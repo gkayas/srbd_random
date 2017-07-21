@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: ecore-avahi
+Description: E core library, avahi integration
+Requires.private: eo >= 1.16.0 eina >= 1.16.0 ecore >= 1.16.0  
+Version: 1.16.0
+Libs: -L${libdir} -lecore_avahi
+Libs.private: 
+Cflags: -I${includedir}/efl-1 -I${includedir}/efl-1 -I${includedir}/ecore-avahi-1

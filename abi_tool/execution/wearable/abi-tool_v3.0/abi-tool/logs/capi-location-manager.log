@@ -1,0 +1,26 @@
+Temporary header file '/tmp/TGvcmAD8sl/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/location/location_batch.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/location/location_bounds.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/location/locations.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/TGvcmAD8sl/dump1.h"  -I/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/location -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/TGvcmAD8sl/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/location/location_batch.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/location/location_bounds.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/location/locations.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/TGvcmAD8sl/dump2.h"  -I/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/location -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/location/location_batch.h:20:0,
+                 from /tmp/TGvcmAD8sl/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/location/locations.h:725:85: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int location_manager_get_accessibility_state(location_accessibility_state_e *state) TIZEN_DEPRECATED_API;
+                                                                                     ^
+

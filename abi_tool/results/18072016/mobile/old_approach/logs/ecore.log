@@ -1,0 +1,544 @@
+Temporary header file '/tmp/vOmWCv8Zpt/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_animator.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_animator.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_exe.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_exe.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Getopt.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_idle_enterer.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_idle_enterer.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_idle_exiter.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_idle_exiter.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_idler.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_idler.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_job.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_job.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_mainloop.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_parent.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_poller.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_poller.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_timer.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/ecore_timer.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-buffer-1/Ecore_Buffer.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-buffer-1/Ecore_Buffer_Queue.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-con-1/Ecore_Con.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-con-1/ecore_con_base.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-con-1/ecore_con_base.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-con-1/ecore_con_client.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-con-1/ecore_con_client.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-con-1/ecore_con_connector.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-con-1/ecore_con_connector.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-con-1/Ecore_Con_Eet.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-con-1/Ecore_Con_Eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-con-1/Ecore_Con_Legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-con-1/ecore_con_server.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-con-1/ecore_con_server.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-con-1/ecore_con_url.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-con-1/ecore_con_url.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-evas-1/Ecore_Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-evas-1/Ecore_Evas_Types.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-file-1/Ecore_File.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-imf-1/Ecore_IMF.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-imf-evas-1/Ecore_IMF_Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-input-1/Ecore_Input.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-input-evas-1/Ecore_Input_Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-ipc-1/Ecore_Ipc.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-x-1/Ecore_X.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-x-1/Ecore_X_Atoms.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-x-1/Ecore_X_Cursor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-x-1/ecore_x_version.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/vOmWCv8Zpt/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-x-1 -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-imf-1 -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-evas-1 -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-con-1 -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:96:16: error: redefinition of ‘struct _Ecore_Version’
+ typedef struct _Ecore_Version
+                ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:96:16: error: previous definition of ‘struct _Ecore_Version’
+ typedef struct _Ecore_Version
+                ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:102:16: error: invalid type in declaration before ‘;’ token
+ } Ecore_Version;
+                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:102:16: error: conflicting declaration ‘typedef int Ecore_Version’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:102:3: error: ‘Ecore_Version’ has a previous declaration as ‘typedef struct _Ecore_Version Ecore_Version’
+ } Ecore_Version;
+   ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:623:8: error: redefinition of ‘struct _Ecore_Event_Signal_User’
+ struct _Ecore_Event_Signal_User
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:623:8: error: previous definition of ‘struct _Ecore_Event_Signal_User’
+ struct _Ecore_Event_Signal_User
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:637:8: error: redefinition of ‘struct _Ecore_Event_Signal_Hup’
+ struct _Ecore_Event_Signal_Hup
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:637:8: error: previous definition of ‘struct _Ecore_Event_Signal_Hup’
+ struct _Ecore_Event_Signal_Hup
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:650:8: error: redefinition of ‘struct _Ecore_Event_Signal_Exit’
+ struct _Ecore_Event_Signal_Exit
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:650:8: error: previous definition of ‘struct _Ecore_Event_Signal_Exit’
+ struct _Ecore_Event_Signal_Exit
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:666:8: error: redefinition of ‘struct _Ecore_Event_Signal_Power’
+ struct _Ecore_Event_Signal_Power
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:666:8: error: previous definition of ‘struct _Ecore_Event_Signal_Power’
+ struct _Ecore_Event_Signal_Power
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:679:8: error: redefinition of ‘struct _Ecore_Event_Signal_Realtime’
+ struct _Ecore_Event_Signal_Realtime
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:679:8: error: previous definition of ‘struct _Ecore_Event_Signal_Realtime’
+ struct _Ecore_Event_Signal_Realtime
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:958:6: error: multiple definition of ‘enum _Ecore_Memory_State’
+ enum _Ecore_Memory_State    /* Memory state */
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:958:6: error: previous definition here
+ enum _Ecore_Memory_State    /* Memory state */
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:994:6: error: multiple definition of ‘enum _Ecore_Power_State’
+ enum _Ecore_Power_State    /* Power state */
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:994:6: error: previous definition here
+ enum _Ecore_Power_State    /* Power state */
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:1063:6: error: multiple definition of ‘enum _Ecore_Exe_Flags’
+ enum _Ecore_Exe_Flags    /* flags for executing a child with its stdin and/or stdout piped back */
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:1063:6: error: previous definition here
+ enum _Ecore_Exe_Flags    /* flags for executing a child with its stdin and/or stdout piped back */
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:1084:6: error: multiple definition of ‘enum _Ecore_Exe_Win32_Priority’
+ enum _Ecore_Exe_Win32_Priority
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:1084:6: error: previous definition here
+ enum _Ecore_Exe_Win32_Priority
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:1116:8: error: redefinition of ‘struct _Ecore_Exe_Event_Add’
+ struct _Ecore_Exe_Event_Add
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:1116:8: error: previous definition of ‘struct _Ecore_Exe_Event_Add’
+ struct _Ecore_Exe_Event_Add
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:1126:8: error: redefinition of ‘struct _Ecore_Exe_Event_Del’
+ struct _Ecore_Exe_Event_Del
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:1126:8: error: previous definition of ‘struct _Ecore_Exe_Event_Del’
+ struct _Ecore_Exe_Event_Del
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:1144:8: error: redefinition of ‘struct _Ecore_Exe_Event_Data_Line’
+ struct _Ecore_Exe_Event_Data_Line
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:1144:8: error: previous definition of ‘struct _Ecore_Exe_Event_Data_Line’
+ struct _Ecore_Exe_Event_Data_Line
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:1154:8: error: redefinition of ‘struct _Ecore_Exe_Event_Data’
+ struct _Ecore_Exe_Event_Data
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:1154:8: error: previous definition of ‘struct _Ecore_Exe_Event_Data’
+ struct _Ecore_Exe_Event_Data
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:1468:6: error: multiple definition of ‘enum _Ecore_Fd_Handler_Flags’
+ enum _Ecore_Fd_Handler_Flags
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:1468:6: error: previous definition here
+ enum _Ecore_Fd_Handler_Flags
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:2949:6: error: multiple definition of ‘enum _Ecore_Poller_Type’
+ enum _Ecore_Poller_Type    /* Poller types */
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:2949:6: error: previous definition here
+ enum _Ecore_Poller_Type    /* Poller types */
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:3041:6: error: multiple definition of ‘enum _Ecore_Pos_Map’
+ enum _Ecore_Pos_Map    /* Position mappings */
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:3041:6: error: previous definition here
+ enum _Ecore_Pos_Map    /* Position mappings */
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:3061:6: error: multiple definition of ‘enum _Ecore_Animator_Source’
+ enum _Ecore_Animator_Source    /* Timing sources for animators */
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore.h:309:0,
+                 from /tmp/vOmWCv8Zpt/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-1/Ecore_Common.h:3061:6: error: previous definition here
+ enum _Ecore_Animator_Source    /* Timing sources for animators */
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump1.h:26:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-buffer-1/Ecore_Buffer.h:390:14: error: use of enum ‘_Ecore_Export_Type’ without previous declaration
+ typedef enum _Ecore_Export_Type Ecore_Export_Type;
+              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/ecore-buffer-1/Ecore_Buffer.h:390:50: error: invalid type in declaration before ‘;’ token
+ typedef enum _Ecore_Export_Type Ecore_Export_Type;
+                                                  ^
+
+Temporary header file '/tmp/vOmWCv8Zpt/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_animator.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_animator.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_exe.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_exe.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Getopt.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_idle_enterer.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_idle_enterer.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_idle_exiter.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_idle_exiter.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_idler.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_idler.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_job.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_job.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_mainloop.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_parent.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_poller.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_poller.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_timer.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/ecore_timer.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/Ecore_Audio.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/ecore_audio.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/ecore_audio_in.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/ecore_audio_in_sndfile.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/ecore_audio_in_tone.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/ecore_audio_obj.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/ecore_audio_obj_in.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/ecore_audio_obj_in_sndfile.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/ecore_audio_obj_in_tone.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/ecore_audio_obj_out.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/ecore_audio_obj_out_pulse.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/ecore_audio_obj_out_sndfile.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/ecore_audio_out.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/ecore_audio_out_pulse.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/ecore_audio_out_sndfile.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1/ecore_audio_protected.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-avahi-1/Ecore_Avahi.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-buffer-1/Ecore_Buffer.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-buffer-1/Ecore_Buffer_Queue.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/Ecore_Con.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/ecore_con_base.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/ecore_con_base.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/ecore_con_client.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/ecore_con_client.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/ecore_con_connector.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/ecore_con_connector.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/Ecore_Con_Eet.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/ecore_con_eet_base.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/ecore_con_eet_base.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/ecore_con_eet_client_obj.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/ecore_con_eet_client_obj.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/Ecore_Con_Eet_Eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/Ecore_Con_Eet_Legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/ecore_con_eet_server_obj.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/ecore_con_eet_server_obj.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/Ecore_Con_Eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/Ecore_Con_Legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/ecore_con_server.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/ecore_con_server.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-drm-1/Ecore_Drm.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-evas-1/Ecore_Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-evas-1/Ecore_Evas_Types.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-fb-1/Ecore_Fb.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-file-1/Ecore_File.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-imf-1/Ecore_IMF.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-imf-evas-1/Ecore_IMF_Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-input-1/Ecore_Input.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-input-evas-1/Ecore_Input_Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-ipc-1/Ecore_Ipc.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-wayland-1/Ecore_Wayland.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/efl_network_url.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1/efl_network_url.eo.legacy.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/vOmWCv8Zpt/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-imf-1 -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-evas-1 -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-con-1 -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-audio-1 -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/wayland-extension -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/libdrm -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eeze-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:94:16: error: redefinition of ‘struct _Ecore_Version’
+ typedef struct _Ecore_Version
+                ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:94:16: error: previous definition of ‘struct _Ecore_Version’
+ typedef struct _Ecore_Version
+                ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:100:16: error: invalid type in declaration before ‘;’ token
+ } Ecore_Version;
+                ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:100:16: error: conflicting declaration ‘typedef int Ecore_Version’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:100:3: error: ‘Ecore_Version’ has a previous declaration as ‘typedef struct _Ecore_Version Ecore_Version’
+ } Ecore_Version;
+   ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:563:8: error: redefinition of ‘struct _Ecore_Event_Signal_User’
+ struct _Ecore_Event_Signal_User
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:563:8: error: previous definition of ‘struct _Ecore_Event_Signal_User’
+ struct _Ecore_Event_Signal_User
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:577:8: error: redefinition of ‘struct _Ecore_Event_Signal_Hup’
+ struct _Ecore_Event_Signal_Hup
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:577:8: error: previous definition of ‘struct _Ecore_Event_Signal_Hup’
+ struct _Ecore_Event_Signal_Hup
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:590:8: error: redefinition of ‘struct _Ecore_Event_Signal_Exit’
+ struct _Ecore_Event_Signal_Exit
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:590:8: error: previous definition of ‘struct _Ecore_Event_Signal_Exit’
+ struct _Ecore_Event_Signal_Exit
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:606:8: error: redefinition of ‘struct _Ecore_Event_Signal_Power’
+ struct _Ecore_Event_Signal_Power
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:606:8: error: previous definition of ‘struct _Ecore_Event_Signal_Power’
+ struct _Ecore_Event_Signal_Power
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:619:8: error: redefinition of ‘struct _Ecore_Event_Signal_Realtime’
+ struct _Ecore_Event_Signal_Realtime
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:619:8: error: previous definition of ‘struct _Ecore_Event_Signal_Realtime’
+ struct _Ecore_Event_Signal_Realtime
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:843:6: error: multiple definition of ‘enum _Ecore_Memory_State’
+ enum _Ecore_Memory_State    /* Memory state */
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:843:6: error: previous definition here
+ enum _Ecore_Memory_State    /* Memory state */
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:879:6: error: multiple definition of ‘enum _Ecore_Power_State’
+ enum _Ecore_Power_State    /* Power state */
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:879:6: error: previous definition here
+ enum _Ecore_Power_State    /* Power state */
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:947:6: error: multiple definition of ‘enum _Ecore_Exe_Flags’
+ enum _Ecore_Exe_Flags    /* flags for executing a child with its stdin and/or stdout piped back */
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:947:6: error: previous definition here
+ enum _Ecore_Exe_Flags    /* flags for executing a child with its stdin and/or stdout piped back */
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:967:6: error: multiple definition of ‘enum _Ecore_Exe_Win32_Priority’
+ enum _Ecore_Exe_Win32_Priority
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:967:6: error: previous definition here
+ enum _Ecore_Exe_Win32_Priority
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:998:8: error: redefinition of ‘struct _Ecore_Exe_Event_Add’
+ struct _Ecore_Exe_Event_Add
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:998:8: error: previous definition of ‘struct _Ecore_Exe_Event_Add’
+ struct _Ecore_Exe_Event_Add
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:1008:8: error: redefinition of ‘struct _Ecore_Exe_Event_Del’
+ struct _Ecore_Exe_Event_Del
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:1008:8: error: previous definition of ‘struct _Ecore_Exe_Event_Del’
+ struct _Ecore_Exe_Event_Del
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:1026:8: error: redefinition of ‘struct _Ecore_Exe_Event_Data_Line’
+ struct _Ecore_Exe_Event_Data_Line
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:1026:8: error: previous definition of ‘struct _Ecore_Exe_Event_Data_Line’
+ struct _Ecore_Exe_Event_Data_Line
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:1036:8: error: redefinition of ‘struct _Ecore_Exe_Event_Data’
+ struct _Ecore_Exe_Event_Data
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:1036:8: error: previous definition of ‘struct _Ecore_Exe_Event_Data’
+ struct _Ecore_Exe_Event_Data
+        ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:1350:6: error: multiple definition of ‘enum _Ecore_Fd_Handler_Flags’
+ enum _Ecore_Fd_Handler_Flags
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:1350:6: error: previous definition here
+ enum _Ecore_Fd_Handler_Flags
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:2641:6: error: multiple definition of ‘enum _Ecore_Poller_Type’
+ enum _Ecore_Poller_Type    /* Poller types */
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:2641:6: error: previous definition here
+ enum _Ecore_Poller_Type    /* Poller types */
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:2719:6: error: multiple definition of ‘enum _Ecore_Pos_Map’
+ enum _Ecore_Pos_Map    /* Position mappings */
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:2719:6: error: previous definition here
+ enum _Ecore_Pos_Map    /* Position mappings */
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:2739:6: error: multiple definition of ‘enum _Ecore_Animator_Source’
+ enum _Ecore_Animator_Source    /* Timing sources for animators */
+      ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:2739:6: error: previous definition here
+ enum _Ecore_Animator_Source    /* Timing sources for animators */
+      ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:3207:14: error: multiple definition of ‘enum _Ecore_Device_Class’
+ typedef enum _Ecore_Device_Class
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:3207:14: error: previous definition here
+ typedef enum _Ecore_Device_Class
+              ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:3217:23: error: invalid type in declaration before ‘;’ token
+   } Ecore_Device_Class; /**< A general class of device @since 1.18 */
+                       ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:3217:23: error: conflicting declaration ‘typedef int Ecore_Device_Class’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:3217:5: error: ‘Ecore_Device_Class’ has a previous declaration as ‘typedef enum _Ecore_Device_Class Ecore_Device_Class’
+   } Ecore_Device_Class; /**< A general class of device @since 1.18 */
+     ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:3222:14: error: multiple definition of ‘enum _Ecore_Device_Subclass’
+ typedef enum _Ecore_Device_Subclass
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:3222:14: error: previous definition here
+ typedef enum _Ecore_Device_Subclass
+              ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:3235:26: error: invalid type in declaration before ‘;’ token
+   } Ecore_Device_Subclass; /**< A general subclass of device @since 1.18 */
+                          ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:3235:26: error: conflicting declaration ‘typedef int Ecore_Device_Subclass’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore.h:353:0,
+                 from /tmp/vOmWCv8Zpt/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-1/Ecore_Common.h:3235:5: error: ‘Ecore_Device_Subclass’ has a previous declaration as ‘typedef enum _Ecore_Device_Subclass Ecore_Device_Subclass’
+   } Ecore_Device_Subclass; /**< A general subclass of device @since 1.18 */
+     ^
+In file included from /tmp/vOmWCv8Zpt/dump2.h:43:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-buffer-1/Ecore_Buffer.h:388:14: error: use of enum ‘_Ecore_Export_Type’ without previous declaration
+ typedef enum _Ecore_Export_Type Ecore_Export_Type;
+              ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-buffer-1/Ecore_Buffer.h:388:50: error: invalid type in declaration before ‘;’ token
+ typedef enum _Ecore_Export_Type Ecore_Export_Type;
+                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-buffer-1/Ecore_Buffer.h:430:3: error: conflicting declaration ‘typedef enum _Ecore_Export_Type Ecore_Export_Type’
+ } Ecore_Export_Type;
+   ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/ecore-buffer-1/Ecore_Buffer.h:388:33: error: ‘Ecore_Export_Type’ has a previous declaration as ‘typedef int Ecore_Export_Type’
+ typedef enum _Ecore_Export_Type Ecore_Export_Type;
+                                 ^
+

@@ -1,0 +1,22 @@
+
+public abstract class  Node {
+	static int NumberType = 0;
+	static int UnknownType = 1;
+	
+	protected int type;
+	protected String value;
+	
+	public Node(int type) {
+		this.type = type;
+	}
+	
+	public int getType() {
+		return type;
+	}
+	public abstract void setValue(int value); 
+	public abstract int getValue(); 
+	
+	public abstract int getOperation(); 
+	
+	
+}

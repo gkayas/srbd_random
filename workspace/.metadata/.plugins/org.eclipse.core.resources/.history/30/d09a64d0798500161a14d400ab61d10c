@@ -1,0 +1,189 @@
+package apprunner;
+
+import java.util.ArrayList;
+
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+public class AppInfo {
+
+	public String getFullPath() {
+		return fullPath;
+	}
+
+	public void setFullPath(String fullPath) {
+		this.fullPath = fullPath;
+	}
+
+	private SimpleStringProperty appName;
+	private SimpleStringProperty install;
+	private SimpleStringProperty launch;
+	private SimpleStringProperty exploratory;
+	private SimpleStringProperty close;
+	private SimpleStringProperty uninstall;
+	private SimpleStringProperty crash;
+	 private SimpleBooleanProperty checked = new SimpleBooleanProperty(true);
+	private String fullPath;
+	
+//	private ArrayList<TestInfo> tcList;
+//	private String appName;
+//	
+//	public void setTCResult(String tcName, TCResult result) {
+//		getTestInfo(tcName).setResult(result);
+//	}
+//	
+//	public String getTCResult(String tcName) {
+//		TestInfo testInfo = getTestInfo(tcName);
+//		if(testInfo != null)
+//			return testInfo.getResult().toString();
+//		return "NR";
+//	}
+//	
+//	private TestInfo getTestInfo(String testInfoType) {
+//		TestInfo installTest = null;
+//		for (TestInfo testInfo : tcList) {
+//			if(testInfo.getTcName().equals(testInfoType)) {
+//				installTest = testInfo;
+//			}
+//		}
+//		return installTest;
+//	}
+
+	public AppInfo() {
+//		this.tcList = new ArrayList<TestInfo>();
+		this.install = new SimpleStringProperty();
+		this.exploratory = new SimpleStringProperty();
+		this.uninstall = new SimpleStringProperty();
+	}
+	
+	public AppInfo(String name) {
+		this.appName = new SimpleStringProperty(name);
+		this.install = new SimpleStringProperty("NT");
+		this.launch = new SimpleStringProperty("NT");
+		this.exploratory = new SimpleStringProperty("NT");
+		this.close = new SimpleStringProperty("NT");
+		this.uninstall = new SimpleStringProperty("NT");
+		this.crash = new SimpleStringProperty("NT");
+	}
+	
+
+	public SimpleStringProperty appNameProperty() {
+		return appName;
+	}
+		
+	public SimpleStringProperty installProperty() {
+		return install;
+	}
+	
+	public SimpleStringProperty launchProperty() {
+		
+		return launch;
+	}
+	
+	public SimpleStringProperty exploratoryProperty() {
+		return exploratory;
+	}
+	
+	public SimpleStringProperty closeProperty() {
+		
+		return close;
+	}
+	
+	public SimpleStringProperty uninstallProperty() {
+
+		return uninstall;
+	}
+	
+	public SimpleStringProperty crashProperty() {
+		
+		return crash;
+	}
+	
+
+    public SimpleBooleanProperty checkBoxProperty() {
+        return this.checked;
+    }
+
+    public java.lang.Boolean getCheckBox() {
+        return this.checkedProperty().get();
+    }
+
+    public void setCheckBox(final java.lang.Boolean checked) {
+        this.checkedProperty().set(checked);
+    }
+	
+	public void setAppName(SimpleStringProperty name) {
+		this.appName = name;
+	}
+
+	
+	public void setInstall(SimpleStringProperty name) {
+		this.install = name;
+	}
+	
+	public void setLaunch(SimpleStringProperty launch) {
+		this.launch = launch;
+	}
+	
+	public void setExploratory(SimpleStringProperty name) {
+		this.exploratory = name;
+	}
+	
+	public void setClose(SimpleStringProperty name) {
+		this.close = name;
+	}
+	
+	public void setUninstall(SimpleStringProperty name) {
+		this.uninstall = name;
+	}
+	
+	public void setCrash(SimpleStringProperty name) {
+		this.crash = name;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof AppInfo)) {
+			return false;
+		}
+		AppInfo target = (AppInfo) obj;
+		
+		return this.getName().getValue().equals(target.getName().getValue());
+	}
+	
+
+	public SimpleStringProperty getName() {
+		return appName;
+	}
+
+	public SimpleStringProperty getInstall() {
+		return install;
+	}
+
+	public SimpleStringProperty getExploratory() {
+		return exploratory;
+	}
+
+	public SimpleStringProperty getUninstall() {
+		return uninstall;
+	}
+
+	public StringProperty getLaunch() {
+		
+		return launch;
+	}
+
+	public StringProperty getClose() {
+	
+		return close;
+	}
+
+	public StringProperty getDetectCrash() {
+		
+		return crash;
+	}
+
+	
+
+}

@@ -1,0 +1,5 @@
+datacontrol_sql_insert
+datacontrol_sql_update
+check_privilege
+datacontrol_sql_get_cursor
+data_control_error

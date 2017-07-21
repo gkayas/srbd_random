@@ -1,0 +1,11 @@
+
+public class NumberNode extends Node{
+
+	@Override
+	public String getType() {
+		return "number";
+	}
+
+	public 
+	
+}

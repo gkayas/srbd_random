@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+apiversion=0.1.0
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: Samsung OpenGLES Toolkit (including Toolkit)
+Description: 3D Canvas Toolkit using OpenGLES (with the toolkit)
+Version: ${apiversion}
+Requires: dali-core
+Libs: -L${libdir} -ldali-toolkit
+Cflags: -I${includedir}

@@ -1,0 +1,14 @@
+Temporary header file '/tmp/0oJJ2uF6tU/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appcore-agent/appcore-agent.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/0oJJ2uF6tU/dump1.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /tmp/0oJJ2uF6tU/dump1.h:3:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appcore-agent/appcore-agent.h:30:29: fatal error: bundle_internal.h: No such file or directory
+ #include <bundle_internal.h>
+                             ^
+compilation terminated.
+

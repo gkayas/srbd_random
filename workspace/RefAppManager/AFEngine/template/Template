@@ -1,0 +1,22 @@
+import java.io.*;
+import org.junit.*;
+import sdk.*;
+import base.TCBase;
+import org.sikuli.basics.*;
+import org.sikuli.script.*;
+import device.ResourceUtils;
+
+public class TestCase extends TCBase
+{
+	public TestCase()
+	{
+		super();		
+	}
+	
+	public TestCase(String s)
+	{
+		super(s);
+	}
+	
+	@Test
+	public void testCases() throws Exception

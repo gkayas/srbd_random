@@ -1,0 +1,3 @@
+ttsp_get_engine_info
+ttsp_unload_engine
+ttsp_load_engine

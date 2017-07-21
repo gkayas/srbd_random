@@ -1,0 +1,42 @@
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class MainClass {
+	public static void main(String[] args) {
+//		SequenceSet ss = new SequenceSet();
+//		ArrayList list = ss.getSequences();
+//		Iterator itr=list.iterator();  
+//		  while(itr.hasNext()){  
+//		   System.out.println(itr.next());  
+//		  }  
+//		  
+//		Sequence s = new Sequence();
+//		System.out.println(s.getSeq(">header2"));
+		
+//		Sequence s = new Sequence(">header1","ACACAGGAAA");
+//		ArrayList list = s.getUsage(4, 2);
+//		Iterator itr=list.iterator();  
+//		  while(itr.hasNext()){  
+//		   System.out.println(itr.next());  
+//		 }
+		
+		SequenceSet ss = null ;
+		try {
+			ss = SequenceSet.load("dna.txt");
+		} catch (FileNotFoundException e) {
+			System.out.println("Inout File not found.");
+			e.printStackTrace();
+		}
+		System.out.println(ss);
+		LinkedList<Sequence> sequences = ss.getSequences();
+		Iterator<Sequence> seqItr = sequences.iterator();
+		while(seqItr.hasNext()) {
+			Sequence seq = seqItr.next();
+			System.out.println(seq);
+			System.out.println(seq.getUsage(1, 1));
+		}
+		
+//		System.out.println(ss.getUsages(1, 1));
+	}
+}//end of main class

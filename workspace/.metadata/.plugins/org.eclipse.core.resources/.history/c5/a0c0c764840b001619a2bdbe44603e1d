@@ -1,0 +1,106 @@
+
+public abstract class  Node {
+	static final int NumberType = 0;
+	static final int UnknownType = 1;
+	
+	static final int OPERATION_ADD = 1;
+	static final int OPERATION_SUB = 2;
+	static final int OPERATION_MUL = 3;
+	static final int OPERATION_DIV = 4;
+	static final int OPERATION_DEAD = 5;
+
+	
+	private int type, operation;
+	protected int value;
+	private boolean isAlive;
+	
+	private int positionX;
+	private int positionY;
+	
+	public int getPositionX() {
+		return positionX;
+	}
+
+//	public void setPositionX(int positionX) {
+//		this.positionX = positionX;
+//	}
+
+	public int getPositionY() {
+		return positionY;
+	}
+//
+//	public void setPositionY(int positionY) {
+//		this.positionY = positionY;
+//	}
+
+	public Node(int value, int operation, int posX, int posY) {
+		this.value = value;
+		this.operation = operation;
+		positionX = posX;
+		positionY = posY;
+		isAlive = true;
+	}
+	
+	public int getType() {
+		return type;
+	}
+	
+	protected void setType(int type) {
+		this.type =  type;
+	}
+	public void setValue(int value) {
+		this.value = value;
+	} 
+	public abstract int getValue(); 
+	
+	public void setOperation(int operation) {
+		this.operation = operation;
+	}
+	
+	public int getOperation() {
+		return this.operation;
+	}
+	
+	public boolean isAlive() {
+		return isAlive;
+	}
+	
+	public String getOperationString() {
+		switch (operation) {
+		case Node.OPERATION_ADD:
+			return "+";
+		case Node.OPERATION_SUB:
+			return "-";
+		case Node.OPERATION_MUL:
+			return "*";
+		case Node.OPERATION_DIV:
+			return "/";
+		default:
+			break;
+		}
+		return null;
+	} 
+	
+	public void incoming(Node node) {
+		
+			switch(this.getOperation()) {
+			case Node.OPERATION_ADD:
+				this.setValue(node.getValue() + this.getValue() );
+				return;
+			case Node.OPERATION_SUB:
+				this.setValue(node.getValue() - this.getValue());
+				return;
+			case Node.OPERATION_MUL:
+				this.setValue(node.getValue() * this.getValue() );
+				return;
+			case Node.OPERATION_DIV:
+				this.setValue(node.getValue() / this.getValue() );
+				return;
+			case Node.OPERATION_DEAD:
+				this.setValue(node.getValue() );
+				isAlive = false;
+				return;
+	
+			}
+	}
+}

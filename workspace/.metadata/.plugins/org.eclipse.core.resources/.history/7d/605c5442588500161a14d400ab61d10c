@@ -1,0 +1,1078 @@
+
+package fxviewer;
+
+import java.awt.BorderLayout;
+import java.awt.Dialog;
+import java.awt.Dialog.ModalExclusionType;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Insets;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.net.URL;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.ResourceBundle;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JSplitPane;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
+
+import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
+import org.fife.ui.rsyntaxtextarea.SyntaxConstants;
+import org.fife.ui.rtextarea.RTextScrollPane;
+import org.fxmisc.flowless.VirtualizedScrollPane;
+import org.fxmisc.richtext.CodeArea;
+import org.fxmisc.richtext.LineNumberFactory;
+import org.fxmisc.richtext.StyleClassedTextArea;
+import org.fxmisc.richtext.StyleSpans;
+import org.fxmisc.richtext.StyleSpansBuilder;
+import org.fxmisc.richtext.StyledTextArea;
+
+import apprunner.AppInfo;
+import apprunner.JsoupXMLParser;
+import apprunner.ReportUtils;
+import javafx.application.Platform;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
+public class MainController implements Initializable, EventHandler<ActionEvent>  /*,ChangeListener*/{
+
+	//	public static final String SUITE_FILES_FOLDER = ResourceUtils.getXmlPath();
+
+	static LaunchInterfaceTask interfaceTask;
+	static RunServerTask runServerTask;
+
+	@FXML
+	private TableView<AppInfo> tcTable;
+
+	@FXML
+	private TableColumn<AppInfo, String> appName;
+
+	@FXML
+	private TableColumn<AppInfo, String> install;
+
+	@FXML
+	private TableColumn<AppInfo, String> launch;
+
+	@FXML
+	private TableColumn<AppInfo, String> exploratory;
+
+	@FXML
+	private TableColumn<AppInfo, String> close;
+
+	@FXML
+	private TableColumn<AppInfo, String> uninstall;
+
+	@FXML
+	private TableColumn<AppInfo, String> crash;
+
+	@FXML
+	private CheckBox installCheck;
+
+	@FXML
+	private CheckBox launchCheck;
+
+	@FXML
+	private CheckBox exploratoryCheck;
+
+	@FXML
+	private CheckBox closeCheck;
+
+	@FXML
+	private CheckBox uninstallCheck;
+
+	@FXML
+	private CheckBox crashCheck;
+
+	@FXML
+	private Button browseBtn;
+
+	@FXML
+	private Button exploratoryCodeBtn;
+
+	@FXML
+	private Button runBtn;
+
+	@FXML
+	private Button rerunBtn;
+
+	@FXML
+	private Button exportReportBtn;
+
+	@FXML
+	private Button runSuspendBtn;
+
+	@FXML
+	private Button refreshBtn;
+
+	@FXML
+	private TextArea console;
+
+
+
+	private void generateJavaFile() {
+
+		try {
+			Scanner sc = new Scanner(new File("./template"));
+			StringBuffer sb = new StringBuffer();
+			while(sc.hasNextLine()) {
+				sb.append(sc.nextLine()+"\n");
+			}
+			sc.close();
+
+
+			List<AppInfo> apps = getTableRows();
+
+			for (AppInfo appInfo : apps) {
+				String appName = appInfo.getName().getValue();
+				File file = new File("./src/storeapp/StoreApp_"+appName+".java");
+
+				if(!file.exists()) {				
+					PrintWriter pw = new PrintWriter(file);
+					String temp = sb.toString();
+					temp = temp.replaceAll("ClassName","StoreApp_"+appName);
+					pw.write(temp);
+					pw.flush();
+					pw.close();
+				}
+			}
+
+
+		} catch (FileNotFoundException e) {
+
+			e.printStackTrace();
+		}
+
+	}
+
+	public void generateJavaFileFromAppInfo(AppInfo appInfo) {
+		try {
+			Scanner sc = new Scanner(new File("./res/template/template.java"));
+			StringBuffer sb = new StringBuffer();
+			while(sc.hasNextLine()) {
+				sb.append(sc.nextLine()+"\n");
+			}
+			sc.close();
+
+			String appName = appInfo.getName().getValue();
+			File file = new File("./src/storeapp/StoreApp_"+appName+".java");
+			if(!file.exists()) {
+				PrintWriter pw = new PrintWriter(file);
+				String temp = sb.toString();
+				temp = temp.replaceAll("ClassName","StoreApp_"+appName);
+				pw.write(temp);
+				pw.flush();
+				pw.close();
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void setRunButtonDisable(boolean value) {
+		runBtn.setDisable(value);
+	}
+
+	public List<AppInfo> getTableRows() {
+
+		return tcTable.getItems();
+	}
+
+	public boolean isInstall() {
+		return installCheck.selectedProperty().getValue();
+	}
+
+	public boolean isLaunch() {
+		return launchCheck.selectedProperty().getValue();
+	}
+
+	public boolean isExploratory() {
+		return exploratoryCheck.selectedProperty().getValue();
+	}
+
+	public boolean isCloseCheck() {
+		return closeCheck.selectedProperty().getValue();
+	}
+
+	public boolean isUninstallCheck() {
+		return uninstallCheck.selectedProperty().getValue();
+	}
+
+	public boolean isCrash() {
+		return crashCheck.selectedProperty().getValue();
+	}
+
+	public void toggleRunServerBtn() {
+		runSuspendBtn.setDisable(!runSuspendBtn.isDisabled());
+	}
+
+	public void toggleInterfaceBtn() {
+		refreshBtn.setDisable(!refreshBtn.isDisabled());
+	}
+
+	public void openInterfaceBtnClicked() {
+		clearConsole();	
+	}
+	
+	public void browseBtnClicked() {
+		File file = new File(System.getProperty("user.home"));
+
+		JFileChooser jFileChooser = new JFileChooser(file);
+		jFileChooser.setMultiSelectionEnabled(true);
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("File", "tpk", "wgt");
+		jFileChooser.setAcceptAllFileFilterUsed(false);
+		jFileChooser.addChoosableFileFilter(filter);
+		int rVal = jFileChooser.showSaveDialog(jFileChooser);
+
+		if (rVal == JFileChooser.APPROVE_OPTION) {
+			File [] selectedFiles = jFileChooser.getSelectedFiles();
+			ArrayList<AppInfo> appList = new ArrayList<AppInfo>();
+			for (File f : selectedFiles) {
+				AppInfo app = new AppInfo(f.getName().replaceAll(".wgt", "").replaceAll(".tpk", ""));
+				try {
+					app.setFullPath(f.getCanonicalPath());
+				} catch (IOException e) {
+					app.setFullPath(" ");
+					e.printStackTrace();
+				}
+				generateJavaFileFromAppInfo(app);
+				appList.add(app);
+			}
+			
+			addAllToTcTable(appList);
+			
+			runBtnCheck();
+		}
+	}
+	
+
+	public void exploratoryCodeBtnClicked() {
+		AppInfo selected = tcTable.getSelectionModel().getSelectedItem();
+
+		openExploratoryCode(selected);
+	}
+
+	public void runBtnClicked() {
+		clearConsole();
+		runSuspendBtn.setDisable(false);
+		JsoupXMLParser.writeXml(this);
+		
+		runBtn.setDisable(true);
+		refreshBtn.setDisable(true);
+		exploratoryCodeBtn.setDisable(true);
+		exportReportBtn.setDisable(true);
+		refreshTcTable();
+		performCompileRun();
+		writeSuspendFile("0");
+	}
+	
+	private void writeSuspendFile(String line) {
+		try {
+			BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("./temp/suspend"));
+			bufferedWriter.write(line);
+			bufferedWriter.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void rerunBtnClicked() {
+		clearConsole();
+
+	}
+
+
+	public void exportReportBtnClicked() {
+		//clearConsole();
+		
+		File file = new File("./reports");
+
+		JFileChooser jFileChooser = new JFileChooser(file);
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("File", ".xls");
+		jFileChooser.setAcceptAllFileFilterUsed(false);
+		jFileChooser.addChoosableFileFilter(filter);
+		int rVal = jFileChooser.showSaveDialog(jFileChooser);
+
+		if (rVal == JFileChooser.APPROVE_OPTION) {
+			String reportFilePath=jFileChooser.getSelectedFile().getAbsolutePath();
+			if(!reportFilePath.contains(".xls"))
+				reportFilePath += ".xls";
+			ReportUtils.exportReport(reportFilePath,getTableRows());
+		}
+
+	}
+
+
+	public void refreshBtnClicked() {
+		
+		Alert alert = new Alert(AlertType.CONFIRMATION, "Do you want to refresh?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+		alert.showAndWait();
+
+		if (alert.getResult() == ButtonType.YES) {
+			clearConsole();
+			removeAllFromTcTable();
+			runBtn.setDisable(true);
+			exportReportBtn.setDisable(true);
+			exploratoryCodeBtn.setDisable(true);
+			refreshBtn.setDisable(true);
+		}
+	}
+
+	private void refreshTcTable() {
+		List<AppInfo> apps = getTableRows();
+		for (AppInfo appInfo : apps) {
+			appInfo.getInstall().setValue("NT");
+			appInfo.getLaunch().setValue("NT");
+			appInfo.getExploratory().setValue("NT");
+			appInfo.getClose().setValue("NT");
+			appInfo.getUninstall().setValue("NT");
+			appInfo.getDetectCrash().setValue("NT");
+		}
+	}
+	
+	
+	
+	public void runSuspendBtnClicked() {
+		//clearConsole();
+		writeSuspendFile("1");
+		runSuspendBtn.setDisable(true);
+		//runServerTask = new RunServerTask(this);
+		//runServerTask.execute();
+	}
+
+
+
+	public TextArea getConsole() {
+		return console;
+	}
+
+
+
+
+	public void listFilesForFolder(final File folder, TreeItem<String> root) {
+		//		List<String> suiteNames = new ArrayList<String>();
+		//		for (final File fileEntry : folder.listFiles()) {
+		//			if (fileEntry.isDirectory()) {
+		//				listFilesForFolder(fileEntry, root);
+		//			} else {
+		//				// System.out.println(fileEntry.getName());
+		//				//TreeItem<String> item = new TreeItem<>(fileEntry.getName().split("\\.")[0]);
+		//				//root.getChildren().add(item);
+		//				suiteNames.add(fileEntry.getName().split("\\.")[0]);
+		//			}
+		//		}
+		//		
+		//		Collections.sort(suiteNames);
+		//		for (String string : suiteNames) {
+		//			TreeItem<String> item = new TreeItem<>(string);
+		//			root.getChildren().add(item);
+		//		}
+
+		//		root.getChildren().add(new TreeItem<String>("Mobile"));
+		//		root.getChildren().add(new TreeItem<String>("Wearable"));
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		if(console == null) 
+			System.out.println("[log] Console is null");
+
+		CustomConsole customConsole = new CustomConsole(console);
+		PrintStream ps = new PrintStream(customConsole);
+		
+		System.setOut(ps);
+		System.setErr(ps);
+
+		//		TreeItem<String> treeRoot = new TreeItem<>("Store App");
+		//		listFilesForFolder(new File(SUITE_FILES_FOLDER), treeRoot);
+
+		//		suiteTree.getSelectionModel().selectedItemProperty().addListener(this);
+		//		treeRoot.setExpanded(true);
+
+		tcTable.setOnMouseClicked( new EventHandler<MouseEvent>() {
+
+			@Override
+			public void handle(MouseEvent event) {
+				//				
+				//				 if ( event.getClickCount() == 2  ) {
+				//					    TestInfo selectedTcInfo = tcTable.getSelectionModel().getSelectedItem();
+				//			            System.out.println(ResourceUtils.getErrorScreenshotPath()+SuiteRunner.getRunner().getSuiteName()+"/"+tcTable.getSelectionModel().getSelectedItem().getTcName()+".png");
+				//			            if(selectedTcInfo.getResult().equals(TCResult.Fail)) {
+				//			            	 imagePopupWindowShow(ResourceUtils.getErrorScreenshotPath()+SuiteRunner.getRunner().getSuiteName()+"/"+selectedTcInfo.getTcName()+".png");
+				//			            }
+				//			           
+				//			     }
+			}
+		});
+
+		//		suiteTree.setRoot(treeRoot);
+
+		install.setStyle("-fx-alignment: CENTER;");
+		launch.setStyle("-fx-alignment: CENTER;");
+		exploratory.setStyle("-fx-alignment: CENTER;");
+		close.setStyle("-fx-alignment: CENTER;");
+		uninstall.setStyle("-fx-alignment: CENTER;");
+		crash.setStyle("-fx-alignment: CENTER;");
+
+
+		runBtnCheck();
+
+		installCheck.setOnAction(this);
+		launchCheck.setOnAction(this);
+		exploratoryCheck.setOnAction(this);
+		uninstallCheck.setOnAction(this);
+		closeCheck.setOnAction(this);
+		crashCheck.setOnAction(this);
+
+		installCheck.setSelected(true);
+		launchCheck.setSelected(true);
+		exploratoryCheck.setSelected(true);
+		uninstallCheck.setSelected(true);
+		closeCheck.setSelected(true);
+
+
+
+		appName.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("appName"));
+
+		install.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("install"));
+
+		launch.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("launch"));
+
+		exploratory.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("exploratory"));
+
+		close.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("close"));
+
+		uninstall.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("uninstall"));
+
+		crash.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("crash"));
+
+
+		rerunBtn.setDisable(true);
+		exportReportBtn.setDisable(true);
+		exploratoryCodeBtn.setDisable(true);
+		refreshBtn.setDisable(true);
+		runSuspendBtn.setDisable(true);
+	}
+
+	public void clearConsole() {
+		Platform.runLater(() -> console.clear());
+	}
+
+	public void imagePopupWindowShow(String imgPath) {
+
+		File imageFile;
+		Image image;
+		ImageView imageView; 
+		BorderPane pane;
+		Scene scene;
+		Stage stage;
+
+		imageFile = new File(imgPath);
+		image = new Image(imageFile.toURI().toString());
+		imageView = new ImageView(image);
+
+		// Image will sit in the middle of our popup.
+		pane = new BorderPane();
+		pane.setCenter(imageView);
+		scene = new Scene(pane);
+
+		// Create the actual window and display it.
+		stage = new Stage();
+		stage.setScene(scene);
+		// Without this, the audio won't stop!
+		stage.setOnCloseRequest(
+				e -> {
+					e.consume();
+					stage.close();
+				}
+				);
+		stage.showAndWait();
+	}
+	
+	public void addToTcTable(AppInfo tc) {
+		runBtn.setDisable(false);
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				tcTable.getItems().add(tc);
+			}
+		});
+
+	}
+
+	public void addAllToTcTable(List<AppInfo> appList) {
+		runBtn.setDisable(false);
+		exploratoryCodeBtn.setDisable(false);
+		exportReportBtn.setDisable(false);
+		refreshBtn.setDisable(false);
+		
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				for (AppInfo app : appList) {
+					if(!getTableRows().contains(app)) {
+						addToTcTable(app);
+					}
+				}
+			}
+		});
+	}
+
+	public void removeAllFromTcTable() {
+
+
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				ObservableList<AppInfo> data = tcTable.getItems();				
+				data.remove(0, data.size());
+
+			}
+		});
+	} 
+
+	public void resetTctable(List<AppInfo> newList) {
+
+		removeAllFromTcTable();
+		addAllToTcTable(newList);
+	}
+
+	private void performCompileRun() {
+
+		new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				String currentWorkingDirectory = System.getProperty("user.dir");
+				ProcessBuilder compile, run;
+				Process compileProcess, runProcess;
+
+				try {
+					if (!isWindows()) {
+						compile = new ProcessBuilder("/bin/sh", "-c","javac -d "+
+								currentWorkingDirectory + "/bin -cp "+ currentWorkingDirectory
+								+ "/AFEngine/lib/*" + ":"+currentWorkingDirectory + "/lib/*:" + currentWorkingDirectory + "/src "+
+								currentWorkingDirectory + "/src/apprunner/Main.java "+ currentWorkingDirectory + "/src/storeapp/*.java");
+					} else {
+						compile = new ProcessBuilder("cmd", "/c", "javac -d "+
+								currentWorkingDirectory + "/bin -cp "+ currentWorkingDirectory
+								+ "/AFEngine/lib/*" + ";"+currentWorkingDirectory + "/lib/*;" + currentWorkingDirectory + "/src "+
+								currentWorkingDirectory + "/src/apprunner/Main.java "+ currentWorkingDirectory + "/src/storeapp/*.java");
+					}
+
+					compileProcess = compile.start();
+
+					String line = "";
+					BufferedReader msgReader = new BufferedReader(new InputStreamReader(compileProcess.getErrorStream()));
+					BufferedReader errReader = new BufferedReader(new InputStreamReader(compileProcess.getErrorStream()));
+
+					while ((line = msgReader.readLine()) != null) {
+						System.out.println(line);
+					}
+
+					int returnCode = compileProcess.waitFor();
+
+					msgReader.close();
+					errReader.close();					
+					compileProcess.destroy();
+
+					if (returnCode == 0) {
+						if (!isWindows()) {
+							run = new ProcessBuilder("/bin/sh", "-c",
+									"java -cp " + currentWorkingDirectory + "/AFEngine/lib/*:" + currentWorkingDirectory + "/lib/*:"
+											+ currentWorkingDirectory + "/bin apprunner.Main");
+						} else {
+							run = new ProcessBuilder("cmd", "/c",
+									"java -cp " + currentWorkingDirectory + "/AFEngine/lib/*;" + "lib/*;"
+											+ currentWorkingDirectory + "/bin apprunner.Main");
+						}
+
+						System.out.println("[log] START AUTOMATION TC EXECUTION.");
+
+						runProcess = run.start();
+						msgReader = new BufferedReader(new InputStreamReader(runProcess.getInputStream()));
+						errReader = new BufferedReader(new InputStreamReader(runProcess.getErrorStream()));	
+
+						StringBuffer msgSb = new StringBuffer();
+						StringBuffer errSb = new StringBuffer();
+						//						char m = 0 ;
+						String sm,se;
+						//						char e = 0 ;
+
+						while(true) {
+							try{
+								runProcess.exitValue();
+								break;
+							}catch(IllegalThreadStateException ex){
+
+							}
+
+							while (msgReader.ready()) {
+								sm = msgReader.readLine();
+								msgSb.append(sm);
+	
+								System.out.println(msgSb.toString());
+
+								if(sm.contains("[result]")) {
+									sm = sm.replaceAll("\\]\\[", " ");
+									sm = sm.replaceAll("\\[", "");
+									sm = sm.replaceAll("\\]", "");	
+
+									Scanner sc = new Scanner(sm);
+									sc.next();
+									AppInfo app = new AppInfo(sc.next());
+
+									String tcName = sc.next();
+									sc.next();
+									String result = sc.next();
+
+									List<AppInfo> appList = getTableRows(); 
+
+									for (AppInfo appInfo : appList) {
+										if(appInfo.equals(app)) {
+											if(tcName.equals("install")) {
+												appInfo.getInstall().setValue(result);
+											} else if(tcName.equals("launch")) {
+												appInfo.getLaunch().setValue(result);
+											} else if(tcName.equals("exploratory")) {
+												appInfo.getExploratory().setValue(result);
+											} else if(tcName.equals("close")) {
+												appInfo.getClose().setValue(result);
+											} else if(tcName.equals("uninstall")) {
+												appInfo.getUninstall().setValue(result);
+											} else if(tcName.equals("detectCrash")) {
+												appInfo.getDetectCrash().setValue(result);
+											}
+										}
+									}
+									sc.close();
+								}
+
+								msgSb = new StringBuffer();
+								//								}
+
+							}
+
+							while (errReader.ready()) {
+								se = errReader.readLine();
+								errSb.append(se);
+								System.out.println(errSb.toString());
+								errSb = new StringBuffer();
+							}
+
+							Thread.sleep(10);
+						}
+
+						msgReader.close();
+						errReader.close();
+						runProcess.destroy();
+						System.out.println("[log] AUTOMATION TC EXECUTION COMPLETED.");
+					}
+
+				} catch (Exception e) {
+
+					e.printStackTrace();
+				}	
+
+				runBtn.setDisable(false);
+				refreshBtn.setDisable(false);
+				exploratoryCodeBtn.setDisable(false);
+				exportReportBtn.setDisable(false);
+				runSuspendBtn.setDisable(true);
+			}
+		}).start();
+	}
+
+	public void runBtnCheck() {
+		if(!exploratoryCodeBtn.isDisable()) {
+			if(installCheck.selectedProperty().getValue() ||
+					uninstallCheck.selectedProperty().getValue() || 
+					exploratoryCheck.selectedProperty().getValue() || 
+					crashCheck.selectedProperty().getValue() ||
+					closeCheck.selectedProperty().getValue() || 
+					launchCheck.selectedProperty().getValue()) {				
+				runBtn.setDisable(false);
+			} else {
+				runBtn.setDisable(true);
+			}
+		} else {
+			runBtn.setDisable(true);
+		}
+	}
+
+	private boolean isWindows() {
+		String osName = System.getProperty("os.name");
+
+		if (osName.toLowerCase().contains("windows")) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public void handle(ActionEvent event) {
+		if (event.getSource() instanceof CheckBox) {
+			CheckBox chk = (CheckBox) event.getSource();
+
+			if ("Exploratory".equals(chk.getText())) {
+				if(chk.selectedProperty().getValue()) {
+					installCheck.setSelected(true);
+					launchCheck.setSelected(true);
+
+				}
+
+			} else if ("Launch".equals(chk.getText())) {
+				if(chk.selectedProperty().getValue()) {
+					installCheck.setSelected(true);
+
+				} else {
+					exploratoryCheck.setSelected(false);
+					closeCheck.setSelected(false);
+					crashCheck.setSelected(false);
+				}
+			}  else if ("Close".equals(chk.getText())) {
+				if(chk.selectedProperty().getValue()) {
+					installCheck.setSelected(true);
+					launchCheck.setSelected(true);
+
+				}
+			} else if ("Uninstall".equals(chk.getText())) {
+				if(chk.selectedProperty().getValue()) {
+					installCheck.setSelected(true);
+
+				}
+			} else if ("Detect Crash".equals(chk.getText())) {
+				if(chk.selectedProperty().getValue()) {
+					installCheck.setSelected(true);
+					launchCheck.setSelected(true);
+
+				}
+			} else if ("Install".equals(chk.getText())) {
+				if(!chk.selectedProperty().getValue()) {
+					launchCheck.setSelected(false);
+					exploratoryCheck.setSelected(false);
+					closeCheck.setSelected(false);
+					uninstallCheck.setSelected(false);
+					crashCheck.setSelected(false);
+
+				}             
+			}
+			
+			runBtnCheck();
+		}
+	}
+
+   private Button createBoldButton(String styleClass) {
+        Button button = new Button("B");
+        button.styleProperty().set("-fx-font-weight: bold;");
+//        setPushHandler(button, styleClass);
+        return button;
+    }
+	
+   private Button createColorButton(Color color, String styleClass) {
+       Rectangle rect = new Rectangle(20, 20, color);
+       Button button = new Button(null, rect);
+//       setPushHandler(button, styleClass);
+       return button;
+   }
+
+   public void createAndShowGUI(AppInfo selected) throws FileNotFoundException {
+	   	String [] parts = readexploratoryCode(selected);
+	   	JDialog frame = new JDialog();
+	   	frame.setModal(true);
+	   	frame.setTitle("Exploratory Code: "+selected.getName().getValue());
+		frame.setLayout(new BorderLayout());
+
+		JPanel contentPane = new JPanel(new GridBagLayout());
+		contentPane.setBorder(BorderFactory.createLineBorder(java.awt.Color.DARK_GRAY));
+		
+		GridBagConstraints codeContentConst = new GridBagConstraints();
+		codeContentConst.fill = GridBagConstraints.BOTH; 
+		codeContentConst.weightx = 0.0;
+		codeContentConst.weighty = 0.1;
+		codeContentConst.gridwidth = 3;
+		codeContentConst.gridx = 0;
+		codeContentConst.gridy = 0;
+		
+		JPanel codeContent = new JPanel();
+		
+		codeContent.setLayout(new BoxLayout(codeContent, BoxLayout.X_AXIS));    
+		RTextScrollPane scrollPanel ; 
+
+		RSyntaxTextArea textArea = new RSyntaxTextArea();
+		textArea.setFont(textArea.getFont().deriveFont(14.0f));
+		textArea.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JAVA);
+		textArea.setCodeFoldingEnabled(true);
+		textArea.setText(parts[1]);
+		scrollPanel = new RTextScrollPane(textArea);
+		
+		codeContent.add(scrollPanel);
+		contentPane.add(codeContent, codeContentConst);
+		
+		JPanel buttonPane = new JPanel(new GridBagLayout());
+		buttonPane.setMaximumSize(new Dimension(Integer.MAX_VALUE, 100));
+		
+		GridBagConstraints buttonPaneConst = new GridBagConstraints();
+		buttonPaneConst.fill = GridBagConstraints.HORIZONTAL;
+		buttonPaneConst.weightx = 1;
+		buttonPaneConst.weightx = 0.9;
+		buttonPaneConst.anchor = GridBagConstraints.PAGE_END;
+		buttonPaneConst.gridx = 0;
+		buttonPaneConst.gridy = 3;
+		buttonPaneConst.gridwidth = 3;
+		
+		JButton saveBtn = new JButton("Save");
+		saveBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(java.awt.event.ActionEvent e) {
+				try {
+					PrintWriter pw = new PrintWriter(new File("./src/storeapp/StoreApp_"+selected.getName().getValue()+".java"));
+					pw.write( parts[0].trim().replace("null", "")+"\n\t\t"+textArea.getText().replace("\n", "\n\t\t")+"\n\t}\n\n"+parts[2].trim().replace("null", ""));
+					pw.flush();
+					pw.close();
+
+				} catch (Exception ex) {
+
+					System.out.println("[log] To write exploratory code please select one application.");
+				}
+				
+			}
+		});
+		
+		GridBagConstraints saveBtnConst = new GridBagConstraints();
+		saveBtnConst.fill = GridBagConstraints.HORIZONTAL;
+		saveBtnConst.insets = new Insets(10, 0, 10, 5);
+		saveBtnConst.gridx = 2;
+		saveBtnConst.gridy = 0;
+		saveBtnConst.gridwidth = 1;
+				
+		GridBagConstraints closeBtnConst = new GridBagConstraints();
+		closeBtnConst.fill = GridBagConstraints.HORIZONTAL;
+		closeBtnConst.insets = new Insets(10, 5, 10, 0);
+		closeBtnConst.gridx = 3;
+		closeBtnConst.gridy = 0;
+		closeBtnConst.gridwidth = 1;
+		JButton closeBtn = new JButton("Close");
+		closeBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(java.awt.event.ActionEvent e) {
+				frame.dispose();
+				
+			}
+		});
+		buttonPane.add(saveBtn, saveBtnConst);
+		buttonPane.add(closeBtn, closeBtnConst);
+		
+		contentPane.add(buttonPane, buttonPaneConst);
+		frame.add(contentPane);
+
+		
+		frame.pack();
+		frame.setSize(600, 600);
+		frame.setPreferredSize(new Dimension(600, 600));
+		frame.setResizable(true);
+		frame.setVisible(true);
+	
+
+	}
+   
+	public void openExploratoryCode(AppInfo selected) {
+		try {
+			createAndShowGUI(selected);
+			
+		} catch (FileNotFoundException e) {
+			
+			e.printStackTrace();
+		}
+		
+	/*	try{
+			String [] parts = readexploratoryCode(selected);
+			Stage primaryStage = new Stage();
+			primaryStage.initModality(Modality.APPLICATION_MODAL);
+			primaryStage.initStyle(StageStyle.DECORATED);	
+			primaryStage.setTitle("Exploratory Code: "+selected.getName().getValue());
+			primaryStage.setResizable(true);
+			Group root = new Group();
+			
+			StyleClassedTextArea area = new StyleClassedTextArea();
+		
+			area.setParagraphGraphicFactory(LineNumberFactory.get(area));
+			
+			area.setContextMenu(new ContextMenu());
+
+			area.richChanges().filter(ch -> !ch.getInserted().equals(ch.getRemoved())).subscribe(change -> {
+                area.setStyleSpans(0, computeHighlighting(area.getText()));
+            });
+
+			area.replaceText(0, 0, sampleCode);
+			
+
+			
+			Button red = createColorButton(Color.RED, "red");
+	        Button green = createColorButton(Color.GREEN, "green");
+	        Button blue = createColorButton(Color.BLUE, "blue");
+	        Button bold = createBoldButton("bold");
+	        HBox panel = new HBox(red, green, blue, bold);
+
+//	        VirtualizedScrollPane vsPane = new VirtualizedScrollPane(area);
+	        VBox.setVgrow(area, Priority.ALWAYS);
+//	        area.setWrapText(true);
+	        VBox vbox = new VBox(panel, area);
+
+	        
+//	        root.getChildren().add(vbox);
+	        Scene scene = new Scene(vbox, 600, 400);
+	        scene.getStylesheets().add(getClass().getResource("java-keywords.css").toExternalForm());
+	        primaryStage.setScene(scene);
+	        primaryStage.setTitle("Manual Highlighting Demo");
+	        primaryStage.show();
+
+	      
+			
+			
+			StyleClassedTextArea textArea = new StyleClassedTextArea();
+			//TextArea textArea = new TextArea();
+			textArea.setPrefHeight(360);
+
+			Button buttonSave = new Button("Save");
+			buttonSave.setPrefWidth(100);        
+			buttonSave.setOnAction((ActionEvent event) -> {
+				try {
+					PrintWriter pw = new PrintWriter(new File("./src/storeapp/StoreApp_"+selected.getName().getValue()+".java"));
+					pw.write( parts[0].trim().replace("null", "")+"\n\t\t"+textArea.getText().replace("\n", "\n\t\t")+"\n\t}\n\n"+parts[2].trim().replace("null", ""));
+					pw.flush();
+					pw.close();
+
+				} catch (Exception e) {
+
+					System.out.println("[log] To write exploratory code please select one application.");
+				}
+			});
+
+
+			Button buttonClose = new Button("Close");
+			buttonClose.setPrefWidth(100);        
+			buttonClose.setOnAction((ActionEvent event) -> {
+				primaryStage.close();
+			});
+
+			HBox hbox = new HBox();
+			hbox.getChildren().addAll(buttonSave, buttonClose);
+			hbox.setSpacing(10);
+			hbox.setAlignment(Pos.CENTER);
+			hbox.setPrefHeight(25.0);
+
+			VBox vBox = new VBox();
+			vBox.setAlignment(Pos.CENTER);
+			vBox.getChildren().addAll(textArea, hbox);
+			vBox.setPrefWidth(VBox.USE_COMPUTED_SIZE);
+
+//			root.getChildren().add(vBox);
+//
+//			primaryStage.setScene(new Scene(, 500, 400));
+//			primaryStage.show();
+
+		} catch (FileNotFoundException e) {
+			System.out.println("[log] Application source file not found!");
+		} catch (Exception e) {
+			System.out.println("[log] To write exploratory code please select one application.");
+			e.printStackTrace();
+		}
+*/
+	}
+
+	private String[] readexploratoryCode(AppInfo selected) throws FileNotFoundException {
+
+		Scanner sc = new Scanner(new File("./src/storeapp/StoreApp_"+selected.getName().getValue()+".java"));
+		String expLine = "\tpublic void exploratory() {";
+		String endLine = "\tpublic void close() {";
+		String [] parts = new String[3];
+		int currentIndex = 0;
+
+		while(sc.hasNextLine()) {
+			String line = sc.nextLine();
+			if(line.equals(expLine)) {
+				parts[currentIndex] += line + "\n";
+				currentIndex++;
+			} else if(line.equals(endLine)) {
+				currentIndex++;
+				parts[currentIndex] += line+ "\n";
+			} else {
+				parts[currentIndex] += line+ "\n";
+			}
+		}
+
+
+
+		sc.close();
+		parts[1] = parts[1].trim().substring(0, parts[1].trim().length()-1);
+		parts[1] = parts[1].replaceAll("\t", "");
+
+		return parts;
+	}
+
+}

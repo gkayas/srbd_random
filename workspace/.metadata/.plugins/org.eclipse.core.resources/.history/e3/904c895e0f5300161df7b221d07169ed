@@ -1,0 +1,123 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.swing.text.html.HTML;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import com.hp.gagawa.java.elements.Body;
+import com.hp.gagawa.java.elements.H1;
+import com.hp.gagawa.java.elements.Head;
+import com.hp.gagawa.java.elements.Html;
+import com.hp.gagawa.java.elements.Table;
+import com.hp.gagawa.java.elements.Td;
+import com.hp.gagawa.java.elements.Text;
+import com.hp.gagawa.java.elements.Th;
+import com.hp.gagawa.java.elements.Title;
+import com.hp.gagawa.java.elements.Tr;
+
+public class Main {
+	static String SOURCE_XML_PATH = "tmp_results/results.junit.xml";
+	 
+	
+	public static void main(String [] args) {
+		try {
+			
+			
+			Html html = new Html();
+
+			Head head = new Head();
+			Title title = new Title();
+			
+			title.appendChild( new Text("SDK Automation Report.") );
+			head.appendChild( title );
+			
+			Body body = new Body();
+			
+			html.appendChild( body );
+			
+			
+			H1 h1 = new H1();
+			h1.appendChild( new Text("Result of TCs") );
+			Table tableFailed = new Table();
+//			tableFailed.setCSSClass("table { "+
+//									"color: #333;"+
+//									"font-family: Helvetica, Arial, sans-serif;"+
+//									"width: 1040px; "+
+//									"border-collapse:" +
+//									"collapse; border-spacing: 0;"+ 
+//									"}");
+			Tr row1 = new Tr();
+			
+			
+			Th th1 = new Th();
+			th1.appendChild(new Text("Tc Name"));
+//			th1.setStyle(" background: #DFDFDF; font-weight: bold; ");
+			row1.appendChild(th1);
+			Th th2 = new Th();
+			th2.appendChild(new Text("Status"));
+//			th2.setStyle(" background: #DFDFDF; font-weight: bold;");
+			row1.appendChild(th2);
+			Th th3 = new Th();
+			th3.appendChild(new Text("Time"));
+//			th3.setStyle(" border: 1px solid #CCC; background: #DFDFDF; font-weight: bold;");
+			row1.appendChild(th3);
+			Th th4 = new Th();
+			th4.appendChild(new Text("Message"));
+			th4.setStyle(" border: 1px solid #CCC; background: #DFDFDF; font-weight: bold;");
+			row1.appendChild(th4);
+			
+			tableFailed.appendChild(row1);
+			
+			Document doc = Jsoup.parse(new File(SOURCE_XML_PATH), "UTF-8");
+			Elements elements = doc.select("testcase");
+			for (Element element : elements) {
+//				System.out.println("Name: "+element.attr("name") + " Time: "+ element.attr("time"));
+				Elements children = element.children();
+				if(children.size() > 0) {
+//					System.out.println("FAILED MEG:");
+					for (Element child : children) {
+//						System.out.println(child.attr("message"));
+					}
+				}
+//				System.out.println("########################################");
+			}
+			
+			body.appendChild(h1);
+			body.appendChild(tableFailed);
+			writeToFile(html.write(), "output.html");
+			System.out.println("DONE");
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private static void writeToFile(String content, String path) {
+		try {
+			PrintWriter pw = new PrintWriter(new FileWriter(new File(path)));
+			
+			pw.write(content);
+			pw.flush();
+			pw.close();
+			
+			
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+	
+	private static Tr setTrStyle(Tr tr) {
+
+		tr.setStyle(" border: 1px solid #CCC; ");
+		return tr;
+		
+	}
+}

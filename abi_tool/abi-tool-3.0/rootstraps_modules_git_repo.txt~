@@ -1,0 +1,16 @@
+ecore
+wayland
+aul
+drm
+widget_service
+tzplatform
+capi-media-tool
+service-adaptor
+xkbcommon
+eeze
+service-adaptor-client
+gbm
+tbm
+appcore-common
+libalarm
+dali

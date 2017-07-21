@@ -1,0 +1,60 @@
+Temporary header file '/tmp/inpdCxCx3_/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n_timezone.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n_types.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n_ubrk.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n_ucalendar.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n_uchar.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n_ucollator.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n_udate.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n_udatepg.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n_uenumeration.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n_ulocale.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n_unormalization.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n_unumber.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n_usearch.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n_uset.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base/utils_i18n_ustring.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/inpdCxCx3_/dump1.h"  -I/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/base -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/inpdCxCx3_/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/cleaned/utils_i18n_timezone.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/cleaned/utils_i18n_usearch.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/cleaned/utils_i18n_ustring.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/deprecated/utils_i18n_timezone.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/deprecated/utils_i18n_usearch.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/deprecated/utils_i18n_ustring.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_alpha_idx.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_field_position.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_format.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_formattable.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_measure.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_measure_format.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_measure_unit.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_parse_position.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_types.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_ubidi.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_ubrk.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_ucalendar.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_uchar.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_ucollator.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_udate.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_udatepg.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_uenumeration.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_ulocale.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_unormalization.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_unumber.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_uset.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_ushape.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/utils_i18n_utmscale.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/inpdCxCx3_/dump2.h"  -I/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base -I/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/base/cleaned -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+

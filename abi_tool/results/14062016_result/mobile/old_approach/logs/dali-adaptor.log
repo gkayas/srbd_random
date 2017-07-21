@@ -1,0 +1,149 @@
+Temporary header file '/tmp/yplwDqhQwg/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/dali.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/text-abstraction/text-abstraction.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/integration-api/adaptors/adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/text-abstraction/text-abstraction-definitions.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/accessibility-adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/public-api/dali-adaptor-version.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/accessibility-action-handler.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/accessibility-gesture-handler.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/bitmap-loader.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/bitmap-saver.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/clipboard.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/clipboard-event-notifier.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/color-controller.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/drag-and-drop-detector.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/event-feeder.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/feedback-player.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/feedback-plugin.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/imf-manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/lifecycle-controller.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/orientation.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/performance-logger.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/physical-keyboard.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/render-surface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/singleton-service.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/sound-player.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/style-monitor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/tilt-sensor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/virtual-keyboard.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework/window-extensions.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/text-abstraction/bidirectional-support.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/text-abstraction/font-client.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/text-abstraction/font-list.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/text-abstraction/font-metrics.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/text-abstraction/glyph-info.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/text-abstraction/script.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/text-abstraction/segmentation.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/text-abstraction/shaping.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/integration-api/adaptors/ecore-x-render-surface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/integration-api/adaptors/ecore-x-types.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/integration-api/adaptors/egl-interface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/integration-api/adaptors/pixmap-render-surface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/integration-api/adaptors/pixmap-render-surface-factory.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/integration-api/adaptors/thread-synchronization-interface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/integration-api/adaptors/trigger-event-factory.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/integration-api/adaptors/trigger-event-factory-interface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/integration-api/adaptors/trigger-event-interface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/public-api/adaptor-framework/application.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/public-api/adaptor-framework/application-configuration.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/public-api/adaptor-framework/input-method.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/public-api/adaptor-framework/key.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/public-api/adaptor-framework/key-grab.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/public-api/adaptor-framework/native-image-source.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/public-api/adaptor-framework/style-change.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/public-api/adaptor-framework/timer.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/public-api/adaptor-framework/tts-player.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/public-api/adaptor-framework/window.h"
+
+  // add namespaces
+  namespace Dali{typedef int tmp_add_type_1;}
+  Dali::tmp_add_type_1 tmp_add_func_1(){return 0;};
+  namespace Dali{namespace AnchorPoint{typedef int tmp_add_type_2;}}
+  Dali::AnchorPoint::tmp_add_type_2 tmp_add_func_2(){return 0;};
+  namespace Dali{namespace BlendingEquation{typedef int tmp_add_type_3;}}
+  Dali::BlendingEquation::tmp_add_type_3 tmp_add_func_3(){return 0;};
+  namespace Dali{namespace BlendingFactor{typedef int tmp_add_type_4;}}
+  Dali::BlendingFactor::tmp_add_type_4 tmp_add_func_4(){return 0;};
+  namespace Dali{namespace BlendingMode{typedef int tmp_add_type_5;}}
+  Dali::BlendingMode::tmp_add_type_5 tmp_add_func_5(){return 0;};
+  namespace Dali{namespace Camera{typedef int tmp_add_type_6;}}
+  Dali::Camera::tmp_add_type_6 tmp_add_func_6(){return 0;};
+  namespace Dali{namespace Color{typedef int tmp_add_type_7;}}
+  Dali::Color::tmp_add_type_7 tmp_add_func_7(){return 0;};
+  namespace Dali{namespace Configuration{typedef int tmp_add_type_8;}}
+  Dali::Configuration::tmp_add_type_8 tmp_add_func_8(){return 0;};
+  namespace Dali{namespace Dimension{typedef int tmp_add_type_9;}}
+  Dali::Dimension::tmp_add_type_9 tmp_add_func_9(){return 0;};
+  namespace Dali{namespace DrawMode{typedef int tmp_add_type_10;}}
+  Dali::DrawMode::tmp_add_type_10 tmp_add_func_10(){return 0;};
+  namespace Dali{namespace EventFeeder{typedef int tmp_add_type_11;}}
+  Dali::EventFeeder::tmp_add_type_11 tmp_add_func_11(){return 0;};
+  namespace Dali{namespace FilterMode{typedef int tmp_add_type_12;}}
+  Dali::FilterMode::tmp_add_type_12 tmp_add_func_12(){return 0;};
+  namespace Dali{namespace FittingMode{typedef int tmp_add_type_13;}}
+  Dali::FittingMode::tmp_add_type_13 tmp_add_func_13(){return 0;};
+  namespace Dali{namespace HorizontalAlignment{typedef int tmp_add_type_14;}}
+  Dali::HorizontalAlignment::tmp_add_type_14 tmp_add_func_14(){return 0;};
+  namespace Dali{namespace InputMethod{typedef int tmp_add_type_15;}}
+  Dali::InputMethod::tmp_add_type_15 tmp_add_func_15(){return 0;};
+  namespace Dali{namespace Integration{typedef int tmp_add_type_16;}}
+  Dali::Integration::tmp_add_type_16 tmp_add_func_16(){return 0;};
+  namespace Dali{namespace Internal{typedef int tmp_add_type_17;}}
+  Dali::Internal::tmp_add_type_17 tmp_add_func_17(){return 0;};
+  namespace Dali{namespace Internal{namespace Adaptor{typedef int tmp_add_type_18;}}}
+  Dali::Internal::Adaptor::tmp_add_type_18 tmp_add_func_18(){return 0;};
+  namespace Dali{namespace KeyGrab{typedef int tmp_add_type_19;}}
+  Dali::KeyGrab::tmp_add_type_19 tmp_add_func_19(){return 0;};
+  namespace Dali{namespace Math{typedef int tmp_add_type_20;}}
+  Dali::Math::tmp_add_type_20 tmp_add_func_20(){return 0;};
+  namespace Dali{namespace ParentOrigin{typedef int tmp_add_type_21;}}
+  Dali::ParentOrigin::tmp_add_type_21 tmp_add_func_21(){return 0;};
+  namespace Dali{namespace Pixel{typedef int tmp_add_type_22;}}
+  Dali::Pixel::tmp_add_type_22 tmp_add_func_22(){return 0;};
+  namespace Dali{namespace PropertyTypes{typedef int tmp_add_type_23;}}
+  Dali::PropertyTypes::tmp_add_type_23 tmp_add_func_23(){return 0;};
+  namespace Dali{namespace Random{typedef int tmp_add_type_24;}}
+  Dali::Random::tmp_add_type_24 tmp_add_func_24(){return 0;};
+  namespace Dali{namespace RenderBuffer{typedef int tmp_add_type_25;}}
+  Dali::RenderBuffer::tmp_add_type_25 tmp_add_func_25(){return 0;};
+  namespace Dali{namespace ResizePolicy{typedef int tmp_add_type_26;}}
+  Dali::ResizePolicy::tmp_add_type_26 tmp_add_func_26(){return 0;};
+  namespace Dali{namespace SamplingMode{typedef int tmp_add_type_27;}}
+  Dali::SamplingMode::tmp_add_type_27 tmp_add_func_27(){return 0;};
+  namespace Dali{namespace SizeScalePolicy{typedef int tmp_add_type_28;}}
+  Dali::SizeScalePolicy::tmp_add_type_28 tmp_add_func_28(){return 0;};
+  namespace Dali{namespace StyleChange{typedef int tmp_add_type_29;}}
+  Dali::StyleChange::tmp_add_type_29 tmp_add_func_29(){return 0;};
+  namespace Dali{namespace TextAbstraction{typedef int tmp_add_type_30;}}
+  Dali::TextAbstraction::tmp_add_type_30 tmp_add_func_30(){return 0;};
+  namespace Dali{namespace TextAbstraction{namespace FontSlant{typedef int tmp_add_type_31;}}}
+  Dali::TextAbstraction::FontSlant::tmp_add_type_31 tmp_add_func_31(){return 0;};
+  namespace Dali{namespace TextAbstraction{namespace FontWeight{typedef int tmp_add_type_32;}}}
+  Dali::TextAbstraction::FontWeight::tmp_add_type_32 tmp_add_func_32(){return 0;};
+  namespace Dali{namespace TextAbstraction{namespace FontWidth{typedef int tmp_add_type_33;}}}
+  Dali::TextAbstraction::FontWidth::tmp_add_type_33 tmp_add_func_33(){return 0;};
+  namespace Dali{namespace TextAbstraction{namespace Internal{typedef int tmp_add_type_34;}}}
+  Dali::TextAbstraction::Internal::tmp_add_type_34 tmp_add_func_34(){return 0;};
+  namespace Dali{namespace VerticalAlignment{typedef int tmp_add_type_35;}}
+  Dali::VerticalAlignment::tmp_add_type_35 tmp_add_func_35(){return 0;};
+  namespace Dali{namespace VirtualKeyboard{typedef int tmp_add_type_36;}}
+  Dali::VirtualKeyboard::tmp_add_type_36 tmp_add_func_36(){return 0;};
+  namespace Dali{namespace WeightObject{typedef int tmp_add_type_37;}}
+  Dali::WeightObject::tmp_add_type_37 tmp_add_func_37(){return 0;};
+  namespace Dali{namespace WindowExtensions{typedef int tmp_add_type_38;}}
+  Dali::WindowExtensions::tmp_add_type_38 tmp_add_func_38(){return 0;};
+  namespace Dali{namespace WrapMode{typedef int tmp_add_type_39;}}
+  Dali::WrapMode::tmp_add_type_39 tmp_add_func_39(){return 0;};
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/yplwDqhQwg/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/public-api/adaptor-framework -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/integration-api/adaptors -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/devel-api/adaptor-framework -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /tmp/yplwDqhQwg/dump1.h:40:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali/integration-api/adaptors/ecore-x-render-surface.h:22:21: fatal error: Ecore_X.h: No such file or directory
+ #include <Ecore_X.h>
+                     ^
+compilation terminated.
+

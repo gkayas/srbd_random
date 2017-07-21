@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String [] args) {
+		Node [] [] nodes = new Node[10][10];
+		
+		for(int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++ ){
+				int value = (int)Math.random()*20 + 2;
+				int type = (Math.random() > 0.5)? Node.UnknownType : Node.NumberType; 
+				
+				Node node = (Node.NumberType == type)? new NumberNode(value) : new UnknownNode(value);
+				
+				nodes[i][j] = node;
+ 			}
+		}
+		printGrid(nodes);
+		Grid grid = new Grid(nodes, 10, 10, 5, 5);
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNext()) {
+			
+			switch(Integer.valueOf(sc.next())) {
+			case 6:
+				grid.moveRight();
+				break;
+			case 4:
+				grid.moveLeft();
+				break;
+			case 8:
+				grid.moveUp();
+				break;
+			case 5:
+				grid.moveDown();
+				break;
+			}
+			System.out.println(grid.getCurrent().value);
+		}
+	}
+
+	
+	public static void printGrid(Node [][] nodes) {
+		for(int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++ ){
+				Node node = nodes[i][j];
+				System.out.print("#"+node.getValue()+" "+node.getType() +"# ");
+ 			}
+			System.out.println();
+		}
+	}
+}

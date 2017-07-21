@@ -1,0 +1,34 @@
+import java.util.Iterator;
+
+// This class represents usage data at the sequence or sequence set level.
+public class Usage {
+	
+	LinkedList<Pair<String, Integer>> kmerList;
+	// Constructor.
+	public Usage() {
+		kmerList = new LinkedList<Pair<String, Integer>>();
+	}
+	// Add a kmer with the corresponding number of occurrences.
+	public void add(String kmer, int count){
+		kmerList.insert(new Pair<String, Integer>(kmer, count));
+	}
+	// Return the number of occurrences of kmer.
+	public int getCount(String kmer){
+		return kmerList.size();
+		
+	}
+	// Return all kmers with their count.
+	public LinkedList<Pair<String, Integer>> getCounts(){
+		return kmerList;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuffer sgf = new StringBuffer();
+		Iterator<Pair<String, Integer>> itr = kmerList.iterator();
+		while (itr.hasNext()) {
+			Pair<String, Integer> pair = itr.next();
+			sgf.append(pair.first+"\t"+pair.second+"\n");
+		}
+	}
+}

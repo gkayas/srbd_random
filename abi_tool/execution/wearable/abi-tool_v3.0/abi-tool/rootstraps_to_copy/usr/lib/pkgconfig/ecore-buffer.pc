@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: ecore-buffer
+Description: E core library, graphic buffer module
+Requires.private: wayland-server >= 1.5.0 wayland-client >= 1.5.0 ecore >= 1.16.0 eo >= 1.16.0 eina >= 1.16.0  
+Version: 1.16.0
+Libs: -L${libdir} -lecore_buffer
+Libs.private: 
+Cflags: -I${includedir}/efl-1 -I${includedir}/ecore-buffer-1

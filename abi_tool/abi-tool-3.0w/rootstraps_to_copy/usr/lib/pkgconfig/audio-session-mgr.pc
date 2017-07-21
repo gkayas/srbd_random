@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: audio-session-mgr
+Description: audio-session-mgr
+Version: 1.0
+Requires: vconf mm-common
+Libs: -L${libdir} -laudio-session-mgr
+Cflags: -I${includedir}/mmf

@@ -1,0 +1,4440 @@
+<!-- kind:binary;verdict:incompatible;affected:31.8;added:0;removed:0;type_problems_high:0;type_problems_medium:2;type_problems_low:1;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:0;changed_constants:8;constant_changes_other:24;tool_version:1.99.18 -->
+<!-- kind:source;verdict:incompatible;affected:47;added:0;removed:0;type_problems_high:1;type_problems_medium:1;type_problems_low:0;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:0;changed_constants:50;constant_changes_other:108;tool_version:1.99.18 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="vconf, compatibility, API, ABI, report" />
+    <meta name="description" content="API/ABI compatibility report for the vconf library between 2.4 and 3.0 versions" />
+    <title>
+        vconf: 2.4 to 3.0 compatibility report
+    </title>
+    <style type="text/css">
+    body {
+    font-family:Arial, sans-serif;
+    background-color:White;
+    color:Black;
+}
+hr {
+    color:Black;
+    background-color:Black;
+    height:1px;
+    border:0;
+}
+h1 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.625em;
+}
+h2 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.25em;
+    white-space:nowrap;
+}
+span.section {
+    font-weight:bold;
+    cursor:pointer;
+    color:#003E69;
+    white-space:nowrap;
+    margin-left:5px;
+}
+span.new_sign {
+    font-weight:bold;
+    margin-left:26px;
+    color:#003E69;
+}
+span.new_sign_lbl {
+    margin-left:28px;
+    font-size:0.875em;
+    color:Black;
+}
+span:hover.section {
+    color:#336699;
+}
+span.sect_aff {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:#cc3300;
+}
+span.sect_info {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:Black;
+}
+span.ext {
+    font-weight:100;
+}
+span.h_name {
+    color:#cc3300;
+    font-size:0.875em;
+    font-weight:bold;
+}
+div.h_list, div.lib_list {
+    font-size:0.94em;
+    padding-left:5px;
+}
+span.ns {
+    color:#408080;
+    font-size:0.94em;
+}
+span.lib_name {
+    color:Green;
+    font-size:0.875em;
+    font-weight:bold;
+}
+span.iname {
+    font-weight:bold;
+    color:#003E69;
+    margin-left:5px;
+}
+span.iname_b {
+    font-weight:bold;
+    font-size:1.1em;
+}
+span.iname_a {
+    color:#333333;
+    font-weight:bold;
+    font-size:0.94em;
+}
+span.sym_p {
+    font-weight:normal;
+    white-space:normal;
+}
+div.affect {
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:0.87em;
+    font-style:italic;
+    line-height:0.75em;
+}
+div.affected {
+    padding-left:30px;
+    padding-top:10px;
+}
+table.ptable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:1em;
+    margin-left:15px;
+    margin-top:3px;
+    margin-bottom:3px;
+    width:900px;
+    
+}
+table.ptable td {
+    border:1px solid gray;
+    padding: 3px;
+    font-size:0.875em;
+    text-align:left;
+    vertical-align:top;
+}
+table.vtable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:16px;
+    margin-left:30px;
+    margin-top:10px;
+}
+table.vtable td {
+    border:1px solid gray;
+    word-wrap:break-word;
+    padding: 3px;
+    font-size:0.875em;
+    max-width:450px;
+    vertical-align:top;
+}
+table.ptable th, table.vtable th {
+    background-color:#eeeeee;
+    font-weight:bold;
+    color:#333333;
+    font-family:Verdana, Arial;
+    font-size:0.81em;
+    border:1px solid gray;
+    text-align:center;
+    vertical-align:top;
+    white-space:nowrap;
+    padding: 3px;
+}
+table.summary {
+    border-collapse:collapse;
+    border:1px outset black;
+}
+table.summary th {
+    background-color:#eeeeee;
+    font-weight:100;
+    text-align:left;
+    font-size:0.94em;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px;
+}
+table.summary td {
+    text-align:right;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px 5px 3px 10px;
+}
+span.mangled {
+    padding-left:15px;
+    font-size:0.875em;
+    cursor:text;
+    color:#444444;
+}
+span.sym_ver {
+    color:#333333;
+    white-space:nowrap;
+    font-family:"DejaVu Sans Mono", Monospace;
+}
+span.attr {
+    color:#333333;
+    font-weight:100;
+}
+span.color_p {
+    font-style:italic;
+    color:Brown;
+}
+span.p {
+    font-style:italic;
+}
+span.fp {
+    font-style:italic;
+    background-color:#FFCCCC;
+}
+span.ttype {
+    font-weight:100;
+}
+span.nowrap {
+    white-space:nowrap;
+}
+span.value {
+    white-space:nowrap;
+    font-weight:bold;
+}
+td.passed {
+    background-color:#CCFFCC;
+}
+td.warning {
+    background-color:#F4F4AF;
+}
+td.failed {
+    background-color:#FFCCCC;
+}
+td.new {
+    background-color:#C6DEFF;
+}
+.top_ref {
+    font-size:0.69em;
+}
+.footer {
+    font-size:0.75em;
+}
+
+.tabset {
+    float:left;
+}
+a.tab {
+    border:1px solid Black;
+    float:left;
+    margin:0px 5px -1px 0px;
+    padding:3px 5px 3px 5px;
+    position:relative;
+    font-size:0.875em;
+    background-color:#DDD;
+    text-decoration:none;
+    color:Black;
+}
+a.disabled:hover
+{
+    color:Black;
+    background:#EEE;
+}
+a.active:hover
+{
+    color:Black;
+    background:White;
+}
+a.active {
+    border-bottom-color:White;
+    background-color:White;
+}
+div.tab {
+    border-top:1px solid Black;
+    padding:0px;
+    width:100%;
+    clear:both;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+    function showContent(header, id)
+{
+    e = document.getElementById(id);
+    if(e.style.display == 'none')
+    {
+        e.style.display = 'block';
+        e.style.visibility = 'visible';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[&minus;]");
+    }
+    else
+    {
+        e.style.display = 'none';
+        e.style.visibility = 'hidden';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[+]");
+    }
+}
+function initTabs()
+{
+    var url = window.location.href;
+    if(url.indexOf('_Source_')!=-1 || url.indexOf('#Source')!=-1)
+    {
+        var tab1 = document.getElementById('BinaryID');
+        var tab2 = document.getElementById('SourceID');
+        tab1.className='tab disabled';
+        tab2.className='tab active';
+    }
+    var sets = document.getElementsByTagName('div');
+    for (var i = 0; i < sets.length; i++)
+    {
+        if (sets[i].className.indexOf('tabset') != -1)
+        {
+            var tabs = [];
+            var links = sets[i].getElementsByTagName('a');
+            for (var j = 0; j < links.length; j++)
+            {
+                if (links[j].className.indexOf('tab') != -1)
+                {
+                    tabs.push(links[j]);
+                    links[j].tabs = tabs;
+                    var tab = document.getElementById(links[j].href.substr(links[j].href.indexOf('#') + 1));
+                    //reset all tabs on start
+                    if (tab)
+                    {
+                        if (links[j].className.indexOf('active')!=-1) {
+                            tab.style.display = 'block';
+                        }
+                        else {
+                            tab.style.display = 'none';
+                        }
+                    }
+                    links[j].onclick = function()
+                    {
+                        var tab = document.getElementById(this.href.substr(this.href.indexOf('#') + 1));
+                        if (tab)
+                        {
+                            //reset all tabs before change
+                            for (var k = 0; k < this.tabs.length; k++)
+                            {
+                                document.getElementById(this.tabs[k].href.substr(this.tabs[k].href.indexOf('#') + 1)).style.display = 'none';
+                                this.tabs[k].className = this.tabs[k].className.replace('active', 'disabled');
+                            }
+                            this.className = 'tab active';
+                            tab.style.display = 'block';
+                            // window.location.hash = this.id.replace('ID', '');
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(url.indexOf('#')!=-1) {
+        location.href=location.href;
+    }
+}
+if (window.addEventListener) window.addEventListener('load', initTabs, false);
+else if (window.attachEvent) window.attachEvent('onload', initTabs);
+    -->
+    </script>
+    </head><body><a name='Source'></a><a name='Binary'></a><a name='Top'></a><h1>API compatibility report for the <span style='color:Blue;'>vconf</span> library between <span style='color:Red;'>2.4</span> and <span style='color:Red;'>3.0</span> versions on <span style='color:Blue;'>x86_64</span></h1>
+
+            <br/>
+            <div class='tabset'>
+            <a id='BinaryID' href='#BinaryTab' class='tab active'>Binary<br/>Compatibility</a>
+            <a id='SourceID' href='#SourceTab' style='margin-left:3px' class='tab disabled'>Source<br/>Compatibility</a>
+            </div><div id='BinaryTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Library Name</th><td>vconf</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>x86_64</td></tr>
+<tr><th>GCC Version</th><td>4.8</td></tr>
+<tr><th>Subject</th><td width='150px'>Binary Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>39</a></td></tr>
+<tr><th>Total Shared Libraries</th><td><a href='#Libs' style='color:Blue;'>2</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>33 / 23</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(31.8%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td>0</td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Type_Binary_Problems_Medium' style='color:Blue;'>2</a></td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Type_Binary_Problems_Low' style='color:Blue;'>1</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td class='warning'><a href='#Constant_Binary_Problems_Low' style='color:Blue;'>8</a></td></tr>
+<tr><th>Other Changes<br/>in Constants</th><td>-</td><td class='passed'><a href='#Other_Binary_Changes_In_Constants' style='color:Blue;'>24</a></td></tr>
+</table>
+
+<a name='Medium_Risk_Binary_Problems'></a><a name='Type_Binary_Problems_Medium'></a>
+<h2>Problems with Data Types, Medium Severity (2)</h2><hr/>
+<span class='h_name'>vconf.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> _keylist_t (1)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>This type became <b>opaque</b>.</td>
+<td>The internal structure of this type is hidden in the new library version and may be different. This may result in crash or incorrect behavior of applications.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (13)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>vconf_get&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>in_parentDIR</i>,</span> <span class='nowrap'>enum get_option_t <i>option</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_add_bool&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>keyname</i>,</span> <span class='nowrap'>int const <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_add_dbl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>keyname</i>,</span> <span class='nowrap'>double const <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_add_int&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>keyname</i>,</span> <span class='nowrap'>int const <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_add_null&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>keyname</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_add_str&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>keyname</i>,</span> <span class='nowrap'>char const* <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_del&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>keyname</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_free&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_lookup&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>keyname</i>,</span> <span class='nowrap'>keynode_t** <i>return_node</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_new&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<div class='affect'>Return value (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+ <b>...</b>
+<br/>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> _keynode_t (1)</span>
+<br/>
+<div id="c_3" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Field <b>next</b> has been removed from this type.</td>
+<td>1) Applications will access incorrect memory when attempting to access this field.<br/>2) Size of the inclusive type has been changed.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_4')">
+[+] affected symbols (10)</span>
+<div id="c_4" style="display:none;">
+<div class='affected'><span class='iname_a'>vconf_ignore_key_changed&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <i>in_key</i>,</span> <span class='nowrap'>vconf_callback_fn <span class='fp'>cb</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;cb.p0&#39; in 2nd parameter &#39;cb&#39; has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_lookup&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <i>keylist</i>,</span> <span class='nowrap'>char const* <i>keyname</i>,</span> <span class='nowrap'>keynode_t** <span class='fp'>return_node</span> )</span></span></span><br/>
+<div class='affect'>3rd parameter &#39;return_node&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_nextnode&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <i>keylist</i> )</span></span></span><br/>
+<div class='affect'>Return value (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_bool&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_dbl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_int&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_name&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_str&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_type&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_notify_key_changed&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <i>in_key</i>,</span> <span class='nowrap'>vconf_callback_fn <span class='fp'>cb</span>,</span> <span class='nowrap'>void* <i>user_data</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;cb.p0&#39; in 2nd parameter &#39;cb&#39; has base type &#39;struct _keynode_t&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a><a name='Type_Binary_Problems_Low'></a>
+<h2>Problems with Data Types, Low Severity (1)</h2><hr/>
+<span class='h_name'>vconf.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> _keynode_t (1)</span>
+<br/>
+<div id="c_5" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Size of this type has been changed from <b>32</b> bytes to <b>24</b> bytes.</td>
+<td>The fields or parameters of such data type may be incorrectly initialized or accessed by old client applications.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_6')">
+[+] affected symbols (10)</span>
+<div id="c_6" style="display:none;">
+<div class='affected'><span class='iname_a'>vconf_ignore_key_changed&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <i>in_key</i>,</span> <span class='nowrap'>vconf_callback_fn <span class='fp'>cb</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;cb.p0&#39; in 2nd parameter &#39;cb&#39; has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_lookup&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <i>keylist</i>,</span> <span class='nowrap'>char const* <i>keyname</i>,</span> <span class='nowrap'>keynode_t** <span class='fp'>return_node</span> )</span></span></span><br/>
+<div class='affect'>3rd parameter &#39;return_node&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_nextnode&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <i>keylist</i> )</span></span></span><br/>
+<div class='affect'>Return value (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_bool&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_dbl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_int&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_name&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_str&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_type&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_notify_key_changed&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <i>in_key</i>,</span> <span class='nowrap'>vconf_callback_fn <span class='fp'>cb</span>,</span> <span class='nowrap'>void* <i>user_data</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;cb.p0&#39; in 2nd parameter &#39;cb&#39; has base type &#39;struct _keynode_t&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Constant_Binary_Problems_Low'></a><h2>Problems with Constants, Low Severity (8)</h2><hr/>
+<span class='h_name'>vconf-internal-bt-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_7')">
+<span class='ext'>[+]</span> VCONFKEY_BT_APP_SELECT_BLUETOOTH</span>
+<br/>
+<div id="c_7" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_APP_SELECT_BLUETOOTH</b> with value <b>4</b> has been removed.</td>
+<td>The value of this constant may no longer be properly handled by new-version library functions.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_8')">
+<span class='ext'>[+]</span> VCONFKEY_BT_APP_SELECT_SPEAKER</span>
+<br/>
+<div id="c_8" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_APP_SELECT_SPEAKER</b> with value <b>2</b> has been removed.</td>
+<td>The value of this constant may no longer be properly handled by new-version library functions.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_9')">
+<span class='ext'>[+]</span> VCONFKEY_BT_PLAYER_SELECT_BLUETOOTH</span>
+<br/>
+<div id="c_9" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_PLAYER_SELECT_BLUETOOTH</b> with value <b>1</b> has been removed.</td>
+<td>The value of this constant may no longer be properly handled by new-version library functions.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_10')">
+<span class='ext'>[+]</span> VCONFKEY_BT_PLAYER_SELECT_SPEAKER</span>
+<br/>
+<div id="c_10" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_PLAYER_SELECT_SPEAKER</b> with value <b>0</b> has been removed.</td>
+<td>The value of this constant may no longer be properly handled by new-version library functions.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-livebox-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_11')">
+<span class='ext'>[+]</span> VCONFKEY_MASTER_CLIENT_ADDR</span>
+<br/>
+<div id="c_11" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_MASTER_CLIENT_ADDR</b> with value <b>&quot;db/data-provider-master/serveraddr&quot;</b> has been removed.</td>
+<td>The value of this constant may no longer be properly handled by new-version library functions.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-nfc-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_12')">
+<span class='ext'>[+]</span> VCONFKEY_NFC_SE_POLICY_MAX</span>
+<br/>
+<div id="c_12" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NFC_SE_POLICY_MAX</b> with value <b>7</b> has been removed.</td>
+<td>The value of this constant may no longer be properly handled by new-version library functions.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_13')">
+<span class='ext'>[+]</span> VCONFKEY_NFC_WALLET_MODE_MAX</span>
+<br/>
+<div id="c_13" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NFC_WALLET_MODE_MAX</b> with value <b>5</b> has been removed.</td>
+<td>The value of this constant may no longer be properly handled by new-version library functions.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-setting-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_14')">
+<span class='ext'>[+]</span> VCONFKEY_SETAPPL_NOTI_RINGTONE_PATH_STR</span>
+<br/>
+<div id="c_14" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The value of constant <b>VCONFKEY_SETAPPL_NOTI_RINGTONE_PATH_STR</b> has been changed from <b>&quot;VCONFKEY_SETAPPL_NOTI_MSG_RINGTONE_PATH_STR&quot;</b> to <b>&quot;db/setting/sound/noti/msg_ringtone_path&quot;</b>.</td>
+<td>Applications will pass an old value of this constant as the parameter to the new-version library functions, that expect a new one. This may result in crash of incorrect behavior of applications.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Binary_Changes'></a><a name='Other_Binary_Changes_In_Constants'></a><h2>Other Changes in Constants (24)</h2><hr/>
+<span class='h_name'>vconf-internal-bt-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_15')">
+<span class='ext'>[+]</span> VCONFKEY_BT_DPM_STATUS_ALLOW</span>
+<br/>
+<div id="c_15" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_DPM_STATUS_ALLOW</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_16')">
+<span class='ext'>[+]</span> VCONFKEY_BT_DPM_STATUS_ERROR</span>
+<br/>
+<div id="c_16" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_DPM_STATUS_ERROR</b> with value <b>1048575</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_17')">
+<span class='ext'>[+]</span> VCONFKEY_BT_DPM_STATUS_HANDSFREE_ONLY</span>
+<br/>
+<div id="c_17" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_DPM_STATUS_HANDSFREE_ONLY</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_18')">
+<span class='ext'>[+]</span> VCONFKEY_BT_DPM_STATUS_RESTRICTED</span>
+<br/>
+<div id="c_18" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_DPM_STATUS_RESTRICTED</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-dnet-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_19')">
+<span class='ext'>[+]</span> VCONFKEY_NETWORK_DEFAULT_PROXY</span>
+<br/>
+<div id="c_19" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NETWORK_DEFAULT_PROXY</b> with value <b>5</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-location-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_20')">
+<span class='ext'>[+]</span> VCONFKEY_LOCATION_MOCK_CONNECTED</span>
+<br/>
+<div id="c_20" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_LOCATION_MOCK_CONNECTED</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_21')">
+<span class='ext'>[+]</span> VCONFKEY_LOCATION_MOCK_OFF</span>
+<br/>
+<div id="c_21" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_LOCATION_MOCK_OFF</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_22')">
+<span class='ext'>[+]</span> VCONFKEY_LOCATION_MOCK_SEARCHING</span>
+<br/>
+<div id="c_22" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_LOCATION_MOCK_SEARCHING</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_23')">
+<span class='ext'>[+]</span> VCONFKEY_LOCATION_MOCK_STATE_MAX</span>
+<br/>
+<div id="c_23" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_LOCATION_MOCK_STATE_MAX</b> with value <b>3</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-mobile-hotspot-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_24')">
+<span class='ext'>[+]</span> VCONFKEY_MOBILE_HOTSPOT_WIFI_OFF</span>
+<br/>
+<div id="c_24" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_MOBILE_HOTSPOT_WIFI_OFF</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_25')">
+<span class='ext'>[+]</span> VCONFKEY_MOBILE_HOTSPOT_WIFI_PENDING_ON</span>
+<br/>
+<div id="c_25" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_MOBILE_HOTSPOT_WIFI_PENDING_ON</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-setting-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_26')">
+<span class='ext'>[+]</span> VCONFKEY_DOUBLE_PRESS_HOME_KEY_LAST_APP</span>
+<br/>
+<div id="c_26" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_DOUBLE_PRESS_HOME_KEY_LAST_APP</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_27')">
+<span class='ext'>[+]</span> VCONFKEY_DOUBLE_PRESS_HOME_KEY_NONE</span>
+<br/>
+<div id="c_27" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_DOUBLE_PRESS_HOME_KEY_NONE</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_28')">
+<span class='ext'>[+]</span> VCONFKEY_DOUBLE_PRESS_HOME_KEY_RECENT_APPS</span>
+<br/>
+<div id="c_28" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_DOUBLE_PRESS_HOME_KEY_RECENT_APPS</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-softap-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_29')">
+<span class='ext'>[+]</span> VCONFKEY_SOFTAP_HIDE_OFF</span>
+<br/>
+<div id="c_29" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SOFTAP_HIDE_OFF</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_30')">
+<span class='ext'>[+]</span> VCONFKEY_SOFTAP_HIDE_ON</span>
+<br/>
+<div id="c_30" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SOFTAP_HIDE_ON</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_31')">
+<span class='ext'>[+]</span> VCONFKEY_SOFTAP_SECURITY_OFF</span>
+<br/>
+<div id="c_31" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SOFTAP_SECURITY_OFF</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_32')">
+<span class='ext'>[+]</span> VCONFKEY_SOFTAP_SECURITY_ON</span>
+<br/>
+<div id="c_32" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SOFTAP_SECURITY_ON</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-wifi-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_33')">
+<span class='ext'>[+]</span> VCONFKEY_WIFI_BGSCAN_MODE_EXPONENTIAL</span>
+<br/>
+<div id="c_33" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WIFI_BGSCAN_MODE_EXPONENTIAL</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_34')">
+<span class='ext'>[+]</span> VCONFKEY_WIFI_BGSCAN_MODE_PERIODIC</span>
+<br/>
+<div id="c_34" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WIFI_BGSCAN_MODE_PERIODIC</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_35')">
+<span class='ext'>[+]</span> VCONFKEY_WIFI_DIRECT_ACTIVATING</span>
+<br/>
+<div id="c_35" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WIFI_DIRECT_ACTIVATING</b> with value <b>6</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_36')">
+<span class='ext'>[+]</span> VCONFKEY_WIFI_DIRECT_CONNECTING</span>
+<br/>
+<div id="c_36" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WIFI_DIRECT_CONNECTING</b> with value <b>7</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_37')">
+<span class='ext'>[+]</span> VCONFKEY_WIFI_DIRECT_DEACTIVATING</span>
+<br/>
+<div id="c_37" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WIFI_DIRECT_DEACTIVATING</b> with value <b>5</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_38')">
+<span class='ext'>[+]</span> VCONFKEY_WIFI_DIRECT_DISCONNECTING</span>
+<br/>
+<div id="c_38" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WIFI_DIRECT_DISCONNECTING</b> with value <b>8</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (39)</h2><hr/>
+<div class='h_list'>
+vconf-internal-account-keys.h<br/>
+vconf-internal-alarm-keys.h<br/>
+vconf-internal-boot-animation-keys.h<br/>
+vconf-internal-browser-keys.h<br/>
+vconf-internal-bt-keys.h<br/>
+vconf-internal-call-keys.h<br/>
+vconf-internal-camera-keys.h<br/>
+vconf-internal-ciss-keys.h<br/>
+vconf-internal-contacts-svc-keys.h<br/>
+vconf-internal-desktop-mode-keys.h<br/>
+vconf-internal-dnet-keys.h<br/>
+vconf-internal-dr-keys.h<br/>
+vconf-internal-email-keys.h<br/>
+vconf-internal-filemanager-keys.h<br/>
+vconf-internal-hotfix.h<br/>
+vconf-internal-idle-lock-keys.h<br/>
+vconf-internal-isf-keys.h<br/>
+vconf-internal-keys.h<br/>
+vconf-internal-livebox-keys.h<br/>
+vconf-internal-location-keys.h<br/>
+vconf-internal-lockscreen-keys.h<br/>
+vconf-internal-miracast-keys.h<br/>
+vconf-internal-mobile-hotspot-keys.h<br/>
+vconf-internal-moved-from.h<br/>
+vconf-internal-msg-keys.h<br/>
+vconf-internal-nfc-keys.h<br/>
+vconf-internal-pm-keys.h<br/>
+vconf-internal-setting-keys.h<br/>
+vconf-internal-sound-keys.h<br/>
+vconf-internal-starter-keys.h<br/>
+vconf-internal-sysman-keys.h<br/>
+vconf-internal-system-keys.h<br/>
+vconf-internal-telephony-keys.h<br/>
+vconf-internal-uncategorized-keys.h<br/>
+vconf-internal-usb-keys.h<br/>
+vconf-internal-wifi-keys.h<br/>
+vconf-internal-wms-keys.h<br/>
+vconf-keys.h<br/>
+vconf.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Shared Libraries (2)</h2><hr/>
+<div class='lib_list'>
+libvconf.so.0.2.45<br/>
+vconf-plugin.so<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><div id='SourceTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Library Name</th><td>vconf</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>x86_64</td></tr>
+<tr><th>GCC Version</th><td>4.8</td></tr>
+<tr><th>Subject</th><td width='150px'>Source Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>39</a></td></tr>
+<tr><th>Total Shared Libraries</th><td><a href='#Libs' style='color:Blue;'>2</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>33 / 23</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(47%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td>0</td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td class='failed'><a href='#Type_Source_Problems_High' style='color:Blue;'>1</a></td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Type_Source_Problems_Medium' style='color:Blue;'>1</a></td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td class='warning'><a href='#Constant_Source_Problems_Low' style='color:Blue;'>50</a></td></tr>
+<tr><th>Other Changes<br/>in Constants</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Constants' style='color:Blue;'>108</a></td></tr>
+</table>
+
+<a name='High_Risk_Source_Problems'></a><a name='Type_Source_Problems_High'></a>
+<h2>Problems with Data Types, High Severity (1)</h2><hr/>
+<span class='h_name'>vconf.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_39')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> _keynode_t (1)</span>
+<br/>
+<div id="c_39" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Field <b>next</b> has been removed from this type.</td>
+<td>Recompilation of a client program may be broken with the error message: '<span class='value'>struct _keynode_t</span>' has no member named '<b>next</b>'.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_40')">
+[+] affected symbols (10)</span>
+<div id="c_40" style="display:none;">
+<div class='affected'><span class='iname_a'>vconf_ignore_key_changed&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <i>in_key</i>,</span> <span class='nowrap'>vconf_callback_fn <span class='fp'>cb</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;cb.p0&#39; in 2nd parameter &#39;cb&#39; has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_lookup&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <i>keylist</i>,</span> <span class='nowrap'>char const* <i>keyname</i>,</span> <span class='nowrap'>keynode_t** <span class='fp'>return_node</span> )</span></span></span><br/>
+<div class='affect'>3rd parameter &#39;return_node&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_nextnode&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <i>keylist</i> )</span></span></span><br/>
+<div class='affect'>Return value (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_bool&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_dbl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_int&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_name&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_str&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_keynode_get_type&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keynode_t* <span class='fp'>keynode</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keynode&#39; (pointer) has base type &#39;struct _keynode_t&#39;.</div>
+<span class='iname_a'>vconf_notify_key_changed&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <i>in_key</i>,</span> <span class='nowrap'>vconf_callback_fn <span class='fp'>cb</span>,</span> <span class='nowrap'>void* <i>user_data</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;cb.p0&#39; in 2nd parameter &#39;cb&#39; has base type &#39;struct _keynode_t&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Medium_Risk_Source_Problems'></a><a name='Type_Source_Problems_Medium'></a>
+<h2>Problems with Data Types, Medium Severity (1)</h2><hr/>
+<span class='h_name'>vconf.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_41')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> _keylist_t (1)</span>
+<br/>
+<div id="c_41" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>This type became <b>opaque</b>.</td>
+<td>The internal structure of this type is hidden in the new library version and recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_42')">
+[+] affected symbols (13)</span>
+<div id="c_42" style="display:none;">
+<div class='affected'><span class='iname_a'>vconf_get&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>in_parentDIR</i>,</span> <span class='nowrap'>enum get_option_t <i>option</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_add_bool&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>keyname</i>,</span> <span class='nowrap'>int const <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_add_dbl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>keyname</i>,</span> <span class='nowrap'>double const <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_add_int&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>keyname</i>,</span> <span class='nowrap'>int const <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_add_null&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>keyname</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_add_str&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>keyname</i>,</span> <span class='nowrap'>char const* <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_del&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>keyname</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_free&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_lookup&#160;<span class='sym_p'>(&#160;<span class='nowrap'>keylist_t* <span class='fp'>keylist</span>,</span> <span class='nowrap'>char const* <i>keyname</i>,</span> <span class='nowrap'>keynode_t** <i>return_node</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;keylist&#39; (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+<span class='iname_a'>vconf_keylist_new&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<div class='affect'>Return value (pointer) has base type &#39;struct _keylist_t&#39;.</div>
+ <b>...</b>
+<br/>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Source_Problems'></a><a name='Constant_Source_Problems_Low'></a><h2>Problems with Constants, Low Severity (50)</h2><hr/>
+<span class='h_name'>vconf-internal-bt-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_43')">
+<span class='ext'>[+]</span> VCONFKEY_BT_APP_SELECT_BLUETOOTH</span>
+<br/>
+<div id="c_43" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_APP_SELECT_BLUETOOTH</b> with value <b>4</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_44')">
+<span class='ext'>[+]</span> VCONFKEY_BT_APP_SELECT_SPEAKER</span>
+<br/>
+<div id="c_44" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_APP_SELECT_SPEAKER</b> with value <b>2</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_45')">
+<span class='ext'>[+]</span> VCONFKEY_BT_PLAYER_SELECT_BLUETOOTH</span>
+<br/>
+<div id="c_45" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_PLAYER_SELECT_BLUETOOTH</b> with value <b>1</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_46')">
+<span class='ext'>[+]</span> VCONFKEY_BT_PLAYER_SELECT_SPEAKER</span>
+<br/>
+<div id="c_46" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_PLAYER_SELECT_SPEAKER</b> with value <b>0</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-dnet-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_47')">
+<span class='ext'>[+]</span> VCONFKEY_NETWORK_ETHERNET_MAC_ADDRESS</span>
+<br/>
+<div id="c_47" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NETWORK_ETHERNET_MAC_ADDRESS</b> with value <b>&quot;db/dnet/mac_address&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-email-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_48')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_ACTIVE_SYNC_HANDLE</span>
+<br/>
+<div id="c_48" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_ACTIVE_SYNC_HANDLE</b> with value <b>&quot;db/email_handle/active_sync_handle&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_49')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_DEFAULT_ACCOUNT_ID</span>
+<br/>
+<div id="c_49" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_DEFAULT_ACCOUNT_ID</b> with value <b>&quot;db/private/email-service/default_account_id&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_50')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_INBOX_ACTIVE</span>
+<br/>
+<div id="c_50" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_INBOX_ACTIVE</b> with value <b>&quot;db/private/org.tizen.email/is_inbox_active&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_51')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_LATEST_MAIL_ID</span>
+<br/>
+<div id="c_51" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_LATEST_MAIL_ID</b> with value <b>&quot;db/private/email-service/latest_mail_id&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_52')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_BADGE_TICKER</span>
+<br/>
+<div id="c_52" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_BADGE_TICKER</b> with value <b>&quot;db/private/email-service/noti_badge_ticker&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_53')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_DISPLAY_CONTENT_TICKER</span>
+<br/>
+<div id="c_53" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_DISPLAY_CONTENT_TICKER</b> with value <b>&quot;db/private/email-service/noti_display_content_ticker&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_54')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_NOTIFICATION_TICKER</span>
+<br/>
+<div id="c_54" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_NOTIFICATION_TICKER</b> with value <b>&quot;db/private/email-service/noti_notification_ticker&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_55')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_1</span>
+<br/>
+<div id="c_55" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_1</b> with value <b>&quot;db/private/email-service/noti_private_id/1&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_56')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_10</span>
+<br/>
+<div id="c_56" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_10</b> with value <b>&quot;db/private/email-service/noti_private_id/10&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_57')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_2</span>
+<br/>
+<div id="c_57" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_2</b> with value <b>&quot;db/private/email-service/noti_private_id/2&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_58')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_3</span>
+<br/>
+<div id="c_58" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_3</b> with value <b>&quot;db/private/email-service/noti_private_id/3&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_59')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_4</span>
+<br/>
+<div id="c_59" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_4</b> with value <b>&quot;db/private/email-service/noti_private_id/4&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_60')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_5</span>
+<br/>
+<div id="c_60" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_5</b> with value <b>&quot;db/private/email-service/noti_private_id/5&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_61')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_6</span>
+<br/>
+<div id="c_61" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_6</b> with value <b>&quot;db/private/email-service/noti_private_id/6&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_62')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_7</span>
+<br/>
+<div id="c_62" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_7</b> with value <b>&quot;db/private/email-service/noti_private_id/7&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_63')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_8</span>
+<br/>
+<div id="c_63" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_8</b> with value <b>&quot;db/private/email-service/noti_private_id/8&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_64')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_9</span>
+<br/>
+<div id="c_64" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_PRIVATE_ID_9</b> with value <b>&quot;db/private/email-service/noti_private_id/9&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_65')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_REP_TYPE</span>
+<br/>
+<div id="c_65" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_REP_TYPE</b> with value <b>&quot;db/private/email-service/noti_rep_type&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_66')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_RINGTONE_PATH</span>
+<br/>
+<div id="c_66" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_RINGTONE_PATH</b> with value <b>&quot;db/private/email-service/noti_ringtone_path&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_67')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_USE_DEFAULT_RINGTONE</span>
+<br/>
+<div id="c_67" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_USE_DEFAULT_RINGTONE</b> with value <b>&quot;db/private/email-service/noti_use_default_ringtone&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_68')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_VIBRATION_STATUS</span>
+<br/>
+<div id="c_68" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_VIBRATION_STATUS</b> with value <b>&quot;db/private/email-service/noti_vibration_status&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_69')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_VIP_USE_DEFAULT_RINGTONE</span>
+<br/>
+<div id="c_69" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_VIP_USE_DEFAULT_RINGTONE</b> with value <b>&quot;db/private/email-service/noti_vip_use_default_ringtone&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_70')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_NOTI_VIP_VIBRATION_STATUS</span>
+<br/>
+<div id="c_70" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_NOTI_VIP_VIBRATION_STATUS</b> with value <b>&quot;db/private/email-service/noti_vip_vibration_status&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_71')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_SLOT_SIZE</span>
+<br/>
+<div id="c_71" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_SLOT_SIZE</b> with value <b>&quot;db/private/email-service/slot_size&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_72')">
+<span class='ext'>[+]</span> VCONFKEY_EMAIL_IS_SYNC_STATUS</span>
+<br/>
+<div id="c_72" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_EMAIL_IS_SYNC_STATUS</b> with value <b>&quot;memory/sync/email&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-livebox-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_73')">
+<span class='ext'>[+]</span> VCONFKEY_MASTER_CLIENT_ADDR</span>
+<br/>
+<div id="c_73" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_MASTER_CLIENT_ADDR</b> with value <b>&quot;db/data-provider-master/serveraddr&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-location-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_74')">
+<span class='ext'>[+]</span> VCONFKEY_LBS_SETTING_IS_SHOW_WPS_POPUP</span>
+<br/>
+<div id="c_74" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_LBS_SETTING_IS_SHOW_WPS_POPUP</b> with value <b>&quot;db/location/setting/WpsPopup&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-nfc-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_75')">
+<span class='ext'>[+]</span> VCONFKEY_NFC_SE_POLICY_MAX</span>
+<br/>
+<div id="c_75" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NFC_SE_POLICY_MAX</b> with value <b>7</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_76')">
+<span class='ext'>[+]</span> VCONFKEY_NFC_WALLET_MODE_MAX</span>
+<br/>
+<div id="c_76" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NFC_WALLET_MODE_MAX</b> with value <b>5</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-setting-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_77')">
+<span class='ext'>[+]</span> VCONFKEY_AMD_EFFECT_IMAGE_ENABLE</span>
+<br/>
+<div id="c_77" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_AMD_EFFECT_IMAGE_ENABLE</b> with value <b>&quot;db/setting/effect_image&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_78')">
+<span class='ext'>[+]</span> VCONFKEY_SETAPPL_ACCESSIBILITY_SPEAK_PASSWD_BOOL</span>
+<br/>
+<div id="c_78" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SETAPPL_ACCESSIBILITY_SPEAK_PASSWD_BOOL</b> with value <b>&quot;db/setting/accessibility/speak_passwd&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_79')">
+<span class='ext'>[+]</span> VCONFKEY_SETAPPL_NOTI_RINGTONE_PATH_STR</span>
+<br/>
+<div id="c_79" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The value of constant <b>VCONFKEY_SETAPPL_NOTI_RINGTONE_PATH_STR</b> has been changed from <b>&quot;VCONFKEY_SETAPPL_NOTI_MSG_RINGTONE_PATH_STR&quot;</b> to <b>&quot;db/setting/sound/noti/msg_ringtone_path&quot;</b>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-sound-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_80')">
+<span class='ext'>[+]</span> VCONFKEY_SOUND_PRIMARY_VOLUME_TYPE</span>
+<br/>
+<div id="c_80" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The value of constant <b>VCONFKEY_SOUND_PRIMARY_VOLUME_TYPE</b> has been changed from <b>&quot;memory/private/sound/PrimaryVolumetype&quot;</b> to <b>&quot;memory/private/sound/PrimaryVolumeType&quot;</b>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_81')">
+<span class='ext'>[+]</span> VCONFKEY_SOUND_PRIMARY_VOLUME_TYPE_FORCE</span>
+<br/>
+<div id="c_81" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SOUND_PRIMARY_VOLUME_TYPE_FORCE</b> with value <b>&quot;memory/private/sound/PrimaryVolumetypeForce&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-uncategorized-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_82')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_265</span>
+<br/>
+<div id="c_82" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_265</b> with value <b>&quot;file/private/wifi/last_power_state&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_83')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_266</span>
+<br/>
+<div id="c_83" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_266</b> with value <b>&quot;file/private/wifi/network_bonding&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_84')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_267</span>
+<br/>
+<div id="c_84" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_267</b> with value <b>&quot;file/private/wifi/sleep_policy&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_85')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_268</span>
+<br/>
+<div id="c_85" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_268</b> with value <b>&quot;file/private/wifi/sort_by&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_86')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_269</span>
+<br/>
+<div id="c_86" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_269</b> with value <b>&quot;file/private/wifi/wifi_off_by_airplane&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_87')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_270</span>
+<br/>
+<div id="c_87" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_270</b> with value <b>&quot;file/private/wifi/wifi_off_by_emergency&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_88')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_271</span>
+<br/>
+<div id="c_88" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_271</b> with value <b>&quot;file/private/wifi/wifi_off_by_restricted&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_89')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_308</span>
+<br/>
+<div id="c_89" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_308</b> with value <b>&quot;memory/private/org.tizen.indicator/show_more_noti_port&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_90')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_335</span>
+<br/>
+<div id="c_90" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_335</b> with value <b>&quot;memory/sysman/cradle_status&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_91')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_336</span>
+<br/>
+<div id="c_91" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_336</b> with value <b>&quot;memory/sysman/earjack_key&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_92')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_338</span>
+<br/>
+<div id="c_92" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_338</b> with value <b>&quot;memory/sysman/usbhost_status&quot;</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes'></a><a name='Other_Source_Changes_In_Constants'></a><h2>Other Changes in Constants (108)</h2><hr/>
+<span class='h_name'>vconf-internal-aul-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_93')">
+<span class='ext'>[+]</span> VCONFKEY_AUL_SOCKET_TIMEOUT</span>
+<br/>
+<div id="c_93" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_AUL_SOCKET_TIMEOUT</b> with value <b>&quot;db/aul/socket_timeout&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-bt-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_94')">
+<span class='ext'>[+]</span> VCONFKEY_BT_DPM_STATUS</span>
+<br/>
+<div id="c_94" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_DPM_STATUS</b> with value <b>&quot;db/bluetooth/dpm&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_95')">
+<span class='ext'>[+]</span> VCONFKEY_BT_DPM_STATUS_ALLOW</span>
+<br/>
+<div id="c_95" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_DPM_STATUS_ALLOW</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_96')">
+<span class='ext'>[+]</span> VCONFKEY_BT_DPM_STATUS_ERROR</span>
+<br/>
+<div id="c_96" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_DPM_STATUS_ERROR</b> with value <b>1048575</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_97')">
+<span class='ext'>[+]</span> VCONFKEY_BT_DPM_STATUS_HANDSFREE_ONLY</span>
+<br/>
+<div id="c_97" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_DPM_STATUS_HANDSFREE_ONLY</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_98')">
+<span class='ext'>[+]</span> VCONFKEY_BT_DPM_STATUS_RESTRICTED</span>
+<br/>
+<div id="c_98" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BT_DPM_STATUS_RESTRICTED</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-ciss-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_99')">
+<span class='ext'>[+]</span> VCONFKEY_CISSAPPL_AUTO_REJECT_ADD_NUMBERS_TO_MESSAGES</span>
+<br/>
+<div id="c_99" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_CISSAPPL_AUTO_REJECT_ADD_NUMBERS_TO_MESSAGES</b> with value <b>&quot;db/ciss/auto_reject_add_numbers_to_messages&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-dnet-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_100')">
+<span class='ext'>[+]</span> VCONFKEY_NETWORK_DEFAULT_PROXY</span>
+<br/>
+<div id="c_100" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NETWORK_DEFAULT_PROXY</b> with value <b>5</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_101')">
+<span class='ext'>[+]</span> VCONFKEY_NETWORK_MAC_ADDRESS</span>
+<br/>
+<div id="c_101" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NETWORK_MAC_ADDRESS</b> with value <b>&quot;db/dnet/mac_address&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_102')">
+<span class='ext'>[+]</span> VCONFKEY_NETWORK_SLEEP_POLICY</span>
+<br/>
+<div id="c_102" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NETWORK_SLEEP_POLICY</b> with value <b>&quot;file/private/wifi/sleep_policy&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_103')">
+<span class='ext'>[+]</span> VCONFKEY_NETWORK_WEARABLE_WIFI_USE</span>
+<br/>
+<div id="c_103" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NETWORK_WEARABLE_WIFI_USE</b> with value <b>&quot;db/private/wifi/wearable_wifi_use&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_104')">
+<span class='ext'>[+]</span> VCONFKEY_NETWORK_WIFI_FREQUENCY</span>
+<br/>
+<div id="c_104" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NETWORK_WIFI_FREQUENCY</b> with value <b>&quot;memory/private/wifi/frequency&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_105')">
+<span class='ext'>[+]</span> VCONFKEY_NETWORK_WIFI_LAST_POWER_STATE</span>
+<br/>
+<div id="c_105" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NETWORK_WIFI_LAST_POWER_STATE</b> with value <b>&quot;file/private/wifi/last_power_state&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_106')">
+<span class='ext'>[+]</span> VCONFKEY_NETWORK_WIFI_OFF_BY_AIRPLANE</span>
+<br/>
+<div id="c_106" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NETWORK_WIFI_OFF_BY_AIRPLANE</b> with value <b>&quot;file/private/wifi/wifi_off_by_airplane&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_107')">
+<span class='ext'>[+]</span> VCONFKEY_NETWORK_WIFI_OFF_BY_EMERGENCY</span>
+<br/>
+<div id="c_107" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NETWORK_WIFI_OFF_BY_EMERGENCY</b> with value <b>&quot;file/private/wifi/wifi_off_by_emergency&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_108')">
+<span class='ext'>[+]</span> VCONFKEY_NETWORK_WIFI_OFF_BY_RESTRICTED</span>
+<br/>
+<div id="c_108" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NETWORK_WIFI_OFF_BY_RESTRICTED</b> with value <b>&quot;file/private/wifi/wifi_off_by_restricted&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-email-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_109')">
+<span class='ext'>[+]</span> EMAIL_VCONF_KEY_IS_TOPMOST_WINDOW</span>
+<br/>
+<div id="c_109" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>EMAIL_VCONF_KEY_IS_TOPMOST_WINDOW</b> with value <b>&quot;db/private/org.tizen.email/is_topmost_window&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-hotfix.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_110')">
+<span class='ext'>[+]</span> VCONFKEY_CISSAPPL_ANSWERING_MODE_INT</span>
+<br/>
+<div id="c_110" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_CISSAPPL_ANSWERING_MODE_INT</b> with value <b>&quot;db/ciss/answering_mode&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_111')">
+<span class='ext'>[+]</span> VCONFKEY_CISSAPPL_ANSWERING_MODE_TIME_INT</span>
+<br/>
+<div id="c_111" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_CISSAPPL_ANSWERING_MODE_TIME_INT</b> with value <b>&quot;db/ciss/answering_mode_time&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_112')">
+<span class='ext'>[+]</span> VCONFKEY_CISSAPPL_OUTGOING_CALL_CONDITIONS_INT</span>
+<br/>
+<div id="c_112" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_CISSAPPL_OUTGOING_CALL_CONDITIONS_INT</b> with value <b>&quot;db/ciss/outgoing_call_conditions&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_113')">
+<span class='ext'>[+]</span> VCONFKEY_CISSAPPL_OUTGOING_CALL_TYPE_INT</span>
+<br/>
+<div id="c_113" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_CISSAPPL_OUTGOING_CALL_TYPE_INT</b> with value <b>&quot;db/ciss/outgoing_call_type&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-idle-lock-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_114')">
+<span class='ext'>[+]</span> VCONFKEY_IDLE_LOCK_STATE_READ_ONLY</span>
+<br/>
+<div id="c_114" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_IDLE_LOCK_STATE_READ_ONLY</b> with value <b>&quot;memory/idle_lock/state_read_only&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-indicator-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_115')">
+<span class='ext'>[+]</span> VCONFKEY_INDICATOR_SHOW_MORE_NOTI</span>
+<br/>
+<div id="c_115" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_INDICATOR_SHOW_MORE_NOTI</b> with value <b>&quot;memory/private/org.tizen.indicator/show_more_noti_port&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-isf-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_116')">
+<span class='ext'>[+]</span> VCONFKEY_ISF_HW_KEYBOARD_INPUT_DETECTED</span>
+<br/>
+<div id="c_116" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_ISF_HW_KEYBOARD_INPUT_DETECTED</b> with value <b>&quot;memory/isf/hw_keyboard_input_detected&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-location-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_117')">
+<span class='ext'>[+]</span> VCONFKEY_LOCATION_HEREMAPS_CONSENT</span>
+<br/>
+<div id="c_117" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_LOCATION_HEREMAPS_CONSENT</b> with value <b>&quot;db/location/heremaps/UserConsent&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_118')">
+<span class='ext'>[+]</span> VCONFKEY_LOCATION_MOCK_CONNECTED</span>
+<br/>
+<div id="c_118" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_LOCATION_MOCK_CONNECTED</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_119')">
+<span class='ext'>[+]</span> VCONFKEY_LOCATION_MOCK_ENABLED</span>
+<br/>
+<div id="c_119" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_LOCATION_MOCK_ENABLED</b> with value <b>&quot;db/location/setting/MockEnabled&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_120')">
+<span class='ext'>[+]</span> VCONFKEY_LOCATION_MOCK_OFF</span>
+<br/>
+<div id="c_120" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_LOCATION_MOCK_OFF</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_121')">
+<span class='ext'>[+]</span> VCONFKEY_LOCATION_MOCK_SEARCHING</span>
+<br/>
+<div id="c_121" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_LOCATION_MOCK_SEARCHING</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_122')">
+<span class='ext'>[+]</span> VCONFKEY_LOCATION_MOCK_STATE</span>
+<br/>
+<div id="c_122" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_LOCATION_MOCK_STATE</b> with value <b>&quot;memory/location/mock/state&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_123')">
+<span class='ext'>[+]</span> VCONFKEY_LOCATION_MOCK_STATE_MAX</span>
+<br/>
+<div id="c_123" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_LOCATION_MOCK_STATE_MAX</b> with value <b>3</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_124')">
+<span class='ext'>[+]</span> VCONFKEY_LOCATION_PASSIVE</span>
+<br/>
+<div id="c_124" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_LOCATION_PASSIVE</b> with value <b>&quot;db/location/setting/Passive&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_125')">
+<span class='ext'>[+]</span> VCONFKEY_LOCATION_RESTRICT</span>
+<br/>
+<div id="c_125" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_LOCATION_RESTRICT</b> with value <b>&quot;db/location/setting/Restriction&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-mobile-hotspot-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_126')">
+<span class='ext'>[+]</span> VCONFKEY_MOBILE_HOTSPOT_WIFI_OFF</span>
+<br/>
+<div id="c_126" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_MOBILE_HOTSPOT_WIFI_OFF</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_127')">
+<span class='ext'>[+]</span> VCONFKEY_MOBILE_HOTSPOT_WIFI_PENDING_ON</span>
+<br/>
+<div id="c_127" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_MOBILE_HOTSPOT_WIFI_PENDING_ON</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_128')">
+<span class='ext'>[+]</span> VCONFKEY_MOBILE_HOTSPOT_WIFI_STATE</span>
+<br/>
+<div id="c_128" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_MOBILE_HOTSPOT_WIFI_STATE</b> with value <b>&quot;memory/mobile_hotspot/wifi_state&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-moved-from.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_129')">
+<span class='ext'>[+]</span> VCONFKEY_BROWSER_USER_AGENT</span>
+<br/>
+<div id="c_129" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BROWSER_USER_AGENT</b> with value <b>&quot;db/browser/user_agent&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_130')">
+<span class='ext'>[+]</span> VCONFKEY_BROWSER_USER_AGENT_PROFILE_2G</span>
+<br/>
+<div id="c_130" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BROWSER_USER_AGENT_PROFILE_2G</b> with value <b>&quot;db/browser/user_agent_profile_2G&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_131')">
+<span class='ext'>[+]</span> VCONFKEY_BROWSER_USER_AGENT_PROFILE_3G</span>
+<br/>
+<div id="c_131" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BROWSER_USER_AGENT_PROFILE_3G</b> with value <b>&quot;db/browser/user_agent_profile_3G&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_132')">
+<span class='ext'>[+]</span> VCONFKEY_BROWSER_USER_AGENT_PROFILE_4G</span>
+<br/>
+<div id="c_132" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_BROWSER_USER_AGENT_PROFILE_4G</b> with value <b>&quot;db/browser/user_agent_profile_4G&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-mtp-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_133')">
+<span class='ext'>[+]</span> VCONFKEY_MTP_SERIAL_NUMBER_STR</span>
+<br/>
+<div id="c_133" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_MTP_SERIAL_NUMBER_STR</b> with value <b>&quot;db/mtp/serial_number&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_134')">
+<span class='ext'>[+]</span> VCONFKEY_MTP_SYNC_PARTNER_STR</span>
+<br/>
+<div id="c_134" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_MTP_SYNC_PARTNER_STR</b> with value <b>&quot;db/mtp/sync_partner&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_135')">
+<span class='ext'>[+]</span> VCONFKEY_MTP_SYNC_TIME_INT</span>
+<br/>
+<div id="c_135" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_MTP_SYNC_TIME_INT</b> with value <b>&quot;db/mtp/sync_time&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-nfc-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_136')">
+<span class='ext'>[+]</span> VCONFKEY_NFC_ESE_DISABLE</span>
+<br/>
+<div id="c_136" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_NFC_ESE_DISABLE</b> with value <b>&quot;db/nfc/ese_disable&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-setting-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_137')">
+<span class='ext'>[+]</span> VCONFKEY_DOUBLE_PRESS_HOME_KEY_LAST_APP</span>
+<br/>
+<div id="c_137" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_DOUBLE_PRESS_HOME_KEY_LAST_APP</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_138')">
+<span class='ext'>[+]</span> VCONFKEY_DOUBLE_PRESS_HOME_KEY_NONE</span>
+<br/>
+<div id="c_138" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_DOUBLE_PRESS_HOME_KEY_NONE</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_139')">
+<span class='ext'>[+]</span> VCONFKEY_DOUBLE_PRESS_HOME_KEY_RECENT_APPS</span>
+<br/>
+<div id="c_139" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_DOUBLE_PRESS_HOME_KEY_RECENT_APPS</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_140')">
+<span class='ext'>[+]</span> VCONFKEY_SETAPPL_ACCESSIBILITY_SCREEN_READER_DESCRIPTION</span>
+<br/>
+<div id="c_140" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SETAPPL_ACCESSIBILITY_SCREEN_READER_DESCRIPTION</b> with value <b>&quot;db/setting/accessibility/screen_reader/description&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_141')">
+<span class='ext'>[+]</span> VCONFKEY_SETAPPL_ACCESSIBILITY_SCREEN_READER_HAPTIC</span>
+<br/>
+<div id="c_141" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SETAPPL_ACCESSIBILITY_SCREEN_READER_HAPTIC</b> with value <b>&quot;db/setting/accessibility/screen_reader/haptic&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_142')">
+<span class='ext'>[+]</span> VCONFKEY_SETAPPL_ACCESSIBILITY_SCREEN_READER_KEYBOARD_FEEDBACK</span>
+<br/>
+<div id="c_142" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SETAPPL_ACCESSIBILITY_SCREEN_READER_KEYBOARD_FEEDBACK</b> with value <b>&quot;db/setting/accessibility/screen_reader/keyboard_feedback&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_143')">
+<span class='ext'>[+]</span> VCONFKEY_SETAPPL_AUTO_OPEN_APPS</span>
+<br/>
+<div id="c_143" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SETAPPL_AUTO_OPEN_APPS</b> with value <b>&quot;db/setting/auto_open_apps&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_144')">
+<span class='ext'>[+]</span> VCONFKEY_SETAPPL_CALL_RINGTONE_USER_LIST</span>
+<br/>
+<div id="c_144" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SETAPPL_CALL_RINGTONE_USER_LIST</b> with value <b>&quot;db/setting/sound/call/user_ringtone_list&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_145')">
+<span class='ext'>[+]</span> VCONFKEY_SETAPPL_DOUBLE_PRESS_HOME_KEY</span>
+<br/>
+<div id="c_145" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SETAPPL_DOUBLE_PRESS_HOME_KEY</b> with value <b>&quot;db/setting/double_press_home_key&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_146')">
+<span class='ext'>[+]</span> VCONFKEY_SETAPPL_NOTI_VIBRATION_LONG_BUZZ</span>
+<br/>
+<div id="c_146" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SETAPPL_NOTI_VIBRATION_LONG_BUZZ</b> with value <b>&quot;db/setting/sound/noti/vibration_long_buzz&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_147')">
+<span class='ext'>[+]</span> VCONFKEY_SETAPPL_NOTIFICATION_INDICATOR</span>
+<br/>
+<div id="c_147" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SETAPPL_NOTIFICATION_INDICATOR</b> with value <b>&quot;db/setting/notification_indicator&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-softap-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_148')">
+<span class='ext'>[+]</span> VCONFKEY_SOFTAP_CONNECTED_DEVICE</span>
+<br/>
+<div id="c_148" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SOFTAP_CONNECTED_DEVICE</b> with value <b>&quot;memory/softap/connected_device&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_149')">
+<span class='ext'>[+]</span> VCONFKEY_SOFTAP_HIDE</span>
+<br/>
+<div id="c_149" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SOFTAP_HIDE</b> with value <b>&quot;db/softap/hide&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_150')">
+<span class='ext'>[+]</span> VCONFKEY_SOFTAP_HIDE_OFF</span>
+<br/>
+<div id="c_150" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SOFTAP_HIDE_OFF</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_151')">
+<span class='ext'>[+]</span> VCONFKEY_SOFTAP_HIDE_ON</span>
+<br/>
+<div id="c_151" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SOFTAP_HIDE_ON</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_152')">
+<span class='ext'>[+]</span> VCONFKEY_SOFTAP_KEY</span>
+<br/>
+<div id="c_152" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SOFTAP_KEY</b> with value <b>&quot;memory/private/softap/key&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_153')">
+<span class='ext'>[+]</span> VCONFKEY_SOFTAP_SECURITY</span>
+<br/>
+<div id="c_153" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SOFTAP_SECURITY</b> with value <b>&quot;db/softap/security&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_154')">
+<span class='ext'>[+]</span> VCONFKEY_SOFTAP_SECURITY_OFF</span>
+<br/>
+<div id="c_154" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SOFTAP_SECURITY_OFF</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_155')">
+<span class='ext'>[+]</span> VCONFKEY_SOFTAP_SECURITY_ON</span>
+<br/>
+<div id="c_155" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SOFTAP_SECURITY_ON</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_156')">
+<span class='ext'>[+]</span> VCONFKEY_SOFTAP_SSID</span>
+<br/>
+<div id="c_156" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SOFTAP_SSID</b> with value <b>&quot;memory/private/softap/ssid&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-sound-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_157')">
+<span class='ext'>[+]</span> VCONFKEY_SOUND_VOLUME_TYPE_MASTER</span>
+<br/>
+<div id="c_157" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SOUND_VOLUME_TYPE_MASTER</b> with value <b>&quot;file/private/sound/volume/master&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-system-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_158')">
+<span class='ext'>[+]</span> VCONFKEY_SYSTEM_TIMECHANGE</span>
+<br/>
+<div id="c_158" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_SYSTEM_TIMECHANGE</b> with value <b>&quot;db/system/timechange&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-uncategorized-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_159')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_003</span>
+<br/>
+<div id="c_159" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_003</b> with value <b>&quot;db/browser/user_agent&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_160')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_007</span>
+<br/>
+<div id="c_160" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_007</b> with value <b>&quot;db/email_handle/active_sync_handle&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_161')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_23</span>
+<br/>
+<div id="c_161" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_23</b> with value <b>&quot;db/msg/sos_send_option&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_162')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_25</span>
+<br/>
+<div id="c_162" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_25</b> with value <b>&quot;db/private/email-service/default_account_id&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_163')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_26</span>
+<br/>
+<div id="c_163" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_26</b> with value <b>&quot;db/private/email-service/latest_mail_id&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_164')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_27</span>
+<br/>
+<div id="c_164" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_27</b> with value <b>&quot;db/private/email-service/noti_badge_ticker&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_165')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_28</span>
+<br/>
+<div id="c_165" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_28</b> with value <b>&quot;db/private/email-service/noti_display_content_ticker&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_166')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_29</span>
+<br/>
+<div id="c_166" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_29</b> with value <b>&quot;db/private/email-service/noti_notification_ticker&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_167')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_30</span>
+<br/>
+<div id="c_167" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_30</b> with value <b>&quot;db/private/email-service/noti_private_id/1&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_168')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_31</span>
+<br/>
+<div id="c_168" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_31</b> with value <b>&quot;db/private/email-service/noti_private_id/10&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_169')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_32</span>
+<br/>
+<div id="c_169" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_32</b> with value <b>&quot;db/private/email-service/noti_private_id/2&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_170')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_33</span>
+<br/>
+<div id="c_170" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_33</b> with value <b>&quot;db/private/email-service/noti_private_id/3&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_171')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_34</span>
+<br/>
+<div id="c_171" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_34</b> with value <b>&quot;db/private/email-service/noti_private_id/4&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_172')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_347</span>
+<br/>
+<div id="c_172" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_347</b> with value <b>&quot;db/private/mobiledata/off_popup/check&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_173')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_348</span>
+<br/>
+<div id="c_173" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_348</b> with value <b>&quot;db/private/mobiledata/on_popup/check&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_174')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_35</span>
+<br/>
+<div id="c_174" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_35</b> with value <b>&quot;db/private/email-service/noti_private_id/5&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_175')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_353</span>
+<br/>
+<div id="c_175" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_353</b> with value <b>&quot;db/private/org.tizen.w-home/logging&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_176')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_36</span>
+<br/>
+<div id="c_176" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_36</b> with value <b>&quot;db/private/email-service/noti_private_id/6&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_177')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_37</span>
+<br/>
+<div id="c_177" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_37</b> with value <b>&quot;db/private/email-service/noti_private_id/7&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_178')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_38</span>
+<br/>
+<div id="c_178" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_38</b> with value <b>&quot;db/private/email-service/noti_private_id/8&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_179')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_384</span>
+<br/>
+<div id="c_179" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_384</b> with value <b>&quot;db/wms/home_bg_gallery&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_180')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_385</span>
+<br/>
+<div id="c_180" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_385</b> with value <b>&quot;db/wms/home_bg_mode&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_181')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_386</span>
+<br/>
+<div id="c_181" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_386</b> with value <b>&quot;db/wms/home_bg_palette&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_182')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_39</span>
+<br/>
+<div id="c_182" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_39</b> with value <b>&quot;db/private/email-service/noti_private_id/9&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_183')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_397</span>
+<br/>
+<div id="c_183" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_397</b> with value <b>&quot;db/setting/accessibility/atspi&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_184')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_40</span>
+<br/>
+<div id="c_184" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_40</b> with value <b>&quot;db/private/email-service/noti_rep_type&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_185')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_41</span>
+<br/>
+<div id="c_185" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_41</b> with value <b>&quot;db/private/email-service/noti_ringtone_path&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_186')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_42</span>
+<br/>
+<div id="c_186" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_42</b> with value <b>&quot;db/private/email-service/noti_use_default_ringtone&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_187')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_43</span>
+<br/>
+<div id="c_187" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_43</b> with value <b>&quot;db/private/email-service/noti_vibration_status&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_188')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_44</span>
+<br/>
+<div id="c_188" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_44</b> with value <b>&quot;db/private/email-service/noti_vip_use_default_ringtone&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_189')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_45</span>
+<br/>
+<div id="c_189" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_45</b> with value <b>&quot;db/private/email-service/noti_vip_vibration_status&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_190')">
+<span class='ext'>[+]</span> VCONFKEY_UNCATEGORIZED_46</span>
+<br/>
+<div id="c_190" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_UNCATEGORIZED_46</b> with value <b>&quot;db/private/email-service/slot_size&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-webkit-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_191')">
+<span class='ext'>[+]</span> VCONFKEY_WEBKIT_USER_AGENT</span>
+<br/>
+<div id="c_191" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WEBKIT_USER_AGENT</b> with value <b>&quot;db/webkit/user_agent&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>vconf-internal-wifi-keys.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_192')">
+<span class='ext'>[+]</span> VCONFKEY_WIFI_BGSCAN_MODE</span>
+<br/>
+<div id="c_192" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WIFI_BGSCAN_MODE</b> with value <b>&quot;memory/wifi/bgscan_mode&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_193')">
+<span class='ext'>[+]</span> VCONFKEY_WIFI_BGSCAN_MODE_EXPONENTIAL</span>
+<br/>
+<div id="c_193" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WIFI_BGSCAN_MODE_EXPONENTIAL</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_194')">
+<span class='ext'>[+]</span> VCONFKEY_WIFI_BGSCAN_MODE_PERIODIC</span>
+<br/>
+<div id="c_194" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WIFI_BGSCAN_MODE_PERIODIC</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_195')">
+<span class='ext'>[+]</span> VCONFKEY_WIFI_DIRECT_ACTIVATING</span>
+<br/>
+<div id="c_195" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WIFI_DIRECT_ACTIVATING</b> with value <b>6</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_196')">
+<span class='ext'>[+]</span> VCONFKEY_WIFI_DIRECT_CONNECTING</span>
+<br/>
+<div id="c_196" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WIFI_DIRECT_CONNECTING</b> with value <b>7</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_197')">
+<span class='ext'>[+]</span> VCONFKEY_WIFI_DIRECT_DEACTIVATING</span>
+<br/>
+<div id="c_197" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WIFI_DIRECT_DEACTIVATING</b> with value <b>5</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_198')">
+<span class='ext'>[+]</span> VCONFKEY_WIFI_DIRECT_DISCONNECTING</span>
+<br/>
+<div id="c_198" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WIFI_DIRECT_DISCONNECTING</b> with value <b>8</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_199')">
+<span class='ext'>[+]</span> VCONFKEY_WIFI_NETWORK_BONDING</span>
+<br/>
+<div id="c_199" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WIFI_NETWORK_BONDING</b> with value <b>&quot;file/private/wifi/network_bonding&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_200')">
+<span class='ext'>[+]</span> VCONFKEY_WIFI_SORT_BY</span>
+<br/>
+<div id="c_200" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>VCONFKEY_WIFI_SORT_BY</b> with value <b>&quot;file/private/wifi/sort_by&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (39)</h2><hr/>
+<div class='h_list'>
+vconf-internal-account-keys.h<br/>
+vconf-internal-alarm-keys.h<br/>
+vconf-internal-boot-animation-keys.h<br/>
+vconf-internal-browser-keys.h<br/>
+vconf-internal-bt-keys.h<br/>
+vconf-internal-call-keys.h<br/>
+vconf-internal-camera-keys.h<br/>
+vconf-internal-ciss-keys.h<br/>
+vconf-internal-contacts-svc-keys.h<br/>
+vconf-internal-desktop-mode-keys.h<br/>
+vconf-internal-dnet-keys.h<br/>
+vconf-internal-dr-keys.h<br/>
+vconf-internal-email-keys.h<br/>
+vconf-internal-filemanager-keys.h<br/>
+vconf-internal-hotfix.h<br/>
+vconf-internal-idle-lock-keys.h<br/>
+vconf-internal-isf-keys.h<br/>
+vconf-internal-keys.h<br/>
+vconf-internal-livebox-keys.h<br/>
+vconf-internal-location-keys.h<br/>
+vconf-internal-lockscreen-keys.h<br/>
+vconf-internal-miracast-keys.h<br/>
+vconf-internal-mobile-hotspot-keys.h<br/>
+vconf-internal-moved-from.h<br/>
+vconf-internal-msg-keys.h<br/>
+vconf-internal-nfc-keys.h<br/>
+vconf-internal-pm-keys.h<br/>
+vconf-internal-setting-keys.h<br/>
+vconf-internal-sound-keys.h<br/>
+vconf-internal-starter-keys.h<br/>
+vconf-internal-sysman-keys.h<br/>
+vconf-internal-system-keys.h<br/>
+vconf-internal-telephony-keys.h<br/>
+vconf-internal-uncategorized-keys.h<br/>
+vconf-internal-usb-keys.h<br/>
+vconf-internal-wifi-keys.h<br/>
+vconf-internal-wms-keys.h<br/>
+vconf-keys.h<br/>
+vconf.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Shared Libraries (2)</h2><hr/>
+<div class='lib_list'>
+libvconf.so.0.2.45<br/>
+vconf-plugin.so<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><hr/>
+<div class='footer' align='right'><i>Generated by <a href='http://lvc.github.io/abi-compliance-checker/'>ABI Compliance Checker</a> 1.99.18 &#160;</i>
+</div>
+<br/>
+
+</body></html>

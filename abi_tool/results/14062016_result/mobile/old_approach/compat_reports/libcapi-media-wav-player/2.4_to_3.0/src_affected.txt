@@ -1,0 +1,3 @@
+wav_player_start_solo
+wav_player_start_loop
+wav_player_start_solo_loop

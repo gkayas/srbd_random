@@ -1,0 +1,3 @@
+datacontrol_sql_get_cursor
+check_privilege
+data_control_error

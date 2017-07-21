@@ -1,0 +1,394 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.jsoup.Jsoup;
+import org.jsoup.examples.HtmlToPlainText;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import com.hp.gagawa.java.elements.Body;
+import com.hp.gagawa.java.elements.H1;
+import com.hp.gagawa.java.elements.Head;
+import com.hp.gagawa.java.elements.Html;
+import com.hp.gagawa.java.elements.Style;
+import com.hp.gagawa.java.elements.Table;
+import com.hp.gagawa.java.elements.Td;
+import com.hp.gagawa.java.elements.Text;
+import com.hp.gagawa.java.elements.Th;
+import com.hp.gagawa.java.elements.Title;
+import com.hp.gagawa.java.elements.Tr;
+
+public class Report {
+
+	private static Html html;
+	private static Table tcTable;
+	private static Table summaryTable;
+	
+	static int failCount;
+	static int passCount;
+	static int failCountTotal;
+	static int passCountTotal;
+	static double executionTime;
+	static double executionTimeTotal;
+	
+	static String MAIN_SUITE_NAME; 
+	
+	static ArrayList<Suite> suiteList;
+	
+	public static ArrayList<Testcase> prepareReportForRun(TCSuite suite) throws IOException  {
+		File inputXml = new File(Utils.getValue(Constants.SOURCE_XML_PATH));
+	
+		if(!inputXml.exists()) {
+			System.out.println(Utils.getValue(Constants.SOURCE_XML_PATH)+" file is not available...");
+			return null;
+		}
+		
+		ArrayList<Testcase> testCaseList = new ArrayList<Testcase>();
+		File resultFile =new File(Utils.getValue(Constants.REPORT_PATH) + File.separatorChar + "report.csv");
+		
+		if(resultFile.exists()) {
+			readExitingResultFile(testCaseList);			
+		}  
+		
+		Document docInputXml = Jsoup.parse(inputXml, "UTF-8");
+		docInputXml.outputSettings().prettyPrint(false);
+		Elements elements = docInputXml.select("testcase");
+		
+		ArrayList<Testcase> failTcList = new ArrayList<Testcase>();
+
+		//add data to tcList
+		for (Element element : elements) {
+			 Testcase tc = new Testcase();
+			
+			tc.setSuiteName(suite.getName());
+			tc.setPlatform(suite.getPlatform());
+			tc.setProfile(suite.getProfile());
+			tc.setName(element.attr("name"));
+			
+			ArrayList<Testcase> suitetcList = suite.getTcList();
+			for (Testcase testcase : suitetcList) {
+				if(testcase.equals(tc)) {
+					tc.setTcmID(testcase.getTcmID());
+					tc.setModule(testcase.getModule());
+					break;
+				}
+			}
+			
+			Elements children = element.children();
+
+			if(children.size() > 0) {				
+				if(!failTcList.contains(tc)) {
+					failTcList.add(tc);
+				}
+				
+				tc.setStatus("Fail");
+				
+				for (Element child : children) {
+					String msg = child.attr("message");					
+					
+					if(msg.contains("Exception occur in rcptt code")) {
+						String failureText = child.html();
+						Pattern pattern = Pattern.compile("\\s*data\\s*\\=\\s*.*\\r?\\n\\s*message\\s*\\=\\s*(.*)\\s*");
+						Matcher matcher = pattern.matcher(failureText);
+						
+						while(matcher.find()) {
+							String s = matcher.group(1).trim().replaceAll("&quot;", "\"");
+							if(!s.contains("The Window \"Save Resource\"") && !s.contains("The Window \"Save Resources\"")) {
+								msg =  matcher.group(1).trim();	
+							}
+						}
+					}
+
+					msg = msg.trim().replaceAll(",",  " ").replaceAll("\n", " ").replaceAll("\r", "").replaceAll("&quot;", "\"");
+					tc.setMsg(msg);
+				}
+				
+			} else {
+				if(element.attr("incomplete").equals("true")) {
+					if(!failTcList.contains(tc)) {
+						failTcList.add(tc);
+					}
+					tc.setIncomplete(true);
+					tc.setStatus("Fail");
+					tc.setMsg("Failed to close report node: RCPTT Connection reset");
+				} else {
+					tc.setStatus("Pass");
+				}
+			}
+			
+			if(testCaseList.contains(tc)) {
+				Testcase prevTc = null;
+				
+				for (Testcase testCase : testCaseList) {
+					if(testCase.equals(tc)) {
+						if(testCase.getTcmID().equals(tc.getTcmID())) {
+							prevTc = testCase;
+							break;
+						}
+					}
+				}
+				
+				if(prevTc == null) {
+					testCaseList.add(tc);
+				} else {
+					if(tc.isIncomplete()) {
+						prevTc.setStatus("Fail");
+						prevTc.setMsg("Failed to close report node: RCPTT Connection reset");
+					} else {
+						prevTc.copy(tc);
+					}
+				}				
+			}else {
+				testCaseList.add(tc);
+			} 
+		}
+		
+		dumpListToResultFile(testCaseList);
+		return failTcList;
+	}
+	
+	public static ArrayList<Testcase> prepareReportForGroupRun(SuiteGroup suiteGroup) throws IOException  {
+		File inputXml = new File(Utils.getValue(Constants.SOURCE_XML_PATH));
+	
+		if(!inputXml.exists()) {
+			System.out.println(Utils.getValue(Constants.SOURCE_XML_PATH)+" file is not available...");
+			return null;
+		}
+		
+		ArrayList<Testcase> testCaseList = new ArrayList<Testcase>();
+		File resultFile =new File(Utils.getValue(Constants.REPORT_PATH) + File.separatorChar + "report.csv");
+		
+		if(resultFile.exists()) {
+			readExitingResultFile(testCaseList);			
+		}  
+		
+		Document docInputXml = Jsoup.parse(inputXml, "UTF-8");
+		docInputXml.outputSettings().prettyPrint(false);
+		Elements elements = docInputXml.select("testcase");
+		
+		ArrayList<Testcase> failTcList = new ArrayList<Testcase>();
+
+		//add data to tcList
+		for (Element element : elements) {
+			Testcase tc = new Testcase();			
+			tc.setName(element.attr("name"));
+			
+			TCSuite suite = suiteGroup.getSuiteForTc(tc);
+			if(suite == null) {
+				continue;
+			}
+			tc.setSuiteName(suite.getName());
+			tc.setPlatform(suite.getPlatform());
+			tc.setProfile(suite.getProfile());
+			
+			ArrayList<Testcase> suiteTcList = suite.getTcList();
+			for (Testcase testcase : suiteTcList) {
+				if(testcase.equals(tc)) {
+					tc.setTcmID(testcase.getTcmID());
+					tc.setModule(testcase.getModule());
+					break;
+				}
+			}
+			
+			Elements children = element.children();
+
+			if(children.size() > 0) {				
+				if(!failTcList.contains(tc)) {
+					failTcList.add(tc);
+				}
+				
+				tc.setStatus("Fail");
+				
+				for (Element child : children) {
+					String msg = child.attr("message");					
+					
+					if(msg.contains("Exception occur in rcptt code")) {
+						String failureText = child.html();
+						Pattern pattern = Pattern.compile("\\s*data\\s*\\=\\s*.*\\r?\\n\\s*message\\s*\\=\\s*(.*)\\s*");
+						Matcher matcher = pattern.matcher(failureText);
+						
+						while(matcher.find()) {
+							String s = matcher.group(1).trim().replaceAll("&quot;", "\"");
+							if(!s.contains("The Window \"Save Resource\"") && !s.contains("The Window \"Save Resources\"")) {
+								msg =  matcher.group(1).trim();	
+							}
+						}
+					}
+
+					msg = msg.trim().replaceAll(",",  " ").replaceAll("\n", " ").replaceAll("\r", "").replaceAll("&quot;", "\"");
+					tc.setMsg(msg);
+				}
+				
+			} else {
+				if(element.attr("incomplete").equals("true")) {
+					if(!failTcList.contains(tc)) {
+						failTcList.add(tc);
+					}
+					tc.setIncomplete(true);
+					tc.setStatus("Fail");
+					tc.setMsg("Failed to close report node: RCPTT Connection reset");
+				} else {
+					tc.setStatus("Pass");
+				}
+			}
+			
+			if(testCaseList.contains(tc)) {
+				Testcase prevTc = null;
+				
+				for (Testcase testCase : testCaseList) {
+					if(testCase.equals(tc)) {
+						if(testCase.getTcmID().equals(tc.getTcmID())) {
+							prevTc = testCase;
+							break;
+						}
+					}
+				}
+				
+				if(prevTc == null) {
+					testCaseList.add(tc);
+				} else {
+					if(tc.isIncomplete()) {
+						prevTc.setStatus("Fail");
+						prevTc.setMsg("Failed to close report node: RCPTT Connection reset");
+					} else {
+						prevTc.copy(tc);
+					}
+				}				
+			}else {
+				testCaseList.add(tc);
+			} 
+		}
+		
+		dumpListToResultFile(testCaseList);
+		return failTcList;
+	}
+	
+
+	private static ArrayList<String> readFailList() throws FileNotFoundException {
+		ArrayList<String> failTcList = new ArrayList<String>();
+		Scanner sc = new Scanner(new File(Utils.getValue(Constants.FAIL_LIST)));
+		while(sc.hasNextLine()) {
+			String line = sc.nextLine().trim();
+			if(line.length()!=0 && !failTcList.contains(line)) {
+				failTcList.add(line);
+			}
+		}
+		
+		sc.close();
+		
+		return failTcList;
+	}
+	
+	private static void dumpListToResultFile(ArrayList<Testcase> list) {
+		try {
+			PrintWriter pw = new PrintWriter(new File(Utils.getValue(Constants.REPORT_PATH) + File.separatorChar + "report.csv"));
+			pw.write("TCM ID,TC ID,Module,Platform,Profile,Result,Message\n");
+			for (Testcase testcase : list) {
+				pw.append(testcase.getTcmID()+","+testcase.getName()+","+testcase.getModule()+","+testcase.getPlatform()+","+testcase.getProfile()+","+testcase.getStatus()+","+testcase.getMsg()+"\n");
+			}
+			
+			pw.flush();
+			pw.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}		
+	}
+		
+	private static void readExitingResultFile(ArrayList<Testcase> testCaseList) throws IOException {
+		Scanner sc = new Scanner(new File(Utils.getValue(Constants.REPORT_PATH) + File.separatorChar + "report.csv"));
+		
+		sc.nextLine();
+		
+		while(sc.hasNextLine()) {
+			String line = sc.nextLine();
+			
+			String parts[] = line.split(",");
+			if(parts.length < 6) {
+				System.out.println(line);				
+				throw new IOException(Utils.getValue(Constants.REPORT_PATH) + File.separatorChar + "report.csv" + " - Wrong formated report file...");
+			}
+			String tcmID = parts[0];
+			String name = parts[1];
+			String module = parts[2];
+			String platform = parts[3];
+			String profile = parts[4];
+			String status = parts[5];
+			String msg = "";
+			if(parts.length == 7 ) {
+				msg = parts[6];
+			}
+			
+			
+			Testcase tc = new Testcase();
+			tc.setTcmID(tcmID);
+			tc.setName(name);
+			tc.setModule(module);
+			tc.setPlatform(platform);
+			tc.setProfile(profile);
+			tc.setStatus(status);
+			tc.setMsg(msg);
+			testCaseList.add(tc);
+		}		
+		sc.close();
+	}
+	
+	public static boolean isTcPassFromXml(String tcName) {
+		File inputXml = new File(Utils.getValue(Constants.SOURCE_XML_PATH));
+		Document docInputXml;
+		try {
+			docInputXml = Jsoup.parse(inputXml , "UTF-8");
+			docInputXml.outputSettings().prettyPrint(false);
+			Elements elements = docInputXml.select("testcase");
+
+			for (Element element : elements) {
+				
+				if(element.attr("name").equals(tcName)) {
+					Elements children = element.children();
+
+					if(children.size() > 0) {
+						for (Element child : children) {
+							String msg = child.attr("message");					
+							
+							if(msg.contains("Exception occur in rcptt code")) {
+								String failureText = child.html();
+								Pattern pattern = Pattern.compile("\\s*data\\s*\\=\\s*.*\\r?\\n\\s*message\\s*\\=\\s*(.*)\\s*");
+								Matcher matcher = pattern.matcher(failureText);
+								
+								while(matcher.find()) {
+									String s = matcher.group(1).trim().replaceAll("&quot;", "\"");
+									if(!s.contains("The Window \"Save Resource\"") && !s.contains("The Window \"Save Resources\"")) {
+										msg =  matcher.group(1).trim();	
+									}
+								}
+							}		
+							
+							msg = msg.trim().replaceAll(",",  " ").replaceAll("\n", " ").replaceAll("\r", "").replaceAll("&quot;", "\"");
+							System.out.println(tcName + " failed. Error: " + msg);
+						}
+						return false;
+					} else {
+						if(element.attr("incomplete").equals("true")) {
+							System.out.println(tcName + " failed. Error: Failed to close report node: Connection reset");
+							return false;
+						} else {
+							return true;
+						}
+					}
+				}				
+			}
+		} catch (IOException e) {
+			System.out.println(Utils.getValue(Constants.SOURCE_XML_PATH)+" - file is not available...");
+		}
+		return false;
+	}
+	
+}

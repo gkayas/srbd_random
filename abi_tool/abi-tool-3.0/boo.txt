@@ -1,0 +1,34 @@
+
+
+
+
+<h2>Problems with Data Types, Low Severity (1)</h2><hr/>
+<span class='h_name'>ckm-manager-async.h</span><br/>
+<span class='ns'>namespace <b>CKM</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_71')">
+<span class='ext'>[+]</span> <span class='ttype'>class</span> ManagerAsync (1)</span>
+<br/>
+<div id="c_71" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Field <b>m_impl</b> has been added to this type.</td>
+<td>Size of the inclusive type has been changed.<br/><b>NOTE</b>: this field should be accessed only from the new library functions, otherwise it may result in crash or incorrect behavior of applications.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_72')">
+[+] affected symbols (2)</span>
+<div id="c_72" style="display:none;">
+<div class='affected'><span class='iname_a'>ManagerAsync::ManagerAsync <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<div class='affect'>This constructor is from &#39;ManagerAsync&#39; class.</div>
+<span class='iname_a'>ManagerAsync::~ManagerAsync <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<div class='affect'>This method is from &#39;ManagerAsync&#39; class.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>
+
+

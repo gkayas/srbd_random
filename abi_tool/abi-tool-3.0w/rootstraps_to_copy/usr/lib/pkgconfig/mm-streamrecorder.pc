@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: mm-streamrecorder
+Description: Multimedia Framework Stream Recorder Library
+Requires: gstreamer-1.0 gstreamer-base-1.0 mm-common mm-log
+Version: $VERSION
+Libs: -L${libdir} -lmmfstreamrecorder
+Cflags: -I${includedir}/ -I${includedir}/mmf

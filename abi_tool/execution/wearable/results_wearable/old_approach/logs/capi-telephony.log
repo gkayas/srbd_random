@@ -1,0 +1,35 @@
+Temporary header file '/tmp/37sMfJu7H8/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/telephony/telephony.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/telephony/telephony_call.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/telephony/telephony_common.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/telephony/telephony_modem.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/telephony/telephony_network.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/telephony/telephony_sim.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/37sMfJu7H8/dump1.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/37sMfJu7H8/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/telephony/telephony.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/telephony/telephony_call.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/telephony/telephony_common.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/telephony/telephony_modem.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/telephony/telephony_network.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/telephony/telephony_sim.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/37sMfJu7H8/dump2.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/telephony/telephony.h:21:0,
+                 from /tmp/37sMfJu7H8/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/telephony/telephony_call.h:125:97: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int telephony_call_get_voice_call_state(telephony_h handle, telephony_call_state_e *call_state) TIZEN_DEPRECATED_API;
+                                                                                                 ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/telephony/telephony_call.h:154:97: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int telephony_call_get_video_call_state(telephony_h handle, telephony_call_state_e *call_state) TIZEN_DEPRECATED_API;
+                                                                                                 ^
+

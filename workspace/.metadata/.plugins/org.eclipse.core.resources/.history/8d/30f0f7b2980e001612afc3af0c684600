@@ -1,0 +1,76 @@
+package application;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.SplitPane;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
+
+public class Main extends Application {
+	
+	static final int SCENE_WIDTH = 600;
+	static final int SCENE_HEIGHT = 600;
+	
+	
+	@Override
+	public void start(Stage primaryStage) {
+		try {
+//			SplitPane root = new SplitPane();
+//			
+//			final StackPane sp1 = new StackPane();
+//			sp1.getChildren().add(new Button("Button One"));
+//			final SplitPane sp2 = new SplitPane();
+//			sp2.setOrientation(Orientation.VERTICAL);
+//			sp2.setDividerPositions(0.3f);
+			
+//			GridPane btnGrid = new GridPane();
+//			btnGrid.setAlignment(Pos.CENTER);
+//			btnGrid.setHgap(10);
+//			btnGrid.setVgap(10);
+//			btnGrid.setPadding(new Insets(25, 25, 25, 25));
+//			
+//			
+//			Button btnRun = new Button("Run");
+//			btnGrid.add(btnRun, 1, 1);
+//			
+//			Button btnReRun = new Button("Re-Run");
+//			btnGrid.add(btnReRun, 2, 1);
+//			
+//			Button btnOthers = new Button("Others");
+//			btnGrid.add(btnOthers, 3, 1);
+//			
+//			TextArea console = new TextArea();
+//			console.setPrefSize(150, 600);
+//			console.setText("Hello\n world!");
+			
+//			sp2.getItems().addAll(btnGrid, console);
+//			
+//			root.getItems().addAll(sp1, sp2);
+//			root.setDividerPositions(0.3f);
+			
+			GridPane root = new GridPane();
+			
+			Pane modules = new BorderedTitledPane(titleString, content)
+			
+			Scene scene = new Scene(root , SCENE_WIDTH, SCENE_HEIGHT);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+}

@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class MainClass {
+	public static void main(String[] args) {
+//		SequenceSet ss = new SequenceSet();
+//		ArrayList list = ss.getSequences();
+//		Iterator itr=list.iterator();  
+//		  while(itr.hasNext()){  
+//		   System.out.println(itr.next());  
+//		  }  
+//		  
+//		Sequence s = new Sequence();
+//		System.out.println(s.getSeq(">header2"));
+		
+//		Sequence s = new Sequence(">header1","ACACAGGAAA");
+//		ArrayList list = s.getUsage(4, 2);
+//		Iterator itr=list.iterator();  
+//		  while(itr.hasNext()){  
+//		   System.out.println(itr.next());  
+//		 }
+		
+		SequenceSet ss = new SequenceSet();
+		LinkedList<String> ll = ss.getUsage(4, 1);
+		System.out.println(ll);
+	}
+}//end of main class

@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: ecore-con
+Description: E core library, Con module
+Requires.private: libsystemd ecore-wayland >= 1.16.0 emile >= 1.16.0 ecore >= 1.16.0 eina >= 1.16.0 eet >= 1.16.0 eo >= 1.16.0 openssl   
+Version: 1.16.0
+Libs: -L${libdir} -lecore_con
+Libs.private:   -lm
+Cflags: -I${includedir}/efl-1 -I${includedir}/ecore-con-1

@@ -1,0 +1,39 @@
+package application;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.swing.SwingWorker;
+
+import javafx.scene.control.TextArea;
+import refapp.AppInfo;
+import refapp.SuiteRunner;
+import refapp.TCRunner;
+
+public class TCRunTask extends SwingWorker<String, String> {
+	TextArea textArea;
+	TCRunner runner;
+	MainController controller;
+
+	public TCRunTask(TCRunner runner, MainController controller) {
+		this.runner = runner;
+		this.controller = controller;
+	}
+
+	@Override
+	public String doInBackground() {
+//		ReportUtils.resetAllTcResutl(runner.getProfileName());
+		
+		try {
+			runner = SuiteRunner.updateRunner();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		controller.resetTctable(runner.getAppInfoList());
+		
+		SuiteRunner.runModule(runner.getProfileName());
+		
+		return null;
+	}
+}

@@ -1,0 +1,56 @@
+package application;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Test {
+	public static void main(String[] a) throws InterruptedException, IOException{
+
+		ProcessBuilder run = new ProcessBuilder("java", "-jar",
+				"test-jar.jar", "Run");
+
+		Process runProcess = run.start();
+	
+		System.out.println("Started exe....");
+		BufferedReader msgReader = new BufferedReader(new InputStreamReader(runProcess.getInputStream()));
+		BufferedReader errReader = new BufferedReader(new InputStreamReader(runProcess.getErrorStream()));	
+
+		StringBuffer msgSb = new StringBuffer();
+		StringBuffer errSb = new StringBuffer();
+		char m = 0 ;	
+		char e = 0 ;
+		while(true) {
+			try{
+				runProcess.exitValue();
+				break;
+			}catch(IllegalThreadStateException ex){
+
+			}
+
+			while (msgReader.ready()) {
+				System.out.println("reading msg....");
+				m = (char)msgReader.read();
+				
+				msgSb.append(m);
+
+				if(m == 10) {
+					//console.setText(console.getText()+msgSb.toString()+"");
+					System.out.println("#"+msgSb.toString()+"#");
+					msgSb = new StringBuffer();
+				}
+
+			}
+
+			while (errReader.ready()) {
+				e = (char)errReader.read();
+				errSb.append(e);
+				if(e == 10) {
+					//console.setText(console.getText()+errSb.toString()+"");
+					errSb = new StringBuffer();
+				}
+			}
+			Thread.sleep(10);
+		}
+	}
+}

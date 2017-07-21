@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1120.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxviewer.MainController">
+   <children>
+      <SplitPane dividerPositions="0.06" orientation="VERTICAL" prefHeight="598.0" prefWidth="613.0" stylesheets="@splitePane.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane maxHeight="50.0" minHeight="50.0" prefHeight="50.0">
+               <children>
+                  <HBox fx:id="containerBtn" alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.4" prefHeight="498.0" prefWidth="734.0" style="-fx-border-width: 1;" stylesheets="@splitePane.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane maxWidth="187.0" minWidth="187.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="695.0" prefWidth="187.0">
+                           <children>
+                              <VBox layoutX="10.0" layoutY="20.0" prefHeight="158.0" prefWidth="181.0" spacing="10.0" style="-fx-border-style: solid inside; -fx-border-width: 0;">
+                                 <children>
+                                    <CheckBox fx:id="installCheck" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="18.0" prefWidth="168.0" text="Install" textFill="#141313" />
+                                    <CheckBox fx:id="launchCheck" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="18.0" prefWidth="168.0" text="Launch" />
+                                    <CheckBox fx:id="exploratoryCheck" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="18.0" prefWidth="168.0" text="Exploratory" />
+                                    <CheckBox fx:id="closeCheck" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="12.0" prefWidth="168.0" text="Close" />
+                                    <CheckBox fx:id="uninstallCheck" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="18.0" prefWidth="168.0" text="Uninstall" />
+                                    <CheckBox fx:id="crashCheck" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="18.0" prefWidth="168.0" text="Detect Crash" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="264.0" prefHeight="406.0" prefWidth="181.0" spacing="10.0" style="-fx-border-style: solid inside; -fx-border-width: 0;">
+                                 <children>
+                                    <Button fx:id="openInterfaceBtn" mnemonicParsing="false" onAction="#openInterfaceBtnClicked" prefHeight="40.0" prefWidth="168.0" text="Open Interface" />
+                                    <Button fx:id="browseBtn" mnemonicParsing="false" onAction="#browseBtnClicked" prefHeight="40.0" prefWidth="168.0" text="Browse" />
+                                    <Button fx:id="exploratoryCodeBtn" mnemonicParsing="false" onAction="#exploratoryCodeBtnClicked" prefHeight="40.0" prefWidth="168.0" text="Exploratory Code" />
+                                    <Button fx:id="runBtn" mnemonicParsing="false" onAction="#runBtnClicked" prefHeight="40.0" prefWidth="168.0" text="Run " />
+                                    <Button fx:id="rerunBtn" mnemonicParsing="false" onAction="#rerunBtnClicked" prefHeight="40.0" prefWidth="168.0" text="Rerun " />
+                                    <Button fx:id="exportReportBtn" mnemonicParsing="false" onAction="#exportReportBtnClicked" prefHeight="40.0" prefWidth="168.0" text="Export Report" />
+                                    <Button fx:id="refreshBtn" mnemonicParsing="false" onAction="#refreshBtnClicked" prefHeight="40.0" prefWidth="168.0" text="Refresh" />
+                                    <Button fx:id="runSuspendBtn" mnemonicParsing="false" onAction="#runSuspendBtnClicked" prefHeight="40.0" prefWidth="168.0" text="Suspend" />
+                                 </children>
+                              </VBox>
+                             
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <SplitPane dividerPositions="0.8" orientation="VERTICAL" prefHeight="506.0" prefWidth="586.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="261.0" prefWidth="609.0">
+                                       <children>
+                                          <TableView fx:id="tcTable" editable="true" layoutX="1.0" layoutY="-2.0" prefHeight="363.0" prefWidth="732.0" styleClass="custom-align" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columns>
+                                                <TableColumn prefWidth="33.0">
+                                                   <graphic>
+                                                      <CheckBox mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" />
+                                                   </graphic>
+                                                   <cellValueFactory><PropertyValueFactory property="checked" /></cellValueFactory>
+                                                   <cellFactory><fxviewer.CheckBoxCellFactory /></cellFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="appName" prefWidth="342.0" text="App Name" />
+                                                <TableColumn fx:id="install" prefWidth="100.0" text="Install" />
+                                                <TableColumn fx:id="launch" prefWidth="100.0" text="Launch" />
+                                                <TableColumn fx:id="exploratory" prefWidth="100.0" text="Exploratory" />
+                                                <TableColumn fx:id="close" prefWidth="100.0" text="Close" />
+                                                <TableColumn fx:id="uninstall" prefWidth="100.0" text="Uninstall" />
+                                                <TableColumn fx:id="crash" prefWidth="110.0" text="Crash" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="191.0" prefWidth="609.0">
+                                       <children>
+                                          <TextArea fx:id="console" layoutX="186.0" layoutY="26.0" prefHeight="251.0" prefWidth="609.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

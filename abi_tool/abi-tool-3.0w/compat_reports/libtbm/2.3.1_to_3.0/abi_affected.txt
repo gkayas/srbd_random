@@ -1,0 +1,4 @@
+tbm_backend_free
+tbm_backend_init
+tbm_bo_cache_flush
+tbm_backend_alloc

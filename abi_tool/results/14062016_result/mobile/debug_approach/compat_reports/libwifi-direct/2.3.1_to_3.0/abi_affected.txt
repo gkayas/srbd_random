@@ -1,0 +1,6 @@
+g_client_info
+wifi_direct_set_discovery_state_changed_cb
+wifi_direct_set_peer_found_cb
+wifi_direct_set_p2poem_loglevel
+__wfd_client_print_cmd
+gettid

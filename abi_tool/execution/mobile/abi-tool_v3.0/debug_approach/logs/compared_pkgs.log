@@ -1,0 +1,27 @@
+==============================libaccounts-svc-debuginfo==============================
+libaccounts-svc is not selected for comparision. 
+==============================appcore-widget-debuginfo==============================
+libcapi-appfw-widget-application is selected for comparision. 
+libcapi-appfw-widget-application dump successful for comparision. 
+==============================cairo-debuginfo==============================
+libcairo-gobject is selected for comparision. 
+libcairo-gobject dump successful for comparision. 
+libcairo-script-interpreter is selected for comparision. 
+libcairo-script-interpreter dump successful for comparision. 
+libcairo is selected for comparision. 
+libcairo dump successful for comparision. 
+==============================capi-media-screen-mirroring-debuginfo==============================
+libcapi-media-screen-mirroring is selected for comparision. 
+libcapi-media-screen-mirroring dump successful for comparision. 
+libmiracast_server_lib is selected for comparision. 
+libmiracast_server_lib dump successful for comparision. 
+==============================capi-network-nfc-debuginfo==============================
+libcapi-network-nfc is selected for comparision. 
+libcapi-network-nfc dump successful for comparision. 
+==============================dali-adaptor-debuginfo==============================
+libdali-adaptor is selected for comparision. 
+libdali-adaptor dump successful for comparision. 
+libdali-feedback-plugin is not selected for comparision. 
+==============================libslp-tapi-debuginfo==============================
+libSLP-tapi is selected for comparision. 
+libSLP-tapi dump successful for comparision. 

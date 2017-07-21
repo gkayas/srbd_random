@@ -1,0 +1,339 @@
+Temporary header file '/tmp/UdKBJIK3wJ/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/dali-toolkit.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/builder/builder.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/controls/bloom-view/bloom-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/controls/effects-view/effects-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/controls/magnifier/magnifier.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/controls/page-turn-view/page-turn-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/controls/popup/popup.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/controls/shadow-view/shadow-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/controls/slider/slider.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/controls/super-blur-view/super-blur-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/controls/tool-bar/tool-bar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/accessibility-manager/accessibility-manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/alignment/alignment.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/gaussian-blur-view/gaussian-blur-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/image-view/image-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/scroll-bar/scroll-bar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/scrollable.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/table-view/table-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/scripting/script.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/buttons/button.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/control.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/focus-manager/keyinput-focus-manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-view-declarations.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view-constraints.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view-page-path-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/focus-manager/keyboard-focus-manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/controls/bubble-effect/bubble-emitter.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/controls/page-turn-view/page-factory.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/controls/page-turn-view/page-turn-landscape-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/controls/page-turn-view/page-turn-portrait-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/controls/text-controls/text-selection-popup.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/controls/text-controls/text-selection-toolbar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/scripting/script-plugin.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/alpha-discard-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/bendy-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/blind-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/bouncing-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/carousel-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/displacement-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/dissolve-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/dissolve-local-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/distance-field-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/image-region-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/iris-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/mask-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/mirror-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/motion-blur-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/motion-stretch-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/nine-patch-mask-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/overlay-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/ripple-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/ripple2d-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/shear-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/soft-button-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/spot-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/square-dissolve-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/swirl-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-cross-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-fold-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-wave-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/buttons/check-box-button.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/buttons/radio-button.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/control-impl.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/default-item-layout.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-factory.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-layout.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/text-controls/text-field.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/text-controls/text-label.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/dali-toolkit-version.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/builder/json-parser.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/builder/tree-node.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/shader-effects/quadratic-bezier.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/styling/style-manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/controls/default-controls/solid-color-actor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/enums.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/public-api/text/rendering-backend.h"
+
+  // add namespaces
+  namespace Dali{typedef int tmp_add_type_1;}
+  Dali::tmp_add_type_1 tmp_add_func_1(){return 0;};
+  namespace Dali{namespace AnchorPoint{typedef int tmp_add_type_2;}}
+  Dali::AnchorPoint::tmp_add_type_2 tmp_add_func_2(){return 0;};
+  namespace Dali{namespace BlendingEquation{typedef int tmp_add_type_3;}}
+  Dali::BlendingEquation::tmp_add_type_3 tmp_add_func_3(){return 0;};
+  namespace Dali{namespace BlendingFactor{typedef int tmp_add_type_4;}}
+  Dali::BlendingFactor::tmp_add_type_4 tmp_add_func_4(){return 0;};
+  namespace Dali{namespace BlendingMode{typedef int tmp_add_type_5;}}
+  Dali::BlendingMode::tmp_add_type_5 tmp_add_func_5(){return 0;};
+  namespace Dali{namespace Camera{typedef int tmp_add_type_6;}}
+  Dali::Camera::tmp_add_type_6 tmp_add_func_6(){return 0;};
+  namespace Dali{namespace Color{typedef int tmp_add_type_7;}}
+  Dali::Color::tmp_add_type_7 tmp_add_func_7(){return 0;};
+  namespace Dali{namespace Configuration{typedef int tmp_add_type_8;}}
+  Dali::Configuration::tmp_add_type_8 tmp_add_func_8(){return 0;};
+  namespace Dali{namespace Dimension{typedef int tmp_add_type_9;}}
+  Dali::Dimension::tmp_add_type_9 tmp_add_func_9(){return 0;};
+  namespace Dali{namespace DrawMode{typedef int tmp_add_type_10;}}
+  Dali::DrawMode::tmp_add_type_10 tmp_add_func_10(){return 0;};
+  namespace Dali{namespace FilterMode{typedef int tmp_add_type_11;}}
+  Dali::FilterMode::tmp_add_type_11 tmp_add_func_11(){return 0;};
+  namespace Dali{namespace FittingMode{typedef int tmp_add_type_12;}}
+  Dali::FittingMode::tmp_add_type_12 tmp_add_func_12(){return 0;};
+  namespace Dali{namespace HorizontalAlignment{typedef int tmp_add_type_13;}}
+  Dali::HorizontalAlignment::tmp_add_type_13 tmp_add_func_13(){return 0;};
+  namespace Dali{namespace InputMethod{typedef int tmp_add_type_14;}}
+  Dali::InputMethod::tmp_add_type_14 tmp_add_func_14(){return 0;};
+  namespace Dali{namespace Internal{typedef int tmp_add_type_15;}}
+  Dali::Internal::tmp_add_type_15 tmp_add_func_15(){return 0;};
+  namespace Dali{namespace Internal{namespace Adaptor{typedef int tmp_add_type_16;}}}
+  Dali::Internal::Adaptor::tmp_add_type_16 tmp_add_func_16(){return 0;};
+  namespace Dali{namespace Math{typedef int tmp_add_type_17;}}
+  Dali::Math::tmp_add_type_17 tmp_add_func_17(){return 0;};
+  namespace Dali{namespace ParentOrigin{typedef int tmp_add_type_18;}}
+  Dali::ParentOrigin::tmp_add_type_18 tmp_add_func_18(){return 0;};
+  namespace Dali{namespace Pixel{typedef int tmp_add_type_19;}}
+  Dali::Pixel::tmp_add_type_19 tmp_add_func_19(){return 0;};
+  namespace Dali{namespace PointState{typedef int tmp_add_type_20;}}
+  Dali::PointState::tmp_add_type_20 tmp_add_func_20(){return 0;};
+  namespace Dali{namespace PropertyTypes{typedef int tmp_add_type_21;}}
+  Dali::PropertyTypes::tmp_add_type_21 tmp_add_func_21(){return 0;};
+  namespace Dali{namespace Random{typedef int tmp_add_type_22;}}
+  Dali::Random::tmp_add_type_22 tmp_add_func_22(){return 0;};
+  namespace Dali{namespace RenderBuffer{typedef int tmp_add_type_23;}}
+  Dali::RenderBuffer::tmp_add_type_23 tmp_add_func_23(){return 0;};
+  namespace Dali{namespace ResizePolicy{typedef int tmp_add_type_24;}}
+  Dali::ResizePolicy::tmp_add_type_24 tmp_add_func_24(){return 0;};
+  namespace Dali{namespace SamplingMode{typedef int tmp_add_type_25;}}
+  Dali::SamplingMode::tmp_add_type_25 tmp_add_func_25(){return 0;};
+  namespace Dali{namespace SizeScalePolicy{typedef int tmp_add_type_26;}}
+  Dali::SizeScalePolicy::tmp_add_type_26 tmp_add_func_26(){return 0;};
+  namespace Dali{namespace StyleChange{typedef int tmp_add_type_27;}}
+  Dali::StyleChange::tmp_add_type_27 tmp_add_func_27(){return 0;};
+  namespace Dali{namespace Toolkit{typedef int tmp_add_type_28;}}
+  Dali::Toolkit::tmp_add_type_28 tmp_add_func_28(){return 0;};
+  namespace Dali{namespace Toolkit{namespace ControlOrientation{typedef int tmp_add_type_29;}}}
+  Dali::Toolkit::ControlOrientation::tmp_add_type_29 tmp_add_func_29(){return 0;};
+  namespace Dali{namespace Toolkit{namespace DefaultItemLayout{typedef int tmp_add_type_30;}}}
+  Dali::Toolkit::DefaultItemLayout::tmp_add_type_30 tmp_add_func_30(){return 0;};
+  namespace Dali{namespace Toolkit{namespace Internal{typedef int tmp_add_type_31;}}}
+  Dali::Toolkit::Internal::tmp_add_type_31 tmp_add_func_31(){return 0;};
+  namespace Dali{namespace Toolkit{namespace NinePatchMaskEffect{typedef int tmp_add_type_32;}}}
+  Dali::Toolkit::NinePatchMaskEffect::tmp_add_type_32 tmp_add_func_32(){return 0;};
+  namespace Dali{namespace Toolkit{namespace Text{typedef int tmp_add_type_33;}}}
+  Dali::Toolkit::Text::tmp_add_type_33 tmp_add_func_33(){return 0;};
+  namespace Dali{namespace VerticalAlignment{typedef int tmp_add_type_34;}}
+  Dali::VerticalAlignment::tmp_add_type_34 tmp_add_func_34(){return 0;};
+  namespace Dali{namespace WeightObject{typedef int tmp_add_type_35;}}
+  Dali::WeightObject::tmp_add_type_35 tmp_add_func_35(){return 0;};
+  namespace Dali{namespace WrapMode{typedef int tmp_add_type_36;}}
+  Dali::WrapMode::tmp_add_type_36 tmp_add_func_36(){return 0;};
+
+  // add classes
+  pthread_attr_t* tmp_add_class_0;
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/UdKBJIK3wJ/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/UdKBJIK3wJ/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/dali-toolkit.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/builder/builder.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/controls/bloom-view/bloom-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/controls/effects-view/effects-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/controls/magnifier/magnifier.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/controls/popup/popup.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/controls/renderer-factory/renderer-factory.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/controls/shadow-view/shadow-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/controls/super-blur-view/super-blur-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/controls/tool-bar/tool-bar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/image-atlas/image-atlas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/accessibility-manager/accessibility-manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/alignment/alignment.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/flex-container/flex-container.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/gaussian-blur-view/gaussian-blur-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/image-view/image-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/model3d-view/model3d-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/page-turn-view/page-turn-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/scroll-bar/scroll-bar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/scrollable.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/slider/slider.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/table-view/table-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/video-view/video-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/scripting/script.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/control.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/controls/popup/confirmation-popup.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/focus-manager/keyinput-focus-manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/doc/dali-toolkit-doc.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-view-declarations.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view-constraints.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view-page-path-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/focus-manager/keyboard-focus-manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/controls/bubble-effect/bubble-emitter.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/controls/control-depth-index-ranges.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/controls/renderer-factory/control-renderer.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/controls/text-controls/text-selection-popup.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/controls/text-controls/text-selection-toolbar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/scripting/script-plugin.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/alpha-discard-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/bendy-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/blind-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/bouncing-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/carousel-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/displacement-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/dissolve-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/dissolve-local-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/distance-field-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/image-region-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/iris-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/mask-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/mirror-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/motion-blur-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/motion-stretch-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/overlay-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/ripple-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/ripple2d-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/shear-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/soft-button-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/spot-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/square-dissolve-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/swirl-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-cross-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-fold-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-wave-effect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/buttons/check-box-button.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/buttons/radio-button.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/control-impl.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/page-turn-view/page-factory.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/page-turn-view/page-turn-landscape-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/page-turn-view/page-turn-portrait-view.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/default-item-layout.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-factory.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-layout.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/text-controls/text-editor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/text-controls/text-field.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/text-controls/text-label.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/dali-toolkit-version.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/builder/json-parser.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/builder/tree-node.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/devel-api/shader-effects/quadratic-bezier.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/controls/default-controls/solid-color-actor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/enums.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/styling/style-manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/dali-toolkit/public-api/text/rendering-backend.h"
+
+  // add namespaces
+  namespace Dali{typedef int tmp_add_type_1;}
+  Dali::tmp_add_type_1 tmp_add_func_1(){return 0;};
+  namespace Dali{namespace AnchorPoint{typedef int tmp_add_type_2;}}
+  Dali::AnchorPoint::tmp_add_type_2 tmp_add_func_2(){return 0;};
+  namespace Dali{namespace BlendingEquation{typedef int tmp_add_type_3;}}
+  Dali::BlendingEquation::tmp_add_type_3 tmp_add_func_3(){return 0;};
+  namespace Dali{namespace BlendingFactor{typedef int tmp_add_type_4;}}
+  Dali::BlendingFactor::tmp_add_type_4 tmp_add_func_4(){return 0;};
+  namespace Dali{namespace BlendingMode{typedef int tmp_add_type_5;}}
+  Dali::BlendingMode::tmp_add_type_5 tmp_add_func_5(){return 0;};
+  namespace Dali{namespace Camera{typedef int tmp_add_type_6;}}
+  Dali::Camera::tmp_add_type_6 tmp_add_func_6(){return 0;};
+  namespace Dali{namespace Color{typedef int tmp_add_type_7;}}
+  Dali::Color::tmp_add_type_7 tmp_add_func_7(){return 0;};
+  namespace Dali{namespace Configuration{typedef int tmp_add_type_8;}}
+  Dali::Configuration::tmp_add_type_8 tmp_add_func_8(){return 0;};
+  namespace Dali{namespace Dimension{typedef int tmp_add_type_9;}}
+  Dali::Dimension::tmp_add_type_9 tmp_add_func_9(){return 0;};
+  namespace Dali{namespace DrawMode{typedef int tmp_add_type_10;}}
+  Dali::DrawMode::tmp_add_type_10 tmp_add_func_10(){return 0;};
+  namespace Dali{namespace FilterMode{typedef int tmp_add_type_11;}}
+  Dali::FilterMode::tmp_add_type_11 tmp_add_func_11(){return 0;};
+  namespace Dali{namespace FittingMode{typedef int tmp_add_type_12;}}
+  Dali::FittingMode::tmp_add_type_12 tmp_add_func_12(){return 0;};
+  namespace Dali{namespace HorizontalAlignment{typedef int tmp_add_type_13;}}
+  Dali::HorizontalAlignment::tmp_add_type_13 tmp_add_func_13(){return 0;};
+  namespace Dali{namespace InputMethod{typedef int tmp_add_type_14;}}
+  Dali::InputMethod::tmp_add_type_14 tmp_add_func_14(){return 0;};
+  namespace Dali{namespace Internal{typedef int tmp_add_type_15;}}
+  Dali::Internal::tmp_add_type_15 tmp_add_func_15(){return 0;};
+  namespace Dali{namespace Internal{namespace Adaptor{typedef int tmp_add_type_16;}}}
+  Dali::Internal::Adaptor::tmp_add_type_16 tmp_add_func_16(){return 0;};
+  namespace Dali{namespace Math{typedef int tmp_add_type_17;}}
+  Dali::Math::tmp_add_type_17 tmp_add_func_17(){return 0;};
+  namespace Dali{namespace ParentOrigin{typedef int tmp_add_type_18;}}
+  Dali::ParentOrigin::tmp_add_type_18 tmp_add_func_18(){return 0;};
+  namespace Dali{namespace Pixel{typedef int tmp_add_type_19;}}
+  Dali::Pixel::tmp_add_type_19 tmp_add_func_19(){return 0;};
+  namespace Dali{namespace PointState{typedef int tmp_add_type_20;}}
+  Dali::PointState::tmp_add_type_20 tmp_add_func_20(){return 0;};
+  namespace Dali{namespace PropertyTypes{typedef int tmp_add_type_21;}}
+  Dali::PropertyTypes::tmp_add_type_21 tmp_add_func_21(){return 0;};
+  namespace Dali{namespace Random{typedef int tmp_add_type_22;}}
+  Dali::Random::tmp_add_type_22 tmp_add_func_22(){return 0;};
+  namespace Dali{namespace RenderBuffer{typedef int tmp_add_type_23;}}
+  Dali::RenderBuffer::tmp_add_type_23 tmp_add_func_23(){return 0;};
+  namespace Dali{namespace ResizePolicy{typedef int tmp_add_type_24;}}
+  Dali::ResizePolicy::tmp_add_type_24 tmp_add_func_24(){return 0;};
+  namespace Dali{namespace SamplingMode{typedef int tmp_add_type_25;}}
+  Dali::SamplingMode::tmp_add_type_25 tmp_add_func_25(){return 0;};
+  namespace Dali{namespace SizeScalePolicy{typedef int tmp_add_type_26;}}
+  Dali::SizeScalePolicy::tmp_add_type_26 tmp_add_func_26(){return 0;};
+  namespace Dali{namespace StyleChange{typedef int tmp_add_type_27;}}
+  Dali::StyleChange::tmp_add_type_27 tmp_add_func_27(){return 0;};
+  namespace Dali{namespace Toolkit{typedef int tmp_add_type_28;}}
+  Dali::Toolkit::tmp_add_type_28 tmp_add_func_28(){return 0;};
+  namespace Dali{namespace Toolkit{namespace ControlOrientation{typedef int tmp_add_type_29;}}}
+  Dali::Toolkit::ControlOrientation::tmp_add_type_29 tmp_add_func_29(){return 0;};
+  namespace Dali{namespace Toolkit{namespace DefaultItemLayout{typedef int tmp_add_type_30;}}}
+  Dali::Toolkit::DefaultItemLayout::tmp_add_type_30 tmp_add_func_30(){return 0;};
+  namespace Dali{namespace Toolkit{namespace DepthIndex{typedef int tmp_add_type_31;}}}
+  Dali::Toolkit::DepthIndex::tmp_add_type_31 tmp_add_func_31(){return 0;};
+  namespace Dali{namespace Toolkit{namespace Internal{typedef int tmp_add_type_32;}}}
+  Dali::Toolkit::Internal::tmp_add_type_32 tmp_add_func_32(){return 0;};
+  namespace Dali{namespace Toolkit{namespace Text{typedef int tmp_add_type_33;}}}
+  Dali::Toolkit::Text::tmp_add_type_33 tmp_add_func_33(){return 0;};
+  namespace Dali{namespace VerticalAlignment{typedef int tmp_add_type_34;}}
+  Dali::VerticalAlignment::tmp_add_type_34 tmp_add_func_34(){return 0;};
+  namespace Dali{namespace WeightObject{typedef int tmp_add_type_35;}}
+  Dali::WeightObject::tmp_add_type_35 tmp_add_func_35(){return 0;};
+  namespace Dali{namespace WrapMode{typedef int tmp_add_type_36;}}
+  Dali::WrapMode::tmp_add_type_36 tmp_add_func_36(){return 0;};
+
+  // add classes
+  pthread_attr_t* tmp_add_class_0;
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/UdKBJIK3wJ/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+

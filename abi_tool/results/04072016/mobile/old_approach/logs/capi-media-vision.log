@@ -1,0 +1,37 @@
+Temporary header file '/tmp/cjHyFmfDdL/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/media/mv_barcode.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/media/mv_barcode_detect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/media/mv_barcode_generate.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/media/mv_barcode_type.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/media/mv_common.h"
+
+  // add classes
+  _tbm_surface_info* tmp_add_class_0;
+  _tbm_surface_plane* tmp_add_class_1;
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/cjHyFmfDdL/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/media -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/media
+
+Temporary header file '/tmp/cjHyFmfDdL/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/media/mv_barcode.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/media/mv_barcode_detect.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/media/mv_barcode_generate.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/media/mv_barcode_type.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/media/mv_common.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/media/mv_face.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/media/mv_face_type.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/media/mv_image.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/media/mv_image_type.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/media/mv_surveillance.h"
+
+  // add classes
+  _tbm_surface_info* tmp_add_class_0;
+  _tbm_surface_plane* tmp_add_class_1;
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/cjHyFmfDdL/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/media -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/media
+

@@ -1,0 +1,78 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+
+
+
+public class Main {
+	public  static void main(String [] args){
+		
+		PrintWriter pwVerdict;
+		PrintWriter pwAffect;
+		try {
+			pwVerdict = new PrintWriter(new File("verdict.log"));
+			pwAffect = new PrintWriter(new File("affect.log"));
+			
+			
+			if(args.length < 1){
+				pwVerdict.write("-1");
+				pwAffect.write("-1");
+			}
+			String filePath = "./compat_reports/lib"+args[0] + "/2.3_to_2.4/compat_report.html";
+			Scanner sc = null;
+			try{
+			    sc = new Scanner(new File(filePath));
+				String valuesV[] = sc.nextLine().split(";");
+				String valuesA[] = sc.nextLine().split(";");
+				for (String string : valuesV) {
+					String cut [] = string.split(":");
+					String key = cut[0];
+					String valString = cut[1];
+					if(key.contains("verdict")){
+						if(valString.equals("incompatible")){
+							pwVerdict.write("0");
+						}else{
+							pwVerdict.write("1");
+						}
+					}
+					if(key.contains("affected")){
+						pwAffect.write(valString);
+					}
+				}
+				
+				for (String string : valuesA) {
+					String cut [] = string.split(":");
+					String key = cut[0];
+					String valString = cut[1];
+					if(key.contains("verdict")){
+						if(valString.equals("incompatible")){
+							pwVerdict.write(" 0");
+						}else{
+							pwVerdict.write(" 1");
+						}
+					}
+					if(key.contains("affected")){
+						pwAffect.write(" "+valString);
+					}
+				}
+				
+			}catch(FileNotFoundException e){
+				pwVerdict.write("-1");
+				pwAffect.write("-1");
+			}
+			
+			if(sc!=null){
+				sc.close();
+			}
+			
+			pwVerdict.flush();
+			pwAffect.flush();
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("Wrong Paths!");
+		}
+		
+	}
+}

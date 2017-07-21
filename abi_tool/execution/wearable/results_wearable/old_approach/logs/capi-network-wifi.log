@@ -1,0 +1,359 @@
+Temporary header file '/tmp/FehhHu8l29/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/wifi-direct/wifi-direct.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/network/wifi.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/FehhHu8l29/dump1.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/FehhHu8l29/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/wifi-direct/wifi-direct.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/wifi-direct/wifi-direct-internal.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi-manager.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/FehhHu8l29/dump2.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /tmp/FehhHu8l29/dump2.h:5:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:433:27: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_initialize(void) TIZEN_DEPRECATED_API;
+                           ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:445:29: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_deinitialize(void) TIZEN_DEPRECATED_API;
+                             ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:479:64: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_activate(wifi_activated_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:503:88: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_activate_with_wifi_picker_tested(wifi_activated_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                        ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:526:68: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_deactivate(wifi_deactivated_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                    ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:543:40: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_is_activated(bool* activated) TIZEN_DEPRECATED_API;
+                                        ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:557:46: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_get_mac_address(char** mac_address) TIZEN_DEPRECATED_API;
+                                              ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:575:50: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_get_network_interface_name(char** name) TIZEN_DEPRECATED_API;
+                                                  ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:596:64: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_scan(wifi_scan_finished_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:618:95: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_scan_specific_ap(const char* essid, wifi_scan_finished_cb callback, void* user_data) TIZEN_DEPRECATED_API;
+                                                                                               ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:636:42: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_get_connected_ap(wifi_ap_h* ap) TIZEN_DEPRECATED_API;
+                                          ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:654:72: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_foreach_found_aps(wifi_found_ap_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                        ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:673:81: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_foreach_found_specific_aps(wifi_found_ap_cb callback, void* user_data) TIZEN_DEPRECATED_API;
+                                                                                 ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:700:77: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_connect(wifi_ap_h ap, wifi_connected_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                             ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:727:83: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_disconnect(wifi_ap_h ap, wifi_disconnected_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                   ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:754:88: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_connect_by_wps_pbc(wifi_ap_h ap, wifi_connected_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                        ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:781:105: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_connect_by_wps_pin(wifi_ap_h ap, const char *pin, wifi_connected_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                                         ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:802:34: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_forget_ap(wifi_ap_h ap) TIZEN_DEPRECATED_API;
+                                  ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:828:74: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_get_connection_state(wifi_connection_state_e* connection_state) TIZEN_DEPRECATED_API;
+                                                                          ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:842:94: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_set_device_state_changed_cb(wifi_device_state_changed_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                              ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:853:46: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_unset_device_state_changed_cb(void) TIZEN_DEPRECATED_API;
+                                              ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:867:82: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_set_background_scan_cb(wifi_scan_finished_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                  ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:878:41: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_unset_background_scan_cb(void) TIZEN_DEPRECATED_API;
+                                         ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:892:102: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_set_connection_state_changed_cb(wifi_connection_state_changed_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                                      ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:903:50: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_unset_connection_state_changed_cb(void) TIZEN_DEPRECATED_API;
+                                                  ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:917:90: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_set_rssi_level_changed_cb(wifi_rssi_level_changed_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                          ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:928:44: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_unset_rssi_level_changed_cb(void) TIZEN_DEPRECATED_API;
+                                            ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:955:54: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_create(const char* essid, wifi_ap_h* ap) TIZEN_DEPRECATED_API;
+                                                      ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:971:61: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_hidden_create(const char* essid, wifi_ap_h* ap) TIZEN_DEPRECATED_API;
+                                                             ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:984:35: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_destroy(wifi_ap_h ap) TIZEN_DEPRECATED_API;
+                                   ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1000:59: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_clone(wifi_ap_h* cloned_ap, wifi_ap_h origin) TIZEN_DEPRECATED_API;
+                                                           ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1018:35: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_refresh(wifi_ap_h ap) TIZEN_DEPRECATED_API;
+                                   ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1043:51: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_essid(wifi_ap_h ap, char** essid) TIZEN_DEPRECATED_API;
+                                                   ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1058:51: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_bssid(wifi_ap_h ap, char** bssid) TIZEN_DEPRECATED_API;
+                                                   ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1072:47: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_rssi(wifi_ap_h ap, int* rssi) TIZEN_DEPRECATED_API;
+                                               ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1086:57: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_frequency(wifi_ap_h ap, int* frequency) TIZEN_DEPRECATED_API;
+                                                         ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1100:57: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_max_speed(wifi_ap_h ap, int* max_speed) TIZEN_DEPRECATED_API;
+                                                         ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1115:55: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_is_favorite(wifi_ap_h ap, bool* favorite) TIZEN_DEPRECATED_API;
+                                                       ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1130:57: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_is_passpoint(wifi_ap_h ap, bool* passpoint) TIZEN_DEPRECATED_API;
+                                                         ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1144:80: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_connection_state(wifi_ap_h ap, wifi_connection_state_e* state) TIZEN_DEPRECATED_API;
+                                                                                ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1160:113: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_ip_config_type(wifi_ap_h ap, wifi_address_family_e address_family, wifi_ip_config_type_e* type) TIZEN_DEPRECATED_API;
+                                                                                                                 ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1183:112: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_ip_config_type(wifi_ap_h ap, wifi_address_family_e address_family, wifi_ip_config_type_e type) TIZEN_DEPRECATED_API;
+                                                                                                                ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1200:99: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_ip_address(wifi_ap_h ap, wifi_address_family_e address_family, char** ip_address) TIZEN_DEPRECATED_API;
+                                                                                                   ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1221:104: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_ip_address(wifi_ap_h ap, wifi_address_family_e address_family, const char* ip_address) TIZEN_DEPRECATED_API;
+                                                                                                        ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1238:101: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_subnet_mask(wifi_ap_h ap, wifi_address_family_e address_family, char** subnet_mask) TIZEN_DEPRECATED_API;
+                                                                                                     ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1259:106: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_subnet_mask(wifi_ap_h ap, wifi_address_family_e address_family, const char* subnet_mask) TIZEN_DEPRECATED_API;
+                                                                                                          ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1276:109: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_gateway_address(wifi_ap_h ap, wifi_address_family_e address_family, char** gateway_address) TIZEN_DEPRECATED_API;
+                                                                                                             ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1298:114: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_gateway_address(wifi_ap_h ap, wifi_address_family_e address_family, const char* gateway_address) TIZEN_DEPRECATED_API;
+                                                                                                                  ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1315:105: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_proxy_address(wifi_ap_h ap, wifi_address_family_e address_family, char** proxy_address) TIZEN_DEPRECATED_API;
+                                                                                                         ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1337:110: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_proxy_address(wifi_ap_h ap, wifi_address_family_e address_family, const char* proxy_address) TIZEN_DEPRECATED_API;
+                                                                                                              ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1351:67: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_proxy_type(wifi_ap_h ap, wifi_proxy_type_e* type) TIZEN_DEPRECATED_API;
+                                                                   ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1371:72: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_proxy_type(wifi_ap_h ap, wifi_proxy_type_e proxy_type) TIZEN_DEPRECATED_API;
+                                                                        ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1389:112: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_dns_address(wifi_ap_h ap, int order, wifi_address_family_e address_family, char** dns_address) TIZEN_DEPRECATED_API;
+                                                                                                                ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1414:117: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_dns_address(wifi_ap_h ap, int order, wifi_address_family_e address_family, const char* dns_address) TIZEN_DEPRECATED_API;
+                                                                                                                     ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1438:73: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_security_type(wifi_ap_h ap, wifi_security_type_e* type) TIZEN_DEPRECATED_API;
+                                                                         ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1452:72: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_security_type(wifi_ap_h ap, wifi_security_type_e type) TIZEN_DEPRECATED_API;
+                                                                        ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1466:77: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_encryption_type(wifi_ap_h ap, wifi_encryption_type_e* type) TIZEN_DEPRECATED_API;
+                                                                             ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1480:76: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_encryption_type(wifi_ap_h ap, wifi_encryption_type_e type) TIZEN_DEPRECATED_API;
+                                                                            ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1496:66: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_is_passphrase_required(wifi_ap_h ap, bool* required) TIZEN_DEPRECATED_API;
+                                                                  ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1510:66: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_passphrase(wifi_ap_h ap, const char* passphrase) TIZEN_DEPRECATED_API;
+                                                                  ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1527:61: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_is_wps_supported(wifi_ap_h ap, bool* supported) TIZEN_DEPRECATED_API;
+                                                             ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1558:91: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_eap_passphrase(wifi_ap_h ap, const char* user_name, const char* password) TIZEN_DEPRECATED_API;
+                                                                                           ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1577:87: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_eap_passphrase(wifi_ap_h ap, char** user_name, bool* is_password_set) TIZEN_DEPRECATED_API;
+                                                                                       ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1594:61: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_eap_ca_cert_file(wifi_ap_h ap, char** file) TIZEN_DEPRECATED_API;
+                                                             ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1609:66: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_eap_ca_cert_file(wifi_ap_h ap, const char* file) TIZEN_DEPRECATED_API;
+                                                                  ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1626:65: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_eap_client_cert_file(wifi_ap_h ap, char** file) TIZEN_DEPRECATED_API;
+                                                                 ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1641:70: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_eap_client_cert_file(wifi_ap_h ap, const char* file) TIZEN_DEPRECATED_API;
+                                                                      ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1658:65: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_eap_private_key_file(wifi_ap_h ap, char** file) TIZEN_DEPRECATED_API;
+                                                                 ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1674:92: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_eap_private_key_info(wifi_ap_h ap, const char* file, const char* password) TIZEN_DEPRECATED_API;
+                                                                                            ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1689:63: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_eap_type(wifi_ap_h ap, wifi_eap_type_e* type) TIZEN_DEPRECATED_API;
+                                                               ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1703:62: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_eap_type(wifi_ap_h ap, wifi_eap_type_e type) TIZEN_DEPRECATED_API;
+                                                              ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1718:73: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_get_eap_auth_type(wifi_ap_h ap, wifi_eap_auth_type_e* type) TIZEN_DEPRECATED_API;
+                                                                         ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1732:72: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_ap_set_eap_auth_type(wifi_ap_h ap, wifi_eap_auth_type_e type) TIZEN_DEPRECATED_API;
+                                                                        ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1763:125: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_create(const char *name, const char *passphrase, wifi_security_type_e security_type, wifi_config_h *config) TIZEN_DEPRECATED_API;
+                                                                                                                             ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1782:75: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_clone(wifi_config_h origin, wifi_config_h *cloned_config) TIZEN_DEPRECATED_API;
+                                                                           ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1799:47: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_destroy(wifi_config_h config) TIZEN_DEPRECATED_API;
+                                               ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1818:58: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_save_configuration(wifi_config_h config) TIZEN_DEPRECATED_API;
+                                                          ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1838:46: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_remove(wifi_config_h config) TIZEN_DEPRECATED_API;
+                                              ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1860:86: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_foreach_configuration(wifi_config_list_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                      ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1878:61: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_get_name(wifi_config_h config, char **name) TIZEN_DEPRECATED_API;
+                                                             ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1894:94: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_get_security_type(wifi_config_h config, wifi_security_type_e *security_type) TIZEN_DEPRECATED_API;
+                                                                                              ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1915:122: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_set_proxy_address(wifi_config_h config, wifi_address_family_e address_family, const char *proxy_address) TIZEN_DEPRECATED_API;
+                                                                                                                          ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1934:118: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_get_proxy_address(wifi_config_h config, wifi_address_family_e *address_family, char **proxy_address) TIZEN_DEPRECATED_API;
+                                                                                                                      ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1953:78: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_set_hidden_ap_property(wifi_config_h config, bool is_hidden) TIZEN_DEPRECATED_API;
+                                                                              ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1969:79: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_get_hidden_ap_property(wifi_config_h config, bool *is_hidden) TIZEN_DEPRECATED_API;
+                                                                               ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:1984:93: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_get_eap_anonymous_identity(wifi_config_h config, char** anonymous_identity) TIZEN_DEPRECATED_API;
+                                                                                             ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2001:98: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_set_eap_anonymous_identity(wifi_config_h config, const char* anonymous_identity) TIZEN_DEPRECATED_API;
+                                                                                                  ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2020:76: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_get_eap_ca_cert_file(wifi_config_h config, char** ca_cert) TIZEN_DEPRECATED_API;
+                                                                            ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2041:81: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_set_eap_ca_cert_file(wifi_config_h config, const char* ca_cert) TIZEN_DEPRECATED_API;
+                                                                                 ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2056:84: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_get_eap_client_cert_file(wifi_config_h config, char** client_cert) TIZEN_DEPRECATED_API;
+                                                                                    ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2074:114: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_set_eap_client_cert_file(wifi_config_h config, const char* private_key, const char* client_cert) TIZEN_DEPRECATED_API;
+                                                                                                                  ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2089:73: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_get_eap_identity(wifi_config_h config, char** identity) TIZEN_DEPRECATED_API;
+                                                                         ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2106:78: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_set_eap_identity(wifi_config_h config, const char* identity) TIZEN_DEPRECATED_API;
+                                                                              ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2120:79: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_get_eap_type(wifi_config_h config, wifi_eap_type_e *eap_type) TIZEN_DEPRECATED_API;
+                                                                               ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2137:78: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_set_eap_type(wifi_config_h config, wifi_eap_type_e eap_type) TIZEN_DEPRECATED_API;
+                                                                              ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2151:94: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_get_eap_auth_type(wifi_config_h config, wifi_eap_auth_type_e* eap_auth_type) TIZEN_DEPRECATED_API;
+                                                                                              ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2168:93: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_set_eap_auth_type(wifi_config_h config, wifi_eap_auth_type_e eap_auth_type) TIZEN_DEPRECATED_API;
+                                                                                             ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2183:83: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_get_eap_subject_match(wifi_config_h config, char** subject_match) TIZEN_DEPRECATED_API;
+                                                                                   ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2200:88: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_config_set_eap_subject_match(wifi_config_h config, const char* subject_match) TIZEN_DEPRECATED_API;
+                                                                                        ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2251:53: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_tdls_disconnect(const char* peer_mac_addr) TIZEN_DEPRECATED_API;
+                                                     ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2272:56: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_tdls_get_connected_peer(char** peer_mac_addr) TIZEN_DEPRECATED_API;
+                                                        ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2288:90: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_tdls_set_state_changed_cb(wifi_tdls_state_changed_cb callback, void* user_data) TIZEN_DEPRECATED_API;
+                                                                                          ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi.h:2300:44: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int wifi_tdls_unset_state_changed_cb(void) TIZEN_DEPRECATED_API;
+                                            ^
+In file included from /tmp/FehhHu8l29/dump2.h:6:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi-manager.h:51:40: error: ‘TIZEN_ERROR_WIFI_MANAGER’ was not declared in this scope
+  WIFI_MANAGER_ERROR_OPERATION_FAILED = TIZEN_ERROR_WIFI_MANAGER|0x01, /**< Operation failed */
+                                        ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi-manager.h:52:37: error: ‘TIZEN_ERROR_WIFI_MANAGER’ was not declared in this scope
+  WIFI_MANAGER_ERROR_NO_CONNECTION = TIZEN_ERROR_WIFI_MANAGER|0x02,  /**< There is no connected AP */
+                                     ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi-manager.h:54:38: error: ‘TIZEN_ERROR_WIFI_MANAGER’ was not declared in this scope
+  WIFI_MANAGER_ERROR_ALREADY_EXISTS = TIZEN_ERROR_WIFI_MANAGER|0x03,  /**< Already exists */
+                                      ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi-manager.h:55:41: error: ‘TIZEN_ERROR_WIFI_MANAGER’ was not declared in this scope
+  WIFI_MANAGER_ERROR_OPERATION_ABORTED = TIZEN_ERROR_WIFI_MANAGER|0x04, /**< Operation is aborted */
+                                         ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi-manager.h:56:35: error: ‘TIZEN_ERROR_WIFI_MANAGER’ was not declared in this scope
+  WIFI_MANAGER_ERROR_DHCP_FAILED = TIZEN_ERROR_WIFI_MANAGER|0x05,   /**< DHCP failed */
+                                   ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi-manager.h:57:35: error: ‘TIZEN_ERROR_WIFI_MANAGER’ was not declared in this scope
+  WIFI_MANAGER_ERROR_INVALID_KEY = TIZEN_ERROR_WIFI_MANAGER|0x06,   /**< Invalid key */
+                                   ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi-manager.h:58:32: error: ‘TIZEN_ERROR_WIFI_MANAGER’ was not declared in this scope
+  WIFI_MANAGER_ERROR_NO_REPLY = TIZEN_ERROR_WIFI_MANAGER|0x07,   /**< No reply */
+                                ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi-manager.h:59:43: error: ‘TIZEN_ERROR_WIFI_MANAGER’ was not declared in this scope
+  WIFI_MANAGER_ERROR_SECURITY_RESTRICTED = TIZEN_ERROR_WIFI_MANAGER|0x08, /**< Restricted by security system policy */
+                                           ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/network/wifi-manager.h:60:43: error: ‘TIZEN_ERROR_WIFI_MANAGER’ was not declared in this scope
+  WIFI_MANAGER_ERROR_ALREADY_INITIALIZED = TIZEN_ERROR_WIFI_MANAGER|0x09, /**< Already initialized */
+                                           ^
+

@@ -1,0 +1,34 @@
+package refapp;
+
+import java.awt.List;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.lang.model.element.Element;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.*;
+import org.jsoup.select.Elements;
+
+public class JsoupXMLParser {
+
+	public static ArrayList<AppInfo> parseXML(String filePath) {
+		ArrayList<AppInfo> appInfoList = new ArrayList<AppInfo>();
+		try {
+			Document doc = Jsoup.parse(new File(filePath), "UTF-8");
+			Elements apps = doc.select("app");
+			
+			for (org.jsoup.nodes.Element app : apps) {
+				String name = app.
+			}
+			
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+}

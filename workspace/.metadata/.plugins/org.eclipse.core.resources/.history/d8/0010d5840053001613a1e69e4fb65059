@@ -1,0 +1,106 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import com.hp.gagawa.java.elements.Body;
+import com.hp.gagawa.java.elements.H1;
+import com.hp.gagawa.java.elements.Head;
+import com.hp.gagawa.java.elements.Html;
+import com.hp.gagawa.java.elements.Table;
+import com.hp.gagawa.java.elements.Td;
+import com.hp.gagawa.java.elements.Text;
+import com.hp.gagawa.java.elements.Title;
+import com.hp.gagawa.java.elements.Tr;
+
+public class Main {
+	static String SOURCE_XML_PATH = "tmp_results/results.junit.xml";
+	 
+	
+	public static void main(String [] args) {
+		try {
+			Document doc = Jsoup.parse(new File(SOURCE_XML_PATH), "UTF-8");
+			Elements elements = doc.select("testcase");
+			for (Element element : elements) {
+//				System.out.println("Name: "+element.attr("name") + " Time: "+ element.attr("time"));
+				Elements children = element.children();
+				if(children.size() > 0) {
+//					System.out.println("FAILED MEG:");
+					for (Element child : children) {
+//						System.out.println(child.attr("message"));
+					}
+				}
+//				System.out.println("########################################");
+			}
+			
+			Html html = new Html();
+
+			Head head = new Head();
+			Title title = new Title();
+			
+			title.appendChild( new Text("SDK Automation Report.") );
+			head.appendChild( title );
+			
+			Body body = new Body();
+			
+			html.appendChild( body );
+			
+			H1 h1 = new H1();
+			h1.appendChild( new Text("Failed TCs") );
+			body.appendChild( h1 );
+			Table tableFailed = new Table();
+			tableFailed.setCSSClass("table { "+
+"color: #333;"+
+"font-family: Helvetica, Arial, sans-serif;"+
+"width: 640px; "+
+"border-collapse:" +
+"collapse; border-spacing: 0;"+ 
+"}");
+			tableFailed.setStyle("color: #333;font-family: Helvetica, Arial, sans-serif;width: 640px;border-collapse: collapse; border-spacing: 0;");
+			
+			Tr row = new Tr();
+			row.setStyle(" border: 1px solid #CCC; ");
+			
+			Td col1 = new Td();
+			col1.appendChild(new Text("CELL1"));
+			col1.setStyle(" border: 1px solid #CCC; ");
+			row.appendChild(col1);
+			
+			Td col2 = new Td();
+			col2.appendChild(new Text("CELL2"));
+			col2.setStyle(" border: 1px solid #CCC; ");
+			row.appendChild(col2);
+			
+			tableFailed.appendChild(row);
+			
+			body.appendChild(tableFailed);
+			
+			writeToFile(html.write(), "output.html");
+			System.out.println("DONE");
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private static void writeToFile(String content, String path) {
+		try {
+			PrintWriter pw = new PrintWriter(new FileWriter(new File(path)));
+			
+			pw.write(content);
+			pw.flush();
+			pw.close();
+			
+			
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+}

@@ -1,0 +1,46 @@
+package application;
+
+import javax.swing.JTextArea;
+import javax.swing.SwingWorker;
+
+public class UploadTask extends SwingWorker<String, String> {
+    private JTextArea textArea;
+
+    // A calling application must pass a JTextArea
+    public UploadTask(JTextArea textArea) {
+        this.textArea = textArea;
+    }
+
+    @Override
+    protected String doInBackground() throws IOException {
+        publish("Getting Ready to upload files"); // public will invoke process - which will be update JtextArea
+           Thread.sleep(1000);
+            publish("Categories retrieved from Cache.");
+           Thread.sleep(1000);
+            publish("FTP Connection established");
+           Thread.sleep(1000);
+            publish("Entered incoming folder");
+           Thread.sleep(1000);
+            publish("--------------------------------");
+           Thread.sleep(1000);
+        return null;
+    }
+
+    @Override
+    protected void done() {
+        if (isCancelled())
+            publish("Cancelled !");
+            else
+        publish("Done !");
+    }
+
+
+    @Override
+    protected void process(List<String> strings) {
+        StringBuilder strBuilder = new StringBuilder();
+        for (String str : strings) {
+                strBuilder.append(str).append('\n');
+            }
+        textArea.append(strBuilder.toString());
+    }
+}

@@ -1,0 +1,78 @@
+import java.util.ArrayList;
+
+public class TCSuite {
+	private String name;
+	private String platform;
+	private String profile;
+	private String module;
+	private ArrayList<TestCase> tcList;
+	
+	public TCSuite() {
+		tcList = new ArrayList<TestCase>();
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public String getPlatform() {
+		return platform;
+	}
+
+
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+	}
+
+
+
+	public String getProfile() {
+		return profile;
+	}
+
+
+
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
+
+
+
+	public String getModule() {
+		return module;
+	}
+
+
+
+	public void setModule(String module) {
+		this.module = module;
+	}
+
+
+
+	public ArrayList<TestCase> getTcList() {
+		return tcList;
+	}
+
+	public void addTc(TestCase tc) {
+		tcList.add(tc);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof TCSuite)) {
+			return false;
+		} 
+		TCSuite suite = (TCSuite) obj;
+		return (this.module.equals(suite.module)) && (this.name.equals(suite.name)) && (this.platform.equals(suite.platform)) && (this.profile.equals(suite.profile)); 
+	}
+}

@@ -1,0 +1,168 @@
+	
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+	border: 1px solid black;
+}
+</style>
+<title>ABI Compatibility Report | 2.3.1 to 3.0</title>
+</head>
+<body>
+<h1>ABI Compatibility Reports Of 2.3.1 to 3.0 Packages</h1>
+<p>
+<table style="width:60%">
+<tr>
+	<td colspan="6">
+		<p>Base binary		: tizen-2.3.1-wearable_20150921.1</p>
+		<p>Compared binary	: tizen-wearable_20160726.4</p>
+		<p><a href="#summary">See the Summary Report Statistics at the end of this page</a></p>
+	</td>
+</tr>
+<tr>
+	<th><b>Packages</b></th>
+	<th>ABI Affected (%)</th>
+	<th>Source Affected (%)</th>
+	<th>Binary</th>
+	<th>Source</th>
+	<th><b>Result</b></th>
+</tr>
+
+	<tr>
+	<td><a href="module/2.3.1_to_3.0/compat_report.html">module</a></td>
+	<td style="color:red">97.7</td>
+	<td style="color:red">96.6</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red"><b>Incompatible</b></td>
+	</tr>
+
+	<tr>
+	<td><a href="module/2.3.1_to_3.0/compat_report.html">module</a></td>
+	<td style="color:red">100</td>
+	<td style="color:red">100</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red"><b>Incompatible</b></td>
+	</tr>
+
+	<tr>
+	<td><a href="module/2.3.1_to_3.0/compat_report.html">module</a></td>
+	<td style="color:red">100</td>
+	<td style="color:red">100</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red"><b>Incompatible</b></td>
+	</tr>
+
+	<tr>
+	<td><a href="module/2.3.1_to_3.0/compat_report.html">module</a></td>
+	<td style="color:red">88.2</td>
+	<td style="color:red">88.2</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red"><b>Incompatible</b></td>
+	</tr>
+
+	<tr>
+	<td><a href="module/2.3.1_to_3.0/compat_report.html">module</a></td>
+	<td style="color:red">100</td>
+	<td style="color:red">100</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red"><b>Incompatible</b></td>
+	</tr>
+
+	<tr>
+	<td><a href="module/2.3.1_to_3.0/compat_report.html">module</a></td>
+	<td style="color:red">100</td>
+	<td style="color:red">100</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red"><b>Incompatible</b></td>
+	</tr>
+
+	<tr>
+	<td><a href="module/2.3.1_to_3.0/compat_report.html">module</a></td>
+	<td style="color:red">81.8</td>
+	<td style="color:red">81.8</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red"><b>Incompatible</b></td>
+	</tr>
+
+	<tr>
+	<td><a href="module/2.3.1_to_3.0/compat_report.html">module</a></td>
+	<td style="color:red">100</td>
+	<td style="color:red">100</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red"><b>Incompatible</b></td>
+	</tr>
+
+	<tr>
+	<td><a href="module/2.3.1_to_3.0/compat_report.html">module</a></td>
+	<td style="color:red">100</td>
+	<td style="color:red">100</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red"><b>Incompatible</b></td>
+	</tr>
+
+	<tr>
+	<td><a href="module/2.3.1_to_3.0/compat_report.html">module</a></td>
+	<td style="color:red">100</td>
+	<td style="color:red">100</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red"><b>Incompatible</b></td>
+	</tr>
+
+	<tr>
+	<td><a href="module/2.3.1_to_3.0/compat_report.html">module</a></td>
+	<td style="color:red">100</td>
+	<td style="color:red">100</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red"><b>Incompatible</b></td>
+	</tr>
+
+	<tr>
+	<td><a href="module/2.3.1_to_3.0/compat_report.html">module</a></td>
+	<td style="color:red">100</td>
+	<td style="color:red">100</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red"><b>Incompatible</b></td>
+	</tr>
+
+	<tr>
+	<td><a href="module/2.3.1_to_3.0/compat_report.html">module</a></td>
+	<td style="color:red">100</td>
+	<td style="color:red">100</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red"><b>Incompatible</b></td>
+	</tr>
+
+	<tr>
+	<td><a href="libelementary/2.3.1_to_3.0/compat_report.html">libelementary</a></td>
+	<td style="color:red">23.4</td>
+	<td style="color:red">22</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red">Incompatible</td>
+	<td style="color:red"><b>Incompatible</b></td>
+	</tr>
+
+	<tr>
+		<td id="summary" colspan="6">
+			<p>Total packages : 0</p>
+			<p>Incompatible packages : 0</p>
+			<p>Incompatible rate : 0</p>
+		</td>
+	</tr>
+	</table>
+	</p>
+	</body>
+	</html>

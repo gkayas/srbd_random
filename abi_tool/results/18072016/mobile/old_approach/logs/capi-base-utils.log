@@ -1,0 +1,46 @@
+Temporary header file '/tmp/0TBKCevYfl/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n_timezone.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n_types.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n_ubrk.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n_ucalendar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n_uchar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n_ucollator.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n_udate.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n_udatepg.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n_uenumeration.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n_ulocale.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n_unormalization.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n_unumber.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n_usearch.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n_uset.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base/utils_i18n_ustring.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/0TBKCevYfl/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/base -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/0TBKCevYfl/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n_timezone.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n_types.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n_ubrk.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n_ucalendar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n_uchar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n_ucollator.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n_udate.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n_udatepg.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n_uenumeration.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n_ulocale.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n_unormalization.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n_unumber.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n_usearch.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n_uset.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base/utils_i18n_ustring.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/0TBKCevYfl/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/base -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+

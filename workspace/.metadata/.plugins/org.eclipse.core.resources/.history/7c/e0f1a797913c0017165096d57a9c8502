@@ -1,0 +1,17 @@
+package uva;
+
+public class Limit {
+	int x = 3;
+	
+	public void inc(Limit l) {
+		
+	}
+	
+	public void print(){
+		System.out.println(x);
+	}
+	
+	public static void main(String []args) {
+		
+	}
+}

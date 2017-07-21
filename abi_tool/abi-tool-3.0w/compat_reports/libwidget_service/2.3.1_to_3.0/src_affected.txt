@@ -1,0 +1,12 @@
+widget_service_destroy_lock
+widget_abi_get_pkgname_by_abi
+widget_service_acquire_lock
+widget_util_release_drm_fd
+widget_util_get_drm_fd
+widget_abi_get_abi_by_pkgname
+widget_util_replace_string
+widget_service_create_lock
+widget_abi_init
+widget_service_release_lock
+widget_abi_fini
+widget_util_uri_to_path

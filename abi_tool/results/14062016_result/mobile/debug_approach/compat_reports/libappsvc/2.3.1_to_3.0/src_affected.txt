@@ -1,0 +1,3 @@
+appsvc_is_defapp
+appsvc_unset_defapp
+appsvc_set_defapp

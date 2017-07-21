@@ -1,0 +1,26 @@
+Temporary header file '/tmp/ASjE6cbkap/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/tbm_bufmgr.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/tbm_bufmgr_backend.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/tbm_surface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/tbm_surface_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/tbm_type.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/ASjE6cbkap/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/ASjE6cbkap/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/tbm_bufmgr.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/tbm_bufmgr_backend.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/tbm_drm_helper.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/tbm_surface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/tbm_surface_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/tbm_surface_queue.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/tbm_type.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/ASjE6cbkap/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+

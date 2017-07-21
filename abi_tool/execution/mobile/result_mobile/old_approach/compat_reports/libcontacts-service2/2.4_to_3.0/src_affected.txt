@@ -1,0 +1,2 @@
+contacts_sim_get_initialization_status
+contacts_sim_import_all_contacts

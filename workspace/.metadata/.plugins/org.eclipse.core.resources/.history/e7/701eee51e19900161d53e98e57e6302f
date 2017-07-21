@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+
+public class TCSuite {
+	String name;
+	String platform;
+	String profile;
+	String module;
+	ArrayList<TestCase> tcList;
+	
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof TCSuite)) {
+			return false;
+		} 
+		TCSuite suite = (TCSuite) obj;
+		return (this.module.equals(suite.module)) && (this.name.equals(suite.name)) && (this.platform.equals(suite.platform)) && (this.profile.equals(suite.profile)); 
+	}
+}

@@ -1,0 +1,13 @@
+# Package Information for pkg-config
+
+prefix=/usr
+exec_prefix=
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: liblaunchpad
+Description: launchpad library for making other types of loader
+Version: 0.2.3.14
+Requires: bundle dlog aul
+Libs: -L${libdir} -llaunchpad
+Cflags: -I${includedir} -I${includedir}/launchpad

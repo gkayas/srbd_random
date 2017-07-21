@@ -1,0 +1,8 @@
+appcore-widget
+cairo
+capi-appfw-application
+appcore-agent
+capi-network-nfc
+elementary
+evas
+libslp-tapi

@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: drm-service-core-tizen
+Description: Tizen Application DRM Plugin
+Version: 
+Requires: dlog openssl db-util
+Libs: -L${libdir} -ldrm-service-core-tizen
+Cflags: -I${includedir}/drm-tizen

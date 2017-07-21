@@ -1,0 +1,384 @@
+Temporary header file '/tmp/8WCK2dzwzH/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_datetime.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_genlist.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_progressbar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_scroller.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_slider.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_spinner.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_surface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/common/efl_extension_common.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_rotary.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/common/efl_extension_more_option.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/common/efl_extension_rotary_selector.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/efl_extension.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/efl_extension_events.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/8WCK2dzwzH/dump1.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ethumb-client-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ethumb-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/elementary-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eldbus-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efreet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/edje-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-input-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-imf-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-file-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-con-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /tmp/8WCK2dzwzH/dump1.h:3:0:
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:57:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_line_width_set(Evas_Object *obj, int line_width);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:71:1: error: ‘EAPI’ does not name a type
+ EAPI int eext_circle_object_line_width_get(const Evas_Object *obj);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:85:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_angle_set(Evas_Object *obj, double angle);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:99:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_angle_get(const Evas_Object *obj);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:113:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_angle_offset_set(Evas_Object *obj, double angle_offset);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:127:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_angle_offset_get(const Evas_Object *obj);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:142:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_angle_min_max_set(Evas_Object *obj, double min_angle, double max_angle);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:157:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_angle_min_max_get(const Evas_Object *obj, double *min_angle, double *max_angle);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:172:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_value_min_max_set(Evas_Object *obj, double min_value, double max_value);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:187:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_value_min_max_get(const Evas_Object *obj, double *min_value, double *max_value);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:201:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_value_set(Evas_Object *obj, double value);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:215:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_value_get(const Evas_Object *obj);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:232:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_color_set(Evas_Object *obj, int r, int g, int b, int a);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:253:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_color_get(const Evas_Object *obj, int *r, int *g, int *b, int *a);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:267:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_radius_set(Evas_Object *obj, double radius);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:281:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_radius_get(const Evas_Object *obj);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:300:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_disabled_set(Evas_Object *obj, Eina_Bool disabled);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:316:1: error: ‘EAPI’ does not name a type
+ EAPI Eina_Bool eext_circle_object_disabled_get(Evas_Object *obj);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:334:1: error: ‘EAPI’ does not name a type
+ EAPI Evas_Object *eext_circle_object_add(Evas_Object *parent, Eext_Circle_Surface *surface);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:349:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_line_width_set(Evas_Object *obj, const char *item_name, int line_width);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:365:1: error: ‘EAPI’ does not name a type
+ EAPI int eext_circle_object_item_line_width_get(const Evas_Object *obj, const char *item_name);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:380:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_angle_set(Evas_Object *obj, const char *item_name, double angle);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:395:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_item_angle_get(const Evas_Object *obj, const char *item_name);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:410:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_angle_offset_set(Evas_Object *obj, const char *item_name, double angle_offset);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:425:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_item_angle_offset_get(const Evas_Object *obj, const char *item_name);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:441:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_angle_min_max_set(Evas_Object *obj, const char *item_name, double min_angle, double max_angle);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump1.h:3:0:
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:457:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_angle_min_max_get(const Evas_Object *obj, const char *item_name, double *min_angle, double *max_angle);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:473:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_value_min_max_set(Evas_Object *obj, const char *item_name, double min_value, double max_value);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:489:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_value_min_max_get(const Evas_Object *obj, const char *item_name, double *min_value, double *max_value);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:504:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_value_set(Evas_Object *obj, const char *item_name, double value);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:519:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_item_value_get(const Evas_Object *obj, const char *item_name);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:537:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_color_set(Evas_Object *obj, const char *item_name, int r, int g, int b, int a);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:559:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_color_get(const Evas_Object *obj, const char *item_name, int *r, int *g, int *b, int *a);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:574:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_radius_set(Evas_Object *obj, const char *item_name, double radius);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:590:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_item_radius_get(const Evas_Object *obj, const char *item_name);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_datetime.h:54:1: error: ‘EAPI’ does not name a type
+ EAPI Evas_Object *eext_circle_object_datetime_add(Evas_Object *datetime, Eext_Circle_Surface *surface);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump1.h:5:0:
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_genlist.h:58:1: error: ‘EAPI’ does not name a type
+ EAPI Evas_Object *eext_circle_object_genlist_add(Evas_Object *genlist, Eext_Circle_Surface *surface);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_genlist.h:79:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_genlist_scroller_policy_set(Evas_Object *obj, Elm_Scroller_Policy policy_h, Elm_Scroller_Policy policy_v);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump1.h:5:0:
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_genlist.h:94:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_genlist_scroller_policy_get(const Evas_Object *obj, Elm_Scroller_Policy *policy_h, Elm_Scroller_Policy *policy_v);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump1.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_progressbar.h:52:1: error: ‘EAPI’ does not name a type
+ EAPI Evas_Object *eext_circle_object_progressbar_add(Evas_Object *parent, Eext_Circle_Surface *surface);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump1.h:7:0:
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_scroller.h:59:1: error: ‘EAPI’ does not name a type
+ EAPI Evas_Object *eext_circle_object_scroller_add(Evas_Object *scroller, Eext_Circle_Surface *surface);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_scroller.h:81:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_scroller_policy_set(Evas_Object *obj,
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_scroller.h:98:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_scroller_policy_get(const Evas_Object *obj,
+ ^
+In file included from /tmp/8WCK2dzwzH/dump1.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_slider.h:61:1: error: ‘EAPI’ does not name a type
+ EAPI Evas_Object *eext_circle_object_slider_add(Evas_Object *parent, Eext_Circle_Surface *surface);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_slider.h:79:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_slider_step_set(Evas_Object *obj, double step);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_slider.h:93:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_slider_step_get(const Evas_Object *obj);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump1.h:9:0:
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_spinner.h:54:1: error: ‘EAPI’ does not name a type
+ EAPI Evas_Object *eext_circle_object_spinner_add(Evas_Object *spinner, Eext_Circle_Surface *surface);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_object_spinner.h:72:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_spinner_angle_set(Evas_Object *obj, double angle);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump1.h:10:0:
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_surface.h:76:1: error: ‘EAPI’ does not name a type
+ EAPI Eext_Circle_Surface *eext_circle_surface_conformant_add(Evas_Object *conform);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_surface.h:94:1: error: ‘EAPI’ does not name a type
+ EAPI Eext_Circle_Surface *eext_circle_surface_layout_add(Evas_Object *layout);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_surface.h:111:1: error: ‘EAPI’ does not name a type
+ EAPI Eext_Circle_Surface *eext_circle_surface_naviframe_add(Evas_Object *naviframe);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/circle/efl_extension_circle_surface.h:122:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_surface_del(Eext_Circle_Surface *surface);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump1.h:11:0:
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/efl-extension/common/efl_extension_common.h:44:4: error: ‘Evas_Object’ does not name a type
+    Evas_Object *obj;
+    ^
+
+Temporary header file '/tmp/8WCK2dzwzH/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_datetime.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_genlist.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_progressbar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_scroller.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_slider.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_spinner.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_surface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/common/efl_extension_common.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_rotary.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/common/efl_extension_more_option.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/common/efl_extension_rotary_selector.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/efl_extension.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/efl_extension_events.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/8WCK2dzwzH/dump2.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ethumb-client-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ethumb-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/elementary-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eldbus-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efreet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/edje-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-input-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-imf-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-file-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-con-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /tmp/8WCK2dzwzH/dump2.h:3:0:
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:57:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_line_width_set(Evas_Object *obj, int line_width);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:71:1: error: ‘EAPI’ does not name a type
+ EAPI int eext_circle_object_line_width_get(const Evas_Object *obj);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:85:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_angle_set(Evas_Object *obj, double angle);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:99:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_angle_get(const Evas_Object *obj);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:113:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_angle_offset_set(Evas_Object *obj, double angle_offset);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:127:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_angle_offset_get(const Evas_Object *obj);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:142:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_angle_min_max_set(Evas_Object *obj, double min_angle, double max_angle);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:157:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_angle_min_max_get(const Evas_Object *obj, double *min_angle, double *max_angle);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:172:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_value_min_max_set(Evas_Object *obj, double min_value, double max_value);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:187:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_value_min_max_get(const Evas_Object *obj, double *min_value, double *max_value);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:201:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_value_set(Evas_Object *obj, double value);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:215:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_value_get(const Evas_Object *obj);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:232:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_color_set(Evas_Object *obj, int r, int g, int b, int a);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:253:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_color_get(const Evas_Object *obj, int *r, int *g, int *b, int *a);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:267:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_radius_set(Evas_Object *obj, double radius);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:281:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_radius_get(const Evas_Object *obj);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:300:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_disabled_set(Evas_Object *obj, Eina_Bool disabled);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:316:1: error: ‘EAPI’ does not name a type
+ EAPI Eina_Bool eext_circle_object_disabled_get(Evas_Object *obj);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:334:1: error: ‘EAPI’ does not name a type
+ EAPI Evas_Object *eext_circle_object_add(Evas_Object *parent, Eext_Circle_Surface *surface);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:349:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_line_width_set(Evas_Object *obj, const char *item_name, int line_width);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:365:1: error: ‘EAPI’ does not name a type
+ EAPI int eext_circle_object_item_line_width_get(const Evas_Object *obj, const char *item_name);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:380:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_angle_set(Evas_Object *obj, const char *item_name, double angle);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:395:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_item_angle_get(const Evas_Object *obj, const char *item_name);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:410:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_angle_offset_set(Evas_Object *obj, const char *item_name, double angle_offset);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:425:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_item_angle_offset_get(const Evas_Object *obj, const char *item_name);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:441:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_angle_min_max_set(Evas_Object *obj, const char *item_name, double min_angle, double max_angle);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump2.h:3:0:
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:457:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_angle_min_max_get(const Evas_Object *obj, const char *item_name, double *min_angle, double *max_angle);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:473:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_value_min_max_set(Evas_Object *obj, const char *item_name, double min_value, double max_value);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:489:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_value_min_max_get(const Evas_Object *obj, const char *item_name, double *min_value, double *max_value);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:504:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_value_set(Evas_Object *obj, const char *item_name, double value);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:519:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_item_value_get(const Evas_Object *obj, const char *item_name);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:537:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_color_set(Evas_Object *obj, const char *item_name, int r, int g, int b, int a);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:559:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_color_get(const Evas_Object *obj, const char *item_name, int *r, int *g, int *b, int *a);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:574:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_item_radius_set(Evas_Object *obj, const char *item_name, double radius);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object.h:590:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_item_radius_get(const Evas_Object *obj, const char *item_name);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_datetime.h:54:1: error: ‘EAPI’ does not name a type
+ EAPI Evas_Object *eext_circle_object_datetime_add(Evas_Object *datetime, Eext_Circle_Surface *surface);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump2.h:5:0:
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_genlist.h:58:1: error: ‘EAPI’ does not name a type
+ EAPI Evas_Object *eext_circle_object_genlist_add(Evas_Object *genlist, Eext_Circle_Surface *surface);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_genlist.h:79:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_genlist_scroller_policy_set(Evas_Object *obj, Elm_Scroller_Policy policy_h, Elm_Scroller_Policy policy_v);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump2.h:5:0:
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_genlist.h:94:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_genlist_scroller_policy_get(const Evas_Object *obj, Elm_Scroller_Policy *policy_h, Elm_Scroller_Policy *policy_v);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump2.h:6:0:
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_progressbar.h:52:1: error: ‘EAPI’ does not name a type
+ EAPI Evas_Object *eext_circle_object_progressbar_add(Evas_Object *parent, Eext_Circle_Surface *surface);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump2.h:7:0:
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_scroller.h:59:1: error: ‘EAPI’ does not name a type
+ EAPI Evas_Object *eext_circle_object_scroller_add(Evas_Object *scroller, Eext_Circle_Surface *surface);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_scroller.h:81:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_scroller_policy_set(Evas_Object *obj,
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_scroller.h:98:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_scroller_policy_get(const Evas_Object *obj,
+ ^
+In file included from /tmp/8WCK2dzwzH/dump2.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_slider.h:61:1: error: ‘EAPI’ does not name a type
+ EAPI Evas_Object *eext_circle_object_slider_add(Evas_Object *parent, Eext_Circle_Surface *surface);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_slider.h:79:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_slider_step_set(Evas_Object *obj, double step);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_slider.h:93:1: error: ‘EAPI’ does not name a type
+ EAPI double eext_circle_object_slider_step_get(const Evas_Object *obj);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump2.h:9:0:
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_spinner.h:54:1: error: ‘EAPI’ does not name a type
+ EAPI Evas_Object *eext_circle_object_spinner_add(Evas_Object *spinner, Eext_Circle_Surface *surface);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_object_spinner.h:72:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_object_spinner_angle_set(Evas_Object *obj, double angle);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump2.h:10:0:
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_surface.h:76:1: error: ‘EAPI’ does not name a type
+ EAPI Eext_Circle_Surface *eext_circle_surface_conformant_add(Evas_Object *conform);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_surface.h:94:1: error: ‘EAPI’ does not name a type
+ EAPI Eext_Circle_Surface *eext_circle_surface_layout_add(Evas_Object *layout);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_surface.h:111:1: error: ‘EAPI’ does not name a type
+ EAPI Eext_Circle_Surface *eext_circle_surface_naviframe_add(Evas_Object *naviframe);
+ ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/circle/efl_extension_circle_surface.h:122:1: error: ‘EAPI’ does not name a type
+ EAPI void eext_circle_surface_del(Eext_Circle_Surface *surface);
+ ^
+In file included from /tmp/8WCK2dzwzH/dump2.h:11:0:
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/efl-extension/common/efl_extension_common.h:44:4: error: ‘Evas_Object’ does not name a type
+    Evas_Object *obj;
+    ^
+

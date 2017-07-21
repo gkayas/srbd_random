@@ -1,0 +1,841 @@
+<!-- kind:binary;verdict:incompatible;affected:97.7;added:123;removed:21;type_problems_high:0;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:1;interface_problems_low:0;changed_constants:0;tool_version:1.99.18 -->
+<!-- kind:source;verdict:incompatible;affected:97.7;added:123;removed:21;type_problems_high:0;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:1;interface_problems_low:0;changed_constants:0;tool_version:1.99.18 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="message-port, compatibility, API, ABI, report" />
+    <meta name="description" content="API/ABI compatibility report for the message-port library between 2.4 and 3.0 versions" />
+    <title>
+        message-port: 2.4 to 3.0 compatibility report
+    </title>
+    <style type="text/css">
+    body {
+    font-family:Arial, sans-serif;
+    background-color:White;
+    color:Black;
+}
+hr {
+    color:Black;
+    background-color:Black;
+    height:1px;
+    border:0;
+}
+h1 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.625em;
+}
+h2 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.25em;
+    white-space:nowrap;
+}
+span.section {
+    font-weight:bold;
+    cursor:pointer;
+    color:#003E69;
+    white-space:nowrap;
+    margin-left:5px;
+}
+span.new_sign {
+    font-weight:bold;
+    margin-left:26px;
+    color:#003E69;
+}
+span.new_sign_lbl {
+    margin-left:28px;
+    font-size:0.875em;
+    color:Black;
+}
+span:hover.section {
+    color:#336699;
+}
+span.sect_aff {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:#cc3300;
+}
+span.sect_info {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:Black;
+}
+span.ext {
+    font-weight:100;
+}
+span.h_name {
+    color:#cc3300;
+    font-size:0.875em;
+    font-weight:bold;
+}
+div.h_list, div.lib_list {
+    font-size:0.94em;
+    padding-left:5px;
+}
+span.ns {
+    color:#408080;
+    font-size:0.94em;
+}
+span.lib_name {
+    color:Green;
+    font-size:0.875em;
+    font-weight:bold;
+}
+span.iname {
+    font-weight:bold;
+    color:#003E69;
+    margin-left:5px;
+}
+span.iname_b {
+    font-weight:bold;
+    font-size:1.1em;
+}
+span.iname_a {
+    color:#333333;
+    font-weight:bold;
+    font-size:0.94em;
+}
+span.sym_p {
+    font-weight:normal;
+    white-space:normal;
+}
+div.affect {
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:0.87em;
+    font-style:italic;
+    line-height:0.75em;
+}
+div.affected {
+    padding-left:30px;
+    padding-top:10px;
+}
+table.ptable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:1em;
+    margin-left:15px;
+    margin-top:3px;
+    margin-bottom:3px;
+    width:900px;
+    
+}
+table.ptable td {
+    border:1px solid gray;
+    padding: 3px;
+    font-size:0.875em;
+    text-align:left;
+    vertical-align:top;
+}
+table.vtable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:16px;
+    margin-left:30px;
+    margin-top:10px;
+}
+table.vtable td {
+    border:1px solid gray;
+    word-wrap:break-word;
+    padding: 3px;
+    font-size:0.875em;
+    max-width:450px;
+    vertical-align:top;
+}
+table.ptable th, table.vtable th {
+    background-color:#eeeeee;
+    font-weight:bold;
+    color:#333333;
+    font-family:Verdana, Arial;
+    font-size:0.81em;
+    border:1px solid gray;
+    text-align:center;
+    vertical-align:top;
+    white-space:nowrap;
+    padding: 3px;
+}
+table.summary {
+    border-collapse:collapse;
+    border:1px outset black;
+}
+table.summary th {
+    background-color:#eeeeee;
+    font-weight:100;
+    text-align:left;
+    font-size:0.94em;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px;
+}
+table.summary td {
+    text-align:right;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px 5px 3px 10px;
+}
+span.mangled {
+    padding-left:15px;
+    font-size:0.875em;
+    cursor:text;
+    color:#444444;
+}
+span.sym_ver {
+    color:#333333;
+    white-space:nowrap;
+    font-family:"DejaVu Sans Mono", Monospace;
+}
+span.attr {
+    color:#333333;
+    font-weight:100;
+}
+span.color_p {
+    font-style:italic;
+    color:Brown;
+}
+span.p {
+    font-style:italic;
+}
+span.fp {
+    font-style:italic;
+    background-color:#FFCCCC;
+}
+span.ttype {
+    font-weight:100;
+}
+span.nowrap {
+    white-space:nowrap;
+}
+span.value {
+    white-space:nowrap;
+    font-weight:bold;
+}
+td.passed {
+    background-color:#CCFFCC;
+}
+td.warning {
+    background-color:#F4F4AF;
+}
+td.failed {
+    background-color:#FFCCCC;
+}
+td.new {
+    background-color:#C6DEFF;
+}
+.top_ref {
+    font-size:0.69em;
+}
+.footer {
+    font-size:0.75em;
+}
+
+.tabset {
+    float:left;
+}
+a.tab {
+    border:1px solid Black;
+    float:left;
+    margin:0px 5px -1px 0px;
+    padding:3px 5px 3px 5px;
+    position:relative;
+    font-size:0.875em;
+    background-color:#DDD;
+    text-decoration:none;
+    color:Black;
+}
+a.disabled:hover
+{
+    color:Black;
+    background:#EEE;
+}
+a.active:hover
+{
+    color:Black;
+    background:White;
+}
+a.active {
+    border-bottom-color:White;
+    background-color:White;
+}
+div.tab {
+    border-top:1px solid Black;
+    padding:0px;
+    width:100%;
+    clear:both;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+    function showContent(header, id)
+{
+    e = document.getElementById(id);
+    if(e.style.display == 'none')
+    {
+        e.style.display = 'block';
+        e.style.visibility = 'visible';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[&minus;]");
+    }
+    else
+    {
+        e.style.display = 'none';
+        e.style.visibility = 'hidden';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[+]");
+    }
+}
+function initTabs()
+{
+    var url = window.location.href;
+    if(url.indexOf('_Source_')!=-1 || url.indexOf('#Source')!=-1)
+    {
+        var tab1 = document.getElementById('BinaryID');
+        var tab2 = document.getElementById('SourceID');
+        tab1.className='tab disabled';
+        tab2.className='tab active';
+    }
+    var sets = document.getElementsByTagName('div');
+    for (var i = 0; i < sets.length; i++)
+    {
+        if (sets[i].className.indexOf('tabset') != -1)
+        {
+            var tabs = [];
+            var links = sets[i].getElementsByTagName('a');
+            for (var j = 0; j < links.length; j++)
+            {
+                if (links[j].className.indexOf('tab') != -1)
+                {
+                    tabs.push(links[j]);
+                    links[j].tabs = tabs;
+                    var tab = document.getElementById(links[j].href.substr(links[j].href.indexOf('#') + 1));
+                    //reset all tabs on start
+                    if (tab)
+                    {
+                        if (links[j].className.indexOf('active')!=-1) {
+                            tab.style.display = 'block';
+                        }
+                        else {
+                            tab.style.display = 'none';
+                        }
+                    }
+                    links[j].onclick = function()
+                    {
+                        var tab = document.getElementById(this.href.substr(this.href.indexOf('#') + 1));
+                        if (tab)
+                        {
+                            //reset all tabs before change
+                            for (var k = 0; k < this.tabs.length; k++)
+                            {
+                                document.getElementById(this.tabs[k].href.substr(this.tabs[k].href.indexOf('#') + 1)).style.display = 'none';
+                                this.tabs[k].className = this.tabs[k].className.replace('active', 'disabled');
+                            }
+                            this.className = 'tab active';
+                            tab.style.display = 'block';
+                            // window.location.hash = this.id.replace('ID', '');
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(url.indexOf('#')!=-1) {
+        location.href=location.href;
+    }
+}
+if (window.addEventListener) window.addEventListener('load', initTabs, false);
+else if (window.attachEvent) window.attachEvent('onload', initTabs);
+    -->
+    </script>
+    </head><body><a name='Source'></a><a name='Binary'></a><a name='Top'></a><h1>API compatibility report for the <span style='color:Blue;'>message-port</span> library between <span style='color:Red;'>2.4</span> and <span style='color:Red;'>3.0</span> versions on <span style='color:Blue;'>x86_64</span></h1>
+
+            <br/>
+            <div class='tabset'>
+            <a id='BinaryID' href='#BinaryTab' class='tab active'>Binary<br/>Compatibility</a>
+            <a id='SourceID' href='#SourceTab' style='margin-left:3px' class='tab disabled'>Source<br/>Compatibility</a>
+            </div><div id='BinaryTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Library Name</th><td>message-port</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>x86_64</td></tr>
+<tr><th>GCC Version</th><td>4.8</td></tr>
+<tr><th>Subject</th><td width='150px'>Binary Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>4</a></td></tr>
+<tr><th>Total Shared Libraries</th><td>0&#160;(not&#160;analyzed)</td></tr>
+<tr><th>Total Symbols / Types</th><td>22 / 2</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(97.7%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Binary_Added' style='color:Blue;'>123</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td class='failed'><a href='#Binary_Removed' style='color:Blue;'>21</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Symbol_Binary_Problems_Medium' style='color:Blue;'>1</a></td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+</table>
+
+<a name='Binary_Added'></a><h2>Added Symbols (123)</h2><hr/>
+<span class='h_name'>data-control-map.h</span><br/>
+<span class="iname">datacontrol_map_add&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> char const* <span class='color_p'>value</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>datacontrol_h* <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>datacontrol_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_get&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_get_data_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_get_provider_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_get_with_page&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span>,</span> <span class='nowrap'>int <span class='color_p'>page_number</span>,</span> <span class='nowrap'>int <span class='color_p'>count_per_page</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_register_response_cb&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, struct datacontrol_map_response_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_remove&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> char const* <span class='color_p'>value</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_set&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> char const* <span class='color_p'>old_value</span>, char const* <span class='color_p'>new_value</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_set_data_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_set_provider_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_unregister_response_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>datacontrol_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data-control-noti.h</span><br/>
+<span class="iname">datacontrol_add_data_change_cb&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, data_control_data_change_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> data_control_add_callback_result_cb <span class='color_p'>result_callback</span>, void* <span class='color_p'>result_cb_user_data</span>, <span class='nowrap'>int* <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_remove_data_change_cb&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>int <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data-control-provider.h</span><br/>
+<span class="iname">datacontrol_provider_add_data_change_consumer_filter_cb&#160;<span class='sym_p'>(&#160;data_control_provider_data_change_consumer_filter_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_foreach_data_change_consumer&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>void* <span class='color_p'>list_cb</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_get_client_appid&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>char** <span class='color_p'>appid</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_map_register_cb&#160;<span class='sym_p'>(&#160;struct datacontrol_provider_map_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_map_unregister_cb&#160;<span class='sym_p'>(&#160;)</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_remove_data_change_consumer_filter_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_data_change_noti&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, enum datacontrol_data_change_type_e <span class='color_p'>type</span>, <span class='nowrap'>bundle* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_delete_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_error&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>char const* <span class='color_p'>error</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_insert_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>long long <span class='color_p'>row_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_map_get_value_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> char** <span class='color_p'>value_list</span>, <span class='nowrap'>int <span class='color_p'>value_count</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_map_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_select_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>void* <span class='color_p'>db_handle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_update_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_sql_register_cb&#160;<span class='sym_p'>(&#160;struct datacontrol_provider_sql_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_sql_unregister_cb&#160;<span class='sym_p'>(&#160;)</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data-control-sql-cursor.h</span><br/>
+<span class="iname">datacontrol_sql_get_blob_data&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>int <span class='color_p'>size</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_column_count&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct resultset_cursor* <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_column_item_size&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, <span class='nowrap'>int <span class='color_p'>column_index</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_column_item_type&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>enum datacontrol_sql_column_type* <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_column_name&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>char* <span class='color_p'>name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_cursor&#160;<span class='sym_p'>(&#160;)</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct resultset_cursor*</span></span><br/>
+<span class="iname">datacontrol_sql_get_double_data&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>double* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_int64_data&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>long long* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_int_data&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>int* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_text_data&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>char* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_remove_cursor&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct resultset_cursor* <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_step_first&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct resultset_cursor* <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_step_last&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct resultset_cursor* <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_step_next&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct resultset_cursor* <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_step_previous&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct resultset_cursor* <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data-control-sql.h</span><br/>
+<span class="iname">datacontrol_sql_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>datacontrol_h* <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_delete&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, char const* <span class='color_p'>where</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>datacontrol_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_data_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_provider_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_insert&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, int const* <span class='color_p'>insert_data</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_register_response_cb&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, struct datacontrol_sql_response_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_select&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, char** <span class='color_p'>column_list</span>, int <span class='color_p'>column_count</span>, char const* <span class='color_p'>where</span>, char const* <span class='color_p'>order</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_select_with_page&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, char** <span class='color_p'>column_list</span>, int <span class='color_p'>column_count</span>, char const* <span class='color_p'>where</span>, char const* <span class='color_p'>order</span>, <span class='nowrap'>int <span class='color_p'>page_number</span>,</span> int <span class='color_p'>count_per_page</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_set_data_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_set_provider_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_unregister_response_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>datacontrol_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_update&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, int const* <span class='color_p'>update_data</span>, char const* <span class='color_p'>where</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data_control_internal.h</span><br/>
+<span class="iname">datacontrol_check_privilege&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum privilege_type <span class='color_p'>check_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data_control_map.h</span><br/>
+<span class="iname">data_control_map_add&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> char const* <span class='color_p'>value</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_control_h* <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_control_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_get&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_get_data_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_get_provider_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_get_with_page&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span>,</span> <span class='nowrap'>int <span class='color_p'>page_number</span>,</span> <span class='nowrap'>int <span class='color_p'>count_per_page</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_register_response_cb&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, struct data_control_map_response_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_remove&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> char const* <span class='color_p'>value</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_set&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> char const* <span class='color_p'>old_value</span>, char const* <span class='color_p'>new_value</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_set_data_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_set_provider_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_unregister_response_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_control_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data_control_noti.h</span><br/>
+<span class="iname">data_control_add_data_change_cb&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, data_control_data_change_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> data_control_add_callback_result_cb <span class='color_p'>result_callback</span>, void* <span class='color_p'>result_cb_user_data</span>, <span class='nowrap'>int* <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_remove_data_change_cb&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>int <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data_control_provider.h</span><br/>
+<span class="iname">data_control_provider_add_data_change_consumer_filter_cb&#160;<span class='sym_p'>(&#160;data_control_provider_data_change_consumer_filter_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_create_delete_statement&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>where</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;char*</span></span><br/>
+<span class="iname">data_control_provider_create_insert_statement&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>bundle* <span class='color_p'>insert_map</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;char*</span></span><br/>
+<span class="iname">data_control_provider_create_select_statement&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, char const** <span class='color_p'>column_list</span>, int <span class='color_p'>column_count</span>, char const* <span class='color_p'>where</span>, <span class='nowrap'>char const* <span class='color_p'>order</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;char*</span></span><br/>
+<span class="iname">data_control_provider_create_update_statement&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, bundle* <span class='color_p'>update_map</span>, <span class='nowrap'>char const* <span class='color_p'>where</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;char*</span></span><br/>
+<span class="iname">data_control_provider_foreach_data_change_consumer&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, data_control_provider_data_change_consumer_cb <span class='color_p'>list_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_get_client_appid&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>char** <span class='color_p'>appid</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_map_register_cb&#160;<span class='sym_p'>(&#160;struct data_control_provider_map_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_map_unregister_cb&#160;<span class='sym_p'>(&#160;)</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_match_data_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;bool</span></span><br/>
+<span class="iname">data_control_provider_match_provider_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;bool</span></span><br/>
+<span class="iname">data_control_provider_remove_data_change_consumer_filter_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_data_change_noti&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, enum data_control_data_change_type_e <span class='color_p'>type</span>, <span class='nowrap'>bundle* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_delete_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_error&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>char const* <span class='color_p'>error</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_insert_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>long long <span class='color_p'>row_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_map_get_value_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> char** <span class='color_p'>value_list</span>, <span class='nowrap'>int <span class='color_p'>value_count</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_map_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_select_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>void* <span class='color_p'>db_handle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_update_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_sql_register_cb&#160;<span class='sym_p'>(&#160;struct data_control_provider_sql_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_sql_unregister_cb&#160;<span class='sym_p'>(&#160;)</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data_control_sql.h</span><br/>
+<span class="iname">data_control_sql_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_control_h* <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_delete&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, char const* <span class='color_p'>where</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_control_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_data_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_provider_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_insert&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, bundle const* <span class='color_p'>insert_data</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_register_response_cb&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, struct data_control_sql_response_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_select&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, char** <span class='color_p'>column_list</span>, int <span class='color_p'>column_count</span>, char const* <span class='color_p'>where</span>, char const* <span class='color_p'>order</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_select_with_page&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, char** <span class='color_p'>column_list</span>, int <span class='color_p'>column_count</span>, char const* <span class='color_p'>where</span>, char const* <span class='color_p'>order</span>, <span class='nowrap'>int <span class='color_p'>page_number</span>,</span> int <span class='color_p'>count_per_page</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_set_data_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_set_provider_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_unregister_response_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_control_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_update&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, bundle const* <span class='color_p'>update_data</span>, char const* <span class='color_p'>where</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data_control_sql_cursor.h</span><br/>
+<span class="iname">data_control_sql_get_blob_data&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>int <span class='color_p'>size</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_column_count&#160;<span class='sym_p'>(&#160;<span class='nowrap'>result_set_cursor <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_column_item_size&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, <span class='nowrap'>int <span class='color_p'>column_index</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_column_item_type&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>enum data_control_sql_column_type_e* <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_column_name&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>char* <span class='color_p'>name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_double_data&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>double* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_int64_data&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>long long* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_int_data&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>int* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_text_data&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>char* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_step_first&#160;<span class='sym_p'>(&#160;<span class='nowrap'>result_set_cursor <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_step_last&#160;<span class='sym_p'>(&#160;<span class='nowrap'>result_set_cursor <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_step_next&#160;<span class='sym_p'>(&#160;<span class='nowrap'>result_set_cursor <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_step_previous&#160;<span class='sym_p'>(&#160;<span class='nowrap'>result_set_cursor <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Binary_Removed'></a><a name='Binary_Withdrawn'></a><h2>Removed Symbols (21)</h2><hr/>
+<span class='h_name'>message-port.h</span><br/>
+<span class="iname">messageport_check_remote_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bool* <span class='color_p'>exist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_check_trusted_local_port&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> <span class='nowrap'>bool* <span class='color_p'>trusted</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_check_trusted_remote_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bool* <span class='color_p'>exist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_get_local_port_name&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> <span class='nowrap'>char** <span class='color_p'>name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_register_local_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>local_port</span>, <span class='nowrap'>messageport_message_cb <span class='color_p'>callback</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_register_trusted_local_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>local_port</span>, <span class='nowrap'>messageport_message_cb <span class='color_p'>callback</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_send_bidirectional_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_send_bidirectional_trusted_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_send_message&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>message</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_send_trusted_message&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>message</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_unregister_local_port&#160;<span class='sym_p'>(&#160;int <span class='color_p'>local_port_id</span>, <span class='nowrap'>bool <span class='color_p'>trusted_port</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>message_port.h</span><br/>
+<span class="iname">message_port_check_remote_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bool* <span class='color_p'>exist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_check_trusted_remote_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bool* <span class='color_p'>exist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_register_local_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>local_port</span>, message_port_message_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_register_trusted_local_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>trusted_local_port</span>, message_port_trusted_message_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_send_message&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>message</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_send_message_with_local_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>message</span>,</span> <span class='nowrap'>int <span class='color_p'>local_port_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_send_trusted_message&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>message</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_send_trusted_message_with_local_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>message</span>,</span> <span class='nowrap'>int <span class='color_p'>local_port_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_unregister_local_port&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>local_port_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_unregister_trusted_local_port&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>trusted_local_port_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Medium_Risk_Binary_Problems'></a><a name='Symbol_Binary_Problems_Medium'></a><a name='Interface_Binary_Problems_Medium'></a>
+<h2>Problems with Symbols, Medium Severity (1)</h2><hr/>
+<span class='h_name'>message_port_internal.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='ext'>[+]</span> convert_to_tizen_error&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum messageport_error_e <span class='color_p'>error</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_1" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>convert_to_tizen_error&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum datacontrol_error_e <span class='color_p'>error</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of parameter <b>error</b> has been changed from <span class='value'>enum messageport_error_e</span> to <span class='value'>enum datacontrol_error_e</span> of different format.</td>
+<td>This parameter may be incorrectly initialized by applications.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (4)</h2><hr/>
+<div class='h_list'>
+message-port.h<br/>
+message_port.h<br/>
+message_port_error.h<br/>
+message_port_internal.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><div id='SourceTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Library Name</th><td>message-port</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>x86_64</td></tr>
+<tr><th>GCC Version</th><td>4.8</td></tr>
+<tr><th>Subject</th><td width='150px'>Source Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>4</a></td></tr>
+<tr><th>Total Shared Libraries</th><td>0&#160;(not&#160;analyzed)</td></tr>
+<tr><th>Total Symbols / Types</th><td>22 / 2</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(97.7%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Source_Added' style='color:Blue;'>123</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td class='failed'><a href='#Source_Removed' style='color:Blue;'>21</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Symbol_Source_Problems_Medium' style='color:Blue;'>1</a></td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+</table>
+
+<a name='Source_Added'></a><h2>Added Symbols (123)</h2><hr/>
+<span class='h_name'>data-control-map.h</span><br/>
+<span class="iname">datacontrol_map_add&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> char const* <span class='color_p'>value</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>datacontrol_h* <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>datacontrol_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_get&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_get_data_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_get_provider_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_get_with_page&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span>,</span> <span class='nowrap'>int <span class='color_p'>page_number</span>,</span> <span class='nowrap'>int <span class='color_p'>count_per_page</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_register_response_cb&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, struct datacontrol_map_response_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_remove&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> char const* <span class='color_p'>value</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_set&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> char const* <span class='color_p'>old_value</span>, char const* <span class='color_p'>new_value</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_set_data_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_set_provider_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_map_unregister_response_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>datacontrol_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data-control-noti.h</span><br/>
+<span class="iname">datacontrol_add_data_change_cb&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, data_control_data_change_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> data_control_add_callback_result_cb <span class='color_p'>result_callback</span>, void* <span class='color_p'>result_cb_user_data</span>, <span class='nowrap'>int* <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_remove_data_change_cb&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>int <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data-control-provider.h</span><br/>
+<span class="iname">datacontrol_provider_add_data_change_consumer_filter_cb&#160;<span class='sym_p'>(&#160;data_control_provider_data_change_consumer_filter_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_foreach_data_change_consumer&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>void* <span class='color_p'>list_cb</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_get_client_appid&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>char** <span class='color_p'>appid</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_map_register_cb&#160;<span class='sym_p'>(&#160;struct datacontrol_provider_map_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_map_unregister_cb&#160;<span class='sym_p'>(&#160;)</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_remove_data_change_consumer_filter_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_data_change_noti&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, enum datacontrol_data_change_type_e <span class='color_p'>type</span>, <span class='nowrap'>bundle* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_delete_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_error&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>char const* <span class='color_p'>error</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_insert_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>long long <span class='color_p'>row_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_map_get_value_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> char** <span class='color_p'>value_list</span>, <span class='nowrap'>int <span class='color_p'>value_count</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_map_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_select_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>void* <span class='color_p'>db_handle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_send_update_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_sql_register_cb&#160;<span class='sym_p'>(&#160;struct datacontrol_provider_sql_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_provider_sql_unregister_cb&#160;<span class='sym_p'>(&#160;)</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data-control-sql-cursor.h</span><br/>
+<span class="iname">datacontrol_sql_get_blob_data&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>int <span class='color_p'>size</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_column_count&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct resultset_cursor* <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_column_item_size&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, <span class='nowrap'>int <span class='color_p'>column_index</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_column_item_type&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>enum datacontrol_sql_column_type* <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_column_name&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>char* <span class='color_p'>name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_cursor&#160;<span class='sym_p'>(&#160;)</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct resultset_cursor*</span></span><br/>
+<span class="iname">datacontrol_sql_get_double_data&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>double* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_int64_data&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>long long* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_int_data&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>int* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_text_data&#160;<span class='sym_p'>(&#160;struct resultset_cursor* <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>char* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_remove_cursor&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct resultset_cursor* <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_step_first&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct resultset_cursor* <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_step_last&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct resultset_cursor* <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_step_next&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct resultset_cursor* <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_step_previous&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct resultset_cursor* <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data-control-sql.h</span><br/>
+<span class="iname">datacontrol_sql_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>datacontrol_h* <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_delete&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, char const* <span class='color_p'>where</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>datacontrol_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_data_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_get_provider_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_insert&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, int const* <span class='color_p'>insert_data</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_register_response_cb&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, struct datacontrol_sql_response_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_select&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, char** <span class='color_p'>column_list</span>, int <span class='color_p'>column_count</span>, char const* <span class='color_p'>where</span>, char const* <span class='color_p'>order</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_select_with_page&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, char** <span class='color_p'>column_list</span>, int <span class='color_p'>column_count</span>, char const* <span class='color_p'>where</span>, char const* <span class='color_p'>order</span>, <span class='nowrap'>int <span class='color_p'>page_number</span>,</span> int <span class='color_p'>count_per_page</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_set_data_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_set_provider_id&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_unregister_response_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>datacontrol_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">datacontrol_sql_update&#160;<span class='sym_p'>(&#160;datacontrol_h <span class='color_p'>provider</span>, int const* <span class='color_p'>update_data</span>, char const* <span class='color_p'>where</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data_control_internal.h</span><br/>
+<span class="iname">datacontrol_check_privilege&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum privilege_type <span class='color_p'>check_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data_control_map.h</span><br/>
+<span class="iname">data_control_map_add&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> char const* <span class='color_p'>value</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_control_h* <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_control_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_get&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_get_data_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_get_provider_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_get_with_page&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span>,</span> <span class='nowrap'>int <span class='color_p'>page_number</span>,</span> <span class='nowrap'>int <span class='color_p'>count_per_page</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_register_response_cb&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, struct data_control_map_response_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_remove&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> char const* <span class='color_p'>value</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_set&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> char const* <span class='color_p'>old_value</span>, char const* <span class='color_p'>new_value</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_set_data_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_set_provider_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_map_unregister_response_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_control_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data_control_noti.h</span><br/>
+<span class="iname">data_control_add_data_change_cb&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, data_control_data_change_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> data_control_add_callback_result_cb <span class='color_p'>result_callback</span>, void* <span class='color_p'>result_cb_user_data</span>, <span class='nowrap'>int* <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_remove_data_change_cb&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>int <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data_control_provider.h</span><br/>
+<span class="iname">data_control_provider_add_data_change_consumer_filter_cb&#160;<span class='sym_p'>(&#160;data_control_provider_data_change_consumer_filter_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_create_delete_statement&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>where</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;char*</span></span><br/>
+<span class="iname">data_control_provider_create_insert_statement&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>bundle* <span class='color_p'>insert_map</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;char*</span></span><br/>
+<span class="iname">data_control_provider_create_select_statement&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, char const** <span class='color_p'>column_list</span>, int <span class='color_p'>column_count</span>, char const* <span class='color_p'>where</span>, <span class='nowrap'>char const* <span class='color_p'>order</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;char*</span></span><br/>
+<span class="iname">data_control_provider_create_update_statement&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, bundle* <span class='color_p'>update_map</span>, <span class='nowrap'>char const* <span class='color_p'>where</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;char*</span></span><br/>
+<span class="iname">data_control_provider_foreach_data_change_consumer&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, data_control_provider_data_change_consumer_cb <span class='color_p'>list_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_get_client_appid&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>char** <span class='color_p'>appid</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_map_register_cb&#160;<span class='sym_p'>(&#160;struct data_control_provider_map_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_map_unregister_cb&#160;<span class='sym_p'>(&#160;)</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_match_data_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;bool</span></span><br/>
+<span class="iname">data_control_provider_match_provider_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;bool</span></span><br/>
+<span class="iname">data_control_provider_remove_data_change_consumer_filter_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>callback_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_data_change_noti&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, enum data_control_data_change_type_e <span class='color_p'>type</span>, <span class='nowrap'>bundle* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_delete_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_error&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>char const* <span class='color_p'>error</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_insert_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>long long <span class='color_p'>row_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_map_get_value_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> char** <span class='color_p'>value_list</span>, <span class='nowrap'>int <span class='color_p'>value_count</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_map_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_select_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span>,</span> <span class='nowrap'>void* <span class='color_p'>db_handle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_send_update_result&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_sql_register_cb&#160;<span class='sym_p'>(&#160;struct data_control_provider_sql_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_provider_sql_unregister_cb&#160;<span class='sym_p'>(&#160;)</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data_control_sql.h</span><br/>
+<span class="iname">data_control_sql_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_control_h* <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_delete&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, char const* <span class='color_p'>where</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_control_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_data_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_provider_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char** <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_insert&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, bundle const* <span class='color_p'>insert_data</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_register_response_cb&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, struct data_control_sql_response_cb* <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_select&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, char** <span class='color_p'>column_list</span>, int <span class='color_p'>column_count</span>, char const* <span class='color_p'>where</span>, char const* <span class='color_p'>order</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_select_with_page&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, char** <span class='color_p'>column_list</span>, int <span class='color_p'>column_count</span>, char const* <span class='color_p'>where</span>, char const* <span class='color_p'>order</span>, <span class='nowrap'>int <span class='color_p'>page_number</span>,</span> int <span class='color_p'>count_per_page</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_set_data_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>data_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_set_provider_id&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, <span class='nowrap'>char const* <span class='color_p'>provider_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_unregister_response_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_control_h <span class='color_p'>provider</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_update&#160;<span class='sym_p'>(&#160;data_control_h <span class='color_p'>provider</span>, bundle const* <span class='color_p'>update_data</span>, char const* <span class='color_p'>where</span>, <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>data_control_sql_cursor.h</span><br/>
+<span class="iname">data_control_sql_get_blob_data&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>int <span class='color_p'>size</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_column_count&#160;<span class='sym_p'>(&#160;<span class='nowrap'>result_set_cursor <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_column_item_size&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, <span class='nowrap'>int <span class='color_p'>column_index</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_column_item_type&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>enum data_control_sql_column_type_e* <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_column_name&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>char* <span class='color_p'>name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_double_data&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>double* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_int64_data&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>long long* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_int_data&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>int* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_get_text_data&#160;<span class='sym_p'>(&#160;result_set_cursor <span class='color_p'>cursor</span>, int <span class='color_p'>column_index</span>, <span class='nowrap'>char* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_step_first&#160;<span class='sym_p'>(&#160;<span class='nowrap'>result_set_cursor <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_step_last&#160;<span class='sym_p'>(&#160;<span class='nowrap'>result_set_cursor <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_step_next&#160;<span class='sym_p'>(&#160;<span class='nowrap'>result_set_cursor <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">data_control_sql_step_previous&#160;<span class='sym_p'>(&#160;<span class='nowrap'>result_set_cursor <span class='color_p'>cursor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Source_Removed'></a><a name='Source_Withdrawn'></a><h2>Removed Symbols (21)</h2><hr/>
+<span class='h_name'>message-port.h</span><br/>
+<span class="iname">messageport_check_remote_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bool* <span class='color_p'>exist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_check_trusted_local_port&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> <span class='nowrap'>bool* <span class='color_p'>trusted</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_check_trusted_remote_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bool* <span class='color_p'>exist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_get_local_port_name&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> <span class='nowrap'>char** <span class='color_p'>name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_register_local_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>local_port</span>, <span class='nowrap'>messageport_message_cb <span class='color_p'>callback</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_register_trusted_local_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>local_port</span>, <span class='nowrap'>messageport_message_cb <span class='color_p'>callback</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_send_bidirectional_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_send_bidirectional_trusted_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_send_message&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>message</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_send_trusted_message&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>message</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">messageport_unregister_local_port&#160;<span class='sym_p'>(&#160;int <span class='color_p'>local_port_id</span>, <span class='nowrap'>bool <span class='color_p'>trusted_port</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>message_port.h</span><br/>
+<span class="iname">message_port_check_remote_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bool* <span class='color_p'>exist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_check_trusted_remote_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bool* <span class='color_p'>exist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_register_local_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>local_port</span>, message_port_message_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_register_trusted_local_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>trusted_local_port</span>, message_port_trusted_message_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_send_message&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>message</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_send_message_with_local_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>message</span>,</span> <span class='nowrap'>int <span class='color_p'>local_port_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_send_trusted_message&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>message</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_send_trusted_message_with_local_port&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>remote_app_id</span>, char const* <span class='color_p'>remote_port</span>, <span class='nowrap'>bundle* <span class='color_p'>message</span>,</span> <span class='nowrap'>int <span class='color_p'>local_port_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_unregister_local_port&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>local_port_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">message_port_unregister_trusted_local_port&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>trusted_local_port_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Medium_Risk_Source_Problems'></a><a name='Symbol_Source_Problems_Medium'></a><a name='Interface_Source_Problems_Medium'></a>
+<h2>Problems with Symbols, Medium Severity (1)</h2><hr/>
+<span class='h_name'>message_port_internal.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_2')">
+<span class='ext'>[+]</span> convert_to_tizen_error&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum messageport_error_e <span class='color_p'>error</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_2" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>convert_to_tizen_error&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum datacontrol_error_e <span class='color_p'>error</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of parameter <b>error</b> has been changed from <span class='value'>enum messageport_error_e</span> to <span class='value'>enum datacontrol_error_e</span> of different format.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (4)</h2><hr/>
+<div class='h_list'>
+message-port.h<br/>
+message_port.h<br/>
+message_port_error.h<br/>
+message_port_internal.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><hr/>
+<div class='footer' align='right'><i>Generated by <a href='http://lvc.github.io/abi-compliance-checker/'>ABI Compliance Checker</a> 1.99.18 &#160;</i>
+</div>
+<br/>
+
+</body></html>

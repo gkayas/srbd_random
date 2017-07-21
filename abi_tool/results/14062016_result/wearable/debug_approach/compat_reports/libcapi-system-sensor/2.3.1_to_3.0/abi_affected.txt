@@ -1,0 +1,13 @@
+sensor_listener_unset_event_cb
+sensor_listener_stop
+_TYPE
+sensor_listener_set_accuracy_cb
+sensor_listener_unset_accuracy_cb
+sensor_listener_set_interval
+sensor_listener_start
+sensor_listener_set_event_cb
+sensor_create_listener
+sensor_destroy_listener
+sensor_listener_set_option
+sensor_listener_set_max_batch_latency
+sensor_listener_read_data

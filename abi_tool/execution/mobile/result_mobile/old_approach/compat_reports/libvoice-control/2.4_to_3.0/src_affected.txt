@@ -1,0 +1,3 @@
+vc_widget_is_command_format_supported
+vc_widget_unsset_send_current_command_list_cb
+vc_mgr_is_command_format_supported

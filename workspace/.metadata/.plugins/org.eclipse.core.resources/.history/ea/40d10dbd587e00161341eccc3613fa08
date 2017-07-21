@@ -1,0 +1,50 @@
+package storeapp;
+
+import java.util.List;
+
+import apprunner.BinaryData;
+import base.TCBase;
+
+public class VisualScienceExperiment extends TCBase {
+
+	BinaryData binary;
+	
+	public VisualScienceExperiment() {
+		super();
+	}
+
+	public VisualScienceExperiment(String tcName, BinaryData binary) {
+		super(tcName);
+		this.binary = binary;
+	}
+
+	//========================================================[TestCases]==========================================================
+
+	public void install() {
+		device.runCommand("sdb uninstall "+ binary.getPackageId());
+		device.runCommand("sdb install " + binary.getPath());
+		
+		List<String> lines = device.runCommand("sdb shell \"pkgcmd -l | grep " + binary.getPackageId() + " | wc -l\"");
+				
+		for (String line : lines) {
+			assertFalse(line.contains("0"));
+		}
+	}
+	
+	public void exploratory() {
+		device.focus();
+		device.launchApp(binary.getAppId());		
+	}
+
+	public void uninstall() {
+		device.runCommand("sdb uninstall "+ binary.getPackageId());
+
+		List<String> lines = device.runCommand("sdb shell \"pkgcmd -l | grep " + binary.getPackageId() + " | wc -l\"");
+		
+		for (String line : lines) {
+			assertFalse(line.contains("1"));
+		}
+
+		
+	}
+}

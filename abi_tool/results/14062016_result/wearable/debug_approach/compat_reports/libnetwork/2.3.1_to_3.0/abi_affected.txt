@@ -1,0 +1,7 @@
+net_get_active_net_info
+net_get_profile_list
+net_get_profile_info
+net_get_wifi_state
+net_add_profile
+net_modify_profile
+net_open_connection_with_wifi_info

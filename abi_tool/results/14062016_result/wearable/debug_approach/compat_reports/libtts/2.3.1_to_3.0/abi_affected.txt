@@ -1,0 +1,7 @@
+__tts_config_display_language_changed_cb
+tts_config_get_message_path
+__tts_cb_error
+tts_file_msg_open_connection
+tts_file_msg_close_connection
+__tts_config_screen_reader_changed_cb
+__tts_config_speech_rate_key_changed_cb

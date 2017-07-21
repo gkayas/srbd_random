@@ -1,0 +1,77 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+// This class represents a set of sequences.
+public class SequenceSet {
+	
+	LinkedList<Sequence> sequenceSet;
+	// Constructor.
+	public SequenceSet() {
+		sequenceSet = new LinkedList<Sequence>();
+	}
+	// Load sequences from FASTA file.
+	public static SequenceSet load(String fileName){
+		SequenceSet seqSet = new SequenceSet();
+		String line = "";
+		String seq = "", header = "";
+		InputStream inputstream = MainClass.class.getResourceAsStream(fileName);
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new InputStreamReader(inputstream));
+			while ((line = br.readLine()) != null) {
+				if(line.charAt(0) != '>')
+				{
+					seq = line;
+				}else{
+					header = line;
+				}
+				Sequence newSeq = new Sequence(header, seq);
+				if(!seqSet.sequenceSet.contains(newSeq)) {
+					seqSet.sequenceSet.insert(newSeq);
+				}
+				
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (br != null) {
+				try {
+					br.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+			}
+		}
+		return seqSet;
+	}
+	// Return the global usage over all sequences in the set. The word length is k and window step size is w.
+	public LinkedList<Usage> getUsages(int k, int w){
+		LinkedList<Usage> usages = new LinkedList<Usage>();
+	
+		Iterator<Sequence> seqItr = sequenceSet.iterator();	
+		while(seqItr.hasNext()) {
+			usages.insert(seqItr.next().getUsage(k, w));
+		}
+		
+		return usages;
+	}
+	// Return all sequences in the set in the same order they appear in the file.
+	public LinkedList<Sequence> getSequences(){
+		LinkedList<Usage> sequences = new LinkedList<Usage>();
+		Iterator<Sequence> seqItr = sequenceSet.iterator();
+		
+		while(seqItr.hasNext()) {
+			sequences.insert(seqItr.next());
+		}
+		return sequences;
+	}
+}

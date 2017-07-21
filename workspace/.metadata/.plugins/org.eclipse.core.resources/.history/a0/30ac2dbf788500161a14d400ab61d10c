@@ -1,0 +1,20 @@
+package fxviewer;
+
+import javafx.scene.control.TableCell;
+import javafx.scene.control.cell.CheckBoxTableCell;
+import javafx.util.Callback;
+import apprunner.*;
+
+public class CheckBoxCellFactory implements Callback<AppInfo, Boolean> {
+	@Override
+	public TableCell call(Object param) {
+		
+	}
+
+	@Override
+	public Boolean call(AppInfo param) {
+		CheckBoxTableCell<AppInfo,Boolean> checkBoxCell = new CheckBoxTableCell();
+		return checkBoxCell;
+	}
+}
+

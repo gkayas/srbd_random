@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib
+includedir=${prefix}/include/widget_service
+
+Name: widget_service
+Description: widget service library
+Version: 
+Requires: bundle capi-base-common aul 
+Libs: -L${libdir} -lwidget_service
+Cflags: -I${includedir}
+cppflags: -I${includedir}

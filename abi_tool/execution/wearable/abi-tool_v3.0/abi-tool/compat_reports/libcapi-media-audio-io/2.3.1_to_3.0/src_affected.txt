@@ -1,0 +1,8 @@
+audio_out_set_interrupted_cb
+audio_in_set_interrupted_cb
+audio_in_ignore_session
+audio_out_create
+audio_out_unset_interrupted_cb
+audio_in_create_loopback
+audio_in_unset_interrupted_cb
+audio_out_ignore_session

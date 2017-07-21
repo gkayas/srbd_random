@@ -1,0 +1,30 @@
+====================
+সোম জুল 11 18:17:22 BDT 2016
+====================
+./logs/vconf.log:12:/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/vconf/vconf-keys.h:25:33: fatal error: vconf-internal-keys.h: No such file or directory
+====================
+মঙ্গল জুল 12 10:35:09 BDT 2016
+====================
+./logs/notification.log:41:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/notification/notification_setting_service.h:22:19: fatal error: alarm.h: No such file or directory
+./logs/vconf.log:12:/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/vconf/vconf-keys.h:25:33: fatal error: vconf-internal-keys.h: No such file or directory
+====================
+শুক্র জুল 15 12:21:19 BDT 2016
+====================
+./logs/notification.log:41:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/notification/notification_setting_service.h:22:19: fatal error: alarm.h: No such file or directory
+./logs/vconf.log:12:/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/vconf/vconf-keys.h:25:33: fatal error: vconf-internal-keys.h: No such file or directory
+====================
+শনি জুল 16 16:39:38 BDT 2016
+====================
+./logs/vconf.log:12:/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/vconf/vconf-keys.h:25:33: fatal error: vconf-internal-keys.h: No such file or directory
+====================
+শনি জুল 16 17:07:02 BDT 2016
+====================
+====================
+বুধ জুল 27 11:18:00 BDT 2016
+====================
+====================
+বৃহঃ জুল 28 14:11:13 BDT 2016
+====================
+====================
+শুক্র জুল 29 18:57:04 BDT 2016
+====================

@@ -1,0 +1,99 @@
+==============================libaccounts-svc-debuginfo==============================
+libaccounts-svc is selected for comparision. 
+libaccounts-svc dump successful for comparision. 
+==============================appcore-widget-debuginfo==============================
+libcapi-appfw-widget-application is selected for comparision. 
+libcapi-appfw-widget-application dump successful for comparision. 
+==============================cairo-debuginfo==============================
+libcairo-gobject is selected for comparision. 
+libcairo-gobject dump successful for comparision. 
+libcairo-script-interpreter is selected for comparision. 
+libcairo-script-interpreter dump successful for comparision. 
+libcairo is selected for comparision. 
+libcairo dump successful for comparision. 
+==============================appcore-agent-debuginfo==============================
+libappcore-agent is selected for comparision. 
+libappcore-agent dump successful for comparision. 
+==============================capi-media-screen-mirroring-debuginfo==============================
+libcapi-media-screen-mirroring is selected for comparision. 
+libcapi-media-screen-mirroring dump successful for comparision. 
+libmiracast_server_lib is selected for comparision. 
+libmiracast_server_lib dump successful for comparision. 
+==============================capi-message-port-debuginfo==============================
+libcapi-message-port is not selected for comparision. 
+==============================capi-network-nfc-debuginfo==============================
+libcapi-network-nfc is selected for comparision. 
+libcapi-network-nfc dump successful for comparision. 
+==============================dali-adaptor-debuginfo==============================
+libdali-adaptor is selected for comparision. 
+libdali-adaptor dump successful for comparision. 
+libdali-feedback-plugin is not selected for comparision. 
+==============================dali-debuginfo==============================
+libdali-core is selected for comparision. 
+libdali-core dump successful for comparision. 
+==============================dali-toolkit-debuginfo==============================
+libdali-toolkit is selected for comparision. 
+libdali-toolkit dump successful for comparision. 
+==============================service-adaptor-debuginfo==============================
+==============================libslp-tapi-debuginfo==============================
+libSLP-tapi is selected for comparision. 
+libSLP-tapi dump successful for comparision. 
+==============================csr-framework-debuginfo==============================
+libsecfw is not selected for comparision. 
+==============================ui-gadget-1-debuginfo==============================
+libug-helloUG-efl is not selected for comparision. 
+libui-gadget-1 is selected for comparision. 
+libui-gadget-1 dump successful for comparision. 
+libui-gadget-1-efl-engine is selected for comparision. 
+libui-gadget-1-efl-engine dump successful for comparision. 
+libug-helloUG-efl is not selected for comparision. 
+==============================email-service-debuginfo==============================
+libemail-network is selected for comparision. 
+libemail-network dump successful for comparision. 
+libemail-common-use is selected for comparision. 
+libemail-common-use dump successful for comparision. 
+libemail-device is selected for comparision. 
+libemail-device dump successful for comparision. 
+libemail-storage is selected for comparision. 
+libemail-storage dump successful for comparision. 
+libemail-ipc is selected for comparision. 
+libemail-ipc dump successful for comparision. 
+libemail-smime-api is selected for comparision. 
+libemail-smime-api dump successful for comparision. 
+libemail-smime is selected for comparision. 
+libemail-smime dump successful for comparision. 
+libemail-core is selected for comparision. 
+libemail-core dump successful for comparision. 
+libemail-container is selected for comparision. 
+libemail-container dump successful for comparision. 
+libemail-api is selected for comparision. 
+libemail-api dump successful for comparision. 
+==============================msg-service-debuginfo==============================
+libmsg_vobject is selected for comparision. 
+libmsg_vobject dump successful for comparision. 
+libmsg_sms_plugin is not selected for comparision. 
+libmsg_transaction_manager is selected for comparision. 
+libmsg_transaction_manager dump successful for comparision. 
+libmsg_framework_handler is selected for comparision. 
+libmsg_framework_handler dump successful for comparision. 
+libmsg_mapi is selected for comparision. 
+libmsg_mapi dump successful for comparision. 
+libmsg_transaction_proxy is selected for comparision. 
+libmsg_transaction_proxy dump successful for comparision. 
+libmsg_plugin_manager is selected for comparision. 
+libmsg_plugin_manager dump successful for comparision. 
+libmsg_externals is selected for comparision. 
+libmsg_externals dump successful for comparision. 
+libmsg_mms_plugin is not selected for comparision. 
+libmsg_utils is selected for comparision. 
+libmsg_utils dump successful for comparision. 
+==============================browser-provider-debuginfo==============================
+libcapi-web-tab is selected for comparision. 
+libcapi-web-tab dump successful for comparision. 
+libcapi-web-bookmark is selected for comparision. 
+libcapi-web-bookmark dump successful for comparision. 
+libcapi-web-history is selected for comparision. 
+libcapi-web-history dump successful for comparision. 
+libcapi-web-bookmark-csc is selected for comparision. 
+libcapi-web-bookmark-csc dump successful for comparision. 
+libcapi-web-scrap is not selected for comparision. 

@@ -1,0 +1,49 @@
+package com.turbovnc.vncviewer;
+
+
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Container;
+
+import javax.swing.AbstractButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class CustomFrame extends JFrame {
+	public CustomFrame(JFrame ref) {
+		super();
+		//JPanel creating
+		JPanel newPanel = new JPanel(new BorderLayout());
+		JLabel label = new JLabel("Enter username:");
+		JTextField userName = new JTextField(20);
+		newPanel.add(label, BorderLayout.NORTH);
+		newPanel.add(userName, BorderLayout.SOUTH);
+		newPanel.setVisible(true);
+		setContentPane(newPanel);
+		
+		setResizable(false);
+		removeMinMaxClose(this);
+		setLocationRelativeTo(ref);
+		
+		setSize(300, 300);
+		setVisible(true);
+	}
+	
+	  public void removeMinMaxClose(Component comp)
+	  {
+	    if(comp instanceof AbstractButton)
+	    {
+	      comp.getParent().remove(comp);
+	    }
+	    if (comp instanceof Container)
+	    {
+	      Component[] comps = ((Container)comp).getComponents();
+	      for(int x = 0, y = comps.length; x < y; x++)
+	      {
+	        removeMinMaxClose(comps[x]);
+	      }
+	    }
+	  }
+}

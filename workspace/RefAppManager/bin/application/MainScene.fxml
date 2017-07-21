@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <SplitPane dividerPositions="0.2759433962264151" layoutX="207.0" layoutY="176.0" prefHeight="600.0" prefWidth="850.0" stylesheets="@splitePane.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="266.0">
+               <children>
+                  <TreeView fx:id="suiteTree" layoutX="17.0" layoutY="117.0" prefHeight="598.0" prefWidth="233.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@splitePane.css">
+               <children>
+                  <SplitPane dividerPositions="0.1" layoutX="233.0" layoutY="110.0" orientation="VERTICAL" prefHeight="598.0" prefWidth="613.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="92.0" prefWidth="611.0">
+                           <children>
+                              <HBox fx:id="containerBtn" alignment="CENTER" layoutX="151.0" prefHeight="88.0" prefWidth="611.0" spacing="2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Button fx:id="runBtn" mnemonicParsing="false" onAction="#runBtnClicked" prefHeight="25.0" prefWidth="137.0" text="Run">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="rerunBtn" layoutX="68.0" layoutY="42.0" mnemonicParsing="false" onAction="#rerunBtnClicked" prefHeight="25.0" prefWidth="137.0" text="Re-Run">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="runSingleBtn" layoutX="169.0" layoutY="42.0" mnemonicParsing="false" onAction="#runsingleBtnClicked" prefHeight="25.0" prefWidth="137.0" text="Run Single">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <SplitPane dividerPositions="0.5" layoutX="193.0" layoutY="80.0" orientation="VERTICAL" prefHeight="506.0" prefWidth="611.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="261.0" prefWidth="609.0">
+                                       <children>
+                                          <TableView fx:id="tcTable" layoutX="134.0" prefHeight="251.0" prefWidth="609.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columns>
+                                                <TableColumn fx:id="testName" prefWidth="250.0" text="Testcase" />
+                                                <TableColumn fx:id="tcStatus" prefWidth="76.0" text="Status" />
+                                                <TableColumn fx:id="tcRemark" prefWidth="277.0" text="Remark" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="191.0" prefWidth="609.0">
+                                       <children>
+                                          <TextArea fx:id="console" layoutX="186.0" layoutY="26.0" prefHeight="251.0" prefWidth="609.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

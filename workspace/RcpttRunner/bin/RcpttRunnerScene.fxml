@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="storeAppAnchor" maxHeight="680.0" maxWidth="600.0" minWidth="600.0" prefHeight="680.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RcpttRunnerController">
+   <children>
+      <SplitPane dividerPositions="0.06" orientation="VERTICAL" prefHeight="850.0" prefWidth="1100.0" stylesheets="@splitePane.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane maxHeight="50.0" minHeight="50.0" prefHeight="50.0">
+               <children>
+                  <HBox fx:id="containerBtn" alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="680.0" prefWidth="1098.0">
+               <children>
+                  <SplitPane dividerPositions="0.4" prefHeight="796.0" prefWidth="1098.0" style="-fx-border-width: 1;" stylesheets="@splitePane.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane maxWidth="150.0" minWidth="150.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="680.0" prefWidth="150.0">
+                           <children>
+                              <VBox layoutX="11.0" layoutY="5.0" prefHeight="224.0" prefWidth="133.0" spacing="10.0" style="-fx-border-style: solid inside; -fx-border-width: 0;">
+                                 <children>
+                                    <ComboBox fx:id="bvtCombo" prefWidth="150.0" />
+                                    <Separator prefWidth="200.0" />
+                                    <CheckBox fx:id="platform30Check" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="18.0" prefWidth="168.0" text="3.0" textFill="#141313" />
+                                    <CheckBox fx:id="platform24Check" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="18.0" prefWidth="168.0" text="2.4" textFill="#141313" />
+                                    <CheckBox fx:id="platform23Check" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="18.0" prefWidth="168.0" text="2.3" textFill="#141313" />
+                                    <CheckBox fx:id="platform232Check" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="18.0" prefWidth="168.0" text="2.3.2" />
+                                    <CheckBox fx:id="platform231Check" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="18.0" prefWidth="168.0" text="2.3.1" />
+                                    <CheckBox fx:id="platformCommonCheck" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="12.0" prefWidth="168.0" text="Common" />
+                                    <Separator prefWidth="200.0" />
+                                    <CheckBox fx:id="profileMobileCheck" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="18.0" prefWidth="168.0" text="Mobile" textFill="#141313" />
+                                    <CheckBox fx:id="profileWearbleCheck" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="18.0" prefWidth="168.0" text="Wearable" textFill="#141313" />
+                                    <Separator prefWidth="200.0" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="360.0" prefHeight="180.0" prefWidth="133.0" spacing="10.0" style="-fx-border-style: solid inside; -fx-border-width: 0;">
+                                 <children>
+                                    <Button fx:id="loadBtn" mnemonicParsing="false" onAction="#loadBtnClicked" prefHeight="40.0" prefWidth="128.0" text="Load" />
+                                    <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveBtnClicked" prefHeight="40.0" prefWidth="128.0" text="Save" />
+                                    <Button fx:id="refreshBtn" mnemonicParsing="false" onAction="#refreshBtnClicked" prefHeight="40.0" prefWidth="128.0" text="Refresh" />
+                                    <Button fx:id="settingsBtn" mnemonicParsing="false" onAction="#settingsBtnClicked" prefHeight="40.0" prefWidth="128.0" text="Settings" />
+                                 </children>
+                              </VBox>
+                             
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="794.0" prefWidth="944.0">
+                           <children>
+                              <SplitPane dividerPositions="0.8" orientation="VERTICAL" prefHeight="794.0" prefWidth="586.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="633.0" prefWidth="609.0">
+                                       <children>
+                                          <TableView fx:id="tcTable" editable="true" layoutX="1.0" layoutY="-2.0" prefHeight="363.0" prefWidth="732.0" styleClass="custom-align" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columns>
+                                                <TableColumn fx:id="checkBox" prefWidth="33.0">
+                                                   <graphic>
+                                                      <CheckBox fx:id="selectAllCheck" mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" />
+                                                   </graphic>
+                                                </TableColumn>
+                                                <TableColumn fx:id="name" prefWidth="297.0" text="Module" />
+                                                <TableColumn fx:id="count" prefWidth="86.0" text="Count" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="157.0" prefWidth="609.0">
+                                       <children>
+                                          <TextArea fx:id="console" layoutX="186.0" layoutY="26.0" prefHeight="251.0" prefWidth="609.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

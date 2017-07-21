@@ -1,0 +1,59 @@
+package fxviewer;
+	
+import java.io.IOException;
+import java.io.PrintStream;
+
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+
+public class Main extends Application { 
+	PrintStream console;
+
+	@Override
+	public void start(Stage stage)  {
+//		AFEngine.initialize();
+		    	
+		console = System.out;
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+			System.out.println("Can not load fxml file");
+			return;
+		}
+	
+		Scene scene = new Scene(root);
+        stage.setTitle("StoreApp Automation");
+        scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+       
+	}
+	
+	@Override
+	public void stop() {
+		System.setOut(console);
+//		AFEngine.deinitialize();
+//		MainController.interfaceTask.stopPrecess();
+//		MainController.runServerTask.stopPrecess();
+		try {
+			super.stop();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	    Platform.exit();
+	    System.exit(0);
+	}
+	
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+}

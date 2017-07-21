@@ -1,0 +1,71 @@
+package uva;
+
+import java.util.HashMap;
+import java.util.Stack;
+
+public class LeetCode {
+	
+	public static void main(String [] args) {
+		System.out.println(new LeetCode().isValid("(()()()())");
+	} 
+	
+	
+	//13 start
+	private static final HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+	
+	static{
+		map.put('I', 1);
+		map.put('V', 5);
+		map.put('X', 10);
+		map.put('L', 50);
+		map.put('C', 100);
+		map.put('D', 500);
+		map.put('M', 1000);
+	}
+	
+	public int romanToInt(String s) {
+        int val = 0;
+        int cursor = 0;
+        char[] ch = s.toCharArray();
+        for (int i = ch.length-1; i>=0; i--) {
+        	int currentVal = map.get(ch[i]);
+        	if(currentVal < cursor) {
+        		val -= currentVal;
+        	} else {
+        		val += currentVal;
+        	}
+			cursor = currentVal;
+		}
+        return val;
+    }
+	//13 ends
+	
+	//20 starts
+	
+	
+	 public boolean isValid(String s) {
+		Stack<Character> stack = new Stack<Character>();
+		char [] ch = s.toCharArray();
+	    for(int i = 0; i<ch.length; i++) {
+	    	switch(ch[i]) {
+	    	case '(' :
+	    		stack.push(')');
+	    		break;
+	    	case '[' :
+	    		stack.push(']');
+	    		break;
+	    	case '{' :
+	    		stack.push('}');
+	    		break;
+	    	default:
+	    		char head = stack.pop();
+	    		if(head != ch[i]) return false;
+	    		break;
+	   		
+	    	}
+	    	
+	    }
+	    return true;
+	 }
+	//20 ends
+}

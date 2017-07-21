@@ -1,0 +1,102 @@
+package refapp;
+
+import java.util.ArrayList;
+
+import javafx.beans.property.SimpleStringProperty;
+
+public class AppInfo {
+
+	private SimpleStringProperty name;
+	private SimpleStringProperty binary;
+	private SimpleStringProperty install;
+	private SimpleStringProperty exploratory ;
+	private SimpleStringProperty uninstall;
+	
+	
+	private ArrayList<TestInfo> tcList;
+	private String appName;
+	private String binaryName;
+	
+	public AppInfo() {
+	
+		this.install = new SimpleStringProperty();
+		this.exploratory = new SimpleStringProperty();
+		this.uninstall = new SimpleStringProperty();
+	}
+	
+	public AppInfo (ArrayList<TestInfo> testCaseList, String name, String binaryName) {
+		this.tcList = testCaseList;
+		this.appName = name;
+		this.binaryName = binaryName;
+		this.name = new SimpleStringProperty(name);
+		this.binary = new SimpleStringProperty(binaryName);
+		this.install = new SimpleStringProperty();
+		this.exploratory = new SimpleStringProperty();
+		this.uninstall = new SimpleStringProperty();
+	}
+	
+	public ArrayList<TestInfo> getTcList() {
+		return tcList;
+	}
+	public void setTcList(ArrayList<TestInfo> tcList) {
+		this.tcList = tcList;
+	}
+	public String getAppName() {
+		return appName;
+	}
+	public void setAppName(String appName) {
+		this.name.set(appName);
+		this.appName = appName;
+	}
+	public String getBinary() {
+		return binaryName;
+	}
+
+	public void setBinaryName(String binaryName) {
+		this.binary.set(binaryName);
+		this.binaryName = binaryName;
+	}
+
+	public SimpleStringProperty nameProperty() {
+		return name;
+	}
+	
+	public SimpleStringProperty binaryProperty() {
+		return binary;
+	}
+	
+	public SimpleStringProperty installProperty() {
+		
+		return install;
+	}
+	
+	public SimpleStringProperty uninstallProperty() {
+		
+		return uninstall;
+	}
+	
+	public SimpleStringProperty exploratoryProperty() {
+		
+		return exploratory;
+	}
+	
+	public void setName(SimpleStringProperty name) {
+		this.name = name;
+	}
+	
+	public void setBinary(SimpleStringProperty name) {
+		this.binary = name;
+	}
+	
+	public void setInstall(SimpleStringProperty name) {
+		this.install = name;
+	}
+	
+	public void setExploratory(SimpleStringProperty name) {
+		this.exploratory = name;
+	}
+	
+	public void setUninstall(SimpleStringProperty name) {
+		this.uninstall = name;
+	}
+}

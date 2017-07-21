@@ -1,0 +1,64 @@
+
+public class Suite {
+	String name;
+	private int passTc;
+	private int failTc;
+	private double time;
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getPassTc() {
+		return passTc;
+	}
+
+	public void setPassTc(int passTc) {
+		this.passTc = passTc;
+	}
+
+	public int getFailTc() {
+		return failTc;
+	}
+
+	public void setFailTc(int failTc) {
+		this.failTc = failTc;
+	}
+
+	public int getTotalTc() {
+		return passTc+failTc;
+	}
+
+
+	public double getTime() {
+		return time;
+	}
+
+	public void setTime(double time) {
+		this.time = time;
+	}
+
+	public Suite(String name, int passTc, int failTc,double time) {
+		this.name = name;
+		this.passTc = passTc;
+		this.failTc = failTc;
+		this.time = time;
+		this.totalTc = passTc + failTc;
+	}
+	
+	public Suite() {
+		
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof Suite)) {
+			return false;
+		}
+		return this.name.equals(((Suite)obj).getName());
+	}
+}

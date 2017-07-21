@@ -1,0 +1,1487 @@
+<!-- kind:binary;verdict:incompatible;affected:77.1;added:28;removed:80;type_problems_high:0;type_problems_medium:3;type_problems_low:7;interface_problems_high:0;interface_problems_medium:8;interface_problems_low:2;changed_constants:0;type_changes_other:1;tool_version:1.99.18 -->
+<!-- kind:source;verdict:incompatible;affected:81.2;added:28;removed:80;type_problems_high:7;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:8;interface_problems_low:0;changed_constants:0;type_changes_other:4;interface_changes_other:2;tool_version:1.99.18 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="libmmfsound, compatibility, API, ABI, report" />
+    <meta name="description" content="API/ABI compatibility report for the libmmfsound object between 2.3.1 and 3.0 versions" />
+    <title>
+        libmmfsound: 2.3.1 to 3.0 compatibility report
+    </title>
+    <style type="text/css">
+    body {
+    font-family:Arial, sans-serif;
+    background-color:White;
+    color:Black;
+}
+hr {
+    color:Black;
+    background-color:Black;
+    height:1px;
+    border:0;
+}
+h1 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.625em;
+}
+h2 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.25em;
+    white-space:nowrap;
+}
+span.section {
+    font-weight:bold;
+    cursor:pointer;
+    color:#003E69;
+    white-space:nowrap;
+    margin-left:5px;
+}
+span.new_sign {
+    font-weight:bold;
+    margin-left:26px;
+    color:#003E69;
+}
+span.new_sign_lbl {
+    margin-left:28px;
+    font-size:0.875em;
+    color:Black;
+}
+span:hover.section {
+    color:#336699;
+}
+span.sect_aff {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:#cc3300;
+}
+span.sect_info {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:Black;
+}
+span.ext {
+    font-weight:100;
+}
+span.h_name {
+    color:#cc3300;
+    font-size:0.875em;
+    font-weight:bold;
+}
+div.h_list, div.lib_list {
+    font-size:0.94em;
+    padding-left:5px;
+}
+span.ns {
+    color:#408080;
+    font-size:0.94em;
+}
+span.lib_name {
+    color:Green;
+    font-size:0.875em;
+    font-weight:bold;
+}
+span.iname {
+    font-weight:bold;
+    color:#003E69;
+    margin-left:5px;
+}
+span.iname_b {
+    font-weight:bold;
+    font-size:1.1em;
+}
+span.iname_a {
+    color:#333333;
+    font-weight:bold;
+    font-size:0.94em;
+}
+span.sym_p {
+    font-weight:normal;
+    white-space:normal;
+}
+div.affect {
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:0.87em;
+    font-style:italic;
+    line-height:0.75em;
+}
+div.affected {
+    padding-left:30px;
+    padding-top:10px;
+}
+table.ptable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:1em;
+    margin-left:15px;
+    margin-top:3px;
+    margin-bottom:3px;
+    width:900px;
+    
+}
+table.ptable td {
+    border:1px solid gray;
+    padding: 3px;
+    font-size:0.875em;
+    text-align:left;
+    vertical-align:top;
+}
+table.vtable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:16px;
+    margin-left:30px;
+    margin-top:10px;
+}
+table.vtable td {
+    border:1px solid gray;
+    word-wrap:break-word;
+    padding: 3px;
+    font-size:0.875em;
+    max-width:450px;
+    vertical-align:top;
+}
+table.ptable th, table.vtable th {
+    background-color:#eeeeee;
+    font-weight:bold;
+    color:#333333;
+    font-family:Verdana, Arial;
+    font-size:0.81em;
+    border:1px solid gray;
+    text-align:center;
+    vertical-align:top;
+    white-space:nowrap;
+    padding: 3px;
+}
+table.summary {
+    border-collapse:collapse;
+    border:1px outset black;
+}
+table.summary th {
+    background-color:#eeeeee;
+    font-weight:100;
+    text-align:left;
+    font-size:0.94em;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px;
+}
+table.summary td {
+    text-align:right;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px 5px 3px 10px;
+}
+span.mangled {
+    padding-left:15px;
+    font-size:0.875em;
+    cursor:text;
+    color:#444444;
+}
+span.sym_ver {
+    color:#333333;
+    white-space:nowrap;
+    font-family:"DejaVu Sans Mono", Monospace;
+}
+span.attr {
+    color:#333333;
+    font-weight:100;
+}
+span.color_p {
+    font-style:italic;
+    color:Brown;
+}
+span.p {
+    font-style:italic;
+}
+span.fp {
+    font-style:italic;
+    background-color:#FFCCCC;
+}
+span.ttype {
+    font-weight:100;
+}
+span.nowrap {
+    white-space:nowrap;
+}
+span.value {
+    white-space:nowrap;
+    font-weight:bold;
+}
+td.passed {
+    background-color:#CCFFCC;
+}
+td.warning {
+    background-color:#F4F4AF;
+}
+td.failed {
+    background-color:#FFCCCC;
+}
+td.new {
+    background-color:#C6DEFF;
+}
+.top_ref {
+    font-size:0.69em;
+}
+.footer {
+    font-size:0.75em;
+}
+
+.tabset {
+    float:left;
+}
+a.tab {
+    border:1px solid Black;
+    float:left;
+    margin:0px 5px -1px 0px;
+    padding:3px 5px 3px 5px;
+    position:relative;
+    font-size:0.875em;
+    background-color:#DDD;
+    text-decoration:none;
+    color:Black;
+}
+a.disabled:hover
+{
+    color:Black;
+    background:#EEE;
+}
+a.active:hover
+{
+    color:Black;
+    background:White;
+}
+a.active {
+    border-bottom-color:White;
+    background-color:White;
+}
+div.tab {
+    border-top:1px solid Black;
+    padding:0px;
+    width:100%;
+    clear:both;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+    function showContent(header, id)
+{
+    e = document.getElementById(id);
+    if(e.style.display == 'none')
+    {
+        e.style.display = 'block';
+        e.style.visibility = 'visible';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[&minus;]");
+    }
+    else
+    {
+        e.style.display = 'none';
+        e.style.visibility = 'hidden';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[+]");
+    }
+}
+function initTabs()
+{
+    var url = window.location.href;
+    if(url.indexOf('_Source_')!=-1 || url.indexOf('#Source')!=-1)
+    {
+        var tab1 = document.getElementById('BinaryID');
+        var tab2 = document.getElementById('SourceID');
+        tab1.className='tab disabled';
+        tab2.className='tab active';
+    }
+    var sets = document.getElementsByTagName('div');
+    for (var i = 0; i < sets.length; i++)
+    {
+        if (sets[i].className.indexOf('tabset') != -1)
+        {
+            var tabs = [];
+            var links = sets[i].getElementsByTagName('a');
+            for (var j = 0; j < links.length; j++)
+            {
+                if (links[j].className.indexOf('tab') != -1)
+                {
+                    tabs.push(links[j]);
+                    links[j].tabs = tabs;
+                    var tab = document.getElementById(links[j].href.substr(links[j].href.indexOf('#') + 1));
+                    //reset all tabs on start
+                    if (tab)
+                    {
+                        if (links[j].className.indexOf('active')!=-1) {
+                            tab.style.display = 'block';
+                        }
+                        else {
+                            tab.style.display = 'none';
+                        }
+                    }
+                    links[j].onclick = function()
+                    {
+                        var tab = document.getElementById(this.href.substr(this.href.indexOf('#') + 1));
+                        if (tab)
+                        {
+                            //reset all tabs before change
+                            for (var k = 0; k < this.tabs.length; k++)
+                            {
+                                document.getElementById(this.tabs[k].href.substr(this.tabs[k].href.indexOf('#') + 1)).style.display = 'none';
+                                this.tabs[k].className = this.tabs[k].className.replace('active', 'disabled');
+                            }
+                            this.className = 'tab active';
+                            tab.style.display = 'block';
+                            // window.location.hash = this.id.replace('ID', '');
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(url.indexOf('#')!=-1) {
+        location.href=location.href;
+    }
+}
+if (window.addEventListener) window.addEventListener('load', initTabs, false);
+else if (window.attachEvent) window.attachEvent('onload', initTabs);
+    -->
+    </script>
+    </head><body><a name='Source'></a><a name='Binary'></a><a name='Top'></a><h1>API compatibility report for the <span style='color:Blue;'>libmmfsound.so</span> object between <span style='color:Red;'>2.3.1</span> and <span style='color:Red;'>3.0</span> versions on <span style='color:Blue;'>ARM</span></h1>
+
+            <br/>
+            <div class='tabset'>
+            <a id='BinaryID' href='#BinaryTab' class='tab active'>Binary<br/>Compatibility</a>
+            <a id='SourceID' href='#SourceTab' style='margin-left:3px' class='tab disabled'>Source<br/>Compatibility</a>
+            </div><div id='BinaryTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libmmfsound</td></tr>
+<tr><th>Version #1</th><td>2.3.1 (gcc 4.6.4)</td></tr>
+<tr><th>Version #2</th><td>3.0 (gcc 4.9.2)</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>Subject</th><td width='150px'>Binary Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>10</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>5</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>109 / 61</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(77.1%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Binary_Added' style='color:Blue;'>28</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td class='failed'><a href='#Binary_Removed' style='color:Blue;'>80</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Type_Binary_Problems_Medium' style='color:Blue;'>3</a></td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Type_Binary_Problems_Low' style='color:Blue;'>7</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Symbol_Binary_Problems_Medium' style='color:Blue;'>8</a></td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Symbol_Binary_Problems_Low' style='color:Blue;'>2</a></td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Binary_Changes_In_Types' style='color:Blue;'>1</a></td></tr>
+</table>
+
+<a name='Binary_Added'></a><h2>Added Symbols (28)</h2><hr/>
+<span class='h_name'>mm_sound.c</span>, <span class='lib_name'>libmmfsound.so.0.1.0</span><br/>
+<span class="iname">mm_sound_add_test_callback&#160;<span class='sym_p'>(&#160;mm_sound_test_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>unsigned int* <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<span class="iname">mm_sound_play_sound_with_stream_info&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>filename</span>, char* <span class='color_p'>stream_type</span>, <span class='nowrap'>int <span class='color_p'>stream_id</span>,</span> mm_sound_stop_callback_func <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>int* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_play_tone_with_stream_info&#160;<span class='sym_p'>(&#160;enum MMSoundTone_t <span class='color_p'>tone</span>, char* <span class='color_p'>stream_type</span>, <span class='nowrap'>int <span class='color_p'>stream_id</span>,</span> double const <span class='color_p'>volume</span>, int const <span class='color_p'>duration</span>, <span class='nowrap'>int* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_remove_test_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>unsigned int <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<span class="iname">mm_sound_send_signal&#160;<span class='sym_p'>(&#160;enum mm_sound_signal_name_t <span class='color_p'>signal</span>, <span class='nowrap'>int <span class='color_p'>value</span> )</span></span></span><br/>
+<span class="iname">mm_sound_subscribe_signal_for_daemon&#160;<span class='sym_p'>(&#160;enum mm_sound_signal_name_t <span class='color_p'>signal</span>, <span class='nowrap'>int <span class='color_p'>client_pid</span>,</span> unsigned int* <span class='color_p'>subscribe_id</span>, mm_sound_signal_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_test&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>a</span>,</span> <span class='nowrap'>int <span class='color_p'>b</span>,</span> <span class='nowrap'>int* <span class='color_p'>getv</span> )</span></span></span><br/>
+<span class="iname">mm_sound_volume_primary_type_get&#160;<span class='sym_p'>(&#160;<span class='nowrap'>volume_type_t* <span class='color_p'>type</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>mm_sound.h</span>, <span class='lib_name'>libmmfsound.so.0.1.0</span><br/>
+<span class="iname">mm_sound_get_signal_value&#160;<span class='sym_p'>(&#160;enum mm_sound_signal_name_t <span class='color_p'>signal</span>, <span class='nowrap'>int* <span class='color_p'>value</span> )</span></span></span><br/>
+<span class="iname">mm_sound_subscribe_signal&#160;<span class='sym_p'>(&#160;enum mm_sound_signal_name_t <span class='color_p'>signal</span>, unsigned int* <span class='color_p'>subscribe_id</span>, mm_sound_signal_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_unsubscribe_signal&#160;<span class='sym_p'>(&#160;<span class='nowrap'>unsigned int <span class='color_p'>subscribe_id</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>mm_sound_device.c</span>, <span class='lib_name'>libmmfsound.so.0.1.0</span><br/>
+<span class="iname">mm_sound_free_device_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundDeviceList_t <span class='color_p'>device_list</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>mm_sound_focus.c</span>, <span class='lib_name'>libmmfsound.so.0.1.0</span><br/>
+<span class="iname">mm_sound_acquire_focus&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> enum mm_sound_focus_type_e <span class='color_p'>focus_type</span>, <span class='nowrap'>char const* <span class='color_p'>additional_info</span> )</span></span></span><br/>
+<span class="iname">mm_sound_focus_get_id&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int* <span class='color_p'>id</span> )</span></span></span><br/>
+<span class="iname">mm_sound_focus_is_cb_thread&#160;<span class='sym_p'>(&#160;<span class='nowrap'>_Bool* <span class='color_p'>result</span> )</span></span></span><br/>
+<span class="iname">mm_sound_focus_set_session_interrupt_callback&#160;<span class='sym_p'>(&#160;mm_sound_focus_session_interrupt_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_focus_unset_session_interrupt_callback&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">mm_sound_get_focus_reacquisition&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> <span class='nowrap'>_Bool* <span class='color_p'>reacquisition</span> )</span></span></span><br/>
+<span class="iname">mm_sound_get_stream_type_of_acquired_focus&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>focus_type</span>,</span> char** <span class='color_p'>stream_type</span>, <span class='nowrap'>char** <span class='color_p'>additional_info</span> )</span></span></span><br/>
+<span class="iname">mm_sound_register_focus&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> char const* <span class='color_p'>stream_type</span>, mm_sound_focus_changed_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_register_focus_for_session&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> <span class='nowrap'>int <span class='color_p'>pid</span>,</span> char const* <span class='color_p'>stream_type</span>, mm_sound_focus_changed_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_release_focus&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> enum mm_sound_focus_type_e <span class='color_p'>focus_type</span>, <span class='nowrap'>char const* <span class='color_p'>additional_info</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_focus_reacquisition&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> <span class='nowrap'>_Bool <span class='color_p'>reacquisition</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_focus_watch_callback&#160;<span class='sym_p'>(&#160;enum mm_sound_focus_type_e <span class='color_p'>focus_type</span>, mm_sound_focus_changed_watch_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>id</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_focus_watch_callback_for_session&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>pid</span>,</span> enum mm_sound_focus_type_e <span class='color_p'>focus_type</span>, mm_sound_focus_changed_watch_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>id</span> )</span></span></span><br/>
+<span class="iname">mm_sound_unregister_focus&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span> )</span></span></span><br/>
+<span class="iname">mm_sound_unset_focus_watch_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>mm_sound_pa_client.c</span>, <span class='lib_name'>libmmfsound.so.0.1.0</span><br/>
+<span class="iname">mm_sound_pa_flush&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int const <span class='color_p'>handle</span> )</span></span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Binary_Removed'></a><a name='Binary_Withdrawn'></a><h2>Removed Symbols (80)</h2><hr/>
+<span class='h_name'>mm_sound.c</span>, <span class='lib_name'>libmmfsound.so.0.1.0</span><br/>
+<span class="iname">mm_sound_add_active_device_changed_callback&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>name</span>, mm_sound_active_device_changed_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_add_available_route_changed_callback&#160;<span class='sym_p'>(&#160;mm_sound_available_route_changed_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_foreach_available_route_cb&#160;<span class='sym_p'>(&#160;mm_sound_available_route_cb <span class='color_p'>available_route_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_get_active_device&#160;<span class='sym_p'>(&#160;mm_sound_device_in* <span class='color_p'>device_in</span>, <span class='nowrap'>mm_sound_device_out* <span class='color_p'>device_out</span> )</span></span></span><br/>
+<span class="iname">mm_sound_get_audio_path&#160;<span class='sym_p'>(&#160;mm_sound_device_in* <span class='color_p'>device_in</span>, <span class='nowrap'>mm_sound_device_out* <span class='color_p'>device_out</span> )</span></span></span><br/>
+<span class="iname">mm_sound_get_call_mute&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='color_p'>type</span>, <span class='nowrap'>int* <span class='color_p'>mute</span> )</span></span></span><br/>
+<span class="iname">mm_sound_get_muteall&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int* <span class='color_p'>muteall</span> )</span></span></span><br/>
+<span class="iname">mm_sound_get_stereo_to_mono&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int* <span class='color_p'>ismono</span> )</span></span></span><br/>
+<span class="iname">mm_sound_get_volume_step&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='color_p'>type</span>, <span class='nowrap'>int* <span class='color_p'>step</span> )</span></span></span><br/>
+<span class="iname">mm_sound_is_route_available&#160;<span class='sym_p'>(&#160;enum mm_sound_route <span class='color_p'>route</span>, <span class='nowrap'>_Bool* <span class='color_p'>is_available</span> )</span></span></span><br/>
+<span class="iname">mm_sound_mute_all&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>muteall</span> )</span></span></span><br/>
+<span class="iname">mm_sound_muteall_add_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>muteall_callback_fn <span class='color_p'>func</span> )</span></span></span><br/>
+<span class="iname">mm_sound_muteall_remove_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>muteall_callback_fn <span class='color_p'>func</span> )</span></span></span><br/>
+<span class="iname">mm_sound_play_loud_solo_sound_no_restore&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>filename</span>, int <span class='color_p'>volume_config</span>, mm_sound_stop_callback_func <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>int* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_play_solo_sound&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>filename</span>, int <span class='color_p'>volume_config</span>, mm_sound_stop_callback_func <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>int* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_play_sound_without_session&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>filename</span>, int <span class='color_p'>volume_config</span>, mm_sound_stop_callback_func <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>int* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_remove_active_device_changed_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>name</span> )</span></span></span><br/>
+<span class="iname">mm_sound_remove_available_route_changed_callback&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">mm_sound_route_add_change_callback&#160;<span class='sym_p'>(&#160;audio_route_policy_changed_callback_fn <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_route_get_a2dp_status&#160;<span class='sym_p'>(&#160;_Bool* <span class='color_p'>connected</span>, <span class='nowrap'>char** <span class='color_p'>bt_name</span> )</span></span></span><br/>
+<span class="iname">mm_sound_route_get_playing_device&#160;<span class='sym_p'>(&#160;<span class='nowrap'>system_audio_route_device_t* <span class='color_p'>dev</span> )</span></span></span><br/>
+<span class="iname">mm_sound_route_get_system_policy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>system_audio_route_t* <span class='color_p'>route</span> )</span></span></span><br/>
+<span class="iname">mm_sound_route_remove_change_callback&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">mm_sound_route_set_system_policy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum system_audio_route_t <span class='color_p'>route</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_active_route&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum mm_sound_route <span class='color_p'>route</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_active_route_auto&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">mm_sound_set_active_route_without_broadcast&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum mm_sound_route <span class='color_p'>route</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_call_mute&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='color_p'>type</span>, <span class='nowrap'>int <span class='color_p'>mute</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_muteall&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>muteall</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_sound_path_for_active_device&#160;<span class='sym_p'>(&#160;enum mm_sound_device_out <span class='color_p'>device_out</span>, <span class='nowrap'>enum mm_sound_device_in <span class='color_p'>device_in</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_stereo_to_mono&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>ismono</span> )</span></span></span><br/>
+<span class="iname">mm_sound_system_get_capture_status&#160;<span class='sym_p'>(&#160;<span class='nowrap'>system_audio_capture_status_t* <span class='color_p'>status</span> )</span></span></span><br/>
+<span class="iname">mm_sound_volume_add_callback&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='color_p'>type</span>, volume_callback_fn <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_volume_get_balance&#160;<span class='sym_p'>(&#160;<span class='nowrap'>float* <span class='color_p'>balance</span> )</span></span></span><br/>
+<span class="iname">mm_sound_volume_get_current_playing_type&#160;<span class='sym_p'>(&#160;<span class='nowrap'>volume_type_t* <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">mm_sound_volume_get_step&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='color_p'>type</span>, <span class='nowrap'>int* <span class='color_p'>step</span> )</span></span></span><br/>
+<span class="iname">mm_sound_volume_primary_type_clear&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">mm_sound_volume_set_balance&#160;<span class='sym_p'>(&#160;<span class='nowrap'>float <span class='color_p'>balance</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>mm_sound_pa_client.c</span>, <span class='lib_name'>libmmfsound.so.0.1.0</span><br/>
+<span class="iname">mm_sound_pa_cork&#160;<span class='sym_p'>(&#160;int const <span class='color_p'>handle</span>, <span class='nowrap'>int const <span class='color_p'>cork</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_corkall&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>cork</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_get_latency&#160;<span class='sym_p'>(&#160;int const <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>latency</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_get_mute&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>handle</span>,</span> <span class='nowrap'>int const <span class='color_p'>type</span>,</span> <span class='nowrap'>int <span class='color_p'>direction</span>,</span> <span class='nowrap'>int* <span class='color_p'>mute</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_get_volume_level&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>handle</span>,</span> <span class='nowrap'>int const <span class='color_p'>type</span>,</span> <span class='nowrap'>int* <span class='color_p'>level</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_get_volume_max&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int const <span class='color_p'>type</span>,</span> <span class='nowrap'>int* <span class='color_p'>step</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_set_call_mute&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int const <span class='color_p'>type</span>,</span> <span class='nowrap'>int const <span class='color_p'>mute</span>,</span> <span class='nowrap'>int <span class='color_p'>direction</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_set_mute&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>handle</span>,</span> <span class='nowrap'>int const <span class='color_p'>type</span>,</span> <span class='nowrap'>int <span class='color_p'>direction</span>,</span> <span class='nowrap'>int <span class='color_p'>mute</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_set_volume_by_type&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int const <span class='color_p'>type</span>,</span> <span class='nowrap'>int const <span class='color_p'>value</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_set_volume_level&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>handle</span>,</span> <span class='nowrap'>int const <span class='color_p'>type</span>,</span> <span class='nowrap'>int <span class='color_p'>level</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>mm_sound_pcm.c</span>, <span class='lib_name'>libmmfsound.so.0.1.0</span><br/>
+<span class="iname">mm_sound_pcm_capture_close&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_ignore_session&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_open&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t* <span class='color_p'>handle</span>, unsigned int const <span class='color_p'>rate</span>, enum MMSoundPcmChannel_t <span class='color_p'>channel</span>, <span class='nowrap'>enum MMSoundPcmFormat_t <span class='color_p'>format</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_open_ex&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t* <span class='color_p'>handle</span>, unsigned int const <span class='color_p'>rate</span>, enum MMSoundPcmChannel_t <span class='color_p'>channel</span>, enum MMSoundPcmFormat_t <span class='color_p'>format</span>, <span class='nowrap'>enum mm_sound_source_type_e <span class='color_p'>source_type</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_read&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, <span class='nowrap'>void* <span class='color_p'>buffer</span>,</span> <span class='nowrap'>unsigned int const <span class='color_p'>length</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_start&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_stop&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_get_latency&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>latency</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_is_started&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>is_started</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_close&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_ignore_session&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_open&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t* <span class='color_p'>handle</span>, unsigned int const <span class='color_p'>rate</span>, enum MMSoundPcmChannel_t <span class='color_p'>channel</span>, enum MMSoundPcmFormat_t <span class='color_p'>format</span>, <span class='nowrap'>int <span class='color_p'>volume_config</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_open_ex&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t* <span class='color_p'>handle</span>, unsigned int const <span class='color_p'>rate</span>, enum MMSoundPcmChannel_t <span class='color_p'>channel</span>, enum MMSoundPcmFormat_t <span class='color_p'>format</span>, int <span class='color_p'>volume_config</span>, <span class='nowrap'>enum ASM_sound_events_t <span class='color_p'>asm_event</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_open_no_session&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t* <span class='color_p'>handle</span>, unsigned int const <span class='color_p'>rate</span>, enum MMSoundPcmChannel_t <span class='color_p'>channel</span>, enum MMSoundPcmFormat_t <span class='color_p'>format</span>, <span class='nowrap'>int <span class='color_p'>volume_config</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_start&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_stop&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_write&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, <span class='nowrap'>void* <span class='color_p'>ptr</span>,</span> <span class='nowrap'>unsigned int <span class='color_p'>length_byte</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_set_message_callback&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, MMMessageCallback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_param</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>mm_sound_pcm_async.c</span>, <span class='lib_name'>libmmfsound.so.0.1.0</span><br/>
+<span class="iname">mm_sound_pcm_capture_close_async&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_drop&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_open_async&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t* <span class='color_p'>handle</span>, unsigned int const <span class='color_p'>rate</span>, enum MMSoundPcmChannel_t <span class='color_p'>channel</span>, enum MMSoundPcmFormat_t <span class='color_p'>format</span>, enum mm_sound_source_type_e <span class='color_p'>source_type</span>, mm_sound_pcm_stream_cb_t <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>userdata</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_peek&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, void const** <span class='color_p'>buffer</span>, <span class='nowrap'>unsigned int const* <span class='color_p'>length</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_start_async&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_stop_async&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_get_latency_async&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>latency</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_is_started_async&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>is_started</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_close_async&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_open_async&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t* <span class='color_p'>handle</span>, unsigned int const <span class='color_p'>rate</span>, enum MMSoundPcmChannel_t <span class='color_p'>channel</span>, enum MMSoundPcmFormat_t <span class='color_p'>format</span>, int <span class='color_p'>volume_config</span>, mm_sound_pcm_stream_cb_t <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>userdata</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_start_async&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_stop_async&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_write_async&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, <span class='nowrap'>void* <span class='color_p'>ptr</span>,</span> <span class='nowrap'>unsigned int <span class='color_p'>length_byte</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_set_message_callback_async&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, MMMessageCallback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_param</span> )</span></span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Medium_Risk_Binary_Problems'></a><a name='Type_Binary_Problems_Medium'></a>
+<h2>Problems with Data Types, Medium Severity (3)</h2><hr/>
+<span class='h_name'>mm_sound.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> mm_sound_device_io_direction_e (3)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Value of member <b>MM_SOUND_DEVICE_IO_DIRECTION_BOTH</b> has been changed from <b>2</b> to <b>3</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Value of member <b>MM_SOUND_DEVICE_IO_DIRECTION_IN</b> has been changed from <b>0</b> to <b>1</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Value of member <b>MM_SOUND_DEVICE_IO_DIRECTION_OUT</b> has been changed from <b>1</b> to <b>2</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (1)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>mm_sound_get_device_io_direction&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundDevice_t <i>device_h</i>,</span> <span class='nowrap'>mm_sound_device_io_direction_e* <span class='fp'>io_direction</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;io_direction&#39; (pointer) has base type &#39;enum mm_sound_device_io_direction_e&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Symbol_Binary_Problems_Medium'></a><a name='Interface_Binary_Problems_Medium'></a>
+<h2>Problems with Symbols, Medium Severity (8)</h2><hr/>
+<span class='h_name'>mm_sound.c</span>, <span class='lib_name'>libmmfsound.so.0.1.0</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='ext'>[+]</span> mm_sound_add_volume_changed_callback&#160;<span class='sym_p'>(&#160;mm_sound_volume_changed_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span> (1)</span>
+<br/>
+<div id="c_3" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_add_volume_changed_callback&#160;<span class='sym_p'>(&#160;mm_sound_volume_changed_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>unsigned int* <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>subs_id</b> of type <span class='value'>unsigned int*</span> has been added to the calling stack.</td>
+<td>This parameter will not be initialized by old clients.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_4')">
+<span class='ext'>[+]</span> mm_sound_remove_volume_changed_callback&#160;<span class='sym_p'>(&#160;)</span> (1)</span>
+<br/>
+<div id="c_4" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_remove_volume_changed_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>unsigned int <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>subs_id</b> of type <span class='value'>unsigned int</span> has been added to the calling stack.</td>
+<td>This parameter will not be initialized by old clients.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>mm_sound_device.c</span>, <span class='lib_name'>libmmfsound.so.0.1.0</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+<span class='ext'>[+]</span> mm_sound_add_device_connected_callback&#160;<span class='sym_p'>(&#160;enum mm_sound_device_flags_e <span class='color_p'>flags</span>, mm_sound_device_connected_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span> (1)</span>
+<br/>
+<div id="c_5" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_add_device_connected_callback&#160;<span class='sym_p'>(&#160;enum mm_sound_device_flags_e <span class='color_p'>flags</span>, mm_sound_device_connected_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>unsigned int* <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>subs_id</b> of type <span class='value'>unsigned int*</span> has been added to the calling stack.</td>
+<td>This parameter will not be initialized by old clients.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_6')">
+<span class='ext'>[+]</span> mm_sound_add_device_information_changed_callback&#160;<span class='sym_p'>(&#160;enum mm_sound_device_flags_e <span class='color_p'>flags</span>, mm_sound_device_info_changed_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span> (1)</span>
+<br/>
+<div id="c_6" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_add_device_information_changed_callback&#160;<span class='sym_p'>(&#160;enum mm_sound_device_flags_e <span class='color_p'>flags</span>, mm_sound_device_info_changed_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>unsigned int* <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>subs_id</b> of type <span class='value'>unsigned int*</span> has been added to the calling stack.</td>
+<td>This parameter will not be initialized by old clients.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_7')">
+<span class='ext'>[+]</span> mm_sound_remove_device_connected_callback&#160;<span class='sym_p'>(&#160;)</span> (1)</span>
+<br/>
+<div id="c_7" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_remove_device_connected_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>unsigned int <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>subs_id</b> of type <span class='value'>unsigned int</span> has been added to the calling stack.</td>
+<td>This parameter will not be initialized by old clients.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_8')">
+<span class='ext'>[+]</span> mm_sound_remove_device_information_changed_callback&#160;<span class='sym_p'>(&#160;)</span> (1)</span>
+<br/>
+<div id="c_8" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_remove_device_information_changed_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>unsigned int <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>subs_id</b> of type <span class='value'>unsigned int</span> has been added to the calling stack.</td>
+<td>This parameter will not be initialized by old clients.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>mm_sound_pcm_async.c</span>, <span class='lib_name'>libmmfsound.so.0.1.0</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_9')">
+<span class='ext'>[+]</span> mm_sound_pa_open&#160;<span class='sym_p'>(&#160;enum MMSoundHandleMode <span class='color_p'>mode</span>, mm_sound_handle_route_info* <span class='color_p'>route_info</span>, enum MMSoundHandlePriority <span class='color_p'>priority</span>, int <span class='color_p'>volume_config</span>, pa_sample_spec* <span class='color_p'>ss</span>, pa_channel_map* <span class='color_p'>channel_map</span>, <span class='nowrap'>int* <span class='color_p'>size</span> )</span></span> (2)</span>
+<br/>
+<div id="c_9" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_pa_open&#160;<span class='sym_p'>(&#160;enum MMSoundHandleMode <span class='color_p'>mode</span>, mm_sound_handle_route_info* <span class='color_p'>route_info</span>, enum MMSoundHandlePriority <span class='color_p'>priority</span>, int <span class='color_p'>volume_config</span>, pa_sample_spec* <span class='color_p'>ss</span>, pa_channel_map* <span class='color_p'>channel_map</span>, <span class='nowrap'>int* <span class='color_p'>size</span>,</span> char* <span class='color_p'>stream_type</span>, <span class='nowrap'>int <span class='color_p'>stream_index</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>stream_type</b> of type <b>char*</b> has been added to the calling stack.</td>
+<td>This parameter will not be initialized by old clients.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Parameter <b>stream_index</b> of type <b>int</b> has been added to the calling stack.</td>
+<td>This parameter will not be initialized by old clients.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a><a name='Type_Binary_Problems_Low'></a>
+<h2>Problems with Data Types, Low Severity (7)</h2><hr/>
+<span class='h_name'>mm_sound.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_10')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> volume_type_t (1)</span>
+<br/>
+<div id="c_10" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>VOLUME_TYPE_EXT_ANDROID</b> has been removed.</td>
+<td>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_11')">
+[+] affected symbols (5)</span>
+<div id="c_11" style="display:none;">
+<div class='affected'><span class='iname_a'>mm_sound_add_volume_changed_callback&#160;<span class='sym_p'>(&#160;mm_sound_volume_changed_cb <span class='fp'>func</span>, <span class='nowrap'>void* <i>user_data</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;func.p0&#39; in 1st parameter &#39;func&#39; has base type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_get_value&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='fp'>type</span>, <span class='nowrap'>unsigned int* <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_primary_type_set&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum volume_type_t <span class='fp'>type</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_remove_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum volume_type_t <span class='fp'>type</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_set_value&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='fp'>type</span>, <span class='nowrap'>unsigned int const <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<span class='h_name'>mm_sound_pa_client.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_12')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> MMSoundHandlePriority (2)</span>
+<br/>
+<div id="c_12" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>HANDLE_PRIORITY_MAX</b> has been removed.</td>
+<td>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>HANDLE_PRIORITY_SOLO</b> has been removed.</td>
+<td>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_13')">
+[+] affected symbols (1)</span>
+<div id="c_13" style="display:none;">
+<div class='affected'><span class='iname_a'>mm_sound_pa_open&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum MMSoundHandleMode <i>mode</i>,</span> mm_sound_handle_route_info* <i>route_info</i>, enum MMSoundHandlePriority <span class='fp'>priority</span>, <span class='nowrap'>int <i>volume_config</i>,</span> <span class='nowrap'>pa_sample_spec* <i>ss</i>,</span> <span class='nowrap'>pa_channel_map* <i>channel_map</i>,</span> <span class='nowrap'>int* <i>size</i> )</span></span></span><br/>
+<div class='affect'>3rd parameter &#39;priority&#39; has type &#39;enum MMSoundHandlePriority&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_14')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> MMSoundHandleRoutePolicy (4)</span>
+<br/>
+<div id="c_14" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>HANDLE_ROUTE_POLICY_IN_MIRRORING</b> has been removed.</td>
+<td>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>HANDLE_ROUTE_POLICY_IN_VOIP</b> has been removed.</td>
+<td>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>HANDLE_ROUTE_POLICY_OUT_ALL</b> has been removed.</td>
+<td>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>HANDLE_ROUTE_POLICY_OUT_HANDSET</b> has been removed.</td>
+<td>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_15')">
+[+] affected symbols (1)</span>
+<div id="c_15" style="display:none;">
+<div class='affected'><span class='iname_a'>mm_sound_pa_open&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum MMSoundHandleMode <i>mode</i>,</span> mm_sound_handle_route_info* <span class='fp'>route_info</span>, <span class='nowrap'>enum MMSoundHandlePriority <i>priority</i>,</span> <span class='nowrap'>int <i>volume_config</i>,</span> <span class='nowrap'>pa_sample_spec* <i>ss</i>,</span> <span class='nowrap'>pa_channel_map* <i>channel_map</i>,</span> <span class='nowrap'>int* <i>size</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;route_info.policy&#39; in 2nd parameter &#39;route_info&#39; (pointer) has type &#39;enum MMSoundHandleRoutePolicy&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Symbol_Binary_Problems_Low'></a><a name='Interface_Binary_Problems_Low'></a>
+<h2>Problems with Symbols, Low Severity (2)</h2><hr/>
+<span class='h_name'>mm_sound.c</span>, <span class='lib_name'>libmmfsound.so.0.1.0</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_16')">
+<span class='ext'>[+]</span> mm_sound_volume_set_value&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='color_p'>type</span>, <span class='nowrap'>unsigned int const <span class='color_p'>value</span> )</span></span> (2)</span>
+<br/>
+<div id="c_16" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_volume_set_value&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='color_p'>volume_type</span>, <span class='nowrap'>unsigned int const <span class='color_p'>volume_level</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>1st</b> parameter <b>type</b> has been renamed to <b>volume_type</b>.</td>
+<td>Renaming of a parameter may indicate a change in its semantic meaning.</td>
+</tr>
+<tr>
+<th>2</th>
+<td><b>2nd</b> parameter <b>value</b> has been renamed to <b>volume_level</b>.</td>
+<td>Renaming of a parameter may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Binary_Changes'></a><a name='Other_Binary_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (1)</h2><hr/>
+<span class='h_name'>mm_sound.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_17')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> volume_type_t (1)</span>
+<br/>
+<div id="c_17" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>VOLUME_TYPE_UNKNOWN</b> with value <b>18446744073709551615</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_18')">
+[+] affected symbols (5)</span>
+<div id="c_18" style="display:none;">
+<div class='affected'><span class='iname_a'>mm_sound_add_volume_changed_callback&#160;<span class='sym_p'>(&#160;mm_sound_volume_changed_cb <span class='fp'>func</span>, <span class='nowrap'>void* <i>user_data</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;func.p0&#39; in 1st parameter &#39;func&#39; has base type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_get_value&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='fp'>type</span>, <span class='nowrap'>unsigned int* <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_primary_type_set&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum volume_type_t <span class='fp'>type</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_remove_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum volume_type_t <span class='fp'>type</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_set_value&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='fp'>type</span>, <span class='nowrap'>unsigned int const <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (10)</h2><hr/>
+<div class='h_list'>
+audio-session-manager-types.h<br/>
+channelmap.h<br/>
+mm_message.h<br/>
+mm_sound.h<br/>
+mm_sound_pa_client.h<br/>
+mm_sound_pcm_async.h<br/>
+mm_sound_private.h<br/>
+sample.h<br/>
+stddef.h<br/>
+stdint.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (5)</h2><hr/>
+<div class='h_list'>
+mm_sound.c<br/>
+mm_sound_device.c<br/>
+mm_sound_pa_client.c<br/>
+mm_sound_pcm.c<br/>
+mm_sound_pcm_async.c<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libmmfsound.so.0.1.0<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><div id='SourceTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libmmfsound</td></tr>
+<tr><th>Version #1</th><td>2.3.1 (gcc 4.6.4)</td></tr>
+<tr><th>Version #2</th><td>3.0 (gcc 4.9.2)</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>Subject</th><td width='150px'>Source Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>10</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>5</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>109 / 61</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(81.2%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Source_Added' style='color:Blue;'>28</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td class='failed'><a href='#Source_Removed' style='color:Blue;'>80</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td class='failed'><a href='#Type_Source_Problems_High' style='color:Blue;'>7</a></td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Symbol_Source_Problems_Medium' style='color:Blue;'>8</a></td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Types' style='color:Blue;'>4</a></td></tr>
+<tr><th>Other Changes<br/>in Symbols</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Symbols' style='color:Blue;'>2</a></td></tr>
+</table>
+
+<a name='Source_Added'></a><h2>Added Symbols (28)</h2><hr/>
+<span class='h_name'>mm_sound.c</span><br/>
+<span class="iname">mm_sound_add_test_callback&#160;<span class='sym_p'>(&#160;mm_sound_test_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>unsigned int* <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<span class="iname">mm_sound_play_sound_with_stream_info&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>filename</span>, char* <span class='color_p'>stream_type</span>, <span class='nowrap'>int <span class='color_p'>stream_id</span>,</span> mm_sound_stop_callback_func <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>int* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_play_tone_with_stream_info&#160;<span class='sym_p'>(&#160;enum MMSoundTone_t <span class='color_p'>tone</span>, char* <span class='color_p'>stream_type</span>, <span class='nowrap'>int <span class='color_p'>stream_id</span>,</span> double const <span class='color_p'>volume</span>, int const <span class='color_p'>duration</span>, <span class='nowrap'>int* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_remove_test_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>unsigned int <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<span class="iname">mm_sound_send_signal&#160;<span class='sym_p'>(&#160;enum mm_sound_signal_name_t <span class='color_p'>signal</span>, <span class='nowrap'>int <span class='color_p'>value</span> )</span></span></span><br/>
+<span class="iname">mm_sound_subscribe_signal_for_daemon&#160;<span class='sym_p'>(&#160;enum mm_sound_signal_name_t <span class='color_p'>signal</span>, <span class='nowrap'>int <span class='color_p'>client_pid</span>,</span> unsigned int* <span class='color_p'>subscribe_id</span>, mm_sound_signal_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_test&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>a</span>,</span> <span class='nowrap'>int <span class='color_p'>b</span>,</span> <span class='nowrap'>int* <span class='color_p'>getv</span> )</span></span></span><br/>
+<span class="iname">mm_sound_volume_primary_type_get&#160;<span class='sym_p'>(&#160;<span class='nowrap'>volume_type_t* <span class='color_p'>type</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>mm_sound.h</span><br/>
+<span class="iname">mm_sound_get_signal_value&#160;<span class='sym_p'>(&#160;enum mm_sound_signal_name_t <span class='color_p'>signal</span>, <span class='nowrap'>int* <span class='color_p'>value</span> )</span></span></span><br/>
+<span class="iname">mm_sound_subscribe_signal&#160;<span class='sym_p'>(&#160;enum mm_sound_signal_name_t <span class='color_p'>signal</span>, unsigned int* <span class='color_p'>subscribe_id</span>, mm_sound_signal_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_unsubscribe_signal&#160;<span class='sym_p'>(&#160;<span class='nowrap'>unsigned int <span class='color_p'>subscribe_id</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>mm_sound_device.c</span><br/>
+<span class="iname">mm_sound_free_device_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundDeviceList_t <span class='color_p'>device_list</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>mm_sound_focus.c</span><br/>
+<span class="iname">mm_sound_acquire_focus&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> enum mm_sound_focus_type_e <span class='color_p'>focus_type</span>, <span class='nowrap'>char const* <span class='color_p'>additional_info</span> )</span></span></span><br/>
+<span class="iname">mm_sound_focus_get_id&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int* <span class='color_p'>id</span> )</span></span></span><br/>
+<span class="iname">mm_sound_focus_is_cb_thread&#160;<span class='sym_p'>(&#160;<span class='nowrap'>_Bool* <span class='color_p'>result</span> )</span></span></span><br/>
+<span class="iname">mm_sound_focus_set_session_interrupt_callback&#160;<span class='sym_p'>(&#160;mm_sound_focus_session_interrupt_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_focus_unset_session_interrupt_callback&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">mm_sound_get_focus_reacquisition&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> <span class='nowrap'>_Bool* <span class='color_p'>reacquisition</span> )</span></span></span><br/>
+<span class="iname">mm_sound_get_stream_type_of_acquired_focus&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>focus_type</span>,</span> char** <span class='color_p'>stream_type</span>, <span class='nowrap'>char** <span class='color_p'>additional_info</span> )</span></span></span><br/>
+<span class="iname">mm_sound_register_focus&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> char const* <span class='color_p'>stream_type</span>, mm_sound_focus_changed_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_register_focus_for_session&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> <span class='nowrap'>int <span class='color_p'>pid</span>,</span> char const* <span class='color_p'>stream_type</span>, mm_sound_focus_changed_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_release_focus&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> enum mm_sound_focus_type_e <span class='color_p'>focus_type</span>, <span class='nowrap'>char const* <span class='color_p'>additional_info</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_focus_reacquisition&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span>,</span> <span class='nowrap'>_Bool <span class='color_p'>reacquisition</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_focus_watch_callback&#160;<span class='sym_p'>(&#160;enum mm_sound_focus_type_e <span class='color_p'>focus_type</span>, mm_sound_focus_changed_watch_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>id</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_focus_watch_callback_for_session&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>pid</span>,</span> enum mm_sound_focus_type_e <span class='color_p'>focus_type</span>, mm_sound_focus_changed_watch_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>id</span> )</span></span></span><br/>
+<span class="iname">mm_sound_unregister_focus&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span> )</span></span></span><br/>
+<span class="iname">mm_sound_unset_focus_watch_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>id</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>mm_sound_pa_client.c</span><br/>
+<span class="iname">mm_sound_pa_flush&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int const <span class='color_p'>handle</span> )</span></span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Source_Removed'></a><a name='Source_Withdrawn'></a><h2>Removed Symbols (80)</h2><hr/>
+<span class='h_name'>mm_sound.c</span><br/>
+<span class="iname">mm_sound_add_active_device_changed_callback&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>name</span>, mm_sound_active_device_changed_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_add_available_route_changed_callback&#160;<span class='sym_p'>(&#160;mm_sound_available_route_changed_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_foreach_available_route_cb&#160;<span class='sym_p'>(&#160;mm_sound_available_route_cb <span class='color_p'>available_route_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_get_active_device&#160;<span class='sym_p'>(&#160;mm_sound_device_in* <span class='color_p'>device_in</span>, <span class='nowrap'>mm_sound_device_out* <span class='color_p'>device_out</span> )</span></span></span><br/>
+<span class="iname">mm_sound_get_audio_path&#160;<span class='sym_p'>(&#160;mm_sound_device_in* <span class='color_p'>device_in</span>, <span class='nowrap'>mm_sound_device_out* <span class='color_p'>device_out</span> )</span></span></span><br/>
+<span class="iname">mm_sound_get_call_mute&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='color_p'>type</span>, <span class='nowrap'>int* <span class='color_p'>mute</span> )</span></span></span><br/>
+<span class="iname">mm_sound_get_muteall&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int* <span class='color_p'>muteall</span> )</span></span></span><br/>
+<span class="iname">mm_sound_get_stereo_to_mono&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int* <span class='color_p'>ismono</span> )</span></span></span><br/>
+<span class="iname">mm_sound_get_volume_step&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='color_p'>type</span>, <span class='nowrap'>int* <span class='color_p'>step</span> )</span></span></span><br/>
+<span class="iname">mm_sound_is_route_available&#160;<span class='sym_p'>(&#160;enum mm_sound_route <span class='color_p'>route</span>, <span class='nowrap'>_Bool* <span class='color_p'>is_available</span> )</span></span></span><br/>
+<span class="iname">mm_sound_mute_all&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>muteall</span> )</span></span></span><br/>
+<span class="iname">mm_sound_muteall_add_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>muteall_callback_fn <span class='color_p'>func</span> )</span></span></span><br/>
+<span class="iname">mm_sound_muteall_remove_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>muteall_callback_fn <span class='color_p'>func</span> )</span></span></span><br/>
+<span class="iname">mm_sound_play_loud_solo_sound_no_restore&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>filename</span>, int <span class='color_p'>volume_config</span>, mm_sound_stop_callback_func <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>int* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_play_solo_sound&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>filename</span>, int <span class='color_p'>volume_config</span>, mm_sound_stop_callback_func <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>int* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_play_sound_without_session&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>filename</span>, int <span class='color_p'>volume_config</span>, mm_sound_stop_callback_func <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>int* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_remove_active_device_changed_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>name</span> )</span></span></span><br/>
+<span class="iname">mm_sound_remove_available_route_changed_callback&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">mm_sound_route_add_change_callback&#160;<span class='sym_p'>(&#160;audio_route_policy_changed_callback_fn <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_route_get_a2dp_status&#160;<span class='sym_p'>(&#160;_Bool* <span class='color_p'>connected</span>, <span class='nowrap'>char** <span class='color_p'>bt_name</span> )</span></span></span><br/>
+<span class="iname">mm_sound_route_get_playing_device&#160;<span class='sym_p'>(&#160;<span class='nowrap'>system_audio_route_device_t* <span class='color_p'>dev</span> )</span></span></span><br/>
+<span class="iname">mm_sound_route_get_system_policy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>system_audio_route_t* <span class='color_p'>route</span> )</span></span></span><br/>
+<span class="iname">mm_sound_route_remove_change_callback&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">mm_sound_route_set_system_policy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum system_audio_route_t <span class='color_p'>route</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_active_route&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum mm_sound_route <span class='color_p'>route</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_active_route_auto&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">mm_sound_set_active_route_without_broadcast&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum mm_sound_route <span class='color_p'>route</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_call_mute&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='color_p'>type</span>, <span class='nowrap'>int <span class='color_p'>mute</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_muteall&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>muteall</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_sound_path_for_active_device&#160;<span class='sym_p'>(&#160;enum mm_sound_device_out <span class='color_p'>device_out</span>, <span class='nowrap'>enum mm_sound_device_in <span class='color_p'>device_in</span> )</span></span></span><br/>
+<span class="iname">mm_sound_set_stereo_to_mono&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>ismono</span> )</span></span></span><br/>
+<span class="iname">mm_sound_system_get_capture_status&#160;<span class='sym_p'>(&#160;<span class='nowrap'>system_audio_capture_status_t* <span class='color_p'>status</span> )</span></span></span><br/>
+<span class="iname">mm_sound_volume_add_callback&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='color_p'>type</span>, volume_callback_fn <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">mm_sound_volume_get_balance&#160;<span class='sym_p'>(&#160;<span class='nowrap'>float* <span class='color_p'>balance</span> )</span></span></span><br/>
+<span class="iname">mm_sound_volume_get_current_playing_type&#160;<span class='sym_p'>(&#160;<span class='nowrap'>volume_type_t* <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">mm_sound_volume_get_step&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='color_p'>type</span>, <span class='nowrap'>int* <span class='color_p'>step</span> )</span></span></span><br/>
+<span class="iname">mm_sound_volume_primary_type_clear&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">mm_sound_volume_set_balance&#160;<span class='sym_p'>(&#160;<span class='nowrap'>float <span class='color_p'>balance</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>mm_sound_pa_client.c</span><br/>
+<span class="iname">mm_sound_pa_cork&#160;<span class='sym_p'>(&#160;int const <span class='color_p'>handle</span>, <span class='nowrap'>int const <span class='color_p'>cork</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_corkall&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>cork</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_get_latency&#160;<span class='sym_p'>(&#160;int const <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>latency</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_get_mute&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>handle</span>,</span> <span class='nowrap'>int const <span class='color_p'>type</span>,</span> <span class='nowrap'>int <span class='color_p'>direction</span>,</span> <span class='nowrap'>int* <span class='color_p'>mute</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_get_volume_level&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>handle</span>,</span> <span class='nowrap'>int const <span class='color_p'>type</span>,</span> <span class='nowrap'>int* <span class='color_p'>level</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_get_volume_max&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int const <span class='color_p'>type</span>,</span> <span class='nowrap'>int* <span class='color_p'>step</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_set_call_mute&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int const <span class='color_p'>type</span>,</span> <span class='nowrap'>int const <span class='color_p'>mute</span>,</span> <span class='nowrap'>int <span class='color_p'>direction</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_set_mute&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>handle</span>,</span> <span class='nowrap'>int const <span class='color_p'>type</span>,</span> <span class='nowrap'>int <span class='color_p'>direction</span>,</span> <span class='nowrap'>int <span class='color_p'>mute</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_set_volume_by_type&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int const <span class='color_p'>type</span>,</span> <span class='nowrap'>int const <span class='color_p'>value</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pa_set_volume_level&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>handle</span>,</span> <span class='nowrap'>int const <span class='color_p'>type</span>,</span> <span class='nowrap'>int <span class='color_p'>level</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>mm_sound_pcm.c</span><br/>
+<span class="iname">mm_sound_pcm_capture_close&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_ignore_session&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_open&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t* <span class='color_p'>handle</span>, unsigned int const <span class='color_p'>rate</span>, enum MMSoundPcmChannel_t <span class='color_p'>channel</span>, <span class='nowrap'>enum MMSoundPcmFormat_t <span class='color_p'>format</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_open_ex&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t* <span class='color_p'>handle</span>, unsigned int const <span class='color_p'>rate</span>, enum MMSoundPcmChannel_t <span class='color_p'>channel</span>, enum MMSoundPcmFormat_t <span class='color_p'>format</span>, <span class='nowrap'>enum mm_sound_source_type_e <span class='color_p'>source_type</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_read&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, <span class='nowrap'>void* <span class='color_p'>buffer</span>,</span> <span class='nowrap'>unsigned int const <span class='color_p'>length</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_start&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_stop&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_get_latency&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>latency</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_is_started&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>is_started</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_close&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_ignore_session&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_open&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t* <span class='color_p'>handle</span>, unsigned int const <span class='color_p'>rate</span>, enum MMSoundPcmChannel_t <span class='color_p'>channel</span>, enum MMSoundPcmFormat_t <span class='color_p'>format</span>, <span class='nowrap'>int <span class='color_p'>volume_config</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_open_ex&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t* <span class='color_p'>handle</span>, unsigned int const <span class='color_p'>rate</span>, enum MMSoundPcmChannel_t <span class='color_p'>channel</span>, enum MMSoundPcmFormat_t <span class='color_p'>format</span>, int <span class='color_p'>volume_config</span>, <span class='nowrap'>enum ASM_sound_events_t <span class='color_p'>asm_event</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_open_no_session&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t* <span class='color_p'>handle</span>, unsigned int const <span class='color_p'>rate</span>, enum MMSoundPcmChannel_t <span class='color_p'>channel</span>, enum MMSoundPcmFormat_t <span class='color_p'>format</span>, <span class='nowrap'>int <span class='color_p'>volume_config</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_start&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_stop&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_write&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, <span class='nowrap'>void* <span class='color_p'>ptr</span>,</span> <span class='nowrap'>unsigned int <span class='color_p'>length_byte</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_set_message_callback&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, MMMessageCallback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_param</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>mm_sound_pcm_async.c</span><br/>
+<span class="iname">mm_sound_pcm_capture_close_async&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_drop&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_open_async&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t* <span class='color_p'>handle</span>, unsigned int const <span class='color_p'>rate</span>, enum MMSoundPcmChannel_t <span class='color_p'>channel</span>, enum MMSoundPcmFormat_t <span class='color_p'>format</span>, enum mm_sound_source_type_e <span class='color_p'>source_type</span>, mm_sound_pcm_stream_cb_t <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>userdata</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_peek&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, void const** <span class='color_p'>buffer</span>, <span class='nowrap'>unsigned int const* <span class='color_p'>length</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_start_async&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_capture_stop_async&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_get_latency_async&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>latency</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_is_started_async&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>is_started</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_close_async&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_open_async&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t* <span class='color_p'>handle</span>, unsigned int const <span class='color_p'>rate</span>, enum MMSoundPcmChannel_t <span class='color_p'>channel</span>, enum MMSoundPcmFormat_t <span class='color_p'>format</span>, int <span class='color_p'>volume_config</span>, mm_sound_pcm_stream_cb_t <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>userdata</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_start_async&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_stop_async&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundPcmHandle_t <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_play_write_async&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, <span class='nowrap'>void* <span class='color_p'>ptr</span>,</span> <span class='nowrap'>unsigned int <span class='color_p'>length_byte</span> )</span></span></span><br/>
+<span class="iname">mm_sound_pcm_set_message_callback_async&#160;<span class='sym_p'>(&#160;MMSoundPcmHandle_t <span class='color_p'>handle</span>, MMMessageCallback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_param</span> )</span></span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='High_Risk_Source_Problems'></a><a name='Type_Source_Problems_High'></a>
+<h2>Problems with Data Types, High Severity (7)</h2><hr/>
+<span class='h_name'>mm_sound.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_19')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> volume_type_t (1)</span>
+<br/>
+<div id="c_19" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>VOLUME_TYPE_EXT_ANDROID</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_20')">
+[+] affected symbols (5)</span>
+<div id="c_20" style="display:none;">
+<div class='affected'><span class='iname_a'>mm_sound_add_volume_changed_callback&#160;<span class='sym_p'>(&#160;mm_sound_volume_changed_cb <span class='fp'>func</span>, <span class='nowrap'>void* <i>user_data</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;func.p0&#39; in 1st parameter &#39;func&#39; has base type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_get_value&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='fp'>type</span>, <span class='nowrap'>unsigned int* <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_primary_type_set&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum volume_type_t <span class='fp'>type</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_remove_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum volume_type_t <span class='fp'>type</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_set_value&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='fp'>type</span>, <span class='nowrap'>unsigned int const <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<span class='h_name'>mm_sound_pa_client.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_21')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> MMSoundHandlePriority (2)</span>
+<br/>
+<div id="c_21" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>HANDLE_PRIORITY_MAX</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>HANDLE_PRIORITY_SOLO</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_22')">
+[+] affected symbols (1)</span>
+<div id="c_22" style="display:none;">
+<div class='affected'><span class='iname_a'>mm_sound_pa_open&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum MMSoundHandleMode <i>mode</i>,</span> mm_sound_handle_route_info* <i>route_info</i>, enum MMSoundHandlePriority <span class='fp'>priority</span>, <span class='nowrap'>int <i>volume_config</i>,</span> <span class='nowrap'>pa_sample_spec* <i>ss</i>,</span> <span class='nowrap'>pa_channel_map* <i>channel_map</i>,</span> <span class='nowrap'>int* <i>size</i> )</span></span></span><br/>
+<div class='affect'>3rd parameter &#39;priority&#39; has type &#39;enum MMSoundHandlePriority&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_23')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> MMSoundHandleRoutePolicy (4)</span>
+<br/>
+<div id="c_23" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>HANDLE_ROUTE_POLICY_IN_MIRRORING</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>HANDLE_ROUTE_POLICY_IN_VOIP</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>HANDLE_ROUTE_POLICY_OUT_ALL</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>HANDLE_ROUTE_POLICY_OUT_HANDSET</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_24')">
+[+] affected symbols (1)</span>
+<div id="c_24" style="display:none;">
+<div class='affected'><span class='iname_a'>mm_sound_pa_open&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum MMSoundHandleMode <i>mode</i>,</span> mm_sound_handle_route_info* <span class='fp'>route_info</span>, <span class='nowrap'>enum MMSoundHandlePriority <i>priority</i>,</span> <span class='nowrap'>int <i>volume_config</i>,</span> <span class='nowrap'>pa_sample_spec* <i>ss</i>,</span> <span class='nowrap'>pa_channel_map* <i>channel_map</i>,</span> <span class='nowrap'>int* <i>size</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;route_info.policy&#39; in 2nd parameter &#39;route_info&#39; (pointer) has type &#39;enum MMSoundHandleRoutePolicy&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Medium_Risk_Source_Problems'></a><a name='Symbol_Source_Problems_Medium'></a><a name='Interface_Source_Problems_Medium'></a>
+<h2>Problems with Symbols, Medium Severity (8)</h2><hr/>
+<span class='h_name'>mm_sound.c</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_25')">
+<span class='ext'>[+]</span> mm_sound_add_volume_changed_callback&#160;<span class='sym_p'>(&#160;mm_sound_volume_changed_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span> (1)</span>
+<br/>
+<div id="c_25" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_add_volume_changed_callback&#160;<span class='sym_p'>(&#160;mm_sound_volume_changed_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>unsigned int* <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>subs_id</b> of type <span class='value'>unsigned int*</span> has been added to the calling stack.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_26')">
+<span class='ext'>[+]</span> mm_sound_remove_volume_changed_callback&#160;<span class='sym_p'>(&#160;)</span> (1)</span>
+<br/>
+<div id="c_26" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_remove_volume_changed_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>unsigned int <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>subs_id</b> of type <span class='value'>unsigned int</span> has been added to the calling stack.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>mm_sound_device.c</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_27')">
+<span class='ext'>[+]</span> mm_sound_add_device_connected_callback&#160;<span class='sym_p'>(&#160;enum mm_sound_device_flags_e <span class='color_p'>flags</span>, mm_sound_device_connected_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span> (1)</span>
+<br/>
+<div id="c_27" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_add_device_connected_callback&#160;<span class='sym_p'>(&#160;enum mm_sound_device_flags_e <span class='color_p'>flags</span>, mm_sound_device_connected_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>unsigned int* <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>subs_id</b> of type <span class='value'>unsigned int*</span> has been added to the calling stack.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_28')">
+<span class='ext'>[+]</span> mm_sound_add_device_information_changed_callback&#160;<span class='sym_p'>(&#160;enum mm_sound_device_flags_e <span class='color_p'>flags</span>, mm_sound_device_info_changed_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span> (1)</span>
+<br/>
+<div id="c_28" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_add_device_information_changed_callback&#160;<span class='sym_p'>(&#160;enum mm_sound_device_flags_e <span class='color_p'>flags</span>, mm_sound_device_info_changed_cb <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>unsigned int* <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>subs_id</b> of type <span class='value'>unsigned int*</span> has been added to the calling stack.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_29')">
+<span class='ext'>[+]</span> mm_sound_remove_device_connected_callback&#160;<span class='sym_p'>(&#160;)</span> (1)</span>
+<br/>
+<div id="c_29" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_remove_device_connected_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>unsigned int <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>subs_id</b> of type <span class='value'>unsigned int</span> has been added to the calling stack.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_30')">
+<span class='ext'>[+]</span> mm_sound_remove_device_information_changed_callback&#160;<span class='sym_p'>(&#160;)</span> (1)</span>
+<br/>
+<div id="c_30" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_remove_device_information_changed_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>unsigned int <span class='color_p'>subs_id</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>subs_id</b> of type <span class='value'>unsigned int</span> has been added to the calling stack.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>mm_sound_pcm_async.c</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_31')">
+<span class='ext'>[+]</span> mm_sound_pa_open&#160;<span class='sym_p'>(&#160;enum MMSoundHandleMode <span class='color_p'>mode</span>, mm_sound_handle_route_info* <span class='color_p'>route_info</span>, enum MMSoundHandlePriority <span class='color_p'>priority</span>, int <span class='color_p'>volume_config</span>, pa_sample_spec* <span class='color_p'>ss</span>, pa_channel_map* <span class='color_p'>channel_map</span>, <span class='nowrap'>int* <span class='color_p'>size</span> )</span></span> (2)</span>
+<br/>
+<div id="c_31" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_pa_open&#160;<span class='sym_p'>(&#160;enum MMSoundHandleMode <span class='color_p'>mode</span>, mm_sound_handle_route_info* <span class='color_p'>route_info</span>, enum MMSoundHandlePriority <span class='color_p'>priority</span>, int <span class='color_p'>volume_config</span>, pa_sample_spec* <span class='color_p'>ss</span>, pa_channel_map* <span class='color_p'>channel_map</span>, <span class='nowrap'>int* <span class='color_p'>size</span>,</span> char* <span class='color_p'>stream_type</span>, <span class='nowrap'>int <span class='color_p'>stream_index</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>stream_type</b> of type <b>char*</b> has been added to the calling stack.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Parameter <b>stream_index</b> of type <b>int</b> has been added to the calling stack.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes'></a><a name='Other_Source_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (4)</h2><hr/>
+<span class='h_name'>mm_sound.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_32')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> mm_sound_device_io_direction_e (3)</span>
+<br/>
+<div id="c_32" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Value of member <b>MM_SOUND_DEVICE_IO_DIRECTION_BOTH</b> has been changed from <b>2</b> to <b>3</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Value of member <b>MM_SOUND_DEVICE_IO_DIRECTION_IN</b> has been changed from <b>0</b> to <b>1</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Value of member <b>MM_SOUND_DEVICE_IO_DIRECTION_OUT</b> has been changed from <b>1</b> to <b>2</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_33')">
+[+] affected symbols (1)</span>
+<div id="c_33" style="display:none;">
+<div class='affected'><span class='iname_a'>mm_sound_get_device_io_direction&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MMSoundDevice_t <i>device_h</i>,</span> <span class='nowrap'>mm_sound_device_io_direction_e* <span class='fp'>io_direction</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;io_direction&#39; (pointer) has base type &#39;enum mm_sound_device_io_direction_e&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_34')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> volume_type_t (1)</span>
+<br/>
+<div id="c_34" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>VOLUME_TYPE_UNKNOWN</b> with value <b>18446744073709551615</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_35')">
+[+] affected symbols (5)</span>
+<div id="c_35" style="display:none;">
+<div class='affected'><span class='iname_a'>mm_sound_add_volume_changed_callback&#160;<span class='sym_p'>(&#160;mm_sound_volume_changed_cb <span class='fp'>func</span>, <span class='nowrap'>void* <i>user_data</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;func.p0&#39; in 1st parameter &#39;func&#39; has base type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_get_value&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='fp'>type</span>, <span class='nowrap'>unsigned int* <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_primary_type_set&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum volume_type_t <span class='fp'>type</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_remove_callback&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum volume_type_t <span class='fp'>type</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+<span class='iname_a'>mm_sound_volume_set_value&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='fp'>type</span>, <span class='nowrap'>unsigned int const <i>value</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;type&#39; has type &#39;enum volume_type_t&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes_In_Symbols'></a><a name='Other_Source_Changes_In_Interfaces'></a>
+<h2>Other Changes in Symbols (2)</h2><hr/>
+<span class='h_name'>mm_sound.c</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_36')">
+<span class='ext'>[+]</span> mm_sound_volume_set_value&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='color_p'>type</span>, <span class='nowrap'>unsigned int const <span class='color_p'>value</span> )</span></span> (2)</span>
+<br/>
+<div id="c_36" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>mm_sound_volume_set_value&#160;<span class='sym_p'>(&#160;enum volume_type_t <span class='color_p'>volume_type</span>, <span class='nowrap'>unsigned int const <span class='color_p'>volume_level</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>1st</b> parameter <b>type</b> has been renamed to <b>volume_type</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td><b>2nd</b> parameter <b>value</b> has been renamed to <b>volume_level</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (10)</h2><hr/>
+<div class='h_list'>
+audio-session-manager-types.h<br/>
+channelmap.h<br/>
+mm_message.h<br/>
+mm_sound.h<br/>
+mm_sound_pa_client.h<br/>
+mm_sound_pcm_async.h<br/>
+mm_sound_private.h<br/>
+sample.h<br/>
+stddef.h<br/>
+stdint.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (5)</h2><hr/>
+<div class='h_list'>
+mm_sound.c<br/>
+mm_sound_device.c<br/>
+mm_sound_pa_client.c<br/>
+mm_sound_pcm.c<br/>
+mm_sound_pcm_async.c<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libmmfsound.so.0.1.0<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><hr/>
+<div class='footer' align='right'><i>Generated by <a href='http://lvc.github.io/abi-compliance-checker/'>ABI Compliance Checker</a> 1.99.18 &#160;</i>
+</div>
+<br/>
+
+</body></html>

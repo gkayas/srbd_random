@@ -1,0 +1,10 @@
+email_update_account_with_validation
+email_free_account
+email_get_account
+email_get_pending_job
+email_add_account_with_validation
+email_get_task_information
+email_add_account
+email_get_account_list
+email_validate_account_ex
+email_update_account

@@ -1,0 +1,10 @@
+_contacts_contact
+_contacts_person_grouprel
+_contacts_person_group_assigned
+_contacts_person_group_not_assigned
+_contacts_person
+_contacts_phone_log_stat
+_contacts_person_contact
+_contacts_person_email
+_contacts_my_profile
+_contacts_person_number

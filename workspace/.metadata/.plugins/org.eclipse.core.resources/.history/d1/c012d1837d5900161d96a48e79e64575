@@ -1,0 +1,669 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import com.hp.gagawa.java.elements.Body;
+import com.hp.gagawa.java.elements.H1;
+import com.hp.gagawa.java.elements.Head;
+import com.hp.gagawa.java.elements.Html;
+import com.hp.gagawa.java.elements.Style;
+import com.hp.gagawa.java.elements.Table;
+import com.hp.gagawa.java.elements.Td;
+import com.hp.gagawa.java.elements.Text;
+import com.hp.gagawa.java.elements.Th;
+import com.hp.gagawa.java.elements.Title;
+import com.hp.gagawa.java.elements.Tr;
+
+public class Report {
+
+	private static Html html;
+	private static Table tcTable;
+	private static Table summaryTable;
+	
+	static int failCountTotal;
+	static int passCountTotal;
+	static double executionTimeTotal;
+	static int failCount;
+	static int passCount;
+	static double executionTime;
+	static ArrayList<Suite> suiteList;
+	static String MAIN_SUITE_NAME; 
+	public static void main(String [] args) throws IOException {
+		Utils.readParameterVariable();		
+		prepareReportForRun("IDE-W");
+		prepareReportForReRun();
+	}
+	
+	
+	private static void prepareHtml() {		
+		suiteList = new ArrayList<Suite>();
+		html = new Html();
+
+		Head head = new Head();
+		Title title = new Title();
+		Style style = new Style("");
+		style.appendText("table { "+
+				"color: #333;"+
+				"font-family: Helvetica, Arial, sans-serif;"+
+				"width: 90%; "+
+				"border-collapse: "+
+				"collapse; border-spacing: 2; "+
+				"aling: center; "+
+				"margin-left:auto;"+ 
+			    "margin-right:auto;"+
+				"}"+
+				"body {"+				    
+				" vertical-align: middle;"+
+				"}"+
+				"td, th { "+
+				"border: 1px solid transparent;"+
+				"height: 30px; "+
+				"transition: all 0.3s; "+
+				"}"+
+				"th {"+
+				"background: #DFDFDF; "+
+				"font-weight: bold;"+
+				"}"+
+				"td {"+
+				"background: #FAFAFA;"+
+				"text-align: center;"+
+				"}  "+
+				"tr:nth-child(even) td { background: #F1F1F1; }   "+
+				"tr:nth-child(odd) td { background: #FEFEFE; }  "+
+				"tr:hover { background: #CCC; color: #55F; } "+
+				"h1{"+
+				"aling: center; "+
+				"text-align: center;"+
+				"}"
+				);
+		
+		head.appendChild(style);
+		
+		
+		title.appendChild( new Text("SDK Automation Report.") );
+		head.appendChild( title );
+		html.appendChild( head );
+		Body body = new Body();
+		html.appendChild( body );
+		
+		H1 summaryHeader = new H1();
+		summaryHeader.appendChild( new Text("Summary Result") );
+		
+		H1 h1 = new H1();
+		h1.appendChild( new Text("Automation Result") );
+		
+		summaryTable = new Table();
+		summaryTable.setAttribute("id", "summaryTable");
+		
+		Tr rowS = new Tr();
+	
+		Th th1S = new Th();
+		th1S.appendChild(new Text("Suite Name"));			
+		rowS.appendChild(th1S);
+		
+		Th th2S = new Th();
+		th2S.appendChild(new Text("Total TCs"));
+		rowS.appendChild(th2S);
+		
+		Th th3S = new Th();
+		th3S.appendChild(new Text("Pass"));
+		rowS.appendChild(th3S);
+		
+		Th th4S = new Th();
+		th4S.appendChild(new Text("Fail"));
+		rowS.appendChild(th4S);
+		
+		Th th5S = new Th();
+		th5S.appendChild(new Text("Execution Time(mins)"));
+		rowS.appendChild(th5S);
+		
+		summaryTable.appendChild(rowS);
+		
+		body.appendChild(summaryHeader);
+		body.appendChild(summaryTable);
+		
+		tcTable = new Table();
+		tcTable.setAttribute("id", "tcTable");
+
+		Tr rowF = new Tr();
+		rowF.setAttribute("id", "header");
+		Th th1 = new Th();
+		th1.appendChild(new Text("Suite"));
+		th1.setAttribute("colspan", "2");
+		rowF.appendChild(th1);
+		Th th2 = new Th();
+		th2.appendChild(new Text("TC ID"));
+		rowF.appendChild(th2);
+		th2.setAttribute("colspan", "2");
+		Th th3 = new Th();
+		th3.appendChild(new Text("Status"));
+		rowF.appendChild(th3);
+		Th th4 = new Th();
+		th4.appendChild(new Text("Time (sec)"));
+		rowF.appendChild(th4);
+		Th th5 = new Th();
+		th5.appendChild(new Text("Message"));
+		rowF.appendChild(th5);
+		
+		tcTable.appendChild(rowF);
+		
+		body.appendChild(h1);
+		body.appendChild(tcTable);		
+	}
+	
+	private static void populateSummaryTable(String suiteName) {
+		
+		Suite currentSuite = new Suite(suiteName, passCount, failCount, executionTime);
+		if(!suiteList.contains(currentSuite)) {
+			System.out.println("In populate Adding to Suite list : "+suiteName +" "+ passCount +" "+ failCount +" "+ executionTime);
+			suiteList.add(currentSuite);
+		} else {
+			Suite prev = suiteList.get(suiteList.indexOf(currentSuite));
+			prev.setTime(prev.getTime()+executionTime);
+			prev.setPassTc(passCount);
+			prev.setFailTc(failCount);
+		}
+		int totalTc = 0;
+		int passTc = 0;
+		int failTc = 0;
+		double executiontime = 0.0;
+		
+		for (Suite suite : suiteList) {
+			Tr rowS = new Tr();
+			rowS.setAttribute("id", suite.getName());
+			
+			Td th1S = new Td();
+			th1S.setAttribute("id", "name");
+			th1S.appendChild(new Text(suite.getName()));
+			rowS.appendChild(th1S);
+			
+			Td th2S = new Td();
+			th2S.setAttribute("id", "total");
+			th2S.appendChild(new Text(suite.getTotalTc()));
+			rowS.appendChild(th2S);
+			totalTc += suite.getTotalTc();
+			
+			Td th3S = new Td();
+			th3S.setAttribute("id", "passed");
+			th3S.appendChild(new Text(suite.getPassTc()));
+			rowS.appendChild(th3S);
+			passTc += suite.getPassTc();
+			
+			
+			Td th4S = new Td();
+			th4S.setAttribute("id", "failed");
+			th4S.appendChild(new Text(suite.getFailTc()));
+			rowS.appendChild(th4S);
+			failTc += suite.getFailTc();
+			
+			Td th5S = new Td();
+			th5S.setAttribute("id", "execution");
+			th5S.appendChild(new Text(String.format("%.2f", (suite.getTime() / 60.0))));
+			rowS.appendChild(th5S);
+			summaryTable.appendChild(rowS);
+			executiontime += suite.getTime();
+		}
+		Tr rowS = new Tr();
+		rowS.setAttribute("id", "full_summary");
+		
+		Td th1S = new Td();
+		th1S.setAttribute("id", "name");
+		th1S.appendChild(new Text("Summary"));
+		rowS.appendChild(th1S);
+		
+		Td th2S = new Td();
+		th2S.setAttribute("id", "total");
+		th2S.appendChild(new Text(totalTc));
+		rowS.appendChild(th2S);
+
+		
+		Td th3S = new Td();
+		th3S.setAttribute("id", "passed");
+		th3S.appendChild(new Text(passTc));
+		rowS.appendChild(th3S);
+		
+		
+		Td th4S = new Td();
+		th4S.setAttribute("id", "failed");
+		th4S.appendChild(new Text(failTc));
+		rowS.appendChild(th4S);
+		
+		Td th5S = new Td();
+		th5S.setAttribute("id", "execution");
+		th5S.appendChild(new Text(String.format("%.2f", (executiontime / 60.0))));
+		rowS.appendChild(th5S);
+		summaryTable.appendChild(rowS);
+	}
+	
+	private static void writeToFile(String content, String path) {
+		try {
+			PrintWriter pw = new PrintWriter(new FileWriter(new File(path)));
+			
+			pw.write(content);
+			pw.flush();
+			pw.close();
+			
+			
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+
+	private static void dumpListToTCTable(ArrayList<Testcase> list) {
+		passCount = 0;
+		failCount = 0;
+		Collections.sort(list);
+		
+		for (Testcase tc : list) {
+			Tr row = new Tr();
+			row.setAttribute("id", tc.getName());
+			
+		
+			Td suite = new Td();
+			suite.setAttribute("id", "suite");
+			suite.setAttribute("colspan", "2");
+			row.appendChild(suite);
+			suite.appendChild(new Text(tc.getSuiteName()));
+			
+		
+			Td name = new Td();
+			name.setAttribute("id", "name");
+			name.setAttribute("colspan", "2");
+			row.appendChild(name);
+			name.appendChild(new Text(tc.getName()));
+
+	
+			Td status = new Td();
+			status.setAttribute("id", "status");
+			row.appendChild(status);
+			status.appendChild(new Text(tc.getStatus()));
+
+			if(tc.getStatus().trim().equals("Pass")) {
+				if(MAIN_SUITE_NAME.equals(tc.getSuiteName())) {
+					passCount++;
+				}
+				
+			} else {
+				if(MAIN_SUITE_NAME.equals(tc.getSuiteName())) {
+					failCount++;
+				}
+			}
+			
+			Td time = new Td();
+			time.setAttribute("id", "time");
+			row.appendChild(time);
+			time.appendChild(new Text(tc.getTime()));
+
+			
+			Td msg = new Td();
+			msg.setAttribute("id", "msg");
+			row.appendChild(msg);
+			msg.appendChild(new Text(tc.getMsg()));
+
+			tcTable.appendChild(row);
+		}
+	}
+	
+	private static void readSummaryTable() throws IOException {
+		Document docResult = Jsoup.parse(new File(Utils.getValue(Constants.RESULT_HTML_PATH)), "UTF-8");
+
+//		Element passed = docResult.getElementById("passed");
+//		passCount = Integer.parseInt(passed.text());
+//		
+//		Element failed = docResult.getElementById("failed");
+//		failCount = Integer.parseInt(failed.text());
+//		
+//		Element execution = docResult.getElementById("execution");
+//		executionTime = Double.parseDouble(execution.text()) * 60.0;
+		
+		Element summary = docResult.getElementById("summaryTable");
+		Elements children = summary.children().get(0).children();
+		
+		for (int i = 1; i <children.size()-1; i++) {
+			Element childRow = children.get(i);
+			Elements cols = childRow.children();
+
+			String name = null;
+			int passTc = 0,failTc = 0;
+			double time = 0;
+			
+			for (Element col : cols) {
+				String id = col.attr("id");
+				String text = col.text();
+				
+				if(id.equals("name")){
+
+					name = col.text();
+				}else if(id.equals("passed")) {
+
+					passTc = Integer.parseInt(text);
+				} else if(id.equals("failed")) {
+
+					failTc =  Integer.parseInt(text);
+				} else if(id.equals("execution")) {
+
+					time =  Double.parseDouble(text) * 60.0;
+				}
+				
+			}
+			System.out.println("Adding to Suite list : "+name +" "+ passTc +" "+ failTc +" "+ time);
+			suiteList.add(new Suite(name, passTc, failTc, time));
+		}
+		
+	}
+	
+	public static void prepareReportForRun(String suiteName) throws IOException  {
+		MAIN_SUITE_NAME = suiteName;
+		prepareHtml();
+		
+		Document doc = Jsoup.parse(new File(Utils.getValue(Constants.SOURCE_XML_PATH)), "UTF-8");
+		Elements elements = doc.select("testcase");
+		
+		File file =new File(Utils.getValue(Constants.FAIL_LIST));
+		ArrayList<String> failTcList;
+		if(!file.exists()){
+			file.createNewFile();
+			failTcList = new ArrayList<String>();
+		} else {
+			failTcList =  readFailList();
+		}
+		
+		PrintWriter pw = new PrintWriter(file);
+		
+		ArrayList<Testcase> testCaseList = new ArrayList<Testcase>();
+		File resultFile =new File(Utils.getValue(Constants.RESULT_HTML_PATH));
+		
+		if(resultFile.exists()) {
+			readSummaryTable();
+			Document resultDoc = Jsoup.parse(new File(Utils.getValue(Constants.RESULT_HTML_PATH)), "UTF-8");
+			Elements oldTcTable = resultDoc.select("table tbody");
+			Elements oldtableContent = oldTcTable.get(1).children();
+			
+			int rownumber = 0;
+			for (Element element : oldtableContent) {
+				if(rownumber == 0) {
+					rownumber++;
+					continue;
+				}
+				
+				Testcase tc = new Testcase();
+
+				Elements cols = element.children();
+				for (Element col : cols) {
+					
+					if(col.attr("id").equals("suite")) {
+			
+						tc.setSuiteName(col.text());
+						
+					} else if(col.attr("id").equals("name")) {
+						
+						tc.setName(col.text());
+						
+					} else if(col.attr("id").equals("status")) {
+						tc.setStatus(col.text());
+						
+					} else if(col.attr("id").equals("time")) {
+						tc.setTime(col.text());
+						
+						
+					} else if(col.attr("id").equals("msg")) {
+						tc.setMsg(col.text());
+						
+					}
+				}
+				
+				testCaseList.add(tc);
+			}			
+		}  
+		
+		for (Element element : elements) {
+			Testcase tc = new Testcase();
+			
+			tc.setSuiteName(suiteName);
+			
+			tc.setName(element.attr("name"));
+			
+			Elements children = element.children();
+
+			if(children.size() > 0) {
+				
+				if(!failTcList.contains(element.attr("name").trim())) {
+					failTcList.add(element.attr("name").trim());
+				}
+				
+				tc.setStatus("Fail");
+				
+				for (Element child : children) {
+					
+					tc.setMsg(child.attr("message"));
+				}
+				
+			} else {
+				
+				tc.setStatus("Pass");
+			}
+			
+			Td time = new Td();
+			time.setAttribute("id", "time");
+			time.appendChild(new Text(element.attr("time")));
+			
+			tc.setTime(element.attr("time"));
+			
+			if(!testCaseList.contains(tc)) {
+				testCaseList.add(tc);
+				
+			} else {
+				Testcase prevTc = testCaseList.get(testCaseList.indexOf(tc));
+				prevTc.copy(tc);
+			}
+			executionTime += Double.parseDouble(tc.getTime());
+		}
+		
+		for (String failTc : failTcList) {
+			pw.append(failTc+"\n");
+		}
+		
+		pw.flush();
+		pw.close();
+
+		dumpListToTCTable(testCaseList);
+		
+		populateSummaryTable(suiteName);
+		
+		writeToFile(html.write(), Utils.getValue(Constants.RESULT_HTML_PATH));
+		
+		if(suiteName.equals("")) {
+			System.out.println("Automation report for tclist run completed...");
+		} else {
+			System.out.println("Automation report for " + suiteName + " suite run completed...");
+		}
+	}
+	
+	public static void prepareReportForReRun() throws IOException  {
+		prepareHtml();
+		
+		Document docResult = Jsoup.parse(new File(Utils.getValue(Constants.RESULT_HTML_PATH)), "UTF-8");
+
+		readSummaryTable();
+		
+		PrintWriter pw = new PrintWriter(new FileWriter(new File(Utils.getValue(Constants.FAIL_LIST))));
+
+		Document doc = Jsoup.parse(new File(Utils.getValue(Constants.SOURCE_XML_PATH)), "UTF-8");
+		
+		Elements rowsOfXML = doc.select("testcase");
+		for (Element tcFrmXML : rowsOfXML) {
+			Elements children = tcFrmXML.children();
+			
+			Element targetRowToChange = docResult.getElementById(tcFrmXML.attr("name"));
+			if(targetRowToChange == null) {
+				pw.close();
+				return;
+			}
+			Elements targetColumns = targetRowToChange.children();
+
+			String statusS = "";
+			String msgS = "";
+			Tr row = new Tr();
+			row.setAttribute("id", tcFrmXML.attr("name"));
+		
+			Td suite = new Td();
+			suite.appendChild(new Text(""));
+			
+			Td name = new Td();
+			name.appendChild(new Text(tcFrmXML.attr("name")));
+			
+			Td time = new Td();
+			time.appendChild(new Text(tcFrmXML.attr("time")));
+			
+			Td status = new Td();
+			Td msg = new Td();
+			
+			if(children.size() > 0) {
+				pw.append(tcFrmXML.attr("name")+"\n");
+				
+				status.appendChild(new Text("Fail"));
+				statusS = "Fail";
+				
+				for (Element child : children) {
+					msg.setStyle("text-align: left");
+					msg.appendChild(new Text(child.attr("message")));
+					msgS = child.attr("message");
+				}
+			} else {
+				status.appendChild(new Text("Pass"));
+				statusS = "Pass";
+			
+			}
+			
+			String suiteName = "";
+			for (Element child : targetColumns) {
+				if(child.attr("id").equals("suite")) {
+					suiteName = child.text();
+				}else if(child.attr("id").equals("time")) {
+					executionTime += Double.parseDouble(tcFrmXML.attr("time"));
+					child.empty();
+					child.append(tcFrmXML.attr("time"));
+					
+				} else if(child.attr("id").equals("status")) {
+					String previousStatus = child.text();
+					if(!previousStatus.equals(statusS)) { //in rerun only case where we need to change is a fail tc is getting passed. so pass++ fail --
+						passCount++; 
+						failCount--;
+					}
+					child.empty();
+					child.append(statusS);
+					
+				} else if(child.attr("id").equals("msg")) {
+					child.empty();
+					child.append(msgS);
+				}
+			}
+			
+			row.appendChild(suite);
+			row.appendChild(name);
+			row.appendChild(status);
+			row.appendChild(time);
+			row.appendChild(msg);	
+			
+			//change code for suitetable
+			Element suitetableRow = docResult.getElementById(suiteName);
+			Elements childern = suitetableRow.children();
+			
+			for (Element child : childern) {
+				if(child.attr("id").equals("passed")) {
+					if(statusS.equals("Pass")) {
+						int passCount = Integer.parseInt(child.text()) + 1;
+						child.empty();
+						child.append(""+passCount);
+					}
+				} else if(child.attr("id").equals("failed")) {
+					if(statusS.equals("Pass")) { 
+						int failCount = Integer.parseInt(child.text()) - 1;
+						child.empty();
+						child.append(""+failCount);
+					}
+				} else if(child.attr("id").equals("execution")) {
+					double executionTime = Double.parseDouble(child.text()) + Double.parseDouble(tcFrmXML.attr("time"));
+					child.empty();
+					child.append(""+executionTime);
+				}
+			}
+			
+			Element summaryRow = docResult.getElementById("full_summary");
+			childern = summaryRow.children();
+			
+			for (Element child : childern) {
+				if(child.attr("id").equals("passed")) {
+					if(statusS.equals("Pass")) {
+						int passCount = Integer.parseInt(child.text()) + 1;
+						child.empty();
+						child.append(""+passCount);
+					}
+				} else if(child.attr("id").equals("failed")) {
+					if(statusS.equals("Pass")) { 
+						int failCount = Integer.parseInt(child.text()) - 1;
+						child.empty();
+						child.append(""+failCount);
+					}
+				} else if(child.attr("id").equals("execution")) {
+					double executionTime = Double.parseDouble(child.text()) + Double.parseDouble(tcFrmXML.attr("time"));
+					child.empty();
+					child.append(""+executionTime);
+				}
+			}
+			
+		}
+		
+//		Element total = docResult.getElementById("total");
+//		total.empty();
+//		total.appendText(""+(passCount+failCount));
+//		
+//		Element passed = docResult.getElementById("passed");
+//		passed.empty();
+//		passed.appendText(""+passCount);
+//		
+//		Element failed = docResult.getElementById("failed");
+//		failed.empty();
+//		failed.appendText(""+failCount);
+//		
+//		Element execution = docResult.getElementById("execution");
+//		execution.empty();
+//		execution.appendText(String.format("%.2f", (executionTime / 60.0)));
+		
+		
+		writeToFile(docResult.html(), Utils.getValue(Constants.RESULT_HTML_PATH));
+		
+		
+		
+		pw.flush();
+		pw.close();
+		System.out.println("Automation report for rerun faillist TCs completed...");
+	}
+
+	private static ArrayList<String> readFailList() throws FileNotFoundException {
+		ArrayList<String> failTcList = new ArrayList<String>();
+		Scanner sc = new Scanner(new File(Utils.getValue(Constants.FAIL_LIST)));
+		while(sc.hasNextLine()) {
+			String line = sc.nextLine().trim();
+			if(line.length()!=0 && !failTcList.contains(line)) {
+				failTcList.add(line);
+			}
+		}
+		
+		sc.close();
+		
+		return failTcList;
+	}
+}

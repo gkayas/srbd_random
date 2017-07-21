@@ -1,0 +1,99 @@
+package refapp;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
+import javafx.beans.property.SimpleStringProperty;
+
+public class ResultUtils {
+	
+	public static String RESULT_FILE_PATH = "reports/result_mobile.csv";
+	
+	public static void showOutput(String result){
+		if(result.indexOf("Pass") > 0) {
+			System.out.println(result);	
+		}
+		else {
+			System.err.println(result);
+		}
+	}
+	
+	public static void writeResultFile(ArrayList<AppInfo> appList) {
+		try {
+			File resultFile = new File(RESULT_FILE_PATH);			
+			PrintWriter pw = new PrintWriter(resultFile);
+		
+			for (AppInfo appInfo : appList) {
+				
+				pw.append(appInfo.toString()+"\n");
+			}
+			pw.flush();
+			pw.close();
+			
+		} catch (FileNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public static ArrayList<AppInfo> readResultFile() {
+		ArrayList<AppInfo> results = new ArrayList<AppInfo>();
+		try {
+			File resultFile = new File(RESULT_FILE_PATH);
+			Scanner sc = new Scanner(resultFile);
+			while(sc.hasNextLine()) {
+				String line = sc.nextLine();
+				System.out.println(line+":::");
+				String [] values = line.split(",");
+				
+				if(values.length != 5) {
+					System.out.println("Wrong formatted result file found.");
+					return null;
+				} 
+				System.err.println("\n"+values.length);
+				
+				AppInfo app = new AppInfo();
+				app.setAppName(values[0]);
+				System.out.println(app.getAppName());
+				app.setBinaryName(values[0]+"as");
+				
+				SimpleStringProperty install = new SimpleStringProperty(values[2]);
+				
+				System.out.println("?"+install.getValue());
+				
+				app.setInstall(install);
+				SimpleStringProperty uninstall = new SimpleStringProperty();
+				uninstall.setValue(values[3]);
+				app.setUninstall(uninstall);
+				SimpleStringProperty exploratory = new SimpleStringProperty();
+				exploratory.setValue(values[4]);
+				app.setExploratory(exploratory);
+				
+				results.add(app);
+				
+			}
+			sc.close();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return results;
+	}
+
+	public static void appendAppInResultFile(AppInfo app, File resultFile) {
+		ArrayList<AppInfo> exitingApps = readResultFile();
+		if(exitingApps.size() == 0) {
+			exitingApps.add(app);
+		} else {
+			for (AppInfo appInfo : exitingApps) {
+				System.out.println(appInfo);
+				if(exitingApps.contains(appInfo)) {
+					exitingApps.get(exitingApps.indexOf(appInfo)).copy(appInfo);
+				} else {
+					exitingApps.add(appInfo);
+				}
+			}
+		}
+		writeResultFile(exitingApps);
+	}
+}

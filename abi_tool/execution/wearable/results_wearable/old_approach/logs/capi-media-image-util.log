@@ -1,0 +1,37 @@
+Temporary header file '/tmp/ffFpR9I7Jo/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/media/image_util.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/media/image_util_internal.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/media/image_util_type.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/ffFpR9I7Jo/dump1.h"  -I/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/media -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/media
+
+Temporary header file '/tmp/ffFpR9I7Jo/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/image_util.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/image_util_internal.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/image_util_type.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/ffFpR9I7Jo/dump2.h"  -I/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/media
+
+In file included from /tmp/ffFpR9I7Jo/dump2.h:3:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/image_util.h:442:117: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int image_util_foreach_supported_jpeg_colorspace(image_util_supported_jpeg_colorspace_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                                                     ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/image_util.h:476:157: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int image_util_decode_jpeg(const char *path, image_util_colorspace_e colorspace, unsigned char **image_buffer, int *width, int *height, unsigned int *size) TIZEN_DEPRECATED_API;
+                                                                                                                                                             ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/image_util.h:509:200: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int image_util_decode_jpeg_from_memory(const unsigned char *jpeg_buffer, int jpeg_size, image_util_colorspace_e colorspace, unsigned char **image_buffer, int *width, int *height, unsigned int *size) TIZEN_DEPRECATED_API;
+                                                                                                                                                                                                        ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/image_util.h:540:148: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int image_util_encode_jpeg(const unsigned char *buffer, int width, int height, image_util_colorspace_e colorspace,  int quality, const char *path) TIZEN_DEPRECATED_API;
+                                                                                                                                                    ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/image_util.h:572:200: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int image_util_encode_jpeg_to_memory(const unsigned char *image_buffer, int width, int height, image_util_colorspace_e colorspace, int quality,  unsigned char **jpeg_buffer, unsigned int *jpeg_size) TIZEN_DEPRECATED_API;
+                                                                                                                                                                                                        ^
+

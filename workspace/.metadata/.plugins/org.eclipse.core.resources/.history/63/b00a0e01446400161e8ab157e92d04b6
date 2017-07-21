@@ -1,0 +1,47 @@
+package com.turbovnc.vncviewer;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Scanner;
+
+
+public class ReadConfigUtil {
+	
+	static HashMap<String, String> devInfo = new HashMap<String, String>(); 
+	
+	
+	static String getLiveMode() {
+		return devInfo.get(Constants.LIVE_MODE);
+	}
+	
+	static String getPlatformVersion() {
+		return devInfo.get(Constants.PLATFORM_VERSION);
+	}	
+	
+	static String getCaptureRefImagePath() {
+		return devInfo.get(Constants.CAPTURE_REF_IMAGE_PATH);
+	}
+	
+	public static void readDeviceConfig() {
+		
+		String configPath;
+		configPath = System.getProperty("user.dir") + "/" + Constants.DEVICE_CONFIG_FILE;
+		
+		try {		
+			Scanner sc = new Scanner(new File(configPath));
+			while(sc.hasNextLine()){
+				String line = sc.nextLine();
+				String tokens[] = line.split("=");
+				devInfo.put(tokens[0].trim(), tokens[1].trim());
+			}
+			
+			sc.close();
+		} catch (FileNotFoundException e) {
+			System.out.println(configPath + " file not found");
+		} catch (Exception e) {
+			System.out.println("Wrong formated Config File.");			
+		}			
+	}
+
+}

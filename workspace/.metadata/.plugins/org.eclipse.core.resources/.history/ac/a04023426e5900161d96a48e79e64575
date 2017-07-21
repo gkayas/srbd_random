@@ -1,0 +1,12 @@
+
+public class Suite {
+	String name;
+	int passTc;
+	int failTc;
+	int totalTc;
+	
+	public Suite(String name, int passTc, int failTc,double time) {
+		this.name = name;
+	}
+	
+}

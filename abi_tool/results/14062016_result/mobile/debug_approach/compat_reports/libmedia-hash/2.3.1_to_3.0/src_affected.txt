@@ -1,0 +1,4 @@
+MD5Init
+MD5Final
+MD5Update
+thumbnail_generate_hash_code

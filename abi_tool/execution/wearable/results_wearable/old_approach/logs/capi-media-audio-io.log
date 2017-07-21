@@ -1,0 +1,45 @@
+Temporary header file '/tmp/QpcF0K1eLk/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/media/audio_io.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/QpcF0K1eLk/dump1.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/media
+
+Temporary header file '/tmp/QpcF0K1eLk/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/audio_io.h"
+
+  // add classes
+  pthread_attr_t* tmp_add_class_0;
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/QpcF0K1eLk/dump2.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/media
+
+In file included from /tmp/QpcF0K1eLk/dump2.h:3:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/audio_io.h:246:118: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int audio_in_create_loopback(int sample_rate, audio_channel_e channel, audio_sample_type_e type , audio_in_h* input) TIZEN_DEPRECATED_API;
+                                                                                                                      ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/audio_io.h:490:102: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int audio_in_set_interrupted_cb(audio_in_h input, audio_io_interrupted_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                                      ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/audio_io.h:508:53: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int audio_in_unset_interrupted_cb(audio_in_h input) TIZEN_DEPRECATED_API;
+                                                     ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/audio_io.h:524:47: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int audio_in_ignore_session(audio_in_h input) TIZEN_DEPRECATED_API;
+                                               ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/audio_io.h:719:136: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int audio_out_create(int sample_rate, audio_channel_e channel, audio_sample_type_e type, sound_type_e sound_type, audio_out_h *output) TIZEN_DEPRECATED_API;
+                                                                                                                                        ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/audio_io.h:1014:105: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int audio_out_set_interrupted_cb(audio_out_h output, audio_io_interrupted_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                                         ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/audio_io.h:1031:56: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int audio_out_unset_interrupted_cb(audio_out_h output) TIZEN_DEPRECATED_API;
+                                                        ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/media/audio_io.h:1046:50: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int audio_out_ignore_session(audio_out_h output) TIZEN_DEPRECATED_API;
+                                                  ^
+

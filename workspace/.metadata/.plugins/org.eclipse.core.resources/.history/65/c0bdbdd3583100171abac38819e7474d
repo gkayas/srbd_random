@@ -1,0 +1,11 @@
+// This class represents usage data at the sequence or sequence set level.
+public class Usage {
+	// Constructor.
+	public Usage();
+	// Add a kmer with the corresponding number of occurrences.
+	public add(String kmer, int count);
+	// Return the number of occurrences of kmer.
+	public int getCount(String kmer);
+	// Return all kmers with their count.
+	public LinkedList<Pair<String, Integer>> getCounts();
+}

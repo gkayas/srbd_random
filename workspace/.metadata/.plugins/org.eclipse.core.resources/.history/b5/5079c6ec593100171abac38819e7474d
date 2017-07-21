@@ -1,0 +1,19 @@
+// This class represents a set of sequences.
+public class SequenceSet {
+	// Constructor.
+	public SequenceSet() {
+		
+	}
+	// Load sequences from FASTA file.
+	public static SequenceSet load(String fileName){
+		
+	}
+	// Return the global usage over all sequences in the set. The word length is k and window step size is w.
+	public Usage getUsage(int k, int w){
+		
+	}
+	// Return all sequences in the set in the same order they appear in the file.
+	public LinkedList<Sequence> getSequences(){
+		
+	}
+}

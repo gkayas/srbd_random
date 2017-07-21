@@ -1,0 +1,23 @@
+<version>
+	2.4
+</version>
+ 
+<headers>
+	/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/
+</headers>
+
+<libs>
+	/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/lib/
+</libs>
+
+<tools>
+   /home/kayes/tizen-sdk/tools/arm-linux-gnueabi-gcc-4.9/bin/
+</tools>
+
+<cross_prefix>
+	arm-linux-gnueabi-
+</cross_prefix>
+
+<gcc_options>
+   
+</gcc_options>

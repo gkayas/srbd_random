@@ -1,0 +1,6 @@
+runtime_info_get_value_int
+runtime_info_get_value_double
+runtime_info_set_changed_cb
+runtime_info_get_value_bool
+runtime_info_unset_changed_cb
+runtime_info_get_value_string

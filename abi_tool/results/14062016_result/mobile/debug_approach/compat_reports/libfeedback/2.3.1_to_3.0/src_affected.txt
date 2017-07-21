@@ -1,0 +1,4 @@
+feedback_get_resource_path
+feedback_set_resource_path
+feedback_play_type
+feedback_play

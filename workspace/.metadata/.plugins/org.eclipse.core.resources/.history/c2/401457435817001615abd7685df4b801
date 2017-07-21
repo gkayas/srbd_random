@@ -1,0 +1,216 @@
+package application;
+
+import java.io.File;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+import javafx.application.Platform;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
+import javafx.util.Callback;
+import refapp.TestInfo;
+
+
+public class MainController implements Initializable, ChangeListener{
+
+	public static final String SUITE_FILES_FOLDER = "/home/kayes/workspace/RefAppManager/res/files/xml/";
+
+	@FXML
+	TreeView<String> suiteTree;
+
+	@FXML
+	private TableView<TestInfo> tcTable;
+
+	@FXML
+	private TableColumn<TestInfo, String> tcName;
+
+	@FXML
+	private TableColumn<TestInfo, String> tcStatus;
+
+	@FXML
+	private TableColumn<TestInfo, String> tcRemark;
+
+	@FXML
+	private Button runBtn;
+
+	@FXML
+	private Button rerunBtn;
+
+	@FXML
+	private Button runsingleBtn;
+	
+	@FXML
+	private TextArea console;
+	//
+	//	ObservableList<Testcase> data = FXCollections.observableArrayList(
+	//			new Testcase("Suite1", "Tc1", "nan", "OKay here are some remarks."),
+	//			new Testcase("Suite1", "Tc2", "nan", "OKay here are some remarks."),
+	//			new Testcase("Suite1", "Tc3", "nan", "OKay here are some remarks.")
+	//			);
+
+
+	public void runBtnClicked() {
+		System.out.println("Run btn cliked");
+		
+//		refapp.SuiteRunner.runModule(tcTable.getItems().get(0).getSuite());
+		//		refapp.Main.mainEntry("Run");
+	}
+
+	public void rerunBtnClicked() {
+		 console.appendText("Rerun");
+	}
+
+	public void runsingleBtnClicked() {
+
+
+	}
+
+	public void listFilesForFolder(final File folder, TreeItem<String> root) {
+		for (final File fileEntry : folder.listFiles()) {
+			if (fileEntry.isDirectory()) {
+				listFilesForFolder(fileEntry, root);
+			} else {
+				// System.out.println(fileEntry.getName());
+				TreeItem<String> item = new TreeItem<>(fileEntry.getName().split("\\.")[0]);
+				root.getChildren().add(item);
+
+			}
+		}
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+
+
+		TreeItem<String> treeRoot = new TreeItem<>("Menu Tree");
+		listFilesForFolder(new File(SUITE_FILES_FOLDER), treeRoot);
+		
+		suiteTree.getSelectionModel().selectedItemProperty().addListener(this);
+		treeRoot.setExpanded(true);
+		
+		suiteTree.setRoot(treeRoot);
+		Logger.init(this);
+
+		tcName.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<TestInfo,String>,ObservableValue<String>>() {
+
+			@Override
+			public ObservableValue<String> call(CellDataFeatures<Testcase,String> param) {
+				if (param.getValue() != null) {
+					return new SimpleStringProperty(param.getValue().getName());
+				} else {
+					return new SimpleStringProperty("<no name>");
+				}
+			}
+		});
+
+		tcStatus.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Testcase,String>,ObservableValue<String>>() {
+
+			@Override
+			public ObservableValue<String> call(CellDataFeatures<Testcase,String> param) {
+				if (param.getValue() != null) {
+					return new SimpleStringProperty(param.getValue().getStaus());
+				} else {
+					return new SimpleStringProperty("<no status>");
+				}
+			}
+		});
+
+		tcRemark.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Testcase,String>,ObservableValue<String>>() {
+
+			@Override
+			public ObservableValue<String> call(CellDataFeatures<Testcase,String> param) {
+				if (param.getValue() != null) {
+					return new SimpleStringProperty(param.getValue().getRemark());
+				} else {
+					return new SimpleStringProperty("<no remark>");
+				}
+			}
+		});
+		//		tcTable.setItems(data);
+
+
+	}
+	
+	public void appendTextToConsole(String tag, String msg) {
+		 console.appendText("["+tag+"] "+ msg+"\n");
+			
+	}
+	
+	public void clearConsole() {
+		 console.clear();
+			
+	}
+	
+	@Override
+	public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+
+		TreeItem<String> selectedItem = (TreeItem<String>) newValue;
+
+		if(selectedItem.getValue().equals("Menu Tree")) {
+			return;
+		}
+
+		System.out.println(selectedItem.getValue());
+		ArrayList<Testcase> tcList = XMLUtil.parseSuitePage(SUITE_FILES_FOLDER, selectedItem.getValue());
+		removeAllFromTcTable();
+		addAllToTcTable(tcList);
+
+	}
+
+	public void addToTcTable(Testcase tc) {
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				tcTable.getItems().add(tc);
+
+			}
+		});
+
+	}
+
+	public void addAllToTcTable(ArrayList<Testcase> tcList) {
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				for (Testcase testcase : tcList) {
+					addToTcTable(testcase);
+				}
+
+			}
+		});
+
+	}
+
+	public void removeAllFromTcTable() {
+
+
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				ObservableList<Testcase> data = tcTable.getItems();				
+				data.remove(0, data.size());
+
+			}
+		});
+
+
+	} 
+	
+	
+}

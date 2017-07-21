@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+apiversion=0.1.0
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: dali-adaptor-uv
+Description: DALi adaptor using libuv
+Version: ${apiversion}
+Requires: dali-core
+Libs: -L${libdir} -ldali-adaptor-uv
+Cflags: -I${includedir}/dali

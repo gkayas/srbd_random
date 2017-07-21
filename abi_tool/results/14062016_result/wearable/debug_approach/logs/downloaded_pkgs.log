@@ -1,0 +1,9 @@
+elementary-debuginfo
+evas-debuginfo
+cairo-debuginfo
+capi-data-control-debuginfo
+capi-message-port-debuginfo
+capi-network-nfc-debuginfo
+appcore-agent-debuginfo
+appcore-widget-debuginfo
+libslp-tapi-debuginfo

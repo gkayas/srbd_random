@@ -1,0 +1,43 @@
+Temporary header file '/tmp/aBtiPZI9fw/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/voice_control.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/voice_control_authority.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/voice_control_command.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/voice_control_command_expand.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/voice_control_common.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/voice_control_elm.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/voice_control_key_defines.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/voice_control_manager.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/voice_control_plugin_engine.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/voice_control_setting.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/voice_control_widget.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/aBtiPZI9fw/dump1.h"  -I/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ethumb-client-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ethumb-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/elementary-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eldbus-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efreet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/edje-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-input-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-imf-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-file-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-con-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /tmp/aBtiPZI9fw/dump1.h:13:0:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/voice_control_widget.h:520:1: error: expected ‘}’ at end of input
+ }
+ ^
+
+Temporary header file '/tmp/aBtiPZI9fw/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/voice_control.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/voice_control_authority.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/voice_control_command.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/voice_control_command_expand.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/voice_control_common.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/voice_control_elm.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/voice_control_elm_private.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/voice_control_internal.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/voice_control_key_defines.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/voice_control_manager.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/voice_control_plugin_engine.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/voice_control_setting.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/voice_control_widget.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/aBtiPZI9fw/dump2.h"  -I/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ethumb-client-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ethumb-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/elementary-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eldbus-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efreet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/edje-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-input-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-imf-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-file-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-con-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+

@@ -1,0 +1,3 @@
+ecore_fb_ts_event_window_get
+ecore_fb_input_device_threshold_click_get
+ecore_fb_input_device_threshold_click_set

@@ -1,0 +1,5 @@
+bt_gatt_get_permissions
+bt_a2dp_source_audio_set_connection_state_changed_cb
+bt_gatt_server_notify
+__bt_check_audio_init_status
+bt_a2dp_source_audio_unset_connection_state_changed_cb

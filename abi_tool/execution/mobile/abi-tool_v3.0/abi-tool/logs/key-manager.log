@@ -1,0 +1,63 @@
+Temporary header file '/tmp/Nck2LeW03f/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/unistd.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckm/ckm-certificate.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckm/ckm-control.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckm/ckm-error.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckm/ckm-key.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckm/ckm-manager.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckm/ckm-manager-async.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckm/ckm-password.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckm/ckm-pkcs12.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckm/ckm-raw-buffer.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckm/ckm-type.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckmc/ckmc-control.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckmc/ckmc-error.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckmc/ckmc-manager.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckmc/ckmc-type.h"
+
+  // add namespaces
+  namespace CKM{typedef int tmp_add_type_1;}
+  CKM::tmp_add_type_1 tmp_add_func_1(){return 0;};
+  namespace CKM{namespace CKM{typedef int tmp_add_type_2;}}
+  CKM::CKM::tmp_add_type_2 tmp_add_func_2(){return 0;};
+
+  // add classes
+  pthread_attr_t* tmp_add_class_0;
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w  -std=c++0x "/tmp/Nck2LeW03f/dump2.h"  -I/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckmc/ckmc-control.h:29:0,
+                 from /tmp/Nck2LeW03f/dump2.h:14:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckmc/ckmc-type.h:579:1: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ TIZEN_DEPRECATED_API;
+ ^
+In file included from /tmp/Nck2LeW03f/dump2.h:14:0:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckmc/ckmc-control.h:211:1: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ TIZEN_DEPRECATED_API;
+ ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckmc/ckmc-control.h:280:1: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ TIZEN_DEPRECATED_API;
+ ^
+In file included from /tmp/Nck2LeW03f/dump2.h:16:0:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckmc/ckmc-manager.h:118:1: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ TIZEN_DEPRECATED_API;
+ ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckmc/ckmc-manager.h:262:1: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ TIZEN_DEPRECATED_API;
+ ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckmc/ckmc-manager.h:481:1: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ TIZEN_DEPRECATED_API;
+ ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckmc/ckmc-manager.h:902:1: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ TIZEN_DEPRECATED_API;
+ ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckmc/ckmc-manager.h:1010:1: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ TIZEN_DEPRECATED_API;
+ ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/ckm/ckmc/ckmc-manager.h:1073:1: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ TIZEN_DEPRECATED_API;
+ ^
+

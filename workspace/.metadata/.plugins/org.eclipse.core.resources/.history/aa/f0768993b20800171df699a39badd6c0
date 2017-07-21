@@ -1,0 +1,79 @@
+
+public class XMLReportModule {
+	static int totalTc = 0;
+	static int totalPassTc = 0;
+	static int totalFailTc = 0;
+	static int totalNATc = 0;
+	static int totalNETc = 0;
+	private String name;
+	private int tcCount;
+	private int passTc;
+	private int failTc;
+	private int naTc;
+	private int neTc;
+	
+	void increaseTcCount() {
+		tcCount++;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public int getTcCount() {
+		return tcCount;
+	}
+
+	public int getPassTc() {
+		return passTc;
+	}
+
+	public int getFailTc() {
+		return failTc;
+	}
+
+	public int getNaTc() {
+		return naTc;
+	}
+
+	public int getNeTc() {
+		return neTc;
+	}
+
+	void increasePassTcCount() {
+		passTc++;
+	}
+	
+	void increaseFailTcCount() {
+		failTc++;
+	}
+	
+	void increaseNATcCount() {
+		naTc++;
+	}
+	
+	public void increaseNETcCount() {
+		neTc++;
+	} 
+	
+	String getPassRate() {
+		return String.format("%.2f", ((1.0 * passTc/(tcCount - naTc)) * 100))+"%";
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof XMLReportModule)) {
+			return false;
+		}
+		return ((XMLReportModule)obj).name.equals(this.name);
+	}
+
+	public XMLReportModule(String name) {
+		this.name = name;
+	}
+
+	public static String getGolbalPassRate() {
+		return String.format("%.2f", ((1.0 * totalPassTc/(totalTc - totalNATc)) * 100))+"%";
+	}
+
+}

@@ -1,0 +1,2149 @@
+<!-- kind:binary;verdict:compatible;affected:0;added:49;removed:0;type_problems_high:0;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:0;changed_constants:0;constant_changes_other:41;tool_version:1.99.18 -->
+<!-- kind:source;verdict:compatible;affected:0;added:49;removed:0;type_problems_high:0;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:0;changed_constants:0;constant_changes_other:41;tool_version:1.99.18 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="capi-media-vision, compatibility, API, ABI, report" />
+    <meta name="description" content="API/ABI compatibility report for the capi-media-vision library between 2.4 and 3.0 versions" />
+    <title>
+        capi-media-vision: 2.4 to 3.0 compatibility report
+    </title>
+    <style type="text/css">
+    body {
+    font-family:Arial, sans-serif;
+    background-color:White;
+    color:Black;
+}
+hr {
+    color:Black;
+    background-color:Black;
+    height:1px;
+    border:0;
+}
+h1 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.625em;
+}
+h2 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.25em;
+    white-space:nowrap;
+}
+span.section {
+    font-weight:bold;
+    cursor:pointer;
+    color:#003E69;
+    white-space:nowrap;
+    margin-left:5px;
+}
+span.new_sign {
+    font-weight:bold;
+    margin-left:26px;
+    color:#003E69;
+}
+span.new_sign_lbl {
+    margin-left:28px;
+    font-size:0.875em;
+    color:Black;
+}
+span:hover.section {
+    color:#336699;
+}
+span.sect_aff {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:#cc3300;
+}
+span.sect_info {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:Black;
+}
+span.ext {
+    font-weight:100;
+}
+span.h_name {
+    color:#cc3300;
+    font-size:0.875em;
+    font-weight:bold;
+}
+div.h_list, div.lib_list {
+    font-size:0.94em;
+    padding-left:5px;
+}
+span.ns {
+    color:#408080;
+    font-size:0.94em;
+}
+span.lib_name {
+    color:Green;
+    font-size:0.875em;
+    font-weight:bold;
+}
+span.iname {
+    font-weight:bold;
+    color:#003E69;
+    margin-left:5px;
+}
+span.iname_b {
+    font-weight:bold;
+    font-size:1.1em;
+}
+span.iname_a {
+    color:#333333;
+    font-weight:bold;
+    font-size:0.94em;
+}
+span.sym_p {
+    font-weight:normal;
+    white-space:normal;
+}
+div.affect {
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:0.87em;
+    font-style:italic;
+    line-height:0.75em;
+}
+div.affected {
+    padding-left:30px;
+    padding-top:10px;
+}
+table.ptable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:1em;
+    margin-left:15px;
+    margin-top:3px;
+    margin-bottom:3px;
+    width:900px;
+    
+}
+table.ptable td {
+    border:1px solid gray;
+    padding: 3px;
+    font-size:0.875em;
+    text-align:left;
+    vertical-align:top;
+}
+table.vtable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:16px;
+    margin-left:30px;
+    margin-top:10px;
+}
+table.vtable td {
+    border:1px solid gray;
+    word-wrap:break-word;
+    padding: 3px;
+    font-size:0.875em;
+    max-width:450px;
+    vertical-align:top;
+}
+table.ptable th, table.vtable th {
+    background-color:#eeeeee;
+    font-weight:bold;
+    color:#333333;
+    font-family:Verdana, Arial;
+    font-size:0.81em;
+    border:1px solid gray;
+    text-align:center;
+    vertical-align:top;
+    white-space:nowrap;
+    padding: 3px;
+}
+table.summary {
+    border-collapse:collapse;
+    border:1px outset black;
+}
+table.summary th {
+    background-color:#eeeeee;
+    font-weight:100;
+    text-align:left;
+    font-size:0.94em;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px;
+}
+table.summary td {
+    text-align:right;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px 5px 3px 10px;
+}
+span.mangled {
+    padding-left:15px;
+    font-size:0.875em;
+    cursor:text;
+    color:#444444;
+}
+span.sym_ver {
+    color:#333333;
+    white-space:nowrap;
+    font-family:"DejaVu Sans Mono", Monospace;
+}
+span.attr {
+    color:#333333;
+    font-weight:100;
+}
+span.color_p {
+    font-style:italic;
+    color:Brown;
+}
+span.p {
+    font-style:italic;
+}
+span.fp {
+    font-style:italic;
+    background-color:#FFCCCC;
+}
+span.ttype {
+    font-weight:100;
+}
+span.nowrap {
+    white-space:nowrap;
+}
+span.value {
+    white-space:nowrap;
+    font-weight:bold;
+}
+td.passed {
+    background-color:#CCFFCC;
+}
+td.warning {
+    background-color:#F4F4AF;
+}
+td.failed {
+    background-color:#FFCCCC;
+}
+td.new {
+    background-color:#C6DEFF;
+}
+.top_ref {
+    font-size:0.69em;
+}
+.footer {
+    font-size:0.75em;
+}
+
+.tabset {
+    float:left;
+}
+a.tab {
+    border:1px solid Black;
+    float:left;
+    margin:0px 5px -1px 0px;
+    padding:3px 5px 3px 5px;
+    position:relative;
+    font-size:0.875em;
+    background-color:#DDD;
+    text-decoration:none;
+    color:Black;
+}
+a.disabled:hover
+{
+    color:Black;
+    background:#EEE;
+}
+a.active:hover
+{
+    color:Black;
+    background:White;
+}
+a.active {
+    border-bottom-color:White;
+    background-color:White;
+}
+div.tab {
+    border-top:1px solid Black;
+    padding:0px;
+    width:100%;
+    clear:both;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+    function showContent(header, id)
+{
+    e = document.getElementById(id);
+    if(e.style.display == 'none')
+    {
+        e.style.display = 'block';
+        e.style.visibility = 'visible';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[&minus;]");
+    }
+    else
+    {
+        e.style.display = 'none';
+        e.style.visibility = 'hidden';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[+]");
+    }
+}
+function initTabs()
+{
+    var url = window.location.href;
+    if(url.indexOf('_Source_')!=-1 || url.indexOf('#Source')!=-1)
+    {
+        var tab1 = document.getElementById('BinaryID');
+        var tab2 = document.getElementById('SourceID');
+        tab1.className='tab disabled';
+        tab2.className='tab active';
+    }
+    var sets = document.getElementsByTagName('div');
+    for (var i = 0; i < sets.length; i++)
+    {
+        if (sets[i].className.indexOf('tabset') != -1)
+        {
+            var tabs = [];
+            var links = sets[i].getElementsByTagName('a');
+            for (var j = 0; j < links.length; j++)
+            {
+                if (links[j].className.indexOf('tab') != -1)
+                {
+                    tabs.push(links[j]);
+                    links[j].tabs = tabs;
+                    var tab = document.getElementById(links[j].href.substr(links[j].href.indexOf('#') + 1));
+                    //reset all tabs on start
+                    if (tab)
+                    {
+                        if (links[j].className.indexOf('active')!=-1) {
+                            tab.style.display = 'block';
+                        }
+                        else {
+                            tab.style.display = 'none';
+                        }
+                    }
+                    links[j].onclick = function()
+                    {
+                        var tab = document.getElementById(this.href.substr(this.href.indexOf('#') + 1));
+                        if (tab)
+                        {
+                            //reset all tabs before change
+                            for (var k = 0; k < this.tabs.length; k++)
+                            {
+                                document.getElementById(this.tabs[k].href.substr(this.tabs[k].href.indexOf('#') + 1)).style.display = 'none';
+                                this.tabs[k].className = this.tabs[k].className.replace('active', 'disabled');
+                            }
+                            this.className = 'tab active';
+                            tab.style.display = 'block';
+                            // window.location.hash = this.id.replace('ID', '');
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(url.indexOf('#')!=-1) {
+        location.href=location.href;
+    }
+}
+if (window.addEventListener) window.addEventListener('load', initTabs, false);
+else if (window.attachEvent) window.attachEvent('onload', initTabs);
+    -->
+    </script>
+    </head><body><a name='Source'></a><a name='Binary'></a><a name='Top'></a><h1>API compatibility report for the <span style='color:Blue;'>capi-media-vision</span> library between <span style='color:Red;'>2.4</span> and <span style='color:Red;'>3.0</span> versions on <span style='color:Blue;'>x86_64</span></h1>
+
+            <br/>
+            <div class='tabset'>
+            <a id='BinaryID' href='#BinaryTab' class='tab active'>Binary<br/>Compatibility</a>
+            <a id='SourceID' href='#SourceTab' style='margin-left:3px' class='tab disabled'>Source<br/>Compatibility</a>
+            </div><div id='BinaryTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Library Name</th><td>capi-media-vision</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>x86_64</td></tr>
+<tr><th>GCC Version</th><td>4.8</td></tr>
+<tr><th>Subject</th><td width='150px'>Binary Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>5</a></td></tr>
+<tr><th>Total Shared Libraries</th><td><a href='#Libs' style='color:Blue;'>4</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>23 / 45</td></tr>
+<tr><th>Verdict</th><td><span style='color:Green;'><b>Compatible</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Binary_Added' style='color:Blue;'>49</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Constants</th><td>-</td><td class='passed'><a href='#Other_Binary_Changes_In_Constants' style='color:Blue;'>41</a></td></tr>
+</table>
+
+<a name='Binary_Added'></a><h2>Added Symbols (49)</h2><hr/>
+<span class='h_name'>mv_face.h</span>, <span class='lib_name'>libcapi-media-vision.so.0.3.23</span><br/>
+<span class="iname">mv_face_detect&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, mv_face_detected_cb <span class='color_p'>detected_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_eye_condition_recognize&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, struct mv_rectangle_s <span class='color_p'>face_location</span>, mv_face_eye_condition_recognized_cb <span class='color_p'>eye_condition_recognized_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_facial_expression_recognize&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, struct mv_rectangle_s <span class='color_p'>face_location</span>, mv_face_facial_expression_recognized_cb <span class='color_p'>expression_recognized_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_add&#160;<span class='sym_p'>(&#160;mv_source_h const <span class='color_p'>source</span>, mv_face_recognition_model_h <span class='color_p'>recognition_model</span>, struct mv_rectangle_s const* <span class='color_p'>example_location</span>, <span class='nowrap'>int <span class='color_p'>face_label</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_clone&#160;<span class='sym_p'>(&#160;mv_face_recognition_model_h <span class='color_p'>src</span>, <span class='nowrap'>mv_face_recognition_model_h* <span class='color_p'>dst</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_face_recognition_model_h* <span class='color_p'>recognition_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_face_recognition_model_h <span class='color_p'>recognition_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_learn&#160;<span class='sym_p'>(&#160;mv_engine_config_h <span class='color_p'>engine_cfg</span>, <span class='nowrap'>mv_face_recognition_model_h <span class='color_p'>recognition_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_load&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_face_recognition_model_h* <span class='color_p'>recognition_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_query_labels&#160;<span class='sym_p'>(&#160;mv_face_recognition_model_h <span class='color_p'>recognition_model</span>, <span class='nowrap'>int** <span class='color_p'>labels</span>,</span> <span class='nowrap'>unsigned int* <span class='color_p'>number_of_labels</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_reset&#160;<span class='sym_p'>(&#160;mv_face_recognition_model_h <span class='color_p'>recognition_model</span>, <span class='nowrap'>int* <span class='color_p'>face_label</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_save&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_face_recognition_model_h <span class='color_p'>recognition_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognize&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, mv_face_recognition_model_h <span class='color_p'>recognition_model</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, struct mv_rectangle_s* <span class='color_p'>face_location</span>, mv_face_recognized_cb <span class='color_p'>recognized_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_track&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, mv_face_tracking_model_h <span class='color_p'>tracking_model</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, mv_face_tracked_cb <span class='color_p'>tracked_cb</span>, <span class='nowrap'>bool <span class='color_p'>do_learn</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_tracking_model_clone&#160;<span class='sym_p'>(&#160;mv_face_tracking_model_h <span class='color_p'>src</span>, <span class='nowrap'>mv_face_tracking_model_h* <span class='color_p'>dst</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_tracking_model_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_face_tracking_model_h* <span class='color_p'>tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_tracking_model_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_face_tracking_model_h <span class='color_p'>tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_tracking_model_load&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_face_tracking_model_h* <span class='color_p'>tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_tracking_model_prepare&#160;<span class='sym_p'>(&#160;mv_face_tracking_model_h <span class='color_p'>tracking_model</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, mv_source_h <span class='color_p'>source</span>, <span class='nowrap'>struct mv_quadrangle_s* <span class='color_p'>location</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_tracking_model_save&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_face_tracking_model_h <span class='color_p'>tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>mv_image.h</span>, <span class='lib_name'>libcapi-media-vision.so.0.3.23</span><br/>
+<span class="iname">mv_image_object_clone&#160;<span class='sym_p'>(&#160;mv_image_object_h <span class='color_p'>src</span>, <span class='nowrap'>mv_image_object_h* <span class='color_p'>dst</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_image_object_h* <span class='color_p'>image_object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_image_object_h <span class='color_p'>image_object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_fill&#160;<span class='sym_p'>(&#160;mv_image_object_h <span class='color_p'>image_object</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, mv_source_h <span class='color_p'>source</span>, <span class='nowrap'>struct mv_rectangle_s* <span class='color_p'>location</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_get_label&#160;<span class='sym_p'>(&#160;mv_image_object_h <span class='color_p'>image_object</span>, <span class='nowrap'>int* <span class='color_p'>label</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_get_recognition_rate&#160;<span class='sym_p'>(&#160;mv_image_object_h <span class='color_p'>image_object</span>, <span class='nowrap'>double* <span class='color_p'>recognition_rate</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_load&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_image_object_h* <span class='color_p'>image_object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_save&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_image_object_h <span class='color_p'>image_object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_set_label&#160;<span class='sym_p'>(&#160;mv_image_object_h <span class='color_p'>image_object</span>, <span class='nowrap'>int <span class='color_p'>label</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_recognize&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, mv_image_object_h const* <span class='color_p'>image_objects</span>, int <span class='color_p'>number_of_objects</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, mv_image_recognized_cb <span class='color_p'>recognized_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_track&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, mv_image_tracking_model_h <span class='color_p'>image_tracking_model</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, mv_image_tracked_cb <span class='color_p'>tracked_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_tracking_model_clone&#160;<span class='sym_p'>(&#160;mv_image_tracking_model_h <span class='color_p'>src</span>, <span class='nowrap'>mv_image_tracking_model_h* <span class='color_p'>dst</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_tracking_model_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_image_tracking_model_h* <span class='color_p'>image_tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_tracking_model_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_image_tracking_model_h <span class='color_p'>image_tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_tracking_model_load&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_image_tracking_model_h* <span class='color_p'>image_tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_tracking_model_refresh&#160;<span class='sym_p'>(&#160;mv_image_tracking_model_h <span class='color_p'>image_tracking_model</span>, <span class='nowrap'>mv_engine_config_h <span class='color_p'>engine_cfg</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_tracking_model_save&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_image_tracking_model_h <span class='color_p'>image_tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_tracking_model_set_target&#160;<span class='sym_p'>(&#160;mv_image_object_h <span class='color_p'>image_object</span>, <span class='nowrap'>mv_image_tracking_model_h <span class='color_p'>image_tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>mv_surveillance.h</span>, <span class='lib_name'>libcapi-media-vision.so.0.3.23</span><br/>
+<span class="iname">mv_surveillance_event_trigger_create&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>event_type</span>, <span class='nowrap'>mv_surveillance_event_trigger_h* <span class='color_p'>trigger</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_event_trigger_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_surveillance_event_trigger_h <span class='color_p'>trigger</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_foreach_event_result_name&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>event_type</span>, mv_surveillance_event_result_name_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_foreach_supported_event_type&#160;<span class='sym_p'>(&#160;mv_surveillance_event_type_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_get_event_trigger_roi&#160;<span class='sym_p'>(&#160;mv_surveillance_event_trigger_h <span class='color_p'>trigger</span>, int* <span class='color_p'>number_of_points</span>, <span class='nowrap'>struct mv_point_s** <span class='color_p'>roi</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_get_event_trigger_type&#160;<span class='sym_p'>(&#160;mv_surveillance_event_trigger_h <span class='color_p'>trigger</span>, <span class='nowrap'>char** <span class='color_p'>event_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_get_result_value&#160;<span class='sym_p'>(&#160;mv_surveillance_result_h <span class='color_p'>result</span>, char const* <span class='color_p'>name</span>, <span class='nowrap'>void* <span class='color_p'>value</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_push_source&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, <span class='nowrap'>int <span class='color_p'>video_stream_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_set_event_trigger_roi&#160;<span class='sym_p'>(&#160;mv_surveillance_event_trigger_h <span class='color_p'>trigger</span>, int <span class='color_p'>number_of_points</span>, <span class='nowrap'>struct mv_point_s* <span class='color_p'>roi</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_subscribe_event_trigger&#160;<span class='sym_p'>(&#160;mv_surveillance_event_trigger_h <span class='color_p'>trigger</span>, int <span class='color_p'>video_stream_id</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, mv_surveillance_event_occurred_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_unsubscribe_event_trigger&#160;<span class='sym_p'>(&#160;mv_surveillance_event_trigger_h <span class='color_p'>trigger</span>, <span class='nowrap'>int <span class='color_p'>video_stream_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Binary_Changes'></a><a name='Other_Binary_Changes_In_Constants'></a><h2>Other Changes in Constants (41)</h2><hr/>
+<span class='h_name'>mv_barcode_generate.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='ext'>[+]</span> MV_BARCODE_GENERATE_ATTR_COLOR_BACK</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_BARCODE_GENERATE_ATTR_COLOR_BACK</b> with value <b>&quot;MV_BARCODE_GENERATE_ATTR_COLOR_BACK&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_2')">
+<span class='ext'>[+]</span> MV_BARCODE_GENERATE_ATTR_COLOR_FRONT</span>
+<br/>
+<div id="c_2" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_BARCODE_GENERATE_ATTR_COLOR_FRONT</b> with value <b>&quot;MV_BARCODE_GENERATE_ATTR_COLOR_FRONT&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>mv_face.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='ext'>[+]</span> MV_FACE_DETECTION_MIN_SIZE_HEIGHT</span>
+<br/>
+<div id="c_3" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_DETECTION_MIN_SIZE_HEIGHT</b> with value <b>&quot;MV_FACE_DETECTION_MIN_SIZE_HEIGHT&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_4')">
+<span class='ext'>[+]</span> MV_FACE_DETECTION_MIN_SIZE_WIDTH</span>
+<br/>
+<div id="c_4" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_DETECTION_MIN_SIZE_WIDTH</b> with value <b>&quot;MV_FACE_DETECTION_MIN_SIZE_WIDTH&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+<span class='ext'>[+]</span> MV_FACE_DETECTION_MODEL_FILE_PATH</span>
+<br/>
+<div id="c_5" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_DETECTION_MODEL_FILE_PATH</b> with value <b>&quot;MV_FACE_DETECTION_MODEL_FILE_PATH&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_6')">
+<span class='ext'>[+]</span> MV_FACE_DETECTION_ROI_HEIGHT</span>
+<br/>
+<div id="c_6" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_DETECTION_ROI_HEIGHT</b> with value <b>&quot;MV_FACE_DETECTION_ROI_HEIGHT&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_7')">
+<span class='ext'>[+]</span> MV_FACE_DETECTION_ROI_WIDTH</span>
+<br/>
+<div id="c_7" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_DETECTION_ROI_WIDTH</b> with value <b>&quot;MV_FACE_DETECTION_ROI_WIDTH&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_8')">
+<span class='ext'>[+]</span> MV_FACE_DETECTION_ROI_X</span>
+<br/>
+<div id="c_8" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_DETECTION_ROI_X</b> with value <b>&quot;MV_FACE_DETECTION_ROI_X&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_9')">
+<span class='ext'>[+]</span> MV_FACE_DETECTION_ROI_Y</span>
+<br/>
+<div id="c_9" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_DETECTION_ROI_Y</b> with value <b>&quot;MV_FACE_DETECTION_ROI_Y&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_10')">
+<span class='ext'>[+]</span> MV_FACE_RECOGNITION_MODEL_TYPE</span>
+<br/>
+<div id="c_10" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_RECOGNITION_MODEL_TYPE</b> with value <b>&quot;MV_FACE_RECOGNITION_MODEL_TYPE&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>mv_image.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_11')">
+<span class='ext'>[+]</span> MV_IMAGE_RECOGNITION_MIN_MATCH_NUM</span>
+<br/>
+<div id="c_11" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_RECOGNITION_MIN_MATCH_NUM</b> with value <b>&quot;MV_IMAGE_RECOGNITION_MIN_MATCH_NUM&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_12')">
+<span class='ext'>[+]</span> MV_IMAGE_RECOGNITION_OBJECT_MAX_KEYPOINTS_NUM</span>
+<br/>
+<div id="c_12" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_RECOGNITION_OBJECT_MAX_KEYPOINTS_NUM</b> with value <b>&quot;MV_IMAGE_RECOGNITION_OBJECT_MAX_KEYPOINTS_NUM&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_13')">
+<span class='ext'>[+]</span> MV_IMAGE_RECOGNITION_OBJECT_SCALE_FACTOR</span>
+<br/>
+<div id="c_13" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_RECOGNITION_OBJECT_SCALE_FACTOR</b> with value <b>&quot;MV_IMAGE_RECOGNITION_OBJECT_SCALE_FACTOR&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_14')">
+<span class='ext'>[+]</span> MV_IMAGE_RECOGNITION_REQ_MATCH_PART</span>
+<br/>
+<div id="c_14" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_RECOGNITION_REQ_MATCH_PART</b> with value <b>&quot;MV_IMAGE_RECOGNITION_REQ_MATCH_PART&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_15')">
+<span class='ext'>[+]</span> MV_IMAGE_RECOGNITION_SCENE_MAX_KEYPOINTS_NUM</span>
+<br/>
+<div id="c_15" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_RECOGNITION_SCENE_MAX_KEYPOINTS_NUM</b> with value <b>&quot;MV_IMAGE_RECOGNITION_SCENE_MAX_KEYPOINTS_NUM&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_16')">
+<span class='ext'>[+]</span> MV_IMAGE_RECOGNITION_SCENE_SCALE_FACTOR</span>
+<br/>
+<div id="c_16" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_RECOGNITION_SCENE_SCALE_FACTOR</b> with value <b>&quot;MV_IMAGE_RECOGNITION_SCENE_SCALE_FACTOR&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_17')">
+<span class='ext'>[+]</span> MV_IMAGE_RECOGNITION_TOLERANT_MATCH_PART_ERR</span>
+<br/>
+<div id="c_17" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_RECOGNITION_TOLERANT_MATCH_PART_ERR</b> with value <b>&quot;MV_IMAGE_RECOGNITION_TOLERANT_MATCH_PART_ERR&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_18')">
+<span class='ext'>[+]</span> MV_IMAGE_TRACKING_EXPECTED_OFFSET</span>
+<br/>
+<div id="c_18" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_TRACKING_EXPECTED_OFFSET</b> with value <b>&quot;MV_IMAGE_TRACKING_EXPECTED_OFFSET&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_19')">
+<span class='ext'>[+]</span> MV_IMAGE_TRACKING_HISTORY_AMOUNT</span>
+<br/>
+<div id="c_19" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_TRACKING_HISTORY_AMOUNT</b> with value <b>&quot;MV_IMAGE_TRACKING_HISTORY_AMOUNT&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_20')">
+<span class='ext'>[+]</span> MV_IMAGE_TRACKING_STABLIZATION_ACCELERATION</span>
+<br/>
+<div id="c_20" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_TRACKING_STABLIZATION_ACCELERATION</b> with value <b>&quot;MV_IMAGE_TRACKING_STABLIZATION_ACCELERATION&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_21')">
+<span class='ext'>[+]</span> MV_IMAGE_TRACKING_STABLIZATION_SPEED</span>
+<br/>
+<div id="c_21" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_TRACKING_STABLIZATION_SPEED</b> with value <b>&quot;MV_IMAGE_TRACKING_STABLIZATION_SPEED&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_22')">
+<span class='ext'>[+]</span> MV_IMAGE_TRACKING_STABLIZATION_TOLERANT_SHIFT</span>
+<br/>
+<div id="c_22" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_TRACKING_STABLIZATION_TOLERANT_SHIFT</b> with value <b>&quot;MV_IMAGE_TRACKING_STABLIZATION_TOLERANT_SHIFT&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_23')">
+<span class='ext'>[+]</span> MV_IMAGE_TRACKING_USE_STABLIZATION</span>
+<br/>
+<div id="c_23" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_TRACKING_USE_STABLIZATION</b> with value <b>&quot;MV_IMAGE_TRACKING_USE_STABLIZATION&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>mv_surveillance.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_24')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_EVENT_TYPE_MOVEMENT_DETECTED</span>
+<br/>
+<div id="c_24" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_EVENT_TYPE_MOVEMENT_DETECTED</b> with value <b>&quot;MV_SURVEILLANCE_EVENT_MOVEMENT_DETECTED&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_25')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_EVENT_TYPE_PERSON_APPEARED_DISAPPEARED</span>
+<br/>
+<div id="c_25" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_EVENT_TYPE_PERSON_APPEARED_DISAPPEARED</b> with value <b>&quot;MV_SURVEILLANCE_EVENT_PERSON_APPEARED_DISAPEARED&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_26')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_EVENT_TYPE_PERSON_RECOGNIZED</span>
+<br/>
+<div id="c_26" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_EVENT_TYPE_PERSON_RECOGNIZED</b> with value <b>&quot;MV_SURVEILLANCE_EVENT_PERSON_RECOGNIZED&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_27')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_FACE_RECOGNITION_MODEL_FILE_PATH</span>
+<br/>
+<div id="c_27" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_FACE_RECOGNITION_MODEL_FILE_PATH</b> with value <b>&quot;MV_SURVEILLANCE_FACE_RECOGNITION_MODEL_FILE_PATH&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_28')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_MOVEMENT_DETECTION_THRESHOLD</span>
+<br/>
+<div id="c_28" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_MOVEMENT_DETECTION_THRESHOLD</b> with value <b>&quot;MV_SURVEILLANCE_MOVEMENT_DETECTION_THRESHOLD&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_29')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_MOVEMENT_NUMBER_OF_REGIONS</span>
+<br/>
+<div id="c_29" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_MOVEMENT_NUMBER_OF_REGIONS</b> with value <b>&quot;NUMBER_OF_MOVEMENT_REGIONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_30')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_MOVEMENT_REGIONS</span>
+<br/>
+<div id="c_30" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_MOVEMENT_REGIONS</b> with value <b>&quot;MOVEMENT_REGIONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_31')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_APPEARED_LOCATIONS</span>
+<br/>
+<div id="c_31" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_APPEARED_LOCATIONS</b> with value <b>&quot;APPEARED_PERSONS_LOCATIONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_32')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_APPEARED_NUMBER</span>
+<br/>
+<div id="c_32" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_APPEARED_NUMBER</b> with value <b>&quot;NUMBER_OF_APPEARED_PERSONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_33')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_DISAPPEARED_LOCATIONS</span>
+<br/>
+<div id="c_33" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_DISAPPEARED_LOCATIONS</b> with value <b>&quot;DISAPPEARED_PERSONS_LOCATIONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_34')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_DISAPPEARED_NUMBER</span>
+<br/>
+<div id="c_34" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_DISAPPEARED_NUMBER</b> with value <b>&quot;NUMBER_OF_DISAPPEARED_PERSONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_35')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_RECOGNIZED_CONFIDENCES</span>
+<br/>
+<div id="c_35" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_RECOGNIZED_CONFIDENCES</b> with value <b>&quot;PERSONS_CONFIDENCES&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_36')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_RECOGNIZED_LABELS</span>
+<br/>
+<div id="c_36" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_RECOGNIZED_LABELS</b> with value <b>&quot;PERSONS_LABELS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_37')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_RECOGNIZED_LOCATIONS</span>
+<br/>
+<div id="c_37" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_RECOGNIZED_LOCATIONS</b> with value <b>&quot;PERSONS_LOCATIONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_38')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_RECOGNIZED_NUMBER</span>
+<br/>
+<div id="c_38" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_RECOGNIZED_NUMBER</b> with value <b>&quot;NUMBER_OF_PERSONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_39')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_TRACKED_LOCATIONS</span>
+<br/>
+<div id="c_39" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_TRACKED_LOCATIONS</b> with value <b>&quot;TRACKED_PERSONS_LOCATIONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_40')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_TRACKED_NUMBER</span>
+<br/>
+<div id="c_40" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_TRACKED_NUMBER</b> with value <b>&quot;NUMBER_OF_TRACKED_PERSONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_41')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_SKIP_FRAMES_COUNT</span>
+<br/>
+<div id="c_41" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_SKIP_FRAMES_COUNT</b> with value <b>&quot;MV_SURVEILLANCE_SKIP_FRAMES_COUNT&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (5)</h2><hr/>
+<div class='h_list'>
+mv_barcode.h<br/>
+mv_barcode_detect.h<br/>
+mv_barcode_generate.h<br/>
+mv_barcode_type.h<br/>
+mv_common.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Shared Libraries (4)</h2><hr/>
+<div class='lib_list'>
+libcapi-media-vision.so.0.1.15<br/>
+libmv_barcode_detector.so<br/>
+libmv_barcode_generator.so<br/>
+libmv_common.so<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><div id='SourceTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Library Name</th><td>capi-media-vision</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>x86_64</td></tr>
+<tr><th>GCC Version</th><td>4.8</td></tr>
+<tr><th>Subject</th><td width='150px'>Source Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>5</a></td></tr>
+<tr><th>Total Shared Libraries</th><td><a href='#Libs' style='color:Blue;'>4</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>23 / 45</td></tr>
+<tr><th>Verdict</th><td><span style='color:Green;'><b>Compatible</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Source_Added' style='color:Blue;'>49</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Constants</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Constants' style='color:Blue;'>41</a></td></tr>
+</table>
+
+<a name='Source_Added'></a><h2>Added Symbols (49)</h2><hr/>
+<span class='h_name'>mv_face.h</span><br/>
+<span class="iname">mv_face_detect&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, mv_face_detected_cb <span class='color_p'>detected_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_eye_condition_recognize&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, struct mv_rectangle_s <span class='color_p'>face_location</span>, mv_face_eye_condition_recognized_cb <span class='color_p'>eye_condition_recognized_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_facial_expression_recognize&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, struct mv_rectangle_s <span class='color_p'>face_location</span>, mv_face_facial_expression_recognized_cb <span class='color_p'>expression_recognized_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_add&#160;<span class='sym_p'>(&#160;mv_source_h const <span class='color_p'>source</span>, mv_face_recognition_model_h <span class='color_p'>recognition_model</span>, struct mv_rectangle_s const* <span class='color_p'>example_location</span>, <span class='nowrap'>int <span class='color_p'>face_label</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_clone&#160;<span class='sym_p'>(&#160;mv_face_recognition_model_h <span class='color_p'>src</span>, <span class='nowrap'>mv_face_recognition_model_h* <span class='color_p'>dst</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_face_recognition_model_h* <span class='color_p'>recognition_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_face_recognition_model_h <span class='color_p'>recognition_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_learn&#160;<span class='sym_p'>(&#160;mv_engine_config_h <span class='color_p'>engine_cfg</span>, <span class='nowrap'>mv_face_recognition_model_h <span class='color_p'>recognition_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_load&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_face_recognition_model_h* <span class='color_p'>recognition_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_query_labels&#160;<span class='sym_p'>(&#160;mv_face_recognition_model_h <span class='color_p'>recognition_model</span>, <span class='nowrap'>int** <span class='color_p'>labels</span>,</span> <span class='nowrap'>unsigned int* <span class='color_p'>number_of_labels</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_reset&#160;<span class='sym_p'>(&#160;mv_face_recognition_model_h <span class='color_p'>recognition_model</span>, <span class='nowrap'>int* <span class='color_p'>face_label</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognition_model_save&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_face_recognition_model_h <span class='color_p'>recognition_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_recognize&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, mv_face_recognition_model_h <span class='color_p'>recognition_model</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, struct mv_rectangle_s* <span class='color_p'>face_location</span>, mv_face_recognized_cb <span class='color_p'>recognized_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_track&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, mv_face_tracking_model_h <span class='color_p'>tracking_model</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, mv_face_tracked_cb <span class='color_p'>tracked_cb</span>, <span class='nowrap'>bool <span class='color_p'>do_learn</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_tracking_model_clone&#160;<span class='sym_p'>(&#160;mv_face_tracking_model_h <span class='color_p'>src</span>, <span class='nowrap'>mv_face_tracking_model_h* <span class='color_p'>dst</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_tracking_model_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_face_tracking_model_h* <span class='color_p'>tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_tracking_model_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_face_tracking_model_h <span class='color_p'>tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_tracking_model_load&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_face_tracking_model_h* <span class='color_p'>tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_tracking_model_prepare&#160;<span class='sym_p'>(&#160;mv_face_tracking_model_h <span class='color_p'>tracking_model</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, mv_source_h <span class='color_p'>source</span>, <span class='nowrap'>struct mv_quadrangle_s* <span class='color_p'>location</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_face_tracking_model_save&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_face_tracking_model_h <span class='color_p'>tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>mv_image.h</span><br/>
+<span class="iname">mv_image_object_clone&#160;<span class='sym_p'>(&#160;mv_image_object_h <span class='color_p'>src</span>, <span class='nowrap'>mv_image_object_h* <span class='color_p'>dst</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_image_object_h* <span class='color_p'>image_object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_image_object_h <span class='color_p'>image_object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_fill&#160;<span class='sym_p'>(&#160;mv_image_object_h <span class='color_p'>image_object</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, mv_source_h <span class='color_p'>source</span>, <span class='nowrap'>struct mv_rectangle_s* <span class='color_p'>location</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_get_label&#160;<span class='sym_p'>(&#160;mv_image_object_h <span class='color_p'>image_object</span>, <span class='nowrap'>int* <span class='color_p'>label</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_get_recognition_rate&#160;<span class='sym_p'>(&#160;mv_image_object_h <span class='color_p'>image_object</span>, <span class='nowrap'>double* <span class='color_p'>recognition_rate</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_load&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_image_object_h* <span class='color_p'>image_object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_save&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_image_object_h <span class='color_p'>image_object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_object_set_label&#160;<span class='sym_p'>(&#160;mv_image_object_h <span class='color_p'>image_object</span>, <span class='nowrap'>int <span class='color_p'>label</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_recognize&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, mv_image_object_h const* <span class='color_p'>image_objects</span>, int <span class='color_p'>number_of_objects</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, mv_image_recognized_cb <span class='color_p'>recognized_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_track&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, mv_image_tracking_model_h <span class='color_p'>image_tracking_model</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, mv_image_tracked_cb <span class='color_p'>tracked_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_tracking_model_clone&#160;<span class='sym_p'>(&#160;mv_image_tracking_model_h <span class='color_p'>src</span>, <span class='nowrap'>mv_image_tracking_model_h* <span class='color_p'>dst</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_tracking_model_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_image_tracking_model_h* <span class='color_p'>image_tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_tracking_model_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_image_tracking_model_h <span class='color_p'>image_tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_tracking_model_load&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_image_tracking_model_h* <span class='color_p'>image_tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_tracking_model_refresh&#160;<span class='sym_p'>(&#160;mv_image_tracking_model_h <span class='color_p'>image_tracking_model</span>, <span class='nowrap'>mv_engine_config_h <span class='color_p'>engine_cfg</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_tracking_model_save&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>file_name</span>, <span class='nowrap'>mv_image_tracking_model_h <span class='color_p'>image_tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_image_tracking_model_set_target&#160;<span class='sym_p'>(&#160;mv_image_object_h <span class='color_p'>image_object</span>, <span class='nowrap'>mv_image_tracking_model_h <span class='color_p'>image_tracking_model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>mv_surveillance.h</span><br/>
+<span class="iname">mv_surveillance_event_trigger_create&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>event_type</span>, <span class='nowrap'>mv_surveillance_event_trigger_h* <span class='color_p'>trigger</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_event_trigger_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>mv_surveillance_event_trigger_h <span class='color_p'>trigger</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_foreach_event_result_name&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>event_type</span>, mv_surveillance_event_result_name_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_foreach_supported_event_type&#160;<span class='sym_p'>(&#160;mv_surveillance_event_type_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_get_event_trigger_roi&#160;<span class='sym_p'>(&#160;mv_surveillance_event_trigger_h <span class='color_p'>trigger</span>, int* <span class='color_p'>number_of_points</span>, <span class='nowrap'>struct mv_point_s** <span class='color_p'>roi</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_get_event_trigger_type&#160;<span class='sym_p'>(&#160;mv_surveillance_event_trigger_h <span class='color_p'>trigger</span>, <span class='nowrap'>char** <span class='color_p'>event_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_get_result_value&#160;<span class='sym_p'>(&#160;mv_surveillance_result_h <span class='color_p'>result</span>, char const* <span class='color_p'>name</span>, <span class='nowrap'>void* <span class='color_p'>value</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_push_source&#160;<span class='sym_p'>(&#160;mv_source_h <span class='color_p'>source</span>, <span class='nowrap'>int <span class='color_p'>video_stream_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_set_event_trigger_roi&#160;<span class='sym_p'>(&#160;mv_surveillance_event_trigger_h <span class='color_p'>trigger</span>, int <span class='color_p'>number_of_points</span>, <span class='nowrap'>struct mv_point_s* <span class='color_p'>roi</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_subscribe_event_trigger&#160;<span class='sym_p'>(&#160;mv_surveillance_event_trigger_h <span class='color_p'>trigger</span>, int <span class='color_p'>video_stream_id</span>, mv_engine_config_h <span class='color_p'>engine_cfg</span>, mv_surveillance_event_occurred_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">mv_surveillance_unsubscribe_event_trigger&#160;<span class='sym_p'>(&#160;mv_surveillance_event_trigger_h <span class='color_p'>trigger</span>, <span class='nowrap'>int <span class='color_p'>video_stream_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes'></a><a name='Other_Source_Changes_In_Constants'></a><h2>Other Changes in Constants (41)</h2><hr/>
+<span class='h_name'>mv_barcode_generate.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_42')">
+<span class='ext'>[+]</span> MV_BARCODE_GENERATE_ATTR_COLOR_BACK</span>
+<br/>
+<div id="c_42" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_BARCODE_GENERATE_ATTR_COLOR_BACK</b> with value <b>&quot;MV_BARCODE_GENERATE_ATTR_COLOR_BACK&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_43')">
+<span class='ext'>[+]</span> MV_BARCODE_GENERATE_ATTR_COLOR_FRONT</span>
+<br/>
+<div id="c_43" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_BARCODE_GENERATE_ATTR_COLOR_FRONT</b> with value <b>&quot;MV_BARCODE_GENERATE_ATTR_COLOR_FRONT&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>mv_face.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_44')">
+<span class='ext'>[+]</span> MV_FACE_DETECTION_MIN_SIZE_HEIGHT</span>
+<br/>
+<div id="c_44" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_DETECTION_MIN_SIZE_HEIGHT</b> with value <b>&quot;MV_FACE_DETECTION_MIN_SIZE_HEIGHT&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_45')">
+<span class='ext'>[+]</span> MV_FACE_DETECTION_MIN_SIZE_WIDTH</span>
+<br/>
+<div id="c_45" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_DETECTION_MIN_SIZE_WIDTH</b> with value <b>&quot;MV_FACE_DETECTION_MIN_SIZE_WIDTH&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_46')">
+<span class='ext'>[+]</span> MV_FACE_DETECTION_MODEL_FILE_PATH</span>
+<br/>
+<div id="c_46" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_DETECTION_MODEL_FILE_PATH</b> with value <b>&quot;MV_FACE_DETECTION_MODEL_FILE_PATH&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_47')">
+<span class='ext'>[+]</span> MV_FACE_DETECTION_ROI_HEIGHT</span>
+<br/>
+<div id="c_47" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_DETECTION_ROI_HEIGHT</b> with value <b>&quot;MV_FACE_DETECTION_ROI_HEIGHT&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_48')">
+<span class='ext'>[+]</span> MV_FACE_DETECTION_ROI_WIDTH</span>
+<br/>
+<div id="c_48" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_DETECTION_ROI_WIDTH</b> with value <b>&quot;MV_FACE_DETECTION_ROI_WIDTH&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_49')">
+<span class='ext'>[+]</span> MV_FACE_DETECTION_ROI_X</span>
+<br/>
+<div id="c_49" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_DETECTION_ROI_X</b> with value <b>&quot;MV_FACE_DETECTION_ROI_X&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_50')">
+<span class='ext'>[+]</span> MV_FACE_DETECTION_ROI_Y</span>
+<br/>
+<div id="c_50" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_DETECTION_ROI_Y</b> with value <b>&quot;MV_FACE_DETECTION_ROI_Y&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_51')">
+<span class='ext'>[+]</span> MV_FACE_RECOGNITION_MODEL_TYPE</span>
+<br/>
+<div id="c_51" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_FACE_RECOGNITION_MODEL_TYPE</b> with value <b>&quot;MV_FACE_RECOGNITION_MODEL_TYPE&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>mv_image.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_52')">
+<span class='ext'>[+]</span> MV_IMAGE_RECOGNITION_MIN_MATCH_NUM</span>
+<br/>
+<div id="c_52" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_RECOGNITION_MIN_MATCH_NUM</b> with value <b>&quot;MV_IMAGE_RECOGNITION_MIN_MATCH_NUM&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_53')">
+<span class='ext'>[+]</span> MV_IMAGE_RECOGNITION_OBJECT_MAX_KEYPOINTS_NUM</span>
+<br/>
+<div id="c_53" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_RECOGNITION_OBJECT_MAX_KEYPOINTS_NUM</b> with value <b>&quot;MV_IMAGE_RECOGNITION_OBJECT_MAX_KEYPOINTS_NUM&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_54')">
+<span class='ext'>[+]</span> MV_IMAGE_RECOGNITION_OBJECT_SCALE_FACTOR</span>
+<br/>
+<div id="c_54" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_RECOGNITION_OBJECT_SCALE_FACTOR</b> with value <b>&quot;MV_IMAGE_RECOGNITION_OBJECT_SCALE_FACTOR&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_55')">
+<span class='ext'>[+]</span> MV_IMAGE_RECOGNITION_REQ_MATCH_PART</span>
+<br/>
+<div id="c_55" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_RECOGNITION_REQ_MATCH_PART</b> with value <b>&quot;MV_IMAGE_RECOGNITION_REQ_MATCH_PART&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_56')">
+<span class='ext'>[+]</span> MV_IMAGE_RECOGNITION_SCENE_MAX_KEYPOINTS_NUM</span>
+<br/>
+<div id="c_56" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_RECOGNITION_SCENE_MAX_KEYPOINTS_NUM</b> with value <b>&quot;MV_IMAGE_RECOGNITION_SCENE_MAX_KEYPOINTS_NUM&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_57')">
+<span class='ext'>[+]</span> MV_IMAGE_RECOGNITION_SCENE_SCALE_FACTOR</span>
+<br/>
+<div id="c_57" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_RECOGNITION_SCENE_SCALE_FACTOR</b> with value <b>&quot;MV_IMAGE_RECOGNITION_SCENE_SCALE_FACTOR&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_58')">
+<span class='ext'>[+]</span> MV_IMAGE_RECOGNITION_TOLERANT_MATCH_PART_ERR</span>
+<br/>
+<div id="c_58" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_RECOGNITION_TOLERANT_MATCH_PART_ERR</b> with value <b>&quot;MV_IMAGE_RECOGNITION_TOLERANT_MATCH_PART_ERR&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_59')">
+<span class='ext'>[+]</span> MV_IMAGE_TRACKING_EXPECTED_OFFSET</span>
+<br/>
+<div id="c_59" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_TRACKING_EXPECTED_OFFSET</b> with value <b>&quot;MV_IMAGE_TRACKING_EXPECTED_OFFSET&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_60')">
+<span class='ext'>[+]</span> MV_IMAGE_TRACKING_HISTORY_AMOUNT</span>
+<br/>
+<div id="c_60" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_TRACKING_HISTORY_AMOUNT</b> with value <b>&quot;MV_IMAGE_TRACKING_HISTORY_AMOUNT&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_61')">
+<span class='ext'>[+]</span> MV_IMAGE_TRACKING_STABLIZATION_ACCELERATION</span>
+<br/>
+<div id="c_61" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_TRACKING_STABLIZATION_ACCELERATION</b> with value <b>&quot;MV_IMAGE_TRACKING_STABLIZATION_ACCELERATION&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_62')">
+<span class='ext'>[+]</span> MV_IMAGE_TRACKING_STABLIZATION_SPEED</span>
+<br/>
+<div id="c_62" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_TRACKING_STABLIZATION_SPEED</b> with value <b>&quot;MV_IMAGE_TRACKING_STABLIZATION_SPEED&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_63')">
+<span class='ext'>[+]</span> MV_IMAGE_TRACKING_STABLIZATION_TOLERANT_SHIFT</span>
+<br/>
+<div id="c_63" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_TRACKING_STABLIZATION_TOLERANT_SHIFT</b> with value <b>&quot;MV_IMAGE_TRACKING_STABLIZATION_TOLERANT_SHIFT&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_64')">
+<span class='ext'>[+]</span> MV_IMAGE_TRACKING_USE_STABLIZATION</span>
+<br/>
+<div id="c_64" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_IMAGE_TRACKING_USE_STABLIZATION</b> with value <b>&quot;MV_IMAGE_TRACKING_USE_STABLIZATION&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>mv_surveillance.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_65')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_EVENT_TYPE_MOVEMENT_DETECTED</span>
+<br/>
+<div id="c_65" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_EVENT_TYPE_MOVEMENT_DETECTED</b> with value <b>&quot;MV_SURVEILLANCE_EVENT_MOVEMENT_DETECTED&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_66')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_EVENT_TYPE_PERSON_APPEARED_DISAPPEARED</span>
+<br/>
+<div id="c_66" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_EVENT_TYPE_PERSON_APPEARED_DISAPPEARED</b> with value <b>&quot;MV_SURVEILLANCE_EVENT_PERSON_APPEARED_DISAPEARED&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_67')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_EVENT_TYPE_PERSON_RECOGNIZED</span>
+<br/>
+<div id="c_67" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_EVENT_TYPE_PERSON_RECOGNIZED</b> with value <b>&quot;MV_SURVEILLANCE_EVENT_PERSON_RECOGNIZED&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_68')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_FACE_RECOGNITION_MODEL_FILE_PATH</span>
+<br/>
+<div id="c_68" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_FACE_RECOGNITION_MODEL_FILE_PATH</b> with value <b>&quot;MV_SURVEILLANCE_FACE_RECOGNITION_MODEL_FILE_PATH&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_69')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_MOVEMENT_DETECTION_THRESHOLD</span>
+<br/>
+<div id="c_69" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_MOVEMENT_DETECTION_THRESHOLD</b> with value <b>&quot;MV_SURVEILLANCE_MOVEMENT_DETECTION_THRESHOLD&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_70')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_MOVEMENT_NUMBER_OF_REGIONS</span>
+<br/>
+<div id="c_70" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_MOVEMENT_NUMBER_OF_REGIONS</b> with value <b>&quot;NUMBER_OF_MOVEMENT_REGIONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_71')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_MOVEMENT_REGIONS</span>
+<br/>
+<div id="c_71" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_MOVEMENT_REGIONS</b> with value <b>&quot;MOVEMENT_REGIONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_72')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_APPEARED_LOCATIONS</span>
+<br/>
+<div id="c_72" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_APPEARED_LOCATIONS</b> with value <b>&quot;APPEARED_PERSONS_LOCATIONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_73')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_APPEARED_NUMBER</span>
+<br/>
+<div id="c_73" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_APPEARED_NUMBER</b> with value <b>&quot;NUMBER_OF_APPEARED_PERSONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_74')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_DISAPPEARED_LOCATIONS</span>
+<br/>
+<div id="c_74" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_DISAPPEARED_LOCATIONS</b> with value <b>&quot;DISAPPEARED_PERSONS_LOCATIONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_75')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_DISAPPEARED_NUMBER</span>
+<br/>
+<div id="c_75" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_DISAPPEARED_NUMBER</b> with value <b>&quot;NUMBER_OF_DISAPPEARED_PERSONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_76')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_RECOGNIZED_CONFIDENCES</span>
+<br/>
+<div id="c_76" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_RECOGNIZED_CONFIDENCES</b> with value <b>&quot;PERSONS_CONFIDENCES&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_77')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_RECOGNIZED_LABELS</span>
+<br/>
+<div id="c_77" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_RECOGNIZED_LABELS</b> with value <b>&quot;PERSONS_LABELS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_78')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_RECOGNIZED_LOCATIONS</span>
+<br/>
+<div id="c_78" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_RECOGNIZED_LOCATIONS</b> with value <b>&quot;PERSONS_LOCATIONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_79')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_RECOGNIZED_NUMBER</span>
+<br/>
+<div id="c_79" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_RECOGNIZED_NUMBER</b> with value <b>&quot;NUMBER_OF_PERSONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_80')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_TRACKED_LOCATIONS</span>
+<br/>
+<div id="c_80" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_TRACKED_LOCATIONS</b> with value <b>&quot;TRACKED_PERSONS_LOCATIONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_81')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_PERSONS_TRACKED_NUMBER</span>
+<br/>
+<div id="c_81" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_PERSONS_TRACKED_NUMBER</b> with value <b>&quot;NUMBER_OF_TRACKED_PERSONS&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_82')">
+<span class='ext'>[+]</span> MV_SURVEILLANCE_SKIP_FRAMES_COUNT</span>
+<br/>
+<div id="c_82" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MV_SURVEILLANCE_SKIP_FRAMES_COUNT</b> with value <b>&quot;MV_SURVEILLANCE_SKIP_FRAMES_COUNT&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (5)</h2><hr/>
+<div class='h_list'>
+mv_barcode.h<br/>
+mv_barcode_detect.h<br/>
+mv_barcode_generate.h<br/>
+mv_barcode_type.h<br/>
+mv_common.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Shared Libraries (4)</h2><hr/>
+<div class='lib_list'>
+libcapi-media-vision.so.0.1.15<br/>
+libmv_barcode_detector.so<br/>
+libmv_barcode_generator.so<br/>
+libmv_common.so<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><hr/>
+<div class='footer' align='right'><i>Generated by <a href='http://lvc.github.io/abi-compliance-checker/'>ABI Compliance Checker</a> 1.99.18 &#160;</i>
+</div>
+<br/>
+
+</body></html>

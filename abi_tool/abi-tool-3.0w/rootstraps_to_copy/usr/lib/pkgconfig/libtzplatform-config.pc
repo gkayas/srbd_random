@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+Name: libtzplatform-config
+Description: Tizen Platform Config library.
+Version: 2.0
+URL: 
+Libs: -L${libdir} -ltzplatform-config-static -ltzplatform-config-2.0
+Cflags: -I${includedir}/ 

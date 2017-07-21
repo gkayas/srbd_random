@@ -1,0 +1,118 @@
+package application;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.List;
+import javax.swing.SwingWorker;
+import javafx.scene.control.TextArea;
+
+public class UpdateConsoleTask extends SwingWorker<String, String> {
+	private TextArea textArea;
+
+	// A calling application must pass a JTextArea
+	String arg1, arg2, arg3;
+	public UpdateConsoleTask(TextArea textArea, String args1, String args2) {
+		this.textArea = textArea;
+		this.arg1 = arg1;
+		this.arg2 = arg2;
+		this.arg3 = "";
+	}
+
+	public UpdateConsoleTask(TextArea textArea, String args1, String args2, String args3) {
+		this.textArea = textArea;
+		this.arg1 = arg1;
+		this.arg2 = arg2;
+		this.arg3 = arg3;
+	}
+
+	private boolean isWindows() {
+		String osName = System.getProperty("os.name");
+
+		if (osName.toLowerCase().contains("windows")) {
+			return true;
+		}
+		return false;
+	}
+
+
+	@Override
+	protected String doInBackground() throws IOException, InterruptedException {
+		ProcessBuilder run;
+		Process runProcess;
+		try {
+			if (!isWindows()) {
+				System.out.println("Starting exe....");
+				//run = new ProcessBuilder("java", "-jar", test-jar.jar", arg);
+			} else {
+				System.out.println("Starting exe....");
+				//run = new ProcessBuilder("cmd", "/c", "java", "-jar", "test-jar.jar", arg);
+			}
+
+			runProcess = Runtime.getRuntime().exec("java -jar refapp-automation.jar " + arg1  + " " + arg2  + " " + arg3);//run.start();
+
+			System.out.println("Started exe....");
+			BufferedReader msgReader = new BufferedReader(new InputStreamReader(runProcess.getInputStream()));
+			BufferedReader errReader = new BufferedReader(new InputStreamReader(runProcess.getErrorStream()));	
+
+			StringBuffer msgSb = new StringBuffer();
+			StringBuffer errSb = new StringBuffer();
+			char m = 0 ;	
+			char e = 0 ;
+			while(true) {
+				try{
+					runProcess.exitValue();
+					break;
+				}catch(IllegalThreadStateException ex){
+
+				}
+
+				while (msgReader.ready()) {
+					System.out.println("reading msg....");
+					m = (char)msgReader.read();
+
+					msgSb.append(m);
+
+					if(m == 10) {
+						//textArea.setText(textArea.getText()+msgSb.toString()+"");
+						publish(msgSb.toString());
+						//textArea.appendText(msgSb.toString());
+						System.out.println("#"+msgSb.toString());
+						msgSb = new StringBuffer();
+					}
+
+				}
+
+				Thread.sleep(10);
+			}
+
+			msgReader.close();
+			errReader.close();
+			runProcess.destroy();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	protected void done() {
+		if (isCancelled())
+			publish("Cancelled !");
+		else
+			publish("Done !");
+	}
+
+
+	@Override
+	protected void process(List<String> strings) {
+		StringBuilder strBuilder = new StringBuilder();
+		for (String str : strings) {
+			strBuilder.append(str).append('\n');
+		}
+		textArea.appendText(strBuilder.toString());
+		System.out.println("In process");
+	}
+}

@@ -1,0 +1,27 @@
+
+public class NumberNode extends Node{
+	
+	
+	public NumberNode(int type) {
+		super(type);
+	}
+
+	@Override
+	public int getType() {
+		return Node.NumberType;
+	}
+
+	@Override
+	public int getValue() {
+		
+		return 0;
+	}
+
+	@Override
+	public int getOperation() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+}

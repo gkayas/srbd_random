@@ -1,0 +1,10 @@
+__set_session_mode
+g_device_info_changed_cb_table
+g_volume_changed_cb_table
+sound_manager_get_call_session_mode
+__get_session_mode
+__session_interrupt_cb
+g_session_interrupt_cb_table
+sound_manager_set_call_session_mode
+__convert_sound_manager_error_code
+g_device_connected_cb_table

@@ -1,0 +1,303 @@
+/* Copyright (C) 2011-2012 Brian P. Hinz
+ * Copyright (C) 2012-2013, 2015 D. R. Commander.  All Rights Reserved.
+ *
+ * This is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this software; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,
+ * USA.
+ */
+/*
+ * Modification done by Golam Kayas(g.kayes@samsung.com) in 15th Nov,2015
+ */
+
+package com.turbovnc.vncviewer;
+
+import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.image.BufferedImage;
+import java.awt.Image;
+import java.awt.Insets;
+import java.awt.Toolkit;
+import java.awt.Graphics2D;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import javax.swing.*;
+import javax.swing.border.*;
+
+import com.turbovnc.rfb.*;
+
+@SuppressWarnings("serial")
+public class Toolbar extends JToolBar implements ActionListener {
+
+	private JFrame parent;
+	static int NUMBER_OF_BUTTONS = 8;
+	static int ICON_WIDTH = 56;
+	static int ICON_HEIGTH = 48;
+
+	static final String[] buttonTips = { "Change Mode", "Verify Image", "Tap Image", "Verify Text", "Tap Text",
+			"Type Text", "Swipe", "Settings" };
+
+	private JButton[] buttons = new JButton[NUMBER_OF_BUTTONS];
+
+	private final ClassLoader cl = getClass().getClassLoader();
+
+	private CodeGenerator codeGenerator;
+	private final ImageIcon[] toolbarIcons = { new ImageIcon(cl.getResource("icons/Live_Mode.png")),
+			new ImageIcon(cl.getResource("icons/Verify_Image.png")),
+			new ImageIcon(cl.getResource("icons/Tap_Image.png")),
+			new ImageIcon(cl.getResource("icons/Verify_Text.png")), new ImageIcon(cl.getResource("icons/Tap_Text.png")),
+			new ImageIcon(cl.getResource("icons/Type_Text.png")), new ImageIcon(cl.getResource("icons/Swipe.png")),
+			new ImageIcon(cl.getResource("icons/Settings.png")) };
+	private final ImageIcon modeChangedIcon = new ImageIcon(cl.getResource("icons/Capture_Mode.png"));
+
+	private final Image[] toolbarImage = { toolbarIcons[0].getImage(), toolbarIcons[1].getImage(),
+			toolbarIcons[2].getImage(), toolbarIcons[3].getImage(), toolbarIcons[4].getImage(),
+			toolbarIcons[5].getImage(), toolbarIcons[6].getImage(), toolbarIcons[7].getImage() };
+
+	public Toolbar(CConn cc_, CodeGenerator codeGenerator, JFrame parent) {
+		super();
+		cc = cc_;
+		this.parent = parent;
+		this.codeGenerator = codeGenerator;
+		for (int i = 0; i < NUMBER_OF_BUTTONS; i++) {
+
+			BufferedImage bi = new BufferedImage(ICON_WIDTH, ICON_HEIGTH, BufferedImage.TYPE_INT_ARGB);
+			Graphics2D g = bi.createGraphics();
+			g.drawImage(toolbarImage[i], 0, 0, ICON_WIDTH, ICON_HEIGTH, null);
+			setAlignmentX(java.awt.Component.LEFT_ALIGNMENT);
+			setAlignmentY(java.awt.Component.CENTER_ALIGNMENT);
+			setFloatable(false);
+			setBorder(new EmptyBorder(1, 2, 1, 0));
+
+			JPanel panel = new JPanel();
+			panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+
+			ImageIcon icon = new ImageIcon(tk.createImage(bi.getSource()));
+			JButton button;
+
+			button = new JButton(icon);
+			button.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
+
+			button.setName(buttonTips[i]);
+			button.setToolTipText(buttonTips[i]);
+			button.setBorderPainted(false);
+			button.setFocusPainted(false);
+			button.setFocusable(false);
+			button.addActionListener(this);
+			button.addMouseListener(new ButtonListener(button));
+			button.setContentAreaFilled(false);
+
+			if (i != 0 && i != NUMBER_OF_BUTTONS-1) {
+				button.setEnabled(false);
+			} 
+			else {
+//				to disable live mode
+				ReadConfigUtil.readDeviceConfig();
+				
+				String liveMode = ReadConfigUtil.getLiveMode();
+				if(!liveMode.equals("0"+"xF1"+"AB05")) {
+					button.setEnabled(false);
+				}
+			}
+			
+
+			buttons[i] = button;
+			add(button);
+
+			add(new JSeparator(JSeparator.VERTICAL) {
+				public Dimension getMaximumSize() {
+					return new Dimension(getPreferredSize().width, Integer.MAX_VALUE);
+				}
+			});
+
+		}
+	}
+
+	private void toggleOperationButtons() {
+		for (int i = 1; i < NUMBER_OF_BUTTONS; i++) {
+			buttons[i].setEnabled(!buttons[i].isEnabled());
+		}
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		Object s = e.getSource();
+		if (((AbstractButton) s).getName() == buttonTips[0]) {
+			cc.viewMode = !cc.viewMode;
+			if (cc.viewMode) {
+				buttons[0].setIcon(modeChangedIcon);
+				codeGenerator.createCodeBox();
+			} else {
+
+				buttons[0].setIcon(toolbarIcons[0]);
+				codeGenerator.closeCodeBox();
+			}
+			toggleOperationButtons();
+
+		} else if (((AbstractButton) s).getName() == buttonTips[1]) {
+			CaptureImage capture = new CaptureImage(codeGenerator, true);
+			capture.start();
+		} else if (((AbstractButton) s).getName() == buttonTips[2]) {
+			CaptureImage capture = new CaptureImage(codeGenerator, false);
+			capture.start();
+		} else if (((AbstractButton) s).getName() == buttonTips[3]) {
+			codeGenerator.verifyText();
+		} else if (((AbstractButton) s).getName() == buttonTips[4]) {
+			codeGenerator.tapText();
+		} else if (((AbstractButton) s).getName() == buttonTips[5]) {
+			codeGenerator.typeText();
+		} else if (((AbstractButton) s).getName() == buttonTips[6]) {
+			codeGenerator.swipe();
+		} else if (((AbstractButton) s).getName() == buttonTips[7]) {
+			createSetupPopup();
+		}
+	}
+
+	
+
+	private void createSetupPopup() {
+		ReadConfigUtil.readDeviceConfig();
+		
+		final JDialog frame = new JDialog(this.parent);
+		frame.setTitle("Device Config");
+
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setLayout(new BorderLayout());	
+		
+		JPanel setupPanel = new JPanel();
+	    Border border = setupPanel.getBorder();
+	    Border margin = new EmptyBorder(10, 10, 10, 10);
+	    setupPanel.setBorder(new CompoundBorder(border, margin));
+	    final JTextArea rcpttTextArea = new JTextArea();
+	    rcpttTextArea.setText(ReadConfigUtil.getLiveMode());
+
+	    GridBagLayout panelGridBagLayout = new GridBagLayout();
+	    panelGridBagLayout.columnWidths = new int[] { 86, 86, 0 };
+	    panelGridBagLayout.rowHeights = new int[] { 20, 20, 20, 20, 20, 0 };
+	    panelGridBagLayout.columnWeights = new double[] { 0.0, 1.0, Double.MIN_VALUE };
+	    panelGridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
+	    setupPanel.setLayout(panelGridBagLayout);
+
+	    final JTextField liveModeField = new JTextField();
+	    final JTextField platformVersionField = new JTextField();
+	    final JTextField profileNameField = new JTextField();
+	    final JTextField profileTypeField = new JTextField();
+	    final JTextField emulatorTypeField = new JTextField();
+	    final JTextField assertModeField = new JTextField();
+	    final JTextField refreashTimeField = new JTextField();
+	    final JTextField searchTimeField = new JTextField();
+	    final JTextField showSysMsgField = new JTextField();	  
+	    final JTextField captureRefImagePathField = new JTextField();
+	    final JTextField imagePathField = new JTextField();
+	    final JTextField videoPathField = new JTextField();
+	    final JTextField musicPathField = new JTextField();
+	    
+	    addLabelAndTextField(Constants.LIVE_MODE, ReadConfigUtil.getLiveMode(), 0, setupPanel, liveModeField);
+	    addLabelAndTextField(Constants.PLATFORM_VERSION, ReadConfigUtil.getPlatformVersion(), 1, setupPanel, platformVersionField);
+	    addLabelAndTextField(Constants.PROFILE_NAME, ReadConfigUtil.getProfileName(), 1, setupPanel, platformVersionField);
+	    addLabelAndTextField(Constants.PROFILE_TYPE, ReadConfigUtil.getProfileType(), 1, setupPanel, platformVersionField);
+	    addLabelAndTextField(Constants.EMULATOR_TYPE, ReadConfigUtil.getEmulatorType(), 6, setupPanel, emulatorTypeField);
+	    addLabelAndTextField(Constants.ASSERT_MODE, ReadConfigUtil.getAssertMode(), 7, setupPanel, assertModeField);
+	    addLabelAndTextField(Constants.REFRESH_TIME, ReadConfigUtil.getRefreshTime(), 3, setupPanel, refreashTimeField);
+	    addLabelAndTextField(Constants.SEARCH_TIME, ReadConfigUtil.getSearchTime(), 4, setupPanel, searchTimeField);
+	    addLabelAndTextField(Constants.SHOW_SYS_MESSAGE, ReadConfigUtil.getShowSysMes(), 2, setupPanel, showSysMsgField);
+	    addLabelAndTextField(Constants.CAPTURE_REF_IMAGE_PATH, ReadConfigUtil.getCaptureRefImagePath(), 8, setupPanel, captureRefImagePathField);
+	    addLabelAndTextField(Constants.DEVICE_IMAGE_PATH, ReadConfigUtil.getImagePath(), 9, setupPanel, imagePathField);
+	    addLabelAndTextField(Constants.DEVICE_VIDEO_PATH, ReadConfigUtil.getVideoPath(), 10, setupPanel, videoPathField);
+	    addLabelAndTextField(Constants.DEVICE_MUSIC_PATH, ReadConfigUtil.getMusicPath(), 11, setupPanel, musicPathField);
+	   
+	    JButton saveButton = new JButton("Save");
+	    saveButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ReadConfigUtil.setValueInDevInfo(Constants.LIVE_MODE, liveModeField.getText().trim());
+				ReadConfigUtil.setValueInDevInfo(Constants.PLATFORM_VERSION, platformVersionField.getText().trim());
+				ReadConfigUtil.setValueInDevInfo(Constants.SHOW_SYS_MESSAGE, showSysMsgField.getText().trim());
+				ReadConfigUtil.setValueInDevInfo(Constants.REFRESH_TIME, refreashTimeField.getText().trim());
+				ReadConfigUtil.setValueInDevInfo(Constants.SEARCH_TIME, searchTimeField.getText().trim());
+				ReadConfigUtil.setValueInDevInfo(Constants.INTERFACE_TYPE, interfaceTypeField.getText().trim());
+				ReadConfigUtil.setValueInDevInfo(Constants.EMULATOR_TYPE, emulatorTypeField.getText().trim());
+				ReadConfigUtil.setValueInDevInfo(Constants.ASSERT_MODE, assertModeField.getText().trim());
+				ReadConfigUtil.setValueInDevInfo(Constants.CAPTURE_REF_IMAGE_PATH, captureRefImagePathField.getText().trim());
+				ReadConfigUtil.setValueInDevInfo(Constants.DEVICE_IMAGE_PATH, imagePathField.getText().trim());
+				ReadConfigUtil.setValueInDevInfo(Constants.DEVICE_VIDEO_PATH, videoPathField.getText().trim());
+				ReadConfigUtil.setValueInDevInfo(Constants.DEVICE_MUSIC_PATH, musicPathField.getText().trim());
+				ReadConfigUtil.writeIntoDeviceConfig();
+			}
+		});
+
+	    GridBagConstraints gridBagConstraintForSave = new GridBagConstraints();
+//	    gridBagConstraintForSave.fill = GridBagConstraints.HORIZONTAL;
+	    gridBagConstraintForSave.anchor = GridBagConstraints.SOUTHEAST;
+	    gridBagConstraintForSave.insets = new Insets(0, 0, 0, 5);
+	    gridBagConstraintForSave.gridx = 1;
+	    gridBagConstraintForSave.gridy = 12;
+	    gridBagConstraintForSave.gridwidth = 1;
+
+	    setupPanel.add(saveButton, gridBagConstraintForSave);
+	    
+	    JButton cancelButton = new JButton("Close");
+	    cancelButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+			}
+		});
+	    GridBagConstraints gridBagConstraintForCancel = new GridBagConstraints();
+//	    gridBagConstraintForCancel.fill = GridBagConstraints.HORIZONTAL;
+	    gridBagConstraintForCancel.anchor = GridBagConstraints.SOUTHEAST;
+	    gridBagConstraintForCancel.insets = new Insets(0, 0, 0, 0);
+	    gridBagConstraintForCancel.gridx = 2;
+	    gridBagConstraintForCancel.gridy = 12;
+	    gridBagConstraintForCancel.gridwidth = 1;
+	    setupPanel.add(cancelButton, gridBagConstraintForCancel);
+
+		frame.add(setupPanel, BorderLayout.CENTER);
+		frame.pack();
+		frame.setSize(CodeBox.FRAME_WIDTH-450, CodeBox.FRAME_HEIGHT - 580);
+		frame.setPreferredSize(new Dimension(CodeBox.FRAME_WIDTH-450, CodeBox.FRAME_HEIGHT - 580));
+		frame.setModal(true);
+		frame.setResizable(false);
+		frame.setVisible(true);
+		
+	}
+
+	private void addLabelAndTextField(String labelText, String valueText, int yPos, Container setupPanel, JTextField textField) {
+
+	    JLabel faxLabel = new JLabel(labelText);
+	    GridBagConstraints gridBagConstraintForLabel = new GridBagConstraints();
+	    gridBagConstraintForLabel.fill = GridBagConstraints.BOTH;
+	    gridBagConstraintForLabel.insets = new Insets(0, 0, 5, 5);
+	    gridBagConstraintForLabel.gridx = 0;
+	    gridBagConstraintForLabel.gridy = yPos;
+	    setupPanel.add(faxLabel, gridBagConstraintForLabel);
+
+	    textField.setText(valueText);
+	    GridBagConstraints gridBagConstraintForTextField = new GridBagConstraints();
+	    gridBagConstraintForTextField.fill = GridBagConstraints.BOTH;
+	    gridBagConstraintForTextField.insets = new Insets(0, 0, 5, 0);
+	    gridBagConstraintForTextField.gridwidth = 2;
+	    gridBagConstraintForTextField.gridx = 1;
+	    gridBagConstraintForTextField.gridy = yPos;
+	    setupPanel.add(textField, gridBagConstraintForTextField);
+//	    textField.setColumns(20);
+	}
+
+	private CConn cc;
+	static Toolkit tk = Toolkit.getDefaultToolkit();
+	static LogWriter vlog = new LogWriter("Toolbar");
+}

@@ -1,0 +1,697 @@
+#!/bin/bash
+#
+# Copyright (c) 2014 Samsung Electronics Co., Ltd.
+#
+# Licensed under the Apache License, Version 2.0 (the License);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http:#www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+ABI_DIR="$(cd "$(dirname $0)" && pwd)"
+OLD_XML="$ABI_DIR/OLD.xml"
+NEW_XML="$ABI_DIR/NEW.xml"
+
+#~ Parsed from config file (abi.conf)
+REPO_SERVER=""
+OLD_PKG_LIST=""
+NEW_PKG_LIST=""
+OLD_VER=""
+NEW_VER=""
+BASE_BINARY=""
+COMPARED_BINARY=""
+DEVICE_PROFILE=""
+DEVICE_TYPE=""
+PROFILE_RELEASE=""
+USER=""
+PASS=""
+
+OLD_REPO=$(cat abi.conf | awk '/^OLD_REPO:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+NEW_REPO=$(cat abi.conf | awk '/^NEW_REPO:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+GCC_PATH=$(cat abi.conf | awk '/^GCC_PATH:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+SYS_ROOT=$(cat abi.conf | awk '/^SYS_ROOT:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+PLATFORM_HEADERS_PATH=$(cat abi.conf | awk '/^PLATFORM_HEADERS_PATH:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+HEADER_CHECKLIST=$(cat abi.conf | awk '/^HEADER_CHECKLIST:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+OLD_PKG_LIST=$(cat abi.conf | awk '/^OLD_PKG_LIST:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+NEW_PKG_LIST=$(cat abi.conf | awk '/^NEW_PKG_LIST:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+OLD_VER=$(cat abi.conf | awk '/^OLD_VER:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+NEW_VER=$(cat abi.conf | awk '/^NEW_VER:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+BASE_BINARY=$(cat abi.conf | awk '/^BASE_BINARY:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+COMPARED_BINARY=$(cat abi.conf | awk '/^COMPARED_BINARY:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+
+OLD_RPM_DIR=$(cat abi.conf | awk '/^OLD_PKG_DOWNLOAD_DIR:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+NEW_RPM_DIR=$(cat abi.conf | awk '/^NEW_PKG_DOWNLOAD_DIR:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+USER=$(cat abi.conf | awk '/^USER:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load USER from abi.conf].\n"; exit 1; fi
+PASS=$(cat abi.conf | awk '/^PASS:/ { print $2; exit; }')
+if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load PASS from abi.conf].\n"; exit 1; fi
+
+printf "\n${USER}[!]${PASS}.......USER and PASS!!!!!!!!!!.\n";
+
+LIB_DIR="\/usr\/lib"
+ETC_DIR="\/usr\/etc"
+USR_DIR="\/usr"
+
+#~ Black        0;30     Dark Gray     1;30
+#~ Red          0;31     Light Red     1;31
+#~ Green        0;32     Light Green   1;32
+#~ Brown/Orange 0;33     Yellow        1;33
+#~ Blue         0;34     Light Blue    1;34
+#~ Purple       0;35     Light Purple  1;35
+#~ Cyan         0;36     Light Cyan    1;36
+#~ Light Gray   0;37     White         1;37
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+function remove()
+{
+	if [ "$1" == "-reports" ]; then
+		find . -type d -name compat_reports -exec rm -rf {} \+
+	elif [ "$1" == "-temp" ]; then
+		rm -rf old-pkg-mod.list
+		rm -rf new-pkg-mod.list
+		rm -rf pkg2git-map.list
+		rm -rf logs/downloaded_pkgs.log
+		rm -rf verdict.log
+		rm -rf affect.log
+	#~elif [ "$1" == "-pkg-list" ]; then
+		rm -rf old-pkg.list
+		rm -rf new-pkg.list
+	elif [ "$1" == "-rpm" ]; then
+		find . -type d -wholename "$NEW_RPM_DIR" -exec rm -rf {} \+
+		find . -type d -wholename "$OLD_RPM_DIR" -exec rm -rf {} \+
+	elif [ "$1" == "-pkg-comp" ]; then
+		find $NEW_RPM_DIR/* -type d -exec rm -rf {} \+
+		find $OLD_RPM_DIR/* -type d -exec rm -rf {} \+
+	else
+		printf "\n${RED}[!]${NC}.......Nothing Removed."
+	fi
+}
+
+function forcekill
+{
+	printf "\n${RED}[!]${NC}.......CTRL-C was pressed"
+	printf "\n${RED}[!]${NC}.......Exiting script.."
+	remove -reports
+	remove -temp
+	remove -pkg-list
+	remove -rpm
+	exit 1
+}
+trap forcekill 2
+
+function pause() {
+  local proceed
+  read -s -r -p "Press any key to continue..." -n 1 proceed
+}
+
+function createXml()
+{
+	# @NOTE: Creates Library Descriptor XML file
+	TOOLCHAINS=$(echo "$HOME/$GCC_PATH" | sed "s:\/:\\\/:g")
+	if [ "-new" == "$1" ]; then
+		HEADERS=$(echo "$PWD/$NEW_RPM_DIR/usr/include/" | sed "s:\.\/::")
+		LIBRARIES=$(echo "$PWD/$NEW_RPM_DIR/usr/lib/" | sed "s:\.\/::")
+		LIBRARIES+="\\n\\t"
+		LIBRARIES+=$(echo "$PWD/$NEW_RPM_DIR/usr/etc/" | sed "s:\.\/::")
+		sed -e "s:%{VERSION}:$NEW_VER:" \
+		-e "s:%{HEADERS}:$HEADERS:" \
+		-e "s:%{LIBRARIES}:$LIBRARIES:" \
+		-e "s:%{TOOLCHAINS}:$TOOLCHAINS:" \
+		-e "s:%{GCC_OPTIONS}::" tools/library_descriptor.xml.t > NEW.xml
+	elif [ "-old" == "$1" ]; then
+		HEADERS=$(echo "$PWD/$OLD_RPM_DIR/usr/include/" | sed "s:\.\/::")
+		LIBRARIES=$(echo "$PWD/$OLD_RPM_DIR/usr/lib/" | sed "s:\.\/::")
+		LIBRARIES+="\\n\\t"
+		LIBRARIES+=$(echo "$PWD/$OLD_RPM_DIR/usr/etc/" | sed "s:\.\/::")
+		sed -e "s:%{VERSION}:$OLD_VER:" \
+		-e "s:%{HEADERS}:$HEADERS:" \
+		-e "s:%{LIBRARIES}:$LIBRARIES:" \
+		-e "s:%{TOOLCHAINS}:$TOOLCHAINS:" \
+		-e "s:%{GCC_OPTIONS}::" tools/library_descriptor.xml.t > OLD.xml
+	fi
+}
+
+function initABIConf()
+{
+	DESC_I=0
+	for conf_key in $(awk '{print $1}' tools/abi.conf.t)
+	do	
+		old_conf_desc=$(awk -v pattern="${conf_key}" -F',' 'match($0, pattern) { print $2; exit; }' abi.conf)	
+		echo
+		echo "[?]........${old_conf_desc} ?"
+		old_conf_setting=$(awk -v pattern="${conf_key}" 'match($0, pattern) { print $2; exit; }' abi.conf)	
+		printf "\n${GREEN}[#]${NC}........[ Previous setting: ${old_conf_setting} ]"
+		old_conf_setting=$(echo $old_conf_setting | sed "s/\:/\\\:/g" | sed "s:\/:\\\/:g")
+		conf_key=${conf_key%%\:}
+		read -r current;
+		if [ "${#current}" -gt 0  ]; then
+			printf "\n${GREEN}[#]${NC}........[ Current setting: ${current} ]"
+			current=$(echo $current | sed "s/\:/\\\:/g" | sed "s:\/:\\\/:g")
+			(sed -e "s:%{$conf_key}:$current:g" tools/abi.conf.t | grep "$conf_key")  >> test.conf
+		else
+			printf "\n${GREEN}[#]${NC}........[ Remains previous setting: ${old_conf_setting} ]"
+			(sed -e "s:%{$conf_key}:$old_conf_setting:g" tools/abi.conf.t | grep "$conf_key") >> test.conf
+		fi
+	done
+	mv test.conf abi.conf
+	rm -rf test.conf
+}
+
+function checkConfiguration()
+{
+	printf "\n${RED}[?]${NC}........DO YOU WANT TO CHANGE ABI TOOL CONFIGURATIONS _ [Y/N]?"
+	while read -r -n 1 -s answer; do
+	  if [[ $answer = [YyNn] ]]; then
+		[[ $answer = [Yy] ]] && retval=0
+		[[ $answer = [Nn] ]] && retval=1
+		break
+	  fi
+	done
+	echo  # just a final linefeed, optics...
+	return $retval
+}
+
+function installPkg()
+{
+	pkg=$1;
+	if sudo dpkg --get-selections | grep -q "^$pkg[[:space:]]*install$" >/dev/null; then
+		if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure].\n"; exit 1; fi
+	else
+		printf "\n${RED}[!]${NC}.......NOT INSTALLED! $pkg. Starting installation."
+		printf "\n${GREEN}[#]${NC}.......Starting installation."
+		if sudo apt-get -qq install $pkg; then
+			if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure].\n"; exit 1; fi
+			printf "\n${GREEN}[#]${NC}.......Successfully installed $pkg."
+		else
+			printf "\n${RED}[!]${NC}.......Error installing $pkg."
+		fi	
+	fi
+	return 1
+}
+
+function helpusage {
+# usage note
+    echo "Usage: `basename $0` <-all|-part> [-d] <path/to/download/directory/for/old/repo/packages> <path/to/download/directory/for/new/repo/packages>"
+    echo "Commands description:"
+    echo "       -all		test all downloaded local packages of repos, a generated modules_git_repo.txt from the OLD_PKG_LIST(abi.conf setting) in use"
+    echo "       -all -d		test all listed packages of repos, a generated modules_git_repo.txt from the OLD_PKG_LIST(abi.conf setting) in use"
+    echo "       -part		test all downloaded local packages of repos mentioned in modules_git_repo.txt"
+    echo "       -part -d		test all listed packages of repos mentioned in modules_git_repo.txt"
+   
+    echo ""
+    exit 1
+}
+
+#~ =================== :: LET'S DOWNLOAD PACKAGES :: ================
+SIZE_LIMIT=$2
+#~ OLD_RPM_DIR=$3
+#~ NEW_RPM_DIR=$4
+
+printf "\n${GREEN}[#]${NC}.......Checking test environment."
+abi-compliance-checker
+if [ $? -ne 0 ]; then
+	printf "\n${GREEN}[#]${NC}.......Checking requirements.\n";
+	installPkg exuberant-ctags
+	installPkg elvis-tools
+	installPkg ctags
+	ctags
+	printf "\n${GREEN}[#]${NC}.......ctags available.\n";
+	printf "\n${RED}[!]${NC}.......NOT FOUND ABI package.\n";
+	git clone https://github.com/lvc/abi-compliance-checker
+	if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure].\n"; exit 1; fi
+	cd abi-compliance-checker
+	installPkg perl
+	sudo perl Makefile.pl -install --prefix=/usr
+	if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure].\n"; exit 1; fi
+	cd ..
+	abi-compliance-checker
+	git clone https://github.com/lvc/abi-dumper
+	if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure].\n"; exit 1; fi
+	cd abi-dumper
+	sudo perl Makefile.pl -install --prefix=/usr
+	if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure].\n"; exit 1; fi
+	cd ..
+	abi-dumper
+	printf "\n${GREEN}[#]${NC}.......ABI dumper packages NOW AVAILABLE.\n";
+fi
+printf "\n${GREEN}[#]${NC}.......ABI packages AVAILABLE.\n";
+
+function root_strap_download()
+{
+	ROOTSTRAPS_FOLDER="rootstraps_to_copy" 
+	rm -rf $ROOTSTRAPS_FOLDER
+	mkdir -p $ROOTSTRAPS_FOLDER
+
+	for line in `cat rootstraps_modules_git_repo.txt`
+	do
+		echo $line
+		wget --user=$USER --password=$PASS -l1 -nd -r -P $ROOTSTRAPS_FOLDER --accept-regex=$line* -R *-docs-*.rpm,*-test-*.rpm $NEW_REPO
+		for rpm in `ls $ROOTSTRAPS_FOLDER | grep devel-`
+		do
+			if [ $rpm != 'usr' ] && [ $rpm != 'etc' ]; then
+				(cd $ROOTSTRAPS_FOLDER; rpm2cpio $rpm | cpio -idmv; cd .. )			
+				if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Rootstrap $rpm rpm extraction failed. [Command failure].\n"; fi
+				echo $SYS_ROOT
+				cp -r -n $ROOTSTRAPS_FOLDER/usr/include/ ~/$SYS_ROOT/usr/
+				if [ $? -ne 0 ]; then 
+					printf "\n${RED}[!]${NC}.......Move to SYS_ROOT Failed [Command failure].\n"; 
+				fi
+			fi
+		done
+	done
+}
+
+function all()
+{
+	printf "\n${GREEN}[#]${NC}.......PREPARING WORKSPACE STRUCTURE.\n"
+	mkdir -p logs
+	mkdir -p $OLD_RPM_DIR
+	mkdir -p $NEW_RPM_DIR
+	mkdir -p compat_reports
+	touch old-pkg-mod.list
+	touch new-pkg-mod.list
+	touch logs/downloaded_pkgs.log
+	touch pkg2git-map.list
+	
+	createXml -new
+	createXml -old
+	
+	# @NOTE: writes the platform header location
+	#~ echo "$HOME/$PLATFORM_HEADERS_PATH" > headers.list
+	echo "" > headers.list
+	
+	printf "\n${GREEN}[#]${NC}.......STARTING DOWNLOAD PACKAGES.\n"
+	if [ $1 == 0 ]; then
+	
+		wget --user=$USER --password=$PASS --progress=bar:force $OLD_PKG_LIST -O old-pkg.list
+		if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Old package List download failed. Check OLD_PKG_LIST from abi.conf].\n"; exit 1; fi
+		wget --user=$USER --password=$PASS --progress=bar:force $NEW_PKG_LIST -O new-pkg.list
+		if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [New package List download failed. Check NEW_PKG_LIST from abi.conf].\n"; exit 1; fi
+	
+	elif [ $1 == 1 ]; then
+	
+		wget --user=$USER --password=$PASS --progress=bar:force $OLD_PKG_LIST -O old-pkg.list
+		if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Old package List download failed. Check OLD_PKG_LIST from abi.conf].\n"; exit 1; fi
+		wget --user=$USER --password=$PASS --progress=bar:force $NEW_PKG_LIST -O new-pkg.list
+		if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [New package List download failed. Check NEW_PKG_LIST from abi.conf].\n"; exit 1; fi
+		
+		# @NOTE: This jar create a modules_git_repo.txt file
+		#~ from .package file
+		(chmod 777 git_repo_parser.sh; ./git_repo_parser.sh)
+		
+	fi
+
+	for line in `cat modules_git_repo.txt`
+	do
+		name=${line%%[[:space:]]}
+		name=$(echo $name | sed "s/\[/\\\[/g" | sed "s/\]/\\\]/g")
+		grep "$name." old-pkg.list>>old-pkg-mod.list
+	done
+	
+	# @NOTE: Old packages those are not selected for download
+	echo "====================" > logs/not_selected_old_packages.log
+	date >> logs/not_selected_old_packages.log
+	echo "====================" >> logs/not_selected_old_packages.log
+	(grep -vf old-pkg-mod.list old-pkg.list >> logs/not_selected_old_packages.log)
+	
+	# @NOTE: No of packages selected for download
+	NR=$(awk 'END{print NR}' old-pkg-mod.list)
+	printf "\n${GREEN}[#]${NC}.......OLD PACKAGE LIST LOADED. [ $NR PACKAGES]"
+	printf "\n${GREEN}[#]${NC}.......ALL PACKAGES SELECTED."
+	
+	COUNT=0
+	
+	printf "\n${GREEN}[#]${NC}.......PLEASE WAIT! DOWNLOAD WILL TAKE SOME TIME."		
+	
+	echo "====================" > logs/old_packages_not_downloaded.log
+	date >> logs/old_packages_not_downloaded.log
+	echo "====================" >> logs/old_packages_not_downloaded.log
+	
+	for old_pkg in `awk '{print $1 "*-" $2}' old-pkg-mod.list | sed 's/.armv7l//'`
+	do
+		if [ -n "$2" ] && [ "$2" == "-d" ];then
+			wget --user=$USER --password=$PASS -q -l1 -nd -r -P $OLD_RPM_DIR -A $old_pkg.armv7l.rpm -R *-docs-*.rpm,*-test-*.rpm $OLD_REPO
+			if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Downloading [Command].\n"; exit 1; fi
+		fi
+		DOWNLOADED=$(find $OLD_RPM_DIR/* -type f -name $old_pkg.armv7l.rpm)
+		if [[ $DOWNLOADED ]]; then
+			printf "\n${GREEN}[#]${NC}....... $old_pkg.armv7l.rpm DOWNLOADED [SUCCESS]."
+			LOG_RPM=${old_pkg%%-[0-9]*}
+			echo "${LOG_RPM%%\*}" >> logs/downloaded_pkgs.log
+		else
+			printf "\n${RED}[!]${NC}....... $old_pkg.armv7l.rpm DOWNLOAD __________ [FAILED]."
+			echo "$old_pkg.armv7l.rpm" >> logs/old_packages_not_downloaded.log
+		fi
+		let COUNT=COUNT+1
+		printf "\n${RED}[!]${NC}.......[STATUS][$COUNT/$NR] PACKAGE(S) DOWNLOADED."
+	done
+	
+	printf "\n${GREEN}[#]${NC}.......DOWNLOADING NEW PACKAGE(S).\n"
+	COUNT=0
+	for line in `cat modules_git_repo.txt`
+	do
+		name=${line%%[[:space:]]}
+		name=$(echo $name | sed "s/\[/\\\[/g" | sed "s/\]/\\\]/g")
+		grep "$name." new-pkg.list>>new-pkg-mod.list
+	done
+	
+	# @NOTE: New packages those are not selected for download
+	echo "====================" > logs/not_selected_new_packages.log
+	date >> logs/not_selected_new_packages.log
+	echo "====================" >> logs/not_selected_new_packages.log
+	(grep -vf new-pkg-mod.list new-pkg.list >> logs/not_selected_new_packages.log)
+	
+	for mod in `awk '{print $1 "*-" $2}' new-pkg-mod.list | sed 's/.armv7l//'`
+	do
+		if [ -n "$2" ] && [ "$2" == "-d" ];then
+			wget --user=$USER --password=$PASS -q -l1 -nd -r -P $NEW_RPM_DIR -A $mod.armv7l.rpm -R *-docs-*.rpm,*-test-*.rpm $NEW_REPO
+			if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure].\n"; exit 1; fi
+		fi
+		let COUNT=COUNT+1
+		printf "\n${GREEN}[$COUNT]${NC} ___________$mod.armv7l.rpm ..........."
+	done
+	printf "\n${GREEN}[#]${NC}.......DOWNLOADED $COUNT NEW PACKAGE(S)."	
+	
+	# @NOTE: Verify sysroot path
+	#~ ${#ArrayName[@]} array count
+	FOUND_PATHS_COUNT=$(find $HOME/$SYS_ROOT | awk 'END{ print NR }')
+	if [ $FOUND_PATHS_COUNT -gt 0 ]; then
+		printf "\n${GREEN}[#]${NC}........SYS_ROOT path: $SYS_ROOT.........[OK]\n"
+	else
+		printf "\n${RED}[!]${NC}........Invalid SYS_ROOT path (SYS_ROOT: $SYS_ROOT). Please check your abi.conf\n"
+		remove -temp
+		exit 1;
+	fi
+	
+	echo "	
+		<!DOCTYPE html>
+		<html>
+		<head>
+		<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		</style>
+		<title>ABI Compatibility Report | ${OLD_VER} to ${NEW_VER}</title>
+		</head>
+		<body>
+		<h1>ABI Compatibility Reports Of $OLD_VER to $NEW_VER Packages</h1>
+		<p>
+		<table style=\"width:60%\">
+		<tr>
+			<td colspan=\"6\">
+				<p>Base binary		: ${BASE_BINARY}</p>
+				<p>Compared binary	: ${COMPARED_BINARY}</p>
+				<p><a href=\"#summary\">See the Summary Report Statistics at the end of this page</a></p>
+			</td>
+		</tr>
+		<tr>
+			<th><b>Packages</b></th>
+			<th>ABI Affected (%)</th>
+			<th>Source Affected (%)</th>
+			<th>Binary</th>
+			<th>Source</th>
+			<th><b>Result</b></th>
+		</tr>" > compat_reports/index.html
+	
+	INCOMPATIBLE_COUNT=0
+
+	for dl in `cat logs/downloaded_pkgs.log`
+	do
+		printf "\n${GREEN}[#]${NC}.......Extracting old packages to ..."
+		for old in `ls -1 $OLD_RPM_DIR | grep $dl`
+		do
+			if [ $old != 'usr' ] && [ $old != 'etc' ]; then
+				(cd $OLD_RPM_DIR; rpm2cpio $old | cpio -idmv; cd ..)			
+				if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure].\n"; exit 1; fi
+			fi
+		done
+		printf "\n${GREEN}[#]${NC}.......Extracting new packages to ..."
+		for new in `ls -1 $NEW_RPM_DIR | grep $dl`
+		do
+			if [ $new != 'usr' ] && [ $new != 'etc' ]; then
+				(cd $NEW_RPM_DIR; rpm2cpio $new | cpio -idmv; cd ..)
+				if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure].\n"; exit 1; fi
+			fi
+		done
+		printf "\n${GREEN}[#]${NC}.......Started ABI compliance checking for \"${dl%%\*}\" package."
+		DIR=$(echo $OLD_RPM_DIR | sed 's/.\///')
+		NEW_DIR=$(echo $NEW_RPM_DIR | sed 's/.\///')
+		
+		mkdir -p $DIR/usr/lib
+		mkdir -p $DIR/usr/include
+		mkdir -p $DIR/usr/etc
+		mkdir -p $NEW_RPM_DIR/usr/lib
+		mkdir -p $NEW_RPM_DIR/usr/include
+		mkdir -p $NEW_RPM_DIR/usr/etc
+		
+		echo "====================" >> logs/${dl%%\*}.log
+		date >> logs/${dl%%\*}.log
+		echo "====================" >> logs/${dl%%\*}.log
+		
+		COMPONENT_NAME=$(echo ${dl%%\*} | sed 's/lib//')
+		printf "\n${GREEN}[#]${NC}........Component name: $COMPONENT_NAME.\n"
+				
+		(cd $ABI_DIR/; abi-compliance-checker -s \
+											-l lib$COMPONENT_NAME \
+											-old OLD.xml -new NEW.xml \
+											-list-affected \
+											-sysroot $HOME/$SYS_ROOT \
+											-l-full ${dl%%\*} \
+											-show-retval \
+											-log-path logs/${dl%%\*}.log)
+	
+		SYMBOLS_ABI_AFFECTED=$(awk 'END{print NR}' compat_reports/lib$COMPONENT_NAME/${OLD_VER}_to_${NEW_VER}/abi_affected.txt)
+		SYMBOLS_SRC_AFFECTED=$(awk 'END{print NR}' compat_reports/lib$COMPONENT_NAME/${OLD_VER}_to_${NEW_VER}/src_affected.txt)
+		
+		ABI_AFFECTED=0
+		SRC_AFFECTED=0
+		ABI_IS_COMPAT=1
+		SRC_IS_COMPAT=1
+		
+		COMPONENT_NAME=$(echo ${dl%%\*} | sed 's/lib//')
+		(chmod 777 verdict.sh; ./verdict.sh $COMPONENT_NAME $OLD_VER $NEW_VER)
+		
+		ABI_IS_COMPAT=$(cat verdict.log | awk '{print $1}')
+		SRC_IS_COMPAT=$(cat verdict.log | awk '{print $2}')
+		if [ "$ABI_IS_COMPAT" -eq 0 ]; then		
+			ABI_AFFECTED=$(cat affect.log | awk '{print $1}')
+		fi
+		if [ "$SRC_IS_COMPAT" -eq 0 ]; then
+			SRC_AFFECTED=$(cat affect.log | awk '{print $2}')
+		fi
+		
+		RESULT="<b>Compatible</b>"
+		BINARY="Compatible"
+		SOURCE="Compatible"
+		COLOR="green"
+		ABI_AFFECTED_COLOR="black"
+		SRC_AFFECTED_COLOR="black"
+		SRC_COLOR="green"
+		LINK="lib$COMPONENT_NAME/${OLD_VER}_to_${NEW_VER}/compat_report.html"
+		
+		if [ -z "${SYMBOLS_ABI_AFFECTED}" -o -z "${SYMBOLS_SRC_AFFECTED}" ]; then
+			RESULT="<b>Not reported</b>"
+			COLOR="black"
+			BINARY="--"
+			SOURCE="--"
+			LINK="#"
+			ABI_AFFECTED="--"
+			SRC_AFFECTED="--"
+		elif [ "$ABI_IS_COMPAT" -eq 0 ]; then
+			COLOR="red"
+			RESULT="<b>Incompatible</b>"
+			BINARY="Incompatible"
+			ABI_AFFECTED_COLOR="red"
+			
+			let INCOMPATIBLE_COUNT++
+					
+			if [ "$SRC_IS_COMPAT" -eq 0 ]; then
+				SRC_AFFECTED_COLOR="red"
+				SRC_COLOR="red"
+				SOURCE="Incompatible"
+			elif [ "$SRC_IS_COMPAT" -eq 1 ]; then
+				SRC_AFFECTED_COLOR="black"
+				SOURCE="Compatible"
+				SRC_COLOR="green"
+			fi			
+		elif [ "$ABI_IS_COMPAT" -eq 1 ]; then
+			COLOR="green"
+			RESULT="<b>Compatible</b>"
+			
+			ABI_AFFECTED_COLOR="black"
+			SRC_AFFECTED_COLOR="black"
+			SRC_COLOR="green"
+			SOURCE="Compatible"
+		fi
+		
+		PKG2GIT_MAP=$(grep "${dl%%[[:space:]]}[- 0-9]*.armv7l" old-pkg-mod.list | awk '{print $3}')
+		for item in `echo $PKG2GIT_MAP`
+		do
+			echo "${dl%%\*},${item}" >> pkg2git-map.list
+			break;
+		done
+
+		echo "
+			<tr>
+			<td><a href=\"${LINK}\">$COMPONENT_NAME</a></td>
+			<td style=\"color:${ABI_AFFECTED_COLOR}\">${ABI_AFFECTED}</td>
+			<td style=\"color:${SRC_AFFECTED_COLOR}\">${SRC_AFFECTED}</td>
+			<td style=\"color:${COLOR}\">${BINARY}</td>
+			<td style=\"color:${SRC_COLOR}\">${SOURCE}</td>
+			<td style=\"color:${COLOR}\">${RESULT}</td>
+			</tr>" >> compat_reports/index.html							
+	
+		#~ options:
+		#~ -report-path compat_reports/${dl%%\*}/${libc%%.so.[0-9]*}/${DIR}_to_${NEW_DIR}/${dl%%\*}_compat_report.html
+		#~ -cross-gcc $GCC_PATH
+		#~ -b firefox -open \
+		#~ -logging-mode a \
+		#~ -cross-prefix arm-linux-gnueabi
+		#~ -headers-list $PWD/$HEADER_CHECKLIST \
+				
+		remove -pkg-comp
+		printf "\n${GREEN}[#]${NC}.......Removed package components for package: ${dl%%\*}"
+		REPORTED=$(find $ABI_DIR -type d -name compat_reports)
+		if [[ $REPORTED ]]; then
+			printf "\n${GREEN}[#]${NC}.......ABI COMPLIANCE REPORT IS READY TO: \"$ABI_DIR/compat_reports\""
+		else
+			printf "\n${GREEN}[#]${NC}.......ABI COMPLIANCE REPORTS IS FAILED TO GENERATE. CHECK abi.conf and library descriptor (OLD.xml, NEW.xml)."		
+		fi
+	done
+	
+	PKGS_REPORTED=$(find ./compat_reports/. -type d -name lib* | awk 'END{print NR}')
+	
+	COMPATIBILITY_RATE=0
+	if [ $PKGS_REPORTED -gt 0 ]; then
+		COMPATIBILITY_RATE=$(bc -l <<< "scale = 2; $INCOMPATIBLE_COUNT / $PKGS_REPORTED")
+	fi
+		
+	echo "
+		<tr>
+			<td id=\"summary\" colspan=\"6\">
+				<p>Total packages : ${PKGS_REPORTED}</p>
+				<p>Incompatible packages : ${INCOMPATIBLE_COUNT}</p>
+				<p>Incompatible rate : ${COMPATIBILITY_RATE}</p>
+			</td>
+		</tr>
+		</table>
+		</p>
+		</body>
+		</html>" >> compat_reports/index.html
+		
+	printf "\n${GREEN}[#]${NC}.......INDEX PAGE IS PREPARED TO: \"compat_reports/index.html\"."
+		
+	printf "\n${RED}[!]${NC}.......Please check for any missing platform headers exists to: logs/missing_headers.log."
+	echo "====================" >> logs/missing_headers.log
+	date >> logs/missing_headers.log
+	echo "====================" >> logs/missing_headers.log
+	(grep -Hnr 'fatal error' ./logs --exclude=missing_headers.log >> logs/missing_headers.log)
+		
+	printf "\n${GREEN}[#]${NC}.......STARTED TO GENERATE SUMMARY REPORT."
+	(chmod 777 rpt-gen.sh; ./rpt-gen.sh)
+	if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure].\n"; remove -temp; exit 1; fi
+	printf "\n${GREEN}[#]${NC}.......Summary report of ABI compatibility reports is generated to: \"compat_reports/report_summary.xls\".\n"
+	
+	remove -temp
+}
+
+function load()
+{	
+	pcregrep
+	if [ $? -ne 0 ]; then
+		installPkg pcregrep
+	fi
+	PATTERN="http://(.+)[/\d+.]*/([\d+.]+[b]*)-(([mobile|wearable|tv]+).*)[/common]*/(tizen-[\d+.]+-[a-z]+[-a-z]*_[\d]{8}\.[\d]+)/repos/([target|emulator].*)/packages/(.+)/"
+	#~ =============( 1)=========(    2      )=(  3  4                   )===========(  5 								        )=======(  6 			    )==========( 7)=
+	#~ GROUPS
+	REPO_SERVER=$(echo $OLD_REPO | pcregrep -o1 $PATTERN)
+	OLD_VER=$(echo $OLD_REPO | pcregrep -o2 $PATTERN)
+	PROFILE_RELEASE=$(echo $OLD_REPO | pcregrep -o3 $PATTERN)
+	DEVICE_PROFILE=$(echo $NEW_REPO | pcregrep -o4 $PATTERN)
+	BASE_BINARY=$(echo $OLD_REPO | pcregrep -o5 $PATTERN)
+	DEVICE_TYPE=$(echo $OLD_REPO | pcregrep -o6 $PATTERN)
+	#~ @since abi-tool-2.0
+	#~ OLD_PKG_LIST="http://${REPO_SERVER}/snapshots/${OLD_VER}-${PROFILE_RELEASE}/common/${BASE_BINARY}/images/target/${DEVICE_PROFILE}_${DEVICE_TYPE}/${BASE_BINARY}_${DEVICE_PROFILE}_${DEVICE_TYPE}.packages"
+	#~ @since abi-tool-2.1
+	OLD_PKG_LIST="http://${REPO_SERVER}/${OLD_VER}-${PROFILE_RELEASE}/${BASE_BINARY}/images/target/${DEVICE_PROFILE}_${DEVICE_TYPE}/${BASE_BINARY}_${DEVICE_PROFILE}_${DEVICE_TYPE}.packages"
+	#~ echo "$OLD_PKG_LIST"
+	
+	REPO_SERVER=$(echo $NEW_REPO | pcregrep -o1 $PATTERN)
+	NEW_VER=$(echo $NEW_REPO | pcregrep -o2 $PATTERN)
+	PROFILE_RELEASE=$(echo $NEW_REPO | pcregrep -o3 $PATTERN)
+	DEVICE_PROFILE=$(echo $NEW_REPO | pcregrep -o4 $PATTERN)
+	COMPARED_BINARY=$(echo $NEW_REPO | pcregrep -o5 $PATTERN)
+	DEVICE_TYPE=$(echo $NEW_REPO | pcregrep -o6 $PATTERN)
+	#~ @since abi-tool-2.0
+	#~ NEW_PKG_LIST="http://${REPO_SERVER}/snapshots/${NEW_VER}-${PROFILE_RELEASE}/common/${COMPARED_BINARY}/images/${DEVICE_PROFILE}_${DEVICE_TYPE}/${COMPARED_BINARY}_${DEVICE_PROFILE}_${DEVICE_TYPE}.packages"
+	#~ @since abi-tool-2.1
+	NEW_PKG_LIST="http://${REPO_SERVER}/${NEW_VER}-${PROFILE_RELEASE}/${COMPARED_BINARY}/images/${DEVICE_PROFILE}_${DEVICE_TYPE}/${COMPARED_BINARY}_${DEVICE_PROFILE}_${DEVICE_TYPE}.packages"
+	#~ echo "$NEW_PKG_LIST"
+	
+	OLD_RPM_DIR=$(cat abi.conf | awk '/^OLD_PKG_DOWNLOAD_DIR:/ { print $2; exit; }')
+	if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+	NEW_RPM_DIR=$(cat abi.conf | awk '/^NEW_PKG_DOWNLOAD_DIR:/ { print $2; exit; }')
+	if [ $? -ne 0 ]; then printf "\n${RED}[!]${NC}.......Aborting [Command failure: failed to load abi.conf].\n"; exit 1; fi
+}
+
+
+#~ Tool-Script starts from here
+
+if [ -z "$1" ]; then
+    echo ""
+    helpusage
+elif [ -z "$OLD_REPO" ] || [ -z "$NEW_REPO" ]; then
+	printf "\n${RED}[!]${NC}.......[abi.conf][Edit the abi.conf file for working repo address.]\n"
+elif [ "-all" == "$1" ]; then
+
+	OLD_RPM_DIR=./$OLD_RPM_DIR
+	NEW_RPM_DIR=./$NEW_RPM_DIR
+	
+	all 1 $2
+	
+elif [ "-part" == "$1" ]; then
+
+	root_strap_download
+	OLD_RPM_DIR=./$OLD_RPM_DIR
+	NEW_RPM_DIR=./$NEW_RPM_DIR
+	
+	all 0 $2
+	
+elif [ "-init" == "$1" ]; then
+
+	load -config
+	
+	OLD_RPM_DIR=./$OLD_RPM_DIR
+	NEW_RPM_DIR=./$NEW_RPM_DIR
+	
+	initABIConf
+	
+else
+    echo ""
+    echo "Invalid subcommand: $1"
+    helpusage
+fi

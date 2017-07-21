@@ -1,0 +1,9 @@
+find developlers: http://suprem.sec.samsung.net/confluence/display/TIZENTESTC/03+Tizen+3.0+Public+Git+List+Package+Information
+
+
+Sample to rubayet vai: (3-4) ABI
+			- [TSAM-10227] capi-media-player : Value of member PLAYER_DISPLAY_TYPE_NONE has been changed from 1 to 2. 
+
+ABI 
+- [TSAM-11072] dali-toolkit : Old 
+- [TSAM-10482 ] libdali-adaptor : 16 api removed

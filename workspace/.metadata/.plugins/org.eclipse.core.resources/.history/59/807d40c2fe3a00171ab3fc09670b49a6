@@ -1,0 +1,906 @@
+package com.turbovnc.vncviewer;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+import javax.imageio.ImageIO;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Caret;
+
+public class TizenCodeGenerator extends CodeGenerator implements ICodeGenerator, ActionListener {
+
+	protected static final String WRITE_CODE_FILE_NAME = "AutomatorCore/src/TestCase.java";
+	private CodeBox codeBox;
+	protected JTextArea rcpttTextArea;
+	protected boolean isCodeRunning = false;
+	private int lastCaret;
+
+	public TizenCodeGenerator(CConn cc_) {
+		super(cc_);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		JButton button = (JButton) e.getSource();
+		if (button.getToolTipText().equals(CodeBox.menuButtonTips[0])) {
+			writeCode();
+			performCompileRun();
+		}
+		if (button.getToolTipText().equals(CodeBox.menuButtonTips[1])) {
+			launchApp();
+		}
+		if (button.getToolTipText().equals(CodeBox.menuButtonTips[2])) {
+			generateAreaCode();
+		}
+		if (button.getToolTipText().equals(CodeBox.menuButtonTips[3])) {
+			// generateRCPTTCode();
+			JFileChooser jFileChooser = new CustomFileChooser(System.getProperty("user.dir") + File.separator + "res" + File.separator + "ref_images");
+			FileNameExtensionFilter filter = new FileNameExtensionFilter("PNG File", "png");
+			jFileChooser.setSelectedFile(new File("screenshot.png"));
+			jFileChooser.setDialogTitle("Save Capture Screen.");
+			jFileChooser.addChoosableFileFilter(filter);
+
+			 BufferedImage im = null;
+			if (cc != null) {
+				Image img = cc.getCurrentClientScreenImage();
+				im =  toBufferedImage(img.getScaledInstance(img.getWidth(null), img.getHeight(null), Image.SCALE_DEFAULT));
+
+				if (im != null) {
+					int rVal = jFileChooser.showSaveDialog(jFileChooser);
+					if (rVal == JFileChooser.APPROVE_OPTION) {
+						String filePath = jFileChooser.getCurrentDirectory().toString().trim();
+						String fileName = jFileChooser.getSelectedFile().getName();
+
+						if (!fileName.toLowerCase().contains(".png")) {
+							fileName = fileName.trim() + ".png";
+						}
+
+						File imgFile = new File(filePath + File.separator + fileName);
+
+						try {
+							ImageIO.write(im, "PNG", imgFile);
+							if (null != codeBox) {
+								Caret pos = codeBox.getCodeArea().getCaret();
+								try {
+									codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.verifyImage(\"" + fileName + "\");\n",null);
+								} catch (BadLocationException eb) {
+									eb.printStackTrace();
+								}
+							}
+						} catch (IOException e1) {
+
+							e1.printStackTrace();
+						}
+					}
+				} else {
+					System.out.println("SaveScreen image is not saved...................");
+				}
+			}
+		}
+	}
+
+
+
+	@Override
+	public void pressMenu() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressMenu();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressEnter() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressEnter();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+//	@Override
+//	public void pressBack() {
+//		if (null != codeBox) {
+//			Caret pos = codeBox.getCodeArea().getCaret();
+//			try {
+//				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressBack();\n",null);
+//			} catch (BadLocationException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//	}
+
+	@Override
+	public void pressHome() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressHome();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressVolPlus() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressVolPlus();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressVolMinus() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressVolMinus();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void longPressHome() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.longPressHome();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressBack() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressBack();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressMute() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressMute();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressChannelPlus() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressChannelPlus();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressChannelMinus() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressChannelMinus();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressUp() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressUp();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressDown() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressDown();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressRight() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressRight();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressLeft() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressLeft();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressPower() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressPower();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressOne() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressOne();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressTwo() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressTwo();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressThree() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressThree();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressFour() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressFour();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressFive() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressFive();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressSix() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressSix();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressSeven() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressSeven();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressEight() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressEight();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressNine() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressNine();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressZero() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressZero();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressOneTwoThree() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressOneTwoThree();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressDotDotDot() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressDotDotDot();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressPlay() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressPlay();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void pressOk() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressOk();\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void tapImage(String imagePath) {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.tapImage(\"" + imagePath + "\");\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void verifyImage(String fileName) {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.verifyImage(\"" + fileName + "\");\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void verifyText() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.verifyText(\"text\");\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void tapText() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.tapText(\"text\");\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void typeText() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.typeText(\"text\");\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void swipe() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.swipe(0.5, 0.2, 0.5, 0.8);\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void launchApp() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.launchApp(\"org.tizen.appname\");\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void generateAreaCode() {
+		if (null != codeBox) {
+			Caret pos = codeBox.getCodeArea().getCaret();
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"new Double[] {0.0, 0.0, 1.0, 1.0}, ",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	
+	@Override
+	public void tapOnScreen(int x, int y) {
+		if (null != codeBox && codeBox.isTapOnTextSelected()) {
+			double scaledX;
+			double scaledY;
+
+			scaledX = getScaledX(x);
+			scaledY = getScaledY(y);
+
+			Caret pos = codeBox.getCodeArea().getCaret();
+			lastCaret = pos.getDot();
+
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressCoord("+String.format( "%.3f", scaledX )+", "+String.format( "%.3f", scaledY)+");\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void doubleTapOnScreen(int x, int y) {
+		if (null != codeBox && codeBox.isTapOnTextSelected()) {
+			double scaledX;
+			double scaledY;
+
+			scaledX = getScaledX(x);
+			scaledY = getScaledY(y);
+
+			Caret pos = codeBox.getCodeArea().getCaret();
+			String code = codeBox.getCodeArea().getText();
+			int currentPos = pos.getDot();
+			codeBox.getCodeArea().setText(code.substring(0, lastCaret));
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.pressCoordTwice("+String.format( "%.3f", scaledX )+", "+String.format( "%.3f", scaledY)+");\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+			String firstPart = codeBox.getCodeArea().getText();
+			codeBox.getCodeArea().setText(firstPart + code.substring(currentPos));
+			codeBox.getCodeArea().setCaretPosition(firstPart.length());
+		}
+	}
+
+	@Override
+	public void swipeOnScreen(int x1, int y1, int x2, int y2, int duration) {
+		if (null != codeBox && codeBox.isTapOnTextSelected()) {
+			double scaledX1, scaledX2;
+			double scaledY1, scaledY2;
+
+			scaledX1 = getScaledX(x1);
+			scaledY1 = getScaledY(y1);
+
+			scaledX2 = getScaledX(x2);
+			scaledY2 = getScaledY(y2);
+
+			Caret pos = codeBox.getCodeArea().getCaret();
+
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.swipe("+String.format( "%.3f", scaledX1 )+", "+String.format( "%.3f", scaledY1)+", "+String.format( "%.3f", scaledX2 )+", "+String.format( "%.3f", scaledY2)+");\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void longTapOnScreen(int x, int y) {
+		if (null != codeBox && codeBox.isTapOnTextSelected()) {
+			double scaledX;
+			double scaledY;
+
+			scaledX = getScaledX(x);
+			scaledY = getScaledY(y);
+
+			Caret pos = codeBox.getCodeArea().getCaret();
+
+			try {
+				codeBox.getCodeArea().getDocument().insertString(pos.getDot(),"device.longPressCoord("+String.format( "%.3f", scaledX )+", "+String.format( "%.3f", scaledY)+");\n",null);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	protected double getScaledX(int x) {
+        double scaledX = 0.0;
+
+        if(ReadConfigUtil.getProfileName().equals("Mobile")) {
+            scaledX = (double)x/(double)479;
+        } else if(ReadConfigUtil.getProfileName().equals("Wearable")) {
+            if(ReadConfigUtil.getScreenWidth().equals(ReadConfigUtil.getScreenHeight())) {
+                scaledX = (double)x/(double)359;
+            } else {
+                scaledX = (double)x/(double)359;
+            }
+        }
+
+        return scaledX;
+    }
+
+	@Override
+    protected double getScaledY(int y) {
+        double scaledY = 0.0;
+
+        if(ReadConfigUtil.getProfileName().equals("Mobile")) {
+            scaledY = (double)y/(double)799;
+        } else if(ReadConfigUtil.getProfileName().equals("Wearable")) {
+            if(ReadConfigUtil.getScreenWidth().equals(ReadConfigUtil.getScreenHeight())) {
+                scaledY = (double)y/(double)359;
+            } else {
+                scaledY = (double)y/(double)479;
+            }
+        }
+
+        return scaledY;
+    }
+	
+	@Override
+	public void createCodeBox(int x, int y) {
+		codeBox = null;
+		codeBox = new CodeBox(this, "Tizen", x, y);
+		System.out.println("Tizen codebox is generated");
+		rcpttTextArea = new JTextArea();
+	}
+	
+	@Override
+	public void closeCodeBox() {
+		codeBox.getFrame().dispose();
+		codeBox = null;
+	}
+
+	@Override
+	public CodeBox getCodeBox() {
+		return codeBox;
+	}
+
+	@Override
+	public boolean isCodeRunning() {
+		return isCodeRunning;
+	}
+	
+	@Override
+	protected void performCompileRun() {
+		codeBox.getConsoleArea().setText("");
+
+		new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				isCodeRunning = true;
+				codeBox.getPlayButton().setEnabled(false);
+
+				String currentWorkingDirectory1 = System.getProperty("user.dir");
+				ProcessBuilder compile, run;
+				Process compileProcess, runProcess;
+
+				try {
+					if (!isWindows()) {
+						compile = new ProcessBuilder("javac", "-d",
+								currentWorkingDirectory1 + "/AutomatorCore/bin", "-cp", currentWorkingDirectory1
+										+ "/AutomatorCore/lib/*" + ":" + currentWorkingDirectory1 + "/AutomatorCore/src",
+								currentWorkingDirectory1 + "/AutomatorCore/src/Main.java");
+					} else {
+						compile = new ProcessBuilder("cmd", "/c", "javac", "-d",
+								currentWorkingDirectory1 + "/AutomatorCore/bin", "-cp", currentWorkingDirectory1
+									+ "/AutomatorCore/lib/*" + ";" + currentWorkingDirectory1 + "/AutomatorCore/src",
+								currentWorkingDirectory1 + "/AutomatorCore/src/Main.java");
+					}
+
+					compileProcess = compile.start();
+
+					String line = "";
+					BufferedReader msgReader = new BufferedReader(new InputStreamReader(compileProcess.getErrorStream()));
+					BufferedReader errReader = new BufferedReader(new InputStreamReader(compileProcess.getErrorStream()));
+
+					while ((line = msgReader.readLine()) != null) {
+						codeBox.getConsoleArea().setText(codeBox.getConsoleArea().getText()+line + "\n");
+					}
+
+					int returnCode = compileProcess.waitFor();
+
+					msgReader.close();
+					errReader.close();
+					compileProcess.destroy();
+
+					if (returnCode == 0) {
+						if (!isWindows()) {
+							run = new ProcessBuilder(
+									"java", "-cp", currentWorkingDirectory1 + "/AutomatorCore/lib/*:"
+											+ currentWorkingDirectory1 + "/AutomatorCore/bin", "Main", currentWorkingDirectory1, "AutomatorCore.log");
+						} else {
+							run = new ProcessBuilder("cmd", "/c",
+									"java", "-cp", currentWorkingDirectory1 + "/AutomatorCore/lib/*;"
+											+ currentWorkingDirectory1 + "/AutomatorCore/bin", "Main", currentWorkingDirectory1, "AutomatorCore.log");
+						}
+
+						runProcess = run.start();
+						msgReader = new BufferedReader(new InputStreamReader(runProcess.getInputStream()));
+						errReader = new BufferedReader(new InputStreamReader(runProcess.getErrorStream()));
+
+						StringBuffer msgSb = new StringBuffer();
+						StringBuffer errSb = new StringBuffer();
+						char m = 0 ;
+						char e = 0 ;
+						while(true) {
+							try{
+								runProcess.exitValue();
+								break;
+							}catch(IllegalThreadStateException ex){
+
+							}
+
+							while (msgReader.ready()) {
+								m = (char)msgReader.read();
+								msgSb.append(m);
+								if(m == 10) {
+									codeBox.getConsoleArea().setText(codeBox.getConsoleArea().getText()+msgSb.toString()+"");
+									msgSb = new StringBuffer();
+								}
+
+							}
+
+							while (errReader.ready()) {
+								e = (char)errReader.read();
+								errSb.append(e);
+								if(e == 10) {
+									codeBox.getConsoleArea().setText(codeBox.getConsoleArea().getText()+errSb.toString()+"");
+									errSb = new StringBuffer();
+								}
+							}
+							Thread.sleep(10);
+						}
+
+						msgReader.close();
+						errReader.close();
+						runProcess.destroy();
+					}
+
+				} catch (Exception e) {
+
+					e.printStackTrace();
+				}
+
+				isCodeRunning = false;
+				codeBox.getPlayButton().setEnabled(true);
+			}
+		}).start();
+	}
+
+	@Override
+	public void writeCode() {
+		BufferedReader buf = null;
+		StringBuffer sb = new StringBuffer();
+		try {
+			buf = new BufferedReader(new FileReader("AutomatorCore/template/Template"));
+
+			if (null != buf) {
+				String s = null;
+
+				while ((s = buf.readLine()) != null) {
+
+					sb.append(s + "\n");
+				}
+			}
+			PrintWriter pw = new PrintWriter(new File(WRITE_CODE_FILE_NAME));
+			pw.write(sb.toString());
+			String code = this.codeBox.getCodeArea().getText().replaceAll("\n", "\n\t\t");
+			pw.append("\n\t@Test\n\tpublic void testCases() throws Exception\n\t{ \n\t\t" + code);
+			pw.append("\n\t}\n}");
+			pw.flush();
+			pw.close();
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+	}
+
+	@Override
+	public void generateRCPTTCode() {
+		JFrame frame = new JFrame("RCPTT CODE");
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setLayout(new BorderLayout());
+
+		JPanel codeContent = new JPanel(new GridLayout(1, 1, 1, 2));
+		JScrollPane scrollPanel = new JScrollPane();
+
+		final JTextArea rcpttTextArea = new JTextArea();
+		rcpttTextArea.setFont(rcpttTextArea.getFont().deriveFont(14.0f));
+		final JTextArea sideBar = new JTextArea();
+		sideBar.setBackground(Color.LIGHT_GRAY);
+		sideBar.setFont(sideBar.getFont().deriveFont(14.0f));
+		sideBar.setEditable(false);
+
+		String rcpttText = codeBox.getCodeArea().getText().replaceAll("(?=[]\\[+&|!{}^\"~*?:\\\\])", "\\\\");
+		Scanner sc = new Scanner(rcpttText);
+		StringBuffer sb = new StringBuffer();
+		sb.append("AutomatorCoreRunCode -code \n \t");
+		int x = 0; int lineCount = 1;
+		while (sc.hasNextLine()) {
+			if(x == 0) {
+				x++;
+			}else {
+				sb.append("+\t");
+			}
+			sb.append(" \"" + sc.nextLine() + "\"  \n ");
+			sideBar.append(lineCount++ + "  \n");
+		}
+		sc.close();
+		sideBar.append(lineCount + "  \n");
+
+		rcpttTextArea.setText(sb.toString());
+		rcpttTextArea.setEditable(false);
+
+		scrollPanel.getViewport().add(rcpttTextArea);
+		scrollPanel.setRowHeaderView(sideBar);
+		scrollPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+
+		codeContent.add(scrollPanel);
+		frame.add(codeContent, BorderLayout.CENTER);
+
+		frame.pack();
+		frame.setSize(CodeBox.FRAME_WIDTH, CodeBox.FRAME_HEIGHT - 200);
+		frame.setPreferredSize(new Dimension(CodeBox.FRAME_WIDTH, CodeBox.FRAME_HEIGHT - 200));
+		frame.setResizable(true);
+		frame.setVisible(true);
+	}
+
+	@Override
+	public void setCursorPosition(int x, int y) {
+		 double scaledX;
+		 double scaledY;
+
+		scaledX = getScaledX(x);
+		scaledY = getScaledY(y);
+
+		 if(null != codeBox) {
+			codeBox.setCursorposition(x, y, scaledX, scaledY);
+		}
+	}
+
+	@Override
+	public void updateFileTree(String parent,String newFile) {
+		codeBox.updateFileTree(parent, newFile);
+	}
+}

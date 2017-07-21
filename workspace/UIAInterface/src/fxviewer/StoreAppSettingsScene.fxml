@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxviewer.StoreAppSettingsController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="600.0">
+         <children>
+            <HBox prefHeight="542.0" prefWidth="600.0">
+               <children>
+                  <VBox alignment="TOP_RIGHT" prefHeight="502.0" prefWidth="291.0" spacing="10.0">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="159.0" text="Save Report Directory : ">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="6.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Exploratory Mode : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="40.0" />
+                     </HBox.margin></VBox>
+                  <VBox alignment="TOP_RIGHT" prefHeight="502.0" prefWidth="486.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="reportPathTxt" prefHeight="26.0" prefWidth="343.0" />
+                        <ComboBox fx:id="expolatoryModeCombo" prefHeight="25.0" prefWidth="412.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets top="40.0" />
+                     </HBox.margin></VBox>
+                  <VBox prefHeight="502.0" prefWidth="0.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="browseResultPathBtn" mnemonicParsing="false" onAction="#browseBtnClicked" prefHeight="25.0" prefWidth="72.0" text="..." />
+                     </children>
+                     <HBox.margin>
+                        <Insets top="40.0" />
+                     </HBox.margin></VBox>
+               </children>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveBtnClicked" prefHeight="30.0" prefWidth="100.0" text="Save" />
+                  <Button fx:id="closeBtn" mnemonicParsing="false" onAction="#closeBtnClicked" prefHeight="30.0" prefWidth="100.0" text="Close" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

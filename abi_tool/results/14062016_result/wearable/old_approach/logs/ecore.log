@@ -1,0 +1,111 @@
+Temporary header file '/tmp/fdPGQxWen8/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1/Ecore.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1/Ecore_Con.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1/Ecore_Con_Eet.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1/Ecore_Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1/Ecore_Fb.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1/Ecore_File.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1/Ecore_Getopt.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1/Ecore_IMF.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1/Ecore_IMF_Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1/Ecore_Input.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1/Ecore_Input_Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1/Ecore_Ipc.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1/Ecore_X.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1/Ecore_X_Atoms.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1/Ecore_X_Cursor.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/fdPGQxWen8/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/ecore-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+Temporary header file '/tmp/fdPGQxWen8/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/Ecore.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_animator.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_animator.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/Ecore_Common.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/Ecore_Eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_exe.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_exe.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/Ecore_Getopt.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_idle_enterer.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_idle_enterer.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_idle_exiter.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_idle_exiter.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_idler.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_idler.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_job.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_job.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/Ecore_Legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_mainloop.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_parent.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_poller.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_poller.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_timer.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1/ecore_timer.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/Ecore_Audio.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/ecore_audio.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/ecore_audio_in.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/ecore_audio_in_sndfile.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/ecore_audio_in_tone.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/ecore_audio_obj.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/ecore_audio_obj_in.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/ecore_audio_obj_in_sndfile.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/ecore_audio_obj_in_tone.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/ecore_audio_obj_out.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/ecore_audio_obj_out_pulse.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/ecore_audio_obj_out_sndfile.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/ecore_audio_out.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/ecore_audio_out_pulse.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/ecore_audio_out_sndfile.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1/ecore_audio_protected.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-avahi-1/Ecore_Avahi.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-buffer-1/Ecore_Buffer.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-buffer-1/Ecore_Buffer_Queue.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/Ecore_Con.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/ecore_con_base.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/ecore_con_base.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/ecore_con_client.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/ecore_con_client.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/ecore_con_connector.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/ecore_con_connector.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/Ecore_Con_Eet.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/ecore_con_eet_base.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/ecore_con_eet_base.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/ecore_con_eet_client_obj.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/ecore_con_eet_client_obj.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/Ecore_Con_Eet_Eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/Ecore_Con_Eet_Legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/ecore_con_eet_server_obj.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/ecore_con_eet_server_obj.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/Ecore_Con_Eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/Ecore_Con_Legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/ecore_con_server.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/ecore_con_server.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-drm-1/Ecore_Drm.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-evas-1/Ecore_Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-evas-1/Ecore_Evas_Types.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-fb-1/Ecore_Fb.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-file-1/Ecore_File.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-imf-1/Ecore_IMF.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-imf-evas-1/Ecore_IMF_Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-input-1/Ecore_Input.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-input-evas-1/Ecore_Input_Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-ipc-1/Ecore_Ipc.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-wayland-1/Ecore_Wayland.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/efl_network_url.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1/efl_network_url.eo.legacy.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/fdPGQxWen8/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-imf-1 -I/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-evas-1 -I/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-con-1 -I/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-audio-1 -I/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/ecore-drm-1/Ecore_Drm.h:4:0,
+                 from /tmp/fdPGQxWen8/dump2.h:65:
+/usr/include/xf86drm.h:40:17: fatal error: drm.h: No such file or directory
+ #include <drm.h>
+                 ^
+compilation terminated.
+

@@ -1,0 +1,34 @@
+package storeapp;
+
+import java.util.List;
+
+import apprunner.BinaryData;
+import base.TCBase;
+
+public class ClassName extends TCBase {
+
+	BinaryData binary;
+	
+	public ClassName() {
+		super();
+	}
+
+	public ClassName(String tcName, BinaryData binary) {
+		super(tcName);
+		this.binary = binary;
+	}
+
+	//========================================================[TestCases]==========================================================
+
+	public void install() {
+		
+	}
+	
+	public void exploratory() {
+		System.out.println("test");
+	}
+
+	public void uninstall() {
+	
+	}
+}

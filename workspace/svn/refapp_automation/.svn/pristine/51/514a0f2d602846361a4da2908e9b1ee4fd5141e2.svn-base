@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apiobjectcollection>
+
+	<apiobject objectname="device">
+		<api>getAssertMode()</api>
+		<api>setAssertMode(boolean assertMode)</api>
+		<api>focus()</api>
+		<api>getRegion()</api>
+		<api>findAllText()</api>
+		<api>verifyText(String... textList)</api>
+		<api>verifyText(Double[] area,String... textList)</api>
+		<api>verifyText(Double similarity,String... textList)</api>
+		<api>verifyText(Double[] area,Double similarity,String... textList)</api>
+		<api>verifyText(long waitMilisecond,String... textList)</api>
+		<api>verifyText(Double[] area,long waitMilisecond,String... textList)</api>
+		<api>verifyText(Double similarity,long waitMilisecond,String... textList)</api>
+		<api>verifyText(Double[] area,Double similarity,long waitMilisecond,String... textList)</api>
+		<api>verifyAnyText(String... textList)</api>
+		<api>verifyAnyText(Double[] area,String... textList)</api>
+		<api>verifyAnyText(Double similarity,String... textList)</api>
+		<api>verifyAnyText(Double[] area,Double similarity,String... textList)</api>
+		<api>verifyAnyText(long waitMilisecond,String... textList)</api>
+		<api>verifyAnyText(Double[] area,long waitMilisecond,String... textList)</api>
+		<api>verifyAnyText(Double similarity,long waitMilisecond,String... textList)</api>
+		<api>verifyAnyText(Double[] area,Double similarity,long waitMilisecond,String... textList)</api>
+		<api>tapText(String text)</api>
+		<api>tapText(Double[] area,String  text)</api>
+		<api>tapText(Double similarity,String text)</api>
+		<api>tapText(Double[] area,Double similarity,String text)</api>
+		<api>tapText(long waitMilisecond,String text)</api>
+		<api>tapText(Double[] area,long waitMilisecond,String text)</api>
+		<api>tapText(Double similarity,long waitMilisecond,String text)</api>
+		<api>tapText(Double[] area,Double similarity,long waitMilisecond,String text)</api>
+		<api>tapAnyText(String... textList)</api>
+		<api>tapAnyText(Double[] area,String... textList)</api>
+		<api>tapAnyText(Double similarity,String... textList)</api>
+		<api>tapAnyText(Double[] area,Double similarity,String... textList)</api>
+		<api>tapAnyText(long waitMilisecond,String... textList)</api>
+		<api>tapAnyText(Double[] area,long waitMilisecond,String... textList)</api>
+		<api>tapAnyText(Double similarity,long waitMilisecond,String... textList)</api>
+		<api>tapAnyText(Double[] area,Double similarity,long waitMilisecond,String... textList)</api>
+		<api>waitForText(long waitMilisecond,String... textList)</api>
+		<api>verifyImage(String bitmap) </api>
+		<api>verifyImage(Double[] area, String bitmap) </api>
+		<api>verifyImage(Double similarity,String bitmap) </api>
+		<api>verifyImage( Double[] area,Double similarity,String bitmap) </api>
+		<api>verifyImage(String bitmap1, String bitmap2) </api>
+		<api>verifyImage(Double[] area,String bitmap1, String bitmap2) </api>
+		<api>verifyImage(Double similarity,String bitmap1, String bitmap2) </api>
+		<api>verifyImage(Double[] area,Double similarity,String bitmap1, String bitmap2) </api>
+		<api>verifyImage(long waitMilisecond,String bitmap) </api>
+		<api>verifyImage(Double[] area,long waitMilisecond, String bitmap) </api>
+		<api>verifyImage(Double similarity,long waitMilisecond,String bitmap) </api>
+		<api>verifyImage( Double[] area,Double similarity,long waitMilisecond,String bitmap) </api>
+		<api>verifyImage(long waitMilisecond,String bitmap1, String bitmap2) </api>
+		<api>verifyImage(Double[] area,long waitMilisecond,String bitmap1, String bitmap2) </api>
+		<api>verifyImage(Double similarity,long waitMilisecond,String bitmap1, String bitmap2) </api>
+		<api>verifyImage(Double[] area, Double similarity,long waitMilisecond,String bitmap1, String bitmap2) </api>
+		<api>tapImage(String bitmap) </api>
+		<api>tapImage( Double[] area,String bitmap) </api>
+		<api>tapImage(Double similarity,String bitmap) </api>
+		<api>tapImage(Double[] area,Double similarity,String bitmap) </api>
+		<api>tapImage(String bitmap1, String bitmap2) </api>
+		<api>tapImage(Double[] area,String bitmap1, String bitmap2) </api>
+		<api>tapImage(Double similarity,String bitmap1, String bitmap2) </api>
+		<api>tapImage(Double[] area, Double similarity,String bitmap1, String bitmap2) </api>
+		<api>tapImage(long waitMilisecond,String bitmap) </api>
+		<api>tapImage( Double[] area,long waitMilisecond,String bitmap) </api>
+		<api>tapImage(Double similarity,long waitMilisecond,String bitmap) </api>
+		<api>tapImage(Double[] area,Double similarity,long waitMilisecond,String bitmap) </api>
+		<api>tapImage(long waitMilisecond,String bitmap1, String bitmap2) </api>
+		<api>tapImage(Double[] area,long waitMilisecond,String bitmap1, String bitmap2) </api>
+		<api>tapImage(Double similarity,long waitMilisecond,String bitmap1, String bitmap2) </api>
+		<api>tapImage(Double[] area, Double similarity,long waitMilisecond,String bitmap1, String bitmap2)</api>
+		<api>waitForImage(long waitMilisecond, String bitmap1) </api>
+		<api>waitForNewScreen()</api>
+		<api>waitForNewScreen(int times)</api>
+		<api>waitForMiliSeconds(long miliSeconds)</api>
+		<api>waitForNewScreen(Double similarity,long times)</api>
+		<api>swipe(double srcx, double srcy, double desx, double desy)</api>
+		<api>pressMenu()</api>
+		<api>pressEnter() </api>
+		<api>pressBack() </api>
+		<api>pressHome() </api>
+		<api>tapOnMiddle()</api>
+		<api>tapOnScreen()</api>
+		<api>tapOnScreen(Double xCord, Double yCord)</api>
+		<api>restartApp(String appID)</api>
+		<api>restartApp(long waitMilisecond,String appID)</api>
+		<api>launchApp(String appID) </api>
+		<api>killApp(String appID)</api>
+		<api>killApp(long waitMilisecond,String appID)</api>
+	</apiobject>
+	
+</apiobjectcollection>
+
+

@@ -1,0 +1,1 @@
+net_get_wifi_state

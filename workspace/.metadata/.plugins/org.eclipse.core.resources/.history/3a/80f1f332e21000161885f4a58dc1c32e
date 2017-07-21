@@ -1,0 +1,95 @@
+package application;
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
+
+public class Main extends Application {
+
+	static final int SCENE_WIDTH = 600;
+	static final int SCENE_HEIGHT = 500;
+	TextArea console;
+
+	@Override
+	public void start(Stage primaryStage) {
+		try {
+		    console = new TextArea();
+		    console.setText("");
+			
+			
+			GridPane btnGrid = new GridPane();
+			btnGrid.setAlignment(Pos.CENTER);
+			btnGrid.setHgap(10);
+			btnGrid.setVgap(10);
+			btnGrid.setPadding(new Insets(25, 25, 25, 25));
+
+
+			Button btnRun = new Button("Run");
+			btnGrid.add(btnRun, 1, 1);
+			btnRun.setOnAction(new EventHandler<ActionEvent>() {
+
+				@Override
+				public void handle(ActionEvent e) {
+					System.out.println("Run pressed");
+					console.clear();
+					//new Thread(task).start();
+					UpdateConsoleTask up = new UpdateConsoleTask( console, "runModule", "Gallery");
+					up.execute();					
+				}
+			});
+
+			Button btnReRun = new Button("Re Run");
+			btnGrid.add(btnReRun, 2, 1);
+			btnReRun.setOnAction(new EventHandler<ActionEvent>() {
+
+				@Override
+				public void handle(ActionEvent e) {
+					UpdateConsoleTask up = new UpdateConsoleTask( console, "reRunTestCase", "Gallery", "Gallery_0010");
+					up.execute();
+				}
+			});
+
+			Button btnSingleRun = new Button("Run Single TC");
+			btnGrid.add(btnSingleRun, 3, 1);
+			btnReRun.setOnAction(new EventHandler<ActionEvent>() {
+
+				@Override
+				public void handle(ActionEvent e) {
+					UpdateConsoleTask up = new UpdateConsoleTask( console, "runTestCase", "Gallery", "Gallery_0010");
+					up.execute();
+				}
+			});
+
+			GridPane root = new GridPane();
+
+			Pane modules = new BorderedTitledPane("Modules", new StackPane());
+			Pane buttons = new BorderedTitledPane("Operations", btnGrid);
+			Pane consoleContainer = new BorderedTitledPane("Console", console);
+
+			//root.add(modules, 0, 0, 1, 5);
+			root.add(buttons, 0, 0, 3, 1);
+			root.add(consoleContainer, 1, 1, 2, 4);
+
+			Scene scene = new Scene(root , SCENE_WIDTH, SCENE_HEIGHT);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+	
+}

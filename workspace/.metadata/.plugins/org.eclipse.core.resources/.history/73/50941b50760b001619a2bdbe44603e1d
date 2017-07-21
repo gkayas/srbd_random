@@ -1,0 +1,17 @@
+
+public class NumberNode extends Node{
+	
+	
+	public NumberNode(int type) {
+		super(type);
+	}
+
+
+	@Override
+	public int getValue() {
+
+		return value;
+	}
+	
+
+}

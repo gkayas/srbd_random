@@ -1,0 +1,83 @@
+
+public abstract class  Node {
+	static final int NumberType = 0;
+	static final int UnknownType = 1;
+	
+	static final int OPERATION_ADD = 1;
+	static final int OPERATION_SUB = 2;
+	static final int OPERATION_MUL = 3;
+	static final int OPERATION_DIV = 4;
+	static final int OPERATION_DEAD = 5;
+
+	
+	private int type, operation;
+	protected int value;
+	protected boolean isAlive;
+	
+	private int positionX;
+	private int positionY;
+	
+	public int getPositionX() {
+		return positionX;
+	}
+
+	public void setPositionX(int positionX) {
+		this.positionX = positionX;
+	}
+
+	public int getPositionY() {
+		return positionY;
+	}
+
+	public void setPositionY(int positionY) {
+		this.positionY = positionY;
+	}
+
+	public Node(int value) {
+		this.value = value;
+		isAlive = true;
+	}
+	
+	public int getType() {
+		return type;
+	}
+	public void setValue(int value) {
+		this.value = value;
+	} 
+	public int getValue(); 
+	
+	public void setOperation(int operation) {
+		this.operation = operation;
+	}
+	
+	public int getOperation() {
+		return this.operation;
+	}
+	
+	public boolean isAlive() {
+		return isAlive;
+	}
+	
+	public void incoming(Node node) {
+		
+			switch(this.getOperation()) {
+			case Node.OPERATION_ADD:
+				this.setValue(node.getValue() + this.getValue() );
+				return;
+			case Node.OPERATION_SUB:
+				this.setValue(node.getValue() - this.getValue());
+				return;
+			case Node.OPERATION_MUL:
+				this.setValue(node.getValue() * this.getValue() );
+				return;
+			case Node.OPERATION_DIV:
+				this.setValue(node.getValue() / this.getValue() );
+				return;
+			case Node.OPERATION_DEAD:
+				this.setValue(node.getValue() );
+				isAlive = false;
+				return;
+	
+			}
+	}
+}

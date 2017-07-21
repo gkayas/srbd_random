@@ -1,0 +1,37 @@
+Temporary header file '/tmp/3wY6b5nWLg/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media/media_format.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media/media_packet.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/3wY6b5nWLg/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /tmp/3wY6b5nWLg/dump1.h:3:0:
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media/media_format.h:50:32: error: ‘TIZEN_ERROR_NONE’ was not declared in this scope
+     MEDIA_FORMAT_ERROR_NONE  = TIZEN_ERROR_NONE,    /**< Successful */
+                                ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media/media_format.h:51:40: error: ‘TIZEN_ERROR_OUT_OF_MEMORY’ was not declared in this scope
+     MEDIA_FORMAT_ERROR_OUT_OF_MEMORY = TIZEN_ERROR_OUT_OF_MEMORY,   /**< Out of memory */
+                                        ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media/media_format.h:52:45: error: ‘TIZEN_ERROR_INVALID_PARAMETER’ was not declared in this scope
+     MEDIA_FORMAT_ERROR_INVALID_PARAMETER  = TIZEN_ERROR_INVALID_PARAMETER,  /**< Invalid parameter */
+                                             ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media/media_format.h:53:44: error: ‘TIZEN_ERROR_INVALID_OPERATION’ was not declared in this scope
+     MEDIA_FORMAT_ERROR_INVALID_OPERATION = TIZEN_ERROR_INVALID_OPERATION,  /**< Invalid operation */
+                                            ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media/media_format.h:54:50: error: ‘TIZEN_ERROR_FILE_NO_SPACE_ON_DEVICE’ was not declared in this scope
+     MEDIA_FORMAT_ERROR_FILE_NO_SPACE_ON_DEVICE = TIZEN_ERROR_FILE_NO_SPACE_ON_DEVICE,  /**< No space left on device */
+                                                  ^
+
+Temporary header file '/tmp/3wY6b5nWLg/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media/media_format.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media/media_packet.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media/media_packet_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media/media_packet_pool.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/3wY6b5nWLg/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+

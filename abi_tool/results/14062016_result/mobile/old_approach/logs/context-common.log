@@ -1,0 +1,411 @@
+Temporary header file '/tmp/EQ5UnfMBpc/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/types_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/context_mgr.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/context_mgr_iface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/db_listener_iface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/db_mgr.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/db_mgr_iface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/dbus_listener_iface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/dbus_server.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/dbus_server_iface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/event_driven.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/json.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/provider_iface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/request_handler.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/scope_mutex.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/shared_vars.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/timer_listener_iface.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/timer_mgr.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal/timer_mgr_iface.h"
+
+  // add namespaces
+  namespace ctx{typedef int tmp_add_type_1;}
+  ctx::tmp_add_type_1 tmp_add_func_1(){return 0;};
+  namespace ctx{namespace shared{typedef int tmp_add_type_2;}}
+  ctx::shared::tmp_add_type_2 tmp_add_func_2(){return 0;};
+  namespace ctx{namespace context_manager{typedef int tmp_add_type_3;}}
+  ctx::context_manager::tmp_add_type_3 tmp_add_func_3(){return 0;};
+  namespace ctx{namespace db_manager{typedef int tmp_add_type_4;}}
+  ctx::db_manager::tmp_add_type_4 tmp_add_func_4(){return 0;};
+  namespace ctx{namespace dbus_server{typedef int tmp_add_type_5;}}
+  ctx::dbus_server::tmp_add_type_5 tmp_add_func_5(){return 0;};
+  namespace ctx{namespace request_handler{typedef int tmp_add_type_6;}}
+  ctx::request_handler::tmp_add_type_6 tmp_add_func_6(){return 0;};
+  namespace ctx{namespace timer_manager{typedef int tmp_add_type_7;}}
+  ctx::timer_manager::tmp_add_type_7 tmp_add_func_7(){return 0;};
+
+  // add classes
+  _GArray* tmp_add_class_0;
+  _GByteArray* tmp_add_class_1;
+  _GCompletion* tmp_add_class_2;
+  _GCond* tmp_add_class_3;
+  _GDate* tmp_add_class_4;
+  _GDebugKey* tmp_add_class_5;
+  _GDoubleIEEE754* tmp_add_class_6;
+  _GError* tmp_add_class_7;
+  _GFloatIEEE754* tmp_add_class_8;
+  _GHashTableIter* tmp_add_class_9;
+  _GHook* tmp_add_class_10;
+  _GHookList* tmp_add_class_11;
+  _GIOChannel* tmp_add_class_12;
+  _GIOFuncs* tmp_add_class_13;
+  _GList* tmp_add_class_14;
+  _GMarkupParser* tmp_add_class_15;
+  _GMemVTable* tmp_add_class_16;
+  _GMutex* tmp_add_class_17;
+  _GNode* tmp_add_class_18;
+  _GOnce* tmp_add_class_19;
+  _GOptionEntry* tmp_add_class_20;
+  _GPollFD* tmp_add_class_21;
+  _GPrivate* tmp_add_class_22;
+  _GPtrArray* tmp_add_class_23;
+  _GQueue* tmp_add_class_24;
+  _GRWLock* tmp_add_class_25;
+  _GRecMutex* tmp_add_class_26;
+  _GSList* tmp_add_class_27;
+  _GScanner* tmp_add_class_28;
+  _GScannerConfig* tmp_add_class_29;
+  _GSource* tmp_add_class_30;
+  _GSourceCallbackFuncs* tmp_add_class_31;
+  _GSourceFuncs* tmp_add_class_32;
+  _GStaticPrivate* tmp_add_class_33;
+  _GStaticRWLock* tmp_add_class_34;
+  _GStaticRecMutex* tmp_add_class_35;
+  _GString* tmp_add_class_36;
+  _GThread* tmp_add_class_37;
+  _GThreadFunctions* tmp_add_class_38;
+  _GThreadPool* tmp_add_class_39;
+  _GTimeVal* tmp_add_class_40;
+  _GTokenValue* tmp_add_class_41;
+  _GTrashStack* tmp_add_class_42;
+  _GTuples* tmp_add_class_43;
+  _GVariantBuilder* tmp_add_class_44;
+  _GVariantDict* tmp_add_class_45;
+  _GVariantIter* tmp_add_class_46;
+  _libc_fpstate* tmp_add_class_47;
+  dirent* tmp_add_class_48;
+  dirent64* tmp_add_class_49;
+  event_driven_thread* tmp_add_class_50;
+  pthread_attr_t* tmp_add_class_51;
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/EQ5UnfMBpc/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/context-service/internal -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/glib-2.0 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/dlog -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/lib/glib-2.0/include
+
+Temporary header file '/tmp/EQ5UnfMBpc/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal/ContextProvider.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal/DatabaseManager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal/DBusSignalWatcher.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal/DBusTypes.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal/EventDrivenThread.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal/IContextManager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal/IDatabaseListener.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal/IDBusSignalListener.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal/ITimerListener.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal/Json.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal/ScopeMutex.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal/SharedVars.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal/TimerManager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal/Types.h"
+
+  // add namespaces
+  namespace ctx{typedef int tmp_add_type_1;}
+  ctx::tmp_add_type_1 tmp_add_func_1(){return 0;};
+
+  // add classes
+  EventDrivenThread* tmp_add_class_0;
+  _GActionEntry* tmp_add_class_1;
+  _GActionGroupInterface* tmp_add_class_2;
+  _GActionInterface* tmp_add_class_3;
+  _GActionMapInterface* tmp_add_class_4;
+  _GAppInfoIface* tmp_add_class_5;
+  _GAppLaunchContext* tmp_add_class_6;
+  _GAppLaunchContextClass* tmp_add_class_7;
+  _GApplication* tmp_add_class_8;
+  _GApplicationClass* tmp_add_class_9;
+  _GApplicationCommandLine* tmp_add_class_10;
+  _GApplicationCommandLineClass* tmp_add_class_11;
+  _GArray* tmp_add_class_12;
+  _GAsyncInitableIface* tmp_add_class_13;
+  _GAsyncResultIface* tmp_add_class_14;
+  _GBufferedInputStream* tmp_add_class_15;
+  _GBufferedInputStreamClass* tmp_add_class_16;
+  _GBufferedOutputStream* tmp_add_class_17;
+  _GBufferedOutputStreamClass* tmp_add_class_18;
+  _GByteArray* tmp_add_class_19;
+  _GCClosure* tmp_add_class_20;
+  _GCancellable* tmp_add_class_21;
+  _GCancellableClass* tmp_add_class_22;
+  _GCharsetConverterClass* tmp_add_class_23;
+  _GClosure* tmp_add_class_24;
+  _GClosureNotifyData* tmp_add_class_25;
+  _GCompletion* tmp_add_class_26;
+  _GCond* tmp_add_class_27;
+  _GConverterIface* tmp_add_class_28;
+  _GConverterInputStream* tmp_add_class_29;
+  _GConverterInputStreamClass* tmp_add_class_30;
+  _GConverterOutputStream* tmp_add_class_31;
+  _GConverterOutputStreamClass* tmp_add_class_32;
+  _GDBusAnnotationInfo* tmp_add_class_33;
+  _GDBusArgInfo* tmp_add_class_34;
+  _GDBusErrorEntry* tmp_add_class_35;
+  _GDBusInterfaceIface* tmp_add_class_36;
+  _GDBusInterfaceInfo* tmp_add_class_37;
+  _GDBusInterfaceSkeleton* tmp_add_class_38;
+  _GDBusInterfaceSkeletonClass* tmp_add_class_39;
+  _GDBusInterfaceVTable* tmp_add_class_40;
+  _GDBusMethodInfo* tmp_add_class_41;
+  _GDBusNodeInfo* tmp_add_class_42;
+  _GDBusObjectIface* tmp_add_class_43;
+  _GDBusObjectManagerClient* tmp_add_class_44;
+  _GDBusObjectManagerClientClass* tmp_add_class_45;
+  _GDBusObjectManagerIface* tmp_add_class_46;
+  _GDBusObjectManagerServer* tmp_add_class_47;
+  _GDBusObjectManagerServerClass* tmp_add_class_48;
+  _GDBusObjectProxy* tmp_add_class_49;
+  _GDBusObjectProxyClass* tmp_add_class_50;
+  _GDBusObjectSkeleton* tmp_add_class_51;
+  _GDBusObjectSkeletonClass* tmp_add_class_52;
+  _GDBusPropertyInfo* tmp_add_class_53;
+  _GDBusProxy* tmp_add_class_54;
+  _GDBusProxyClass* tmp_add_class_55;
+  _GDBusSignalInfo* tmp_add_class_56;
+  _GDBusSubtreeVTable* tmp_add_class_57;
+  _GDataInputStream* tmp_add_class_58;
+  _GDataInputStreamClass* tmp_add_class_59;
+  _GDataOutputStream* tmp_add_class_60;
+  _GDataOutputStreamClass* tmp_add_class_61;
+  _GDate* tmp_add_class_62;
+  _GDebugKey* tmp_add_class_63;
+  _GDoubleIEEE754* tmp_add_class_64;
+  _GDriveIface* tmp_add_class_65;
+  _GEmblemedIcon* tmp_add_class_66;
+  _GEmblemedIconClass* tmp_add_class_67;
+  _GEnumClass* tmp_add_class_68;
+  _GEnumValue* tmp_add_class_69;
+  _GError* tmp_add_class_70;
+  _GFileAttributeInfo* tmp_add_class_71;
+  _GFileAttributeInfoList* tmp_add_class_72;
+  _GFileEnumerator* tmp_add_class_73;
+  _GFileEnumeratorClass* tmp_add_class_74;
+  _GFileIOStream* tmp_add_class_75;
+  _GFileIOStreamClass* tmp_add_class_76;
+  _GFileIface* tmp_add_class_77;
+  _GFileInputStream* tmp_add_class_78;
+  _GFileInputStreamClass* tmp_add_class_79;
+  _GFileMonitor* tmp_add_class_80;
+  _GFileMonitorClass* tmp_add_class_81;
+  _GFileOutputStream* tmp_add_class_82;
+  _GFileOutputStreamClass* tmp_add_class_83;
+  _GFilenameCompleterClass* tmp_add_class_84;
+  _GFilterInputStream* tmp_add_class_85;
+  _GFilterInputStreamClass* tmp_add_class_86;
+  _GFilterOutputStream* tmp_add_class_87;
+  _GFilterOutputStreamClass* tmp_add_class_88;
+  _GFlagsClass* tmp_add_class_89;
+  _GFlagsValue* tmp_add_class_90;
+  _GFloatIEEE754* tmp_add_class_91;
+  _GHashTableIter* tmp_add_class_92;
+  _GHook* tmp_add_class_93;
+  _GHookList* tmp_add_class_94;
+  _GIOChannel* tmp_add_class_95;
+  _GIOFuncs* tmp_add_class_96;
+  _GIOStream* tmp_add_class_97;
+  _GIOStreamClass* tmp_add_class_98;
+  _GIconIface* tmp_add_class_99;
+  _GInetAddress* tmp_add_class_100;
+  _GInetAddressClass* tmp_add_class_101;
+  _GInetAddressMask* tmp_add_class_102;
+  _GInetAddressMaskClass* tmp_add_class_103;
+  _GInetSocketAddress* tmp_add_class_104;
+  _GInetSocketAddressClass* tmp_add_class_105;
+  _GInitableIface* tmp_add_class_106;
+  _GInputStream* tmp_add_class_107;
+  _GInputStreamClass* tmp_add_class_108;
+  _GInputVector* tmp_add_class_109;
+  _GInterfaceInfo* tmp_add_class_110;
+  _GList* tmp_add_class_111;
+  _GListModelInterface* tmp_add_class_112;
+  _GLoadableIconIface* tmp_add_class_113;
+  _GMarkupParser* tmp_add_class_114;
+  _GMemVTable* tmp_add_class_115;
+  _GMemoryInputStream* tmp_add_class_116;
+  _GMemoryInputStreamClass* tmp_add_class_117;
+  _GMemoryOutputStream* tmp_add_class_118;
+  _GMemoryOutputStreamClass* tmp_add_class_119;
+  _GMenuAttributeIter* tmp_add_class_120;
+  _GMenuAttributeIterClass* tmp_add_class_121;
+  _GMenuLinkIter* tmp_add_class_122;
+  _GMenuLinkIterClass* tmp_add_class_123;
+  _GMenuModel* tmp_add_class_124;
+  _GMenuModelClass* tmp_add_class_125;
+  _GMountIface* tmp_add_class_126;
+  _GMountOperation* tmp_add_class_127;
+  _GMountOperationClass* tmp_add_class_128;
+  _GMutex* tmp_add_class_129;
+  _GNativeVolumeMonitor* tmp_add_class_130;
+  _GNativeVolumeMonitorClass* tmp_add_class_131;
+  _GNetworkAddress* tmp_add_class_132;
+  _GNetworkAddressClass* tmp_add_class_133;
+  _GNetworkMonitorInterface* tmp_add_class_134;
+  _GNetworkService* tmp_add_class_135;
+  _GNetworkServiceClass* tmp_add_class_136;
+  _GNode* tmp_add_class_137;
+  _GObject* tmp_add_class_138;
+  _GObjectClass* tmp_add_class_139;
+  _GObjectConstructParam* tmp_add_class_140;
+  _GOnce* tmp_add_class_141;
+  _GOptionEntry* tmp_add_class_142;
+  _GOutputMessage* tmp_add_class_143;
+  _GOutputStream* tmp_add_class_144;
+  _GOutputStreamClass* tmp_add_class_145;
+  _GOutputVector* tmp_add_class_146;
+  _GParamSpec* tmp_add_class_147;
+  _GParamSpecBoolean* tmp_add_class_148;
+  _GParamSpecBoxed* tmp_add_class_149;
+  _GParamSpecChar* tmp_add_class_150;
+  _GParamSpecClass* tmp_add_class_151;
+  _GParamSpecDouble* tmp_add_class_152;
+  _GParamSpecEnum* tmp_add_class_153;
+  _GParamSpecFlags* tmp_add_class_154;
+  _GParamSpecFloat* tmp_add_class_155;
+  _GParamSpecGType* tmp_add_class_156;
+  _GParamSpecInt* tmp_add_class_157;
+  _GParamSpecInt64* tmp_add_class_158;
+  _GParamSpecLong* tmp_add_class_159;
+  _GParamSpecObject* tmp_add_class_160;
+  _GParamSpecOverride* tmp_add_class_161;
+  _GParamSpecParam* tmp_add_class_162;
+  _GParamSpecPointer* tmp_add_class_163;
+  _GParamSpecString* tmp_add_class_164;
+  _GParamSpecTypeInfo* tmp_add_class_165;
+  _GParamSpecUChar* tmp_add_class_166;
+  _GParamSpecUInt* tmp_add_class_167;
+  _GParamSpecUInt64* tmp_add_class_168;
+  _GParamSpecULong* tmp_add_class_169;
+  _GParamSpecUnichar* tmp_add_class_170;
+  _GParamSpecValueArray* tmp_add_class_171;
+  _GParamSpecVariant* tmp_add_class_172;
+  _GParameter* tmp_add_class_173;
+  _GPermission* tmp_add_class_174;
+  _GPermissionClass* tmp_add_class_175;
+  _GPollFD* tmp_add_class_176;
+  _GPollableInputStreamInterface* tmp_add_class_177;
+  _GPollableOutputStreamInterface* tmp_add_class_178;
+  _GPrivate* tmp_add_class_179;
+  _GProxyAddress* tmp_add_class_180;
+  _GProxyAddressClass* tmp_add_class_181;
+  _GProxyAddressEnumerator* tmp_add_class_182;
+  _GProxyAddressEnumeratorClass* tmp_add_class_183;
+  _GProxyInterface* tmp_add_class_184;
+  _GProxyResolverInterface* tmp_add_class_185;
+  _GPtrArray* tmp_add_class_186;
+  _GQueue* tmp_add_class_187;
+  _GRWLock* tmp_add_class_188;
+  _GRecMutex* tmp_add_class_189;
+  _GRemoteActionGroupInterface* tmp_add_class_190;
+  _GResolver* tmp_add_class_191;
+  _GResolverClass* tmp_add_class_192;
+  _GSList* tmp_add_class_193;
+  _GScanner* tmp_add_class_194;
+  _GScannerConfig* tmp_add_class_195;
+  _GSeekableIface* tmp_add_class_196;
+  _GSettings* tmp_add_class_197;
+  _GSettingsClass* tmp_add_class_198;
+  _GSignalInvocationHint* tmp_add_class_199;
+  _GSignalQuery* tmp_add_class_200;
+  _GSimpleActionGroup* tmp_add_class_201;
+  _GSimpleActionGroupClass* tmp_add_class_202;
+  _GSimpleProxyResolver* tmp_add_class_203;
+  _GSimpleProxyResolverClass* tmp_add_class_204;
+  _GSocket* tmp_add_class_205;
+  _GSocketAddress* tmp_add_class_206;
+  _GSocketAddressClass* tmp_add_class_207;
+  _GSocketAddressEnumerator* tmp_add_class_208;
+  _GSocketAddressEnumeratorClass* tmp_add_class_209;
+  _GSocketClass* tmp_add_class_210;
+  _GSocketClient* tmp_add_class_211;
+  _GSocketClientClass* tmp_add_class_212;
+  _GSocketConnectableIface* tmp_add_class_213;
+  _GSocketConnection* tmp_add_class_214;
+  _GSocketConnectionClass* tmp_add_class_215;
+  _GSocketControlMessage* tmp_add_class_216;
+  _GSocketControlMessageClass* tmp_add_class_217;
+  _GSocketListener* tmp_add_class_218;
+  _GSocketListenerClass* tmp_add_class_219;
+  _GSocketService* tmp_add_class_220;
+  _GSocketServiceClass* tmp_add_class_221;
+  _GSource* tmp_add_class_222;
+  _GSourceCallbackFuncs* tmp_add_class_223;
+  _GSourceFuncs* tmp_add_class_224;
+  _GStaticPrivate* tmp_add_class_225;
+  _GStaticRWLock* tmp_add_class_226;
+  _GStaticRecMutex* tmp_add_class_227;
+  _GStaticResource* tmp_add_class_228;
+  _GString* tmp_add_class_229;
+  _GTcpConnection* tmp_add_class_230;
+  _GTcpConnectionClass* tmp_add_class_231;
+  _GTcpWrapperConnection* tmp_add_class_232;
+  _GTcpWrapperConnectionClass* tmp_add_class_233;
+  _GThread* tmp_add_class_234;
+  _GThreadFunctions* tmp_add_class_235;
+  _GThreadPool* tmp_add_class_236;
+  _GThreadedSocketService* tmp_add_class_237;
+  _GThreadedSocketServiceClass* tmp_add_class_238;
+  _GTimeVal* tmp_add_class_239;
+  _GTlsBackendInterface* tmp_add_class_240;
+  _GTlsCertificate* tmp_add_class_241;
+  _GTlsCertificateClass* tmp_add_class_242;
+  _GTlsClientConnectionInterface* tmp_add_class_243;
+  _GTlsConnection* tmp_add_class_244;
+  _GTlsConnectionClass* tmp_add_class_245;
+  _GTlsDatabase* tmp_add_class_246;
+  _GTlsDatabaseClass* tmp_add_class_247;
+  _GTlsFileDatabaseInterface* tmp_add_class_248;
+  _GTlsInteraction* tmp_add_class_249;
+  _GTlsInteractionClass* tmp_add_class_250;
+  _GTlsPassword* tmp_add_class_251;
+  _GTlsPasswordClass* tmp_add_class_252;
+  _GTlsServerConnectionInterface* tmp_add_class_253;
+  _GTokenValue* tmp_add_class_254;
+  _GTrashStack* tmp_add_class_255;
+  _GTuples* tmp_add_class_256;
+  _GTypeClass* tmp_add_class_257;
+  _GTypeFundamentalInfo* tmp_add_class_258;
+  _GTypeInfo* tmp_add_class_259;
+  _GTypeInstance* tmp_add_class_260;
+  _GTypeInterface* tmp_add_class_261;
+  _GTypeModule* tmp_add_class_262;
+  _GTypeModuleClass* tmp_add_class_263;
+  _GTypePluginClass* tmp_add_class_264;
+  _GTypeQuery* tmp_add_class_265;
+  _GTypeValueTable* tmp_add_class_266;
+  _GValue* tmp_add_class_267;
+  _GValueArray* tmp_add_class_268;
+  _GVariantBuilder* tmp_add_class_269;
+  _GVariantDict* tmp_add_class_270;
+  _GVariantIter* tmp_add_class_271;
+  _GVfs* tmp_add_class_272;
+  _GVfsClass* tmp_add_class_273;
+  _GVolumeIface* tmp_add_class_274;
+  _GVolumeMonitor* tmp_add_class_275;
+  _GVolumeMonitorClass* tmp_add_class_276;
+  _GZlibCompressorClass* tmp_add_class_277;
+  _GZlibDecompressorClass* tmp_add_class_278;
+  _libc_fpstate* tmp_add_class_279;
+  dirent* tmp_add_class_280;
+  dirent64* tmp_add_class_281;
+  pthread_attr_t* tmp_add_class_282;
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/EQ5UnfMBpc/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/glib-2.0 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/dlog -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/lib/glib-2.0/include
+
+In file included from /tmp/EQ5UnfMBpc/dump2.h:15:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/context-service/internal/TimerManager.h:97:64: error: ‘>>’ should be ‘> >’ within a nested template argument list
+   static std::map<int, std::pair<ITimerListener*, TimerManager*>> __listenerMap;
+                                                                ^
+

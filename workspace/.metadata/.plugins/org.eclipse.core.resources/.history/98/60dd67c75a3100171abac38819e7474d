@@ -1,0 +1,57 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.Set;
+
+// This class represents a set of sequences.
+public class SequenceSet {
+	
+	Set<Sequence> sequenceSet;
+	// Constructor.
+	public SequenceSet() {
+		sequenceSet = new HashSet<Sequence>();
+	}
+	// Load sequences from FASTA file.
+	public static  SequenceSet load(String fileName){
+		String line = "";
+		String seq = "", header = "";
+		InputStream inputstream = MainClass.class.getResourceAsStream(fileName);
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new InputStreamReader(inputstream));
+			while ((line = br.readLine()) != null) {
+				if(line.charAt(0) != '>')
+				{
+					seq = line;
+				}else{
+					header = line;
+				}
+				sequenceSet.add(new Sequence(header, seq));
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (br != null) {
+				try {
+					br.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+			}
+		}
+	}
+	// Return the global usage over all sequences in the set. The word length is k and window step size is w.
+	public Usage getUsage(int k, int w){
+		
+	}
+	// Return all sequences in the set in the same order they appear in the file.
+	public LinkedList<Sequence> getSequences(){
+		
+	}
+}

@@ -1,0 +1,298 @@
+package fxviewer;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import apprunner.AppInfo;
+import apprunner.SuiteRunner;
+import apprunner.TCRunner;
+import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+
+import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
+
+public class MainController implements Initializable  /*,ChangeListener*/{
+
+//	public static final String SUITE_FILES_FOLDER = ResourceUtils.getXmlPath();
+
+	static LaunchInterfaceTask interfaceTask;
+	static RunServerTask runServerTask;
+
+	@FXML
+	private TableView<AppInfo> tcTable;
+
+	@FXML
+	private TableColumn<AppInfo, String> name;
+
+	@FXML
+	private TableColumn<AppInfo, String> binary;
+
+	@FXML
+	private TableColumn<AppInfo, String> install;
+	
+	@FXML
+	private TableColumn<AppInfo, String> exploratory;
+	
+	@FXML
+	private TableColumn<AppInfo, String> uninstall;
+
+	@FXML
+	private Button runBtn;
+
+	@FXML
+	private Button rerunBtn;
+
+	@FXML
+	private Button runsingleBtn;
+	
+	@FXML
+	private Button runServerBtn;
+	
+	@FXML
+	private Button interfaceBtn;
+
+	@FXML
+	private TextArea console;
+	
+	public void runBtnClicked() {
+		clearConsole();
+		TCRunner runner = SuiteRunner.getRunner();
+		new TCRunTask(runner, this).execute();
+	}
+	
+	public void setRunButtonDisable(boolean value) {
+		runBtn.setDisable(value);
+	}
+	
+	public void toggleRunServerBtn() {
+		runServerBtn.setDisable(!runServerBtn.isDisabled());
+	}
+	
+	public void toggleInterfaceBtn() {
+		interfaceBtn.setDisable(!interfaceBtn.isDisabled());
+	}
+	
+	public void runServerBtnClicked() {
+		clearConsole();
+		runServerTask = new RunServerTask(this);
+		runServerTask.execute();
+	}
+	
+	public void interfaceBtnClicked() {
+		clearConsole();
+	 	interfaceTask = new LaunchInterfaceTask(this);
+	 	interfaceTask.execute();
+	}
+	
+	public TextArea getConsole() {
+		return console;
+	}
+
+	public void rerunBtnClicked() {
+//		clearConsole();
+//		TCRunner runner = SuiteRunner.getRunner();
+//		new TCReRunTask(runner, this).execute();
+	}
+
+	public void runsingleBtnClicked() {
+//		clearConsole();
+//		TCRunner runner = SuiteRunner.getRunner();
+//		AppInfo selectedTc =  tcTable.getSelectionModel().getSelectedItem();
+//		System.out.println(selectedTc.getTcName());
+//		new TCRunSingle(runner, selectedTc.getTcName()).execute();;
+	}
+
+	public void listFilesForFolder(final File folder, TreeItem<String> root) {
+//		List<String> suiteNames = new ArrayList<String>();
+//		for (final File fileEntry : folder.listFiles()) {
+//			if (fileEntry.isDirectory()) {
+//				listFilesForFolder(fileEntry, root);
+//			} else {
+//				// System.out.println(fileEntry.getName());
+//				//TreeItem<String> item = new TreeItem<>(fileEntry.getName().split("\\.")[0]);
+//				//root.getChildren().add(item);
+//				suiteNames.add(fileEntry.getName().split("\\.")[0]);
+//			}
+//		}
+//		
+//		Collections.sort(suiteNames);
+//		for (String string : suiteNames) {
+//			TreeItem<String> item = new TreeItem<>(string);
+//			root.getChildren().add(item);
+//		}
+		
+//		root.getChildren().add(new TreeItem<String>("Mobile"));
+//		root.getChildren().add(new TreeItem<String>("Wearable"));
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		if(console == null) 
+			System.out.println("Console null");
+		
+		CustomConsole customConsole = new CustomConsole(console);
+		PrintStream ps = new PrintStream(customConsole);
+		
+		//System.setOut(ps);
+		//System.setErr(ps);
+
+		TreeItem<String> treeRoot = new TreeItem<>("Store App");
+//		listFilesForFolder(new File(SUITE_FILES_FOLDER), treeRoot);
+
+//		suiteTree.getSelectionModel().selectedItemProperty().addListener(this);
+		treeRoot.setExpanded(true);
+		
+		tcTable.setOnMouseClicked( new EventHandler<MouseEvent>() {
+
+			@Override
+			public void handle(MouseEvent event) {
+//				
+//				 if ( event.getClickCount() == 2  ) {
+//					    TestInfo selectedTcInfo = tcTable.getSelectionModel().getSelectedItem();
+//			            System.out.println(ResourceUtils.getErrorScreenshotPath()+SuiteRunner.getRunner().getSuiteName()+"/"+tcTable.getSelectionModel().getSelectedItem().getTcName()+".png");
+//			            if(selectedTcInfo.getResult().equals(TCResult.Fail)) {
+//			            	 imagePopupWindowShow(ResourceUtils.getErrorScreenshotPath()+SuiteRunner.getRunner().getSuiteName()+"/"+selectedTcInfo.getTcName()+".png");
+//			            }
+//			           
+//			     }
+			}
+		});
+
+//		suiteTree.setRoot(treeRoot);
+
+		install.setStyle("-fx-alignment: CENTER;");
+		exploratory.setStyle("-fx-alignment: CENTER;");
+		uninstall.setStyle("-fx-alignment: CENTER;");
+		
+		name.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("name"));
+
+		binary.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("binary"));
+		
+		install.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("install"));
+		
+		exploratory.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("exploratory"));
+		
+		uninstall.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("uninstall"));
+	}
+
+	public void clearConsole() {
+
+		Platform.runLater(() -> console.clear());
+	}
+	
+    public void imagePopupWindowShow(String imgPath) {
+
+        File imageFile;
+        Image image;
+        ImageView imageView; 
+        BorderPane pane;
+        Scene scene;
+        Stage stage;
+        
+        imageFile = new File(imgPath);
+        image = new Image(imageFile.toURI().toString());
+        imageView = new ImageView(image);
+
+        // Image will sit in the middle of our popup.
+        pane = new BorderPane();
+        pane.setCenter(imageView);
+        scene = new Scene(pane);
+
+        // Create the actual window and display it.
+        stage = new Stage();
+        stage.setScene(scene);
+        // Without this, the audio won't stop!
+        stage.setOnCloseRequest(
+            e -> {
+                e.consume();
+                stage.close();
+            }
+        );
+        stage.showAndWait();
+    }
+
+//	@Override
+//	public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+//
+//		TreeItem<String> selectedItem = (TreeItem<String>) newValue;
+//
+//		if(selectedItem.getValue().equals("Storeapp Automation")) {
+//			return;
+//		}
+//
+//		TCRunner runner = null;
+//		try {
+//			runner = SuiteRunner.getAppRunner(selectedItem.getValue());
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//
+//		resetTctable(runner.getAppInfoList());
+//	}
+
+	public void addToTcTable(AppInfo tc) {
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				tcTable.getItems().add(tc);
+			}
+		});
+
+	}
+
+	public void addAllToTcTable(List<AppInfo> appList) {
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				for (AppInfo app : appList) {
+					addToTcTable(app);
+				}
+			}
+		});
+	}
+
+	public void removeAllFromTcTable() {
+
+
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				ObservableList<AppInfo> data = tcTable.getItems();				
+				data.remove(0, data.size());
+
+			}
+		});
+	} 
+
+	public void resetTctable(List<AppInfo> newList) {
+
+		removeAllFromTcTable();
+		addAllToTcTable(newList);
+	}
+
+}

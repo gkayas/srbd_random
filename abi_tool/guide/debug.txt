@@ -1,0 +1,2 @@
+1. List all the packages you want to run in "modules_git_repo.txt" file.
+2. Run debug_info.jar using : java -jar debug_approach.jar

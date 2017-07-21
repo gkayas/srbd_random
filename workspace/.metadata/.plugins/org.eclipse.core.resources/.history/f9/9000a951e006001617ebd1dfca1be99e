@@ -1,0 +1,22 @@
+
+public class Unknown extends Node {
+
+	
+	@Override
+	public int getType() {
+		
+		return Node.UnknownType;
+	}
+
+	@Override
+	public int getValue() {
+		// TODO Auto-generated method stub
+		return -1;
+	}
+
+	@Override
+	public int getOperation() {
+		return 0;
+	}
+	
+}

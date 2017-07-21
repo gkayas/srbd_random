@@ -1,0 +1,85 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
+
+public class Solution {
+	public static void main(String [] args) {
+		int [] input = {2,5,4,7,10};
+		int ans[] = twoSum(input,9);
+//		System.out.println(ans[0]+" "+ans[1]);
+		
+		System.out.println(reverse(Integer.MAX_VALUE/5));
+	}
+	//1
+	public static int[] twoSum(int[] nums, int target) {
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		int ans[] = new int [2];
+		for (int i = 0; i<nums.length; i++) {
+			Integer j;
+			if((j = map.get(nums[i])) != null) {
+				//				System.out.println(nums[i]+ " " + j);
+				ans[1] = i;
+				ans[0] = j;
+				return ans;
+			} else {
+				int comp = target - nums[i];
+				map.put(comp, i);
+			}
+		}
+		return null;
+	}
+	//1 ends
+
+	//278
+	ArrayList<Integer> ar = new ArrayList<Integer>();
+	
+	void initSam() {
+		for(int i = 0; i < 1702766720; i ++) {
+			ar.add(0);
+		}
+		for(int i = 1702766720; i < 2126753391; i ++) {
+			ar.add(1);
+		}
+	}
+	
+	public int firstBadVersion(int n) {
+		initSam();
+		return doBinarySerach(1, n);
+	}
+
+	public int doBinarySerach(int start, int end) {
+		
+		while(start < end) {
+			int mid = start+(end-start)/2;
+			if(isBadVersion(mid)) {
+				end = mid;
+			} else {
+				start = mid +1;
+			}
+		}
+		return start;
+		
+	}
+
+	private boolean isBadVersion(int mid) {
+		
+		return (ar.get(mid) == 1);
+	}
+	//278 end
+	
+	//7
+	 public static int reverse(int x) {
+		long reverseInt = 0;
+		
+		while(x != 0) {
+			reverseInt = reverseInt * 10 + x % 10;
+			x = x/10;
+			
+		}
+		
+		if(reverseInt > Integer.MAX_VALUE || reverseInt < Integer.MIN_VALUE) {
+			reverseInt = 0;
+		}
+		return (int) reverseInt;
+	 }
+}

@@ -1,0 +1,9 @@
+pa_esound_protocol_ref
+pa_esound_options_parse
+pa_esound_protocol_get
+pa_esound_protocol_disconnect
+pa_esound_protocol_connect
+pa_esound_options_ref
+pa_esound_options_unref
+pa_esound_protocol_unref
+pa_esound_options_new

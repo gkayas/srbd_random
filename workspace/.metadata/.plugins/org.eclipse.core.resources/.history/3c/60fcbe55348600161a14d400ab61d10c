@@ -1,0 +1,244 @@
+package apprunner;
+
+import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Hashtable;
+import java.util.List;
+
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.ss.usermodel.*;
+
+import fxviewer.MainController;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+
+public class ReportUtils {
+
+//	private static String TEMPLATE_REPORT_FILE_PATH =  "res/report_temp/report.xls";
+//	private static String REPORT_DATE_TIME_FORMAT = "yyyy_MM_dd_HH_mm_ss";
+//	private static String CURRENT_REPORT_FILE_PATH; 
+//
+//
+//	public static void initialize()
+//	{
+//		createReport_updated();
+//	}
+//
+//	private static String getReportTime()
+//	{
+//		DateFormat dateFormat = new SimpleDateFormat(REPORT_DATE_TIME_FORMAT);
+//		Calendar cal = Calendar.getInstance();
+//		return dateFormat.format(cal.getTime());
+//	}
+//
+//	private static void createReport_updated(){
+//		FileInputStream templateFile;
+//		HSSFWorkbook workbook = null;
+//		try{
+//			CURRENT_REPORT_FILE_PATH = "reports/report.xls";
+//
+//			File currentReportFile = new File(CURRENT_REPORT_FILE_PATH);
+//			if(currentReportFile.exists())
+//			{
+//				templateFile = new FileInputStream(CURRENT_REPORT_FILE_PATH);
+//			}
+//			else
+//			{
+//				templateFile = new FileInputStream(TEMPLATE_REPORT_FILE_PATH);
+//			}
+//			workbook = new HSSFWorkbook(templateFile);
+//			templateFile.close();
+//			FileOutputStream outFile =new FileOutputStream(currentReportFile);
+//			System.out.println("[Report] File path: " + currentReportFile.getAbsolutePath());
+//			workbook.write(outFile);
+//			outFile.close();
+//		}
+//		catch(Exception e){
+//			System.out.println(e.getMessage());
+//		}
+//	}
+//
+//	private static Cell findRow(HSSFSheet sheet, String cellContent) {
+//		for (Row row : sheet) {
+//			for (Cell cell : row) {
+//				if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
+//					if (cell.getRichStringCellValue().getString().trim().equals(cellContent)) {
+//						return cell;
+//					}
+//				}
+//			}
+//		}               
+//		return null;
+//	}
+//
+//	static Hashtable<String , String> getTestCaseResultMap(String moduleName) {
+//		Hashtable<String, String> map = null;
+//		FileInputStream templateFile;
+//		HSSFWorkbook workbook = null;
+//		try{
+//			map = new Hashtable<String, String>();
+//			File file = new File(CURRENT_REPORT_FILE_PATH);
+//			if(file.exists())
+//			{
+//				templateFile = new FileInputStream(CURRENT_REPORT_FILE_PATH);
+//			}
+//			else
+//			{
+//				templateFile = new FileInputStream(TEMPLATE_REPORT_FILE_PATH);
+//			}
+//			workbook = new HSSFWorkbook(templateFile);
+//			HSSFSheet sheet = workbook.getSheet(moduleName);
+//			for (Row row : sheet) {
+//				Cell tcName = row.getCell(0);
+//				Cell tcResult = row.getCell(1);
+//				map.put(tcName.getStringCellValue(), tcResult.getStringCellValue());
+//			}
+//			templateFile.close();
+//		}catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//
+//		return map;
+//	}
+//
+//	public static void resetAllTcResutl(String moduleName) {
+//
+//		FileInputStream templateFile;
+//		HSSFWorkbook workbook = null;
+//		try{
+//			File file = new File(CURRENT_REPORT_FILE_PATH);
+//			if(file.exists())
+//			{
+//				templateFile = new FileInputStream(CURRENT_REPORT_FILE_PATH);
+//			}
+//			else
+//			{
+//				templateFile = new FileInputStream(TEMPLATE_REPORT_FILE_PATH);
+//			}
+//			workbook = new HSSFWorkbook(templateFile);
+//			HSSFSheet sheet = workbook.getSheet(moduleName);
+//
+//			for (Row row : sheet) {
+//				Cell tcName = row.getCell(0);
+//				Cell tcResult = row.getCell(1);
+//				tcResult.setCellValue(TCResult.NR.toString());
+//			}
+//			
+//			templateFile.close();
+//
+//			FileOutputStream outFile = new FileOutputStream(file);
+//			workbook.write(outFile);
+//			outFile.close();
+//
+//		}catch (Exception e) {
+//			System.out.println(e.getMessage());
+//		}
+//
+//	}
+//
+//	static void updateExcelResult(String module, String tcid,String result){
+//		try{
+//			
+//			FileInputStream file = new FileInputStream(CURRENT_REPORT_FILE_PATH);
+//			HSSFWorkbook workbook = new HSSFWorkbook(file);
+//			HSSFSheet sheet = workbook.getSheet(module);
+//
+//			Cell cell = findRow(sheet,tcid);
+//			Cell resultCell = null;
+//			HSSFRow sheetrow = sheet.getRow(cell.getRowIndex());
+//			resultCell = sheetrow.getCell(cell.getColumnIndex() + 1);
+//			resultCell.setCellValue(result);
+//			file.close();
+//			//System.out.println("[Report] updated, Module : " + module + ", TC : " + tcid + ", Result : "+result);
+//
+//			FileOutputStream outFile =new FileOutputStream(new File(CURRENT_REPORT_FILE_PATH));
+//			workbook.write(outFile);
+//			outFile.close();
+//			
+//		} catch (Exception e) {
+//			System.out.println(e.getMessage());
+//		}
+//	}
+	
+	public static void exportReport(String reportFilePath, List<AppInfo> apps)
+	{
+		try{
+			HSSFWorkbook workbook = new HSSFWorkbook();
+			HSSFSheet worksheet = workbook.createSheet("Report");
+			
+			String[] headers = new String[] { "App Name", "Install", "Launch", "Exploratory","Close","Uninstall","Crash","Result" };
+
+			int rowNumber = 0;
+			HSSFRow nRow = worksheet.createRow(rowNumber++);
+			
+			for (int headerIndex=0; headerIndex<headers.length; headerIndex++) {
+				nRow.createCell(headerIndex).setCellValue(headers[headerIndex]);
+			}
+			
+			for (AppInfo appInfo : apps) {
+				int columnNumber = 0;
+				nRow = worksheet.createRow(rowNumber++);
+				
+				ArrayList<StringProperty> propertyList = new ArrayList<StringProperty>();
+				propertyList.add(appInfo.getName());
+				propertyList.add(appInfo.getInstall());
+				propertyList.add(appInfo.getLaunch());
+				propertyList.add(appInfo.getExploratory());
+				propertyList.add(appInfo.getClose());
+				propertyList.add(appInfo.getUninstall());
+				propertyList.add(appInfo.getDetectCrash());
+				for (StringProperty stringProperty : propertyList) {
+					HSSFCell cell = nRow.createCell(columnNumber++);
+					cell.setCellValue(stringProperty.getValue().toString());
+				}
+				
+				HSSFCell cell = nRow.createCell(columnNumber++);
+				cell.setCellValue(getFinalResult(propertyList)+"");
+				
+			}
+
+			File reportFile = new File(reportFilePath);
+			if(!reportFile.getParentFile().exists())
+				reportFile.getParentFile().mkdir();
+			FileOutputStream fileOutputStream = new FileOutputStream(reportFile);
+			workbook.write(fileOutputStream);
+			fileOutputStream.close();
+			
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+
+	private static TCResult getFinalResult(ArrayList<StringProperty> propertyList) {
+//		boolean isPass = false;
+//		for (HSSFCell hssfCell : cellList) {
+//			if(hssfCell.getStringCellValue().toString().equals(TCResult.Fail+""))
+//				return TCResult.Fail;
+//			else if(hssfCell.getStringCellValue().toString().equals(TCResult.Pass+""))
+//				isPass = true;
+//		}
+//		if(isPass)
+//			return TCResult.Pass;
+//		else
+//			return TCResult.NT;
+		
+		boolean isPass = false;
+		for (int index = 1; index < propertyList.size(); index++) {
+			if(propertyList.get(index).getValue().toString().equals(TCResult.Fail+""))
+				return TCResult.Fail;
+			else if(propertyList.get(index).getValue().toString().equals(TCResult.Pass+""))
+				isPass = true;
+		}
+		if(isPass)
+			return TCResult.Pass;
+		else
+			return TCResult.NT;
+	}
+
+}

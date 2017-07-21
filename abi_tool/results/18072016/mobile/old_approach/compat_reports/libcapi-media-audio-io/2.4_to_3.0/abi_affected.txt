@@ -1,0 +1,3 @@
+audio_in_get_latency
+audio_in_set_device
+audio_out_get_latency

@@ -1,0 +1,3 @@
+_ZN9MsgPlugin13setConfigDataEPK13MSG_SETTING_S
+_Z24MsgStorageChangeListenerhP18MSG_MESSAGE_INFO_S
+_ZN9MsgPlugin13getConfigDataEP13MSG_SETTING_S

@@ -1,0 +1,5 @@
+pa_cli_protocol_get
+pa_cli_protocol_ref
+pa_cli_protocol_disconnect
+pa_cli_protocol_connect
+pa_cli_protocol_unref

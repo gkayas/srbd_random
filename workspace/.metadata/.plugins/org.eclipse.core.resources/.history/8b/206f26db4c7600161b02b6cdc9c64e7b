@@ -1,0 +1,29 @@
+package com.turbovnc.vncviewer;
+
+public class Constants {
+	
+	//device-config.ini keys
+	public final static String LIVE_MODE = "LIVE_MODE";
+	public final static String PLATFORM_VERSION = "PLATFORM_VERSION";
+	public final static String PROFILE_NAME = "PROFILE_NAME";
+	public final static String PROFILE_TYPE = "PROFILE_TYPE";
+	public final static String EMULATOR_TYPE = "EMULATOR_TYPE";
+	public final static String REFRESH_TIME = "REFRESH_WAIT_TIME";
+	public final static String ASSERT_MODE = "ASSERT_MODE";
+	public final static String SHOW_SYS_MESSAGE = "SHOW_SYS_MESSAGE";
+	public final static String SEARCH_TIME = "SEARCH_WAIT_TIME";
+	public final static String INTERFACE_TYPE = "INTERFACE_TYPE";
+	public final static String CAPTURE_REF_IMAGE_PATH = "CAPTURE_REF_IMAGE_PATH";
+	public final static String DEVICE_VIDEO_PATH = "DEVICE_VIDEO_PATH";
+	public final static String DEVICE_IMAGE_PATH = "DEVICE_IMAGE_PATH";
+	public final static String DEVICE_MUSIC_PATH = "DEVICE_MUSIC_PATH";
+	
+	public final static String PLATFORM_PROFILE = "PLATFORM_PROFILE";
+	public final static String PLATFORM_ARCHITECTURE = "PLATFORM_ARCHITECTURE";
+	
+	
+	
+	//Paths
+	public final static String DEVICE_CONFIG_FILE ="device_config.ini";
+
+}

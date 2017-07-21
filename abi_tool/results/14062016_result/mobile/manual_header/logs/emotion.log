@@ -1,0 +1,54 @@
+Temporary header file '/tmp/1xqGQ9aofn/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/emotion-1/Emotion.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/emotion-1/Emotion_Eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/emotion-1/Emotion_Generic_Plugin.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/emotion-1/Emotion_Legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/emotion-1/emotion_object.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/emotion-1/emotion_object.eo.legacy.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/1xqGQ9aofn/dump1.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /tmp/1xqGQ9aofn/dump1.h:5:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/emotion-1/Emotion_Generic_Plugin.h:16:14: error: use of enum ‘_Emotion_Generic_Cmd’ without previous declaration
+ typedef enum _Emotion_Generic_Cmd Emotion_Generic_Cmd;
+              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/emotion-1/Emotion_Generic_Plugin.h:16:54: error: invalid type in declaration before ‘;’ token
+ typedef enum _Emotion_Generic_Cmd Emotion_Generic_Cmd;
+                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/emotion-1/Emotion_Generic_Plugin.h:17:14: error: use of enum ‘_Emotion_Generic_Result’ without previous declaration
+ typedef enum _Emotion_Generic_Result Emotion_Generic_Result;
+              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/emotion-1/Emotion_Generic_Plugin.h:17:60: error: invalid type in declaration before ‘;’ token
+ typedef enum _Emotion_Generic_Result Emotion_Generic_Result;
+                                                            ^
+
+Temporary header file '/tmp/1xqGQ9aofn/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/emotion-1/Emotion.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/emotion-1/Emotion_Eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/emotion-1/Emotion_Generic_Plugin.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/emotion-1/Emotion_Legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/emotion-1/emotion_object.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/emotion-1/emotion_object.eo.legacy.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/1xqGQ9aofn/dump2.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /tmp/1xqGQ9aofn/dump2.h:5:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/emotion-1/Emotion_Generic_Plugin.h:16:14: error: use of enum ‘_Emotion_Generic_Cmd’ without previous declaration
+ typedef enum _Emotion_Generic_Cmd Emotion_Generic_Cmd;
+              ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/emotion-1/Emotion_Generic_Plugin.h:16:54: error: invalid type in declaration before ‘;’ token
+ typedef enum _Emotion_Generic_Cmd Emotion_Generic_Cmd;
+                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/emotion-1/Emotion_Generic_Plugin.h:17:14: error: use of enum ‘_Emotion_Generic_Result’ without previous declaration
+ typedef enum _Emotion_Generic_Result Emotion_Generic_Result;
+              ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/emotion-1/Emotion_Generic_Plugin.h:17:60: error: invalid type in declaration before ‘;’ token
+ typedef enum _Emotion_Generic_Result Emotion_Generic_Result;
+                                                            ^
+

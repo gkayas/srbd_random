@@ -1,0 +1,8 @@
+package test;
+
+public class Custom  {
+	
+	public String toString() {
+		return "I am custom";
+	}
+}

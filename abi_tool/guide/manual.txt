@@ -1,0 +1,4 @@
+1. Dowloanload old rpm in "old" folder and "new" rpm in new folder
+2. Check NEW.xml and OLD.xml, correct any wrong path if found.
+3. Run Command:  abi-compliance-checker -s  <libname> -old OLD.xml -new NEW.xml -list-affected sysroot <get_sys_root_path from abi.conf of the old approach> -l-full <libname> -show-retval -log-path logs/<libname>.log
+4. To generate the excel file needed for manual execution, list the package names in "package_names.txt" and run generate_report.jar.

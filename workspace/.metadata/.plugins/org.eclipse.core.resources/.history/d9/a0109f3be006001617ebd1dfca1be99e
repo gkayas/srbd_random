@@ -1,0 +1,23 @@
+
+public class NumberNode extends Node{
+	
+	
+	@Override
+	public String getType() {
+		return "number";
+	}
+
+	@Override
+	public int getValue() {
+		
+		return 0;
+	}
+
+	@Override
+	public int getOperation() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+}

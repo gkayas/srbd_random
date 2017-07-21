@@ -1,0 +1,131 @@
+Temporary header file '/tmp/gwaz_nbY7E/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/device/device-error.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/device/battery.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/device/callback.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/device/display.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/device/haptic.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/device/led.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/device/power.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/system/device.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/system/device-error.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/gwaz_nbY7E/dump1.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /tmp/gwaz_nbY7E/dump1.h:10:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/system/device.h:62:34: error: redeclaration of ‘DEVICE_BATTERY_LEVEL_EMPTY’
+     DEVICE_BATTERY_LEVEL_EMPTY = 0,      /**< The battery goes empty. Prepare for the safe termination of the application, because the device starts a shutdown process soon after entering this level. */
+                                  ^
+In file included from /tmp/gwaz_nbY7E/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/device/battery.h:40:5: note: previous declaration ‘device_battery_level_e DEVICE_BATTERY_LEVEL_EMPTY’
+     DEVICE_BATTERY_LEVEL_EMPTY = 0,  /**< The battery goes empty. Prepare for the safe termination of the application, because the device starts a shutdown process soon after entering this level. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump1.h:10:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/system/device.h:63:5: error: redeclaration of ‘DEVICE_BATTERY_LEVEL_CRITICAL’
+     DEVICE_BATTERY_LEVEL_CRITICAL,  /**< The battery charge is at a critical state. You may have to stop using multimedia features, because they are not guaranteed to work correctly at this battery status. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/device/battery.h:41:5: note: previous declaration ‘device_battery_level_e DEVICE_BATTERY_LEVEL_CRITICAL’
+     DEVICE_BATTERY_LEVEL_CRITICAL,   /**< The battery charge is at a critical state. You may have to stop using multimedia features, because they are not guaranteed to work correctly at this battery status. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump1.h:10:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/system/device.h:64:5: error: redeclaration of ‘DEVICE_BATTERY_LEVEL_LOW’
+     DEVICE_BATTERY_LEVEL_LOW,       /**< The battery has little charge left. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/device/battery.h:42:5: note: previous declaration ‘device_battery_level_e DEVICE_BATTERY_LEVEL_LOW’
+     DEVICE_BATTERY_LEVEL_LOW,        /**< The battery has little charge left. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump1.h:10:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/system/device.h:65:5: error: redeclaration of ‘DEVICE_BATTERY_LEVEL_HIGH’
+     DEVICE_BATTERY_LEVEL_HIGH,    /**< The battery status is not to be careful. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/device/battery.h:43:5: note: previous declaration ‘device_battery_level_e DEVICE_BATTERY_LEVEL_HIGH’
+     DEVICE_BATTERY_LEVEL_HIGH,       /**< The battery status is not to be careful. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump1.h:10:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/system/device.h:66:5: error: redeclaration of ‘DEVICE_BATTERY_LEVEL_FULL’
+     DEVICE_BATTERY_LEVEL_FULL,      /**< The battery status is full. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/device/battery.h:44:5: note: previous declaration ‘device_battery_level_e DEVICE_BATTERY_LEVEL_FULL’
+     DEVICE_BATTERY_LEVEL_FULL,       /**< The battery status is full. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump1.h:10:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/system/device.h:67:3: error: conflicting declaration ‘typedef enum device_battery_level_e device_battery_level_e’
+ } device_battery_level_e;
+   ^
+In file included from /tmp/gwaz_nbY7E/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/device/battery.h:45:3: error: ‘device_battery_level_e’ has a previous declaration as ‘typedef enum device_battery_level_e device_battery_level_e’
+ } device_battery_level_e;
+   ^
+
+Temporary header file '/tmp/gwaz_nbY7E/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/device/device-error.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/device/battery.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/device/callback.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/device/display.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/device/haptic.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/device/ir.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/device/led.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/device/power.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/system/device.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/system/device-error.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/gwaz_nbY7E/dump2.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /tmp/gwaz_nbY7E/dump2.h:11:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/system/device.h:59:34: error: redeclaration of ‘DEVICE_BATTERY_LEVEL_EMPTY’
+     DEVICE_BATTERY_LEVEL_EMPTY = 0,      /**< The battery goes empty. Prepare for the safe termination of the application, because the device starts a shutdown process soon after entering this level. */
+                                  ^
+In file included from /tmp/gwaz_nbY7E/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/device/battery.h:39:5: note: previous declaration ‘device_battery_level_e DEVICE_BATTERY_LEVEL_EMPTY’
+     DEVICE_BATTERY_LEVEL_EMPTY = 0,  /**< The battery goes empty. Prepare for the safe termination of the application, because the device starts a shutdown process soon after entering this level. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump2.h:11:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/system/device.h:60:5: error: redeclaration of ‘DEVICE_BATTERY_LEVEL_CRITICAL’
+     DEVICE_BATTERY_LEVEL_CRITICAL,  /**< The battery charge is at a critical state. You may have to stop using multimedia features, because they are not guaranteed to work correctly at this battery status. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/device/battery.h:40:5: note: previous declaration ‘device_battery_level_e DEVICE_BATTERY_LEVEL_CRITICAL’
+     DEVICE_BATTERY_LEVEL_CRITICAL,   /**< The battery charge is at a critical state. You may have to stop using multimedia features, because they are not guaranteed to work correctly at this battery status. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump2.h:11:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/system/device.h:61:5: error: redeclaration of ‘DEVICE_BATTERY_LEVEL_LOW’
+     DEVICE_BATTERY_LEVEL_LOW,       /**< The battery has little charge left. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/device/battery.h:41:5: note: previous declaration ‘device_battery_level_e DEVICE_BATTERY_LEVEL_LOW’
+     DEVICE_BATTERY_LEVEL_LOW,        /**< The battery has little charge left. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump2.h:11:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/system/device.h:62:5: error: redeclaration of ‘DEVICE_BATTERY_LEVEL_HIGH’
+     DEVICE_BATTERY_LEVEL_HIGH,    /**< The battery status is not to be careful. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/device/battery.h:42:5: note: previous declaration ‘device_battery_level_e DEVICE_BATTERY_LEVEL_HIGH’
+     DEVICE_BATTERY_LEVEL_HIGH,       /**< The battery status is not to be careful. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump2.h:11:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/system/device.h:63:5: error: redeclaration of ‘DEVICE_BATTERY_LEVEL_FULL’
+     DEVICE_BATTERY_LEVEL_FULL,      /**< The battery status is full. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/device/battery.h:43:5: note: previous declaration ‘device_battery_level_e DEVICE_BATTERY_LEVEL_FULL’
+     DEVICE_BATTERY_LEVEL_FULL,       /**< The battery status is full. */
+     ^
+In file included from /tmp/gwaz_nbY7E/dump2.h:11:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/system/device.h:64:3: error: conflicting declaration ‘typedef enum device_battery_level_e device_battery_level_e’
+ } device_battery_level_e;
+   ^
+In file included from /tmp/gwaz_nbY7E/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/device/battery.h:44:3: error: ‘device_battery_level_e’ has a previous declaration as ‘typedef enum device_battery_level_e device_battery_level_e’
+ } device_battery_level_e;
+   ^
+

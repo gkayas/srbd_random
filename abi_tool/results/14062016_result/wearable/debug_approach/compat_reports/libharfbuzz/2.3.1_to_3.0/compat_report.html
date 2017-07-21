@@ -1,0 +1,827 @@
+<!-- kind:binary;verdict:compatible;affected:0;added:0;removed:0;type_problems_high:0;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:0;changed_constants:0;type_changes_other:23;tool_version:1.99.18 -->
+<!-- kind:source;verdict:compatible;affected:0;added:4;removed:0;type_problems_high:0;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:0;changed_constants:0;type_changes_other:23;tool_version:1.99.18 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="libharfbuzz, compatibility, API, ABI, report" />
+    <meta name="description" content="API/ABI compatibility report for the libharfbuzz object between 2.3.1 and 3.0 versions" />
+    <title>
+        libharfbuzz: 2.3.1 to 3.0 compatibility report
+    </title>
+    <style type="text/css">
+    body {
+    font-family:Arial, sans-serif;
+    background-color:White;
+    color:Black;
+}
+hr {
+    color:Black;
+    background-color:Black;
+    height:1px;
+    border:0;
+}
+h1 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.625em;
+}
+h2 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.25em;
+    white-space:nowrap;
+}
+span.section {
+    font-weight:bold;
+    cursor:pointer;
+    color:#003E69;
+    white-space:nowrap;
+    margin-left:5px;
+}
+span.new_sign {
+    font-weight:bold;
+    margin-left:26px;
+    color:#003E69;
+}
+span.new_sign_lbl {
+    margin-left:28px;
+    font-size:0.875em;
+    color:Black;
+}
+span:hover.section {
+    color:#336699;
+}
+span.sect_aff {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:#cc3300;
+}
+span.sect_info {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:Black;
+}
+span.ext {
+    font-weight:100;
+}
+span.h_name {
+    color:#cc3300;
+    font-size:0.875em;
+    font-weight:bold;
+}
+div.h_list, div.lib_list {
+    font-size:0.94em;
+    padding-left:5px;
+}
+span.ns {
+    color:#408080;
+    font-size:0.94em;
+}
+span.lib_name {
+    color:Green;
+    font-size:0.875em;
+    font-weight:bold;
+}
+span.iname {
+    font-weight:bold;
+    color:#003E69;
+    margin-left:5px;
+}
+span.iname_b {
+    font-weight:bold;
+    font-size:1.1em;
+}
+span.iname_a {
+    color:#333333;
+    font-weight:bold;
+    font-size:0.94em;
+}
+span.sym_p {
+    font-weight:normal;
+    white-space:normal;
+}
+div.affect {
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:0.87em;
+    font-style:italic;
+    line-height:0.75em;
+}
+div.affected {
+    padding-left:30px;
+    padding-top:10px;
+}
+table.ptable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:1em;
+    margin-left:15px;
+    margin-top:3px;
+    margin-bottom:3px;
+    width:900px;
+    
+}
+table.ptable td {
+    border:1px solid gray;
+    padding: 3px;
+    font-size:0.875em;
+    text-align:left;
+    vertical-align:top;
+}
+table.vtable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:16px;
+    margin-left:30px;
+    margin-top:10px;
+}
+table.vtable td {
+    border:1px solid gray;
+    word-wrap:break-word;
+    padding: 3px;
+    font-size:0.875em;
+    max-width:450px;
+    vertical-align:top;
+}
+table.ptable th, table.vtable th {
+    background-color:#eeeeee;
+    font-weight:bold;
+    color:#333333;
+    font-family:Verdana, Arial;
+    font-size:0.81em;
+    border:1px solid gray;
+    text-align:center;
+    vertical-align:top;
+    white-space:nowrap;
+    padding: 3px;
+}
+table.summary {
+    border-collapse:collapse;
+    border:1px outset black;
+}
+table.summary th {
+    background-color:#eeeeee;
+    font-weight:100;
+    text-align:left;
+    font-size:0.94em;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px;
+}
+table.summary td {
+    text-align:right;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px 5px 3px 10px;
+}
+span.mangled {
+    padding-left:15px;
+    font-size:0.875em;
+    cursor:text;
+    color:#444444;
+}
+span.sym_ver {
+    color:#333333;
+    white-space:nowrap;
+    font-family:"DejaVu Sans Mono", Monospace;
+}
+span.attr {
+    color:#333333;
+    font-weight:100;
+}
+span.color_p {
+    font-style:italic;
+    color:Brown;
+}
+span.p {
+    font-style:italic;
+}
+span.fp {
+    font-style:italic;
+    background-color:#FFCCCC;
+}
+span.ttype {
+    font-weight:100;
+}
+span.nowrap {
+    white-space:nowrap;
+}
+span.value {
+    white-space:nowrap;
+    font-weight:bold;
+}
+td.passed {
+    background-color:#CCFFCC;
+}
+td.warning {
+    background-color:#F4F4AF;
+}
+td.failed {
+    background-color:#FFCCCC;
+}
+td.new {
+    background-color:#C6DEFF;
+}
+.top_ref {
+    font-size:0.69em;
+}
+.footer {
+    font-size:0.75em;
+}
+
+.tabset {
+    float:left;
+}
+a.tab {
+    border:1px solid Black;
+    float:left;
+    margin:0px 5px -1px 0px;
+    padding:3px 5px 3px 5px;
+    position:relative;
+    font-size:0.875em;
+    background-color:#DDD;
+    text-decoration:none;
+    color:Black;
+}
+a.disabled:hover
+{
+    color:Black;
+    background:#EEE;
+}
+a.active:hover
+{
+    color:Black;
+    background:White;
+}
+a.active {
+    border-bottom-color:White;
+    background-color:White;
+}
+div.tab {
+    border-top:1px solid Black;
+    padding:0px;
+    width:100%;
+    clear:both;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+    function showContent(header, id)
+{
+    e = document.getElementById(id);
+    if(e.style.display == 'none')
+    {
+        e.style.display = 'block';
+        e.style.visibility = 'visible';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[&minus;]");
+    }
+    else
+    {
+        e.style.display = 'none';
+        e.style.visibility = 'hidden';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[+]");
+    }
+}
+function initTabs()
+{
+    var url = window.location.href;
+    if(url.indexOf('_Source_')!=-1 || url.indexOf('#Source')!=-1)
+    {
+        var tab1 = document.getElementById('BinaryID');
+        var tab2 = document.getElementById('SourceID');
+        tab1.className='tab disabled';
+        tab2.className='tab active';
+    }
+    var sets = document.getElementsByTagName('div');
+    for (var i = 0; i < sets.length; i++)
+    {
+        if (sets[i].className.indexOf('tabset') != -1)
+        {
+            var tabs = [];
+            var links = sets[i].getElementsByTagName('a');
+            for (var j = 0; j < links.length; j++)
+            {
+                if (links[j].className.indexOf('tab') != -1)
+                {
+                    tabs.push(links[j]);
+                    links[j].tabs = tabs;
+                    var tab = document.getElementById(links[j].href.substr(links[j].href.indexOf('#') + 1));
+                    //reset all tabs on start
+                    if (tab)
+                    {
+                        if (links[j].className.indexOf('active')!=-1) {
+                            tab.style.display = 'block';
+                        }
+                        else {
+                            tab.style.display = 'none';
+                        }
+                    }
+                    links[j].onclick = function()
+                    {
+                        var tab = document.getElementById(this.href.substr(this.href.indexOf('#') + 1));
+                        if (tab)
+                        {
+                            //reset all tabs before change
+                            for (var k = 0; k < this.tabs.length; k++)
+                            {
+                                document.getElementById(this.tabs[k].href.substr(this.tabs[k].href.indexOf('#') + 1)).style.display = 'none';
+                                this.tabs[k].className = this.tabs[k].className.replace('active', 'disabled');
+                            }
+                            this.className = 'tab active';
+                            tab.style.display = 'block';
+                            // window.location.hash = this.id.replace('ID', '');
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(url.indexOf('#')!=-1) {
+        location.href=location.href;
+    }
+}
+if (window.addEventListener) window.addEventListener('load', initTabs, false);
+else if (window.attachEvent) window.attachEvent('onload', initTabs);
+    -->
+    </script>
+    </head><body><a name='Source'></a><a name='Binary'></a><a name='Top'></a><h1>API compatibility report for the <span style='color:Blue;'>libharfbuzz.so</span> object between <span style='color:Red;'>2.3.1</span> and <span style='color:Red;'>3.0</span> versions on <span style='color:Blue;'>ARM</span></h1>
+
+            <br/>
+            <div class='tabset'>
+            <a id='BinaryID' href='#BinaryTab' class='tab active'>Binary<br/>Compatibility</a>
+            <a id='SourceID' href='#SourceTab' style='margin-left:3px' class='tab disabled'>Source<br/>Compatibility</a>
+            </div><div id='BinaryTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libharfbuzz</td></tr>
+<tr><th>Version #1</th><td>2.3.1 (gcc 4.6.4)</td></tr>
+<tr><th>Version #2</th><td>3.0 (gcc 4.9.2)</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>Subject</th><td width='150px'>Binary Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>29</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>16</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>255 / 287</td></tr>
+<tr><th>Verdict</th><td><span style='color:Green;'><b>Compatible</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td>0</td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Binary_Changes_In_Types' style='color:Blue;'>23</a></td></tr>
+</table>
+
+<a name='Other_Binary_Changes'></a><a name='Other_Binary_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (23)</h2><hr/>
+<span class='h_name'>gunicode.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> GUnicodeScript (23)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>G_UNICODE_SCRIPT_BASSA_VAH</b> with value <b>103</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>G_UNICODE_SCRIPT_CAUCASIAN_ALBANIAN</b> with value <b>104</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>G_UNICODE_SCRIPT_DUPLOYAN</b> with value <b>105</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>G_UNICODE_SCRIPT_ELBASAN</b> with value <b>106</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>5</th>
+<td>The member <b>G_UNICODE_SCRIPT_GRANTHA</b> with value <b>107</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>6</th>
+<td>The member <b>G_UNICODE_SCRIPT_KHOJKI</b> with value <b>108</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>7</th>
+<td>The member <b>G_UNICODE_SCRIPT_KHUDAWADI</b> with value <b>109</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>8</th>
+<td>The member <b>G_UNICODE_SCRIPT_LINEAR_A</b> with value <b>110</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>9</th>
+<td>The member <b>G_UNICODE_SCRIPT_MAHAJANI</b> with value <b>111</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>10</th>
+<td>The member <b>G_UNICODE_SCRIPT_MANICHAEAN</b> with value <b>112</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>11</th>
+<td>The member <b>G_UNICODE_SCRIPT_MENDE_KIKAKUI</b> with value <b>113</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>12</th>
+<td>The member <b>G_UNICODE_SCRIPT_MODI</b> with value <b>114</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>13</th>
+<td>The member <b>G_UNICODE_SCRIPT_MRO</b> with value <b>115</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>14</th>
+<td>The member <b>G_UNICODE_SCRIPT_NABATAEAN</b> with value <b>116</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>15</th>
+<td>The member <b>G_UNICODE_SCRIPT_OLD_NORTH_ARABIAN</b> with value <b>117</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>16</th>
+<td>The member <b>G_UNICODE_SCRIPT_OLD_PERMIC</b> with value <b>118</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>17</th>
+<td>The member <b>G_UNICODE_SCRIPT_PAHAWH_HMONG</b> with value <b>119</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>18</th>
+<td>The member <b>G_UNICODE_SCRIPT_PALMYRENE</b> with value <b>120</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>19</th>
+<td>The member <b>G_UNICODE_SCRIPT_PAU_CIN_HAU</b> with value <b>121</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>20</th>
+<td>The member <b>G_UNICODE_SCRIPT_PSALTER_PAHLAVI</b> with value <b>122</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>21</th>
+<td>The member <b>G_UNICODE_SCRIPT_SIDDHAM</b> with value <b>123</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>22</th>
+<td>The member <b>G_UNICODE_SCRIPT_TIRHUTA</b> with value <b>124</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>23</th>
+<td>The member <b>G_UNICODE_SCRIPT_WARANG_CITI</b> with value <b>125</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (2)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>hb_glib_script_from_script&#160;<span class='sym_p'>(&#160;<span class='nowrap'>hb_script_t <i>script</i> )</span></span></span><br/>
+<div class='affect'>Return value has base type &#39;enum GUnicodeScript&#39;.</div>
+<span class='iname_a'>hb_glib_script_to_script&#160;<span class='sym_p'>(&#160;<span class='nowrap'>GUnicodeScript <span class='fp'>script</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;script&#39; has base type &#39;enum GUnicodeScript&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (29)</h2><hr/>
+<div class='h_list'>
+freetype.h<br/>
+ftimage.h<br/>
+ftsystem.h<br/>
+fttypes.h<br/>
+garray.h<br/>
+gunicode.h<br/>
+hb-atomic-private.hh<br/>
+hb-blob.h<br/>
+hb-buffer-private.hh<br/>
+hb-buffer.h<br/>
+hb-common.h<br/>
+hb-face-private.hh<br/>
+hb-face.h<br/>
+hb-font-private.hh<br/>
+hb-font.h<br/>
+hb-mutex-private.hh<br/>
+hb-object-private.hh<br/>
+hb-ot-layout.h<br/>
+hb-private.hh<br/>
+hb-set-private.hh<br/>
+hb-set.h<br/>
+hb-shape-plan-private.hh<br/>
+hb-shape-plan.h<br/>
+hb-shape.h<br/>
+hb-shaper-private.hh<br/>
+hb-unicode-private.hh<br/>
+hb-unicode.h<br/>
+pthreadtypes.h<br/>
+stdint.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (16)</h2><hr/>
+<div class='h_list'>
+hb-blob.cc<br/>
+hb-buffer-serialize.cc<br/>
+hb-buffer.cc<br/>
+hb-common.cc<br/>
+hb-face.cc<br/>
+hb-font.cc<br/>
+hb-ft.cc<br/>
+hb-glib.cc<br/>
+hb-ot-font.cc<br/>
+hb-ot-layout.cc<br/>
+hb-ot-shape.cc<br/>
+hb-ot-tag.cc<br/>
+hb-set.cc<br/>
+hb-shape-plan.cc<br/>
+hb-shape.cc<br/>
+hb-unicode.cc<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libharfbuzz.so.0.940.0<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><div id='SourceTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libharfbuzz</td></tr>
+<tr><th>Version #1</th><td>2.3.1 (gcc 4.6.4)</td></tr>
+<tr><th>Version #2</th><td>3.0 (gcc 4.9.2)</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>Subject</th><td width='150px'>Source Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>29</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>16</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>255 / 287</td></tr>
+<tr><th>Verdict</th><td><span style='color:Green;'><b>Compatible</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Source_Added' style='color:Blue;'>4</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Types' style='color:Blue;'>23</a></td></tr>
+</table>
+
+<a name='Source_Added'></a><h2>Added Symbols (4)</h2><hr/>
+<span class='h_name'>hb-face-private.hh</span><br/>
+<span class="iname">_hb_face_nil <span class='attr'>[data]</span></span><br/>
+<br/>
+<span class='h_name'>hb-private.hh</span><br/>
+<span class="iname">_hb_options <span class='attr'>[data]</span></span><br/>
+<br/>
+<span class='h_name'>hb-unicode-private.hh</span><br/>
+<span class="iname">_hb_modified_combining_class <span class='attr'>[data]</span></span><br/>
+<span class="iname">_hb_unicode_funcs_nil <span class='attr'>[data]</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes'></a><a name='Other_Source_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (23)</h2><hr/>
+<span class='h_name'>gunicode.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> GUnicodeScript (23)</span>
+<br/>
+<div id="c_3" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>G_UNICODE_SCRIPT_BASSA_VAH</b> with value <b>103</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>G_UNICODE_SCRIPT_CAUCASIAN_ALBANIAN</b> with value <b>104</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>G_UNICODE_SCRIPT_DUPLOYAN</b> with value <b>105</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>G_UNICODE_SCRIPT_ELBASAN</b> with value <b>106</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>5</th>
+<td>The member <b>G_UNICODE_SCRIPT_GRANTHA</b> with value <b>107</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>6</th>
+<td>The member <b>G_UNICODE_SCRIPT_KHOJKI</b> with value <b>108</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>7</th>
+<td>The member <b>G_UNICODE_SCRIPT_KHUDAWADI</b> with value <b>109</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>8</th>
+<td>The member <b>G_UNICODE_SCRIPT_LINEAR_A</b> with value <b>110</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>9</th>
+<td>The member <b>G_UNICODE_SCRIPT_MAHAJANI</b> with value <b>111</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>10</th>
+<td>The member <b>G_UNICODE_SCRIPT_MANICHAEAN</b> with value <b>112</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>11</th>
+<td>The member <b>G_UNICODE_SCRIPT_MENDE_KIKAKUI</b> with value <b>113</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>12</th>
+<td>The member <b>G_UNICODE_SCRIPT_MODI</b> with value <b>114</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>13</th>
+<td>The member <b>G_UNICODE_SCRIPT_MRO</b> with value <b>115</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>14</th>
+<td>The member <b>G_UNICODE_SCRIPT_NABATAEAN</b> with value <b>116</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>15</th>
+<td>The member <b>G_UNICODE_SCRIPT_OLD_NORTH_ARABIAN</b> with value <b>117</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>16</th>
+<td>The member <b>G_UNICODE_SCRIPT_OLD_PERMIC</b> with value <b>118</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>17</th>
+<td>The member <b>G_UNICODE_SCRIPT_PAHAWH_HMONG</b> with value <b>119</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>18</th>
+<td>The member <b>G_UNICODE_SCRIPT_PALMYRENE</b> with value <b>120</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>19</th>
+<td>The member <b>G_UNICODE_SCRIPT_PAU_CIN_HAU</b> with value <b>121</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>20</th>
+<td>The member <b>G_UNICODE_SCRIPT_PSALTER_PAHLAVI</b> with value <b>122</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>21</th>
+<td>The member <b>G_UNICODE_SCRIPT_SIDDHAM</b> with value <b>123</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>22</th>
+<td>The member <b>G_UNICODE_SCRIPT_TIRHUTA</b> with value <b>124</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>23</th>
+<td>The member <b>G_UNICODE_SCRIPT_WARANG_CITI</b> with value <b>125</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_4')">
+[+] affected symbols (2)</span>
+<div id="c_4" style="display:none;">
+<div class='affected'><span class='iname_a'>hb_glib_script_from_script&#160;<span class='sym_p'>(&#160;<span class='nowrap'>hb_script_t <i>script</i> )</span></span></span><br/>
+<div class='affect'>Return value has base type &#39;enum GUnicodeScript&#39;.</div>
+<span class='iname_a'>hb_glib_script_to_script&#160;<span class='sym_p'>(&#160;<span class='nowrap'>GUnicodeScript <span class='fp'>script</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;script&#39; has base type &#39;enum GUnicodeScript&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (29)</h2><hr/>
+<div class='h_list'>
+freetype.h<br/>
+ftimage.h<br/>
+ftsystem.h<br/>
+fttypes.h<br/>
+garray.h<br/>
+gunicode.h<br/>
+hb-atomic-private.hh<br/>
+hb-blob.h<br/>
+hb-buffer-private.hh<br/>
+hb-buffer.h<br/>
+hb-common.h<br/>
+hb-face-private.hh<br/>
+hb-face.h<br/>
+hb-font-private.hh<br/>
+hb-font.h<br/>
+hb-mutex-private.hh<br/>
+hb-object-private.hh<br/>
+hb-ot-layout.h<br/>
+hb-private.hh<br/>
+hb-set-private.hh<br/>
+hb-set.h<br/>
+hb-shape-plan-private.hh<br/>
+hb-shape-plan.h<br/>
+hb-shape.h<br/>
+hb-shaper-private.hh<br/>
+hb-unicode-private.hh<br/>
+hb-unicode.h<br/>
+pthreadtypes.h<br/>
+stdint.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (16)</h2><hr/>
+<div class='h_list'>
+hb-blob.cc<br/>
+hb-buffer-serialize.cc<br/>
+hb-buffer.cc<br/>
+hb-common.cc<br/>
+hb-face.cc<br/>
+hb-font.cc<br/>
+hb-ft.cc<br/>
+hb-glib.cc<br/>
+hb-ot-font.cc<br/>
+hb-ot-layout.cc<br/>
+hb-ot-shape.cc<br/>
+hb-ot-tag.cc<br/>
+hb-set.cc<br/>
+hb-shape-plan.cc<br/>
+hb-shape.cc<br/>
+hb-unicode.cc<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libharfbuzz.so.0.940.0<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><hr/>
+<div class='footer' align='right'><i>Generated by <a href='http://lvc.github.io/abi-compliance-checker/'>ABI Compliance Checker</a> 1.99.18 &#160;</i>
+</div>
+<br/>
+
+</body></html>

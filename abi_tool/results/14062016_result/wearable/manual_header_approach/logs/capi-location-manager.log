@@ -1,0 +1,20 @@
+Temporary header file '/tmp/8QqUNY_kQm/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/location/location_batch.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/location/location_bounds.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/location/locations.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/8QqUNY_kQm/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/location -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/8QqUNY_kQm/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/location/location_batch.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/location/location_bounds.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/location/locations.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/8QqUNY_kQm/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/location -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+

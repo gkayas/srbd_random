@@ -1,0 +1,67 @@
+package sampleapp;
+
+import base.*;
+import device.*;
+import java.io.*;
+import apprunner.*;
+import java.util.*;
+
+public class ClassName extends TCBase {
+
+	BinaryData b;
+
+	public ClassName() {
+		super();
+	}
+
+	public ClassName(String tcName, BinaryData binary) {
+		super(tcName);
+		this.b = binary;
+		device.setAssertMode(true);
+	}
+
+	//========================================================[TestCases]==========================================================
+
+	public void build() {
+		b.prepareSampleApplication();
+		assertTrue(device.cliProjectBuild(b.getAppType(), b.getBuildRootstrap(), b.getCompiler(), b.getBuildConfiguration(), b.getProjectPath()));
+	}
+
+	public void packaging() {
+		assertTrue(device.cliProjectPackage(b.getAppType(), b.getBuildConfiguration(), b.getProfileKeyPath(),b.getProfileKeyName(), b.getProfileKeyPassword(),b.getProjectPath()));
+	}
+
+	public void install() {
+		assertTrue(device.installApp(EnumCommand.CLI, b.getPackageId(), b.getPackagePath()));
+	}
+
+	public void launch() {
+		assertTrue(device.launchApp(EnumCommand.CLI, b.getAppLauncher(), b.getPackageId(), b.getAppId()));
+	}
+
+	public void exploratory() {
+		device.focus();
+
+
+		/*
+		Click on "Live Mode" in Device Interface.
+		Implement Exploratory code in Automation Script Generator.
+		Copy Exploratory code from Automation Script Generator and paste here.
+		*/
+		//--------------------------------------------------------------------------//
+
+
+	}
+
+	public void close() {
+		assertTrue(device.closeApp(b.getAppLauncher(), b.getChangedPackageId(), b.getAppId()));
+	}
+
+	public void uninstall() {
+		assertTrue(device.uninstallApp(EnumCommand.CLI, b.getPackageId()));
+	}
+
+	public void detectCrash() {
+		assertFalse(device.detectCrash(b.getCrashFilePrefix()));
+	}
+}

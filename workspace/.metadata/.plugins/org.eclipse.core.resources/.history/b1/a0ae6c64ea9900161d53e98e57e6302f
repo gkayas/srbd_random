@@ -1,0 +1,350 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+import com.sun.corba.se.impl.javax.rmi.CORBA.Util;
+
+
+public class Main {
+
+	static int processReturnValue = -1;
+	public static void main(String[] args) {
+		
+		if(args.length <= 0) {
+			System.out.println("Incorrect Parameter (ex: java -jar sdk-automation.java sp/run/rerun/clear)...");
+			return;
+		}	
+		
+		Utils.readParameterVariable();
+		Utils.createInitialDirectory();
+		
+		//read suitelists
+	
+		
+		
+//		if(args[0].equals("sp")) {
+//			setupPrequisite();
+//		}else if(args[0].equals("run")) {
+//			if(args.length < 2) {
+//				System.out.println("Incorrect Parameter (ex: java -jar sdk-automation.java run suite/tc)...");
+//				return;
+//			}
+//			
+//			if(args[1].equals("suite")) {
+//				runSuite();
+//			}else if(args[1].equals("tc")) {
+//				runTestCase();
+//			}else {
+//				System.out.println("Incorrect Parameter (ex: java -jar sdk-automation.java run suite/tc)...");
+//				return;
+//			}
+//			
+//			
+//		} else if(args[0].equals("rerun")){
+//			reRunFailTCs();
+//		}else if(args[0].equals("clear")){
+//			clearWorkspace();
+//		} else {
+//			System.out.println("Incorrect Parameter (ex: java -jar sdk-automation.java sp/run/rerun/clear)...");
+//		}	
+	}	
+
+	private static void runProcess(String... args ) {
+
+		try {
+			final String [] cmd = args;
+			Thread runner = new Thread(new Runnable() {			
+		    
+				@Override
+				public void run() {
+					
+					Process process = null;
+			        try {
+			        	process = new ProcessBuilder(cmd).start();
+			            
+			            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+			            
+			            String message;
+			            while((message=reader.readLine()) != null) {
+			                System.out.println(message);
+			            }
+			        	
+			            processReturnValue = process.waitFor();  
+			            		        	
+			            reader.close();
+			            process.destroy();		            
+			        } catch (Exception e) {
+			            e.printStackTrace();
+			        } finally {
+						process.destroy();		  
+					}
+				}
+				
+			}) ;		
+			runner.start();
+			runner.join();
+			
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} 
+    }	
+	
+	private static void runAllSuites() {
+		setupPrequisite();
+		
+		ArrayList<TCSuite> suitList =  Utils.readSuiteList();
+		for (TCSuite tcSuite : suitList) {
+			processReturnValue = -1;
+			runSuite(tcSuite);
+			
+			if(processReturnValue == 0 || processReturnValue == 56) {
+				/*try {
+					Report.prepareReportForRun(tcSuite.getName());							
+				} catch (IOException e) {
+					e.printStackTrace();
+				}*/
+				
+			} else {
+				System.out.println("\nReport save failed for suite: " + tcSuite.getName() + " processReturnValue: " + processReturnValue + "...............\n");
+			}
+		}
+	}
+	
+	private static void runSuite(TCSuite suite) {
+		System.out.println("Executing Suite: "+ suite + "......................\n");
+
+		Utils.deleteFile(Utils.getValue(Constants.SOURCE_XML_PATH));
+
+		if (Utils.isWindows()) {
+			runProcess("cmd", "/c", "java","-jar",Utils.getValue(Constants.RUNNER)+"/plugins/"+Utils.getValue(Constants.RCPTT_LAUNCHER)+".jar",  
+					"-application","org.eclipse.rcptt.runner.headless",  
+					"-data",Utils.getValue(Constants.RUNNER_WORKSPACE),  
+					"-aut",Utils.getValue(Constants.AUT_PATH),  
+					"-autWsPrefix",Utils.getValue(Constants.AUT_WORKSPACE),  
+					"-autConsolePrefix",Utils.getValue(Constants.AUT_OUT),  
+					"-autVMArgs","-Xms512m;-Xmx1024m;-XX:PermSize=512m;-XX:MaxPermSize=1024m",  
+					"-reuseExistingWorkspace",  
+					"-junitReport",Utils.getValue(Constants.JUNIT_REPORT),  
+					"-suites",suite.getName());
+		} else {
+			runProcess( "java","-jar",Utils.getValue(Constants.RUNNER)+"/plugins/"+Utils.getValue(Constants.RCPTT_LAUNCHER)+".jar",  
+					"-application","org.eclipse.rcptt.runner.headless",  
+					"-data",Utils.getValue(Constants.RUNNER_WORKSPACE),  
+					"-aut",Utils.getValue(Constants.AUT_PATH),  
+					"-autWsPrefix",Utils.getValue(Constants.AUT_WORKSPACE),  
+					"-autConsolePrefix",Utils.getValue(Constants.AUT_OUT),  
+					"-autVMArgs","-Xms512m;-Xmx1024m;-XX:PermSize=512m;-XX:MaxPermSize=1024m", 
+					"-reuseExistingWorkspace",  
+					"-junitReport",Utils.getValue(Constants.JUNIT_REPORT),  
+					"-suites",suite.getName());
+		}
+
+		/*if(processReturnValue == 0 || processReturnValue == 56) {
+			try {
+				Report.prepareReportForRun(suite.getName());							
+			} catch (IOException e) {
+				e.printStackTrace();
+			}				
+		} else {
+			System.out.println("\nReport save failed for suite: " + suite + " processReturnValue: " + processReturnValue + "...............\n");
+		}*/
+		
+	}
+	
+	private static void runTestCase() {
+		Utils.deleteFile(Utils.getValue(Constants.SOURCE_XML_PATH));
+
+		String tclist;
+		tclist = Utils.readTCList("tclist");
+		
+		if(tclist.length() == 0) {
+			return;
+		}
+		
+		System.out.println("\nStart executing tclist..........................\n");
+		
+		
+		processReturnValue = -1;
+				
+		if (Utils.isWindows()) {
+			runProcess("cmd", "/c", "java","-jar",Utils.getValue(Constants.RUNNER)+"/plugins/"+Utils.getValue(Constants.RCPTT_LAUNCHER)+".jar",  
+					"-application","org.eclipse.rcptt.runner.headless",  
+					"-data",Utils.getValue(Constants.RUNNER_WORKSPACE),  
+					"-aut",Utils.getValue(Constants.AUT_PATH),  
+					"-autWsPrefix",Utils.getValue(Constants.AUT_WORKSPACE),  
+					"-autConsolePrefix",Utils.getValue(Constants.AUT_OUT),  
+					"-autVMArgs","-Xms512m;-Xmx1024m;-XX:PermSize=512m;-XX:MaxPermSize=1024m",  
+					"-reuseExistingWorkspace",  
+					"-junitReport",Utils.getValue(Constants.JUNIT_REPORT),  
+					"-tests",tclist);
+		} else {
+			runProcess( "java","-jar",Utils.getValue(Constants.RUNNER)+"/plugins/"+Utils.getValue(Constants.RCPTT_LAUNCHER)+".jar",  
+						"-application","org.eclipse.rcptt.runner.headless",  
+						"-data",Utils.getValue(Constants.RUNNER_WORKSPACE),  
+						"-aut",Utils.getValue(Constants.AUT_PATH),  
+						"-autWsPrefix",Utils.getValue(Constants.AUT_WORKSPACE),  
+						"-autConsolePrefix",Utils.getValue(Constants.AUT_OUT),  
+						"-autVMArgs","-Xms512m;-Xmx1024m;-XX:PermSize=512m;-XX:MaxPermSize=1024m",
+						"-reuseExistingWorkspace",  
+						"-junitReport",Utils.getValue(Constants.JUNIT_REPORT),  
+						"-tests",tclist);
+		}
+		
+		if(processReturnValue == 0 || processReturnValue == 56) {
+			try {
+				Report.prepareReportForRun("tclist");
+			} catch (IOException e) {				
+				e.printStackTrace();
+			}
+		} else {
+			System.out.println("\nReport save failed for tclist: " + " processReturnValue: " + processReturnValue + "...............\n");
+		}
+	}
+	
+	private static void reRunFailTCs() {
+		Utils.deleteFile(Utils.getValue(Constants.SOURCE_XML_PATH));
+		
+		String tclist;
+		tclist = Utils.readTCList(Utils.getValue(Constants.FAIL_LIST));
+		
+		if(tclist.length() == 0) {
+			return;
+		}
+		
+		System.out.println("\nStart executing faillist..........................\n");
+		
+		
+		processReturnValue = -1;
+				
+		if (Utils.isWindows()) {
+			runProcess("cmd", "/c", "java","-jar",Utils.getValue(Constants.RUNNER)+"/plugins/"+Utils.getValue(Constants.RCPTT_LAUNCHER)+".jar",  
+					"-application","org.eclipse.rcptt.runner.headless",  
+					"-data",Utils.getValue(Constants.RUNNER_WORKSPACE),  
+					"-aut",Utils.getValue(Constants.AUT_PATH),  
+					"-autWsPrefix",Utils.getValue(Constants.AUT_WORKSPACE),  
+					"-autConsolePrefix",Utils.getValue(Constants.AUT_OUT),  
+					"-autVMArgs","-Xms512m;-Xmx1024m;-XX:PermSize=512m;-XX:MaxPermSize=1024m",
+					"-reuseExistingWorkspace",  
+					"-junitReport",Utils.getValue(Constants.JUNIT_REPORT),  
+					"-tests",tclist);
+			
+		} else {
+			runProcess( "java","-jar",Utils.getValue(Constants.RUNNER)+"/plugins/"+Utils.getValue(Constants.RCPTT_LAUNCHER)+".jar",  
+						"-application","org.eclipse.rcptt.runner.headless",  
+						"-data",Utils.getValue(Constants.RUNNER_WORKSPACE),  
+						"-aut",Utils.getValue(Constants.AUT_PATH),  
+						"-autWsPrefix",Utils.getValue(Constants.AUT_WORKSPACE),  
+						"-autConsolePrefix",Utils.getValue(Constants.AUT_OUT),  
+						"-autVMArgs","-Xms512m;-Xmx1024m;-XX:PermSize=512m;-XX:MaxPermSize=1024m",
+						"-reuseExistingWorkspace",  
+						"-junitReport",Utils.getValue(Constants.JUNIT_REPORT),  
+						"-tests",tclist);
+		}
+		
+		if(processReturnValue == 0 || processReturnValue == 56) {
+			try {
+				Report.prepareReportForReRun();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} else {
+			System.out.println("\nReport save failed for faillist: " + " processReturnValue: " + processReturnValue + "...............\n");
+		}
+	}
+	
+	private static void clearWorkspace() {
+		Utils.deleteFolder(Utils.getValue(Constants.TEST_RESULT));
+		Utils.deleteFolder(Utils.getValue(Constants.AUTOMATION_WORKSPACE));
+		System.out.println("Automation workspace clear successfully...............\n");
+	}
+	
+	private static void setupPrequisite() {
+		System.out.println("\nInitializing SetupPrerequisite..........................\n"); 
+
+		processReturnValue = -1;
+		
+		if(!Utils.writeParameterVariable()) {
+			return;
+		}
+				
+		Utils.deleteFile(Utils.getValue(Constants.SOURCE_XML_PATH));
+		Utils.deleteFolder(Utils.getValue(Constants.AUTOMATION_WORKSPACE) + File.separatorChar + "runner-workspace");
+		
+			
+		if (Utils.isWindows()) {			
+			runProcess("cmd", "/c", "java","-jar",Utils.getValue(Constants.RUNNER)+"/plugins/"+Utils.getValue(Constants.RCPTT_LAUNCHER)+".jar",  
+					"-application","org.eclipse.rcptt.runner.headless",  
+					"-data",Utils.getValue(Constants.RUNNER_WORKSPACE),  
+					"-aut",Utils.getValue(Constants.AUT_PATH),  
+					"-autWsPrefix",Utils.getValue(Constants.AUT_WORKSPACE),  
+					"-autConsolePrefix",Utils.getValue(Constants.AUT_OUT),  
+					"-autVMArgs","-Xms512m;-Xmx1024m;-XX:PermSize=512m;-XX:MaxPermSize=1024m",
+					"-reuseExistingWorkspace",  
+					"-junitReport",Utils.getValue(Constants.JUNIT_REPORT),  
+					"-import",Utils.getValue(Constants.PROJECT),  
+					"-tests","SetupPrerequisite.test");
+			
+		} else {
+			runProcess( "java","-jar",Utils.getValue(Constants.RUNNER)+"/plugins/"+Utils.getValue(Constants.RCPTT_LAUNCHER)+".jar",  
+						"-application","org.eclipse.rcptt.runner.headless",  
+						"-data",Utils.getValue(Constants.RUNNER_WORKSPACE),  
+						"-aut",Utils.getValue(Constants.AUT_PATH),  
+						"-autWsPrefix",Utils.getValue(Constants.AUT_WORKSPACE),  
+						"-autConsolePrefix",Utils.getValue(Constants.AUT_OUT),  
+						"-autVMArgs","-Xms512m;-Xmx1024m;-XX:PermSize=512m;-XX:MaxPermSize=1024m",
+						"-reuseExistingWorkspace",  
+						"-junitReport",Utils.getValue(Constants.JUNIT_REPORT),  
+						"-import",Utils.getValue(Constants.PROJECT),  
+						"-tests","SetupPrerequisite.test");
+		}
+		
+		if(processReturnValue == 0 || processReturnValue == 56) {
+			System.out.println("\nSetupPrerequisite completed.Please make sure SetupPrerequisite is passed.......\n");			
+		}
+	}
+	
+	private static void setupPlatformEnv() {
+		System.out.println("\nInitializing SetupPlatformEnv..........................\n"); 
+
+		processReturnValue = -1;
+		
+		if(!Utils.writeParameterVariable()) {
+			return;
+		}
+				
+		Utils.deleteFile(Utils.getValue(Constants.SOURCE_XML_PATH));
+			
+		if (Utils.isWindows()) {			
+			runProcess("cmd", "/c", "java","-jar",Utils.getValue(Constants.RUNNER)+"/plugins/"+Utils.getValue(Constants.RCPTT_LAUNCHER)+".jar",  
+					"-application","org.eclipse.rcptt.runner.headless",  
+					"-data",Utils.getValue(Constants.RUNNER_WORKSPACE),  
+					"-aut",Utils.getValue(Constants.AUT_PATH),  
+					"-autWsPrefix",Utils.getValue(Constants.AUT_WORKSPACE),  
+					"-autConsolePrefix",Utils.getValue(Constants.AUT_OUT),  
+					"-autVMArgs","-Xms512m;-Xmx1024m;-XX:PermSize=512m;-XX:MaxPermSize=1024m",
+					"-reuseExistingWorkspace",  
+					"-junitReport",Utils.getValue(Constants.JUNIT_REPORT),  
+					"-import",Utils.getValue(Constants.PROJECT),  
+					"-tests","SetupPlatformEnv.test");
+			
+		} else {
+			runProcess( "java","-jar",Utils.getValue(Constants.RUNNER)+"/plugins/"+Utils.getValue(Constants.RCPTT_LAUNCHER)+".jar",  
+						"-application","org.eclipse.rcptt.runner.headless",  
+						"-data",Utils.getValue(Constants.RUNNER_WORKSPACE),  
+						"-aut",Utils.getValue(Constants.AUT_PATH),  
+						"-autWsPrefix",Utils.getValue(Constants.AUT_WORKSPACE),  
+						"-autConsolePrefix",Utils.getValue(Constants.AUT_OUT),  
+						"-autVMArgs","-Xms512m;-Xmx1024m;-XX:PermSize=512m;-XX:MaxPermSize=1024m",
+						"-reuseExistingWorkspace",  
+						"-junitReport",Utils.getValue(Constants.JUNIT_REPORT),  
+						"-import",Utils.getValue(Constants.PROJECT),  
+						"-tests","SetupPlatformEnv.test");
+		}
+		
+		if(processReturnValue == 0 || processReturnValue == 56) {
+			System.out.println("\SetupPlatformEnv completed.Please make sure SetupPrerequisite is passed.......\n");			
+		}
+	}
+}

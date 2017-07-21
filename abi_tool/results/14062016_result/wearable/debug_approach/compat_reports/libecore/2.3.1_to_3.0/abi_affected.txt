@@ -1,0 +1,2 @@
+_ecore_timer_delay
+_ecore_event_handler_del

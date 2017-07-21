@@ -1,0 +1,2 @@
+add_to_home_remove_dynamicbox
+add_to_home_remove_shortcut

@@ -1,0 +1,1 @@
+vc_widget_unsset_send_current_command_list_cb

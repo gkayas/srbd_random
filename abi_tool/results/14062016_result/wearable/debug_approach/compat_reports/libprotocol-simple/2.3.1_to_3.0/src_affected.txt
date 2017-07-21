@@ -1,0 +1,9 @@
+pa_simple_options_new
+pa_simple_protocol_connect
+pa_simple_protocol_ref
+pa_simple_options_ref
+pa_simple_options_unref
+pa_simple_protocol_unref
+pa_simple_protocol_get
+pa_simple_options_parse
+pa_simple_protocol_disconnect

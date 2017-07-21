@@ -1,0 +1,6 @@
+-injars /home/jsmith/myapp.jar
+-outjars /home/jsmith/myapp-obfuscated.jar This is the obfuscated jar file
+-libraryjars /usr/java/jdk1.5.0_14/jre/lib/rt.jar
+-printmapping proguard.map
+-verbose
+-keep public class mypkg.MainAppFrame

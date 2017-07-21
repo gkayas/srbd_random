@@ -1,0 +1,421 @@
+Temporary header file '/tmp/lpcSMjlCld/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/lpcSMjlCld/dump1.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/widget_service
+
+In file included from /tmp/lpcSMjlCld/dump1.h:3:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:199:36: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_init(Evas_Object *win);
+                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:199:49: error: ‘win’ was not declared in this scope
+ extern int widget_viewer_evas_init(Evas_Object *win);
+                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:222:8: error: ‘Evas_Object’ does not name a type
+ extern Evas_Object *widget_viewer_evas_add_widget(Evas_Object *parent, const char *widget_id, const char *content_info, double period);
+        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:278:44: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_pause_widget(Evas_Object *widget);
+                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:278:57: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_pause_widget(Evas_Object *widget);
+                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:292:45: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_resume_widget(Evas_Object *widget);
+                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:292:58: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_resume_widget(Evas_Object *widget);
+                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:316:56: error: ‘Evas_Object’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_content_info(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:316:69: error: ‘widget’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_content_info(Evas_Object *widget);
+                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:327:56: error: ‘Evas_Object’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_title_string(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:327:69: error: ‘widget’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_title_string(Evas_Object *widget);
+                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:337:53: error: ‘Evas_Object’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_widget_id(Evas_Object *widget);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:337:66: error: ‘widget’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_widget_id(Evas_Object *widget);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:346:45: error: ‘Evas_Object’ was not declared in this scope
+ extern double widget_viewer_evas_get_period(Evas_Object *widget);
+                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:346:58: error: ‘widget’ was not declared in this scope
+ extern double widget_viewer_evas_get_period(Evas_Object *widget);
+                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:356:51: error: variable or field ‘widget_viewer_evas_cancel_click_event’ declared void
+ extern void widget_viewer_evas_cancel_click_event(Evas_Object *widget);
+                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:356:51: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:356:64: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_cancel_click_event(Evas_Object *widget);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:364:48: error: variable or field ‘widget_viewer_evas_disable_preview’ declared void
+ extern void widget_viewer_evas_disable_preview(Evas_Object *widget);
+                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:364:48: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:364:61: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_disable_preview(Evas_Object *widget);
+                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:373:53: error: variable or field ‘widget_viewer_evas_disable_overlay_text’ declared void
+ extern void widget_viewer_evas_disable_overlay_text(Evas_Object *widget);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:373:53: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:373:66: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_disable_overlay_text(Evas_Object *widget);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:382:48: error: variable or field ‘widget_viewer_evas_disable_loading’ declared void
+ extern void widget_viewer_evas_disable_loading(Evas_Object *widget);
+                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:382:48: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:382:61: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_disable_loading(Evas_Object *widget);
+                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:397:51: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_feed_mouse_up_event(Evas_Object *widget);
+                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:397:64: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_feed_mouse_up_event(Evas_Object *widget);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:407:56: error: variable or field ‘widget_viewer_evas_activate_faulted_widget’ declared void
+ extern void widget_viewer_evas_activate_faulted_widget(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:407:56: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:407:69: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_activate_faulted_widget(Evas_Object *widget);
+                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:417:43: error: ‘Evas_Object’ was not declared in this scope
+ extern bool widget_viewer_evas_is_faulted(Evas_Object *widget);
+                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:417:56: error: ‘widget’ was not declared in this scope
+ extern bool widget_viewer_evas_is_faulted(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:431:49: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_freeze_visibility(Evas_Object *widget, widget_visibility_status_e status);
+                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:431:62: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_freeze_visibility(Evas_Object *widget, widget_visibility_status_e status);
+                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:431:97: error: expected primary-expression before ‘status’
+ extern int widget_viewer_evas_freeze_visibility(Evas_Object *widget, widget_visibility_status_e status);
+                                                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:442:47: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_thaw_visibility(Evas_Object *widget);
+                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:442:60: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_thaw_visibility(Evas_Object *widget);
+                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:452:53: error: ‘Evas_Object’ was not declared in this scope
+ extern bool widget_viewer_evas_is_visibility_frozen(Evas_Object *widget);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:452:66: error: ‘widget’ was not declared in this scope
+ extern bool widget_viewer_evas_is_visibility_frozen(Evas_Object *widget);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:462:42: error: ‘Evas_Object’ was not declared in this scope
+ extern bool widget_viewer_evas_is_widget(Evas_Object *widget);
+                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:462:55: error: ‘widget’ was not declared in this scope
+ extern bool widget_viewer_evas_is_widget(Evas_Object *widget);
+                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:470:53: error: variable or field ‘widget_viewer_evas_set_permanent_delete’ declared void
+ extern void widget_viewer_evas_set_permanent_delete(Evas_Object *widget, int flag);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:470:53: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:470:66: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_set_permanent_delete(Evas_Object *widget, int flag);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:470:74: error: expected primary-expression before ‘int’
+ extern void widget_viewer_evas_set_permanent_delete(Evas_Object *widget, int flag);
+                                                                          ^
+In file included from /tmp/lpcSMjlCld/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:77:5: error: ‘Evas_Object’ does not name a type
+     Evas_Object *widget;
+     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:86:50: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_destroy_glance_bar(Evas_Object *widget);
+                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:86:63: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_destroy_glance_bar(Evas_Object *widget);
+                                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:98:45: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_set_view_port(Evas_Object *widget, int x, int y, int w, int h);
+                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:98:58: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_set_view_port(Evas_Object *widget, int x, int y, int w, int h);
+                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:98:66: error: expected primary-expression before ‘int’
+ extern int widget_viewer_evas_set_view_port(Evas_Object *widget, int x, int y, int w, int h);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:98:73: error: expected primary-expression before ‘int’
+ extern int widget_viewer_evas_set_view_port(Evas_Object *widget, int x, int y, int w, int h);
+                                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:98:80: error: expected primary-expression before ‘int’
+ extern int widget_viewer_evas_set_view_port(Evas_Object *widget, int x, int y, int w, int h);
+                                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:98:87: error: expected primary-expression before ‘int’
+ extern int widget_viewer_evas_set_view_port(Evas_Object *widget, int x, int y, int w, int h);
+                                                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:110:45: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_get_view_port(Evas_Object *widget, int *x, int *y, int *w, int *h);
+                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:110:58: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_get_view_port(Evas_Object *widget, int *x, int *y, int *w, int *h);
+                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:110:66: error: expected primary-expression before ‘int’
+ extern int widget_viewer_evas_get_view_port(Evas_Object *widget, int *x, int *y, int *w, int *h);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:110:74: error: expected primary-expression before ‘int’
+ extern int widget_viewer_evas_get_view_port(Evas_Object *widget, int *x, int *y, int *w, int *h);
+                                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:110:82: error: expected primary-expression before ‘int’
+ extern int widget_viewer_evas_get_view_port(Evas_Object *widget, int *x, int *y, int *w, int *h);
+                                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:110:90: error: expected primary-expression before ‘int’
+ extern int widget_viewer_evas_get_view_port(Evas_Object *widget, int *x, int *y, int *w, int *h);
+                                                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:123:49: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_feed_access_event(Evas_Object *widget, int type, void *info, void (*ret_cb)(Evas_Object *obj, int ret, void *data), void *data);
+                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:123:62: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_feed_access_event(Evas_Object *widget, int type, void *info, void (*ret_cb)(Evas_Object *obj, int ret, void *data), void *data);
+                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:123:70: error: expected primary-expression before ‘int’
+ extern int widget_viewer_evas_feed_access_event(Evas_Object *widget, int type, void *info, void (*ret_cb)(Evas_Object *obj, int ret, void *data), void *data);
+                                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:123:80: error: expected primary-expression before ‘void’
+ extern int widget_viewer_evas_feed_access_event(Evas_Object *widget, int type, void *info, void (*ret_cb)(Evas_Object *obj, int ret, void *data), void *data);
+                                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:123:99: error: ‘ret_cb’ was not declared in this scope
+ extern int widget_viewer_evas_feed_access_event(Evas_Object *widget, int type, void *info, void (*ret_cb)(Evas_Object *obj, int ret, void *data), void *data);
+                                                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:123:107: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_feed_access_event(Evas_Object *widget, int type, void *info, void (*ret_cb)(Evas_Object *obj, int ret, void *data), void *data);
+                                                                                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:123:120: error: ‘obj’ was not declared in this scope
+ extern int widget_viewer_evas_feed_access_event(Evas_Object *widget, int type, void *info, void (*ret_cb)(Evas_Object *obj, int ret, void *data), void *data);
+                                                                                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:123:125: error: expected primary-expression before ‘int’
+ extern int widget_viewer_evas_feed_access_event(Evas_Object *widget, int type, void *info, void (*ret_cb)(Evas_Object *obj, int ret, void *data), void *data);
+                                                                                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:123:134: error: expected primary-expression before ‘void’
+ extern int widget_viewer_evas_feed_access_event(Evas_Object *widget, int type, void *info, void (*ret_cb)(Evas_Object *obj, int ret, void *data), void *data);
+                                                                                                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:123:147: error: expected primary-expression before ‘void’
+ extern int widget_viewer_evas_feed_access_event(Evas_Object *widget, int type, void *info, void (*ret_cb)(Evas_Object *obj, int ret, void *data), void *data);
+                                                                                                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:132:44: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_dump_to_file(Evas_Object *widget, const char *filename);
+                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:132:57: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_dump_to_file(Evas_Object *widget, const char *filename);
+                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:132:65: error: expected primary-expression before ‘const’
+ extern int widget_viewer_evas_dump_to_file(Evas_Object *widget, const char *filename);
+                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:223:47: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_get_instance_id(Evas_Object *widget, char **instance_id);
+                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:223:60: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_get_instance_id(Evas_Object *widget, char **instance_id);
+                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:223:68: error: expected primary-expression before ‘char’
+ extern int widget_viewer_evas_get_instance_id(Evas_Object *widget, char **instance_id);
+                                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:225:49: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_set_widget_option(Evas_Object *widget, widget_option_widget_e option, int value);
+                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:225:62: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_set_widget_option(Evas_Object *widget, widget_option_widget_e option, int value);
+                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:225:93: error: expected primary-expression before ‘option’
+ extern int widget_viewer_evas_set_widget_option(Evas_Object *widget, widget_option_widget_e option, int value);
+                                                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:225:101: error: expected primary-expression before ‘int’
+ extern int widget_viewer_evas_set_widget_option(Evas_Object *widget, widget_option_widget_e option, int value);
+                                                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:251:48: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_emit_text_signal(Evas_Object *widget, widget_text_signal_s event_info, void *data);
+                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:251:61: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_emit_text_signal(Evas_Object *widget, widget_text_signal_s event_info, void *data);
+                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:251:90: error: expected primary-expression before ‘event_info’
+ extern int widget_viewer_evas_emit_text_signal(Evas_Object *widget, widget_text_signal_s event_info, void *data);
+                                                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:251:102: error: expected primary-expression before ‘void’
+ extern int widget_viewer_evas_emit_text_signal(Evas_Object *widget, widget_text_signal_s event_info, void *data);
+                                                                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:262:49: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_set_preview_image(Evas_Object *widget, widget_size_type_e type, const char *preview);
+                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:262:62: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_set_preview_image(Evas_Object *widget, widget_size_type_e type, const char *preview);
+                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:262:89: error: expected primary-expression before ‘type’
+ extern int widget_viewer_evas_set_preview_image(Evas_Object *widget, widget_size_type_e type, const char *preview);
+                                                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:262:95: error: expected primary-expression before ‘const’
+ extern int widget_viewer_evas_set_preview_image(Evas_Object *widget, widget_size_type_e type, const char *preview);
+                                                                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:272:44: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_hide_overlay(Evas_Object *widget);
+                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:272:57: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_hide_overlay(Evas_Object *widget);
+                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:274:57: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_hide_faulted_overlay_once(Evas_Object *widget);
+                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:274:70: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_hide_faulted_overlay_once(Evas_Object *widget);
+                                                                      ^
+
+Temporary header file '/tmp/lpcSMjlCld/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/lpcSMjlCld/dump2.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/widget_service
+
+In file included from /tmp/lpcSMjlCld/dump2.h:3:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:133:36: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_init(Evas_Object *win);
+                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:133:49: error: ‘win’ was not declared in this scope
+ extern int widget_viewer_evas_init(Evas_Object *win);
+                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:166:8: error: ‘Evas_Object’ does not name a type
+ extern Evas_Object *widget_viewer_evas_add_widget(Evas_Object *parent, const char *widget_id, const char *content_info, double period);
+        ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:226:44: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_pause_widget(Evas_Object *widget);
+                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:226:57: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_pause_widget(Evas_Object *widget);
+                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:241:45: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_resume_widget(Evas_Object *widget);
+                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:241:58: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_resume_widget(Evas_Object *widget);
+                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:276:56: error: ‘Evas_Object’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_content_info(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:276:69: error: ‘widget’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_content_info(Evas_Object *widget);
+                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:294:56: error: ‘Evas_Object’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_title_string(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:294:69: error: ‘widget’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_title_string(Evas_Object *widget);
+                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:311:53: error: ‘Evas_Object’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_widget_id(Evas_Object *widget);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:311:66: error: ‘widget’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_widget_id(Evas_Object *widget);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:327:45: error: ‘Evas_Object’ was not declared in this scope
+ extern double widget_viewer_evas_get_period(Evas_Object *widget);
+                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:327:58: error: ‘widget’ was not declared in this scope
+ extern double widget_viewer_evas_get_period(Evas_Object *widget);
+                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:343:51: error: variable or field ‘widget_viewer_evas_cancel_click_event’ declared void
+ extern void widget_viewer_evas_cancel_click_event(Evas_Object *widget);
+                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:343:51: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:343:64: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_cancel_click_event(Evas_Object *widget);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:358:48: error: variable or field ‘widget_viewer_evas_disable_preview’ declared void
+ extern void widget_viewer_evas_disable_preview(Evas_Object *widget);
+                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:358:48: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:358:61: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_disable_preview(Evas_Object *widget);
+                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:374:53: error: variable or field ‘widget_viewer_evas_disable_overlay_text’ declared void
+ extern void widget_viewer_evas_disable_overlay_text(Evas_Object *widget);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:374:53: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:374:66: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_disable_overlay_text(Evas_Object *widget);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:390:48: error: variable or field ‘widget_viewer_evas_disable_loading’ declared void
+ extern void widget_viewer_evas_disable_loading(Evas_Object *widget);
+                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:390:48: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:390:61: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_disable_loading(Evas_Object *widget);
+                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:406:51: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_feed_mouse_up_event(Evas_Object *widget);
+                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:406:64: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_feed_mouse_up_event(Evas_Object *widget);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:421:56: error: variable or field ‘widget_viewer_evas_activate_faulted_widget’ declared void
+ extern void widget_viewer_evas_activate_faulted_widget(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:421:56: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:421:69: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_activate_faulted_widget(Evas_Object *widget);
+                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:438:43: error: ‘Evas_Object’ was not declared in this scope
+ extern bool widget_viewer_evas_is_faulted(Evas_Object *widget);
+                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:438:56: error: ‘widget’ was not declared in this scope
+ extern bool widget_viewer_evas_is_faulted(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:456:49: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_freeze_visibility(Evas_Object *widget, widget_visibility_status_e status);
+                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:456:62: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_freeze_visibility(Evas_Object *widget, widget_visibility_status_e status);
+                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:456:97: error: expected primary-expression before ‘status’
+ extern int widget_viewer_evas_freeze_visibility(Evas_Object *widget, widget_visibility_status_e status);
+                                                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:471:47: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_thaw_visibility(Evas_Object *widget);
+                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:471:60: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_thaw_visibility(Evas_Object *widget);
+                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:488:53: error: ‘Evas_Object’ was not declared in this scope
+ extern bool widget_viewer_evas_is_visibility_frozen(Evas_Object *widget);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:488:66: error: ‘widget’ was not declared in this scope
+ extern bool widget_viewer_evas_is_visibility_frozen(Evas_Object *widget);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:505:42: error: ‘Evas_Object’ was not declared in this scope
+ extern bool widget_viewer_evas_is_widget(Evas_Object *widget);
+                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:505:55: error: ‘widget’ was not declared in this scope
+ extern bool widget_viewer_evas_is_widget(Evas_Object *widget);
+                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:520:53: error: variable or field ‘widget_viewer_evas_set_permanent_delete’ declared void
+ extern void widget_viewer_evas_set_permanent_delete(Evas_Object *widget, int flag);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:520:53: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:520:66: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_set_permanent_delete(Evas_Object *widget, int flag);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h:520:74: error: expected primary-expression before ‘int’
+ extern void widget_viewer_evas_set_permanent_delete(Evas_Object *widget, int flag);
+                                                                          ^
+

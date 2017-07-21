@@ -1,0 +1,1052 @@
+Temporary header file '/tmp/A_k5obx6hk/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/edje_edit.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/edje_edit.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/edje_object.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/edje_object.eo.legacy.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/A_k5obx6hk/dump1.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:9:16: error: redefinition of ‘struct _Edje_Version’
+ typedef struct _Edje_Version
+                ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:9:16: error: previous definition of ‘struct _Edje_Version’
+ typedef struct _Edje_Version
+                ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:15:15: error: invalid type in declaration before ‘;’ token
+ } Edje_Version;
+               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:15:15: error: conflicting declaration ‘typedef int Edje_Version’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:15:3: error: ‘Edje_Version’ has a previous declaration as ‘typedef struct _Edje_Version Edje_Version’
+ } Edje_Version;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:317:14: error: multiple definition of ‘enum _Edje_External_Param_Type’
+ typedef enum _Edje_External_Param_Type
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:317:14: error: previous definition here
+ typedef enum _Edje_External_Param_Type
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:326:27: error: invalid type in declaration before ‘;’ token
+ } Edje_External_Param_Type;
+                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:326:27: error: conflicting declaration ‘typedef int Edje_External_Param_Type’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:326:3: error: ‘Edje_External_Param_Type’ has a previous declaration as ‘typedef enum _Edje_External_Param_Type Edje_External_Param_Type’
+ } Edje_External_Param_Type;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:332:14: error: multiple definition of ‘enum _Edje_External_Param_Flags’
+ typedef enum _Edje_External_Param_Flags
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:332:14: error: previous definition here
+ typedef enum _Edje_External_Param_Flags
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:342:28: error: invalid type in declaration before ‘;’ token
+ } Edje_External_Param_Flags;
+                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:342:28: error: conflicting declaration ‘typedef int Edje_External_Param_Flags’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:342:3: error: ‘Edje_External_Param_Flags’ has a previous declaration as ‘typedef enum _Edje_External_Param_Flags Edje_External_Param_Flags’
+ } Edje_External_Param_Flags;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:357:8: error: redefinition of ‘struct _Edje_External_Param’
+ struct _Edje_External_Param
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:357:8: error: previous definition of ‘struct _Edje_External_Param’
+ struct _Edje_External_Param
+        ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:406:8: error: redefinition of ‘struct _Edje_External_Param_Info’
+ struct _Edje_External_Param_Info
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:406:8: error: previous definition of ‘struct _Edje_External_Param_Info’
+ struct _Edje_External_Param_Info
+        ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:533:8: error: redefinition of ‘struct _Edje_External_Type’
+ struct _Edje_External_Type
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:533:8: error: previous definition of ‘struct _Edje_External_Type’
+ struct _Edje_External_Type
+        ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:570:8: error: redefinition of ‘struct _Edje_External_Type_Info’
+ struct _Edje_External_Type_Info
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:570:8: error: previous definition of ‘struct _Edje_External_Type_Info’
+ struct _Edje_External_Type_Info
+        ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:961:8: error: redefinition of ‘struct _Edje_Entry_Change_Info’
+ struct _Edje_Entry_Change_Info
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:961:8: error: previous definition of ‘struct _Edje_Entry_Change_Info’
+ struct _Edje_Entry_Change_Info
+        ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:989:14: error: multiple definition of ‘enum _Edje_Text_Filter_Type’
+ typedef enum _Edje_Text_Filter_Type
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:989:14: error: previous definition here
+ typedef enum _Edje_Text_Filter_Type
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:994:24: error: invalid type in declaration before ‘;’ token
+ } Edje_Text_Filter_Type;
+                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:994:24: error: conflicting declaration ‘typedef int Edje_Text_Filter_Type’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:994:3: error: ‘Edje_Text_Filter_Type’ has a previous declaration as ‘typedef enum _Edje_Text_Filter_Type Edje_Text_Filter_Type’
+ } Edje_Text_Filter_Type;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1002:14: error: multiple definition of ‘enum _Edje_Text_Autocapital_Type’
+ typedef enum _Edje_Text_Autocapital_Type
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1002:14: error: previous definition here
+ typedef enum _Edje_Text_Autocapital_Type
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1008:29: error: invalid type in declaration before ‘;’ token
+ } Edje_Text_Autocapital_Type;
+                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1008:29: error: conflicting declaration ‘typedef int Edje_Text_Autocapital_Type’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1008:3: error: ‘Edje_Text_Autocapital_Type’ has a previous declaration as ‘typedef enum _Edje_Text_Autocapital_Type Edje_Text_Autocapital_Type’
+ } Edje_Text_Autocapital_Type;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1014:14: error: multiple definition of ‘enum _Edje_Input_Panel_Lang’
+ typedef enum _Edje_Input_Panel_Lang
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1014:14: error: previous definition here
+ typedef enum _Edje_Input_Panel_Lang
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1018:24: error: invalid type in declaration before ‘;’ token
+ } Edje_Input_Panel_Lang;
+                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1018:24: error: conflicting declaration ‘typedef int Edje_Input_Panel_Lang’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1018:3: error: ‘Edje_Input_Panel_Lang’ has a previous declaration as ‘typedef enum _Edje_Input_Panel_Lang Edje_Input_Panel_Lang’
+ } Edje_Input_Panel_Lang;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1020:14: error: multiple definition of ‘enum _Edje_Input_Panel_Return_Key_Type’
+ typedef enum _Edje_Input_Panel_Return_Key_Type
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1020:14: error: previous definition here
+ typedef enum _Edje_Input_Panel_Return_Key_Type
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1031:35: error: invalid type in declaration before ‘;’ token
+ } Edje_Input_Panel_Return_Key_Type;
+                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1031:35: error: conflicting declaration ‘typedef int Edje_Input_Panel_Return_Key_Type’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1031:3: error: ‘Edje_Input_Panel_Return_Key_Type’ has a previous declaration as ‘typedef enum _Edje_Input_Panel_Return_Key_Type Edje_Input_Panel_Return_Key_Type’
+ } Edje_Input_Panel_Return_Key_Type;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1037:14: error: multiple definition of ‘enum _Edje_Input_Panel_Layout’
+ typedef enum _Edje_Input_Panel_Layout
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1037:14: error: previous definition here
+ typedef enum _Edje_Input_Panel_Layout
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1053:26: error: invalid type in declaration before ‘;’ token
+ } Edje_Input_Panel_Layout;
+                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1053:26: error: conflicting declaration ‘typedef int Edje_Input_Panel_Layout’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1053:3: error: ‘Edje_Input_Panel_Layout’ has a previous declaration as ‘typedef enum _Edje_Input_Panel_Layout Edje_Input_Panel_Layout’
+ } Edje_Input_Panel_Layout;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1061:42: error: redeclaration of ‘EDJE_INPUT_HINT_NONE’
+    EDJE_INPUT_HINT_NONE                = 0,        /**< No active hints @since 1.12 */
+                                          ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1061:4: note: previous declaration ‘Edje_Input_Hints EDJE_INPUT_HINT_NONE’
+    EDJE_INPUT_HINT_NONE                = 0,        /**< No active hints @since 1.12 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1062:47: error: redeclaration of ‘EDJE_INPUT_HINT_AUTO_COMPLETE’
+    EDJE_INPUT_HINT_AUTO_COMPLETE       = 1 << 0,   /**< Suggest word auto completion @since 1.12 */
+                                               ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1062:4: note: previous declaration ‘Edje_Input_Hints EDJE_INPUT_HINT_AUTO_COMPLETE’
+    EDJE_INPUT_HINT_AUTO_COMPLETE       = 1 << 0,   /**< Suggest word auto completion @since 1.12 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1063:47: error: redeclaration of ‘EDJE_INPUT_HINT_SENSITIVE_DATA’
+    EDJE_INPUT_HINT_SENSITIVE_DATA      = 1 << 1,   /**< Typed text should not be stored. @since 1.12 */
+                                               ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1063:4: note: previous declaration ‘Edje_Input_Hints EDJE_INPUT_HINT_SENSITIVE_DATA’
+    EDJE_INPUT_HINT_SENSITIVE_DATA      = 1 << 1,   /**< Typed text should not be stored. @since 1.12 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1064:3: error: conflicting declaration ‘typedef enum Edje_Input_Hints Edje_Input_Hints’
+ } Edje_Input_Hints;
+   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1064:3: error: ‘Edje_Input_Hints’ has a previous declaration as ‘typedef enum Edje_Input_Hints Edje_Input_Hints’
+ } Edje_Input_Hints;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1068:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL,         /**< The plain normal layout @since 1.12 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1068:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL,         /**< The plain normal layout @since 1.12 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1069:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME,       /**< Filename layout. Symbols such as '/' should be disabled. @since 1.12 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1069:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME,       /**< Filename layout. Symbols such as '/' should be disabled. @since 1.12 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1070:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME     /**< The name of a person. @since 1.12 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1070:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME     /**< The name of a person. @since 1.12 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1075:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL,             /**< The plain normal number layout @since 1.8 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1075:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL,             /**< The plain normal number layout @since 1.8 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1076:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED,             /**< The number layout to allow a positive or negative sign at the start @since 1.8 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1076:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED,             /**< The number layout to allow a positive or negative sign at the start @since 1.8 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1077:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL,            /**< The number layout to allow decimal point to provide fractional value @since 1.8 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1077:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL,            /**< The number layout to allow decimal point to provide fractional value @since 1.8 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1078:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL  /**< The number layout to allow decimal point and negative sign @since 1.8 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1078:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL  /**< The number layout to allow decimal point and negative sign @since 1.8 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1083:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL,       /**< The normal password layout @since 1.12 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1083:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL,       /**< The normal password layout @since 1.12 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1084:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY’
+    EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY    /**< The password layout to allow only number @since 1.12 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1084:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY’
+    EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY    /**< The password layout to allow only number @since 1.12 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1316:14: error: multiple definition of ‘enum _Edje_Part_Type’
+ typedef enum _Edje_Part_Type
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1316:14: error: previous definition here
+ typedef enum _Edje_Part_Type
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1335:17: error: invalid type in declaration before ‘;’ token
+ } Edje_Part_Type;
+                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1335:17: error: conflicting declaration ‘typedef int Edje_Part_Type’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1335:3: error: ‘Edje_Part_Type’ has a previous declaration as ‘typedef enum _Edje_Part_Type Edje_Part_Type’
+ } Edje_Part_Type;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1371:14: error: multiple definition of ‘enum _Edje_Text_Effect’
+ typedef enum _Edje_Text_Effect
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1371:14: error: previous definition here
+ typedef enum _Edje_Text_Effect
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1399:19: error: invalid type in declaration before ‘;’ token
+ } Edje_Text_Effect;
+                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1399:19: error: conflicting declaration ‘typedef int Edje_Text_Effect’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1399:3: error: ‘Edje_Text_Effect’ has a previous declaration as ‘typedef enum _Edje_Text_Effect Edje_Text_Effect’
+ } Edje_Text_Effect;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1460:14: error: multiple definition of ‘enum _Edje_Cursor’
+ typedef enum _Edje_Cursor
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1460:14: error: previous definition here
+ typedef enum _Edje_Cursor
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1470:14: error: invalid type in declaration before ‘;’ token
+ } Edje_Cursor;
+              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1470:14: error: conflicting declaration ‘typedef int Edje_Cursor’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1470:3: error: ‘Edje_Cursor’ has a previous declaration as ‘typedef enum _Edje_Cursor Edje_Cursor’
+ } Edje_Cursor;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1501:14: error: multiple definition of ‘enum _Edje_Aspect_Control’
+ typedef enum _Edje_Aspect_Control
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1501:14: error: previous definition here
+ typedef enum _Edje_Aspect_Control
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1508:22: error: invalid type in declaration before ‘;’ token
+ } Edje_Aspect_Control;
+                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1508:22: error: conflicting declaration ‘typedef int Edje_Aspect_Control’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1508:3: error: ‘Edje_Aspect_Control’ has a previous declaration as ‘typedef enum _Edje_Aspect_Control Edje_Aspect_Control’
+ } Edje_Aspect_Control;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1559:14: error: multiple definition of ‘enum _Edje_Drag_Dir’
+ typedef enum _Edje_Drag_Dir
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1559:14: error: previous definition here
+ typedef enum _Edje_Drag_Dir
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1565:16: error: invalid type in declaration before ‘;’ token
+ } Edje_Drag_Dir;
+                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1565:16: error: conflicting declaration ‘typedef int Edje_Drag_Dir’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1565:3: error: ‘Edje_Drag_Dir’ has a previous declaration as ‘typedef enum _Edje_Drag_Dir Edje_Drag_Dir’
+ } Edje_Drag_Dir;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1637:14: error: multiple definition of ‘enum _Edje_Object_Table_Homogeneous_Mode’
+ typedef enum _Edje_Object_Table_Homogeneous_Mode
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1637:14: error: previous definition here
+ typedef enum _Edje_Object_Table_Homogeneous_Mode
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1642:37: error: invalid type in declaration before ‘;’ token
+ } Edje_Object_Table_Homogeneous_Mode;
+                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1642:37: error: conflicting declaration ‘typedef int Edje_Object_Table_Homogeneous_Mode’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1642:3: error: ‘Edje_Object_Table_Homogeneous_Mode’ has a previous declaration as ‘typedef enum _Edje_Object_Table_Homogeneous_Mode Edje_Object_Table_Homogeneous_Mode’
+ } Edje_Object_Table_Homogeneous_Mode;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1769:14: error: multiple definition of ‘enum _Edje_Load_Error’
+ typedef enum _Edje_Load_Error
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1769:14: error: previous definition here
+ typedef enum _Edje_Load_Error
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1781:18: error: invalid type in declaration before ‘;’ token
+ } Edje_Load_Error; /**< Edje file loading error codes one can get - see edje_load_error_str() too. */
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1781:18: error: conflicting declaration ‘typedef int Edje_Load_Error’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1781:3: error: ‘Edje_Load_Error’ has a previous declaration as ‘typedef enum _Edje_Load_Error Edje_Load_Error’
+ } Edje_Load_Error; /**< Edje file loading error codes one can get - see edje_load_error_str() too. */
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1902:14: error: multiple definition of ‘enum _Edje_Tween_Mode’
+ typedef enum _Edje_Tween_Mode
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1902:14: error: previous definition here
+ typedef enum _Edje_Tween_Mode
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1919:18: error: invalid type in declaration before ‘;’ token
+ } Edje_Tween_Mode;
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1919:18: error: conflicting declaration ‘typedef int Edje_Tween_Mode’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1919:3: error: ‘Edje_Tween_Mode’ has a previous declaration as ‘typedef enum _Edje_Tween_Mode Edje_Tween_Mode’
+ } Edje_Tween_Mode;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1927:14: error: multiple definition of ‘enum _Edje_Action_Type’
+ typedef enum _Edje_Action_Type
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1927:14: error: previous definition here
+ typedef enum _Edje_Action_Type
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1963:19: error: invalid type in declaration before ‘;’ token
+ } Edje_Action_Type;
+                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1963:19: error: conflicting declaration ‘typedef int Edje_Action_Type’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:1963:3: error: ‘Edje_Action_Type’ has a previous declaration as ‘typedef enum _Edje_Action_Type Edje_Action_Type’
+ } Edje_Action_Type;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2104:14: error: multiple definition of ‘enum _Edje_Message_Type’
+ typedef enum _Edje_Message_Type
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2104:14: error: previous definition here
+ typedef enum _Edje_Message_Type
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2123:20: error: invalid type in declaration before ‘;’ token
+ } Edje_Message_Type;
+                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2123:20: error: conflicting declaration ‘typedef int Edje_Message_Type’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2123:3: error: ‘Edje_Message_Type’ has a previous declaration as ‘typedef enum _Edje_Message_Type Edje_Message_Type’
+ } Edje_Message_Type;
+   ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2175:8: error: redefinition of ‘struct _Edje_Message_String’
+ struct _Edje_Message_String
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2175:8: error: previous definition of ‘struct _Edje_Message_String’
+ struct _Edje_Message_String
+        ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2180:8: error: redefinition of ‘struct _Edje_Message_Int’
+ struct _Edje_Message_Int
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2180:8: error: previous definition of ‘struct _Edje_Message_Int’
+ struct _Edje_Message_Int
+        ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2185:8: error: redefinition of ‘struct _Edje_Message_Float’
+ struct _Edje_Message_Float
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2185:8: error: previous definition of ‘struct _Edje_Message_Float’
+ struct _Edje_Message_Float
+        ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2190:8: error: redefinition of ‘struct _Edje_Message_String_Set’
+ struct _Edje_Message_String_Set
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2190:8: error: previous definition of ‘struct _Edje_Message_String_Set’
+ struct _Edje_Message_String_Set
+        ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2196:8: error: redefinition of ‘struct _Edje_Message_Int_Set’
+ struct _Edje_Message_Int_Set
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2196:8: error: previous definition of ‘struct _Edje_Message_Int_Set’
+ struct _Edje_Message_Int_Set
+        ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2202:8: error: redefinition of ‘struct _Edje_Message_Float_Set’
+ struct _Edje_Message_Float_Set
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2202:8: error: previous definition of ‘struct _Edje_Message_Float_Set’
+ struct _Edje_Message_Float_Set
+        ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2208:8: error: redefinition of ‘struct _Edje_Message_String_Int’
+ struct _Edje_Message_String_Int
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2208:8: error: previous definition of ‘struct _Edje_Message_String_Int’
+ struct _Edje_Message_String_Int
+        ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2214:8: error: redefinition of ‘struct _Edje_Message_String_Float’
+ struct _Edje_Message_String_Float
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2214:8: error: previous definition of ‘struct _Edje_Message_String_Float’
+ struct _Edje_Message_String_Float
+        ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2220:8: error: redefinition of ‘struct _Edje_Message_String_Int_Set’
+ struct _Edje_Message_String_Int_Set
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2220:8: error: previous definition of ‘struct _Edje_Message_String_Int_Set’
+ struct _Edje_Message_String_Int_Set
+        ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2227:8: error: redefinition of ‘struct _Edje_Message_String_Float_Set’
+ struct _Edje_Message_String_Float_Set
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2227:8: error: previous definition of ‘struct _Edje_Message_String_Float_Set’
+ struct _Edje_Message_String_Float_Set
+        ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2430:14: error: multiple definition of ‘enum _Edje_Channel’
+ typedef enum _Edje_Channel
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2430:14: error: previous definition here
+ typedef enum _Edje_Channel
+              ^
+In file included from /tmp/A_k5obx6hk/dump1.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2440:15: error: invalid type in declaration before ‘;’ token
+ } Edje_Channel;
+               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2440:15: error: conflicting declaration ‘typedef int Edje_Channel’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/edje-1/Edje_Common.h:2440:3: error: ‘Edje_Channel’ has a previous declaration as ‘typedef enum _Edje_Channel Edje_Channel’
+ } Edje_Channel;
+   ^
+
+Temporary header file '/tmp/A_k5obx6hk/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/edje_edit.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/edje_edit.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/edje_object.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/edje_object.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/edje_types.eot.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/A_k5obx6hk/dump2.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:11:16: error: redefinition of ‘struct _Edje_Version’
+ typedef struct _Edje_Version
+                ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:11:16: error: previous definition of ‘struct _Edje_Version’
+ typedef struct _Edje_Version
+                ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:17:15: error: invalid type in declaration before ‘;’ token
+ } Edje_Version;
+               ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:17:15: error: conflicting declaration ‘typedef int Edje_Version’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:17:3: error: ‘Edje_Version’ has a previous declaration as ‘typedef struct _Edje_Version Edje_Version’
+ } Edje_Version;
+   ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:34:8: error: redefinition of ‘struct _Edje_Color_Class’
+ struct _Edje_Color_Class
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:34:8: error: previous definition of ‘struct _Edje_Color_Class’
+ struct _Edje_Color_Class
+        ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:328:14: error: multiple definition of ‘enum _Edje_External_Param_Flags’
+ typedef enum _Edje_External_Param_Flags
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:328:14: error: previous definition here
+ typedef enum _Edje_External_Param_Flags
+              ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:338:28: error: invalid type in declaration before ‘;’ token
+ } Edje_External_Param_Flags;
+                            ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:338:28: error: conflicting declaration ‘typedef int Edje_External_Param_Flags’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:338:3: error: ‘Edje_External_Param_Flags’ has a previous declaration as ‘typedef enum _Edje_External_Param_Flags Edje_External_Param_Flags’
+ } Edje_External_Param_Flags;
+   ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:383:8: error: redefinition of ‘struct _Edje_External_Param_Info’
+ struct _Edje_External_Param_Info
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:383:8: error: previous definition of ‘struct _Edje_External_Param_Info’
+ struct _Edje_External_Param_Info
+        ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:510:8: error: redefinition of ‘struct _Edje_External_Type’
+ struct _Edje_External_Type
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:510:8: error: previous definition of ‘struct _Edje_External_Type’
+ struct _Edje_External_Type
+        ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:549:8: error: redefinition of ‘struct _Edje_External_Type_Info’
+ struct _Edje_External_Type_Info
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:549:8: error: previous definition of ‘struct _Edje_External_Type_Info’
+ struct _Edje_External_Type_Info
+        ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:929:8: error: redefinition of ‘struct _Edje_Entry_Change_Info’
+ struct _Edje_Entry_Change_Info
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:929:8: error: previous definition of ‘struct _Edje_Entry_Change_Info’
+ struct _Edje_Entry_Change_Info
+        ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:957:14: error: multiple definition of ‘enum _Edje_Text_Filter_Type’
+ typedef enum _Edje_Text_Filter_Type
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:957:14: error: previous definition here
+ typedef enum _Edje_Text_Filter_Type
+              ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:962:24: error: invalid type in declaration before ‘;’ token
+ } Edje_Text_Filter_Type;
+                        ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:962:24: error: conflicting declaration ‘typedef int Edje_Text_Filter_Type’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:962:3: error: ‘Edje_Text_Filter_Type’ has a previous declaration as ‘typedef enum _Edje_Text_Filter_Type Edje_Text_Filter_Type’
+ } Edje_Text_Filter_Type;
+   ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:966:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL,         /**< The plain normal layout @since 1.12 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:966:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL,         /**< The plain normal layout @since 1.12 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:967:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME,       /**< Filename layout. Symbols such as '/' should be disabled. @since 1.12 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:967:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME,       /**< Filename layout. Symbols such as '/' should be disabled. @since 1.12 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:968:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME     /**< The name of a person. @since 1.12 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:968:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME     /**< The name of a person. @since 1.12 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:973:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL,             /**< The plain normal number layout @since 1.8 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:973:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL,             /**< The plain normal number layout @since 1.8 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:974:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED,             /**< The number layout to allow a positive or negative sign at the start @since 1.8 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:974:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED,             /**< The number layout to allow a positive or negative sign at the start @since 1.8 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:975:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL,            /**< The number layout to allow decimal point to provide fractional value @since 1.8 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:975:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL,            /**< The number layout to allow decimal point to provide fractional value @since 1.8 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:976:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL  /**< The number layout to allow decimal point and negative sign @since 1.8 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:976:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL  /**< The number layout to allow decimal point and negative sign @since 1.8 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:981:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL,       /**< The normal password layout @since 1.12 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:981:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL,       /**< The normal password layout @since 1.12 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:982:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY’
+    EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY    /**< The password layout to allow only number @since 1.12 */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:982:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY’
+    EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY    /**< The password layout to allow only number @since 1.12 */
+    ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1220:14: error: multiple definition of ‘enum _Edje_Part_Type’
+ typedef enum _Edje_Part_Type
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1220:14: error: previous definition here
+ typedef enum _Edje_Part_Type
+              ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1240:17: error: invalid type in declaration before ‘;’ token
+ } Edje_Part_Type;
+                 ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1240:17: error: conflicting declaration ‘typedef int Edje_Part_Type’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1240:3: error: ‘Edje_Part_Type’ has a previous declaration as ‘typedef enum _Edje_Part_Type Edje_Part_Type’
+ } Edje_Part_Type;
+   ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1274:14: error: multiple definition of ‘enum _Edje_Text_Effect’
+ typedef enum _Edje_Text_Effect
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1274:14: error: previous definition here
+ typedef enum _Edje_Text_Effect
+              ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1298:19: error: invalid type in declaration before ‘;’ token
+ } Edje_Text_Effect;
+                   ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1298:19: error: conflicting declaration ‘typedef int Edje_Text_Effect’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1298:3: error: ‘Edje_Text_Effect’ has a previous declaration as ‘typedef enum _Edje_Text_Effect Edje_Text_Effect’
+ } Edje_Text_Effect;
+   ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1378:14: error: multiple definition of ‘enum _Edje_Aspect_Control’
+ typedef enum _Edje_Aspect_Control
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1378:14: error: previous definition here
+ typedef enum _Edje_Aspect_Control
+              ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1385:22: error: invalid type in declaration before ‘;’ token
+ } Edje_Aspect_Control;
+                      ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1385:22: error: conflicting declaration ‘typedef int Edje_Aspect_Control’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1385:3: error: ‘Edje_Aspect_Control’ has a previous declaration as ‘typedef enum _Edje_Aspect_Control Edje_Aspect_Control’
+ } Edje_Aspect_Control;
+   ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1495:14: error: multiple definition of ‘enum _Edje_Object_Table_Homogeneous_Mode’
+ typedef enum _Edje_Object_Table_Homogeneous_Mode
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1495:14: error: previous definition here
+ typedef enum _Edje_Object_Table_Homogeneous_Mode
+              ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1500:37: error: invalid type in declaration before ‘;’ token
+ } Edje_Object_Table_Homogeneous_Mode;
+                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1500:37: error: conflicting declaration ‘typedef int Edje_Object_Table_Homogeneous_Mode’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1500:3: error: ‘Edje_Object_Table_Homogeneous_Mode’ has a previous declaration as ‘typedef enum _Edje_Object_Table_Homogeneous_Mode Edje_Object_Table_Homogeneous_Mode’
+ } Edje_Object_Table_Homogeneous_Mode;
+   ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1718:14: error: multiple definition of ‘enum _Edje_Tween_Mode’
+ typedef enum _Edje_Tween_Mode
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1718:14: error: previous definition here
+ typedef enum _Edje_Tween_Mode
+              ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1735:18: error: invalid type in declaration before ‘;’ token
+ } Edje_Tween_Mode;
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1735:18: error: conflicting declaration ‘typedef int Edje_Tween_Mode’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1735:3: error: ‘Edje_Tween_Mode’ has a previous declaration as ‘typedef enum _Edje_Tween_Mode Edje_Tween_Mode’
+ } Edje_Tween_Mode;
+   ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1747:14: error: multiple definition of ‘enum _Edje_Action_Type’
+ typedef enum _Edje_Action_Type
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1747:14: error: previous definition here
+ typedef enum _Edje_Action_Type
+              ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1783:19: error: invalid type in declaration before ‘;’ token
+ } Edje_Action_Type;
+                   ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1783:19: error: conflicting declaration ‘typedef int Edje_Action_Type’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1783:3: error: ‘Edje_Action_Type’ has a previous declaration as ‘typedef enum _Edje_Action_Type Edje_Action_Type’
+ } Edje_Action_Type;
+   ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1921:8: error: redefinition of ‘struct _Edje_Message_String’
+ struct _Edje_Message_String
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1921:8: error: previous definition of ‘struct _Edje_Message_String’
+ struct _Edje_Message_String
+        ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1926:8: error: redefinition of ‘struct _Edje_Message_Int’
+ struct _Edje_Message_Int
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1926:8: error: previous definition of ‘struct _Edje_Message_Int’
+ struct _Edje_Message_Int
+        ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1931:8: error: redefinition of ‘struct _Edje_Message_Float’
+ struct _Edje_Message_Float
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1931:8: error: previous definition of ‘struct _Edje_Message_Float’
+ struct _Edje_Message_Float
+        ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1936:8: error: redefinition of ‘struct _Edje_Message_String_Set’
+ struct _Edje_Message_String_Set
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1936:8: error: previous definition of ‘struct _Edje_Message_String_Set’
+ struct _Edje_Message_String_Set
+        ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1942:8: error: redefinition of ‘struct _Edje_Message_Int_Set’
+ struct _Edje_Message_Int_Set
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1942:8: error: previous definition of ‘struct _Edje_Message_Int_Set’
+ struct _Edje_Message_Int_Set
+        ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1948:8: error: redefinition of ‘struct _Edje_Message_Float_Set’
+ struct _Edje_Message_Float_Set
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1948:8: error: previous definition of ‘struct _Edje_Message_Float_Set’
+ struct _Edje_Message_Float_Set
+        ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1954:8: error: redefinition of ‘struct _Edje_Message_String_Int’
+ struct _Edje_Message_String_Int
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1954:8: error: previous definition of ‘struct _Edje_Message_String_Int’
+ struct _Edje_Message_String_Int
+        ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1960:8: error: redefinition of ‘struct _Edje_Message_String_Float’
+ struct _Edje_Message_String_Float
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1960:8: error: previous definition of ‘struct _Edje_Message_String_Float’
+ struct _Edje_Message_String_Float
+        ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1966:8: error: redefinition of ‘struct _Edje_Message_String_Int_Set’
+ struct _Edje_Message_String_Int_Set
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1966:8: error: previous definition of ‘struct _Edje_Message_String_Int_Set’
+ struct _Edje_Message_String_Int_Set
+        ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1973:8: error: redefinition of ‘struct _Edje_Message_String_Float_Set’
+ struct _Edje_Message_String_Float_Set
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:1973:8: error: previous definition of ‘struct _Edje_Message_String_Float_Set’
+ struct _Edje_Message_String_Float_Set
+        ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:2142:14: error: multiple definition of ‘enum _Edje_Channel’
+ typedef enum _Edje_Channel
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:2142:14: error: previous definition here
+ typedef enum _Edje_Channel
+              ^
+In file included from /tmp/A_k5obx6hk/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:2152:15: error: invalid type in declaration before ‘;’ token
+ } Edje_Channel;
+               ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:2152:15: error: conflicting declaration ‘typedef int Edje_Channel’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/A_k5obx6hk/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/edje-1/Edje_Common.h:2152:3: error: ‘Edje_Channel’ has a previous declaration as ‘typedef enum _Edje_Channel Edje_Channel’
+ } Edje_Channel;
+   ^
+

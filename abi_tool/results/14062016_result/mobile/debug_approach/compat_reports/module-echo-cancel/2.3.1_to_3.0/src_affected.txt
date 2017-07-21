@@ -1,0 +1,14 @@
+pa_speex_ec_init
+pa_adrian_ec_init
+pa_echo_canceller_get_capture_volume
+pa_adrian_ec_done
+module_echo_cancel_LTX_pa__get_n_used
+pa_adrian_ec_run
+module_echo_cancel_LTX_pa__done
+pa_null_ec_run
+pa_null_ec_done
+pa_echo_canceller_set_capture_volume
+pa_null_ec_init
+module_echo_cancel_LTX_pa__init
+pa_speex_ec_done
+pa_speex_ec_run

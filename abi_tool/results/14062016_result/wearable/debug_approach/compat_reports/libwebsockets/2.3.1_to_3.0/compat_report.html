@@ -1,0 +1,2415 @@
+<!-- kind:binary;verdict:incompatible;affected:89;added:91;removed:65;type_problems_high:0;type_problems_medium:26;type_problems_low:2;interface_problems_high:1;interface_problems_medium:6;interface_problems_low:2;changed_constants:0;type_changes_other:61;tool_version:1.99.18 -->
+<!-- kind:source;verdict:incompatible;affected:89;added:92;removed:64;type_problems_high:1;type_problems_medium:0;type_problems_low:0;interface_problems_high:1;interface_problems_medium:6;interface_problems_low:0;changed_constants:0;type_changes_other:88;interface_changes_other:2;tool_version:1.99.18 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="libwebsockets, compatibility, API, ABI, report" />
+    <meta name="description" content="API/ABI compatibility report for the libwebsockets object between 2.3.1 and 3.0 versions" />
+    <title>
+        libwebsockets: 2.3.1 to 3.0 compatibility report
+    </title>
+    <style type="text/css">
+    body {
+    font-family:Arial, sans-serif;
+    background-color:White;
+    color:Black;
+}
+hr {
+    color:Black;
+    background-color:Black;
+    height:1px;
+    border:0;
+}
+h1 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.625em;
+}
+h2 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.25em;
+    white-space:nowrap;
+}
+span.section {
+    font-weight:bold;
+    cursor:pointer;
+    color:#003E69;
+    white-space:nowrap;
+    margin-left:5px;
+}
+span.new_sign {
+    font-weight:bold;
+    margin-left:26px;
+    color:#003E69;
+}
+span.new_sign_lbl {
+    margin-left:28px;
+    font-size:0.875em;
+    color:Black;
+}
+span:hover.section {
+    color:#336699;
+}
+span.sect_aff {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:#cc3300;
+}
+span.sect_info {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:Black;
+}
+span.ext {
+    font-weight:100;
+}
+span.h_name {
+    color:#cc3300;
+    font-size:0.875em;
+    font-weight:bold;
+}
+div.h_list, div.lib_list {
+    font-size:0.94em;
+    padding-left:5px;
+}
+span.ns {
+    color:#408080;
+    font-size:0.94em;
+}
+span.lib_name {
+    color:Green;
+    font-size:0.875em;
+    font-weight:bold;
+}
+span.iname {
+    font-weight:bold;
+    color:#003E69;
+    margin-left:5px;
+}
+span.iname_b {
+    font-weight:bold;
+    font-size:1.1em;
+}
+span.iname_a {
+    color:#333333;
+    font-weight:bold;
+    font-size:0.94em;
+}
+span.sym_p {
+    font-weight:normal;
+    white-space:normal;
+}
+div.affect {
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:0.87em;
+    font-style:italic;
+    line-height:0.75em;
+}
+div.affected {
+    padding-left:30px;
+    padding-top:10px;
+}
+table.ptable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:1em;
+    margin-left:15px;
+    margin-top:3px;
+    margin-bottom:3px;
+    width:900px;
+    
+}
+table.ptable td {
+    border:1px solid gray;
+    padding: 3px;
+    font-size:0.875em;
+    text-align:left;
+    vertical-align:top;
+}
+table.vtable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:16px;
+    margin-left:30px;
+    margin-top:10px;
+}
+table.vtable td {
+    border:1px solid gray;
+    word-wrap:break-word;
+    padding: 3px;
+    font-size:0.875em;
+    max-width:450px;
+    vertical-align:top;
+}
+table.ptable th, table.vtable th {
+    background-color:#eeeeee;
+    font-weight:bold;
+    color:#333333;
+    font-family:Verdana, Arial;
+    font-size:0.81em;
+    border:1px solid gray;
+    text-align:center;
+    vertical-align:top;
+    white-space:nowrap;
+    padding: 3px;
+}
+table.summary {
+    border-collapse:collapse;
+    border:1px outset black;
+}
+table.summary th {
+    background-color:#eeeeee;
+    font-weight:100;
+    text-align:left;
+    font-size:0.94em;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px;
+}
+table.summary td {
+    text-align:right;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px 5px 3px 10px;
+}
+span.mangled {
+    padding-left:15px;
+    font-size:0.875em;
+    cursor:text;
+    color:#444444;
+}
+span.sym_ver {
+    color:#333333;
+    white-space:nowrap;
+    font-family:"DejaVu Sans Mono", Monospace;
+}
+span.attr {
+    color:#333333;
+    font-weight:100;
+}
+span.color_p {
+    font-style:italic;
+    color:Brown;
+}
+span.p {
+    font-style:italic;
+}
+span.fp {
+    font-style:italic;
+    background-color:#FFCCCC;
+}
+span.ttype {
+    font-weight:100;
+}
+span.nowrap {
+    white-space:nowrap;
+}
+span.value {
+    white-space:nowrap;
+    font-weight:bold;
+}
+td.passed {
+    background-color:#CCFFCC;
+}
+td.warning {
+    background-color:#F4F4AF;
+}
+td.failed {
+    background-color:#FFCCCC;
+}
+td.new {
+    background-color:#C6DEFF;
+}
+.top_ref {
+    font-size:0.69em;
+}
+.footer {
+    font-size:0.75em;
+}
+
+.tabset {
+    float:left;
+}
+a.tab {
+    border:1px solid Black;
+    float:left;
+    margin:0px 5px -1px 0px;
+    padding:3px 5px 3px 5px;
+    position:relative;
+    font-size:0.875em;
+    background-color:#DDD;
+    text-decoration:none;
+    color:Black;
+}
+a.disabled:hover
+{
+    color:Black;
+    background:#EEE;
+}
+a.active:hover
+{
+    color:Black;
+    background:White;
+}
+a.active {
+    border-bottom-color:White;
+    background-color:White;
+}
+div.tab {
+    border-top:1px solid Black;
+    padding:0px;
+    width:100%;
+    clear:both;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+    function showContent(header, id)
+{
+    e = document.getElementById(id);
+    if(e.style.display == 'none')
+    {
+        e.style.display = 'block';
+        e.style.visibility = 'visible';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[&minus;]");
+    }
+    else
+    {
+        e.style.display = 'none';
+        e.style.visibility = 'hidden';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[+]");
+    }
+}
+function initTabs()
+{
+    var url = window.location.href;
+    if(url.indexOf('_Source_')!=-1 || url.indexOf('#Source')!=-1)
+    {
+        var tab1 = document.getElementById('BinaryID');
+        var tab2 = document.getElementById('SourceID');
+        tab1.className='tab disabled';
+        tab2.className='tab active';
+    }
+    var sets = document.getElementsByTagName('div');
+    for (var i = 0; i < sets.length; i++)
+    {
+        if (sets[i].className.indexOf('tabset') != -1)
+        {
+            var tabs = [];
+            var links = sets[i].getElementsByTagName('a');
+            for (var j = 0; j < links.length; j++)
+            {
+                if (links[j].className.indexOf('tab') != -1)
+                {
+                    tabs.push(links[j]);
+                    links[j].tabs = tabs;
+                    var tab = document.getElementById(links[j].href.substr(links[j].href.indexOf('#') + 1));
+                    //reset all tabs on start
+                    if (tab)
+                    {
+                        if (links[j].className.indexOf('active')!=-1) {
+                            tab.style.display = 'block';
+                        }
+                        else {
+                            tab.style.display = 'none';
+                        }
+                    }
+                    links[j].onclick = function()
+                    {
+                        var tab = document.getElementById(this.href.substr(this.href.indexOf('#') + 1));
+                        if (tab)
+                        {
+                            //reset all tabs before change
+                            for (var k = 0; k < this.tabs.length; k++)
+                            {
+                                document.getElementById(this.tabs[k].href.substr(this.tabs[k].href.indexOf('#') + 1)).style.display = 'none';
+                                this.tabs[k].className = this.tabs[k].className.replace('active', 'disabled');
+                            }
+                            this.className = 'tab active';
+                            tab.style.display = 'block';
+                            // window.location.hash = this.id.replace('ID', '');
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(url.indexOf('#')!=-1) {
+        location.href=location.href;
+    }
+}
+if (window.addEventListener) window.addEventListener('load', initTabs, false);
+else if (window.attachEvent) window.attachEvent('onload', initTabs);
+    -->
+    </script>
+    </head><body><a name='Source'></a><a name='Binary'></a><a name='Top'></a><h1>API compatibility report for the <span style='color:Blue;'>libwebsockets.so</span> object between <span style='color:Red;'>2.3.1</span> and <span style='color:Red;'>3.0</span> versions on <span style='color:Blue;'>ARM</span></h1>
+
+            <br/>
+            <div class='tabset'>
+            <a id='BinaryID' href='#BinaryTab' class='tab active'>Binary<br/>Compatibility</a>
+            <a id='SourceID' href='#SourceTab' style='margin-left:3px' class='tab disabled'>Source<br/>Compatibility</a>
+            </div><div id='BinaryTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libwebsockets</td></tr>
+<tr><th>Version #1</th><td>2.3.1 (gcc 4.6.4)</td></tr>
+<tr><th>Version #2</th><td>3.0 (gcc 4.9.2)</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>Subject</th><td width='150px'>Binary Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>32</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>15</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>77 / 16</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(89%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Binary_Added' style='color:Blue;'>91</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td class='failed'><a href='#Binary_Removed' style='color:Blue;'>65</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Type_Binary_Problems_Medium' style='color:Blue;'>26</a></td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Type_Binary_Problems_Low' style='color:Blue;'>2</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td class='failed'><a href='#Symbol_Binary_Problems_High' style='color:Blue;'>1</a></td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Symbol_Binary_Problems_Medium' style='color:Blue;'>6</a></td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Symbol_Binary_Problems_Low' style='color:Blue;'>2</a></td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Binary_Changes_In_Types' style='color:Blue;'>61</a></td></tr>
+</table>
+
+<a name='Binary_Added'></a><h2>Added Symbols (91)</h2><hr/>
+<span class='h_name'>alloc.c</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">lws_set_allocator&#160;<span class='sym_p'>(&#160;<span class='nowrap'>void*(*<span class='color_p'>cb</span>)(void*, size_t) )</span></span></span><br/>
+<br/>
+<span class='h_name'>client-handshake.c</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">lws_client_connect&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, char const* <span class='color_p'>address</span>, <span class='nowrap'>int <span class='color_p'>port</span>,</span> int <span class='color_p'>ssl_connection</span>, char const* <span class='color_p'>path</span>, char const* <span class='color_p'>host</span>, char const* <span class='color_p'>origin</span>, char const* <span class='color_p'>protocol</span>, <span class='nowrap'>int <span class='color_p'>ietf_version_or_minus_one</span> )</span></span></span><br/>
+<span class="iname">lws_client_connect_extended&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, char const* <span class='color_p'>address</span>, <span class='nowrap'>int <span class='color_p'>port</span>,</span> int <span class='color_p'>ssl_connection</span>, char const* <span class='color_p'>path</span>, char const* <span class='color_p'>host</span>, char const* <span class='color_p'>origin</span>, char const* <span class='color_p'>protocol</span>, int <span class='color_p'>ietf_version_or_minus_one</span>, <span class='nowrap'>void* <span class='color_p'>userdata</span> )</span></span></span><br/>
+<span class="iname">lws_client_connect_via_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_client_connect_info* <span class='color_p'>i</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>context.c</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">lws_context_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_create_context&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context_creation_info* <span class='color_p'>info</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>extension-permessage-deflate.c</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">lws_extension_callback_pm_deflate&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, struct lws_extension const* <span class='color_p'>ext</span>, <span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> enum lws_extension_callback_reasons <span class='color_p'>reason</span>, <span class='nowrap'>void* <span class='color_p'>user</span>,</span> <span class='nowrap'>void* <span class='color_p'>in</span>,</span> <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>header.c</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">lws_add_http_header_by_name&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char const* <span class='color_p'>name</span>, unsigned char const* <span class='color_p'>value</span>, <span class='nowrap'>int <span class='color_p'>length</span>,</span> unsigned char** <span class='color_p'>p</span>, <span class='nowrap'>unsigned char* <span class='color_p'>end</span> )</span></span></span><br/>
+<span class="iname">lws_token_to_string&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum lws_token_indexes <span class='color_p'>token</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>libwebsockets.c</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">_lws_logv&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>filter</span>,</span> char const* <span class='color_p'>format</span>, <span class='nowrap'>va_list <span class='color_p'>vl</span> )</span></span></span><br/>
+<span class="iname">lws_callback_all_protocol&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, struct lws_protocols const* <span class='color_p'>protocol</span>, <span class='nowrap'>int <span class='color_p'>reason</span> )</span></span></span><br/>
+<span class="iname">lws_canonical_hostname&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_close_reason&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> enum lws_close_status <span class='color_p'>status</span>, unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_context_user&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_get_addresses&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>void* <span class='color_p'>ads</span>,</span> <span class='nowrap'>char* <span class='color_p'>name</span>,</span> <span class='nowrap'>int <span class='color_p'>name_len</span>,</span> <span class='nowrap'>char* <span class='color_p'>rip</span>,</span> <span class='nowrap'>int <span class='color_p'>rip_len</span> )</span></span></span><br/>
+<span class="iname">lws_get_count_threads&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_get_peer_addresses&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> lws_sockfd_type <span class='color_p'>fd</span>, <span class='nowrap'>char* <span class='color_p'>name</span>,</span> <span class='nowrap'>int <span class='color_p'>name_len</span>,</span> <span class='nowrap'>char* <span class='color_p'>rip</span>,</span> <span class='nowrap'>int <span class='color_p'>rip_len</span> )</span></span></span><br/>
+<span class="iname">lws_get_peer_write_allowance&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_get_protocol&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_get_reserved_bits&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_get_socket_fd&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_is_final_fragment&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_is_ssl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_partial_buffered&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_rx_flow_allow_all_protocol&#160;<span class='sym_p'>(&#160;struct lws_context const* <span class='color_p'>context</span>, <span class='nowrap'>struct lws_protocols const* <span class='color_p'>protocol</span> )</span></span></span><br/>
+<span class="iname">lws_wsi_user&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lwsl_emit_stderr&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>level</span>,</span> <span class='nowrap'>char const* <span class='color_p'>line</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>libwebsockets.h</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">lws_add_http_header_by_token&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> enum lws_token_indexes <span class='color_p'>token</span>, unsigned char const* <span class='color_p'>value</span>, <span class='nowrap'>int <span class='color_p'>length</span>,</span> unsigned char** <span class='color_p'>p</span>, <span class='nowrap'>unsigned char* <span class='color_p'>end</span> )</span></span></span><br/>
+<span class="iname">lws_add_http_header_content_length&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned long <span class='color_p'>content_length</span>, unsigned char** <span class='color_p'>p</span>, <span class='nowrap'>unsigned char* <span class='color_p'>end</span> )</span></span></span><br/>
+<span class="iname">lws_add_http_header_status&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned int <span class='color_p'>code</span>, unsigned char** <span class='color_p'>p</span>, <span class='nowrap'>unsigned char* <span class='color_p'>end</span> )</span></span></span><br/>
+<span class="iname">lws_callback_on_writable&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>p1</span> )</span></span></span><br/>
+<span class="iname">lws_cancel_service_pt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_ext_parse_options&#160;<span class='sym_p'>(&#160;struct lws_extension const* <span class='color_p'>ext</span>, <span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>void* <span class='color_p'>ext_user</span>,</span> struct lws_ext_options const* <span class='color_p'>opts</span>, <span class='nowrap'>char const* <span class='color_p'>in</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_finalize_http_header&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char** <span class='color_p'>p</span>, <span class='nowrap'>unsigned char* <span class='color_p'>end</span> )</span></span></span><br/>
+<span class="iname">lws_get_context&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws const* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_get_fops&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_get_random&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>void* <span class='color_p'>buf</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_http_transaction_completed&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>p1</span> )</span></span></span><br/>
+<span class="iname">lws_interface_to_sa&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>ipv6</span>,</span> char const* <span class='color_p'>ifname</span>, struct sockaddr_in* <span class='color_p'>addr</span>, <span class='nowrap'>size_t <span class='color_p'>addrlen</span> )</span></span></span><br/>
+<span class="iname">lws_parse_uri&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char* <span class='color_p'>p</span>,</span> char const** <span class='color_p'>prot</span>, char const** <span class='color_p'>ads</span>, <span class='nowrap'>int* <span class='color_p'>port</span>,</span> <span class='nowrap'>char const** <span class='color_p'>path</span> )</span></span></span><br/>
+<span class="iname">lws_read&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_return_http_status&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned int <span class='color_p'>code</span>, <span class='nowrap'>char const* <span class='color_p'>html_body</span> )</span></span></span><br/>
+<span class="iname">lws_rx_flow_control&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>int <span class='color_p'>enable</span> )</span></span></span><br/>
+<span class="iname">lws_serve_http_file_fragment&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_service_fd&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>struct pollfd* <span class='color_p'>pollfd</span> )</span></span></span><br/>
+<span class="iname">lws_service_fd_tsi&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, struct pollfd* <span class='color_p'>pollfd</span>, <span class='nowrap'>int <span class='color_p'>tsi</span> )</span></span></span><br/>
+<span class="iname">lws_set_proxy&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>char const* <span class='color_p'>proxy</span> )</span></span></span><br/>
+<span class="iname">lws_set_timeout&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> enum pending_timeout <span class='color_p'>reason</span>, <span class='nowrap'>int <span class='color_p'>secs</span> )</span></span></span><br/>
+<span class="iname">lws_SHA1&#160;<span class='sym_p'>(&#160;unsigned char const* <span class='color_p'>d</span>, <span class='nowrap'>size_t <span class='color_p'>n</span>,</span> <span class='nowrap'>unsigned char* <span class='color_p'>md</span> )</span></span></span><br/>
+<span class="iname">lws_write&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span>,</span> <span class='nowrap'>enum lws_write_protocol <span class='color_p'>wp</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>lws-plat-unix.c</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">lws_cancel_service&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>output.c</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">lws_ssl_pending_no_ssl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>parsers.c</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">lws_hdr_copy_fragment&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>char* <span class='color_p'>dst</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span>,</span> enum lws_token_indexes <span class='color_p'>h</span>, <span class='nowrap'>int <span class='color_p'>frag_idx</span> )</span></span></span><br/>
+<span class="iname">lws_hdr_fragment_length&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> enum lws_token_indexes <span class='color_p'>h</span>, <span class='nowrap'>int <span class='color_p'>frag_idx</span> )</span></span></span><br/>
+<span class="iname">lws_remaining_packet_payload&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pollfd.c</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">lws_callback_on_writable_all_protocol&#160;<span class='sym_p'>(&#160;struct lws_context const* <span class='color_p'>context</span>, <span class='nowrap'>struct lws_protocols const* <span class='color_p'>protocol</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>private-libwebsockets.h</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">lws_client_reset&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>int <span class='color_p'>ssl</span>,</span> char const* <span class='color_p'>address</span>, <span class='nowrap'>int <span class='color_p'>port</span>,</span> char const* <span class='color_p'>path</span>, <span class='nowrap'>char const* <span class='color_p'>host</span> )</span></span></span><br/>
+<span class="iname">lws_context_init_extensions&#160;<span class='sym_p'>(&#160;struct lws_context_creation_info* <span class='color_p'>info</span>, <span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_context_init_server_ssl&#160;<span class='sym_p'>(&#160;struct lws_context_creation_info* <span class='color_p'>info</span>, <span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_plat_change_pollfd&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>struct pollfd* <span class='color_p'>pfd</span> )</span></span></span><br/>
+<span class="iname">lws_plat_context_early_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_plat_context_early_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">lws_plat_context_late_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_plat_delete_socket_from_fds&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>int <span class='color_p'>m</span> )</span></span></span><br/>
+<span class="iname">lws_plat_drop_app_privileges&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context_creation_info* <span class='color_p'>info</span> )</span></span></span><br/>
+<span class="iname">lws_plat_inet_ntop&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>af</span>,</span> <span class='nowrap'>void const* <span class='color_p'>src</span>,</span> <span class='nowrap'>char* <span class='color_p'>dst</span>,</span> <span class='nowrap'>int <span class='color_p'>cnt</span> )</span></span></span><br/>
+<span class="iname">lws_plat_init&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>struct lws_context_creation_info* <span class='color_p'>info</span> )</span></span></span><br/>
+<span class="iname">lws_plat_insert_socket_into_fds&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_plat_service&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>int <span class='color_p'>timeout_ms</span> )</span></span></span><br/>
+<span class="iname">lws_plat_service_periodic&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_plat_service_tsi&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>int <span class='color_p'>timeout_ms</span>,</span> <span class='nowrap'>int <span class='color_p'>tsi</span> )</span></span></span><br/>
+<span class="iname">lws_plat_set_socket_options&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>int <span class='color_p'>fd</span> )</span></span></span><br/>
+<span class="iname">lws_poll_listen_fd&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct pollfd* <span class='color_p'>fd</span> )</span></span></span><br/>
+<span class="iname">lws_server_get_canonical_hostname&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>struct lws_context_creation_info* <span class='color_p'>info</span> )</span></span></span><br/>
+<span class="iname">lws_server_socket_service_ssl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>lws_sockfd_type <span class='color_p'>accept_fd</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_capable_read&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>int <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_capable_read_no_ssl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>int <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_capable_write&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>int <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_capable_write_no_ssl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>int <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_close&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_context_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_pending&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_remove_wsi_from_buffered_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_union_transition&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>enum connection_mode <span class='color_p'>mode</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>server-handshake.c</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">lws_extension_server_handshake&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>char** <span class='color_p'>p</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>server.c</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">lws_adopt_socket&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>lws_sockfd_type <span class='color_p'>accept_fd</span> )</span></span></span><br/>
+<span class="iname">lws_serve_http_file&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> char const* <span class='color_p'>file</span>, char const* <span class='color_p'>content_type</span>, char const* <span class='color_p'>other_headers</span>, <span class='nowrap'>int <span class='color_p'>other_headers_len</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>service.c</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">lws_service&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>int <span class='color_p'>timeout_ms</span> )</span></span></span><br/>
+<span class="iname">lws_service_tsi&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>int <span class='color_p'>timeout_ms</span>,</span> <span class='nowrap'>int <span class='color_p'>tsi</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>ssl.c</span>, <span class='lib_name'>libwebsockets.so.7</span><br/>
+<span class="iname">lws_decode_ssl_error&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">lws_ssl_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Binary_Removed'></a><a name='Binary_Withdrawn'></a><h2>Removed Symbols (65)</h2><hr/>
+<span class='h_name'>base64-decode.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">lws_b64_selftest&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>client-handshake.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">__libwebsocket_client_connect_2&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_client_connect&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, char const* <span class='color_p'>address</span>, <span class='nowrap'>int <span class='color_p'>port</span>,</span> int <span class='color_p'>ssl_connection</span>, char const* <span class='color_p'>path</span>, char const* <span class='color_p'>host</span>, char const* <span class='color_p'>origin</span>, char const* <span class='color_p'>protocol</span>, <span class='nowrap'>int <span class='color_p'>ietf_version_or_minus_one</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_client_connect_extended&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, char const* <span class='color_p'>address</span>, <span class='nowrap'>int <span class='color_p'>port</span>,</span> int <span class='color_p'>ssl_connection</span>, char const* <span class='color_p'>path</span>, char const* <span class='color_p'>host</span>, char const* <span class='color_p'>origin</span>, char const* <span class='color_p'>protocol</span>, int <span class='color_p'>ietf_version_or_minus_one</span>, <span class='nowrap'>void* <span class='color_p'>userdata</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>client-parser.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">libwebsocket_client_rx_sm&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>unsigned char <span class='color_p'>c</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>client.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">libwebsockets_generate_client_handshake&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>char* <span class='color_p'>pkt</span> )</span></span></span><br/>
+<span class="iname">lws_client_interpret_server_handshake&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_client_socket_service&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>struct pollfd* <span class='color_p'>pollfd</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>daemonize.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">get_daemonize_pid&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">lws_daemonize&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>_lock_path</span> )</span></span></span><br/>
+<span class="iname">pid_daemon <span class='attr'>[data]</span></span><br/>
+<br/>
+<span class='h_name'>extension-deflate-frame.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">lws_extension_callback_deflate_frame&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket_extension* <span class='color_p'>ext</span>, struct libwebsocket* <span class='color_p'>wsi</span>, enum libwebsocket_extension_callback_reasons <span class='color_p'>reason</span>, <span class='nowrap'>void* <span class='color_p'>user</span>,</span> <span class='nowrap'>void* <span class='color_p'>in</span>,</span> <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>extension-deflate-stream.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">lws_extension_callback_deflate_stream&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket_extension* <span class='color_p'>ext</span>, struct libwebsocket* <span class='color_p'>wsi</span>, enum libwebsocket_extension_callback_reasons <span class='color_p'>reason</span>, <span class='nowrap'>void* <span class='color_p'>user</span>,</span> <span class='nowrap'>void* <span class='color_p'>in</span>,</span> <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>extension.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">libwebsocket_get_internal_extensions&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">libwebsocket_internal_extensions <span class='attr'>[data]</span></span><br/>
+<br/>
+<span class='h_name'>handshake.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">libwebsocket_read&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>libwebsockets.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">_libwebsocket_rx_flow_control&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">insert_wsi_socket_into_fds&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_callback_on_writable&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_callback_on_writable_all_protocol&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket_protocols const* <span class='color_p'>protocol</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_canonical_hostname&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_close_and_free_session&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>enum lws_close_status <span class='color_p'>reason</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_context_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_context_user&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_create_context&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context_creation_info* <span class='color_p'>info</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_ensure_user_space&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_get_reserved_bits&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_get_socket_fd&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_is_final_fragment&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_rx_flow_control&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>int <span class='color_p'>enable</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_service&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>int <span class='color_p'>timeout_ms</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_service_fd&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>struct pollfd* <span class='color_p'>pollfd</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_service_timeout_check&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>unsigned int <span class='color_p'>sec</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_set_timeout&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, enum pending_timeout <span class='color_p'>reason</span>, <span class='nowrap'>int <span class='color_p'>secs</span> )</span></span></span><br/>
+<span class="iname">libwebsockets_get_peer_addresses&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>int <span class='color_p'>fd</span>,</span> <span class='nowrap'>char* <span class='color_p'>name</span>,</span> <span class='nowrap'>int <span class='color_p'>name_len</span>,</span> <span class='nowrap'>char* <span class='color_p'>rip</span>,</span> <span class='nowrap'>int <span class='color_p'>rip_len</span> )</span></span></span><br/>
+<span class="iname">libwebsockets_get_protocol&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsockets_get_random&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>void* <span class='color_p'>buf</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_any_extension_handled&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, enum libwebsocket_extension_callback_reasons <span class='color_p'>r</span>, <span class='nowrap'>void* <span class='color_p'>v</span>,</span> <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_get_extension_user_matching_ext&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>struct libwebsocket_extension* <span class='color_p'>ext</span> )</span></span></span><br/>
+<span class="iname">lws_handle_POLLOUT_event&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>struct pollfd* <span class='color_p'>pollfd</span> )</span></span></span><br/>
+<span class="iname">lws_set_socket_options&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>int <span class='color_p'>fd</span> )</span></span></span><br/>
+<span class="iname">user_callback_handle_rxflow&#160;<span class='sym_p'>(&#160;callback_function* <span class='color_p'>callback_function</span>, struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, enum libwebsocket_callback_reasons <span class='color_p'>reason</span>, <span class='nowrap'>void* <span class='color_p'>user</span>,</span> <span class='nowrap'>void* <span class='color_p'>in</span>,</span> <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>output.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">libwebsocket_write&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span>,</span> <span class='nowrap'>enum libwebsocket_write_protocol <span class='color_p'>protocol</span> )</span></span></span><br/>
+<span class="iname">libwebsockets_serve_http_file&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, char const* <span class='color_p'>file</span>, <span class='nowrap'>char const* <span class='color_p'>content_type</span> )</span></span></span><br/>
+<span class="iname">libwebsockets_serve_http_file_fragment&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_issue_raw&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_issue_raw_ext_access&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lwsl_hexdump&#160;<span class='sym_p'>(&#160;<span class='nowrap'>void* <span class='color_p'>vbuf</span>,</span> <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>parsers.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">lextable <span class='attr'>[data]</span></span><br/>
+<span class="iname">lextable_decode&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>pos</span>,</span> <span class='nowrap'>char <span class='color_p'>c</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_interpret_incoming_packet&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_parse&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>unsigned char <span class='color_p'>c</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_rx_sm&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>unsigned char <span class='color_p'>c</span> )</span></span></span><br/>
+<span class="iname">libwebsockets_remaining_packet_payload&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_allocate_header_table&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_hdr_simple_create&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, enum lws_token_indexes <span class='color_p'>h</span>, <span class='nowrap'>char const* <span class='color_p'>s</span> )</span></span></span><br/>
+<span class="iname">lws_hdr_simple_ptr&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>enum lws_token_indexes <span class='color_p'>h</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>private-libwebsockets.h</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">openssl_websocket_private_data_index <span class='attr'>[data]</span></span><br/>
+<br/>
+<span class='h_name'>server-handshake.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">handshake_0405&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>server.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">libwebsocket_create_new_server_wsi&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>sha-1.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="iname">SHA1&#160;<span class='sym_p'>(&#160;unsigned char const* <span class='color_p'>d</span>, <span class='nowrap'>size_t <span class='color_p'>n</span>,</span> <span class='nowrap'>unsigned char* <span class='color_p'>md</span> )</span></span></span><br/>
+<span class="iname">sha1_init&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct sha1_ctxt* <span class='color_p'>ctxt</span> )</span></span></span><br/>
+<span class="iname">sha1_loop&#160;<span class='sym_p'>(&#160;struct sha1_ctxt* <span class='color_p'>ctxt</span>, unsigned char const* <span class='color_p'>input</span>, <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">sha1_pad&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct sha1_ctxt* <span class='color_p'>ctxt</span> )</span></span></span><br/>
+<span class="iname">sha1_result&#160;<span class='sym_p'>(&#160;struct sha1_ctxt* <span class='color_p'>ctxt</span>, <span class='nowrap'>void* <span class='color_p'>digest0</span> )</span></span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='High_Risk_Binary_Problems'></a><a name='Symbol_Binary_Problems_High'></a><a name='Interface_Binary_Problems_High'></a>
+<h2>Problems with Symbols, High Severity (1)</h2><hr/>
+<span class='h_name'>server.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='ext'>[+]</span> interface_to_sa&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>ifname</span>, struct sockaddr_in* <span class='color_p'>addr</span>, <span class='nowrap'>size_t <span class='color_p'>addrlen</span> )</span></span> (1)</span>
+<br/>
+<div id="c_1" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>interface_to_sa&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, char const* <span class='color_p'>ifname</span>, struct sockaddr_in* <span class='color_p'>addr</span>, <span class='nowrap'>size_t <span class='color_p'>addrlen</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>context</b> of type <span class='value'>struct lws_context*</span> has been added to the calling stack at the middle position.</td>
+<td>Layout of parameter's stack has been changed and therefore parameters at higher positions in the stack may be incorrectly initialized by applications.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Medium_Risk_Binary_Problems'></a><a name='Type_Binary_Problems_Medium'></a>
+<h2>Problems with Data Types, Medium Severity (26)</h2><hr/>
+<span class='h_name'>libwebsockets.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_2')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> lws_token_indexes (26)</span>
+<br/>
+<div id="c_2" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Value of member <b>WSI_INIT_TOKEN_MUXURL</b> has been changed from <b>28</b> to <b>89</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Value of member <b>WSI_PARSING_COMPLETE</b> has been changed from <b>27</b> to <b>88</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Value of member <b>WSI_TOKEN_ACCEPT</b> has been changed from <b>14</b> to <b>13</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Value of member <b>WSI_TOKEN_CHALLENGE</b> has been changed from <b>9</b> to <b>8</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>5</th>
+<td>Value of member <b>WSI_TOKEN_CONNECTION</b> has been changed from <b>2</b> to <b>4</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>6</th>
+<td>Value of member <b>WSI_TOKEN_DRAFT</b> has been changed from <b>8</b> to <b>7</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>7</th>
+<td>Value of member <b>WSI_TOKEN_EXTENSIONS</b> has been changed from <b>13</b> to <b>9</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>8</th>
+<td>Value of member <b>WSI_TOKEN_HOST</b> has been changed from <b>1</b> to <b>3</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>9</th>
+<td>Value of member <b>WSI_TOKEN_HTTP</b> has been changed from <b>16</b> to <b>15</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>10</th>
+<td>Value of member <b>WSI_TOKEN_KEY</b> has been changed from <b>10</b> to <b>32</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>11</th>
+<td>Value of member <b>WSI_TOKEN_KEY1</b> has been changed from <b>3</b> to <b>10</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>12</th>
+<td>Value of member <b>WSI_TOKEN_KEY2</b> has been changed from <b>4</b> to <b>11</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>13</th>
+<td>Value of member <b>WSI_TOKEN_NAME_PART</b> has been changed from <b>24</b> to <b>85</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>14</th>
+<td>Value of member <b>WSI_TOKEN_NONCE</b> has been changed from <b>15</b> to <b>14</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>15</th>
+<td>Value of member <b>WSI_TOKEN_ORIGIN</b> has been changed from <b>7</b> to <b>6</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>16</th>
+<td>Value of member <b>WSI_TOKEN_PROTOCOL</b> has been changed from <b>5</b> to <b>12</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>17</th>
+<td>Value of member <b>WSI_TOKEN_SKIPPING</b> has been changed from <b>25</b> to <b>86</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>18</th>
+<td>Value of member <b>WSI_TOKEN_SKIPPING_SAW_CR</b> has been changed from <b>26</b> to <b>87</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>19</th>
+<td>Value of member <b>WSI_TOKEN_SWORIGIN</b> has been changed from <b>12</b> to <b>34</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>20</th>
+<td>Value of member <b>WSI_TOKEN_UPGRADE</b> has been changed from <b>6</b> to <b>5</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>21</th>
+<td>Value of member <b>WSI_TOKEN_VERSION</b> has been changed from <b>11</b> to <b>33</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>22</th>
+<td>Value of member <b>_WSI_TOKEN_CLIENT_HOST</b> has been changed from <b>21</b> to <b>82</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>23</th>
+<td>Value of member <b>_WSI_TOKEN_CLIENT_ORIGIN</b> has been changed from <b>22</b> to <b>83</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>24</th>
+<td>Value of member <b>_WSI_TOKEN_CLIENT_PEER_ADDRESS</b> has been changed from <b>19</b> to <b>80</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>25</th>
+<td>Value of member <b>_WSI_TOKEN_CLIENT_SENT_PROTOCOLS</b> has been changed from <b>18</b> to <b>79</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>26</th>
+<td>Value of member <b>_WSI_TOKEN_CLIENT_URI</b> has been changed from <b>20</b> to <b>81</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_3')">
+[+] affected symbols (2)</span>
+<div id="c_3" style="display:none;">
+<div class='affected'><span class='iname_a'>lws_hdr_copy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <i>wsi</i>,</span> <span class='nowrap'>char* <i>dest</i>,</span> <span class='nowrap'>int <i>len</i>,</span> <span class='nowrap'>enum lws_token_indexes <span class='fp'>h</span> )</span></span></span><br/>
+<div class='affect'>4th parameter &#39;h&#39; has type &#39;enum lws_token_indexes&#39;.</div>
+<span class='iname_a'>lws_hdr_total_length&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <i>wsi</i>,</span> <span class='nowrap'>enum lws_token_indexes <span class='fp'>h</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;h&#39; has type &#39;enum lws_token_indexes&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Symbol_Binary_Problems_Medium'></a><a name='Interface_Binary_Problems_Medium'></a>
+<h2>Problems with Symbols, Medium Severity (6)</h2><hr/>
+<span class='h_name'>libwebsockets.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_4')">
+<span class='ext'>[+]</span> lws_send_pipe_choked&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span> (1)</span>
+<br/>
+<div id="c_4" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>lws_send_pipe_choked&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Base type of <b>1st</b> parameter <b>wsi</b> has been changed from <span class='nowrap'><span class='value'>struct libwebsocket</span> (<b>112</b> bytes)</span> to <span class='nowrap'><span class='value'>struct lws</span> (<b>308</b> bytes)</span>.</td>
+<td>This parameter may be incorrectly initialized by applications.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>parsers.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+<span class='ext'>[+]</span> lws_frame_is_binary&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span> (1)</span>
+<br/>
+<div id="c_5" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>lws_frame_is_binary&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Base type of <b>1st</b> parameter <b>wsi</b> has been changed from <span class='nowrap'><span class='value'>struct libwebsocket</span> (<b>112</b> bytes)</span> to <span class='nowrap'><span class='value'>struct lws</span> (<b>308</b> bytes)</span>.</td>
+<td>This parameter may be incorrectly initialized by applications.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_6')">
+<span class='ext'>[+]</span> lws_hdr_copy&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>char* <span class='color_p'>dest</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span>,</span> <span class='nowrap'>enum lws_token_indexes <span class='color_p'>h</span> )</span></span> (1)</span>
+<br/>
+<div id="c_6" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>lws_hdr_copy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>char* <span class='color_p'>dst</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span>,</span> <span class='nowrap'>enum lws_token_indexes <span class='color_p'>h</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Base type of <b>1st</b> parameter <b>wsi</b> has been changed from <span class='nowrap'><span class='value'>struct libwebsocket</span> (<b>112</b> bytes)</span> to <span class='nowrap'><span class='value'>struct lws</span> (<b>308</b> bytes)</span>.</td>
+<td>This parameter may be incorrectly initialized by applications.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_7')">
+<span class='ext'>[+]</span> lws_hdr_total_length&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>enum lws_token_indexes <span class='color_p'>h</span> )</span></span> (1)</span>
+<br/>
+<div id="c_7" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>lws_hdr_total_length&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>enum lws_token_indexes <span class='color_p'>h</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Base type of <b>1st</b> parameter <b>wsi</b> has been changed from <span class='nowrap'><span class='value'>struct libwebsocket</span> (<b>112</b> bytes)</span> to <span class='nowrap'><span class='value'>struct lws</span> (<b>308</b> bytes)</span>.</td>
+<td>This parameter may be incorrectly initialized by applications.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>server.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_8')">
+<span class='ext'>[+]</span> lws_server_socket_service&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>struct pollfd* <span class='color_p'>pollfd</span> )</span></span> (2)</span>
+<br/>
+<div id="c_8" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>lws_server_socket_service&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>struct pollfd* <span class='color_p'>pollfd</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Base type of <b>1st</b> parameter <b>context</b> has been changed from <span class='nowrap'><span class='value'>struct libwebsocket_context</span> (<b>4448</b> bytes)</span> to <span class='nowrap'><span class='value'>struct lws_context</span> (<b>3596</b> bytes)</span>.</td>
+<td>This parameter may be incorrectly initialized by applications.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Base type of <b>2nd</b> parameter <b>wsi</b> has been changed from <span class='nowrap'><span class='value'>struct libwebsocket</span> (<b>112</b> bytes)</span> to <span class='nowrap'><span class='value'>struct lws</span> (<b>308</b> bytes)</span>.</td>
+<td>This parameter may be incorrectly initialized by applications.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a><a name='Type_Binary_Problems_Low'></a>
+<h2>Problems with Data Types, Low Severity (2)</h2><hr/>
+<span class='h_name'>libwebsockets.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_9')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> lws_token_indexes (2)</span>
+<br/>
+<div id="c_9" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Value of member <b>WSI_TOKEN_COUNT</b> has been changed from <b>23</b> to <b>84</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Name of member with value <b>17</b> has been changed from <b>WSI_TOKEN_MUXURL</b> to <b>WSI_TOKEN_HTTP_ACCEPT</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_10')">
+[+] affected symbols (2)</span>
+<div id="c_10" style="display:none;">
+<div class='affected'><span class='iname_a'>lws_hdr_copy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <i>wsi</i>,</span> <span class='nowrap'>char* <i>dest</i>,</span> <span class='nowrap'>int <i>len</i>,</span> <span class='nowrap'>enum lws_token_indexes <span class='fp'>h</span> )</span></span></span><br/>
+<div class='affect'>4th parameter &#39;h&#39; has type &#39;enum lws_token_indexes&#39;.</div>
+<span class='iname_a'>lws_hdr_total_length&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <i>wsi</i>,</span> <span class='nowrap'>enum lws_token_indexes <span class='fp'>h</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;h&#39; has type &#39;enum lws_token_indexes&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Symbol_Binary_Problems_Low'></a><a name='Interface_Binary_Problems_Low'></a>
+<h2>Problems with Symbols, Low Severity (2)</h2><hr/>
+<span class='h_name'>libwebsockets.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_11')">
+<span class='ext'>[+]</span> lws_set_log_level&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>level</span>,</span> <span class='nowrap'>void(*<span class='color_p'>log_emit_function</span>)(int, char const*) )</span></span> (1)</span>
+<br/>
+<div id="c_11" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>lws_set_log_level&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>level</span>,</span> <span class='nowrap'>void(*<span class='color_p'>func</span>)(int, char const*) )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>log_emit_function</b> has been renamed to <b>func</b>.</td>
+<td>Renaming of a parameter may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>parsers.c</span>, <span class='lib_name'>libwebsockets.so.3.0.0</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_12')">
+<span class='ext'>[+]</span> lws_hdr_copy&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>char* <span class='color_p'>dest</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span>,</span> <span class='nowrap'>enum lws_token_indexes <span class='color_p'>h</span> )</span></span> (1)</span>
+<br/>
+<div id="c_12" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>lws_hdr_copy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>char* <span class='color_p'>dst</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span>,</span> <span class='nowrap'>enum lws_token_indexes <span class='color_p'>h</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>dest</b> has been renamed to <b>dst</b>.</td>
+<td>Renaming of a parameter may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Binary_Changes'></a><a name='Other_Binary_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (61)</h2><hr/>
+<span class='h_name'>libwebsockets.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_13')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> lws_token_indexes (61)</span>
+<br/>
+<div id="c_13" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>WSI_TOKEN_DELETE_URI</b> with value <b>75</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>WSI_TOKEN_HTTP2_SETTINGS</b> with value <b>16</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>WSI_TOKEN_HTTP_ACCEPT_CHARSET</b> with value <b>40</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>WSI_TOKEN_HTTP_ACCEPT_ENCODING</b> with value <b>21</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>5</th>
+<td>The member <b>WSI_TOKEN_HTTP_ACCEPT_LANGUAGE</b> with value <b>22</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>6</th>
+<td>The member <b>WSI_TOKEN_HTTP_ACCEPT_RANGES</b> with value <b>41</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>7</th>
+<td>The member <b>WSI_TOKEN_HTTP_ACCESS_CONTROL_ALLOW_ORIGIN</b> with value <b>42</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>8</th>
+<td>The member <b>WSI_TOKEN_HTTP_AC_REQUEST_HEADERS</b> with value <b>18</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>9</th>
+<td>The member <b>WSI_TOKEN_HTTP_AGE</b> with value <b>43</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>10</th>
+<td>The member <b>WSI_TOKEN_HTTP_ALLOW</b> with value <b>44</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>11</th>
+<td>The member <b>WSI_TOKEN_HTTP_AUTHORIZATION</b> with value <b>25</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>12</th>
+<td>The member <b>WSI_TOKEN_HTTP_CACHE_CONTROL</b> with value <b>24</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>13</th>
+<td>The member <b>WSI_TOKEN_HTTP_COLON_AUTHORITY</b> with value <b>35</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>14</th>
+<td>The member <b>WSI_TOKEN_HTTP_COLON_METHOD</b> with value <b>36</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>15</th>
+<td>The member <b>WSI_TOKEN_HTTP_COLON_PATH</b> with value <b>37</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>16</th>
+<td>The member <b>WSI_TOKEN_HTTP_COLON_SCHEME</b> with value <b>38</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>17</th>
+<td>The member <b>WSI_TOKEN_HTTP_COLON_STATUS</b> with value <b>39</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>18</th>
+<td>The member <b>WSI_TOKEN_HTTP_CONTENT_DISPOSITION</b> with value <b>45</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>19</th>
+<td>The member <b>WSI_TOKEN_HTTP_CONTENT_ENCODING</b> with value <b>46</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>20</th>
+<td>The member <b>WSI_TOKEN_HTTP_CONTENT_LANGUAGE</b> with value <b>47</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>21</th>
+<td>The member <b>WSI_TOKEN_HTTP_CONTENT_LENGTH</b> with value <b>27</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>22</th>
+<td>The member <b>WSI_TOKEN_HTTP_CONTENT_LOCATION</b> with value <b>48</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>23</th>
+<td>The member <b>WSI_TOKEN_HTTP_CONTENT_RANGE</b> with value <b>49</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>24</th>
+<td>The member <b>WSI_TOKEN_HTTP_CONTENT_TYPE</b> with value <b>28</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>25</th>
+<td>The member <b>WSI_TOKEN_HTTP_COOKIE</b> with value <b>26</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>26</th>
+<td>The member <b>WSI_TOKEN_HTTP_DATE</b> with value <b>29</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>27</th>
+<td>The member <b>WSI_TOKEN_HTTP_ETAG</b> with value <b>50</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>28</th>
+<td>The member <b>WSI_TOKEN_HTTP_EXPECT</b> with value <b>51</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>29</th>
+<td>The member <b>WSI_TOKEN_HTTP_EXPIRES</b> with value <b>52</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>30</th>
+<td>The member <b>WSI_TOKEN_HTTP_FROM</b> with value <b>53</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>31</th>
+<td>The member <b>WSI_TOKEN_HTTP_IF_MATCH</b> with value <b>54</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>32</th>
+<td>The member <b>WSI_TOKEN_HTTP_IF_MODIFIED_SINCE</b> with value <b>19</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>33</th>
+<td>The member <b>WSI_TOKEN_HTTP_IF_NONE_MATCH</b> with value <b>20</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>34</th>
+<td>The member <b>WSI_TOKEN_HTTP_IF_RANGE</b> with value <b>55</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>35</th>
+<td>The member <b>WSI_TOKEN_HTTP_IF_UNMODIFIED_SINCE</b> with value <b>56</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>36</th>
+<td>The member <b>WSI_TOKEN_HTTP_LAST_MODIFIED</b> with value <b>57</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>37</th>
+<td>The member <b>WSI_TOKEN_HTTP_LINK</b> with value <b>58</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>38</th>
+<td>The member <b>WSI_TOKEN_HTTP_LOCATION</b> with value <b>59</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>39</th>
+<td>The member <b>WSI_TOKEN_HTTP_MAX_FORWARDS</b> with value <b>60</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>40</th>
+<td>The member <b>WSI_TOKEN_HTTP_PRAGMA</b> with value <b>23</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>41</th>
+<td>The member <b>WSI_TOKEN_HTTP_PROXY_AUTHENTICATE</b> with value <b>61</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>42</th>
+<td>The member <b>WSI_TOKEN_HTTP_PROXY_AUTHORIZATION</b> with value <b>62</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>43</th>
+<td>The member <b>WSI_TOKEN_HTTP_RANGE</b> with value <b>30</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>44</th>
+<td>The member <b>WSI_TOKEN_HTTP_REFERER</b> with value <b>31</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>45</th>
+<td>The member <b>WSI_TOKEN_HTTP_REFRESH</b> with value <b>63</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>46</th>
+<td>The member <b>WSI_TOKEN_HTTP_RETRY_AFTER</b> with value <b>64</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>47</th>
+<td>The member <b>WSI_TOKEN_HTTP_SERVER</b> with value <b>65</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>48</th>
+<td>The member <b>WSI_TOKEN_HTTP_SET_COOKIE</b> with value <b>66</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>49</th>
+<td>The member <b>WSI_TOKEN_HTTP_STRICT_TRANSPORT_SECURITY</b> with value <b>67</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>50</th>
+<td>The member <b>WSI_TOKEN_HTTP_TRANSFER_ENCODING</b> with value <b>68</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>51</th>
+<td>The member <b>WSI_TOKEN_HTTP_URI_ARGS</b> with value <b>76</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>52</th>
+<td>The member <b>WSI_TOKEN_HTTP_USER_AGENT</b> with value <b>69</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>53</th>
+<td>The member <b>WSI_TOKEN_HTTP_VARY</b> with value <b>70</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>54</th>
+<td>The member <b>WSI_TOKEN_HTTP_VIA</b> with value <b>71</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>55</th>
+<td>The member <b>WSI_TOKEN_HTTP_WWW_AUTHENTICATE</b> with value <b>72</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>56</th>
+<td>The member <b>WSI_TOKEN_HTTP_X_REAL_IP</b> with value <b>78</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>57</th>
+<td>The member <b>WSI_TOKEN_OPTIONS_URI</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>58</th>
+<td>The member <b>WSI_TOKEN_PATCH_URI</b> with value <b>73</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>59</th>
+<td>The member <b>WSI_TOKEN_POST_URI</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>60</th>
+<td>The member <b>WSI_TOKEN_PROXY</b> with value <b>77</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>61</th>
+<td>The member <b>WSI_TOKEN_PUT_URI</b> with value <b>74</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_14')">
+[+] affected symbols (2)</span>
+<div id="c_14" style="display:none;">
+<div class='affected'><span class='iname_a'>lws_hdr_copy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <i>wsi</i>,</span> <span class='nowrap'>char* <i>dest</i>,</span> <span class='nowrap'>int <i>len</i>,</span> <span class='nowrap'>enum lws_token_indexes <span class='fp'>h</span> )</span></span></span><br/>
+<div class='affect'>4th parameter &#39;h&#39; has type &#39;enum lws_token_indexes&#39;.</div>
+<span class='iname_a'>lws_hdr_total_length&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <i>wsi</i>,</span> <span class='nowrap'>enum lws_token_indexes <span class='fp'>h</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;h&#39; has type &#39;enum lws_token_indexes&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (32)</h2><hr/>
+<div class='h_list'>
+asn1.h<br/>
+bio.h<br/>
+bn.h<br/>
+buffer.h<br/>
+comp.h<br/>
+crypto.h<br/>
+dh.h<br/>
+dsa.h<br/>
+dtls1.h<br/>
+ec.h<br/>
+evp.h<br/>
+hmac.h<br/>
+in.h<br/>
+libwebsockets.h<br/>
+ossl_typ.h<br/>
+pem.h<br/>
+poll.h<br/>
+pqueue.h<br/>
+private-libwebsockets.h<br/>
+rsa.h<br/>
+sockaddr.h<br/>
+ssl.h<br/>
+ssl2.h<br/>
+ssl3.h<br/>
+stack.h<br/>
+stddef.h<br/>
+stdint.h<br/>
+time.h<br/>
+tls1.h<br/>
+types.h<br/>
+x509.h<br/>
+x509_vfy.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (15)</h2><hr/>
+<div class='h_list'>
+base64-decode.c<br/>
+client-handshake.c<br/>
+client-parser.c<br/>
+client.c<br/>
+daemonize.c<br/>
+extension-deflate-frame.c<br/>
+extension-deflate-stream.c<br/>
+extension.c<br/>
+handshake.c<br/>
+libwebsockets.c<br/>
+output.c<br/>
+parsers.c<br/>
+server-handshake.c<br/>
+server.c<br/>
+sha-1.c<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libwebsockets.so.3.0.0<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><div id='SourceTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libwebsockets</td></tr>
+<tr><th>Version #1</th><td>2.3.1 (gcc 4.6.4)</td></tr>
+<tr><th>Version #2</th><td>3.0 (gcc 4.9.2)</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>Subject</th><td width='150px'>Source Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>32</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>15</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>77 / 16</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(89%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Source_Added' style='color:Blue;'>92</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td class='failed'><a href='#Source_Removed' style='color:Blue;'>64</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td class='failed'><a href='#Type_Source_Problems_High' style='color:Blue;'>1</a></td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td class='failed'><a href='#Symbol_Source_Problems_High' style='color:Blue;'>1</a></td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Symbol_Source_Problems_Medium' style='color:Blue;'>6</a></td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Types' style='color:Blue;'>88</a></td></tr>
+<tr><th>Other Changes<br/>in Symbols</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Symbols' style='color:Blue;'>2</a></td></tr>
+</table>
+
+<a name='Source_Added'></a><h2>Added Symbols (92)</h2><hr/>
+<span class='h_name'>alloc.c</span><br/>
+<span class="iname">lws_set_allocator&#160;<span class='sym_p'>(&#160;<span class='nowrap'>void*(*<span class='color_p'>cb</span>)(void*, size_t) )</span></span></span><br/>
+<br/>
+<span class='h_name'>client-handshake.c</span><br/>
+<span class="iname">lws_client_connect&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, char const* <span class='color_p'>address</span>, <span class='nowrap'>int <span class='color_p'>port</span>,</span> int <span class='color_p'>ssl_connection</span>, char const* <span class='color_p'>path</span>, char const* <span class='color_p'>host</span>, char const* <span class='color_p'>origin</span>, char const* <span class='color_p'>protocol</span>, <span class='nowrap'>int <span class='color_p'>ietf_version_or_minus_one</span> )</span></span></span><br/>
+<span class="iname">lws_client_connect_extended&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, char const* <span class='color_p'>address</span>, <span class='nowrap'>int <span class='color_p'>port</span>,</span> int <span class='color_p'>ssl_connection</span>, char const* <span class='color_p'>path</span>, char const* <span class='color_p'>host</span>, char const* <span class='color_p'>origin</span>, char const* <span class='color_p'>protocol</span>, int <span class='color_p'>ietf_version_or_minus_one</span>, <span class='nowrap'>void* <span class='color_p'>userdata</span> )</span></span></span><br/>
+<span class="iname">lws_client_connect_via_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_client_connect_info* <span class='color_p'>i</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>context.c</span><br/>
+<span class="iname">lws_context_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_create_context&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context_creation_info* <span class='color_p'>info</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>extension-permessage-deflate.c</span><br/>
+<span class="iname">lws_extension_callback_pm_deflate&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, struct lws_extension const* <span class='color_p'>ext</span>, <span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> enum lws_extension_callback_reasons <span class='color_p'>reason</span>, <span class='nowrap'>void* <span class='color_p'>user</span>,</span> <span class='nowrap'>void* <span class='color_p'>in</span>,</span> <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>header.c</span><br/>
+<span class="iname">lws_add_http_header_by_name&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char const* <span class='color_p'>name</span>, unsigned char const* <span class='color_p'>value</span>, <span class='nowrap'>int <span class='color_p'>length</span>,</span> unsigned char** <span class='color_p'>p</span>, <span class='nowrap'>unsigned char* <span class='color_p'>end</span> )</span></span></span><br/>
+<span class="iname">lws_token_to_string&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum lws_token_indexes <span class='color_p'>token</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>libwebsockets.c</span><br/>
+<span class="iname">_lws_logv&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>filter</span>,</span> char const* <span class='color_p'>format</span>, <span class='nowrap'>va_list <span class='color_p'>vl</span> )</span></span></span><br/>
+<span class="iname">lws_callback_all_protocol&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, struct lws_protocols const* <span class='color_p'>protocol</span>, <span class='nowrap'>int <span class='color_p'>reason</span> )</span></span></span><br/>
+<span class="iname">lws_canonical_hostname&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_close_reason&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> enum lws_close_status <span class='color_p'>status</span>, unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_context_user&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_get_addresses&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>void* <span class='color_p'>ads</span>,</span> <span class='nowrap'>char* <span class='color_p'>name</span>,</span> <span class='nowrap'>int <span class='color_p'>name_len</span>,</span> <span class='nowrap'>char* <span class='color_p'>rip</span>,</span> <span class='nowrap'>int <span class='color_p'>rip_len</span> )</span></span></span><br/>
+<span class="iname">lws_get_count_threads&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_get_peer_addresses&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> lws_sockfd_type <span class='color_p'>fd</span>, <span class='nowrap'>char* <span class='color_p'>name</span>,</span> <span class='nowrap'>int <span class='color_p'>name_len</span>,</span> <span class='nowrap'>char* <span class='color_p'>rip</span>,</span> <span class='nowrap'>int <span class='color_p'>rip_len</span> )</span></span></span><br/>
+<span class="iname">lws_get_peer_write_allowance&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_get_protocol&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_get_reserved_bits&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_get_socket_fd&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_is_final_fragment&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_is_ssl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_partial_buffered&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_rx_flow_allow_all_protocol&#160;<span class='sym_p'>(&#160;struct lws_context const* <span class='color_p'>context</span>, <span class='nowrap'>struct lws_protocols const* <span class='color_p'>protocol</span> )</span></span></span><br/>
+<span class="iname">lws_wsi_user&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lwsl_emit_stderr&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>level</span>,</span> <span class='nowrap'>char const* <span class='color_p'>line</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>libwebsockets.h</span><br/>
+<span class="iname">lws_add_http_header_by_token&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> enum lws_token_indexes <span class='color_p'>token</span>, unsigned char const* <span class='color_p'>value</span>, <span class='nowrap'>int <span class='color_p'>length</span>,</span> unsigned char** <span class='color_p'>p</span>, <span class='nowrap'>unsigned char* <span class='color_p'>end</span> )</span></span></span><br/>
+<span class="iname">lws_add_http_header_content_length&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned long <span class='color_p'>content_length</span>, unsigned char** <span class='color_p'>p</span>, <span class='nowrap'>unsigned char* <span class='color_p'>end</span> )</span></span></span><br/>
+<span class="iname">lws_add_http_header_status&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned int <span class='color_p'>code</span>, unsigned char** <span class='color_p'>p</span>, <span class='nowrap'>unsigned char* <span class='color_p'>end</span> )</span></span></span><br/>
+<span class="iname">lws_callback_on_writable&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>p1</span> )</span></span></span><br/>
+<span class="iname">lws_cancel_service_pt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_ext_parse_options&#160;<span class='sym_p'>(&#160;struct lws_extension const* <span class='color_p'>ext</span>, <span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>void* <span class='color_p'>ext_user</span>,</span> struct lws_ext_options const* <span class='color_p'>opts</span>, <span class='nowrap'>char const* <span class='color_p'>in</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_finalize_http_header&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char** <span class='color_p'>p</span>, <span class='nowrap'>unsigned char* <span class='color_p'>end</span> )</span></span></span><br/>
+<span class="iname">lws_get_context&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws const* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_get_fops&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_get_random&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>void* <span class='color_p'>buf</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_http_transaction_completed&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>p1</span> )</span></span></span><br/>
+<span class="iname">lws_interface_to_sa&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>ipv6</span>,</span> char const* <span class='color_p'>ifname</span>, struct sockaddr_in* <span class='color_p'>addr</span>, <span class='nowrap'>size_t <span class='color_p'>addrlen</span> )</span></span></span><br/>
+<span class="iname">lws_parse_uri&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char* <span class='color_p'>p</span>,</span> char const** <span class='color_p'>prot</span>, char const** <span class='color_p'>ads</span>, <span class='nowrap'>int* <span class='color_p'>port</span>,</span> <span class='nowrap'>char const** <span class='color_p'>path</span> )</span></span></span><br/>
+<span class="iname">lws_read&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_return_http_status&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned int <span class='color_p'>code</span>, <span class='nowrap'>char const* <span class='color_p'>html_body</span> )</span></span></span><br/>
+<span class="iname">lws_rx_flow_control&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>int <span class='color_p'>enable</span> )</span></span></span><br/>
+<span class="iname">lws_serve_http_file_fragment&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_service_fd&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>struct pollfd* <span class='color_p'>pollfd</span> )</span></span></span><br/>
+<span class="iname">lws_service_fd_tsi&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, struct pollfd* <span class='color_p'>pollfd</span>, <span class='nowrap'>int <span class='color_p'>tsi</span> )</span></span></span><br/>
+<span class="iname">lws_set_proxy&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>char const* <span class='color_p'>proxy</span> )</span></span></span><br/>
+<span class="iname">lws_set_timeout&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> enum pending_timeout <span class='color_p'>reason</span>, <span class='nowrap'>int <span class='color_p'>secs</span> )</span></span></span><br/>
+<span class="iname">lws_SHA1&#160;<span class='sym_p'>(&#160;unsigned char const* <span class='color_p'>d</span>, <span class='nowrap'>size_t <span class='color_p'>n</span>,</span> <span class='nowrap'>unsigned char* <span class='color_p'>md</span> )</span></span></span><br/>
+<span class="iname">lws_write&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span>,</span> <span class='nowrap'>enum lws_write_protocol <span class='color_p'>wp</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>lws-plat-unix.c</span><br/>
+<span class="iname">lws_cancel_service&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>output.c</span><br/>
+<span class="iname">lws_ssl_pending_no_ssl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>parsers.c</span><br/>
+<span class="iname">lws_hdr_copy_fragment&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>char* <span class='color_p'>dst</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span>,</span> enum lws_token_indexes <span class='color_p'>h</span>, <span class='nowrap'>int <span class='color_p'>frag_idx</span> )</span></span></span><br/>
+<span class="iname">lws_hdr_fragment_length&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> enum lws_token_indexes <span class='color_p'>h</span>, <span class='nowrap'>int <span class='color_p'>frag_idx</span> )</span></span></span><br/>
+<span class="iname">lws_remaining_packet_payload&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pollfd.c</span><br/>
+<span class="iname">lws_callback_on_writable_all_protocol&#160;<span class='sym_p'>(&#160;struct lws_context const* <span class='color_p'>context</span>, <span class='nowrap'>struct lws_protocols const* <span class='color_p'>protocol</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>private-libwebsockets.h</span><br/>
+<span class="iname">log_level <span class='attr'>[data]</span></span><br/>
+<span class="iname">lws_client_reset&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>int <span class='color_p'>ssl</span>,</span> char const* <span class='color_p'>address</span>, <span class='nowrap'>int <span class='color_p'>port</span>,</span> char const* <span class='color_p'>path</span>, <span class='nowrap'>char const* <span class='color_p'>host</span> )</span></span></span><br/>
+<span class="iname">lws_context_init_extensions&#160;<span class='sym_p'>(&#160;struct lws_context_creation_info* <span class='color_p'>info</span>, <span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_context_init_server_ssl&#160;<span class='sym_p'>(&#160;struct lws_context_creation_info* <span class='color_p'>info</span>, <span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_plat_change_pollfd&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>struct pollfd* <span class='color_p'>pfd</span> )</span></span></span><br/>
+<span class="iname">lws_plat_context_early_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_plat_context_early_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">lws_plat_context_late_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_plat_delete_socket_from_fds&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>int <span class='color_p'>m</span> )</span></span></span><br/>
+<span class="iname">lws_plat_drop_app_privileges&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context_creation_info* <span class='color_p'>info</span> )</span></span></span><br/>
+<span class="iname">lws_plat_inet_ntop&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>af</span>,</span> <span class='nowrap'>void const* <span class='color_p'>src</span>,</span> <span class='nowrap'>char* <span class='color_p'>dst</span>,</span> <span class='nowrap'>int <span class='color_p'>cnt</span> )</span></span></span><br/>
+<span class="iname">lws_plat_init&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>struct lws_context_creation_info* <span class='color_p'>info</span> )</span></span></span><br/>
+<span class="iname">lws_plat_insert_socket_into_fds&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_plat_service&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>int <span class='color_p'>timeout_ms</span> )</span></span></span><br/>
+<span class="iname">lws_plat_service_periodic&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_plat_service_tsi&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>int <span class='color_p'>timeout_ms</span>,</span> <span class='nowrap'>int <span class='color_p'>tsi</span> )</span></span></span><br/>
+<span class="iname">lws_plat_set_socket_options&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>int <span class='color_p'>fd</span> )</span></span></span><br/>
+<span class="iname">lws_poll_listen_fd&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct pollfd* <span class='color_p'>fd</span> )</span></span></span><br/>
+<span class="iname">lws_server_get_canonical_hostname&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>struct lws_context_creation_info* <span class='color_p'>info</span> )</span></span></span><br/>
+<span class="iname">lws_server_socket_service_ssl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>lws_sockfd_type <span class='color_p'>accept_fd</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_capable_read&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>int <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_capable_read_no_ssl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>int <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_capable_write&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>int <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_capable_write_no_ssl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>int <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_close&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_context_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_pending&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_ssl_remove_wsi_from_buffered_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_union_transition&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>enum connection_mode <span class='color_p'>mode</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>server-handshake.c</span><br/>
+<span class="iname">lws_extension_server_handshake&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>char** <span class='color_p'>p</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>server.c</span><br/>
+<span class="iname">lws_adopt_socket&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>lws_sockfd_type <span class='color_p'>accept_fd</span> )</span></span></span><br/>
+<span class="iname">lws_serve_http_file&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> char const* <span class='color_p'>file</span>, char const* <span class='color_p'>content_type</span>, char const* <span class='color_p'>other_headers</span>, <span class='nowrap'>int <span class='color_p'>other_headers_len</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>service.c</span><br/>
+<span class="iname">lws_service&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>int <span class='color_p'>timeout_ms</span> )</span></span></span><br/>
+<span class="iname">lws_service_tsi&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>int <span class='color_p'>timeout_ms</span>,</span> <span class='nowrap'>int <span class='color_p'>tsi</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>ssl.c</span><br/>
+<span class="iname">lws_decode_ssl_error&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">lws_ssl_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Source_Removed'></a><a name='Source_Withdrawn'></a><h2>Removed Symbols (64)</h2><hr/>
+<span class='h_name'>base64-decode.c</span><br/>
+<span class="iname">lws_b64_selftest&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>client-handshake.c</span><br/>
+<span class="iname">__libwebsocket_client_connect_2&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_client_connect&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, char const* <span class='color_p'>address</span>, <span class='nowrap'>int <span class='color_p'>port</span>,</span> int <span class='color_p'>ssl_connection</span>, char const* <span class='color_p'>path</span>, char const* <span class='color_p'>host</span>, char const* <span class='color_p'>origin</span>, char const* <span class='color_p'>protocol</span>, <span class='nowrap'>int <span class='color_p'>ietf_version_or_minus_one</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_client_connect_extended&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, char const* <span class='color_p'>address</span>, <span class='nowrap'>int <span class='color_p'>port</span>,</span> int <span class='color_p'>ssl_connection</span>, char const* <span class='color_p'>path</span>, char const* <span class='color_p'>host</span>, char const* <span class='color_p'>origin</span>, char const* <span class='color_p'>protocol</span>, int <span class='color_p'>ietf_version_or_minus_one</span>, <span class='nowrap'>void* <span class='color_p'>userdata</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>client-parser.c</span><br/>
+<span class="iname">libwebsocket_client_rx_sm&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>unsigned char <span class='color_p'>c</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>client.c</span><br/>
+<span class="iname">libwebsockets_generate_client_handshake&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>char* <span class='color_p'>pkt</span> )</span></span></span><br/>
+<span class="iname">lws_client_interpret_server_handshake&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_client_socket_service&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>struct pollfd* <span class='color_p'>pollfd</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>daemonize.c</span><br/>
+<span class="iname">get_daemonize_pid&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">lws_daemonize&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>_lock_path</span> )</span></span></span><br/>
+<span class="iname">pid_daemon <span class='attr'>[data]</span></span><br/>
+<br/>
+<span class='h_name'>extension-deflate-frame.c</span><br/>
+<span class="iname">lws_extension_callback_deflate_frame&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket_extension* <span class='color_p'>ext</span>, struct libwebsocket* <span class='color_p'>wsi</span>, enum libwebsocket_extension_callback_reasons <span class='color_p'>reason</span>, <span class='nowrap'>void* <span class='color_p'>user</span>,</span> <span class='nowrap'>void* <span class='color_p'>in</span>,</span> <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>extension-deflate-stream.c</span><br/>
+<span class="iname">lws_extension_callback_deflate_stream&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket_extension* <span class='color_p'>ext</span>, struct libwebsocket* <span class='color_p'>wsi</span>, enum libwebsocket_extension_callback_reasons <span class='color_p'>reason</span>, <span class='nowrap'>void* <span class='color_p'>user</span>,</span> <span class='nowrap'>void* <span class='color_p'>in</span>,</span> <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>extension.c</span><br/>
+<span class="iname">libwebsocket_get_internal_extensions&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">libwebsocket_internal_extensions <span class='attr'>[data]</span></span><br/>
+<br/>
+<span class='h_name'>handshake.c</span><br/>
+<span class="iname">libwebsocket_read&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>libwebsockets.c</span><br/>
+<span class="iname">_libwebsocket_rx_flow_control&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">insert_wsi_socket_into_fds&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_callback_on_writable&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_callback_on_writable_all_protocol&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket_protocols const* <span class='color_p'>protocol</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_canonical_hostname&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_close_and_free_session&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>enum lws_close_status <span class='color_p'>reason</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_context_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_context_user&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_create_context&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws_context_creation_info* <span class='color_p'>info</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_ensure_user_space&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_get_reserved_bits&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_get_socket_fd&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_is_final_fragment&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_rx_flow_control&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>int <span class='color_p'>enable</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_service&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>int <span class='color_p'>timeout_ms</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_service_fd&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>struct pollfd* <span class='color_p'>pollfd</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_service_timeout_check&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>unsigned int <span class='color_p'>sec</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_set_timeout&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, enum pending_timeout <span class='color_p'>reason</span>, <span class='nowrap'>int <span class='color_p'>secs</span> )</span></span></span><br/>
+<span class="iname">libwebsockets_get_peer_addresses&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>int <span class='color_p'>fd</span>,</span> <span class='nowrap'>char* <span class='color_p'>name</span>,</span> <span class='nowrap'>int <span class='color_p'>name_len</span>,</span> <span class='nowrap'>char* <span class='color_p'>rip</span>,</span> <span class='nowrap'>int <span class='color_p'>rip_len</span> )</span></span></span><br/>
+<span class="iname">libwebsockets_get_protocol&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">libwebsockets_get_random&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>void* <span class='color_p'>buf</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_any_extension_handled&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, enum libwebsocket_extension_callback_reasons <span class='color_p'>r</span>, <span class='nowrap'>void* <span class='color_p'>v</span>,</span> <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_get_extension_user_matching_ext&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>struct libwebsocket_extension* <span class='color_p'>ext</span> )</span></span></span><br/>
+<span class="iname">lws_handle_POLLOUT_event&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>struct pollfd* <span class='color_p'>pollfd</span> )</span></span></span><br/>
+<span class="iname">lws_set_socket_options&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>int <span class='color_p'>fd</span> )</span></span></span><br/>
+<span class="iname">user_callback_handle_rxflow&#160;<span class='sym_p'>(&#160;callback_function* <span class='color_p'>callback_function</span>, struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, enum libwebsocket_callback_reasons <span class='color_p'>reason</span>, <span class='nowrap'>void* <span class='color_p'>user</span>,</span> <span class='nowrap'>void* <span class='color_p'>in</span>,</span> <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>output.c</span><br/>
+<span class="iname">libwebsocket_write&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span>,</span> <span class='nowrap'>enum libwebsocket_write_protocol <span class='color_p'>protocol</span> )</span></span></span><br/>
+<span class="iname">libwebsockets_serve_http_file&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, char const* <span class='color_p'>file</span>, <span class='nowrap'>char const* <span class='color_p'>content_type</span> )</span></span></span><br/>
+<span class="iname">libwebsockets_serve_http_file_fragment&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_issue_raw&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lws_issue_raw_ext_access&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">lwsl_hexdump&#160;<span class='sym_p'>(&#160;<span class='nowrap'>void* <span class='color_p'>vbuf</span>,</span> <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>parsers.c</span><br/>
+<span class="iname">lextable <span class='attr'>[data]</span></span><br/>
+<span class="iname">lextable_decode&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>pos</span>,</span> <span class='nowrap'>char <span class='color_p'>c</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_interpret_incoming_packet&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, unsigned char* <span class='color_p'>buf</span>, <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_parse&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>unsigned char <span class='color_p'>c</span> )</span></span></span><br/>
+<span class="iname">libwebsocket_rx_sm&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>unsigned char <span class='color_p'>c</span> )</span></span></span><br/>
+<span class="iname">libwebsockets_remaining_packet_payload&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_allocate_header_table&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<span class="iname">lws_hdr_simple_create&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, enum lws_token_indexes <span class='color_p'>h</span>, <span class='nowrap'>char const* <span class='color_p'>s</span> )</span></span></span><br/>
+<span class="iname">lws_hdr_simple_ptr&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>enum lws_token_indexes <span class='color_p'>h</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>server-handshake.c</span><br/>
+<span class="iname">handshake_0405&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, <span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>server.c</span><br/>
+<span class="iname">libwebsocket_create_new_server_wsi&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket_context* <span class='color_p'>context</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>sha-1.c</span><br/>
+<span class="iname">SHA1&#160;<span class='sym_p'>(&#160;unsigned char const* <span class='color_p'>d</span>, <span class='nowrap'>size_t <span class='color_p'>n</span>,</span> <span class='nowrap'>unsigned char* <span class='color_p'>md</span> )</span></span></span><br/>
+<span class="iname">sha1_init&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct sha1_ctxt* <span class='color_p'>ctxt</span> )</span></span></span><br/>
+<span class="iname">sha1_loop&#160;<span class='sym_p'>(&#160;struct sha1_ctxt* <span class='color_p'>ctxt</span>, unsigned char const* <span class='color_p'>input</span>, <span class='nowrap'>size_t <span class='color_p'>len</span> )</span></span></span><br/>
+<span class="iname">sha1_pad&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct sha1_ctxt* <span class='color_p'>ctxt</span> )</span></span></span><br/>
+<span class="iname">sha1_result&#160;<span class='sym_p'>(&#160;struct sha1_ctxt* <span class='color_p'>ctxt</span>, <span class='nowrap'>void* <span class='color_p'>digest0</span> )</span></span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='High_Risk_Source_Problems'></a><a name='Type_Source_Problems_High'></a>
+<h2>Problems with Data Types, High Severity (1)</h2><hr/>
+<span class='h_name'>libwebsockets.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_15')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> lws_token_indexes (1)</span>
+<br/>
+<div id="c_15" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Name of member with value <b>17</b> has been changed from <b>WSI_TOKEN_MUXURL</b> to <b>WSI_TOKEN_HTTP_ACCEPT</b>.</td>
+<td>Recompilation of a client program may be broken with the error message: '<b>WSI_TOKEN_MUXURL</b>' was not declared in this scope.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_16')">
+[+] affected symbols (2)</span>
+<div id="c_16" style="display:none;">
+<div class='affected'><span class='iname_a'>lws_hdr_copy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <i>wsi</i>,</span> <span class='nowrap'>char* <i>dest</i>,</span> <span class='nowrap'>int <i>len</i>,</span> <span class='nowrap'>enum lws_token_indexes <span class='fp'>h</span> )</span></span></span><br/>
+<div class='affect'>4th parameter &#39;h&#39; has type &#39;enum lws_token_indexes&#39;.</div>
+<span class='iname_a'>lws_hdr_total_length&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <i>wsi</i>,</span> <span class='nowrap'>enum lws_token_indexes <span class='fp'>h</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;h&#39; has type &#39;enum lws_token_indexes&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Symbol_Source_Problems_High'></a><a name='Interface_Source_Problems_High'></a>
+<h2>Problems with Symbols, High Severity (1)</h2><hr/>
+<span class='h_name'>server.c</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_17')">
+<span class='ext'>[+]</span> interface_to_sa&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>ifname</span>, struct sockaddr_in* <span class='color_p'>addr</span>, <span class='nowrap'>size_t <span class='color_p'>addrlen</span> )</span></span> (1)</span>
+<br/>
+<div id="c_17" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>interface_to_sa&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, char const* <span class='color_p'>ifname</span>, struct sockaddr_in* <span class='color_p'>addr</span>, <span class='nowrap'>size_t <span class='color_p'>addrlen</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>context</b> of type <span class='value'>struct lws_context*</span> has been added to the calling stack at the middle position.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Medium_Risk_Source_Problems'></a><a name='Symbol_Source_Problems_Medium'></a><a name='Interface_Source_Problems_Medium'></a>
+<h2>Problems with Symbols, Medium Severity (6)</h2><hr/>
+<span class='h_name'>libwebsockets.c</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_18')">
+<span class='ext'>[+]</span> lws_send_pipe_choked&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span> (1)</span>
+<br/>
+<div id="c_18" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>lws_send_pipe_choked&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Base type of parameter <b>wsi</b> has been changed from <span class='value'>struct libwebsocket</span> to <span class='value'>struct lws</span> of different format.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>parsers.c</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_19')">
+<span class='ext'>[+]</span> lws_frame_is_binary&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <span class='color_p'>wsi</span> )</span></span> (1)</span>
+<br/>
+<div id="c_19" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>lws_frame_is_binary&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Base type of parameter <b>wsi</b> has been changed from <span class='value'>struct libwebsocket</span> to <span class='value'>struct lws</span> of different format.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_20')">
+<span class='ext'>[+]</span> lws_hdr_copy&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>char* <span class='color_p'>dest</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span>,</span> <span class='nowrap'>enum lws_token_indexes <span class='color_p'>h</span> )</span></span> (1)</span>
+<br/>
+<div id="c_20" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>lws_hdr_copy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>char* <span class='color_p'>dst</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span>,</span> <span class='nowrap'>enum lws_token_indexes <span class='color_p'>h</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Base type of parameter <b>wsi</b> has been changed from <span class='value'>struct libwebsocket</span> to <span class='value'>struct lws</span> of different format.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_21')">
+<span class='ext'>[+]</span> lws_hdr_total_length&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>enum lws_token_indexes <span class='color_p'>h</span> )</span></span> (1)</span>
+<br/>
+<div id="c_21" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>lws_hdr_total_length&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>enum lws_token_indexes <span class='color_p'>h</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Base type of parameter <b>wsi</b> has been changed from <span class='value'>struct libwebsocket</span> to <span class='value'>struct lws</span> of different format.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>server.c</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_22')">
+<span class='ext'>[+]</span> lws_server_socket_service&#160;<span class='sym_p'>(&#160;struct libwebsocket_context* <span class='color_p'>context</span>, struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>struct pollfd* <span class='color_p'>pollfd</span> )</span></span> (2)</span>
+<br/>
+<div id="c_22" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>lws_server_socket_service&#160;<span class='sym_p'>(&#160;struct lws_context* <span class='color_p'>context</span>, <span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>struct pollfd* <span class='color_p'>pollfd</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Base type of parameter <b>context</b> has been changed from <span class='value'>struct libwebsocket_context</span> to <span class='value'>struct lws_context</span> of different format.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Base type of parameter <b>wsi</b> has been changed from <span class='value'>struct libwebsocket</span> to <span class='value'>struct lws</span> of different format.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes'></a><a name='Other_Source_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (88)</h2><hr/>
+<span class='h_name'>libwebsockets.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_23')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> lws_token_indexes (88)</span>
+<br/>
+<div id="c_23" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>WSI_TOKEN_DELETE_URI</b> with value <b>75</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>WSI_TOKEN_HTTP2_SETTINGS</b> with value <b>16</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>WSI_TOKEN_HTTP_ACCEPT_CHARSET</b> with value <b>40</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>WSI_TOKEN_HTTP_ACCEPT_ENCODING</b> with value <b>21</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>5</th>
+<td>The member <b>WSI_TOKEN_HTTP_ACCEPT_LANGUAGE</b> with value <b>22</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>6</th>
+<td>The member <b>WSI_TOKEN_HTTP_ACCEPT_RANGES</b> with value <b>41</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>7</th>
+<td>The member <b>WSI_TOKEN_HTTP_ACCESS_CONTROL_ALLOW_ORIGIN</b> with value <b>42</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>8</th>
+<td>The member <b>WSI_TOKEN_HTTP_AC_REQUEST_HEADERS</b> with value <b>18</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>9</th>
+<td>The member <b>WSI_TOKEN_HTTP_AGE</b> with value <b>43</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>10</th>
+<td>The member <b>WSI_TOKEN_HTTP_ALLOW</b> with value <b>44</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>11</th>
+<td>The member <b>WSI_TOKEN_HTTP_AUTHORIZATION</b> with value <b>25</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>12</th>
+<td>The member <b>WSI_TOKEN_HTTP_CACHE_CONTROL</b> with value <b>24</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>13</th>
+<td>The member <b>WSI_TOKEN_HTTP_COLON_AUTHORITY</b> with value <b>35</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>14</th>
+<td>The member <b>WSI_TOKEN_HTTP_COLON_METHOD</b> with value <b>36</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>15</th>
+<td>The member <b>WSI_TOKEN_HTTP_COLON_PATH</b> with value <b>37</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>16</th>
+<td>The member <b>WSI_TOKEN_HTTP_COLON_SCHEME</b> with value <b>38</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>17</th>
+<td>The member <b>WSI_TOKEN_HTTP_COLON_STATUS</b> with value <b>39</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>18</th>
+<td>The member <b>WSI_TOKEN_HTTP_CONTENT_DISPOSITION</b> with value <b>45</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>19</th>
+<td>The member <b>WSI_TOKEN_HTTP_CONTENT_ENCODING</b> with value <b>46</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>20</th>
+<td>The member <b>WSI_TOKEN_HTTP_CONTENT_LANGUAGE</b> with value <b>47</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>21</th>
+<td>The member <b>WSI_TOKEN_HTTP_CONTENT_LENGTH</b> with value <b>27</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>22</th>
+<td>The member <b>WSI_TOKEN_HTTP_CONTENT_LOCATION</b> with value <b>48</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>23</th>
+<td>The member <b>WSI_TOKEN_HTTP_CONTENT_RANGE</b> with value <b>49</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>24</th>
+<td>The member <b>WSI_TOKEN_HTTP_CONTENT_TYPE</b> with value <b>28</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>25</th>
+<td>The member <b>WSI_TOKEN_HTTP_COOKIE</b> with value <b>26</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>26</th>
+<td>The member <b>WSI_TOKEN_HTTP_DATE</b> with value <b>29</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>27</th>
+<td>The member <b>WSI_TOKEN_HTTP_ETAG</b> with value <b>50</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>28</th>
+<td>The member <b>WSI_TOKEN_HTTP_EXPECT</b> with value <b>51</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>29</th>
+<td>The member <b>WSI_TOKEN_HTTP_EXPIRES</b> with value <b>52</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>30</th>
+<td>The member <b>WSI_TOKEN_HTTP_FROM</b> with value <b>53</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>31</th>
+<td>The member <b>WSI_TOKEN_HTTP_IF_MATCH</b> with value <b>54</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>32</th>
+<td>The member <b>WSI_TOKEN_HTTP_IF_MODIFIED_SINCE</b> with value <b>19</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>33</th>
+<td>The member <b>WSI_TOKEN_HTTP_IF_NONE_MATCH</b> with value <b>20</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>34</th>
+<td>The member <b>WSI_TOKEN_HTTP_IF_RANGE</b> with value <b>55</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>35</th>
+<td>The member <b>WSI_TOKEN_HTTP_IF_UNMODIFIED_SINCE</b> with value <b>56</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>36</th>
+<td>The member <b>WSI_TOKEN_HTTP_LAST_MODIFIED</b> with value <b>57</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>37</th>
+<td>The member <b>WSI_TOKEN_HTTP_LINK</b> with value <b>58</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>38</th>
+<td>The member <b>WSI_TOKEN_HTTP_LOCATION</b> with value <b>59</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>39</th>
+<td>The member <b>WSI_TOKEN_HTTP_MAX_FORWARDS</b> with value <b>60</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>40</th>
+<td>The member <b>WSI_TOKEN_HTTP_PRAGMA</b> with value <b>23</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>41</th>
+<td>The member <b>WSI_TOKEN_HTTP_PROXY_AUTHENTICATE</b> with value <b>61</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>42</th>
+<td>The member <b>WSI_TOKEN_HTTP_PROXY_AUTHORIZATION</b> with value <b>62</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>43</th>
+<td>The member <b>WSI_TOKEN_HTTP_RANGE</b> with value <b>30</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>44</th>
+<td>The member <b>WSI_TOKEN_HTTP_REFERER</b> with value <b>31</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>45</th>
+<td>The member <b>WSI_TOKEN_HTTP_REFRESH</b> with value <b>63</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>46</th>
+<td>The member <b>WSI_TOKEN_HTTP_RETRY_AFTER</b> with value <b>64</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>47</th>
+<td>The member <b>WSI_TOKEN_HTTP_SERVER</b> with value <b>65</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>48</th>
+<td>The member <b>WSI_TOKEN_HTTP_SET_COOKIE</b> with value <b>66</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>49</th>
+<td>The member <b>WSI_TOKEN_HTTP_STRICT_TRANSPORT_SECURITY</b> with value <b>67</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>50</th>
+<td>The member <b>WSI_TOKEN_HTTP_TRANSFER_ENCODING</b> with value <b>68</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>51</th>
+<td>The member <b>WSI_TOKEN_HTTP_URI_ARGS</b> with value <b>76</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>52</th>
+<td>The member <b>WSI_TOKEN_HTTP_USER_AGENT</b> with value <b>69</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>53</th>
+<td>The member <b>WSI_TOKEN_HTTP_VARY</b> with value <b>70</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>54</th>
+<td>The member <b>WSI_TOKEN_HTTP_VIA</b> with value <b>71</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>55</th>
+<td>The member <b>WSI_TOKEN_HTTP_WWW_AUTHENTICATE</b> with value <b>72</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>56</th>
+<td>The member <b>WSI_TOKEN_HTTP_X_REAL_IP</b> with value <b>78</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>57</th>
+<td>The member <b>WSI_TOKEN_OPTIONS_URI</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>58</th>
+<td>The member <b>WSI_TOKEN_PATCH_URI</b> with value <b>73</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>59</th>
+<td>The member <b>WSI_TOKEN_POST_URI</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>60</th>
+<td>The member <b>WSI_TOKEN_PROXY</b> with value <b>77</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>61</th>
+<td>The member <b>WSI_TOKEN_PUT_URI</b> with value <b>74</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>62</th>
+<td>Value of member <b>WSI_TOKEN_COUNT</b> has been changed from <b>23</b> to <b>84</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>63</th>
+<td>Value of member <b>WSI_INIT_TOKEN_MUXURL</b> has been changed from <b>28</b> to <b>89</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>64</th>
+<td>Value of member <b>WSI_PARSING_COMPLETE</b> has been changed from <b>27</b> to <b>88</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>65</th>
+<td>Value of member <b>WSI_TOKEN_ACCEPT</b> has been changed from <b>14</b> to <b>13</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>66</th>
+<td>Value of member <b>WSI_TOKEN_CHALLENGE</b> has been changed from <b>9</b> to <b>8</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>67</th>
+<td>Value of member <b>WSI_TOKEN_CONNECTION</b> has been changed from <b>2</b> to <b>4</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>68</th>
+<td>Value of member <b>WSI_TOKEN_DRAFT</b> has been changed from <b>8</b> to <b>7</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>69</th>
+<td>Value of member <b>WSI_TOKEN_EXTENSIONS</b> has been changed from <b>13</b> to <b>9</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>70</th>
+<td>Value of member <b>WSI_TOKEN_HOST</b> has been changed from <b>1</b> to <b>3</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>71</th>
+<td>Value of member <b>WSI_TOKEN_HTTP</b> has been changed from <b>16</b> to <b>15</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>72</th>
+<td>Value of member <b>WSI_TOKEN_KEY</b> has been changed from <b>10</b> to <b>32</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>73</th>
+<td>Value of member <b>WSI_TOKEN_KEY1</b> has been changed from <b>3</b> to <b>10</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>74</th>
+<td>Value of member <b>WSI_TOKEN_KEY2</b> has been changed from <b>4</b> to <b>11</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>75</th>
+<td>Value of member <b>WSI_TOKEN_NAME_PART</b> has been changed from <b>24</b> to <b>85</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>76</th>
+<td>Value of member <b>WSI_TOKEN_NONCE</b> has been changed from <b>15</b> to <b>14</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>77</th>
+<td>Value of member <b>WSI_TOKEN_ORIGIN</b> has been changed from <b>7</b> to <b>6</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>78</th>
+<td>Value of member <b>WSI_TOKEN_PROTOCOL</b> has been changed from <b>5</b> to <b>12</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>79</th>
+<td>Value of member <b>WSI_TOKEN_SKIPPING</b> has been changed from <b>25</b> to <b>86</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>80</th>
+<td>Value of member <b>WSI_TOKEN_SKIPPING_SAW_CR</b> has been changed from <b>26</b> to <b>87</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>81</th>
+<td>Value of member <b>WSI_TOKEN_SWORIGIN</b> has been changed from <b>12</b> to <b>34</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>82</th>
+<td>Value of member <b>WSI_TOKEN_UPGRADE</b> has been changed from <b>6</b> to <b>5</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>83</th>
+<td>Value of member <b>WSI_TOKEN_VERSION</b> has been changed from <b>11</b> to <b>33</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>84</th>
+<td>Value of member <b>_WSI_TOKEN_CLIENT_HOST</b> has been changed from <b>21</b> to <b>82</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>85</th>
+<td>Value of member <b>_WSI_TOKEN_CLIENT_ORIGIN</b> has been changed from <b>22</b> to <b>83</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>86</th>
+<td>Value of member <b>_WSI_TOKEN_CLIENT_PEER_ADDRESS</b> has been changed from <b>19</b> to <b>80</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>87</th>
+<td>Value of member <b>_WSI_TOKEN_CLIENT_SENT_PROTOCOLS</b> has been changed from <b>18</b> to <b>79</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>88</th>
+<td>Value of member <b>_WSI_TOKEN_CLIENT_URI</b> has been changed from <b>20</b> to <b>81</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_24')">
+[+] affected symbols (2)</span>
+<div id="c_24" style="display:none;">
+<div class='affected'><span class='iname_a'>lws_hdr_copy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <i>wsi</i>,</span> <span class='nowrap'>char* <i>dest</i>,</span> <span class='nowrap'>int <i>len</i>,</span> <span class='nowrap'>enum lws_token_indexes <span class='fp'>h</span> )</span></span></span><br/>
+<div class='affect'>4th parameter &#39;h&#39; has type &#39;enum lws_token_indexes&#39;.</div>
+<span class='iname_a'>lws_hdr_total_length&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct libwebsocket* <i>wsi</i>,</span> <span class='nowrap'>enum lws_token_indexes <span class='fp'>h</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;h&#39; has type &#39;enum lws_token_indexes&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes_In_Symbols'></a><a name='Other_Source_Changes_In_Interfaces'></a>
+<h2>Other Changes in Symbols (2)</h2><hr/>
+<span class='h_name'>libwebsockets.c</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_25')">
+<span class='ext'>[+]</span> lws_set_log_level&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>level</span>,</span> <span class='nowrap'>void(*<span class='color_p'>log_emit_function</span>)(int, char const*) )</span></span> (1)</span>
+<br/>
+<div id="c_25" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>lws_set_log_level&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>level</span>,</span> <span class='nowrap'>void(*<span class='color_p'>func</span>)(int, char const*) )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>log_emit_function</b> has been renamed to <b>func</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>parsers.c</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_26')">
+<span class='ext'>[+]</span> lws_hdr_copy&#160;<span class='sym_p'>(&#160;struct libwebsocket* <span class='color_p'>wsi</span>, <span class='nowrap'>char* <span class='color_p'>dest</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span>,</span> <span class='nowrap'>enum lws_token_indexes <span class='color_p'>h</span> )</span></span> (1)</span>
+<br/>
+<div id="c_26" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>lws_hdr_copy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct lws* <span class='color_p'>wsi</span>,</span> <span class='nowrap'>char* <span class='color_p'>dst</span>,</span> <span class='nowrap'>int <span class='color_p'>len</span>,</span> <span class='nowrap'>enum lws_token_indexes <span class='color_p'>h</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>dest</b> has been renamed to <b>dst</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (32)</h2><hr/>
+<div class='h_list'>
+asn1.h<br/>
+bio.h<br/>
+bn.h<br/>
+buffer.h<br/>
+comp.h<br/>
+crypto.h<br/>
+dh.h<br/>
+dsa.h<br/>
+dtls1.h<br/>
+ec.h<br/>
+evp.h<br/>
+hmac.h<br/>
+in.h<br/>
+libwebsockets.h<br/>
+ossl_typ.h<br/>
+pem.h<br/>
+poll.h<br/>
+pqueue.h<br/>
+private-libwebsockets.h<br/>
+rsa.h<br/>
+sockaddr.h<br/>
+ssl.h<br/>
+ssl2.h<br/>
+ssl3.h<br/>
+stack.h<br/>
+stddef.h<br/>
+stdint.h<br/>
+time.h<br/>
+tls1.h<br/>
+types.h<br/>
+x509.h<br/>
+x509_vfy.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (15)</h2><hr/>
+<div class='h_list'>
+base64-decode.c<br/>
+client-handshake.c<br/>
+client-parser.c<br/>
+client.c<br/>
+daemonize.c<br/>
+extension-deflate-frame.c<br/>
+extension-deflate-stream.c<br/>
+extension.c<br/>
+handshake.c<br/>
+libwebsockets.c<br/>
+output.c<br/>
+parsers.c<br/>
+server-handshake.c<br/>
+server.c<br/>
+sha-1.c<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libwebsockets.so.3.0.0<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><hr/>
+<div class='footer' align='right'><i>Generated by <a href='http://lvc.github.io/abi-compliance-checker/'>ABI Compliance Checker</a> 1.99.18 &#160;</i>
+</div>
+<br/>
+
+</body></html>

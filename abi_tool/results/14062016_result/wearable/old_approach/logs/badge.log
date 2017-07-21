@@ -1,0 +1,32 @@
+Temporary header file '/tmp/EAaHXAWlw5/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/badge/badge.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/badge/badge_error.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/badge/badge_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/badge/service/badge_setting_service.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/badge/service/badge_db.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/EAaHXAWlw5/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/badge -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/EAaHXAWlw5/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/badge/badge.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/badge/badge_db.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/badge/badge_error.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/badge/badge_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/badge/badge_setting_service.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/EAaHXAWlw5/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/badge -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/glib-2.0 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/lib/glib-2.0/include
+
+In file included from /tmp/EAaHXAWlw5/dump2.h:4:0:
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/badge/badge_db.h:42:23: error: ‘GList’ was not declared in this scope
+ int badge_db_get_list(GList **badge_list);
+                       ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/badge/badge_db.h:42:31: error: ‘badge_list’ was not declared in this scope
+ int badge_db_get_list(GList **badge_list);
+                               ^
+

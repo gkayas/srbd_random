@@ -1,0 +1,215 @@
+package manager;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import org.apache.log4j.Logger;
+
+public class Vnc {
+	private Device device;
+	private static String serverRunCommand;
+//	private String vncPort;
+//	private String rmiPort;
+	static int vncP = 5899, rmiP = 1098;
+
+	public Vnc(Device device) {
+		this.device = device;
+		
+//		vncPort = device.getVncPort();
+//		rmiPort = device.getRmiPort();
+		//vncP++;
+		//rmiP++;
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("Connecting to device: "+device.getSerial()+" with VNC port :"+vncP+" with RMI port :"+rmiP);
+//		vncPort = String.valueOf(vncP);
+//		rmiPort = String.valueOf(rmiP);		
+		
+	}
+
+
+	private File getInstaller() throws Exception {
+		String installerDirectory = System.getProperty("user.dir") + File.separator + Constant.VNC_SERVER_PATH + File.separator + device.getVersion() + File.separator+ device.getProfile() + File.separator + device.getType();
+		File[] files =new File(installerDirectory).listFiles();
+		int installerCount = 0;
+		File installer = null;
+		if(files == null) throw new Exception(installerDirectory + " not found");
+		for (File file : files) {
+			if (file.getName().contains(".rpm")){
+				installer = file;
+				installerCount++;
+			}
+		}
+		if(installerCount == 0)
+			throw new Exception("No installer foud in "+installerDirectory);
+		else if(installerCount > 1)
+			throw new Exception("More than one installer foud in "+installerDirectory);
+		return installer;
+	}
+
+	private int getIntValue(String stringVersion) {
+		String[] intValues = stringVersion.split("\\.");
+		int intVersion = 0;
+		for (String intValue : intValues) {
+			intVersion = intVersion*100 + Integer.parseInt(intValue);
+		}
+		return intVersion;
+	}
+
+	private int getAvailableVersion() throws Exception{
+		return getIntValue(getInstaller().getName().split("-")[1].trim());
+	}
+
+	private int getIntalledVersion() {
+		ArrayList<String> commandOutLines = UtilsCLI.runCommand("sdb  -s "+ device.getSerial() +"  shell " + device.getRecommendedVNCtype() + " --version", null);
+		for (String line : commandOutLines) {
+			if(line.contains(device.getRecommendedVNCtype())){
+				return getIntValue(line.split(" ")[1].trim());
+			}
+		}
+		return 0;
+	}
+
+	private boolean isInstalledOlder() throws Exception {
+		if (getAvailableVersion() > getIntalledVersion())
+			return true;
+		return false;
+	}
+
+	private boolean isInstalled() {
+		ArrayList<String> commandOutLines = UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  shell " + device.getRecommendedVNCtype() + " --help", null);
+		for (String line : commandOutLines) {
+			if(line.contains("command not found"))
+				return false;
+		}
+		return true;
+	}
+
+	public void install() throws Exception {
+		Logger logger = UtilsLogger.getLogger("install");
+
+		UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  root on",logger);
+		UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  shell rpm -e " + device.getRecommendedVNCtype(), logger);
+		UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  root off",logger);
+
+		if(!isInstalled() || isInstalledOlder()){
+			File installerFile = getInstaller();
+			System.out.println("Installing "+installerFile.getAbsolutePath());
+			UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  root on",logger);
+			UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  push " + installerFile.getAbsolutePath() + " /opt/home/root/",logger);
+			boolean isChangebootingExist = true;
+			ArrayList<String> commandOutLines = UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  shell ls /usr/bin/change-booting-mode.sh", null);
+			for (String line : commandOutLines) {
+				if (line.contains("cannot access")){
+					isChangebootingExist = false;
+					break;
+				}
+			}
+			if(isChangebootingExist) UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  shell /usr/bin/change-booting-mode.sh --update",logger);
+			UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  shell rpm -Uvh --force --nodeps /opt/home/root/"+installerFile.getName(),logger);
+			UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  shell chsmack -a '_' /etc/ld.so.cache",logger);
+
+			//UtilsCLI.runCommand("sdb shell \"sync && reboot\"",logger);
+			//device.waitForReady();
+			//System.out.println("VNC Server install successfully...");
+		}
+	}
+
+	public void runServer() throws Exception {
+		killRunnigServer();
+		Logger logger = UtilsLogger.getLogger("vncserver");
+		UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  root on",logger);
+		UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  forward --remove-all",logger);
+		UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  forward tcp:"+device.getVncPort()+" tcp:"+device.getVncPort(),logger);
+		UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  shell 'echo \"xorg sdbd rwx\" > /sys/fs/smackfs/load2'",logger);
+		serverRunCommand = "";
+		
+		if (device.getProfile().contains(Constant.DEVICE_PROFILE_MOBILE)){
+			if(device.getVersion().contains("3.0")){
+				if(device.getType().contains(Constant.EMULATOR))
+					serverRunCommand = "sdb -s "+ device.getSerial() +"  shell 'export XDG_RUNTIME_DIR=/run && /usr/bin/waylandvnc -rawfb console -scale 480x800 --threads -pipeinput UINPUT:direct_btn=/dev/input/event3,direct_key=/dev/input/event4,nouinput";
+				else
+					serverRunCommand = "sdb -s "+ device.getSerial() +"  shell 'export XDG_RUNTIME_DIR=/run && /usr/bin/waylandvnc -rawfb console -scale 480x800 --threads -pipeinput UINPUT:direct_btn=/dev/input/event0,direct_key=/dev/input/event1,nouinput";
+			}else{
+				if(device.getType().contains(Constant.EMULATOR))
+				{
+					serverRunCommand = "sdb -s "+ device.getSerial() +"  shell 'x11vnc -dk -modtweak -xkb -scale 480x800 -ncache_keep_anims -input KMB -threads -input_eagerly -noremote -nocmds -noxdamage -noxinerama";
+				}
+				else
+				{
+					serverRunCommand = "sdb -s "+ device.getSerial() +"  shell 'x11vnc -pipeinput tee:UINPUT:K,direct_abs=/dev/input/event0 -dk -modtweak -xkb -scale 480x800 -ncache_keep_anims -input KMB -threads -input_eagerly -noremote -nocmds -noxdamage -noxinerama";
+				}
+			}
+		}else if (device.getProfile().contains(Constant.DEVICE_PROFILE_WEARABLE)){
+			if(device.getVersion().contains("3.0")) {
+
+				if(device.getScreenHeight() == device.getScreenWidth())
+					serverRunCommand = "sdb -s "+ device.getSerial() +"  shell 'export XDG_RUNTIME_DIR=/run && /usr/bin/waylandvnc -rawfb console -scale 360x360 --threads -pipeinput UINPUT:direct_btn=/dev/input/event0,direct_key=/dev/input/event1,nouinput";
+				else
+					serverRunCommand = "sdb -s "+ device.getSerial() +"  shell 'export XDG_RUNTIME_DIR=/run && /usr/bin/waylandvnc -rawfb console -scale 360x480 --threads -pipeinput UINPUT:direct_btn=/dev/input/event0,direct_key=/dev/input/event1,nouinput";
+			} else {
+				if(device.getScreenHeight() == device.getScreenWidth())
+					serverRunCommand = "sdb -s "+ device.getSerial() +"  shell 'x11vnc -pipeinput tee:UINPUT:K,direct_abs=/dev/input/event0 -dk -modtweak -xkb -scale 360x360 -ncache_keep_anims -input KMB -threads -input_eagerly -noremote -nocmds -noxdamage -noxinerama";
+				else
+					serverRunCommand = "sdb -s "+ device.getSerial() +"  shell 'x11vnc -pipeinput tee:UINPUT:K,direct_abs=/dev/input/event0 -dk -modtweak -xkb -scale 360x480 -ncache_keep_anims -input KMB -threads -input_eagerly -noremote -nocmds -noxdamage -noxinerama";
+			}
+		}else {
+			
+			if(device.getVersion().contains("3.0")){
+				if(device.getType().contains(Constant.EMULATOR))
+					serverRunCommand = "sdb -s "+ device.getSerial() +"  shell 'export XDG_RUNTIME_DIR=/run && /usr/bin/waylandvnc -rawfb console -scale 960x540 --threads -pipeinput UINPUT:direct_btn=/dev/input/event3,direct_key=/dev/input/event4,nouinput -dk -dk";
+				else
+					serverRunCommand = "sdb -s "+ device.getSerial() +"  shell 'export XDG_RUNTIME_DIR=/run && /usr/bin/waylandvnc -rawfb console -scale 960x540 --threads -pipeinput UINPUT:direct_btn=/dev/input/event0,direct_key=/dev/input/event1,nouinput";
+			}else{
+				if(device.getType().contains(Constant.EMULATOR))
+				{
+					serverRunCommand = "sdb -s "+ device.getSerial() +"  shell 'x11vnc -dk -modtweak -xkb -scale 960x540 -ncache_keep_anims -input KMB -threads -input_eagerly -noremote -nocmds -noxdamage -noxinerama";
+				}
+				else
+				{
+					serverRunCommand = "sdb -s "+ device.getSerial() +"  shell 'x11vnc -pipeinput tee:UINPUT:K,direct_abs=/dev/input/event0 -dk -modtweak -xkb -scale 960x540 -ncache_keep_anims -input KMB -threads -input_eagerly -noremote -nocmds -noxdamage -noxinerama";
+				}
+			}
+		}
+
+		new Thread(){
+			@Override
+			public void run() {
+				UtilsCLI.runCommand(serverRunCommand +" -rfbport "+device.getVncPort() +"'",logger);
+				super.run();
+			}
+		}.start();
+	}
+
+	private void killRunnigServer() {
+		ArrayList<String> commandOutLines = UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  shell \"ps aux | grep " + device.getRecommendedVNCtype() + " | grep -v grep\"", null);
+		for (String line : commandOutLines) {
+			Scanner scanner = new Scanner(line);
+			scanner.next();
+			UtilsCLI.runCommand("sdb -s "+ device.getSerial() +"  shell kill " + scanner.next(), null);
+			scanner.close();
+		}
+	}
+
+	public void runClient(){
+		Logger logger = UtilsLogger.getLogger("vncclient");
+		File sourceFile = new File(Constant.VNC_CLIENT_CONFIG_PATH);
+		File targetFile = new File(System.getProperty("user.home") + "/.java/.userPrefs/" + sourceFile.getName());
+		try {
+			UtilsFile.copy(sourceFile, targetFile);
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}		
+		
+		new Thread(){
+			@Override
+			public void run() {
+				UtilsCLI.runCommand("java -jar "+Constant.DEVICE_INTERFACE_PATH +" -vncport "+device.getVncPort()+" -rmiport "+device.getRmiPort(),logger);
+				super.run();
+			}
+		}.start();
+		
+	}
+}

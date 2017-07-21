@@ -1,0 +1,4 @@
+media_format_get_audio_info
+media_format_get_video_info
+media_format_set_video_mime
+media_format_set_audio_mime

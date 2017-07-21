@@ -1,0 +1,30 @@
+package fxviewer;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.swing.SwingWorker;
+
+import apprunner.AppInfo;
+import apprunner.ResultUtils;
+import javafx.scene.control.TextArea;
+
+public class TCRunTask extends SwingWorker<String, String> {
+	TextArea textArea;
+	MainController controller;
+
+	public TCRunTask(MainController controller) {
+		this.controller = controller;
+	}
+
+	@Override
+	public String doInBackground() {
+//		ReportUtils.resetAllTcResutl(runner.getProfileName());
+		
+		this.controller.setRunButtonDisable(true);
+		
+		this.controller.setRunButtonDisable(false);
+		
+		return null;
+	}
+}

@@ -1,0 +1,11 @@
+audio_out_unset_interrupted_cb
+audio_out_get_latency
+audio_out_set_interrupted_cb
+audio_in_set_device
+audio_in_get_latency
+audio_in_create_loopback
+audio_in_ignore_session
+audio_in_set_interrupted_cb
+audio_out_create
+audio_in_unset_interrupted_cb
+audio_out_ignore_session

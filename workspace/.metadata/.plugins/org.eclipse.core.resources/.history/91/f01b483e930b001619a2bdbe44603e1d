@@ -1,0 +1,104 @@
+
+public class Grid {
+	private Node [][] nodes ;
+	private int height,width;
+	private int startX,startY;
+	private Node current;
+	
+	public Node getCurrent() {
+		return current;
+	}
+	
+	public void setCurrent(Node current) {
+		this.current = current;
+	}
+	
+	public Grid(Node [][] nodes, int width, int height, int startX, int startY) {
+		this.nodes = nodes;
+		this.height = height;
+		this.width = width;
+		current = nodes[startX][startY];
+	}
+	
+	public Node moveRight() {
+		int currentX = current.getPositionX();
+		
+		if(currentX == width-1) {
+			return null;
+		}
+		int currentY = current.getPositionY();
+//		System.out.println("In right: "+ (currentX + 1)+" "+(currentY));
+		Node next = nodes[currentX + 1][currentY];
+		if(!next.isVisited) {
+			next.incoming(current);
+			current = next;
+		} else {
+			System.out.println("Already visited node, current will not chamge");
+		}
+		return current;
+	}
+	
+	public Node moveLeft() {
+		int currentX = current.getPositionX();
+		
+		if(currentX == 0) {
+			return null;
+		}
+		int currentY = current.getPositionY();
+//		System.out.println("In left: "+ (currentX - 1)+" "+(currentY));
+		Node next = nodes[currentX - 1][currentY];
+		if(!next.isVisited) {
+			next.incoming(current);
+			current = next;
+		} else {
+			System.out.println("Already visited node, current will not chamge");
+		}
+		return current;
+	}
+	
+	public Node moveUp() {
+		
+		int currentY = current.getPositionY();
+		if(currentY == 0) {
+			return null;
+		}
+		int currentX = current.getPositionX();
+//		System.out.println("In left: "+ (currentX )+" "+(currentY - 1));
+		Node next = nodes[currentX][currentY - 1];
+		if(!next.isVisited) {
+			next.incoming(current);
+			current = next;
+		} else {
+			System.out.println("Already visited node, current will not chamge");
+		}
+		return current;
+	}
+	
+	public Node moveDown() {
+		int currentY = current.getPositionY();
+		if(currentY == height-1) {
+			return null;
+		}
+		int currentX = current.getPositionX();
+//		System.out.println("In left: "+ (currentX)+" "+(currentY));
+		Node next = nodes[currentX][currentY + 1];
+		if(!next.isVisited) {
+			next.incoming(current);
+			current = next;
+		} else {
+			System.out.println("Already visited node, current will not chamge");
+		}
+		return current;
+	}
+	
+	public static boolean checkNeighbour(Node node, Node [][] nodes) {
+		int posX = node.positionX;
+		int posY = node.positionY;
+		boolean flag = true;
+		if(posX == 0) {
+			flag = flag && 
+		}
+		return isAlive;
+		
+	}
+}

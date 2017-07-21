@@ -1,0 +1,2 @@
+recorder_set_audio_device_id
+recorder_get_audio_device_id

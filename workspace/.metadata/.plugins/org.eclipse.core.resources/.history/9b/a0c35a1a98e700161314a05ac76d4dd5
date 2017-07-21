@@ -1,0 +1,38 @@
+package com.turbovnc.vncviewer;
+
+public class SdbDevice {
+	private String name, serial, type;
+
+
+	public SdbDevice(String name, String serial, String type) {
+		this.name = name;
+		this.serial = serial;
+		this.type = type;
+	}
+	
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSerial() {
+		return serial;
+	}
+
+	public void setSerial(String serial) {
+		this.serial = serial;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+}

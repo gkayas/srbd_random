@@ -1,0 +1,28 @@
+package suites;
+
+import base.TCBase;
+import refapp.SuiteRunner;
+
+public class Calendar extends TCBase {
+
+	public Calendar() {
+		super();
+	}
+
+	public Calendar(String s) {
+		super(s);		
+	}
+
+	// ========================================================[TestCases]==========================================================
+
+	public void install() {
+		device.focus();
+	}
+	
+	public void exploratory() {
+	}
+
+	public void uninstall() 
+	{
+	}
+}

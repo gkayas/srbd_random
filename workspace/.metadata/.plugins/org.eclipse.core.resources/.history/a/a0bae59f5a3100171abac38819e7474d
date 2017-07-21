@@ -1,0 +1,31 @@
+// This class represents a single sequence.
+public class Sequence {
+	private String header,sequence;
+    	// Constructor.
+	public Sequence(String header, String seq){
+		this.header = header;
+		sequence = seq;
+	}
+	// Return the header of the sequence.
+	public String getHeader(){
+		return header;
+	}
+	public String getSeq(){
+		return sequence;
+	}
+	// Return the usage for word length k and window step size w.
+	public Usage getUsage(int k, int w){
+		return null;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof Sequence)) {
+			retur false;
+		}
+		Sequence target = (Sequence) obj;
+		
+		return this.header.equals(target)
+	}
+	
+}

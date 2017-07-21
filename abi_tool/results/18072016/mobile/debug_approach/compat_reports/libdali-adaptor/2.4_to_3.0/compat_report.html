@@ -1,0 +1,4309 @@
+<!-- kind:binary;verdict:incompatible;affected:10.6;added:61;removed:47;type_problems_high:0;type_problems_medium:1;type_problems_low:7;interface_problems_high:6;interface_problems_medium:1;interface_problems_low:3;changed_constants:0;type_changes_other:29;tool_version:1.99.18 -->
+<!-- kind:source;verdict:incompatible;affected:13.2;added:60;removed:66;type_problems_high:6;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:7;interface_problems_low:3;changed_constants:0;type_changes_other:30;interface_changes_other:4;tool_version:1.99.18 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="libdali-adaptor, compatibility, API, ABI, report" />
+    <meta name="description" content="API/ABI compatibility report for the libdali-adaptor object between 2.4 and 3.0 versions" />
+    <title>
+        libdali-adaptor: 2.4 to 3.0 compatibility report
+    </title>
+    <style type="text/css">
+    body {
+    font-family:Arial, sans-serif;
+    background-color:White;
+    color:Black;
+}
+hr {
+    color:Black;
+    background-color:Black;
+    height:1px;
+    border:0;
+}
+h1 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.625em;
+}
+h2 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.25em;
+    white-space:nowrap;
+}
+span.section {
+    font-weight:bold;
+    cursor:pointer;
+    color:#003E69;
+    white-space:nowrap;
+    margin-left:5px;
+}
+span.new_sign {
+    font-weight:bold;
+    margin-left:26px;
+    color:#003E69;
+}
+span.new_sign_lbl {
+    margin-left:28px;
+    font-size:0.875em;
+    color:Black;
+}
+span:hover.section {
+    color:#336699;
+}
+span.sect_aff {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:#cc3300;
+}
+span.sect_info {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:Black;
+}
+span.ext {
+    font-weight:100;
+}
+span.h_name {
+    color:#cc3300;
+    font-size:0.875em;
+    font-weight:bold;
+}
+div.h_list, div.lib_list {
+    font-size:0.94em;
+    padding-left:5px;
+}
+span.ns {
+    color:#408080;
+    font-size:0.94em;
+}
+span.lib_name {
+    color:Green;
+    font-size:0.875em;
+    font-weight:bold;
+}
+span.iname {
+    font-weight:bold;
+    color:#003E69;
+    margin-left:5px;
+}
+span.iname_b {
+    font-weight:bold;
+    font-size:1.1em;
+}
+span.iname_a {
+    color:#333333;
+    font-weight:bold;
+    font-size:0.94em;
+}
+span.sym_p {
+    font-weight:normal;
+    white-space:normal;
+}
+div.affect {
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:0.87em;
+    font-style:italic;
+    line-height:0.75em;
+}
+div.affected {
+    padding-left:30px;
+    padding-top:10px;
+}
+table.ptable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:1em;
+    margin-left:15px;
+    margin-top:3px;
+    margin-bottom:3px;
+    width:900px;
+    
+}
+table.ptable td {
+    border:1px solid gray;
+    padding: 3px;
+    font-size:0.875em;
+    text-align:left;
+    vertical-align:top;
+}
+table.vtable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:16px;
+    margin-left:30px;
+    margin-top:10px;
+}
+table.vtable td {
+    border:1px solid gray;
+    word-wrap:break-word;
+    padding: 3px;
+    font-size:0.875em;
+    max-width:450px;
+    vertical-align:top;
+}
+table.ptable th, table.vtable th {
+    background-color:#eeeeee;
+    font-weight:bold;
+    color:#333333;
+    font-family:Verdana, Arial;
+    font-size:0.81em;
+    border:1px solid gray;
+    text-align:center;
+    vertical-align:top;
+    white-space:nowrap;
+    padding: 3px;
+}
+table.summary {
+    border-collapse:collapse;
+    border:1px outset black;
+}
+table.summary th {
+    background-color:#eeeeee;
+    font-weight:100;
+    text-align:left;
+    font-size:0.94em;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px;
+}
+table.summary td {
+    text-align:right;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px 5px 3px 10px;
+}
+span.mangled {
+    padding-left:15px;
+    font-size:0.875em;
+    cursor:text;
+    color:#444444;
+}
+span.sym_ver {
+    color:#333333;
+    white-space:nowrap;
+    font-family:"DejaVu Sans Mono", Monospace;
+}
+span.attr {
+    color:#333333;
+    font-weight:100;
+}
+span.color_p {
+    font-style:italic;
+    color:Brown;
+}
+span.p {
+    font-style:italic;
+}
+span.fp {
+    font-style:italic;
+    background-color:#FFCCCC;
+}
+span.ttype {
+    font-weight:100;
+}
+span.nowrap {
+    white-space:nowrap;
+}
+span.value {
+    white-space:nowrap;
+    font-weight:bold;
+}
+td.passed {
+    background-color:#CCFFCC;
+}
+td.warning {
+    background-color:#F4F4AF;
+}
+td.failed {
+    background-color:#FFCCCC;
+}
+td.new {
+    background-color:#C6DEFF;
+}
+.top_ref {
+    font-size:0.69em;
+}
+.footer {
+    font-size:0.75em;
+}
+
+.tabset {
+    float:left;
+}
+a.tab {
+    border:1px solid Black;
+    float:left;
+    margin:0px 5px -1px 0px;
+    padding:3px 5px 3px 5px;
+    position:relative;
+    font-size:0.875em;
+    background-color:#DDD;
+    text-decoration:none;
+    color:Black;
+}
+a.disabled:hover
+{
+    color:Black;
+    background:#EEE;
+}
+a.active:hover
+{
+    color:Black;
+    background:White;
+}
+a.active {
+    border-bottom-color:White;
+    background-color:White;
+}
+div.tab {
+    border-top:1px solid Black;
+    padding:0px;
+    width:100%;
+    clear:both;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+    function showContent(header, id)
+{
+    e = document.getElementById(id);
+    if(e.style.display == 'none')
+    {
+        e.style.display = 'block';
+        e.style.visibility = 'visible';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[&minus;]");
+    }
+    else
+    {
+        e.style.display = 'none';
+        e.style.visibility = 'hidden';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[+]");
+    }
+}
+function initTabs()
+{
+    var url = window.location.href;
+    if(url.indexOf('_Source_')!=-1 || url.indexOf('#Source')!=-1)
+    {
+        var tab1 = document.getElementById('BinaryID');
+        var tab2 = document.getElementById('SourceID');
+        tab1.className='tab disabled';
+        tab2.className='tab active';
+    }
+    var sets = document.getElementsByTagName('div');
+    for (var i = 0; i < sets.length; i++)
+    {
+        if (sets[i].className.indexOf('tabset') != -1)
+        {
+            var tabs = [];
+            var links = sets[i].getElementsByTagName('a');
+            for (var j = 0; j < links.length; j++)
+            {
+                if (links[j].className.indexOf('tab') != -1)
+                {
+                    tabs.push(links[j]);
+                    links[j].tabs = tabs;
+                    var tab = document.getElementById(links[j].href.substr(links[j].href.indexOf('#') + 1));
+                    //reset all tabs on start
+                    if (tab)
+                    {
+                        if (links[j].className.indexOf('active')!=-1) {
+                            tab.style.display = 'block';
+                        }
+                        else {
+                            tab.style.display = 'none';
+                        }
+                    }
+                    links[j].onclick = function()
+                    {
+                        var tab = document.getElementById(this.href.substr(this.href.indexOf('#') + 1));
+                        if (tab)
+                        {
+                            //reset all tabs before change
+                            for (var k = 0; k < this.tabs.length; k++)
+                            {
+                                document.getElementById(this.tabs[k].href.substr(this.tabs[k].href.indexOf('#') + 1)).style.display = 'none';
+                                this.tabs[k].className = this.tabs[k].className.replace('active', 'disabled');
+                            }
+                            this.className = 'tab active';
+                            tab.style.display = 'block';
+                            // window.location.hash = this.id.replace('ID', '');
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(url.indexOf('#')!=-1) {
+        location.href=location.href;
+    }
+}
+if (window.addEventListener) window.addEventListener('load', initTabs, false);
+else if (window.attachEvent) window.attachEvent('onload', initTabs);
+    -->
+    </script>
+    </head><body><a name='Source'></a><a name='Binary'></a><a name='Top'></a><h1>API compatibility report for the <span style='color:Blue;'>libdali-adaptor.so</span> object between <span style='color:Red;'>2.4</span> and <span style='color:Red;'>3.0</span> versions on <span style='color:Blue;'>ARM</span></h1>
+
+            <br/>
+            <div class='tabset'>
+            <a id='BinaryID' href='#BinaryTab' class='tab active'>Binary<br/>Compatibility</a>
+            <a id='SourceID' href='#SourceTab' style='margin-left:3px' class='tab disabled'>Source<br/>Compatibility</a>
+            </div><div id='BinaryTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libdali-adaptor</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>GCC Version</th><td>4.9.2</td></tr>
+<tr><th>Subject</th><td width='150px'>Binary Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>183</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>45</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>469 / 366</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(10.6%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Binary_Added' style='color:Blue;'>61</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td class='failed'><a href='#Binary_Removed' style='color:Blue;'>47</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Type_Binary_Problems_Medium' style='color:Blue;'>1</a></td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Type_Binary_Problems_Low' style='color:Blue;'>7</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td class='failed'><a href='#Symbol_Binary_Problems_High' style='color:Blue;'>6</a></td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Symbol_Binary_Problems_Medium' style='color:Blue;'>1</a></td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Symbol_Binary_Problems_Low' style='color:Blue;'>3</a></td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Binary_Changes_In_Types' style='color:Blue;'>29</a></td></tr>
+</table>
+
+<a name='Binary_Added'></a><h2>Added Symbols (61)</h2><hr/>
+<span class='h_name'>adaptor.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+Adaptor::GetNativeWindowHandle&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_1" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali7Adaptor21GetNativeWindowHandleEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>bidirectional-support.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_2')">
+BidirectionalSupport::GetMirroredText&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Character* <span class='color_p'>text</span>,</span> CharacterDirection* <span class='color_p'>directions</span>, <span class='nowrap'>Length <span class='color_p'>numberOfCharacters</span> )</span></span></span>
+<br/>
+<div id="c_2" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali15TextAbstraction20BidirectionalSupport15GetMirroredTextEPjPbj</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>bitmap-loader.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+BitmapLoader::GetUrl&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_3" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali12BitmapLoader6GetUrlEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_4')">
+BitmapLoader::IsLoaded&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_4" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali12BitmapLoader8IsLoadedEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+BitmapLoader::Load&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_5" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali12BitmapLoader4LoadEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_6')">
+BitmapLoader::New&#160;<span class='sym_p'>(&#160;std::string const&amp; <span class='color_p'>url</span>, ImageDimensions <span class='color_p'>size</span>, enum FittingMode::Type <span class='color_p'>fittingMode</span>, enum SamplingMode::Type <span class='color_p'>samplingMode</span>, <span class='nowrap'>bool <span class='color_p'>orientationCorrection</span> )</span></span> <span class='attr'>[static]</span></span>
+<br/>
+<div id="c_6" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali12BitmapLoader3NewERKSsNS_10Uint16PairENS_11FittingMode4TypeENS_12SamplingMode4TypeEb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>ecore-wl-render-surface.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali::ECore</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_7')">
+EcoreWlRenderSurface::EcoreWlRenderSurface <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;Dali::PositionSize <span class='color_p'>positionSize</span>, Dali::Any <span class='color_p'>surface</span>, std::string const&amp; <span class='color_p'>name</span>, <span class='nowrap'>bool <span class='color_p'>isTransparent</span> )</span></span></span>
+<br/>
+<div id="c_7" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurfaceC1ENS_4RectIiEENS_3AnyERKSsb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_8')">
+EcoreWlRenderSurface::EcoreWlRenderSurface <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;Dali::PositionSize <span class='color_p'>positionSize</span>, Dali::Any <span class='color_p'>surface</span>, std::string const&amp; <span class='color_p'>name</span>, <span class='nowrap'>bool <span class='color_p'>isTransparent</span> )</span></span></span>
+<br/>
+<div id="c_8" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurfaceC2ENS_4RectIiEENS_3AnyERKSsb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_9')">
+EcoreWlRenderSurface::GetDrawable&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_9" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurface11GetDrawableEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_10')">
+EcoreWlRenderSurface::GetPositionSize&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_10" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali5ECore20EcoreWlRenderSurface15GetPositionSizeEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_11')">
+EcoreWlRenderSurface::GetWlWindow&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_11" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurface11GetWlWindowEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_12')">
+EcoreWlRenderSurface::Init&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Dali::Any <span class='color_p'>p1</span> )</span></span></span>
+<br/>
+<div id="c_12" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurface4InitENS_3AnyE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_13')">
+EcoreWlRenderSurface::MoveResize&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Dali::PositionSize <span class='color_p'>positionSize</span> )</span></span></span>
+<br/>
+<div id="c_13" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurface10MoveResizeENS_4RectIiEE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_14')">
+EcoreWlRenderSurface::SetRenderNotification&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Dali::TriggerEventInterface* <span class='color_p'>renderNotification</span> )</span></span></span>
+<br/>
+<div id="c_14" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurface21SetRenderNotificationEPNS_21TriggerEventInterfaceE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_15')">
+EcoreWlRenderSurface::SetViewMode&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum Dali::ViewMode <span class='color_p'>viewMode</span> )</span></span></span>
+<br/>
+<div id="c_15" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurface11SetViewModeENS_8ViewModeE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_16')">
+EcoreWlRenderSurface::~EcoreWlRenderSurface <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_16" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurfaceD0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_17')">
+EcoreWlRenderSurface::~EcoreWlRenderSurface <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_17" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurfaceD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_18')">
+EcoreWlRenderSurface::~EcoreWlRenderSurface <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_18" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurfaceD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>environment-variable.cpp</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali::EnvironmentVariable</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_19')">
+GetEnvironmentVariable&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>variable</span> )</span></span></span>
+<br/>
+<div id="c_19" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali19EnvironmentVariable22GetEnvironmentVariableEPKc</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>event-thread-callback.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_20')">
+EventThreadCallback::EventThreadCallback <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>CallbackBase* <span class='color_p'>callback</span> )</span></span></span>
+<br/>
+<div id="c_20" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali19EventThreadCallbackC1EPNS_12CallbackBaseE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_21')">
+EventThreadCallback::EventThreadCallback <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>CallbackBase* <span class='color_p'>callback</span> )</span></span></span>
+<br/>
+<div id="c_21" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali19EventThreadCallbackC2EPNS_12CallbackBaseE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_22')">
+EventThreadCallback::Trigger&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_22" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali19EventThreadCallback7TriggerEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_23')">
+EventThreadCallback::~EventThreadCallback <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_23" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali19EventThreadCallbackD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_24')">
+EventThreadCallback::~EventThreadCallback <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_24" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali19EventThreadCallbackD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>file-loader.cpp</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali::FileLoader</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_25')">
+GetFileSize&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string const&amp; <span class='color_p'>filename</span> )</span></span></span>
+<br/>
+<div id="c_25" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali10FileLoader11GetFileSizeERKSs</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_26')">
+ReadFile&#160;<span class='sym_p'>(&#160;std::string const&amp; <span class='color_p'>filename</span>, Dali::Vector&lt;char, true&gt;&amp; <span class='color_p'>memblock</span>, <span class='nowrap'>enum FileType <span class='color_p'>fileType</span> )</span></span></span>
+<br/>
+<div id="c_26" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali10FileLoader8ReadFileERKSsRNS_6VectorIcLb1EEENS0_8FileTypeE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_27')">
+ReadFile&#160;<span class='sym_p'>(&#160;std::string const&amp; <span class='color_p'>filename</span>, std::streampos&amp; <span class='color_p'>fileSize</span>, Dali::Vector&lt;char, true&gt;&amp; <span class='color_p'>memblock</span>, <span class='nowrap'>enum FileType <span class='color_p'>fileType</span> )</span></span></span>
+<br/>
+<div id="c_27" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali10FileLoader8ReadFileERKSsRSt4fposI11__mbstate_tERNS_6VectorIcLb1EEENS0_8FileTypeE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>font-client.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_28')">
+FontClient::CreateVectorBlob&#160;<span class='sym_p'>(&#160;<span class='nowrap'>FontId <span class='color_p'>fontId</span>,</span> GlyphIndex <span class='color_p'>glyphIndex</span>, struct VectorBlob*&amp; <span class='color_p'>blob</span>, unsigned int&amp; <span class='color_p'>blobLength</span>, unsigned int&amp; <span class='color_p'>nominalWidth</span>, <span class='nowrap'>unsigned int&amp; <span class='color_p'>nominalHeight</span> )</span></span></span>
+<br/>
+<div id="c_28" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali15TextAbstraction10FontClient16CreateVectorBlobEjjRPNS0_10VectorBlobERjS5_S5_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_29')">
+FontClient::GetGlyphMetrics&#160;<span class='sym_p'>(&#160;struct GlyphInfo* <span class='color_p'>array</span>, <span class='nowrap'>uint32_t <span class='color_p'>size</span>,</span> enum GlyphType <span class='color_p'>type</span>, <span class='nowrap'>bool <span class='color_p'>horizontal</span>,</span> <span class='nowrap'>int <span class='color_p'>desiredFixedSize</span> )</span></span></span>
+<br/>
+<div id="c_29" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali15TextAbstraction10FontClient15GetGlyphMetricsEPNS0_9GlyphInfoEjNS0_9GlyphTypeEbi</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_30')">
+FontClient::ResetSystemDefaults&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_30" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali15TextAbstraction10FontClient19ResetSystemDefaultsEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>imf-manager.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_31')">
+ImfManager::GetCursorPosition&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_31" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali10ImfManager17GetCursorPositionEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_32')">
+ImfManager::GetSurroundingText&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_32" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali10ImfManager18GetSurroundingTextEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_33')">
+ImfManager::SetSurroundingText&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string const&amp; <span class='color_p'>text</span> )</span></span></span>
+<br/>
+<div id="c_33" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali10ImfManager18SetSurroundingTextERKSs</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>native-image-source.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_34')">
+NativeImageSource::IsColorDepthSupported&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum NativeImageSource::ColorDepth <span class='color_p'>colorDepth</span> )</span></span></span>
+<br/>
+<div id="c_34" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali17NativeImageSource21IsColorDepthSupportedENS0_10ColorDepthE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_35')">
+NativeImageSource::SetSource&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Any <span class='color_p'>source</span> )</span></span></span>
+<br/>
+<div id="c_35" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali17NativeImageSource9SetSourceENS_3AnyE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>video-player.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_36')">
+VideoPlayer::DownCast&#160;<span class='sym_p'>(&#160;<span class='nowrap'>BaseHandle <span class='color_p'>handle</span> )</span></span> <span class='attr'>[static]</span></span>
+<br/>
+<div id="c_36" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer8DownCastENS_10BaseHandleE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_37')">
+VideoPlayer::FinishedSignal&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_37" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer14FinishedSignalEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_38')">
+VideoPlayer::GetDisplayRotation&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_38" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer18GetDisplayRotationEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_39')">
+VideoPlayer::GetPlayPosition&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_39" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer15GetPlayPositionEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_40')">
+VideoPlayer::GetUrl&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_40" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer6GetUrlEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_41')">
+VideoPlayer::GetVolume&#160;<span class='sym_p'>(&#160;<span class='nowrap'>float&amp; <span class='color_p'>left</span>,</span> <span class='nowrap'>float&amp; <span class='color_p'>right</span> )</span></span></span>
+<br/>
+<div id="c_41" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer9GetVolumeERfS1_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_42')">
+VideoPlayer::IsLooping&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_42" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer9IsLoopingEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_43')">
+VideoPlayer::IsMuted&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_43" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer7IsMutedEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_44')">
+VideoPlayer::New&#160;<span class='sym_p'>(&#160;)</span> <span class='attr'>[static]</span></span>
+<br/>
+<div id="c_44" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer3NewEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_45')">
+VideoPlayer::operator&#160;=&#160;<span class='sym_p'>(&#160;<span class='nowrap'>VideoPlayer const&amp; <span class='color_p'>player</span> )</span></span></span>
+<br/>
+<div id="c_45" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayeraSERKS0_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_46')">
+VideoPlayer::Pause&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_46" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer5PauseEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_47')">
+VideoPlayer::Play&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_47" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer4PlayEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_48')">
+VideoPlayer::SetDisplayRotation&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum VideoPlayerPlugin::DisplayRotation <span class='color_p'>rotation</span> )</span></span></span>
+<br/>
+<div id="c_48" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer18SetDisplayRotationENS_17VideoPlayerPlugin15DisplayRotationE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_49')">
+VideoPlayer::SetLooping&#160;<span class='sym_p'>(&#160;<span class='nowrap'>bool <span class='color_p'>looping</span> )</span></span></span>
+<br/>
+<div id="c_49" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer10SetLoopingEb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_50')">
+VideoPlayer::SetMute&#160;<span class='sym_p'>(&#160;<span class='nowrap'>bool <span class='color_p'>mute</span> )</span></span></span>
+<br/>
+<div id="c_50" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer7SetMuteEb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_51')">
+VideoPlayer::SetPlayPosition&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>millisecond</span> )</span></span></span>
+<br/>
+<div id="c_51" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer15SetPlayPositionEi</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_52')">
+VideoPlayer::SetRenderingTarget&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Any <span class='color_p'>target</span> )</span></span></span>
+<br/>
+<div id="c_52" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer18SetRenderingTargetENS_3AnyE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_53')">
+VideoPlayer::SetUrl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string const&amp; <span class='color_p'>url</span> )</span></span></span>
+<br/>
+<div id="c_53" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer6SetUrlERKSs</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_54')">
+VideoPlayer::SetVolume&#160;<span class='sym_p'>(&#160;<span class='nowrap'>float <span class='color_p'>left</span>,</span> <span class='nowrap'>float <span class='color_p'>right</span> )</span></span></span>
+<br/>
+<div id="c_54" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer9SetVolumeEff</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_55')">
+VideoPlayer::Stop&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_55" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer4StopEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_56')">
+VideoPlayer::VideoPlayer <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_56" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayerC1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_57')">
+VideoPlayer::VideoPlayer <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>VideoPlayer const&amp; <span class='color_p'>player</span> )</span></span></span>
+<br/>
+<div id="c_57" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayerC1ERKS0_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_58')">
+VideoPlayer::VideoPlayer <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_58" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayerC2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_59')">
+VideoPlayer::VideoPlayer <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>VideoPlayer const&amp; <span class='color_p'>player</span> )</span></span></span>
+<br/>
+<div id="c_59" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayerC2ERKS0_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_60')">
+VideoPlayer::~VideoPlayer <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_60" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayerD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_61')">
+VideoPlayer::~VideoPlayer <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_61" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayerD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Binary_Removed'></a><a name='Binary_Withdrawn'></a><h2>Removed Symbols (47)</h2><hr/>
+<span class='h_name'>bidirectional-support.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_62')">
+BidirectionalSupport::GetMirroredText&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Character* <span class='color_p'>text</span>,</span> <span class='nowrap'>Length <span class='color_p'>numberOfCharacters</span> )</span></span></span>
+<br/>
+<div id="c_62" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali15TextAbstraction20BidirectionalSupport15GetMirroredTextEPjj</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>bitmap-loader.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_63')">
+BitmapLoader::GetBufferStride&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_63" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali12BitmapLoader15GetBufferStrideEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_64')">
+BitmapLoader::GetImageHeight&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_64" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali12BitmapLoader14GetImageHeightEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_65')">
+BitmapLoader::GetImageWidth&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_65" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali12BitmapLoader13GetImageWidthEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_66')">
+BitmapLoader::GetPixelFormat&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_66" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali12BitmapLoader14GetPixelFormatEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_67')">
+BitmapLoader::New&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string const&amp; <span class='color_p'>filename</span> )</span></span> <span class='attr'>[static]</span></span>
+<br/>
+<div id="c_67" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali12BitmapLoader3NewERKSs</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>ecore-x-render-surface.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali::ECore</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_68')">
+EcoreXRenderSurface::EcoreXRenderSurface <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;Dali::PositionSize <span class='color_p'>positionSize</span>, Dali::Any <span class='color_p'>surface</span>, std::string const&amp; <span class='color_p'>name</span>, <span class='nowrap'>bool <span class='color_p'>isTransparent</span> )</span></span></span>
+<br/>
+<div id="c_68" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurfaceC1ENS_4RectIiEENS_3AnyERKSsb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_69')">
+EcoreXRenderSurface::EcoreXRenderSurface <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;Dali::PositionSize <span class='color_p'>positionSize</span>, Dali::Any <span class='color_p'>surface</span>, std::string const&amp; <span class='color_p'>name</span>, <span class='nowrap'>bool <span class='color_p'>isTransparent</span> )</span></span></span>
+<br/>
+<div id="c_69" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurfaceC2ENS_4RectIiEENS_3AnyERKSsb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_70')">
+EcoreXRenderSurface::GetDrawable&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_70" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurface11GetDrawableEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_71')">
+EcoreXRenderSurface::GetPositionSize&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_71" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali5ECore19EcoreXRenderSurface15GetPositionSizeEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_72')">
+EcoreXRenderSurface::GetXWindow&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_72" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurface10GetXWindowEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_73')">
+EcoreXRenderSurface::Init&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Dali::Any <span class='color_p'>p1</span> )</span></span></span>
+<br/>
+<div id="c_73" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurface4InitENS_3AnyE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_74')">
+EcoreXRenderSurface::MoveResize&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Dali::PositionSize <span class='color_p'>positionSize</span> )</span></span></span>
+<br/>
+<div id="c_74" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurface10MoveResizeENS_4RectIiEE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_75')">
+EcoreXRenderSurface::SetRenderNotification&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Dali::TriggerEventInterface* <span class='color_p'>renderNotification</span> )</span></span></span>
+<br/>
+<div id="c_75" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurface21SetRenderNotificationEPNS_21TriggerEventInterfaceE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_76')">
+EcoreXRenderSurface::SetViewMode&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum Dali::ViewMode <span class='color_p'>viewMode</span> )</span></span></span>
+<br/>
+<div id="c_76" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurface11SetViewModeENS_8ViewModeE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_77')">
+EcoreXRenderSurface::~EcoreXRenderSurface <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_77" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurfaceD0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_78')">
+EcoreXRenderSurface::~EcoreXRenderSurface <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_78" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurfaceD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_79')">
+EcoreXRenderSurface::~EcoreXRenderSurface <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_79" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurfaceD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_80')">
+vtable for EcoreXRenderSurface <span class='attr'>[data]</span></span>
+<br/>
+<div id="c_80" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZTVN4Dali5ECore19EcoreXRenderSurfaceE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>exception.hpp</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>boost</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_81')">
+exception::~exception <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_81" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost9exceptionD0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_82')">
+exception::~exception <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_82" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost9exceptionD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_83')">
+exception::~exception <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_83" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost9exceptionD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_84')">
+vtable for exception <span class='attr'>[data]</span></span>
+<br/>
+<div id="c_84" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZTVN5boost9exceptionE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class='h_name'>exception.hpp</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>boost::exception_detail</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_85')">
+error_info_injector&lt;boost::condition_error&gt;::~error_info_injector <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_85" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_15condition_errorEED0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_86')">
+error_info_injector&lt;boost::condition_error&gt;::~error_info_injector <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_86" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_15condition_errorEED1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_87')">
+error_info_injector&lt;boost::condition_error&gt;::~error_info_injector <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_87" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_15condition_errorEED2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_88')">
+error_info_injector&lt;boost::lock_error&gt;::~error_info_injector <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_88" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_10lock_errorEED0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_89')">
+error_info_injector&lt;boost::lock_error&gt;::~error_info_injector <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_89" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_10lock_errorEED1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_90')">
+error_info_injector&lt;boost::lock_error&gt;::~error_info_injector <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_90" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_10lock_errorEED2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_91')">
+error_info_injector&lt;boost::thread_resource_error&gt;::~error_info_injector <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_91" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_21thread_resource_errorEED0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_92')">
+error_info_injector&lt;boost::thread_resource_error&gt;::~error_info_injector <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_92" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_21thread_resource_errorEED1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_93')">
+error_info_injector&lt;boost::thread_resource_error&gt;::~error_info_injector <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_93" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_21thread_resource_errorEED2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_94')">
+vtable for clone_base <span class='attr'>[data]</span></span>
+<br/>
+<div id="c_94" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZTVN5boost16exception_detail10clone_baseE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>exceptions.hpp</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>boost</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_95')">
+condition_error::~condition_error <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_95" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost15condition_errorD0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_96')">
+condition_error::~condition_error <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_96" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost15condition_errorD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_97')">
+condition_error::~condition_error <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_97" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost15condition_errorD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_98')">
+vtable for condition_error <span class='attr'>[data]</span></span>
+<br/>
+<div id="c_98" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZTVN5boost15condition_errorE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>font-client.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_99')">
+FontClient::GetGlyphMetrics&#160;<span class='sym_p'>(&#160;struct GlyphInfo* <span class='color_p'>array</span>, <span class='nowrap'>uint32_t <span class='color_p'>size</span>,</span> <span class='nowrap'>bool <span class='color_p'>horizontal</span>,</span> <span class='nowrap'>int <span class='color_p'>maxFixedSize</span> )</span></span></span>
+<br/>
+<div id="c_99" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali15TextAbstraction10FontClient15GetGlyphMetricsEPNS0_9GlyphInfoEjbi</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_100')">
+FontClient::SetDefaultFont&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct FontDescription const&amp; <span class='color_p'>fontDescription</span> )</span></span></span>
+<br/>
+<div id="c_100" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali15TextAbstraction10FontClient14SetDefaultFontERKNS0_15FontDescriptionE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>imf-manager.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_101')">
+ImfManager::GetContext&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_101" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali10ImfManager10GetContextEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_102')">
+ImfManager::GetCursorPosition&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_102" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali10ImfManager17GetCursorPositionEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_103')">
+ImfManager::GetSurroundingText&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_103" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali10ImfManager18GetSurroundingTextEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_104')">
+ImfManager::SetSurroundingText&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string <span class='color_p'>text</span> )</span></span></span>
+<br/>
+<div id="c_104" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali10ImfManager18SetSurroundingTextESs</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>system_error.hpp</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>boost::system</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_105')">
+system_error::what&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_105" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK5boost6system12system_error4whatEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_106')">
+vtable for system_error <span class='attr'>[data]</span></span>
+<br/>
+<div id="c_106" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZTVN5boost6system12system_errorE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>window-extensions.cpp</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali::WindowExtensions</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_107')">
+EnableEffect&#160;<span class='sym_p'>(&#160;Dali::Window <span class='color_p'>window</span>, <span class='nowrap'>bool <span class='color_p'>enable</span> )</span></span></span>
+<br/>
+<div id="c_107" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali16WindowExtensions12EnableEffectENS_6WindowEb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_108')">
+IsEffectEnabled&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Dali::Window <span class='color_p'>window</span> )</span></span></span>
+<br/>
+<div id="c_108" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali16WindowExtensions15IsEffectEnabledENS_6WindowE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='High_Risk_Binary_Problems'></a><a name='Symbol_Binary_Problems_High'></a><a name='Interface_Binary_Problems_High'></a>
+<h2>Problems with Symbols, High Severity (6)</h2><hr/>
+<span class='h_name'>bidirectional-support.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_109')">
+<span class='ext'>[+]</span> BidirectionalSupport::GetMirroredText&#160;<span class='sym_p'>(&#160;Character* <span class='color_p'>text</span>, <span class='nowrap'>Length <span class='color_p'>numberOfCharacters</span> )</span></span> (1)</span>
+<br/>
+<div id="c_109" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>BidirectionalSupport::GetMirroredText&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Character* <span class='color_p'>text</span>,</span> CharacterDirection* <span class='color_p'>directions</span>, <span class='nowrap'>Length <span class='color_p'>numberOfCharacters</span> )</span></span></span><br/>
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali15TextAbstraction20BidirectionalSupport15GetMirroredTextEPjj</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameters list has been changed.</td>
+<td>The name of the appropriate symbol for this function on binary level has been changed from <b>_ZN4Dali15TextAbstraction20BidirectionalSupport15GetMirroredTextEPjj</b> to <b>_ZN4Dali15TextAbstraction20BidirectionalSupport15GetMirroredTextEPjPbj</b>. This may cause "undefined reference" linker error in old client applications.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>bitmap-loader.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_110')">
+<span class='ext'>[+]</span> BitmapLoader::New&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string const&amp; <span class='color_p'>filename</span> )</span></span> <span class='attr'>[static]</span> (1)</span>
+<br/>
+<div id="c_110" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>BitmapLoader::New&#160;<span class='sym_p'>(&#160;std::string const&amp; <span class='color_p'>url</span>, ImageDimensions <span class='color_p'>size</span>, enum FittingMode::Type <span class='color_p'>fittingMode</span>, enum SamplingMode::Type <span class='color_p'>samplingMode</span>, <span class='nowrap'>bool <span class='color_p'>orientationCorrection</span> )</span></span> <span class='attr'>[static]</span></span><br/>
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali12BitmapLoader3NewERKSs</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameters list has been changed.</td>
+<td>The name of the appropriate symbol for this function on binary level has been changed from <b>_ZN4Dali12BitmapLoader3NewERKSs</b> to <b>_ZN4Dali12BitmapLoader3NewERKSsNS_10Uint16PairENS_11FittingMode4TypeENS_12SamplingMode4TypeEb</b>. This may cause "undefined reference" linker error in old client applications.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>font-client.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_111')">
+<span class='ext'>[+]</span> FontClient::GetGlyphMetrics&#160;<span class='sym_p'>(&#160;struct GlyphInfo* <span class='color_p'>array</span>, <span class='nowrap'>uint32_t <span class='color_p'>size</span>,</span> <span class='nowrap'>bool <span class='color_p'>horizontal</span>,</span> <span class='nowrap'>int <span class='color_p'>maxFixedSize</span> )</span></span> (1)</span>
+<br/>
+<div id="c_111" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>FontClient::GetGlyphMetrics&#160;<span class='sym_p'>(&#160;struct GlyphInfo* <span class='color_p'>array</span>, <span class='nowrap'>uint32_t <span class='color_p'>size</span>,</span> enum GlyphType <span class='color_p'>type</span>, <span class='nowrap'>bool <span class='color_p'>horizontal</span>,</span> <span class='nowrap'>int <span class='color_p'>desiredFixedSize</span> )</span></span></span><br/>
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali15TextAbstraction10FontClient15GetGlyphMetricsEPNS0_9GlyphInfoEjbi</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameters list has been changed.</td>
+<td>The name of the appropriate symbol for this function on binary level has been changed from <b>_ZN4Dali15TextAbstraction10FontClient15GetGlyphMetricsEPNS0_9GlyphInfoEjbi</b> to <b>_ZN4Dali15TextAbstraction10FontClient15GetGlyphMetricsEPNS0_9GlyphInfoEjNS0_9GlyphTypeEbi</b>. This may cause "undefined reference" linker error in old client applications.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>imf-manager.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_112')">
+<span class='ext'>[+]</span> ImfManager::GetCursorPosition&#160;<span class='sym_p'>(&#160;)</span> (1)</span>
+<br/>
+<div id="c_112" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>ImfManager::GetCursorPosition&#160;<span class='sym_p'>(&#160;)</span> const</span><br/>
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali10ImfManager17GetCursorPositionEv</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Method became <b>const</b>.</td>
+<td>The name of the appropriate symbol for this function on binary level has been changed from <b>_ZN4Dali10ImfManager17GetCursorPositionEv</b> to <b>_ZNK4Dali10ImfManager17GetCursorPositionEv</b>. This may cause "undefined reference" linker error in old client applications.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_113')">
+<span class='ext'>[+]</span> ImfManager::GetSurroundingText&#160;<span class='sym_p'>(&#160;)</span> (1)</span>
+<br/>
+<div id="c_113" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>ImfManager::GetSurroundingText&#160;<span class='sym_p'>(&#160;)</span> const</span><br/>
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali10ImfManager18GetSurroundingTextEv</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Method became <b>const</b>.</td>
+<td>The name of the appropriate symbol for this function on binary level has been changed from <b>_ZN4Dali10ImfManager18GetSurroundingTextEv</b> to <b>_ZNK4Dali10ImfManager18GetSurroundingTextEv</b>. This may cause "undefined reference" linker error in old client applications.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_114')">
+<span class='ext'>[+]</span> ImfManager::SetSurroundingText&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string <span class='color_p'>text</span> )</span></span> (1)</span>
+<br/>
+<div id="c_114" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>ImfManager::SetSurroundingText&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string const&amp; <span class='color_p'>text</span> )</span></span></span><br/>
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali10ImfManager18SetSurroundingTextESs</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameters list has been changed.</td>
+<td>The name of the appropriate symbol for this function on binary level has been changed from <b>_ZN4Dali10ImfManager18SetSurroundingTextESs</b> to <b>_ZN4Dali10ImfManager18SetSurroundingTextERKSs</b>. This may cause "undefined reference" linker error in old client applications.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Medium_Risk_Binary_Problems'></a><a name='Type_Binary_Problems_Medium'></a>
+<h2>Problems with Data Types, Medium Severity (1)</h2><hr/>
+<span class='h_name'>script.h</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_115')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> Script (1)</span>
+<br/>
+<div id="c_115" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Value of member <b>UNKNOWN</b> has been changed from <b>33</b> to <b>28</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_116')">
+[+] affected symbols (4)</span>
+<div id="c_116" style="display:none;">
+<div class='affected'><span class='iname_a'>GetCharacterScript&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Character <i>character</i> )</span></span></span><br/>
+<div class='affect'>Return value has type &#39;enum Script&#39;.</div>
+<span class='iname_a'>IsRightToLeftScript&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum Script <span class='fp'>script</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;script&#39; has type &#39;enum Script&#39;.</div>
+<span class='iname_a'>HasLigatureMustBreak&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum Script <span class='fp'>script</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;script&#39; has type &#39;enum Script&#39;.</div>
+<span class='iname_a'>Shaping::Shape&#160;<span class='sym_p'>(&#160;Character const*const <i>text</i>, Length <i>numberOfCharacters</i>, <span class='nowrap'>FontId <i>fontId</i>,</span> <span class='nowrap'>enum Script <span class='fp'>script</span> )</span></span></span><br/>
+<div class='affect'>4th parameter &#39;script&#39; has type &#39;enum Script&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Symbol_Binary_Problems_Medium'></a><a name='Interface_Binary_Problems_Medium'></a>
+<h2>Problems with Symbols, Medium Severity (1)</h2><hr/>
+<span class='h_name'>bitmap-loader.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_117')">
+<span class='ext'>[+]</span> BitmapLoader::GetPixelData&#160;<span class='sym_p'>(&#160;)</span> const (1)</span>
+<br/>
+<div id="c_117" style="display:none;">
+
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZNK4Dali12BitmapLoader12GetPixelDataEv</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The pointer level of return value has been decreased from <b>1</b> to <b>0</b>.</td>
+<td>Applications may try to access unallocated memory by the dereferencing of new return value and therefore cause a crash.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a><a name='Type_Binary_Problems_Low'></a>
+<h2>Problems with Data Types, Low Severity (7)</h2><hr/>
+<span class='h_name'>pixmap-render-surface.h</span><br/>
+<span class='ns'>namespace <b>Dali::ECore</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_118')">
+<span class='ext'>[+]</span> <span class='ttype'>class</span> PixmapRenderSurface (2)</span>
+<br/>
+<div id="c_118" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Size of this type has been changed from <b>40</b> bytes to <b>36</b> bytes.</td>
+<td>The fields or parameters of such data type may be incorrectly initialized or accessed by old client applications.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Field <b>mImpl</b> has been removed from this type.</td>
+<td>Size of the inclusive type has been changed.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_119')">
+[+] affected symbols (1)</span>
+<div id="c_119" style="display:none;">
+<div class='affected'><span class='iname_a'>CreatePixmapSurface&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Dali::PositionSize <i>positionSize</i>,</span> <span class='nowrap'>Dali::Any <i>surface</i>,</span> <span class='nowrap'>std::string const&amp; <i>name</i>,</span> <span class='nowrap'>bool <i>isTransparent</i> )</span></span></span><br/>
+<div class='affect'>Return value (pointer) has base type &#39;PixmapRenderSurface&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<span class='h_name'>script.h</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_120')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> Script (5)</span>
+<br/>
+<div id="c_120" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>SYMBOLS1</b> has been removed.</td>
+<td>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>SYMBOLS2</b> has been removed.</td>
+<td>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>SYMBOLS3</b> has been removed.</td>
+<td>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>SYMBOLS4</b> has been removed.</td>
+<td>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td>
+</tr>
+<tr>
+<th>5</th>
+<td>The member <b>SYMBOLS5</b> has been removed.</td>
+<td>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_121')">
+[+] affected symbols (4)</span>
+<div id="c_121" style="display:none;">
+<div class='affected'><span class='iname_a'>GetCharacterScript&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Character <i>character</i> )</span></span></span><br/>
+<div class='affect'>Return value has type &#39;enum Script&#39;.</div>
+<span class='iname_a'>IsRightToLeftScript&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum Script <span class='fp'>script</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;script&#39; has type &#39;enum Script&#39;.</div>
+<span class='iname_a'>HasLigatureMustBreak&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum Script <span class='fp'>script</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;script&#39; has type &#39;enum Script&#39;.</div>
+<span class='iname_a'>Shaping::Shape&#160;<span class='sym_p'>(&#160;Character const*const <i>text</i>, Length <i>numberOfCharacters</i>, <span class='nowrap'>FontId <i>fontId</i>,</span> <span class='nowrap'>enum Script <span class='fp'>script</span> )</span></span></span><br/>
+<div class='affect'>4th parameter &#39;script&#39; has type &#39;enum Script&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Symbol_Binary_Problems_Low'></a><a name='Interface_Binary_Problems_Low'></a>
+<h2>Problems with Symbols, Low Severity (3)</h2><hr/>
+<span class='h_name'>bitmap-loader.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_122')">
+<span class='ext'>[+]</span> BitmapLoader::GetPixelData&#160;<span class='sym_p'>(&#160;)</span> const (1)</span>
+<br/>
+<div id="c_122" style="display:none;">
+
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZNK4Dali12BitmapLoader12GetPixelDataEv</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of return value has been changed from <span class='value'>unsigned char*</span> to <b>PixelData</b>.</td>
+<td>Replacement of return type may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>dali-adaptor-version.cpp</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_123')">
+<span class='ext'>[+]</span> ADAPTOR_MICRO_VERSION <span class='attr'>[data]</span> (1)</span>
+<br/>
+<div id="c_123" style="display:none;">
+
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali21ADAPTOR_MICRO_VERSIONE</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The initial value of this global data has been changed from <b>49</b> to <b>39</b>.</td>
+<td>Applications will use an old value of this data instead of the new one. This may cause incorrect behavior of applications.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>font-client.h</span>, <span class='lib_name'>libdali-adaptor.so.0.0.0</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_124')">
+<span class='ext'>[+]</span> FontClient::GetFontMetrics&#160;<span class='sym_p'>(&#160;FontId <span class='color_p'>fontId</span>, struct FontMetrics&amp; <span class='color_p'>metrics</span>, <span class='nowrap'>int <span class='color_p'>maxFixedSize</span> )</span></span> (1)</span>
+<br/>
+<div id="c_124" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>FontClient::GetFontMetrics&#160;<span class='sym_p'>(&#160;<span class='nowrap'>FontId <span class='color_p'>fontId</span>,</span> struct FontMetrics&amp; <span class='color_p'>metrics</span>, <span class='nowrap'>int <span class='color_p'>desiredFixedSize</span> )</span></span></span><br/>
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali15TextAbstraction10FontClient14GetFontMetricsEjRNS0_11FontMetricsEi</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>3rd</b> parameter <b>maxFixedSize</b> has been renamed to <b>desiredFixedSize</b>.</td>
+<td>Renaming of a parameter may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Binary_Changes'></a><a name='Other_Binary_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (29)</h2><hr/>
+<span class='h_name'>pixel.h</span><br/>
+<span class='ns'>namespace <b>Dali::Pixel</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_125')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> Format (29)</span>
+<br/>
+<div id="c_125" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_10x10_KHR</b> with value <b>38</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_10x5_KHR</b> with value <b>35</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_10x6_KHR</b> with value <b>36</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_10x8_KHR</b> with value <b>37</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>5</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_12x10_KHR</b> with value <b>39</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>6</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_12x12_KHR</b> with value <b>40</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>7</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_4x4_KHR</b> with value <b>27</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>8</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_5x4_KHR</b> with value <b>28</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>9</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_5x5_KHR</b> with value <b>29</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>10</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_6x5_KHR</b> with value <b>30</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>11</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_6x6_KHR</b> with value <b>31</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>12</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_8x5_KHR</b> with value <b>32</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>13</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_8x6_KHR</b> with value <b>33</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>14</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_8x8_KHR</b> with value <b>34</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>15</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR</b> with value <b>52</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>16</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR</b> with value <b>49</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>17</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR</b> with value <b>50</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>18</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR</b> with value <b>51</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>19</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR</b> with value <b>53</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>20</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR</b> with value <b>54</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>21</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR</b> with value <b>41</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>22</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR</b> with value <b>42</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>23</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR</b> with value <b>43</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>24</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR</b> with value <b>44</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>25</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR</b> with value <b>45</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>26</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR</b> with value <b>46</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>27</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR</b> with value <b>47</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>28</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR</b> with value <b>48</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>29</th>
+<td>The member <b>INVALID</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_126')">
+[+] affected symbols (2)</span>
+<div id="c_126" style="display:none;">
+<div class='affected'><span class='iname_a'>Dali::EncodeToFile&#160;<span class='sym_p'>(&#160;<span class='nowrap'>unsigned char const*const <i>pixelBuffer</i>,</span> <span class='nowrap'>std::string const&amp; <i>filename</i>,</span> enum Format const <span class='fp'>pixelFormat</span>, <span class='nowrap'>std::size_t const <i>width</i>,</span> <span class='nowrap'>std::size_t const <i>height</i> )</span></span></span><br/>
+<div class='affect'>3rd parameter &#39;pixelFormat&#39; has base type &#39;enum Format&#39;.</div>
+<span class='iname_a'>Dali::NativeImageSource::GetPixels&#160;<span class='sym_p'>(&#160;std::vector&lt;unsigned char&gt;&amp; <i>pixbuf</i>, <span class='nowrap'>unsigned int&amp; <i>width</i>,</span> <span class='nowrap'>unsigned int&amp; <i>height</i>,</span> <span class='nowrap'>enum Format&amp; <span class='fp'>pixelFormat</span> )</span></span> const</span><br/>
+<div class='affect'>4th parameter &#39;pixelFormat&#39; (reference) has base type &#39;enum Format&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (183)</h2><hr/>
+<div class='h_list'>
+accessibility-adaptor.h<br/>
+actor.h<br/>
+adaptor-impl.h<br/>
+adaptor-internal-services.h<br/>
+adaptor.h<br/>
+alloc_traits.h<br/>
+allocator.h<br/>
+any.h<br/>
+application-configuration.h<br/>
+application.h<br/>
+bad_weak_ptr.hpp<br/>
+base-handle.h<br/>
+base-signal.h<br/>
+basic_string.h<br/>
+bidirectional-support.h<br/>
+bitmap-loader.h<br/>
+bitmap-saver.h<br/>
+bitmap.h<br/>
+buffer-image.h<br/>
+c++config.h<br/>
+callback-manager.h<br/>
+callback.h<br/>
+clipboard-event-notifier.h<br/>
+clipboard.h<br/>
+color-controller.h<br/>
+conditional-wait.h<br/>
+core-event-interface.h<br/>
+core.h<br/>
+dali-signal.h<br/>
+dali-vector.h<br/>
+damage-observer.h<br/>
+debug.h<br/>
+display-connection-impl.h<br/>
+display-connection.h<br/>
+drag-and-drop-detector-impl.h<br/>
+drag-and-drop-detector.h<br/>
+ecore-x-render-surface.h<br/>
+ecore-x-types.h<br/>
+Ecore_X.h<br/>
+egl-factory-interface.h<br/>
+egl-factory.h<br/>
+egl-image-extensions.h<br/>
+egl-implementation.h<br/>
+egl-interface.h<br/>
+egl-sync-implementation.h<br/>
+egl.h<br/>
+eglext.h<br/>
+eglplatform.h<br/>
+environment-options.h<br/>
+error_code.hpp<br/>
+error_info_impl.hpp<br/>
+event-handler.h<br/>
+exception.hpp<br/>
+exception_ptr.hpp<br/>
+exceptions.hpp<br/>
+feedback-player.h<br/>
+feedback-plugin-proxy.h<br/>
+feedback-plugin.h<br/>
+font-client.h<br/>
+font-list.h<br/>
+font-metrics.h<br/>
+frame-time-stamp.h<br/>
+frame-time.h<br/>
+function_base.hpp<br/>
+future.hpp<br/>
+gesture-detector.h<br/>
+gesture-manager.h<br/>
+gesture-requests.h<br/>
+gesture.h<br/>
+gl-abstraction.h<br/>
+gl-extensions.h<br/>
+gl-implementation.h<br/>
+gl-sync-abstraction.h<br/>
+gl2.h<br/>
+gl2ext.h<br/>
+glyph-info.h<br/>
+greg_day.hpp<br/>
+greg_day_of_year.hpp<br/>
+greg_month.hpp<br/>
+greg_weekday.hpp<br/>
+greg_year.hpp<br/>
+handle.h<br/>
+image-operations.h<br/>
+image.h<br/>
+imf-manager.h<br/>
+input-method.h<br/>
+intrusive-ptr.h<br/>
+kernel-trace.h<br/>
+key-event.h<br/>
+key-grab.h<br/>
+key.h<br/>
+lifecycle-controller.h<br/>
+lifecycle-observer.h<br/>
+multi-point-event-integ.h<br/>
+mutex.h<br/>
+mutex.hpp<br/>
+native-image-interface.h<br/>
+native-image-source-impl.h<br/>
+native-image-source.h<br/>
+new_allocator.h<br/>
+noncopyable.hpp<br/>
+object-profiler.h<br/>
+object-registry.h<br/>
+orientation.h<br/>
+performance-interface.h<br/>
+performance-logger.h<br/>
+performance-marker.h<br/>
+physical-keyboard.h<br/>
+pixel.h<br/>
+pixmap-render-surface.h<br/>
+platform-abstraction.h<br/>
+property-map.h<br/>
+property.h<br/>
+pthreadtypes.h<br/>
+quaternion.h<br/>
+radian.h<br/>
+rect.h<br/>
+render-controller.h<br/>
+render-surface.h<br/>
+render-thread.h<br/>
+resource-cache.h<br/>
+resource-declarations.h<br/>
+resource-loader.h<br/>
+resource-request.h<br/>
+resource-requester-base.h<br/>
+resource-types.h<br/>
+rotation-observer.h<br/>
+script.h<br/>
+segmentation.h<br/>
+shaping.h<br/>
+shared_count.hpp<br/>
+shared_ptr.hpp<br/>
+singleton-service.h<br/>
+socket-factory-interface.h<br/>
+socket-factory.h<br/>
+socket-interface.h<br/>
+sound-player.h<br/>
+sp_counted_base_spin.hpp<br/>
+sp_typeinfo.hpp<br/>
+stddef.h<br/>
+stdint.h<br/>
+stl_deque.h<br/>
+stl_function.h<br/>
+stl_map.h<br/>
+stl_pair.h<br/>
+stl_queue.h<br/>
+stl_tree.h<br/>
+stl_vector.h<br/>
+stringfwd.h<br/>
+style-change.h<br/>
+style-monitor.h<br/>
+system-trace.h<br/>
+system_error.hpp<br/>
+text-abstraction-definitions.h<br/>
+thread-controller.h<br/>
+thread-synchronization-interface.h<br/>
+thread-synchronization.h<br/>
+tilt-sensor.h<br/>
+timer.h<br/>
+tizen-platform-abstraction.h<br/>
+touch-event-combiner.h<br/>
+touch-point.h<br/>
+trace-interface.h<br/>
+trigger-event-factory-interface.h<br/>
+trigger-event-factory.h<br/>
+trigger-event-interface.h<br/>
+tts-player.h<br/>
+type-registry.h<br/>
+type_info.hpp<br/>
+uint-16-pair.h<br/>
+update-thread.h<br/>
+vector2.h<br/>
+vector4.h<br/>
+view-mode.h<br/>
+virtual-keyboard.h<br/>
+vsync-monitor-interface.h<br/>
+vsync-monitor.h<br/>
+vsync-notifier.h<br/>
+wheel-event.h<br/>
+window-visibility-observer.h<br/>
+window.h<br/>
+xf86drm.h<br/>
+Xlib.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (45)</h2><hr/>
+<div class='h_list'>
+accessibility-adaptor.cpp<br/>
+adaptor.cpp<br/>
+application.cpp<br/>
+bidirectional-support.cpp<br/>
+bitmap-loader.cpp<br/>
+bitmap-saver.cpp<br/>
+clipboard-event-notifier.cpp<br/>
+clipboard.cpp<br/>
+color-controller.cpp<br/>
+conditional-wait.cpp<br/>
+dali-adaptor-version.cpp<br/>
+drag-and-drop-detector.cpp<br/>
+ecore-x-event-handler.cpp<br/>
+ecore-x-render-surface.cpp<br/>
+event-feeder.cpp<br/>
+feedback-player.cpp<br/>
+font-client.cpp<br/>
+font-list.cpp<br/>
+font-metrics.cpp<br/>
+glyph-info.cpp<br/>
+imf-manager.cpp<br/>
+iosfwd<br/>
+key-grab-x.cpp<br/>
+key.cpp<br/>
+lifecycle-controller.cpp<br/>
+native-image-source.cpp<br/>
+orientation.cpp<br/>
+performance-logger.cpp<br/>
+physical-keyboard.cpp<br/>
+pixmap-render-surface-factory.cpp<br/>
+pixmap-render-surface-x.cpp<br/>
+resource-loader.cpp<br/>
+script.cpp<br/>
+segmentation.cpp<br/>
+shaping.cpp<br/>
+singleton-service.cpp<br/>
+sound-player.cpp<br/>
+style-monitor.cpp<br/>
+tilt-sensor.cpp<br/>
+timer.cpp<br/>
+trigger-event-factory.cpp<br/>
+tts-player.cpp<br/>
+virtual-keyboard.cpp<br/>
+window-extensions.cpp<br/>
+window.cpp<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libdali-adaptor.so.0.0.0<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><div id='SourceTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libdali-adaptor</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>GCC Version</th><td>4.9.2</td></tr>
+<tr><th>Subject</th><td width='150px'>Source Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>183</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>45</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>568 / 379</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(13.2%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Source_Added' style='color:Blue;'>60</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td class='failed'><a href='#Source_Removed' style='color:Blue;'>66</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td class='failed'><a href='#Type_Source_Problems_High' style='color:Blue;'>6</a></td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Symbol_Source_Problems_Medium' style='color:Blue;'>7</a></td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Symbol_Source_Problems_Low' style='color:Blue;'>3</a></td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Types' style='color:Blue;'>30</a></td></tr>
+<tr><th>Other Changes<br/>in Symbols</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Symbols' style='color:Blue;'>4</a></td></tr>
+</table>
+
+<a name='Source_Added'></a><h2>Added Symbols (60)</h2><hr/>
+<span class='h_name'>adaptor.h</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_127')">
+Adaptor::GetNativeWindowHandle&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_127" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali7Adaptor21GetNativeWindowHandleEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>bidirectional-support.h</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_128')">
+BidirectionalSupport::GetMirroredText&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Character* <span class='color_p'>text</span>,</span> CharacterDirection* <span class='color_p'>directions</span>, <span class='nowrap'>Length <span class='color_p'>numberOfCharacters</span> )</span></span></span>
+<br/>
+<div id="c_128" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali15TextAbstraction20BidirectionalSupport15GetMirroredTextEPjPbj</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>bitmap-loader.h</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_129')">
+BitmapLoader::GetUrl&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_129" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali12BitmapLoader6GetUrlEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_130')">
+BitmapLoader::IsLoaded&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_130" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali12BitmapLoader8IsLoadedEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_131')">
+BitmapLoader::Load&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_131" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali12BitmapLoader4LoadEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_132')">
+BitmapLoader::New&#160;<span class='sym_p'>(&#160;std::string const&amp; <span class='color_p'>url</span>, ImageDimensions <span class='color_p'>size</span>, enum FittingMode::Type <span class='color_p'>fittingMode</span>, enum SamplingMode::Type <span class='color_p'>samplingMode</span>, <span class='nowrap'>bool <span class='color_p'>orientationCorrection</span> )</span></span> <span class='attr'>[static]</span></span>
+<br/>
+<div id="c_132" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali12BitmapLoader3NewERKSsNS_10Uint16PairENS_11FittingMode4TypeENS_12SamplingMode4TypeEb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>callback.h</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_133')">
+CallbackBase::Execute&lt;Internal::Adaptor::FileDescriptorMonitor::EventType&gt;&#160;<span class='sym_p'>(&#160;CallbackBase&amp; <span class='color_p'>callback</span>, <span class='nowrap'>enum Internal::Adaptor::FileDescriptorMonitor::EventType <span class='color_p'>param1</span> )</span></span> <span class='attr'>[static]</span></span>
+<br/>
+<div id="c_133" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali12CallbackBase7ExecuteINS_8Internal7Adaptor21FileDescriptorMonitor9EventTypeEEEvRS0_T_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>ecore-wl-render-surface.h</span><br/>
+<span class='ns'>namespace <b>Dali::ECore</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_134')">
+EcoreWlRenderSurface::EcoreWlRenderSurface <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;Dali::PositionSize <span class='color_p'>positionSize</span>, Dali::Any <span class='color_p'>surface</span>, std::string const&amp; <span class='color_p'>name</span>, <span class='nowrap'>bool <span class='color_p'>isTransparent</span> )</span></span></span>
+<br/>
+<div id="c_134" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurfaceC1ENS_4RectIiEENS_3AnyERKSsb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_135')">
+EcoreWlRenderSurface::EcoreWlRenderSurface <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;Dali::PositionSize <span class='color_p'>positionSize</span>, Dali::Any <span class='color_p'>surface</span>, std::string const&amp; <span class='color_p'>name</span>, <span class='nowrap'>bool <span class='color_p'>isTransparent</span> )</span></span></span>
+<br/>
+<div id="c_135" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurfaceC2ENS_4RectIiEENS_3AnyERKSsb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_136')">
+EcoreWlRenderSurface::GetDrawable&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_136" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurface11GetDrawableEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_137')">
+EcoreWlRenderSurface::GetPositionSize&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_137" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali5ECore20EcoreWlRenderSurface15GetPositionSizeEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_138')">
+EcoreWlRenderSurface::GetWlWindow&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_138" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurface11GetWlWindowEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_139')">
+EcoreWlRenderSurface::Init&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Dali::Any <span class='color_p'>p1</span> )</span></span></span>
+<br/>
+<div id="c_139" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurface4InitENS_3AnyE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_140')">
+EcoreWlRenderSurface::MoveResize&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Dali::PositionSize <span class='color_p'>positionSize</span> )</span></span></span>
+<br/>
+<div id="c_140" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurface10MoveResizeENS_4RectIiEE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_141')">
+EcoreWlRenderSurface::SetRenderNotification&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Dali::TriggerEventInterface* <span class='color_p'>renderNotification</span> )</span></span></span>
+<br/>
+<div id="c_141" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurface21SetRenderNotificationEPNS_21TriggerEventInterfaceE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_142')">
+EcoreWlRenderSurface::SetViewMode&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum Dali::ViewMode <span class='color_p'>viewMode</span> )</span></span></span>
+<br/>
+<div id="c_142" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurface11SetViewModeENS_8ViewModeE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_143')">
+EcoreWlRenderSurface::~EcoreWlRenderSurface <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_143" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurfaceD0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_144')">
+EcoreWlRenderSurface::~EcoreWlRenderSurface <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_144" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurfaceD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_145')">
+EcoreWlRenderSurface::~EcoreWlRenderSurface <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_145" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore20EcoreWlRenderSurfaceD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>environment-variable.cpp</span><br/>
+<span class='ns'>namespace <b>Dali::EnvironmentVariable</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_146')">
+GetEnvironmentVariable&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>variable</span> )</span></span></span>
+<br/>
+<div id="c_146" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali19EnvironmentVariable22GetEnvironmentVariableEPKc</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>event-thread-callback.h</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_147')">
+EventThreadCallback::EventThreadCallback <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>CallbackBase* <span class='color_p'>callback</span> )</span></span></span>
+<br/>
+<div id="c_147" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali19EventThreadCallbackC1EPNS_12CallbackBaseE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_148')">
+EventThreadCallback::EventThreadCallback <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>CallbackBase* <span class='color_p'>callback</span> )</span></span></span>
+<br/>
+<div id="c_148" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali19EventThreadCallbackC2EPNS_12CallbackBaseE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_149')">
+EventThreadCallback::Trigger&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_149" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali19EventThreadCallback7TriggerEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_150')">
+EventThreadCallback::~EventThreadCallback <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_150" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali19EventThreadCallbackD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_151')">
+EventThreadCallback::~EventThreadCallback <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_151" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali19EventThreadCallbackD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>file-loader.cpp</span><br/>
+<span class='ns'>namespace <b>Dali::FileLoader</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_152')">
+GetFileSize&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string const&amp; <span class='color_p'>filename</span> )</span></span></span>
+<br/>
+<div id="c_152" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali10FileLoader11GetFileSizeERKSs</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_153')">
+ReadFile&#160;<span class='sym_p'>(&#160;std::string const&amp; <span class='color_p'>filename</span>, Dali::Vector&lt;char, true&gt;&amp; <span class='color_p'>memblock</span>, <span class='nowrap'>enum FileType <span class='color_p'>fileType</span> )</span></span></span>
+<br/>
+<div id="c_153" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali10FileLoader8ReadFileERKSsRNS_6VectorIcLb1EEENS0_8FileTypeE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_154')">
+ReadFile&#160;<span class='sym_p'>(&#160;std::string const&amp; <span class='color_p'>filename</span>, std::streampos&amp; <span class='color_p'>fileSize</span>, Dali::Vector&lt;char, true&gt;&amp; <span class='color_p'>memblock</span>, <span class='nowrap'>enum FileType <span class='color_p'>fileType</span> )</span></span></span>
+<br/>
+<div id="c_154" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali10FileLoader8ReadFileERKSsRSt4fposI11__mbstate_tERNS_6VectorIcLb1EEENS0_8FileTypeE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>font-client.h</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_155')">
+FontClient::CreateVectorBlob&#160;<span class='sym_p'>(&#160;<span class='nowrap'>FontId <span class='color_p'>fontId</span>,</span> GlyphIndex <span class='color_p'>glyphIndex</span>, struct VectorBlob*&amp; <span class='color_p'>blob</span>, unsigned int&amp; <span class='color_p'>blobLength</span>, unsigned int&amp; <span class='color_p'>nominalWidth</span>, <span class='nowrap'>unsigned int&amp; <span class='color_p'>nominalHeight</span> )</span></span></span>
+<br/>
+<div id="c_155" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali15TextAbstraction10FontClient16CreateVectorBlobEjjRPNS0_10VectorBlobERjS5_S5_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_156')">
+FontClient::GetGlyphMetrics&#160;<span class='sym_p'>(&#160;struct GlyphInfo* <span class='color_p'>array</span>, <span class='nowrap'>uint32_t <span class='color_p'>size</span>,</span> enum GlyphType <span class='color_p'>type</span>, <span class='nowrap'>bool <span class='color_p'>horizontal</span>,</span> <span class='nowrap'>int <span class='color_p'>desiredFixedSize</span> )</span></span></span>
+<br/>
+<div id="c_156" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali15TextAbstraction10FontClient15GetGlyphMetricsEPNS0_9GlyphInfoEjNS0_9GlyphTypeEbi</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_157')">
+FontClient::ResetSystemDefaults&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_157" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali15TextAbstraction10FontClient19ResetSystemDefaultsEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>imf-manager.h</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_158')">
+ImfManager::SetSurroundingText&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string const&amp; <span class='color_p'>text</span> )</span></span></span>
+<br/>
+<div id="c_158" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali10ImfManager18SetSurroundingTextERKSs</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>native-image-source.h</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_159')">
+NativeImageSource::IsColorDepthSupported&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum NativeImageSource::ColorDepth <span class='color_p'>colorDepth</span> )</span></span></span>
+<br/>
+<div id="c_159" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali17NativeImageSource21IsColorDepthSupportedENS0_10ColorDepthE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_160')">
+NativeImageSource::SetSource&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Any <span class='color_p'>source</span> )</span></span></span>
+<br/>
+<div id="c_160" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali17NativeImageSource9SetSourceENS_3AnyE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>video-player.h</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_161')">
+VideoPlayer::DownCast&#160;<span class='sym_p'>(&#160;<span class='nowrap'>BaseHandle <span class='color_p'>handle</span> )</span></span> <span class='attr'>[static]</span></span>
+<br/>
+<div id="c_161" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer8DownCastENS_10BaseHandleE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_162')">
+VideoPlayer::FinishedSignal&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_162" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer14FinishedSignalEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_163')">
+VideoPlayer::GetDisplayRotation&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_163" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer18GetDisplayRotationEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_164')">
+VideoPlayer::GetPlayPosition&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_164" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer15GetPlayPositionEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_165')">
+VideoPlayer::GetUrl&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_165" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer6GetUrlEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_166')">
+VideoPlayer::GetVolume&#160;<span class='sym_p'>(&#160;<span class='nowrap'>float&amp; <span class='color_p'>left</span>,</span> <span class='nowrap'>float&amp; <span class='color_p'>right</span> )</span></span></span>
+<br/>
+<div id="c_166" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer9GetVolumeERfS1_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_167')">
+VideoPlayer::IsLooping&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_167" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer9IsLoopingEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_168')">
+VideoPlayer::IsMuted&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_168" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer7IsMutedEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_169')">
+VideoPlayer::New&#160;<span class='sym_p'>(&#160;)</span> <span class='attr'>[static]</span></span>
+<br/>
+<div id="c_169" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer3NewEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_170')">
+VideoPlayer::operator&#160;=&#160;<span class='sym_p'>(&#160;<span class='nowrap'>VideoPlayer const&amp; <span class='color_p'>player</span> )</span></span></span>
+<br/>
+<div id="c_170" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayeraSERKS0_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_171')">
+VideoPlayer::Pause&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_171" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer5PauseEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_172')">
+VideoPlayer::Play&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_172" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer4PlayEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_173')">
+VideoPlayer::SetDisplayRotation&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum VideoPlayerPlugin::DisplayRotation <span class='color_p'>rotation</span> )</span></span></span>
+<br/>
+<div id="c_173" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer18SetDisplayRotationENS_17VideoPlayerPlugin15DisplayRotationE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_174')">
+VideoPlayer::SetLooping&#160;<span class='sym_p'>(&#160;<span class='nowrap'>bool <span class='color_p'>looping</span> )</span></span></span>
+<br/>
+<div id="c_174" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer10SetLoopingEb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_175')">
+VideoPlayer::SetMute&#160;<span class='sym_p'>(&#160;<span class='nowrap'>bool <span class='color_p'>mute</span> )</span></span></span>
+<br/>
+<div id="c_175" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer7SetMuteEb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_176')">
+VideoPlayer::SetPlayPosition&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>millisecond</span> )</span></span></span>
+<br/>
+<div id="c_176" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer15SetPlayPositionEi</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_177')">
+VideoPlayer::SetRenderingTarget&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Any <span class='color_p'>target</span> )</span></span></span>
+<br/>
+<div id="c_177" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer18SetRenderingTargetENS_3AnyE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_178')">
+VideoPlayer::SetUrl&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string const&amp; <span class='color_p'>url</span> )</span></span></span>
+<br/>
+<div id="c_178" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer6SetUrlERKSs</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_179')">
+VideoPlayer::SetVolume&#160;<span class='sym_p'>(&#160;<span class='nowrap'>float <span class='color_p'>left</span>,</span> <span class='nowrap'>float <span class='color_p'>right</span> )</span></span></span>
+<br/>
+<div id="c_179" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer9SetVolumeEff</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_180')">
+VideoPlayer::Stop&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_180" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayer4StopEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_181')">
+VideoPlayer::VideoPlayer <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_181" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayerC1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_182')">
+VideoPlayer::VideoPlayer <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>VideoPlayer const&amp; <span class='color_p'>player</span> )</span></span></span>
+<br/>
+<div id="c_182" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayerC1ERKS0_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_183')">
+VideoPlayer::VideoPlayer <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_183" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayerC2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_184')">
+VideoPlayer::VideoPlayer <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>VideoPlayer const&amp; <span class='color_p'>player</span> )</span></span></span>
+<br/>
+<div id="c_184" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayerC2ERKS0_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_185')">
+VideoPlayer::~VideoPlayer <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_185" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayerD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_186')">
+VideoPlayer::~VideoPlayer <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_186" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali11VideoPlayerD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Source_Removed'></a><a name='Source_Withdrawn'></a><h2>Removed Symbols (66)</h2><hr/>
+<span class='h_name'>bidirectional-support.h</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_187')">
+BidirectionalSupport::GetMirroredText&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Character* <span class='color_p'>text</span>,</span> <span class='nowrap'>Length <span class='color_p'>numberOfCharacters</span> )</span></span></span>
+<br/>
+<div id="c_187" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali15TextAbstraction20BidirectionalSupport15GetMirroredTextEPjj</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>bitmap-loader.h</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_188')">
+BitmapLoader::GetBufferStride&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_188" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali12BitmapLoader15GetBufferStrideEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_189')">
+BitmapLoader::GetImageHeight&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_189" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali12BitmapLoader14GetImageHeightEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_190')">
+BitmapLoader::GetImageWidth&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_190" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali12BitmapLoader13GetImageWidthEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_191')">
+BitmapLoader::GetPixelFormat&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_191" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali12BitmapLoader14GetPixelFormatEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_192')">
+BitmapLoader::New&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string const&amp; <span class='color_p'>filename</span> )</span></span> <span class='attr'>[static]</span></span>
+<br/>
+<div id="c_192" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali12BitmapLoader3NewERKSs</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>ecore-x-render-surface.h</span><br/>
+<span class='ns'>namespace <b>Dali::ECore</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_193')">
+EcoreXRenderSurface::EcoreXRenderSurface <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;Dali::PositionSize <span class='color_p'>positionSize</span>, Dali::Any <span class='color_p'>surface</span>, std::string const&amp; <span class='color_p'>name</span>, <span class='nowrap'>bool <span class='color_p'>isTransparent</span> )</span></span></span>
+<br/>
+<div id="c_193" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurfaceC1ENS_4RectIiEENS_3AnyERKSsb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_194')">
+EcoreXRenderSurface::EcoreXRenderSurface <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;Dali::PositionSize <span class='color_p'>positionSize</span>, Dali::Any <span class='color_p'>surface</span>, std::string const&amp; <span class='color_p'>name</span>, <span class='nowrap'>bool <span class='color_p'>isTransparent</span> )</span></span></span>
+<br/>
+<div id="c_194" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurfaceC2ENS_4RectIiEENS_3AnyERKSsb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_195')">
+EcoreXRenderSurface::GetDrawable&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_195" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurface11GetDrawableEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_196')">
+EcoreXRenderSurface::GetPositionSize&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_196" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK4Dali5ECore19EcoreXRenderSurface15GetPositionSizeEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_197')">
+EcoreXRenderSurface::GetXWindow&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_197" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurface10GetXWindowEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_198')">
+EcoreXRenderSurface::Init&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Dali::Any <span class='color_p'>p1</span> )</span></span></span>
+<br/>
+<div id="c_198" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurface4InitENS_3AnyE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_199')">
+EcoreXRenderSurface::MoveResize&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Dali::PositionSize <span class='color_p'>positionSize</span> )</span></span></span>
+<br/>
+<div id="c_199" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurface10MoveResizeENS_4RectIiEE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_200')">
+EcoreXRenderSurface::SetRenderNotification&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Dali::TriggerEventInterface* <span class='color_p'>renderNotification</span> )</span></span></span>
+<br/>
+<div id="c_200" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurface21SetRenderNotificationEPNS_21TriggerEventInterfaceE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_201')">
+EcoreXRenderSurface::SetViewMode&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum Dali::ViewMode <span class='color_p'>viewMode</span> )</span></span></span>
+<br/>
+<div id="c_201" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurface11SetViewModeENS_8ViewModeE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_202')">
+EcoreXRenderSurface::~EcoreXRenderSurface <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_202" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurfaceD0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_203')">
+EcoreXRenderSurface::~EcoreXRenderSurface <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_203" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurfaceD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_204')">
+EcoreXRenderSurface::~EcoreXRenderSurface <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_204" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali5ECore19EcoreXRenderSurfaceD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>exception.hpp</span><br/>
+<span class='ns'>namespace <b>boost</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_205')">
+exception::exception <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>exception const&amp; <span class='color_p'>p1</span> )</span></span></span>
+<br/>
+<div id="c_205" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost9exceptionC1ERKS0_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_206')">
+exception::exception <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>exception const&amp; <span class='color_p'>p1</span> )</span></span></span>
+<br/>
+<div id="c_206" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost9exceptionC2ERKS0_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_207')">
+exception::~exception <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_207" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost9exceptionD0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_208')">
+exception::~exception <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_208" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost9exceptionD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_209')">
+exception::~exception <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_209" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost9exceptionD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class='h_name'>exception.hpp</span><br/>
+<span class='ns'>namespace <b>boost::exception_detail</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_210')">
+error_info_injector&lt;boost::condition_error&gt;::error_info_injector <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct error_info_injector&lt;boost::condition_error&gt;const&amp; <span class='color_p'>p1</span> )</span></span></span>
+<br/>
+<div id="c_210" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_15condition_errorEEC1ERKS3_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_211')">
+error_info_injector&lt;boost::condition_error&gt;::error_info_injector <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct error_info_injector&lt;boost::condition_error&gt;const&amp; <span class='color_p'>p1</span> )</span></span></span>
+<br/>
+<div id="c_211" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_15condition_errorEEC2ERKS3_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_212')">
+error_info_injector&lt;boost::condition_error&gt;::~error_info_injector <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_212" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_15condition_errorEED0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_213')">
+error_info_injector&lt;boost::condition_error&gt;::~error_info_injector <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_213" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_15condition_errorEED1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_214')">
+error_info_injector&lt;boost::condition_error&gt;::~error_info_injector <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_214" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_15condition_errorEED2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_215')">
+error_info_injector&lt;boost::lock_error&gt;::error_info_injector <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct error_info_injector&lt;boost::lock_error&gt;const&amp; <span class='color_p'>p1</span> )</span></span></span>
+<br/>
+<div id="c_215" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_10lock_errorEEC1ERKS3_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_216')">
+error_info_injector&lt;boost::lock_error&gt;::error_info_injector <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct error_info_injector&lt;boost::lock_error&gt;const&amp; <span class='color_p'>p1</span> )</span></span></span>
+<br/>
+<div id="c_216" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_10lock_errorEEC2ERKS3_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_217')">
+error_info_injector&lt;boost::lock_error&gt;::~error_info_injector <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_217" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_10lock_errorEED0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_218')">
+error_info_injector&lt;boost::lock_error&gt;::~error_info_injector <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_218" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_10lock_errorEED1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_219')">
+error_info_injector&lt;boost::lock_error&gt;::~error_info_injector <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_219" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_10lock_errorEED2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_220')">
+error_info_injector&lt;boost::thread_resource_error&gt;::error_info_injector <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct error_info_injector&lt;boost::thread_resource_error&gt;const&amp; <span class='color_p'>p1</span> )</span></span></span>
+<br/>
+<div id="c_220" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_21thread_resource_errorEEC1ERKS3_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_221')">
+error_info_injector&lt;boost::thread_resource_error&gt;::error_info_injector <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct error_info_injector&lt;boost::thread_resource_error&gt;const&amp; <span class='color_p'>p1</span> )</span></span></span>
+<br/>
+<div id="c_221" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_21thread_resource_errorEEC2ERKS3_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_222')">
+error_info_injector&lt;boost::thread_resource_error&gt;::~error_info_injector <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_222" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_21thread_resource_errorEED0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_223')">
+error_info_injector&lt;boost::thread_resource_error&gt;::~error_info_injector <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_223" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_21thread_resource_errorEED1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_224')">
+error_info_injector&lt;boost::thread_resource_error&gt;::~error_info_injector <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_224" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16exception_detail19error_info_injectorINS_21thread_resource_errorEED2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>exceptions.hpp</span><br/>
+<span class='ns'>namespace <b>boost</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_225')">
+condition_error::~condition_error <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_225" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost15condition_errorD0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_226')">
+condition_error::~condition_error <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_226" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost15condition_errorD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_227')">
+condition_error::~condition_error <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_227" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost15condition_errorD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_228')">
+lock_error::~lock_error <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_228" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost10lock_errorD0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_229')">
+lock_error::~lock_error <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_229" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost10lock_errorD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_230')">
+lock_error::~lock_error <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_230" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost10lock_errorD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_231')">
+thread_exception::thread_exception <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>ev</span>,</span> <span class='nowrap'>char const* <span class='color_p'>what_arg</span> )</span></span></span>
+<br/>
+<div id="c_231" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16thread_exceptionC1EiPKc</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_232')">
+thread_exception::thread_exception <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>ev</span>,</span> <span class='nowrap'>char const* <span class='color_p'>what_arg</span> )</span></span></span>
+<br/>
+<div id="c_232" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16thread_exceptionC2EiPKc</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_233')">
+thread_exception::~thread_exception <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_233" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16thread_exceptionD0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_234')">
+thread_exception::~thread_exception <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_234" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16thread_exceptionD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_235')">
+thread_exception::~thread_exception <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_235" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost16thread_exceptionD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_236')">
+thread_resource_error::~thread_resource_error <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_236" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost21thread_resource_errorD0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_237')">
+thread_resource_error::~thread_resource_error <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_237" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost21thread_resource_errorD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_238')">
+thread_resource_error::~thread_resource_error <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_238" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost21thread_resource_errorD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>font-client.h</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_239')">
+FontClient::GetGlyphMetrics&#160;<span class='sym_p'>(&#160;struct GlyphInfo* <span class='color_p'>array</span>, <span class='nowrap'>uint32_t <span class='color_p'>size</span>,</span> <span class='nowrap'>bool <span class='color_p'>horizontal</span>,</span> <span class='nowrap'>int <span class='color_p'>maxFixedSize</span> )</span></span></span>
+<br/>
+<div id="c_239" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali15TextAbstraction10FontClient15GetGlyphMetricsEPNS0_9GlyphInfoEjbi</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_240')">
+FontClient::SetDefaultFont&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct FontDescription const&amp; <span class='color_p'>fontDescription</span> )</span></span></span>
+<br/>
+<div id="c_240" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali15TextAbstraction10FontClient14SetDefaultFontERKNS0_15FontDescriptionE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>imf-manager.h</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_241')">
+ImfManager::GetContext&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_241" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali10ImfManager10GetContextEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_242')">
+ImfManager::SetSurroundingText&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string <span class='color_p'>text</span> )</span></span></span>
+<br/>
+<div id="c_242" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali10ImfManager18SetSurroundingTextESs</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>system_error.hpp</span><br/>
+<span class='ns'>namespace <b>boost::system</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_243')">
+system_error::system_error <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>error_code <span class='color_p'>ec</span>,</span> <span class='nowrap'>char const* <span class='color_p'>what_arg</span> )</span></span></span>
+<br/>
+<div id="c_243" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost6system12system_errorC1ENS0_10error_codeEPKc</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_244')">
+system_error::system_error <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>system_error const&amp; <span class='color_p'>p1</span> )</span></span></span>
+<br/>
+<div id="c_244" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost6system12system_errorC1ERKS1_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_245')">
+system_error::system_error <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>error_code <span class='color_p'>ec</span>,</span> <span class='nowrap'>char const* <span class='color_p'>what_arg</span> )</span></span></span>
+<br/>
+<div id="c_245" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost6system12system_errorC2ENS0_10error_codeEPKc</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_246')">
+system_error::system_error <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;<span class='nowrap'>system_error const&amp; <span class='color_p'>p1</span> )</span></span></span>
+<br/>
+<div id="c_246" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost6system12system_errorC2ERKS1_</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_247')">
+system_error::what&#160;<span class='sym_p'>(&#160;)</span> const</span>
+<br/>
+<div id="c_247" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZNK5boost6system12system_error4whatEv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_248')">
+system_error::~system_error <span class='attr'>[in-charge-deleting]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_248" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost6system12system_errorD0Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_249')">
+system_error::~system_error <span class='attr'>[in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_249" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost6system12system_errorD1Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_250')">
+system_error::~system_error <span class='attr'>[not-in-charge]</span>&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_250" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN5boost6system12system_errorD2Ev</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>window-extensions.cpp</span><br/>
+<span class='ns'>namespace <b>Dali::WindowExtensions</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_251')">
+EnableEffect&#160;<span class='sym_p'>(&#160;Dali::Window <span class='color_p'>window</span>, <span class='nowrap'>bool <span class='color_p'>enable</span> )</span></span></span>
+<br/>
+<div id="c_251" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali16WindowExtensions12EnableEffectENS_6WindowEb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_252')">
+IsEffectEnabled&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Dali::Window <span class='color_p'>window</span> )</span></span></span>
+<br/>
+<div id="c_252" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZN4Dali16WindowExtensions15IsEffectEnabledENS_6WindowE</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='High_Risk_Source_Problems'></a><a name='Type_Source_Problems_High'></a>
+<h2>Problems with Data Types, High Severity (6)</h2><hr/>
+<span class='h_name'>egl-interface.h</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_253')">
+<span class='ext'>[+]</span> <span class='ttype'>class</span> EglInterface (1)</span>
+<br/>
+<div id="c_253" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Pure_Virtual method <span class='iname_b'>EglInterface::IsPixmapYInverted&#160;<span class='sym_p'>(&#160;)</span></span> has been removed from this class.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_254')">
+[+] affected symbols (6)</span>
+<div id="c_254" style="display:none;">
+<div class='affected'><span class='iname_a'>EglInterface::CopyBuffers&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<div class='affect'>This method is from &#39;EglInterface&#39; class.</div>
+<span class='iname_a'>EglInterface::SwapBuffers&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<div class='affect'>This method is from &#39;EglInterface&#39; class.</div>
+<span class='iname_a'>EglInterface::CreateContext&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<div class='affect'>This method is from &#39;EglInterface&#39; class.</div>
+<span class='iname_a'>EglInterface::TerminateGles&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<div class='affect'>This method is from &#39;EglInterface&#39; class.</div>
+<span class='iname_a'>EglInterface::MakeContextCurrent&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<div class='affect'>This method is from &#39;EglInterface&#39; class.</div>
+<span class='iname_a'>EglInterface::WaitGL&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<div class='affect'>This method is from &#39;EglInterface&#39; class.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<span class='h_name'>script.h</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_255')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> Script (5)</span>
+<br/>
+<div id="c_255" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>SYMBOLS1</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>SYMBOLS2</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>SYMBOLS3</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>SYMBOLS4</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+<tr>
+<th>5</th>
+<td>The member <b>SYMBOLS5</b> has been removed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_256')">
+[+] affected symbols (4)</span>
+<div id="c_256" style="display:none;">
+<div class='affected'><span class='iname_a'>GetCharacterScript&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Character <i>character</i> )</span></span></span><br/>
+<div class='affect'>Return value has type &#39;enum Script&#39;.</div>
+<span class='iname_a'>IsRightToLeftScript&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum Script <span class='fp'>script</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;script&#39; has type &#39;enum Script&#39;.</div>
+<span class='iname_a'>HasLigatureMustBreak&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum Script <span class='fp'>script</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;script&#39; has type &#39;enum Script&#39;.</div>
+<span class='iname_a'>Shaping::Shape&#160;<span class='sym_p'>(&#160;Character const*const <i>text</i>, Length <i>numberOfCharacters</i>, <span class='nowrap'>FontId <i>fontId</i>,</span> <span class='nowrap'>enum Script <span class='fp'>script</span> )</span></span></span><br/>
+<div class='affect'>4th parameter &#39;script&#39; has type &#39;enum Script&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Medium_Risk_Source_Problems'></a><a name='Symbol_Source_Problems_Medium'></a><a name='Interface_Source_Problems_Medium'></a>
+<h2>Problems with Symbols, Medium Severity (7)</h2><hr/>
+<span class='h_name'>bidirectional-support.h</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_257')">
+<span class='ext'>[+]</span> BidirectionalSupport::GetMirroredText&#160;<span class='sym_p'>(&#160;Character* <span class='color_p'>text</span>, <span class='nowrap'>Length <span class='color_p'>numberOfCharacters</span> )</span></span> (1)</span>
+<br/>
+<div id="c_257" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>BidirectionalSupport::GetMirroredText&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Character* <span class='color_p'>text</span>,</span> CharacterDirection* <span class='color_p'>directions</span>, <span class='nowrap'>Length <span class='color_p'>numberOfCharacters</span> )</span></span></span><br/>
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali15TextAbstraction20BidirectionalSupport15GetMirroredTextEPjj</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameters list has been changed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>bitmap-loader.h</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_258')">
+<span class='ext'>[+]</span> BitmapLoader::GetPixelData&#160;<span class='sym_p'>(&#160;)</span> const (1)</span>
+<br/>
+<div id="c_258" style="display:none;">
+
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZNK4Dali12BitmapLoader12GetPixelDataEv</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The pointer level of return value has been increased from <b>1</b> to <b>0</b>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_259')">
+<span class='ext'>[+]</span> BitmapLoader::New&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string const&amp; <span class='color_p'>filename</span> )</span></span> <span class='attr'>[static]</span> (1)</span>
+<br/>
+<div id="c_259" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>BitmapLoader::New&#160;<span class='sym_p'>(&#160;std::string const&amp; <span class='color_p'>url</span>, ImageDimensions <span class='color_p'>size</span>, enum FittingMode::Type <span class='color_p'>fittingMode</span>, enum SamplingMode::Type <span class='color_p'>samplingMode</span>, <span class='nowrap'>bool <span class='color_p'>orientationCorrection</span> )</span></span> <span class='attr'>[static]</span></span><br/>
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali12BitmapLoader3NewERKSs</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameters list has been changed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>font-client.h</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_260')">
+<span class='ext'>[+]</span> FontClient::GetGlyphMetrics&#160;<span class='sym_p'>(&#160;struct GlyphInfo* <span class='color_p'>array</span>, <span class='nowrap'>uint32_t <span class='color_p'>size</span>,</span> <span class='nowrap'>bool <span class='color_p'>horizontal</span>,</span> <span class='nowrap'>int <span class='color_p'>maxFixedSize</span> )</span></span> (1)</span>
+<br/>
+<div id="c_260" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>FontClient::GetGlyphMetrics&#160;<span class='sym_p'>(&#160;struct GlyphInfo* <span class='color_p'>array</span>, <span class='nowrap'>uint32_t <span class='color_p'>size</span>,</span> enum GlyphType <span class='color_p'>type</span>, <span class='nowrap'>bool <span class='color_p'>horizontal</span>,</span> <span class='nowrap'>int <span class='color_p'>desiredFixedSize</span> )</span></span></span><br/>
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali15TextAbstraction10FontClient15GetGlyphMetricsEPNS0_9GlyphInfoEjbi</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameters list has been changed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>imf-manager.h</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_261')">
+<span class='ext'>[+]</span> ImfManager::GetSurroundingText&#160;<span class='sym_p'>(&#160;)</span> (2)</span>
+<br/>
+<div id="c_261" style="display:none;">
+
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali10ImfManager18GetSurroundingTextEv</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The pointer level of return value has been increased from <b>0</b> to <b>1</b>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Type of return value became <b>const</b> (has been changed from <b>std::string</b> to <span class='value'>std::string const&amp;</span>).</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_262')">
+<span class='ext'>[+]</span> ImfManager::SetSurroundingText&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string <span class='color_p'>text</span> )</span></span> (1)</span>
+<br/>
+<div id="c_262" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>ImfManager::SetSurroundingText&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::string const&amp; <span class='color_p'>text</span> )</span></span></span><br/>
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali10ImfManager18SetSurroundingTextESs</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameters list has been changed.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Source_Problems'></a><a name='Symbol_Source_Problems_Low'></a><a name='Interface_Source_Problems_Low'></a>
+<h2>Problems with Symbols, Low Severity (3)</h2><hr/>
+<span class='h_name'>bitmap-loader.h</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_263')">
+<span class='ext'>[+]</span> BitmapLoader::GetPixelData&#160;<span class='sym_p'>(&#160;)</span> const (1)</span>
+<br/>
+<div id="c_263" style="display:none;">
+
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZNK4Dali12BitmapLoader12GetPixelDataEv</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of return value has been changed from <span class='value'>unsigned char*</span> to <b>PixelData</b>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>imf-manager.h</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_264')">
+<span class='ext'>[+]</span> ImfManager::GetCursorPosition&#160;<span class='sym_p'>(&#160;)</span> (1)</span>
+<br/>
+<div id="c_264" style="display:none;">
+
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali10ImfManager17GetCursorPositionEv</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of return value has been changed from <b>int</b> to <span class='value'>unsigned int</span>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_265')">
+<span class='ext'>[+]</span> ImfManager::GetSurroundingText&#160;<span class='sym_p'>(&#160;)</span> (1)</span>
+<br/>
+<div id="c_265" style="display:none;">
+
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali10ImfManager18GetSurroundingTextEv</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of return value has been changed from <b>std::string</b> to <span class='value'>std::string const&amp;</span>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes'></a><a name='Other_Source_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (30)</h2><hr/>
+<span class='h_name'>pixel.h</span><br/>
+<span class='ns'>namespace <b>Dali::Pixel</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_266')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> Format (29)</span>
+<br/>
+<div id="c_266" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_10x10_KHR</b> with value <b>38</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_10x5_KHR</b> with value <b>35</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_10x6_KHR</b> with value <b>36</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_10x8_KHR</b> with value <b>37</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>5</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_12x10_KHR</b> with value <b>39</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>6</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_12x12_KHR</b> with value <b>40</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>7</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_4x4_KHR</b> with value <b>27</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>8</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_5x4_KHR</b> with value <b>28</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>9</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_5x5_KHR</b> with value <b>29</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>10</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_6x5_KHR</b> with value <b>30</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>11</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_6x6_KHR</b> with value <b>31</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>12</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_8x5_KHR</b> with value <b>32</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>13</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_8x6_KHR</b> with value <b>33</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>14</th>
+<td>The member <b>COMPRESSED_RGBA_ASTC_8x8_KHR</b> with value <b>34</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>15</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR</b> with value <b>52</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>16</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR</b> with value <b>49</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>17</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR</b> with value <b>50</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>18</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR</b> with value <b>51</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>19</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR</b> with value <b>53</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>20</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR</b> with value <b>54</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>21</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR</b> with value <b>41</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>22</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR</b> with value <b>42</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>23</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR</b> with value <b>43</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>24</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR</b> with value <b>44</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>25</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR</b> with value <b>45</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>26</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR</b> with value <b>46</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>27</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR</b> with value <b>47</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>28</th>
+<td>The member <b>COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR</b> with value <b>48</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>29</th>
+<td>The member <b>INVALID</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_267')">
+[+] affected symbols (2)</span>
+<div id="c_267" style="display:none;">
+<div class='affected'><span class='iname_a'>Dali::EncodeToFile&#160;<span class='sym_p'>(&#160;<span class='nowrap'>unsigned char const*const <i>pixelBuffer</i>,</span> <span class='nowrap'>std::string const&amp; <i>filename</i>,</span> enum Format const <span class='fp'>pixelFormat</span>, <span class='nowrap'>std::size_t const <i>width</i>,</span> <span class='nowrap'>std::size_t const <i>height</i> )</span></span></span><br/>
+<div class='affect'>3rd parameter &#39;pixelFormat&#39; has base type &#39;enum Format&#39;.</div>
+<span class='iname_a'>Dali::NativeImageSource::GetPixels&#160;<span class='sym_p'>(&#160;std::vector&lt;unsigned char&gt;&amp; <i>pixbuf</i>, <span class='nowrap'>unsigned int&amp; <i>width</i>,</span> <span class='nowrap'>unsigned int&amp; <i>height</i>,</span> <span class='nowrap'>enum Format&amp; <span class='fp'>pixelFormat</span> )</span></span> const</span><br/>
+<div class='affect'>4th parameter &#39;pixelFormat&#39; (reference) has base type &#39;enum Format&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<span class='h_name'>script.h</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_268')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> Script (1)</span>
+<br/>
+<div id="c_268" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Value of member <b>UNKNOWN</b> has been changed from <b>33</b> to <b>28</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_269')">
+[+] affected symbols (4)</span>
+<div id="c_269" style="display:none;">
+<div class='affected'><span class='iname_a'>GetCharacterScript&#160;<span class='sym_p'>(&#160;<span class='nowrap'>Character <i>character</i> )</span></span></span><br/>
+<div class='affect'>Return value has type &#39;enum Script&#39;.</div>
+<span class='iname_a'>IsRightToLeftScript&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum Script <span class='fp'>script</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;script&#39; has type &#39;enum Script&#39;.</div>
+<span class='iname_a'>HasLigatureMustBreak&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum Script <span class='fp'>script</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;script&#39; has type &#39;enum Script&#39;.</div>
+<span class='iname_a'>Shaping::Shape&#160;<span class='sym_p'>(&#160;Character const*const <i>text</i>, Length <i>numberOfCharacters</i>, <span class='nowrap'>FontId <i>fontId</i>,</span> <span class='nowrap'>enum Script <span class='fp'>script</span> )</span></span></span><br/>
+<div class='affect'>4th parameter &#39;script&#39; has type &#39;enum Script&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes_In_Symbols'></a><a name='Other_Source_Changes_In_Interfaces'></a>
+<h2>Other Changes in Symbols (4)</h2><hr/>
+<span class='h_name'>dali-adaptor-version.cpp</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_270')">
+<span class='ext'>[+]</span> ADAPTOR_MICRO_VERSION <span class='attr'>[data]</span> (1)</span>
+<br/>
+<div id="c_270" style="display:none;">
+
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali21ADAPTOR_MICRO_VERSIONE</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The initial value of this global data has been changed from <b>49</b> to <b>39</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>font-client.h</span><br/>
+<span class='ns'>namespace <b>Dali::TextAbstraction</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_271')">
+<span class='ext'>[+]</span> FontClient::GetFontMetrics&#160;<span class='sym_p'>(&#160;FontId <span class='color_p'>fontId</span>, struct FontMetrics&amp; <span class='color_p'>metrics</span>, <span class='nowrap'>int <span class='color_p'>maxFixedSize</span> )</span></span> (1)</span>
+<br/>
+<div id="c_271" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>FontClient::GetFontMetrics&#160;<span class='sym_p'>(&#160;<span class='nowrap'>FontId <span class='color_p'>fontId</span>,</span> struct FontMetrics&amp; <span class='color_p'>metrics</span>, <span class='nowrap'>int <span class='color_p'>desiredFixedSize</span> )</span></span></span><br/>
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali15TextAbstraction10FontClient14GetFontMetricsEjRNS0_11FontMetricsEi</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>3rd</b> parameter <b>maxFixedSize</b> has been renamed to <b>desiredFixedSize</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>imf-manager.h</span><br/>
+<span class='ns'>namespace <b>Dali</b></span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_272')">
+<span class='ext'>[+]</span> ImfManager::GetCursorPosition&#160;<span class='sym_p'>(&#160;)</span> (1)</span>
+<br/>
+<div id="c_272" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>ImfManager::GetCursorPosition&#160;<span class='sym_p'>(&#160;)</span> const</span><br/>
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali10ImfManager17GetCursorPositionEv</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Method became <b>const</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_273')">
+<span class='ext'>[+]</span> ImfManager::GetSurroundingText&#160;<span class='sym_p'>(&#160;)</span> (1)</span>
+<br/>
+<div id="c_273" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>ImfManager::GetSurroundingText&#160;<span class='sym_p'>(&#160;)</span> const</span><br/>
+<span class='mangled'>&#160;&#160;&#160;&#160;[symbol: <b>_ZN4Dali10ImfManager18GetSurroundingTextEv</b>]</span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Method became <b>const</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (183)</h2><hr/>
+<div class='h_list'>
+accessibility-adaptor.h<br/>
+actor.h<br/>
+adaptor-impl.h<br/>
+adaptor-internal-services.h<br/>
+adaptor.h<br/>
+alloc_traits.h<br/>
+allocator.h<br/>
+any.h<br/>
+application-configuration.h<br/>
+application.h<br/>
+bad_weak_ptr.hpp<br/>
+base-handle.h<br/>
+base-signal.h<br/>
+basic_string.h<br/>
+bidirectional-support.h<br/>
+bitmap-loader.h<br/>
+bitmap-saver.h<br/>
+bitmap.h<br/>
+buffer-image.h<br/>
+c++config.h<br/>
+callback-manager.h<br/>
+callback.h<br/>
+clipboard-event-notifier.h<br/>
+clipboard.h<br/>
+color-controller.h<br/>
+conditional-wait.h<br/>
+core-event-interface.h<br/>
+core.h<br/>
+dali-signal.h<br/>
+dali-vector.h<br/>
+damage-observer.h<br/>
+debug.h<br/>
+display-connection-impl.h<br/>
+display-connection.h<br/>
+drag-and-drop-detector-impl.h<br/>
+drag-and-drop-detector.h<br/>
+ecore-x-render-surface.h<br/>
+ecore-x-types.h<br/>
+Ecore_X.h<br/>
+egl-factory-interface.h<br/>
+egl-factory.h<br/>
+egl-image-extensions.h<br/>
+egl-implementation.h<br/>
+egl-interface.h<br/>
+egl-sync-implementation.h<br/>
+egl.h<br/>
+eglext.h<br/>
+eglplatform.h<br/>
+environment-options.h<br/>
+error_code.hpp<br/>
+error_info_impl.hpp<br/>
+event-handler.h<br/>
+exception.hpp<br/>
+exception_ptr.hpp<br/>
+exceptions.hpp<br/>
+feedback-player.h<br/>
+feedback-plugin-proxy.h<br/>
+feedback-plugin.h<br/>
+font-client.h<br/>
+font-list.h<br/>
+font-metrics.h<br/>
+frame-time-stamp.h<br/>
+frame-time.h<br/>
+function_base.hpp<br/>
+future.hpp<br/>
+gesture-detector.h<br/>
+gesture-manager.h<br/>
+gesture-requests.h<br/>
+gesture.h<br/>
+gl-abstraction.h<br/>
+gl-extensions.h<br/>
+gl-implementation.h<br/>
+gl-sync-abstraction.h<br/>
+gl2.h<br/>
+gl2ext.h<br/>
+glyph-info.h<br/>
+greg_day.hpp<br/>
+greg_day_of_year.hpp<br/>
+greg_month.hpp<br/>
+greg_weekday.hpp<br/>
+greg_year.hpp<br/>
+handle.h<br/>
+image-operations.h<br/>
+image.h<br/>
+imf-manager.h<br/>
+input-method.h<br/>
+intrusive-ptr.h<br/>
+kernel-trace.h<br/>
+key-event.h<br/>
+key-grab.h<br/>
+key.h<br/>
+lifecycle-controller.h<br/>
+lifecycle-observer.h<br/>
+multi-point-event-integ.h<br/>
+mutex.h<br/>
+mutex.hpp<br/>
+native-image-interface.h<br/>
+native-image-source-impl.h<br/>
+native-image-source.h<br/>
+new_allocator.h<br/>
+noncopyable.hpp<br/>
+object-profiler.h<br/>
+object-registry.h<br/>
+orientation.h<br/>
+performance-interface.h<br/>
+performance-logger.h<br/>
+performance-marker.h<br/>
+physical-keyboard.h<br/>
+pixel.h<br/>
+pixmap-render-surface.h<br/>
+platform-abstraction.h<br/>
+property-map.h<br/>
+property.h<br/>
+pthreadtypes.h<br/>
+quaternion.h<br/>
+radian.h<br/>
+rect.h<br/>
+render-controller.h<br/>
+render-surface.h<br/>
+render-thread.h<br/>
+resource-cache.h<br/>
+resource-declarations.h<br/>
+resource-loader.h<br/>
+resource-request.h<br/>
+resource-requester-base.h<br/>
+resource-types.h<br/>
+rotation-observer.h<br/>
+script.h<br/>
+segmentation.h<br/>
+shaping.h<br/>
+shared_count.hpp<br/>
+shared_ptr.hpp<br/>
+singleton-service.h<br/>
+socket-factory-interface.h<br/>
+socket-factory.h<br/>
+socket-interface.h<br/>
+sound-player.h<br/>
+sp_counted_base_spin.hpp<br/>
+sp_typeinfo.hpp<br/>
+stddef.h<br/>
+stdint.h<br/>
+stl_deque.h<br/>
+stl_function.h<br/>
+stl_map.h<br/>
+stl_pair.h<br/>
+stl_queue.h<br/>
+stl_tree.h<br/>
+stl_vector.h<br/>
+stringfwd.h<br/>
+style-change.h<br/>
+style-monitor.h<br/>
+system-trace.h<br/>
+system_error.hpp<br/>
+text-abstraction-definitions.h<br/>
+thread-controller.h<br/>
+thread-synchronization-interface.h<br/>
+thread-synchronization.h<br/>
+tilt-sensor.h<br/>
+timer.h<br/>
+tizen-platform-abstraction.h<br/>
+touch-event-combiner.h<br/>
+touch-point.h<br/>
+trace-interface.h<br/>
+trigger-event-factory-interface.h<br/>
+trigger-event-factory.h<br/>
+trigger-event-interface.h<br/>
+tts-player.h<br/>
+type-registry.h<br/>
+type_info.hpp<br/>
+uint-16-pair.h<br/>
+update-thread.h<br/>
+vector2.h<br/>
+vector4.h<br/>
+view-mode.h<br/>
+virtual-keyboard.h<br/>
+vsync-monitor-interface.h<br/>
+vsync-monitor.h<br/>
+vsync-notifier.h<br/>
+wheel-event.h<br/>
+window-visibility-observer.h<br/>
+window.h<br/>
+xf86drm.h<br/>
+Xlib.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (45)</h2><hr/>
+<div class='h_list'>
+accessibility-adaptor.cpp<br/>
+adaptor.cpp<br/>
+application.cpp<br/>
+bidirectional-support.cpp<br/>
+bitmap-loader.cpp<br/>
+bitmap-saver.cpp<br/>
+clipboard-event-notifier.cpp<br/>
+clipboard.cpp<br/>
+color-controller.cpp<br/>
+conditional-wait.cpp<br/>
+dali-adaptor-version.cpp<br/>
+drag-and-drop-detector.cpp<br/>
+ecore-x-event-handler.cpp<br/>
+ecore-x-render-surface.cpp<br/>
+event-feeder.cpp<br/>
+feedback-player.cpp<br/>
+font-client.cpp<br/>
+font-list.cpp<br/>
+font-metrics.cpp<br/>
+glyph-info.cpp<br/>
+imf-manager.cpp<br/>
+iosfwd<br/>
+key-grab-x.cpp<br/>
+key.cpp<br/>
+lifecycle-controller.cpp<br/>
+native-image-source.cpp<br/>
+orientation.cpp<br/>
+performance-logger.cpp<br/>
+physical-keyboard.cpp<br/>
+pixmap-render-surface-factory.cpp<br/>
+pixmap-render-surface-x.cpp<br/>
+resource-loader.cpp<br/>
+script.cpp<br/>
+segmentation.cpp<br/>
+shaping.cpp<br/>
+singleton-service.cpp<br/>
+sound-player.cpp<br/>
+style-monitor.cpp<br/>
+tilt-sensor.cpp<br/>
+timer.cpp<br/>
+trigger-event-factory.cpp<br/>
+tts-player.cpp<br/>
+virtual-keyboard.cpp<br/>
+window-extensions.cpp<br/>
+window.cpp<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libdali-adaptor.so.0.0.0<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><hr/>
+<div class='footer' align='right'><i>Generated by <a href='http://lvc.github.io/abi-compliance-checker/'>ABI Compliance Checker</a> 1.99.18 &#160;</i>
+</div>
+<br/>
+
+</body></html>

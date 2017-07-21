@@ -1,0 +1,22 @@
+Temporary header file '/tmp/vByv_xOmw2/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/manual_execution/mobile/2.4/usr/include/appfw/message-port.h"
+  #include "/home/kayes/abi_tool/manual_execution/mobile/2.4/usr/include/appfw/message_port.h"
+  #include "/home/kayes/abi_tool/manual_execution/mobile/2.4/usr/include/appfw/message_port_error.h"
+  #include "/home/kayes/abi_tool/manual_execution/mobile/2.4/usr/include/appfw/message_port_internal.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/vByv_xOmw2/dump1.h"  -I/home/kayes/abi_tool/manual_execution/mobile/2.4/usr/include/appfw -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/vByv_xOmw2/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/manual_execution/mobile/3.0/usr/include/appfw/message-port.h"
+  #include "/home/kayes/abi_tool/manual_execution/mobile/3.0/usr/include/appfw/message_port.h"
+  #include "/home/kayes/abi_tool/manual_execution/mobile/3.0/usr/include/appfw/message_port_error.h"
+  #include "/home/kayes/abi_tool/manual_execution/mobile/3.0/usr/include/appfw/message_port_internal.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/vByv_xOmw2/dump2.h"  -I/home/kayes/abi_tool/manual_execution/mobile/3.0/usr/include/appfw -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+

@@ -1,0 +1,30 @@
+Temporary header file '/tmp/rRhCwqqwD2/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/TCSErrorCodes.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/TCSImpl.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/TWPImpl.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/rRhCwqqwD2/dump1.h"
+
+Temporary header file '/tmp/rRhCwqqwD2/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csr/csr-content-screening.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csr/csr-content-screening-types.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csr/csr-engine-manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csr/csr-error.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csr/csr-web-protection.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csr/csr-web-protection-types.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csre/csre-content-screening.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csre/csre-content-screening-engine-info.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csre/csre-content-screening-types.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csre/csre-error.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csre/csre-web-protection.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csre/csre-web-protection-engine-info.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csre/csre-web-protection-types.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/rRhCwqqwD2/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csre -I/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csr -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+

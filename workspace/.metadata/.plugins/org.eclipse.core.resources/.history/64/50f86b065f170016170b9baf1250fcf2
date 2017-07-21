@@ -1,0 +1,23 @@
+package application;
+
+import javafx.application.Platform;
+import javafx.scene.control.TextArea;
+
+public class Logger {
+	public static MainController main;
+
+	public static void init(MainController controller) {
+		main = controller;
+		main.clearConsole();
+	}
+
+	public static void msg(String msg) {
+
+		Platform.runLater(() ->main.appendTextToConsole("[msg]", msg));
+	}
+
+	public static void err(String err) {
+
+		Platform.runLater(() ->main.appendTextToConsole("[err]", err));
+	}
+}

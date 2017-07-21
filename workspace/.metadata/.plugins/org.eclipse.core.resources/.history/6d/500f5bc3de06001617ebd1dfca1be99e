@@ -1,0 +1,8 @@
+
+public abstract class  Node {
+	private String type;
+
+	public abstract String getType(); 
+	
+	public abstract int getValue(); 
+}

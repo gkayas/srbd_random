@@ -1,0 +1,230 @@
+/* Copyright (C) 2011-2012 Brian P. Hinz
+ * Copyright (C) 2012-2013, 2015 D. R. Commander.  All Rights Reserved.
+ *
+ * This is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this software; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,
+ * USA.
+ */
+/*
+ * Modification done by Golam Kayas(g.kayes@samsung.com) in 15th Nov,2015
+ */
+
+package com.turbovnc.vncviewer;
+
+import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.image.BufferedImage;
+import java.awt.Image;
+import java.awt.Insets;
+import java.awt.Toolkit;
+import java.awt.Graphics2D;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import javax.swing.*;
+import javax.swing.border.*;
+
+import com.turbovnc.rfb.*;
+
+@SuppressWarnings("serial")
+public class Toolbar extends JToolBar implements ActionListener {
+
+	static int NUMBER_OF_BUTTONS = 8;
+	static int ICON_WIDTH = 56;
+	static int ICON_HEIGTH = 48;
+
+	static final String[] buttonTips = { "Change Mode", "Verify Image", "Tap Image", "Verify Text", "Tap Text",
+			"Type Text", "Swipe", "Settings" };
+
+	private JButton[] buttons = new JButton[NUMBER_OF_BUTTONS];
+
+	private final ClassLoader cl = getClass().getClassLoader();
+
+	private CodeGenerator codeGenerator;
+	private final ImageIcon[] toolbarIcons = { new ImageIcon(cl.getResource("icons/Live_Mode.png")),
+			new ImageIcon(cl.getResource("icons/Verify_Image.png")),
+			new ImageIcon(cl.getResource("icons/Tap_Image.png")),
+			new ImageIcon(cl.getResource("icons/Verify_Text.png")), new ImageIcon(cl.getResource("icons/Tap_Text.png")),
+			new ImageIcon(cl.getResource("icons/Type_Text.png")), new ImageIcon(cl.getResource("icons/Swipe.png")),
+			new ImageIcon(cl.getResource("icons/Settings.png")) };
+	private final ImageIcon modeChangedIcon = new ImageIcon(cl.getResource("icons/Capture_Mode.png"));
+
+	private final Image[] toolbarImage = { toolbarIcons[0].getImage(), toolbarIcons[1].getImage(),
+			toolbarIcons[2].getImage(), toolbarIcons[3].getImage(), toolbarIcons[4].getImage(),
+			toolbarIcons[5].getImage(), toolbarIcons[6].getImage(), toolbarIcons[7].getImage() };
+
+	public Toolbar(CConn cc_, CodeGenerator codeGenerator) {
+		super();
+		cc = cc_;
+
+		this.codeGenerator = codeGenerator;
+		for (int i = 0; i < NUMBER_OF_BUTTONS; i++) {
+
+			BufferedImage bi = new BufferedImage(ICON_WIDTH, ICON_HEIGTH, BufferedImage.TYPE_INT_ARGB);
+			Graphics2D g = bi.createGraphics();
+			g.drawImage(toolbarImage[i], 0, 0, ICON_WIDTH, ICON_HEIGTH, null);
+			setAlignmentX(java.awt.Component.LEFT_ALIGNMENT);
+			setAlignmentY(java.awt.Component.CENTER_ALIGNMENT);
+			setFloatable(false);
+			setBorder(new EmptyBorder(1, 2, 1, 0));
+
+			JPanel panel = new JPanel();
+			panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+
+			ImageIcon icon = new ImageIcon(tk.createImage(bi.getSource()));
+			JButton button;
+
+			button = new JButton(icon);
+			button.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
+
+			button.setName(buttonTips[i]);
+			button.setToolTipText(buttonTips[i]);
+			button.setBorderPainted(false);
+			button.setFocusPainted(false);
+			button.setFocusable(false);
+			button.addActionListener(this);
+			button.addMouseListener(new ButtonListener(button));
+			button.setContentAreaFilled(false);
+
+			if (i != 0 && i != NUMBER_OF_BUTTONS-1) {
+				button.setEnabled(false);
+			} 
+			else {
+//				to disable live mode
+				ReadConfigUtil.readDeviceConfig();
+				
+				String liveMode = ReadConfigUtil.getLiveMode();
+				if(!liveMode.equals("0"+"xF1"+"AB05")) {
+					button.setEnabled(false);
+				}
+			}
+			
+
+			buttons[i] = button;
+			add(button);
+
+			add(new JSeparator(JSeparator.VERTICAL) {
+				public Dimension getMaximumSize() {
+					return new Dimension(getPreferredSize().width, Integer.MAX_VALUE);
+				}
+			});
+
+		}
+	}
+
+	private void toggleOperationButtons() {
+		for (int i = 1; i < NUMBER_OF_BUTTONS; i++) {
+			buttons[i].setEnabled(!buttons[i].isEnabled());
+		}
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		Object s = e.getSource();
+		if (((AbstractButton) s).getName() == buttonTips[0]) {
+			cc.viewMode = !cc.viewMode;
+			if (cc.viewMode) {
+				buttons[0].setIcon(modeChangedIcon);
+				codeGenerator.createCodeBox();
+			} else {
+
+				buttons[0].setIcon(toolbarIcons[0]);
+				codeGenerator.closeCodeBox();
+			}
+			toggleOperationButtons();
+
+		} else if (((AbstractButton) s).getName() == buttonTips[1]) {
+			CaptureImage capture = new CaptureImage(codeGenerator, true);
+			capture.start();
+		} else if (((AbstractButton) s).getName() == buttonTips[2]) {
+			CaptureImage capture = new CaptureImage(codeGenerator, false);
+			capture.start();
+		} else if (((AbstractButton) s).getName() == buttonTips[3]) {
+			codeGenerator.verifyText();
+		} else if (((AbstractButton) s).getName() == buttonTips[4]) {
+			codeGenerator.tapText();
+		} else if (((AbstractButton) s).getName() == buttonTips[5]) {
+			codeGenerator.typeText();
+		} else if (((AbstractButton) s).getName() == buttonTips[6]) {
+			codeGenerator.swipe();
+		} else if (((AbstractButton) s).getName() == buttonTips[7]) {
+			createSetupPopup();
+		}
+	}
+
+	
+
+	private void createSetupPopup() {
+		ReadConfigUtil.readDeviceConfig();
+		
+		JFrame frame = new JFrame("Setup");
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setLayout(new BorderLayout());	
+		
+		JPanel addressPanel = new JPanel();
+	    Border border = addressPanel.getBorder();
+	    Border margin = new EmptyBorder(10, 10, 10, 10);
+	    addressPanel.setBorder(new CompoundBorder(border, margin));
+	    final JTextArea rcpttTextArea = new JTextArea();
+	    rcpttTextArea.setText(ReadConfigUtil.getLiveMode());
+//	    addressPanel.add(rcpttTextArea);
+
+	    GridBagLayout panelGridBagLayout = new GridBagLayout();
+	    panelGridBagLayout.columnWidths = new int[] { 86, 86, 0 };
+	    panelGridBagLayout.rowHeights = new int[] { 20, 20, 20, 20, 20, 0 };
+	    panelGridBagLayout.columnWeights = new double[] { 0.0, 1.0, Double.MIN_VALUE };
+	    panelGridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
+	    addressPanel.setLayout(panelGridBagLayout);
+
+	    JTextField liveModeField = new JTextField();
+	    
+	    addLabelAndTextField(Constants.LIVE_MODE, ReadConfigUtil.getLiveMode(), 0, addressPanel);
+	    addLabelAndTextField("Street:", "", 1, addressPanel);
+	    addLabelAndTextField("State:", "", 2, addressPanel);
+	    addLabelAndTextField("Phone:", "", 3, addressPanel);
+	    addLabelAndTextField("Mail:", "",4, addressPanel);
+		
+		frame.add(addressPanel, BorderLayout.CENTER);
+		frame.pack();
+		frame.setSize(CodeBox.FRAME_WIDTH-400, CodeBox.FRAME_HEIGHT - 400);
+		frame.setPreferredSize(new Dimension(CodeBox.FRAME_WIDTH-400, CodeBox.FRAME_HEIGHT - 400));
+		frame.setResizable(true);
+		frame.setVisible(true);
+	}
+
+	private void addLabelAndTextField(String labelText, String valueText, int yPos, Container addressPanel, JTextField textField) {
+
+	    JLabel faxLabel = new JLabel(labelText);
+	    GridBagConstraints gridBagConstraintForLabel = new GridBagConstraints();
+	    gridBagConstraintForLabel.fill = GridBagConstraints.BOTH;
+	    gridBagConstraintForLabel.insets = new Insets(0, 0, 5, 5);
+	    gridBagConstraintForLabel.gridx = 0;
+	    gridBagConstraintForLabel.gridy = yPos;
+	    addressPanel.add(faxLabel, gridBagConstraintForLabel);
+
+	    textField.setText(valueText);
+	    GridBagConstraints gridBagConstraintForTextField = new GridBagConstraints();
+	    gridBagConstraintForTextField.fill = GridBagConstraints.BOTH;
+	    gridBagConstraintForTextField.insets = new Insets(0, 0, 5, 0);
+	    gridBagConstraintForTextField.gridx = 1;
+	    gridBagConstraintForTextField.gridy = yPos;
+	    addressPanel.add(textField, gridBagConstraintForTextField);
+	    textField.setColumns(10);
+	}
+
+	private CConn cc;
+	static Toolkit tk = Toolkit.getDefaultToolkit();
+	static LogWriter vlog = new LogWriter("Toolbar");
+}

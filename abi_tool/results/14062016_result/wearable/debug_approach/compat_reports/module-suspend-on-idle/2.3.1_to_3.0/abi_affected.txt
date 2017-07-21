@@ -1,0 +1,4 @@
+module_suspend_on_idle_LTX_pa__done
+pm_display_unlock
+pm_display_lock
+module_suspend_on_idle_LTX_pa__init

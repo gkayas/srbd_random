@@ -1,0 +1,9 @@
+ethumb_client_compress_get
+ethumb_client_category_get
+ethumb_client_aspect_get
+ethumb_client_size_get
+ethumb_client_orientation_get
+ethumb_client_crop_align_get
+ethumb_client_quality_get
+ethumb_client_dir_path_get
+ethumb_client_format_get

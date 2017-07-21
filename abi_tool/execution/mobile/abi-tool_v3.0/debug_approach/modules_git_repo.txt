@@ -1,0 +1,9 @@
+accounts-svc
+appcore-widget
+cairo
+capi-appfw-service-application
+capi-media-screen-mirroring
+capi-network-nfc
+dali-adaptor
+dali-core
+libslp-tapi

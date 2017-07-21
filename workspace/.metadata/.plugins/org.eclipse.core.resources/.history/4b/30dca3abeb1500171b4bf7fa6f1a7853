@@ -1,0 +1,57 @@
+package com.turbovnc.vncviewer;
+
+
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.AbstractButton;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JRootPane;
+
+public class CustomFrame extends JFrame implements ActionListener {
+	public CustomFrame(JFrame ref) {
+		super();
+		JFrame.setDefaultLookAndFeelDecorated(true);
+		setUndecorated(true);
+		getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+		setResizable(false);
+	    removeMinMaxClose(this);
+	    JPanel p = new JPanel(new GridBagLayout());
+	    JButton btn = new JButton("Exit");
+	    p.add(btn,new GridBagConstraints());
+	    getContentPane().add(p);
+	    setSize(400,300);
+	    setLocationRelativeTo(ref);
+	   // setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    setVisible(true);
+	    btn.addActionListener(this);
+	}
+	
+	  public void removeMinMaxClose(Component comp)
+	  {
+	    if(comp instanceof AbstractButton)
+	    {
+	      comp.getParent().remove(comp);
+	    }
+	    if (comp instanceof Container)
+	    {
+	      Component[] comps = ((Container)comp).getComponents();
+	      for(int x = 0, y = comps.length; x < y; x++)
+	      {
+	        removeMinMaxClose(comps[x]);
+	      }
+	    }
+	  }
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		this.dispose();
+	}
+}

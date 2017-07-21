@@ -1,0 +1,14 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+libexecdir=/usr/libexec
+pkglibexecdir=${libexecdir}/pepper
+
+Name: Pepper DRM Backend Library
+Description: Pepper DRM backend library header and library files
+Version: @PEPPER_DRM_VERSION@
+
+Requires.private: libdrm gbm pepper pepper-render pepper-libinput
+Cflags: -I${includedir}/pepper
+Libs: -L${libdir} -lpepper-drm

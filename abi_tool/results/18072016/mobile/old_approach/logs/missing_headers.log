@@ -1,0 +1,25 @@
+====================
+সোম জুল 11 16:00:53 BDT 2016
+====================
+./logs/notification.log:46:/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_setting_service.h:22:19: fatal error: alarm.h: No such file or directory
+./logs/dali-toolkit.log:162:/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/builder/builder.h:25:55: fatal error: dali/devel-api/animation/path-constrainer.h: No such file or directory
+./logs/capi-appfw-application.log:23:/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_internal.h:26:28: fatal error: appcore-common.h: No such file or directory
+====================
+শুক্র জুল 15 11:43:56 BDT 2016
+====================
+./logs/notification.log:46:/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_setting_service.h:22:19: fatal error: alarm.h: No such file or directory
+./logs/dali-toolkit.log:162:/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/builder/builder.h:25:55: fatal error: dali/devel-api/animation/path-constrainer.h: No such file or directory
+./logs/capi-appfw-application.log:23:/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_internal.h:26:28: fatal error: appcore-common.h: No such file or directory
+====================
+শনি জুল 16 13:16:15 BDT 2016
+====================
+./logs/notification.log:46:/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_setting_service.h:22:19: fatal error: alarm.h: No such file or directory
+./logs/dali-toolkit.log:162:/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/dali-toolkit/devel-api/builder/builder.h:25:55: fatal error: dali/devel-api/animation/path-constrainer.h: No such file or directory
+./logs/capi-appfw-application.log:23:/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_internal.h:26:28: fatal error: appcore-common.h: No such file or directory
+====================
+শনি জুল 16 14:04:37 BDT 2016
+====================
+./logs/capi-appfw-application.log:23:/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_internal.h:26:28: fatal error: appcore-common.h: No such file or directory
+====================
+শনি জুল 16 14:36:06 BDT 2016
+====================

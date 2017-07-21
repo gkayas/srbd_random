@@ -1,0 +1,94 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.List;
+
+import com.sun.javafx.tk.FontLoader;
+
+public class FileUtil {
+
+	static String grepFilesFromFolder(String folderName, String fileNameRegx) {
+		ProcessResult ans = runProcess( "bash", "-c", "ls " + folderName + " | grep "+fileNameRegx);
+		return ans.result;
+	}
+
+	static ProcessResult giveAllPermission(String file) {
+		return runProcess("chmod","777",file);
+	}
+	static String grepSoFilesFromFolder(String folderName) {
+		System.out.printf("%s %s %s\n", "bash" , "-c",  "find "+folderName+" -name '*.so.*'");
+		ProcessResult ans = runProcess( "find",folderName,"-name", "'*.so.*'");
+		return ans.result;
+	}
+
+	static String grepFromFile(String fileName, String regX) {
+		ProcessResult ans = runProcess("grep", regX, fileName);
+		return ans.result;
+	}
+
+	public static ProcessResult extractRpm(String rpmFolder, String rpmName) {
+		rpmFolder = rpmFolder.trim();
+		rpmName = rpmName.trim();
+		if(rpmName.length() == 0) {
+			return null;
+		}
+		System.out.println("Extracting : "+rpmName + " to " +rpmFolder );
+		return runProcess( "bash", "-c", "cd "+ rpmFolder+"&& rpm2cpio " + rpmName + " | cpio -idmv");
+	}
+
+	private static ProcessResult runProcess(String... args ) {
+	
+		Process p = null;
+		String result = "";
+		try {
+			p = new ProcessBuilder(args).start();
+			p.waitFor();
+
+			BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			StringBuffer sb = new StringBuffer();
+			String s = "";
+			while((s=reader.readLine()) != null) {
+				
+				sb.append(s+"\n");
+//				System.out.println(s);
+			}
+			result = sb.toString();
+			p.destroy();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		return new ProcessResult(p, result);
+	}
+
+	public static boolean isSymlink(File file) throws IOException {
+		if (file == null)
+			throw new NullPointerException("File must not be null");
+		File canon;
+		if (file.getParent() == null) {
+			canon = file;
+		} else {
+			File canonDir = file.getParentFile().getCanonicalFile();
+			canon = new File(canonDir, file.getName());
+		}
+		return !canon.getCanonicalFile().equals(canon.getAbsoluteFile());
+	}
+	
+	public static boolean dumpLibToFile(String libName, String dumpFilePath, String version) {
+		ProcessResult result = runProcess("bash", "-c", "abi-dumper " + libName + " -o " +"./"+ dumpFilePath + " -lver " + version);
+		return (result.process.exitValue()!=0)?false:true;
+	}
+	
+	public static ProcessResult runShFile(String shFilePath, String args) {
+		return runProcess("./"+shFilePath, args);
+	}
+	
+	public static ProcessResult checkAbiComplaiance(String libName, String oldDumpPath, String newDumpPath) {
+//		libName = libName.replaceFirst("lib", "");
+		return runProcess("bash", "-c", "abi-compliance-checker -l " + libName + " -old " + oldDumpPath + " -new " + newDumpPath+" -list-affected");
+	}
+}

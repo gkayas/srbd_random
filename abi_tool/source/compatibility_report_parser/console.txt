@@ -1,0 +1,846 @@
+***********libaccounts-svc***********
+***********capi-appfw-app-manager***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<h2>Removed Symbols (1)</h2><hr/>
+<span class='h_name'>app_manager.h</span>, <span class='lib_name'>libcapi-appfw-app-manager.so.0.2.4</span><br/>
+<span class="iname">app_manager_open_app&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>app_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+
+***********capi-media-audio-io***********
+***********badge***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Symbols, Low Severity (2)</h2><hr/>
+<span class='h_name'>badge.h</span>, <span class='lib_name'>libbadge.so.0.0.1</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='extendable'>[+]</span> badge_foreach_existed&#160;<span class='sym_p'>(&#160;badge_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_1" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>badge_foreach_existed&#160;<span class='sym_p'>(&#160;badge_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'><b>2nd</b> parameter <b>data</b> has been renamed to <b>user_data</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_2')">
+<span class='extendable'>[+]</span> badge_register_changed_cb&#160;<span class='sym_p'>(&#160;badge_change_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_2" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>badge_register_changed_cb&#160;<span class='sym_p'>(&#160;badge_change_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'><b>2nd</b> parameter <b>data</b> has been renamed to <b>user_data</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<br/>
+***********capi-base-utils***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Symbols, Low Severity (6)</h2><hr/>
+<span class='h_name'>utils_i18n_usearch.h</span>, <span class='lib_name'>libbase-utils-i18n.so.0.0.8</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='extendable'>[+]</span> i18n_usearch_create&#160;<span class='sym_p'>(&#160;i18n_uchar const* <span class='color_p'>pattern</span>, int32_t <span class='color_p'>pattern_len</span>, i18n_uchar const* <span class='color_p'>text</span>, int32_t <span class='color_p'>text_len</span>, char const* <span class='color_p'>locale</span>, i18n_ubreak_iterator_s* <span class='color_p'>breakiter</span>, <span class='nowrap'>i18n_usearch_h* <span class='color_p'>searchiter</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (2)</span>
+<br/>
+<div id="c_1" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>i18n_usearch_create&#160;<span class='sym_p'>(&#160;i18n_uchar const* <span class='color_p'>pattern</span>, int32_t <span class='color_p'>pattern_len</span>, i18n_uchar const* <span class='color_p'>text</span>, int32_t <span class='color_p'>text_len</span>, char const* <span class='color_p'>locale</span>, i18n_ubreak_iterator_s* <span class='color_p'>break_iter</span>, <span class='nowrap'>i18n_usearch_h* <span class='color_p'>search_iter</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'><b>6th</b> parameter <b>breakiter</b> has been renamed to <b>break_iter</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+<tr><th>2</th><td align='left' valign='top'><b>7th</b> parameter <b>searchiter</b> has been renamed to <b>search_iter</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_2')">
+<span class='extendable'>[+]</span> i18n_usearch_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>i18n_usearch_h <span class='color_p'>searchiter</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_2" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>i18n_usearch_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>i18n_usearch_h <span class='color_p'>search_iter</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'><b>1st</b> parameter <b>searchiter</b> has been renamed to <b>search_iter</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='extendable'>[+]</span> i18n_usearch_first&#160;<span class='sym_p'>(&#160;i18n_usearch_h <span class='color_p'>strsrch</span>, <span class='nowrap'>int32_t* <span class='color_p'>index_first</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_3" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>i18n_usearch_first&#160;<span class='sym_p'>(&#160;i18n_usearch_h <span class='color_p'>search_iter</span>, <span class='nowrap'>int32_t* <span class='color_p'>index_first</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'><b>1st</b> parameter <b>strsrch</b> has been renamed to <b>search_iter</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_4')">
+<span class='extendable'>[+]</span> i18n_usearch_get_collator&#160;<span class='sym_p'>(&#160;i18n_usearch_h const <span class='color_p'>strsrch</span>, <span class='nowrap'>i18n_ucollator_h* <span class='color_p'>collator</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_4" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>i18n_usearch_get_collator&#160;<span class='sym_p'>(&#160;i18n_usearch_h const <span class='color_p'>search_iter</span>, <span class='nowrap'>i18n_ucollator_h* <span class='color_p'>collator</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'><b>1st</b> parameter <b>strsrch</b> has been renamed to <b>search_iter</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+<span class='extendable'>[+]</span> i18n_usearch_get_matched_text&#160;<span class='sym_p'>(&#160;i18n_usearch_h const <span class='color_p'>strsrch</span>, i18n_uchar* <span class='color_p'>result</span>, int32_t <span class='color_p'>result_capacity</span>, <span class='nowrap'>int32_t* <span class='color_p'>len_matched_text</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_5" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>i18n_usearch_get_matched_text&#160;<span class='sym_p'>(&#160;i18n_usearch_h const <span class='color_p'>search_iter</span>, i18n_uchar* <span class='color_p'>result</span>, int32_t <span class='color_p'>result_capacity</span>, <span class='nowrap'>int32_t* <span class='color_p'>len_matched_text</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'><b>1st</b> parameter <b>strsrch</b> has been renamed to <b>search_iter</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<br/>
+***********capi-network-bluetooth***********
+***********bundle***********
+***********cairo***********
+***********calendar-service***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<h2>Removed Symbols (6)</h2><hr/>
+<span class='h_name'>calendar_db.h</span>, <span class='lib_name'>libcalendar-service2.so.0.1.126</span><br/>
+<span class="iname">calendar_db_delete_records_async&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>view_uri</span>, int* <span class='color_p'>record_id_array</span>, <span class='nowrap'>int <span class='color_p'>count</span>,</span> calendar_db_result_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">calendar_db_insert_records_async&#160;<span class='sym_p'>(&#160;calendar_list_h <span class='color_p'>record_list</span>, calendar_db_insert_result_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">calendar_db_insert_vcalendars_async&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>vcalendar_stream</span>, calendar_db_insert_result_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">calendar_db_replace_records_async&#160;<span class='sym_p'>(&#160;calendar_list_h <span class='color_p'>record_list</span>, int* <span class='color_p'>record_id_array</span>, <span class='nowrap'>int <span class='color_p'>count</span>,</span> calendar_db_result_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">calendar_db_replace_vcalendars_async&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>vcalendar_stream</span>, int* <span class='color_p'>record_id_array</span>, <span class='nowrap'>int <span class='color_p'>count</span>,</span> calendar_db_result_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">calendar_db_update_records_async&#160;<span class='sym_p'>(&#160;calendar_list_h <span class='color_p'>record_list</span>, calendar_db_result_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+
+***********capi-media-camera***********
+***********capi-media-tool***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Data Types, Low Severity (1)</h2><hr/>
+<span class='h_name'>media_format.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='extendable'>[+]</span> <span class='ttype'>enum</span> media_format_mimetype_e (1)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Value of member <b>MEDIA_FORMAT_MAX</b> has been changed from <b>570435025</b> to <b>570437633</b>.</td><td align='left' valign='top'>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (4)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>media_format_get_audio_info&#160;<span class='sym_p'>(&#160;media_format_h <span class='param'>fmt</span>, enum media_format_mimetype_e* <span class='focus_p'>mimetype</span>, <span class='nowrap'>int* <span class='param'>channel</span>,</span> <span class='nowrap'>int* <span class='param'>samplerate</span>,</span> <span class='nowrap'>int* <span class='param'>bit</span>,</span> <span class='nowrap'>int* <span class='param'>avg_bps</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;mimetype&#39; (pointer) has base type &#39;enum media_format_mimetype_e&#39;.</div>
+<span class='iname_a'>media_format_get_video_info&#160;<span class='sym_p'>(&#160;media_format_h <span class='param'>fmt</span>, enum media_format_mimetype_e* <span class='focus_p'>mimetype</span>, <span class='nowrap'>int* <span class='param'>width</span>,</span> <span class='nowrap'>int* <span class='param'>height</span>,</span> <span class='nowrap'>int* <span class='param'>avg_bps</span>,</span> <span class='nowrap'>int* <span class='param'>max_bps</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;mimetype&#39; (pointer) has base type &#39;enum media_format_mimetype_e&#39;.</div>
+<span class='iname_a'>media_format_set_audio_mime&#160;<span class='sym_p'>(&#160;media_format_h <span class='param'>fmt</span>, <span class='nowrap'>enum media_format_mimetype_e <span class='focus_p'>mimetype</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;mimetype&#39; has type &#39;enum media_format_mimetype_e&#39;.</div>
+<span class='iname_a'>media_format_set_video_mime&#160;<span class='sym_p'>(&#160;media_format_h <span class='param'>fmt</span>, <span class='nowrap'>enum media_format_mimetype_e <span class='focus_p'>mimetype</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;mimetype&#39; has type &#39;enum media_format_mimetype_e&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<br/>
+***********capi-network-connection***********
+***********contacts-service2***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<h2>Removed Symbols (4)</h2><hr/>
+<span class='h_name'>contacts_db.h</span>, <span class='lib_name'>libcontacts-service2.so.0.12.26</span><br/>
+<span class="iname">contacts_db_delete_records_async&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>view_uri</span>, int* <span class='color_p'>record_id_array</span>, <span class='nowrap'>int <span class='color_p'>count</span>,</span> contacts_db_result_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">contacts_db_insert_records_async&#160;<span class='sym_p'>(&#160;contacts_list_h <span class='color_p'>record_list</span>, contacts_db_insert_result_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">contacts_db_replace_records_async&#160;<span class='sym_p'>(&#160;contacts_list_h <span class='color_p'>list</span>, int* <span class='color_p'>record_id_array</span>, <span class='nowrap'>int <span class='color_p'>count</span>,</span> contacts_db_result_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">contacts_db_update_records_async&#160;<span class='sym_p'>(&#160;contacts_list_h <span class='color_p'>record_list</span>, contacts_db_result_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+
+***********capi-system-device***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Data Types, Low Severity (1)</h2><hr/>
+<span class='h_name'>callback.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='extendable'>[+]</span> <span class='ttype'>enum</span> device_callback_e (1)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Value of member <b>DEVICE_CALLBACK_MAX</b> has been changed from <b>4</b> to <b>5</b>.</td><td align='left' valign='top'>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (2)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>device_add_callback&#160;<span class='sym_p'>(&#160;enum device_callback_e <span class='focus_p'>type</span>, device_changed_cb <span class='param'>callback</span>, <span class='nowrap'>void* <span class='param'>user_data</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;type&#39; has type &#39;enum device_callback_e&#39;.</div>
+<span class='iname_a'>device_remove_callback&#160;<span class='sym_p'>(&#160;enum device_callback_e <span class='focus_p'>type</span>, <span class='nowrap'>device_changed_cb <span class='param'>callback</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;type&#39; has type &#39;enum device_callback_e&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<br/>
+***********libdlog***********
+***********capi-ui-efl-util***********
+***********capi-messaging-email***********
+***********capi-media-image-util***********
+***********libstorage***********
+***********capi-location-manager***********
+***********capi-media-codec***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Symbols, Low Severity (1)</h2><hr/>
+<span class='h_name'>media_codec.h</span>, <span class='lib_name'>libcapi-media-codec.so.0.1.1</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='extendable'>[+]</span> mediacodec_set_codec&#160;<span class='sym_p'>(&#160;mediacodec_h <span class='color_p'>mediacodec</span>, enum mediacodec_codec_type_e <span class='color_p'>codec_id</span>, <span class='nowrap'>enum mediacodec_support_type_e <span class='color_p'>flags</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_1" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>mediacodec_set_codec&#160;<span class='sym_p'>(&#160;mediacodec_h <span class='color_p'>mediacodec</span>, enum mediacodec_codec_type_e <span class='color_p'>codec_type</span>, <span class='nowrap'>enum mediacodec_support_type_e <span class='color_p'>flags</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'><b>2nd</b> parameter <b>codec_id</b> has been renamed to <b>codec_type</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<br/>
+***********capi-content-media-content***********
+***********capi-system-media-key***********
+***********capi-messaging-messages***********
+***********capi-media-metadata-extractor***********
+***********capi-content-mime-type***********
+***********capi-base-common***********
+***********capi-network-nfc***********
+***********notification***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<h2>Removed Symbols (1)</h2><hr/>
+<span class='h_name'>notification_internal.h</span>, <span class='lib_name'>libnotification.so.0.1.0</span><br/>
+<span class="iname">notifiation_clear&#160;<span class='sym_p'>(&#160;<span class='nowrap'>notification_type_e <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a style='font-size:11px;' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Data Types, Low Severity (2)</h2><hr/>
+<span class='h_name'>notification_type.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='extendable'>[+]</span> <span class='ttype'>enum</span> _notification_image_type (1)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Value of member <b>NOTIFICATION_IMAGE_TYPE_MAX</b> has been changed from <b>12</b> to <b>18</b>.</td><td align='left' valign='top'>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (2)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>notification_get_image&#160;<span class='sym_p'>(&#160;notification_h <span class='param'>noti</span>, notification_image_type_e <span class='focus_p'>type</span>, <span class='nowrap'>char** <span class='param'>image_path</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;type&#39; has base type &#39;enum _notification_image_type&#39;.</div>
+<span class='iname_a'>notification_set_image&#160;<span class='sym_p'>(&#160;notification_h <span class='param'>noti</span>, notification_image_type_e <span class='focus_p'>type</span>, <span class='nowrap'>char const* <span class='param'>image_path</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;type&#39; has base type &#39;enum _notification_image_type&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='extendable'>[+]</span> <span class='ttype'>enum</span> _notification_text_type (1)</span>
+<br/>
+<div id="c_3" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Value of member <b>NOTIFICATION_TEXT_TYPE_MAX</b> has been changed from <b>13</b> to <b>19</b>.</td><td align='left' valign='top'>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_4')">
+[+] affected symbols (4)</span>
+<div id="c_4" style="display:none;">
+<div class='affected'><span class='iname_a'>notification_get_text&#160;<span class='sym_p'>(&#160;notification_h <span class='param'>noti</span>, notification_text_type_e <span class='focus_p'>type</span>, <span class='nowrap'>char** <span class='param'>text</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;type&#39; has base type &#39;enum _notification_text_type&#39;.</div>
+<span class='iname_a'>notification_get_time_from_text&#160;<span class='sym_p'>(&#160;notification_h <span class='param'>noti</span>, notification_text_type_e <span class='focus_p'>type</span>, <span class='nowrap'>time_t* <span class='param'>time</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;type&#39; has base type &#39;enum _notification_text_type&#39;.</div>
+<span class='iname_a'>notification_set_text&#160;<span class='sym_p'>(&#160;notification_h <span class='param'>noti</span>, notification_text_type_e <span class='focus_p'>type</span>, <span class='nowrap'>char const* <span class='param'>text</span>,</span> <span class='nowrap'>char const* <span class='param'>key</span>,</span> <span class='nowrap'>int <span class='param'>args_type</span>,</span> <span class='nowrap'>... )</span></span></span><br/><div class='affect'>2nd parameter &#39;type&#39; has base type &#39;enum _notification_text_type&#39;.</div>
+<span class='iname_a'>notification_set_time_to_text&#160;<span class='sym_p'>(&#160;notification_h <span class='param'>noti</span>, notification_text_type_e <span class='focus_p'>type</span>, <span class='nowrap'>time_t <span class='param'>time</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;type&#39; has base type &#39;enum _notification_text_type&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<br/>
+***********capi-appfw-package-manager***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Data Types, Medium Severity (1)</h2><hr/>
+<span class='h_name'>package_manager_internal.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='extendable'>[+]</span> <span class='ttype'>enum</span> privilege_type (1)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Value of member <b>PRIVILEGE_PACKAGE_MANAGER_ADMIN</b> has been changed from <b>1</b> to <b>2</b>.</td><td align='left' valign='top'>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (1)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>check_privilege&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum privilege_type <span class='focus_p'>type</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;type&#39; has type &#39;enum privilege_type&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<br/><a style='font-size:11px;' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Data Types, Low Severity (2)</h2><hr/>
+<span class='h_name'>package_manager.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='extendable'>[+]</span> <span class='ttype'>typedef</span> package_manager_size_info_receive_cb (1)</span>
+<br/>
+<div id="c_3" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Base type has been changed from <span class='value'>void(*)(char const*,package_size_info_t const*,void*)</span> to <span class='value'>void(*)(char const*,package_size_info_h,void*)</span>.</td><td align='left' valign='top'>Replacement of the base data type may indicate a change in its semantic meaning.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_4')">
+[+] affected symbols (1)</span>
+<div id="c_4" style="display:none;">
+<div class='affected'><span class='iname_a'>package_manager_get_package_size_info&#160;<span class='sym_p'>(&#160;char const* <span class='param'>package_id</span>, void(*<span class='focus_p'>callback</span>)(char const*, package_size_info_t const*, void*), <span class='nowrap'>void* <span class='param'>user_data</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;callback&#39; has type &#39;package_manager_size_info_receive_cb&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+<span class='extendable'>[+]</span> <span class='ttype'>typedef</span> package_manager_total_size_info_receive_cb (1)</span>
+<br/>
+<div id="c_5" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Base type has been changed from <span class='value'>void(*)(package_size_info_t const*,void*)</span> to <b>void(*)(package_size_info_h,void*)</b>.</td><td align='left' valign='top'>Replacement of the base data type may indicate a change in its semantic meaning.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_6')">
+[+] affected symbols (1)</span>
+<div id="c_6" style="display:none;">
+<div class='affected'><span class='iname_a'>package_manager_get_total_package_size_info&#160;<span class='sym_p'>(&#160;void(*<span class='focus_p'>callback</span>)(package_size_info_t const*, void*), <span class='nowrap'>void* <span class='param'>user_data</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;callback&#39; has type &#39;package_manager_total_size_info_receive_cb&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<br/>
+***********privilege-info***********
+***********libpush***********
+***********capi-media-radio***********
+***********capi-media-recorder***********
+***********capi-system-runtime-info***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Data Types, Low Severity (10)</h2><hr/>
+<span class='h_name'>runtime_info.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='extendable'>[+]</span> <span class='ttype'>enum</span> runtime_info_key_e (10)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>The member <b>RUNTIME_INFO_KEY_24HOUR_CLOCK_FORMAT_ENABLED</b> has been removed.</td><td align='left' valign='top'>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td></tr>
+<tr><th>2</th><td align='left' valign='top'>The member <b>RUNTIME_INFO_KEY_FIRST_DAY_OF_WEEK</b> has been removed.</td><td align='left' valign='top'>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td></tr>
+<tr><th>3</th><td align='left' valign='top'>The member <b>RUNTIME_INFO_KEY_FLIGHT_MODE_ENABLED</b> has been removed.</td><td align='left' valign='top'>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td></tr>
+<tr><th>4</th><td align='left' valign='top'>The member <b>RUNTIME_INFO_KEY_LANGUAGE</b> has been removed.</td><td align='left' valign='top'>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td></tr>
+<tr><th>5</th><td align='left' valign='top'>The member <b>RUNTIME_INFO_KEY_LOCATION_ADVANCED_GPS_ENABLED</b> has been removed.</td><td align='left' valign='top'>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td></tr>
+<tr><th>6</th><td align='left' valign='top'>The member <b>RUNTIME_INFO_KEY_REGION</b> has been removed.</td><td align='left' valign='top'>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td></tr>
+<tr><th>7</th><td align='left' valign='top'>The member <b>RUNTIME_INFO_KEY_SILENT_MODE_ENABLED</b> has been removed.</td><td align='left' valign='top'>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td></tr>
+<tr><th>8</th><td align='left' valign='top'>The member <b>RUNTIME_INFO_KEY_SLIDING_KEYBOARD_OPENED</b> has been removed.</td><td align='left' valign='top'>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td></tr>
+<tr><th>9</th><td align='left' valign='top'>The member <b>RUNTIME_INFO_KEY_VIBRATION_LEVEL_HAPTIC_FEEDBACK</b> has been removed.</td><td align='left' valign='top'>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td></tr>
+<tr><th>10</th><td align='left' valign='top'>The member <b>RUNTIME_INFO_KEY_WIFI_STATUS</b> has been removed.</td><td align='left' valign='top'>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (6)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>runtime_info_get_value_bool&#160;<span class='sym_p'>(&#160;enum runtime_info_key_e <span class='focus_p'>key</span>, <span class='nowrap'>bool* <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum runtime_info_key_e&#39;.</div>
+<span class='iname_a'>runtime_info_get_value_double&#160;<span class='sym_p'>(&#160;enum runtime_info_key_e <span class='focus_p'>key</span>, <span class='nowrap'>double* <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum runtime_info_key_e&#39;.</div>
+<span class='iname_a'>runtime_info_get_value_int&#160;<span class='sym_p'>(&#160;enum runtime_info_key_e <span class='focus_p'>key</span>, <span class='nowrap'>int* <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum runtime_info_key_e&#39;.</div>
+<span class='iname_a'>runtime_info_get_value_string&#160;<span class='sym_p'>(&#160;enum runtime_info_key_e <span class='focus_p'>key</span>, <span class='nowrap'>char** <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum runtime_info_key_e&#39;.</div>
+<span class='iname_a'>runtime_info_set_changed_cb&#160;<span class='sym_p'>(&#160;enum runtime_info_key_e <span class='focus_p'>key</span>, runtime_info_changed_cb <span class='param'>callback</span>, <span class='nowrap'>void* <span class='param'>user_data</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum runtime_info_key_e&#39;.</div>
+<span class='iname_a'>runtime_info_unset_changed_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum runtime_info_key_e <span class='focus_p'>key</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum runtime_info_key_e&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<br/>
+***********capi-system-sensor***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Data Types, Low Severity (1)</h2><hr/>
+<span class='h_name'>sensor.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='extendable'>[+]</span> <span class='ttype'>enum</span> sensor_type_e (1)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Value of member <b>SENSOR_LAST</b> has been changed from <b>13</b> to <b>21</b>.</td><td align='left' valign='top'>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (4)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>sensor_get_default_sensor&#160;<span class='sym_p'>(&#160;enum sensor_type_e <span class='focus_p'>type</span>, <span class='nowrap'>sensor_h* <span class='param'>sensor</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;type&#39; has type &#39;enum sensor_type_e&#39;.</div>
+<span class='iname_a'>sensor_get_sensor_list&#160;<span class='sym_p'>(&#160;enum sensor_type_e <span class='focus_p'>type</span>, <span class='nowrap'>sensor_h** <span class='param'>list</span>,</span> <span class='nowrap'>int* <span class='param'>sensor_count</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;type&#39; has type &#39;enum sensor_type_e&#39;.</div>
+<span class='iname_a'>sensor_get_type&#160;<span class='sym_p'>(&#160;<span class='nowrap'>sensor_h <span class='param'>sensor</span>,</span> <span class='nowrap'>enum sensor_type_e* <span class='focus_p'>type</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;type&#39; (pointer) has base type &#39;enum sensor_type_e&#39;.</div>
+<span class='iname_a'>sensor_is_supported&#160;<span class='sym_p'>(&#160;enum sensor_type_e <span class='focus_p'>type</span>, <span class='nowrap'>bool* <span class='param'>supported</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;type&#39; has type &#39;enum sensor_type_e&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<br/>
+***********libshortcut***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<h2>Removed Symbols (2)</h2><hr/>
+<span class='h_name'>shortcut_private.h</span>, <span class='lib_name'>libshortcut.so.0.0.1</span><br/>
+<span class="iname">add_to_home_remove_dynamicbox&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, char const* <span class='color_p'>name</span>, result_internal_cb_t <span class='color_p'>result_cb</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">add_to_home_remove_shortcut&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, char const* <span class='color_p'>name</span>, char const* <span class='color_p'>content_info</span>, result_internal_cb_t <span class='color_p'>result_cb</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a style='font-size:11px;' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a><a name='Symbol_Binary_Problems_Low'></a>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Symbols, Low Severity (4)</h2><hr/>
+<span class='h_name'>shortcut.h</span>, <span class='lib_name'>libshortcut.so.0.0.1</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='extendable'>[+]</span> shortcut_get_list&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, int(*<span class='color_p'>cb</span>)(char const*, char const*, char const*, char const*, char const*, void*), <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (3)</span>
+<br/>
+<div id="c_1" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>shortcut_get_list&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>package_name</span>, shortcut_list_cb <span class='color_p'>list_cb</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'><b>1st</b> parameter <b>appid</b> has been renamed to <b>package_name</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+<tr><th>2</th><td align='left' valign='top'><b>2nd</b> parameter <b>cb</b> has been renamed to <b>list_cb</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+<tr><th>3</th><td align='left' valign='top'>Type of <b>2nd</b> parameter <b>cb</b> has been changed from <span class='value'>int(*)(char const*,char const*,char const*,char const*,char const*,void*)</span> to <b>shortcut_list_cb</b>.</td><td align='left' valign='top'>Replacement of parameter data type may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_2')">
+<span class='extendable'>[+]</span> shortcut_set_request_cb&#160;<span class='sym_p'>(&#160;request_cb_t <span class='color_p'>request_cb</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_2" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>shortcut_set_request_cb&#160;<span class='sym_p'>(&#160;shortcut_request_cb <span class='color_p'>request_cb</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Type of <b>1st</b> parameter <b>request_cb</b> has been changed from <b>request_cb_t</b> to <b>shortcut_request_cb</b>.</td><td align='left' valign='top'>Replacement of parameter data type may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<br/>
+***********capi-media-sound-manager***********
+***********stt***********
+***********capi-system-info***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<h2>Removed Symbols (5)</h2><hr/>
+<span class='h_name'>system_info_internal.h</span>, <span class='lib_name'>libcapi-system-info.so.0.2.0</span><br/>
+<span class="iname">system_info_get_internal_value&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>key</span>,</span> <span class='nowrap'>char** <span class='color_p'>value</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">system_info_get_value_bool&#160;<span class='sym_p'>(&#160;enum system_info_key_e <span class='color_p'>key</span>, <span class='nowrap'>bool* <span class='color_p'>value</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">system_info_get_value_double&#160;<span class='sym_p'>(&#160;enum system_info_key_e <span class='color_p'>key</span>, <span class='nowrap'>double* <span class='color_p'>value</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">system_info_get_value_int&#160;<span class='sym_p'>(&#160;enum system_info_key_e <span class='color_p'>key</span>, <span class='nowrap'>int* <span class='color_p'>value</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">system_info_get_value_string&#160;<span class='sym_p'>(&#160;enum system_info_key_e <span class='color_p'>key</span>, <span class='nowrap'>char** <span class='color_p'>value</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+
+***********capi-system-system-settings***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Data Types, Medium Severity (6)</h2><hr/>
+<span class='h_name'>system_settings.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='extendable'>[+]</span> <span class='ttype'>enum</span> system_settings_key_e (6)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Value of member <b>SYSTEM_SETTINGS_KEY_MOTION_ENABLED</b> has been changed from <b>5</b> to <b>22</b>.</td><td align='left' valign='top'>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td></tr>
+<tr><th>2</th><td align='left' valign='top'>Value of member <b>SYSTEM_SETTINGS_KEY_NETWORK_FLIGHT_MODE</b> has been changed from <b>23</b> to <b>24</b>.</td><td align='left' valign='top'>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td></tr>
+<tr><th>3</th><td align='left' valign='top'>Value of member <b>SYSTEM_SETTINGS_KEY_NETWORK_WIFI_NOTIFICATION</b> has been changed from <b>22</b> to <b>23</b>.</td><td align='left' valign='top'>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td></tr>
+<tr><th>4</th><td align='left' valign='top'>Value of member <b>SYSTEM_SETTINGS_KEY_SCREEN_BACKLIGHT_TIME</b> has been changed from <b>24</b> to <b>25</b>.</td><td align='left' valign='top'>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td></tr>
+<tr><th>5</th><td align='left' valign='top'>Value of member <b>SYSTEM_SETTINGS_KEY_SOUND_NOTIFICATION</b> has been changed from <b>25</b> to <b>26</b>.</td><td align='left' valign='top'>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td></tr>
+<tr><th>6</th><td align='left' valign='top'>Value of member <b>SYSTEM_SETTINGS_KEY_SOUND_NOTIFICATION_REPETITION_PERIOD</b> has been changed from <b>26</b> to <b>27</b>.</td><td align='left' valign='top'>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (8)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>system_settings_get_value_bool&#160;<span class='sym_p'>(&#160;enum system_settings_key_e <span class='focus_p'>key</span>, <span class='nowrap'>bool* <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+<span class='iname_a'>system_settings_get_value_int&#160;<span class='sym_p'>(&#160;enum system_settings_key_e <span class='focus_p'>key</span>, <span class='nowrap'>int* <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+<span class='iname_a'>system_settings_get_value_string&#160;<span class='sym_p'>(&#160;enum system_settings_key_e <span class='focus_p'>key</span>, <span class='nowrap'>char** <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+<span class='iname_a'>system_settings_set_changed_cb&#160;<span class='sym_p'>(&#160;enum system_settings_key_e <span class='focus_p'>key</span>, system_settings_changed_cb <span class='param'>callback</span>, <span class='nowrap'>void* <span class='param'>user_data</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+<span class='iname_a'>system_settings_set_value_bool&#160;<span class='sym_p'>(&#160;enum system_settings_key_e <span class='focus_p'>key</span>, <span class='nowrap'>bool <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+<span class='iname_a'>system_settings_set_value_int&#160;<span class='sym_p'>(&#160;enum system_settings_key_e <span class='focus_p'>key</span>, <span class='nowrap'>int <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+<span class='iname_a'>system_settings_set_value_string&#160;<span class='sym_p'>(&#160;enum system_settings_key_e <span class='focus_p'>key</span>, <span class='nowrap'>char const* <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+<span class='iname_a'>system_settings_unset_changed_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum system_settings_key_e <span class='focus_p'>key</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<br/><a style='font-size:11px;' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Data Types, Low Severity (2)</h2><hr/>
+<span class='h_name'>system_settings.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='extendable'>[+]</span> <span class='ttype'>enum</span> system_settings_key_e (2)</span>
+<br/>
+<div id="c_3" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Value of member <b>SYSTEM_SETTINGS_KEY_MAX</b> has been changed from <b>27</b> to <b>29</b>.</td><td align='left' valign='top'>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td></tr>
+<tr><th>2</th><td align='left' valign='top'>The member <b>SYSTEM_SETTINGS_KEY_TAP_AND_HOLD_DELAY</b> has been removed.</td><td align='left' valign='top'>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_4')">
+[+] affected symbols (8)</span>
+<div id="c_4" style="display:none;">
+<div class='affected'><span class='iname_a'>system_settings_get_value_bool&#160;<span class='sym_p'>(&#160;enum system_settings_key_e <span class='focus_p'>key</span>, <span class='nowrap'>bool* <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+<span class='iname_a'>system_settings_get_value_int&#160;<span class='sym_p'>(&#160;enum system_settings_key_e <span class='focus_p'>key</span>, <span class='nowrap'>int* <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+<span class='iname_a'>system_settings_get_value_string&#160;<span class='sym_p'>(&#160;enum system_settings_key_e <span class='focus_p'>key</span>, <span class='nowrap'>char** <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+<span class='iname_a'>system_settings_set_changed_cb&#160;<span class='sym_p'>(&#160;enum system_settings_key_e <span class='focus_p'>key</span>, system_settings_changed_cb <span class='param'>callback</span>, <span class='nowrap'>void* <span class='param'>user_data</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+<span class='iname_a'>system_settings_set_value_bool&#160;<span class='sym_p'>(&#160;enum system_settings_key_e <span class='focus_p'>key</span>, <span class='nowrap'>bool <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+<span class='iname_a'>system_settings_set_value_int&#160;<span class='sym_p'>(&#160;enum system_settings_key_e <span class='focus_p'>key</span>, <span class='nowrap'>int <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+<span class='iname_a'>system_settings_set_value_string&#160;<span class='sym_p'>(&#160;enum system_settings_key_e <span class='focus_p'>key</span>, <span class='nowrap'>char const* <span class='param'>value</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+<span class='iname_a'>system_settings_unset_changed_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum system_settings_key_e <span class='focus_p'>key</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;key&#39; has type &#39;enum system_settings_key_e&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<br/>
+***********libtbm***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<h2>Removed Symbols (1)</h2><hr/>
+<span class='h_name'>tbm_bufmgr.h</span>, <span class='lib_name'>libtbm.so.1.0.0</span><br/>
+<span class="iname">tbm_bo_cache_flush&#160;<span class='sym_p'>(&#160;<span class='nowrap'>tbm_bo <span class='color_p'>bo</span>,</span> <span class='nowrap'>int <span class='color_p'>flags</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a style='font-size:11px;' href='#Top'>to the top</a><br/>
+<a name='High_Risk_Binary_Problems'></a>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Data Types, High Severity (1)</h2><hr/>
+<span class='h_name'>tbm_bufmgr_backend.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='extendable'>[+]</span> <span class='ttype'>struct</span> _tbm_bufmgr_backend (1)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Size of this type has been changed from <b>108</b> bytes to <b>116</b> bytes.</td><td align='left' valign='top'>Layout of parameter's stack of several functions has been changed and therefore parameters at higher positions in the stack may be incorrectly initialized by applications.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (2)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>tbm_backend_free&#160;<span class='sym_p'>(&#160;<span class='nowrap'>tbm_bufmgr_backend <span class='focus_p'>backend</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;backend&#39; (pointer) has base type &#39;struct _tbm_bufmgr_backend&#39;.</div>
+<span class='iname_a'>tbm_backend_init&#160;<span class='sym_p'>(&#160;<span class='nowrap'>tbm_bufmgr <span class='param'>bufmgr</span>,</span> <span class='nowrap'>tbm_bufmgr_backend <span class='focus_p'>backend</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;backend&#39; (pointer) has base type &#39;struct _tbm_bufmgr_backend&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<br/><a style='font-size:11px;' href='#Top'>to the top</a><br/>
+<a name='Symbol_Binary_Problems_High'></a>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Symbols, High Severity (4)</h2><hr/>
+<span class='h_name'>tbm_surface_internal.h</span>, <span class='lib_name'>libtbm.so.1.0.0</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='extendable'>[+]</span> tbm_surface_internal_create_with_bos&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>width</span>,</span> <span class='nowrap'>int <span class='color_p'>height</span>,</span> <span class='nowrap'>int <span class='color_p'>format</span>,</span> <span class='nowrap'>tbm_bo* <span class='color_p'>bos</span>,</span> <span class='nowrap'>int <span class='color_p'>num</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;tbm_surface_h</span> (4)</span>
+<br/>
+<div id="c_3" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>tbm_surface_internal_create_with_bos&#160;<span class='sym_p'>(&#160;tbm_surface_info_s* <span class='color_p'>info</span>, <span class='nowrap'>tbm_bo* <span class='color_p'>bos</span>,</span> <span class='nowrap'>int <span class='color_p'>num</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;tbm_surface_h</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Parameter <b>info</b> of type <b>tbm_surface_info_s*</b> has been added to the calling stack at the middle position.</td><td align='left' valign='top'>Layout of parameter's stack has been changed and therefore parameters at higher positions in the stack may be incorrectly initialized by applications.</td></tr>
+<tr><th>2</th><td align='left' valign='top'><b>1st</b> middle parameter <b>width</b> has been removed from the calling stack.</td><td align='left' valign='top'>Layout of parameter's stack has been changed and therefore parameters at higher positions in the stack may be incorrectly initialized by applications.</td></tr>
+<tr><th>3</th><td align='left' valign='top'><b>2nd</b> middle parameter <b>height</b> has been removed from the calling stack.</td><td align='left' valign='top'>Layout of parameter's stack has been changed and therefore parameters at higher positions in the stack may be incorrectly initialized by applications.</td></tr>
+<tr><th>4</th><td align='left' valign='top'><b>3rd</b> middle parameter <b>format</b> has been removed from the calling stack.</td><td align='left' valign='top'>Layout of parameter's stack has been changed and therefore parameters at higher positions in the stack may be incorrectly initialized by applications.</td></tr>
+</table><br/>
+</div>
+<br/><a style='font-size:11px;' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Data Types, Low Severity (8)</h2><hr/>
+<span class='h_name'>tbm_bufmgr_backend.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_4')">
+<span class='extendable'>[+]</span> <span class='ttype'>struct</span> _tbm_bufmgr_backend (8)</span>
+<br/>
+<div id="c_4" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Field <b>bo_export_fd</b> has been added to this type.</td><td align='left' valign='top'>1) This field will not be initialized by old clients.<br/>2) Size of the inclusive type has been changed.<br/><b>NOTE</b>: this field should be accessed only from the new library functions, otherwise it may result in crash or incorrect behavior of applications.</td></tr>
+<tr><th>2</th><td align='left' valign='top'>Field <b>bo_import_fd</b> has been added to this type.</td><td align='left' valign='top'>1) This field will not be initialized by old clients.<br/>2) Size of the inclusive type has been changed.<br/><b>NOTE</b>: this field should be accessed only from the new library functions, otherwise it may result in crash or incorrect behavior of applications.</td></tr>
+<tr><th>3</th><td align='left' valign='top'>Field <b>fd_to_handle</b> has been added to this type.</td><td align='left' valign='top'>1) This field will not be initialized by old clients.<br/>2) Size of the inclusive type has been changed.<br/><b>NOTE</b>: this field should be accessed only from the new library functions, otherwise it may result in crash or incorrect behavior of applications.</td></tr>
+<tr><th>4</th><td align='left' valign='top'>Field <b>surface_get_num_bos</b> has been added to this type.</td><td align='left' valign='top'>1) This field will not be initialized by old clients.<br/>2) Size of the inclusive type has been changed.<br/><b>NOTE</b>: this field should be accessed only from the new library functions, otherwise it may result in crash or incorrect behavior of applications.</td></tr>
+<tr><th>5</th><td align='left' valign='top'>Size of this type has been changed from <b>108</b> bytes to <b>116</b> bytes.</td><td align='left' valign='top'>The fields or parameters of such data type may be incorrectly initialized or accessed by old client applications.</td></tr>
+<tr><th>6</th><td align='left' valign='top'>Field <b>reserved7</b> has been removed from this type.</td><td align='left' valign='top'>Size of the inclusive type has been changed.</td></tr>
+<tr><th>7</th><td align='left' valign='top'>Field <b>reserved8</b> has been removed from this type.</td><td align='left' valign='top'>Size of the inclusive type has been changed.</td></tr>
+<tr><th>8</th><td align='left' valign='top'>Base type of field <b>surface_get_plane_data</b> has been changed from <b>int(*)(tbm_surface_h,int,int,tbm_format,int,uint32_t*,uint32_t*,uint32_t*)</b> to <b>int(*)(tbm_surface_h,int,int,tbm_format,int,uint32_t*,uint32_t*,uint32_t*,int*)</b>.</td><td align='left' valign='top'>Replacement of field base type may indicate a change in the semantic meaning of the field.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_5')">
+[+] affected symbols (3)</span>
+<div id="c_5" style="display:none;">
+<div class='affected'><span class='iname_a'>tbm_backend_alloc&#160;<span class='sym_p'>(&#160;)</span></span><br/><div class='affect'>Return value (pointer) has base type &#39;struct _tbm_bufmgr_backend&#39;.</div>
+<span class='iname_a'>tbm_backend_free&#160;<span class='sym_p'>(&#160;<span class='nowrap'>tbm_bufmgr_backend <span class='focus_p'>backend</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;backend&#39; (pointer) has base type &#39;struct _tbm_bufmgr_backend&#39;.</div>
+<span class='iname_a'>tbm_backend_init&#160;<span class='sym_p'>(&#160;<span class='nowrap'>tbm_bufmgr <span class='param'>bufmgr</span>,</span> <span class='nowrap'>tbm_bufmgr_backend <span class='focus_p'>backend</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;backend&#39; (pointer) has base type &#39;struct _tbm_bufmgr_backend&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<br/>
+***********capi-telephony***********
+***********capi-media-tone-player***********
+***********tts***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<h2>Removed Symbols (1)</h2><hr/>
+<span class='h_name'>tts_setting.h</span>, <span class='lib_name'>libtts_setting.so</span><br/>
+<span class="iname">tts_setting_foreach_surpported_voices&#160;<span class='sym_p'>(&#160;tts_setting_supported_voice_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a style='font-size:11px;' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a>
+***********capi-web-url-download***********
+***********capi-media-video-util***********
+***********capi-media-wav-player***********
+***********capi-network-wifi***********
+***********capi-network-wifi-direct***********
+***********email-service***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Data Types, Medium Severity (3)</h2><hr/>
+<span class='h_name'>email-types.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='extendable'>[+]</span> <span class='ttype'>struct</span> email_mail_data_t (3)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Field <b>key_id</b> has been added at the middle position of this structural type.</td><td align='left' valign='top'>1) Size of the inclusive type has been changed.<br/>2) Layout of structure fields has been changed and therefore fields at higher positions of the structure definition may be incorrectly accessed by applications.</td></tr>
+<tr><th>2</th><td align='left' valign='top'>Field <b>key_list</b> has been added at the middle position of this structural type.</td><td align='left' valign='top'>1) Size of the inclusive type has been changed.<br/>2) Layout of structure fields has been changed and therefore fields at higher positions of the structure definition may be incorrectly accessed by applications.</td></tr>
+<tr><th>3</th><td align='left' valign='top'>Field <b>user_name</b> has been added at the middle position of this structural type.</td><td align='left' valign='top'>1) Size of the inclusive type has been changed.<br/>2) Layout of structure fields has been changed and therefore fields at higher positions of the structure definition may be incorrectly accessed by applications.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (13)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>email_add_mail&#160;<span class='sym_p'>(&#160;struct email_mail_data_t* <span class='focus_p'>input_mail_data</span>, struct email_attachment_data_t* <span class='param'>input_attachment_data_list</span>, int <span class='param'>input_attachment_count</span>, struct email_meeting_request_t* <span class='param'>input_meeting_request</span>, <span class='nowrap'>int <span class='param'>input_from_eas</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;input_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_delete_parsed_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct email_mail_data_t* <span class='focus_p'>input_mail_data</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;input_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_free_mail_data&#160;<span class='sym_p'>(&#160;struct email_mail_data_t** <span class='focus_p'>mail_list</span>, <span class='nowrap'>int <span class='param'>count</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;mail_list&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_get_decrypt_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='param'>mail_id</span>,</span> struct email_mail_data_t** <span class='focus_p'>output_mail_data</span>, struct email_attachment_data_t** <span class='param'>output_attachment_data</span>, <span class='nowrap'>int* <span class='param'>output_attachment_count</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;output_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_get_decrypt_message_ex&#160;<span class='sym_p'>(&#160;struct email_mail_data_t* <span class='focus_p'>input_mail_data</span>, struct email_attachment_data_t* <span class='param'>input_attachment_data</span>, int <span class='param'>input_attachment_count</span>, struct email_mail_data_t** <span class='param'>output_mail_data</span>, struct email_attachment_data_t** <span class='param'>output_attachment_data</span>, <span class='nowrap'>int* <span class='param'>output_attachment_count</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;input_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_get_mail_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='param'>input_mail_id</span>,</span> <span class='nowrap'>struct email_mail_data_t** <span class='focus_p'>output_mail_data</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;output_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_get_mails&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='param'>account_id</span>,</span> <span class='nowrap'>int <span class='param'>mailbox_id</span>,</span> <span class='nowrap'>int <span class='param'>thread_id</span>,</span> <span class='nowrap'>int <span class='param'>start_index</span>,</span> <span class='nowrap'>int <span class='param'>limit_count</span>,</span> enum email_sort_type_t <span class='param'>sorting</span>, struct email_mail_data_t** <span class='focus_p'>mail_list</span>, <span class='nowrap'>int* <span class='param'>result_count</span> )</span></span></span><br/><div class='affect'>7th parameter &#39;mail_list&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_get_thread_information_by_thread_id&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='param'>thread_id</span>,</span> <span class='nowrap'>struct email_mail_data_t** <span class='focus_p'>thread_info</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;thread_info&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_parse_mime_file&#160;<span class='sym_p'>(&#160;char* <span class='param'>eml_file_path</span>, struct email_mail_data_t** <span class='focus_p'>output_mail_data</span>, struct email_attachment_data_t** <span class='param'>output_attachment_data</span>, <span class='nowrap'>int* <span class='param'>output_attachment_count</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;output_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_query_mails&#160;<span class='sym_p'>(&#160;char* <span class='param'>conditional_clause_string</span>, struct email_mail_data_t** <span class='focus_p'>mail_list</span>, <span class='nowrap'>int* <span class='param'>result_count</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;mail_list&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_update_mail&#160;<span class='sym_p'>(&#160;struct email_mail_data_t* <span class='focus_p'>input_mail_data</span>, struct email_attachment_data_t* <span class='param'>input_attachment_data_list</span>, int <span class='param'>input_attachment_count</span>, struct email_meeting_request_t* <span class='param'>input_meeting_request</span>, <span class='nowrap'>int <span class='param'>input_from_eas</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;input_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_verify_signature_ex&#160;<span class='sym_p'>(&#160;struct email_mail_data_t* <span class='focus_p'>input_mail_data</span>, struct email_attachment_data_t* <span class='param'>input_attachment_data</span>, int <span class='param'>input_attachment_count</span>, <span class='nowrap'>int* <span class='param'>verify</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;input_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_write_mime_file&#160;<span class='sym_p'>(&#160;struct email_mail_data_t* <span class='focus_p'>input_mail_data</span>, struct email_attachment_data_t* <span class='param'>input_attachment_data</span>, int <span class='param'>input_attachment_count</span>, <span class='nowrap'>char** <span class='param'>output_file_path</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;input_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<br/><a style='font-size:11px;' href='#Top'>to the top</a><br/>
+<a name='Symbol_Binary_Problems_Medium'></a>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Symbols, Medium Severity (2)</h2><hr/>
+<span class='h_name'>email-api-smime.h</span>, <span class='lib_name'>libemail-smime-api.so.1.1.0</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='extendable'>[+]</span> email_get_decrypt_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>mail_id</span>,</span> struct email_mail_data_t** <span class='color_p'>output_mail_data</span>, struct email_attachment_data_t** <span class='color_p'>output_attachment_data</span>, <span class='nowrap'>int* <span class='color_p'>output_attachment_count</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_3" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>email_get_decrypt_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>mail_id</span>,</span> struct email_mail_data_t** <span class='color_p'>output_mail_data</span>, struct email_attachment_data_t** <span class='color_p'>output_attachment_data</span>, int* <span class='color_p'>output_attachment_count</span>, <span class='nowrap'>int* <span class='color_p'>verify</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Parameter <b>verify</b> of type <b>int*</b> has been added to the calling stack.</td><td align='left' valign='top'>This parameter will not be initialized by old clients.</td></tr>
+</table><br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_4')">
+<span class='extendable'>[+]</span> email_get_decrypt_message_ex&#160;<span class='sym_p'>(&#160;struct email_mail_data_t* <span class='color_p'>input_mail_data</span>, struct email_attachment_data_t* <span class='color_p'>input_attachment_data</span>, int <span class='color_p'>input_attachment_count</span>, struct email_mail_data_t** <span class='color_p'>output_mail_data</span>, struct email_attachment_data_t** <span class='color_p'>output_attachment_data</span>, <span class='nowrap'>int* <span class='color_p'>output_attachment_count</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_4" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>email_get_decrypt_message_ex&#160;<span class='sym_p'>(&#160;struct email_mail_data_t* <span class='color_p'>input_mail_data</span>, struct email_attachment_data_t* <span class='color_p'>input_attachment_data</span>, int <span class='color_p'>input_attachment_count</span>, struct email_mail_data_t** <span class='color_p'>output_mail_data</span>, struct email_attachment_data_t** <span class='color_p'>output_attachment_data</span>, int* <span class='color_p'>output_attachment_count</span>, <span class='nowrap'>int* <span class='color_p'>verify</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Parameter <b>verify</b> of type <b>int*</b> has been added to the calling stack.</td><td align='left' valign='top'>This parameter will not be initialized by old clients.</td></tr>
+</table><br/>
+</div>
+<br/><a style='font-size:11px;' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Data Types, Low Severity (3)</h2><hr/>
+<span class='h_name'>email-types.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+<span class='extendable'>[+]</span> <span class='ttype'>struct</span> email_account_t (2)</span>
+<br/>
+<div id="c_5" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Field <b>user_name</b> has been added to this type.</td><td align='left' valign='top'>1) This field will not be initialized by old clients.<br/>2) Size of the inclusive type has been changed.<br/><b>NOTE</b>: this field should be accessed only from the new library functions, otherwise it may result in crash or incorrect behavior of applications.</td></tr>
+<tr><th>2</th><td align='left' valign='top'>Size of this type has been changed from <b>264</b> bytes to <b>268</b> bytes.</td><td align='left' valign='top'>The fields or parameters of such data type may be incorrectly initialized or accessed by old client applications.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_6')">
+[+] affected symbols (8)</span>
+<div id="c_6" style="display:none;">
+<div class='affected'><span class='iname_a'>email_add_account&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct email_account_t* <span class='focus_p'>account</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;account&#39; (pointer) has base type &#39;struct email_account_t&#39;.</div>
+<span class='iname_a'>email_add_account_with_validation&#160;<span class='sym_p'>(&#160;struct email_account_t* <span class='focus_p'>account</span>, <span class='nowrap'>int* <span class='param'>handle</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;account&#39; (pointer) has base type &#39;struct email_account_t&#39;.</div>
+<span class='iname_a'>email_free_account&#160;<span class='sym_p'>(&#160;struct email_account_t** <span class='focus_p'>account_list</span>, <span class='nowrap'>int <span class='param'>count</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;account_list&#39; (pointer) has base type &#39;struct email_account_t&#39;.</div>
+<span class='iname_a'>email_get_account&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='param'>account_id</span>,</span> <span class='nowrap'>int <span class='param'>pulloption</span>,</span> <span class='nowrap'>struct email_account_t** <span class='focus_p'>account</span> )</span></span></span><br/><div class='affect'>3rd parameter &#39;account&#39; (pointer) has base type &#39;struct email_account_t&#39;.</div>
+<span class='iname_a'>email_get_account_list&#160;<span class='sym_p'>(&#160;struct email_account_t** <span class='focus_p'>account_list</span>, <span class='nowrap'>int* <span class='param'>count</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;account_list&#39; (pointer) has base type &#39;struct email_account_t&#39;.</div>
+<span class='iname_a'>email_update_account&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='param'>account_id</span>,</span> <span class='nowrap'>struct email_account_t* <span class='focus_p'>new_account</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;new_account&#39; (pointer) has base type &#39;struct email_account_t&#39;.</div>
+<span class='iname_a'>email_update_account_with_validation&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='param'>account_id</span>,</span> <span class='nowrap'>struct email_account_t* <span class='focus_p'>new_account</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;new_account&#39; (pointer) has base type &#39;struct email_account_t&#39;.</div>
+<span class='iname_a'>email_validate_account_ex&#160;<span class='sym_p'>(&#160;struct email_account_t* <span class='focus_p'>account</span>, <span class='nowrap'>int* <span class='param'>handle</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;account&#39; (pointer) has base type &#39;struct email_account_t&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_7')">
+<span class='extendable'>[+]</span> <span class='ttype'>struct</span> email_mail_data_t (1)</span>
+<br/>
+<div id="c_7" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Size of this type has been changed from <b>200</b> bytes to <b>212</b> bytes.</td><td align='left' valign='top'>The fields or parameters of such data type may be incorrectly initialized or accessed by old client applications.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_8')">
+[+] affected symbols (13)</span>
+<div id="c_8" style="display:none;">
+<div class='affected'><span class='iname_a'>email_add_mail&#160;<span class='sym_p'>(&#160;struct email_mail_data_t* <span class='focus_p'>input_mail_data</span>, struct email_attachment_data_t* <span class='param'>input_attachment_data_list</span>, int <span class='param'>input_attachment_count</span>, struct email_meeting_request_t* <span class='param'>input_meeting_request</span>, <span class='nowrap'>int <span class='param'>input_from_eas</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;input_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_delete_parsed_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct email_mail_data_t* <span class='focus_p'>input_mail_data</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;input_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_free_mail_data&#160;<span class='sym_p'>(&#160;struct email_mail_data_t** <span class='focus_p'>mail_list</span>, <span class='nowrap'>int <span class='param'>count</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;mail_list&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_get_decrypt_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='param'>mail_id</span>,</span> struct email_mail_data_t** <span class='focus_p'>output_mail_data</span>, struct email_attachment_data_t** <span class='param'>output_attachment_data</span>, <span class='nowrap'>int* <span class='param'>output_attachment_count</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;output_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_get_decrypt_message_ex&#160;<span class='sym_p'>(&#160;struct email_mail_data_t* <span class='param'>input_mail_data</span>, struct email_attachment_data_t* <span class='param'>input_attachment_data</span>, int <span class='param'>input_attachment_count</span>, struct email_mail_data_t** <span class='focus_p'>output_mail_data</span>, struct email_attachment_data_t** <span class='param'>output_attachment_data</span>, <span class='nowrap'>int* <span class='param'>output_attachment_count</span> )</span></span></span><br/><div class='affect'>4th parameter &#39;output_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_get_mail_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='param'>input_mail_id</span>,</span> <span class='nowrap'>struct email_mail_data_t** <span class='focus_p'>output_mail_data</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;output_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_get_mails&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='param'>account_id</span>,</span> <span class='nowrap'>int <span class='param'>mailbox_id</span>,</span> <span class='nowrap'>int <span class='param'>thread_id</span>,</span> <span class='nowrap'>int <span class='param'>start_index</span>,</span> <span class='nowrap'>int <span class='param'>limit_count</span>,</span> enum email_sort_type_t <span class='param'>sorting</span>, struct email_mail_data_t** <span class='focus_p'>mail_list</span>, <span class='nowrap'>int* <span class='param'>result_count</span> )</span></span></span><br/><div class='affect'>7th parameter &#39;mail_list&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_get_thread_information_by_thread_id&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='param'>thread_id</span>,</span> <span class='nowrap'>struct email_mail_data_t** <span class='focus_p'>thread_info</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;thread_info&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_parse_mime_file&#160;<span class='sym_p'>(&#160;char* <span class='param'>eml_file_path</span>, struct email_mail_data_t** <span class='focus_p'>output_mail_data</span>, struct email_attachment_data_t** <span class='param'>output_attachment_data</span>, <span class='nowrap'>int* <span class='param'>output_attachment_count</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;output_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_query_mails&#160;<span class='sym_p'>(&#160;char* <span class='param'>conditional_clause_string</span>, struct email_mail_data_t** <span class='focus_p'>mail_list</span>, <span class='nowrap'>int* <span class='param'>result_count</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;mail_list&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_update_mail&#160;<span class='sym_p'>(&#160;struct email_mail_data_t* <span class='focus_p'>input_mail_data</span>, struct email_attachment_data_t* <span class='param'>input_attachment_data_list</span>, int <span class='param'>input_attachment_count</span>, struct email_meeting_request_t* <span class='param'>input_meeting_request</span>, <span class='nowrap'>int <span class='param'>input_from_eas</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;input_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_verify_signature_ex&#160;<span class='sym_p'>(&#160;struct email_mail_data_t* <span class='focus_p'>input_mail_data</span>, struct email_attachment_data_t* <span class='param'>input_attachment_data</span>, int <span class='param'>input_attachment_count</span>, <span class='nowrap'>int* <span class='param'>verify</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;input_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+<span class='iname_a'>email_write_mime_file&#160;<span class='sym_p'>(&#160;struct email_mail_data_t* <span class='focus_p'>input_mail_data</span>, struct email_attachment_data_t* <span class='param'>input_attachment_data</span>, int <span class='param'>input_attachment_count</span>, <span class='nowrap'>char** <span class='param'>output_file_path</span> )</span></span></span><br/><div class='affect'>1st parameter &#39;input_mail_data&#39; (pointer) has base type &#39;struct email_mail_data_t&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<br/>
+***********libslp-tapi***********
+***********msg-service***********
+***********capi-network-tethering***********
+***********ui-gadget***********
+***********csr-framework***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Symbols, Low Severity (5)</h2><hr/>
+<span class='h_name'>TWPImpl.h</span>, <span class='lib_name'>libsecfw.so</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='extendable'>[+]</span> TWPConfigurationDestroy&#160;<span class='sym_p'>(&#160;TWPLIB_HANDLE <span class='color_p'>hLib</span>, <span class='nowrap'>TWPConfigurationHandle* <span class='color_p'>hConfigure</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;enum TWP_RESULT</span> (1)</span>
+<br/>
+<div id="c_1" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>TWPConfigurationDestroy&#160;<span class='sym_p'>(&#160;TWPLIB_HANDLE <span class='color_p'>hLib</span>, <span class='nowrap'>TWPConfigurationHandle* <span class='color_p'>phConfigure</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;enum TWP_RESULT</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'><b>2nd</b> parameter <b>hConfigure</b> has been renamed to <b>phConfigure</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_2')">
+<span class='extendable'>[+]</span> TWPPolicyCreate&#160;<span class='sym_p'>(&#160;TWPLIB_HANDLE <span class='color_p'>hLib</span>, TWPConfigurationHandle <span class='color_p'>hCfg</span>, enum TWPCategories* <span class='color_p'>pCategories</span>, unsigned int <span class='color_p'>uCount</span>, <span class='nowrap'>TWPPolicyHandle* <span class='color_p'>hPolicy</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;enum TWP_RESULT</span> (1)</span>
+<br/>
+<div id="c_2" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>TWPPolicyCreate&#160;<span class='sym_p'>(&#160;TWPLIB_HANDLE <span class='color_p'>hLib</span>, TWPConfigurationHandle <span class='color_p'>hCfg</span>, enum TWPCategories* <span class='color_p'>pCategories</span>, unsigned int <span class='color_p'>uCount</span>, <span class='nowrap'>TWPPolicyHandle* <span class='color_p'>phPolicy</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;enum TWP_RESULT</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'><b>5th</b> parameter <b>hPolicy</b> has been renamed to <b>phPolicy</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='extendable'>[+]</span> TWPPolicyDestroy&#160;<span class='sym_p'>(&#160;TWPLIB_HANDLE <span class='color_p'>hLib</span>, <span class='nowrap'>TWPPolicyHandle* <span class='color_p'>hPolicy</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;enum TWP_RESULT</span> (1)</span>
+<br/>
+<div id="c_3" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>TWPPolicyDestroy&#160;<span class='sym_p'>(&#160;TWPLIB_HANDLE <span class='color_p'>hLib</span>, <span class='nowrap'>TWPPolicyHandle* <span class='color_p'>phPolicy</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;enum TWP_RESULT</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'><b>2nd</b> parameter <b>hPolicy</b> has been renamed to <b>phPolicy</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_4')">
+<span class='extendable'>[+]</span> TWPResponseDestroy&#160;<span class='sym_p'>(&#160;TWPLIB_HANDLE <span class='color_p'>hLib</span>, <span class='nowrap'>TWPResponseHandle* <span class='color_p'>hResponse</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;enum TWP_RESULT</span> (1)</span>
+<br/>
+<div id="c_4" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>TWPResponseDestroy&#160;<span class='sym_p'>(&#160;TWPLIB_HANDLE <span class='color_p'>hLib</span>, <span class='nowrap'>TWPResponseHandle* <span class='color_p'>phResponse</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;enum TWP_RESULT</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'><b>2nd</b> parameter <b>hResponse</b> has been renamed to <b>phResponse</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+<span class='extendable'>[+]</span> TWPResponseGetUrlRatingByUrl&#160;<span class='sym_p'>(&#160;TWPLIB_HANDLE <span class='color_p'>hLib</span>, TWPResponseHandle <span class='color_p'>hResponse</span>, char const* <span class='color_p'>pUrl</span>, unsigned int <span class='color_p'>uUrlLength</span>, <span class='nowrap'>TWPUrlRatingHandle* <span class='color_p'>hRating</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;enum TWP_RESULT</span> (1)</span>
+<br/>
+<div id="c_5" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>TWPResponseGetUrlRatingByUrl&#160;<span class='sym_p'>(&#160;TWPLIB_HANDLE <span class='color_p'>hLib</span>, TWPResponseHandle <span class='color_p'>hResponse</span>, char const* <span class='color_p'>pUrl</span>, unsigned int <span class='color_p'>uUrlLength</span>, <span class='nowrap'>TWPUrlRatingHandle* <span class='color_p'>phRating</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;enum TWP_RESULT</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'><b>5th</b> parameter <b>hRating</b> has been renamed to <b>phRating</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<br/>
+***********efl-extension***********
+***********minicontrol***********
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<h2>Removed Symbols (18)</h2><hr/>
+<span class='h_name'>minicontrol-handler.h</span>, <span class='lib_name'>libminicontrol-handler.so.0.0.1</span><br/>
+<span class="iname">minicontrol_handler_clone&#160;<span class='sym_p'>(&#160;minicontrol_h <span class='color_p'>handler</span>, <span class='nowrap'>minicontrol_h* <span class='color_p'>handler_new</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<span class="iname">minicontrol_handler_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>minicontrol_h* <span class='color_p'>handler</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<span class="iname">minicontrol_handler_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>minicontrol_h <span class='color_p'>handler</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<span class="iname">minicontrol_handler_get_category&#160;<span class='sym_p'>(&#160;minicontrol_h <span class='color_p'>handler</span>, <span class='nowrap'>char** <span class='color_p'>category</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<span class="iname">minicontrol_handler_get_operation&#160;<span class='sym_p'>(&#160;minicontrol_h <span class='color_p'>handler</span>, <span class='nowrap'>char** <span class='color_p'>operation</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<span class="iname">minicontrol_handler_get_pid&#160;<span class='sym_p'>(&#160;minicontrol_h <span class='color_p'>handler</span>, <span class='nowrap'>int* <span class='color_p'>pid</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<span class="iname">minicontrol_handler_get_priority&#160;<span class='sym_p'>(&#160;minicontrol_h <span class='color_p'>handler</span>, <span class='nowrap'>char** <span class='color_p'>priority</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<span class="iname">minicontrol_handler_get_service_name&#160;<span class='sym_p'>(&#160;minicontrol_h <span class='color_p'>handler</span>, <span class='nowrap'>char** <span class='color_p'>name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<span class="iname">minicontrol_handler_get_timestamp&#160;<span class='sym_p'>(&#160;minicontrol_h <span class='color_p'>handler</span>, <span class='nowrap'>time_t* <span class='color_p'>timestamp</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<span class="iname">minicontrol_handler_set_category&#160;<span class='sym_p'>(&#160;minicontrol_h <span class='color_p'>handler</span>, <span class='nowrap'>char const* <span class='color_p'>category</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<span class="iname">minicontrol_handler_set_operation&#160;<span class='sym_p'>(&#160;minicontrol_h <span class='color_p'>handler</span>, <span class='nowrap'>char const* <span class='color_p'>operation</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<span class="iname">minicontrol_handler_set_priority&#160;<span class='sym_p'>(&#160;minicontrol_h <span class='color_p'>handler</span>, <span class='nowrap'>char const* <span class='color_p'>priority</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<span class="iname">minicontrol_handler_set_service_name&#160;<span class='sym_p'>(&#160;minicontrol_h <span class='color_p'>handler</span>, <span class='nowrap'>char const* <span class='color_p'>name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<span class="iname">minicontrol_handler_set_timestamp&#160;<span class='sym_p'>(&#160;minicontrol_h <span class='color_p'>handler</span>, <span class='nowrap'>time_t <span class='color_p'>timestamp</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<br/>
+<span class='h_name'>minicontrol-monitor.h</span>, <span class='lib_name'>libminicontrol-monitor.so.0.0.1</span><br/>
+<span class="iname">minicontrol_monitor_start_with_handler&#160;<span class='sym_p'>(&#160;minicontrol_monitor_with_handler_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<br/>
+<span class='h_name'>minicontrol-provider.h</span>, <span class='lib_name'>libminicontrol-provider.so.0.0.1</span><br/>
+<span class="iname">minicontrol_win_add_by_handler&#160;<span class='sym_p'>(&#160;<span class='nowrap'>minicontrol_h <span class='color_p'>handler</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;Evas_Object*</span></span><br/>
+<span class="iname">minicontrol_win_handler_get&#160;<span class='sym_p'>(&#160;Evas_Object* <span class='color_p'>mincontrol</span>, <span class='nowrap'>minicontrol_h* <span class='color_p'>handler</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<span class="iname">minicontrol_win_handler_update&#160;<span class='sym_p'>(&#160;Evas_Object* <span class='color_p'>mincontrol</span>, <span class='nowrap'>minicontrol_h <span class='color_p'>handler</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span></span><br/>
+<br/>
+<a style='font-size:11px;' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Data Types, Low Severity (3)</h2><hr/>
+<span class='h_name'>minicontrol-type.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='extendable'>[+]</span> <span class='ttype'>enum</span> minicontrol_request_e (3)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>The member <b>MINICONTROL_REQ_PROVIDER_PAUSE</b> has been removed.</td><td align='left' valign='top'>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td></tr>
+<tr><th>2</th><td align='left' valign='top'>The member <b>MINICONTROL_REQ_PROVIDER_RESUME</b> has been removed.</td><td align='left' valign='top'>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td></tr>
+<tr><th>3</th><td align='left' valign='top'>The member <b>MINICONTROL_REQ_UPDATE_HANDLER</b> has been removed.</td><td align='left' valign='top'>This may result in crash or incorrect behavior of applications because the library may not handle removed member anymore.</td></tr>
+</table>
+<span class="section_affected" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (2)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>minicontrol_request&#160;<span class='sym_p'>(&#160;Evas_Object* <span class='param'>mincontrol</span>, <span class='nowrap'>enum minicontrol_request_e <span class='focus_p'>request</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;request&#39; has type &#39;enum minicontrol_request_e&#39;.</div>
+<span class='iname_a'>minicontrol_viewer_request&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='param'>appid</span>,</span> enum minicontrol_request_e <span class='focus_p'>request</span>, <span class='nowrap'>int <span class='param'>value</span> )</span></span></span><br/><div class='affect'>2nd parameter &#39;request&#39; has type &#39;enum minicontrol_request_e&#39;.</div>
+</div></div>
+<br/><br/></div>
+
+<br/><a style='font-size:11px;' href='#Top'>to the top</a><br/>
+<a name='Symbol_Binary_Problems_Low'></a>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<h2>Problems with Symbols, Low Severity (5)</h2><hr/>
+<span class='h_name'>minicontrol-monitor.h</span>, <span class='lib_name'>libminicontrol-monitor.so.0.0.1</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='extendable'>[+]</span> minicontrol_monitor_start&#160;<span class='sym_p'>(&#160;minicontrol_monitor_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span> (1)</span>
+<br/>
+<div id="c_3" style="display:none;">
+
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Type of return value has been changed from <b>minicontrol_error_e</b> to <b>int</b>.</td><td align='left' valign='top'>Replacement of return type may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_4')">
+<span class='extendable'>[+]</span> minicontrol_monitor_stop&#160;<span class='sym_p'>(&#160;)</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span> (1)</span>
+<br/>
+<div id="c_4" style="display:none;">
+
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Type of return value has been changed from <b>minicontrol_error_e</b> to <b>int</b>.</td><td align='left' valign='top'>Replacement of return type may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<br/><span class='h_name'>minicontrol-provider.h</span>, <span class='lib_name'>libminicontrol-provider.so.0.0.1</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+<span class='extendable'>[+]</span> minicontrol_request&#160;<span class='sym_p'>(&#160;Evas_Object* <span class='color_p'>mincontrol</span>, <span class='nowrap'>enum minicontrol_request_e <span class='color_p'>request</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span> (1)</span>
+<br/>
+<div id="c_5" style="display:none;">
+
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Type of return value has been changed from <b>minicontrol_error_e</b> to <b>int</b>.</td><td align='left' valign='top'>Replacement of return type may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<br/><span class='h_name'>minicontrol-viewer.h</span>, <span class='lib_name'>libminicontrol-viewer.so.0.0.1</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_6')">
+<span class='extendable'>[+]</span> minicontrol_viewer_add&#160;<span class='sym_p'>(&#160;Evas_Object* <span class='color_p'>parent</span>, <span class='nowrap'>char const* <span class='color_p'>svr_name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;Evas_Object*</span> (1)</span>
+<br/>
+<div id="c_6" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span><br/><span class='new_sign'>minicontrol_viewer_add&#160;<span class='sym_p'>(&#160;Evas_Object* <span class='color_p'>parent</span>, <span class='nowrap'>char const* <span class='color_p'>minicontrol_name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;Evas_Object*</span></span><br/>
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'><b>2nd</b> parameter <b>svr_name</b> has been renamed to <b>minicontrol_name</b>.</td><td align='left' valign='top'>Renaming of a parameter may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_7')">
+<span class='extendable'>[+]</span> minicontrol_viewer_request&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, enum minicontrol_request_e <span class='color_p'>request</span>, <span class='nowrap'>int <span class='color_p'>value</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;minicontrol_error_e</span> (1)</span>
+<br/>
+<div id="c_7" style="display:none;">
+
+<table class='ptable'><tr><th width='2%'></th><th width='47%'>Change</th><th>Effect</th></tr><tr><th>1</th><td align='left' valign='top'>Type of return value has been changed from <b>minicontrol_error_e</b> to <b>int</b>.</td><td align='left' valign='top'>Replacement of return type may indicate a change in its semantic meaning.</td></tr>
+</table><br/>
+</div>
+<br/><a style='font-size:11px;' href='#Top'>to the top</a><br/>
+

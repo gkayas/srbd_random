@@ -1,0 +1,11 @@
+package refapp;
+
+import java.util.ArrayList;
+
+public class AppInfo {
+
+	ArrayList<TestInfo> tcList;
+	String appName;
+	String binary;
+
+}

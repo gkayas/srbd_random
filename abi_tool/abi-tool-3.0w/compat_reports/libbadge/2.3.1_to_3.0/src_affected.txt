@@ -1,0 +1,17 @@
+_badget_set_count
+badge_setting_property_set
+_badge_remove
+_badget_set_display
+badge_changed_cb_call
+_badget_get_count
+_badge_is_existing
+_badget_get_display
+_badge_unregister_changed_cb
+badge_setting_db_set
+badge_setting_db_get
+badge_setting_property_get
+badge_db_delete
+_badge_register_changed_cb
+badge_db_insert
+_badge_insert
+badge_foreach_existed

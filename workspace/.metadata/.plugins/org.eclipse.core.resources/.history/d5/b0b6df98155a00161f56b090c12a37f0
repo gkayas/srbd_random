@@ -1,0 +1,88 @@
+
+public class Testcase implements Comparable<Testcase>{
+	
+	public String getSuiteName() {
+		return suiteName;
+	}
+
+	public void setSuiteName(String suiteName) {
+		this.suiteName = suiteName;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	private String suiteName;
+	private String name;
+	private String time;
+	private String status;
+	private String msg;
+	
+	public Testcase(String suite, String name, String time, String status, String msg) {
+		this.suiteName = suite;
+		this.name = name;
+		this.time = time;
+		this.status =status;
+		this.msg = msg;
+	}
+	
+	public Testcase() {
+		this.suiteName = "";
+		this.name = "";
+		this.time = "";
+		this.status = "";
+		this.msg = "";
+	}
+	
+	public void copy(Testcase target) {
+		this.setMsg(target.getMsg());
+		this.setName(target.getName());
+		this.setStatus(target.getStatus());
+		this.setTime(target.getTime());
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(!(o instanceof Testcase)) {
+			return false;
+		}
+		Testcase obj = (Testcase) o;
+		return this.name.equals(obj.name);
+		
+	}
+
+	@Override
+	public int compareTo(Testcase o) {
+		
+		return this.suiteName.compareTo(o.suiteName);
+	}
+	
+}

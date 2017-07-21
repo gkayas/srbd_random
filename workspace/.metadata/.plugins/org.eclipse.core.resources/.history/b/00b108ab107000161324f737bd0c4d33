@@ -1,0 +1,14 @@
+package test;
+
+public class CustomChild extends Custom{
+
+	private String cmsg;
+	public CustomChild(String a, String b) {
+		super(a);
+		
+	}
+	public String toString() {
+		
+		return "I am custom child: "+ cmsg;
+	}
+}

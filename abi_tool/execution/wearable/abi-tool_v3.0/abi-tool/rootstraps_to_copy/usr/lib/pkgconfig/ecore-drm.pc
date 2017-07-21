@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: ecore-drm
+Description: E core library, DRM module
+Requires.private: gbm libtdm >= 1.0.0 libinput >= 0.6.0 libdrm >= 2.4 xkbcommon >= 0.3.0 gbm eina >= 1.16.0 eo >= 1.16.0 eeze >= 1.16.0 eldbus >= 1.16.0 ecore-input >= 1.16.0 ecore >= 1.16.0  
+Version: 1.16.0
+Libs: -L${libdir} -lecore_drm
+Libs.private: 
+Cflags: -I${includedir}/efl-1 -I${includedir}/ecore-drm-1

@@ -1,0 +1,7 @@
+
+public class Suite {
+	String name;
+	int passTc;
+	int failTc;
+	int totalTc;
+}

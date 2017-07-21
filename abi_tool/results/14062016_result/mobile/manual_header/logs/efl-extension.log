@@ -1,0 +1,494 @@
+Temporary header file '/tmp/mDISDW12yg/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension_events.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_legacy.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/mDISDW12yg/dump1.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ethumb-client-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ethumb-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/elementary-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eldbus-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efreet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/edje-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-input-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-imf-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-file-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-con-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump1.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:27:35: error: redeclaration of ‘EEXT_FLOATINGBUTTON_LEFT_OUT’
+    EEXT_FLOATINGBUTTON_LEFT_OUT = 0, /**< hides in the left, but small handler will show only */
+                                   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:27:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_LEFT_OUT’
+    EEXT_FLOATINGBUTTON_LEFT_OUT = 0, /**< hides in the left, but small handler will show only */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump1.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:28:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_LEFT’
+    EEXT_FLOATINGBUTTON_LEFT, /**< shows all of buttons, but lies on the left */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:28:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_LEFT’
+    EEXT_FLOATINGBUTTON_LEFT, /**< shows all of buttons, but lies on the left */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump1.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:29:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_CENTER’
+    EEXT_FLOATINGBUTTON_CENTER, /**< shows all of buttons, but lies on the center */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:29:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_CENTER’
+    EEXT_FLOATINGBUTTON_CENTER, /**< shows all of buttons, but lies on the center */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump1.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:30:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_RIGHT’
+    EEXT_FLOATINGBUTTON_RIGHT, /**< shows all of buttons, but lies on the right */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:30:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_RIGHT’
+    EEXT_FLOATINGBUTTON_RIGHT, /**< shows all of buttons, but lies on the right */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump1.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:31:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_RIGHT_OUT’
+    EEXT_FLOATINGBUTTON_RIGHT_OUT, /**< hides in the right, but small handler will show only */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:31:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_RIGHT_OUT’
+    EEXT_FLOATINGBUTTON_RIGHT_OUT, /**< hides in the right, but small handler will show only */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump1.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:32:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_LAST’
+    EEXT_FLOATINGBUTTON_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:32:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_LAST’
+    EEXT_FLOATINGBUTTON_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump1.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:33:3: error: conflicting declaration ‘typedef enum Eext_Floatingbutton_Pos Eext_Floatingbutton_Pos’
+ } Eext_Floatingbutton_Pos;
+   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:33:3: error: ‘Eext_Floatingbutton_Pos’ has a previous declaration as ‘typedef enum Eext_Floatingbutton_Pos Eext_Floatingbutton_Pos’
+ } Eext_Floatingbutton_Pos;
+   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump1.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:36:39: error: redeclaration of ‘EEXT_FLOATINGBUTTON_MODE_DEFAULT’
+    EEXT_FLOATINGBUTTON_MODE_DEFAULT = 0, /**< allows all positions */
+                                       ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:36:4: note: previous declaration ‘Eext_Floatingbutton_Mode EEXT_FLOATINGBUTTON_MODE_DEFAULT’
+    EEXT_FLOATINGBUTTON_MODE_DEFAULT = 0, /**< allows all positions */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump1.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:37:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES’
+    EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES, /**< allows LEFT and RIGHT positions only */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:37:4: note: previous declaration ‘Eext_Floatingbutton_Mode EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES’
+    EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES, /**< allows LEFT and RIGHT positions only */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump1.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:38:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_MODE_LAST’
+    EEXT_FLOATINGBUTTON_MODE_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:38:4: note: previous declaration ‘Eext_Floatingbutton_Mode EEXT_FLOATINGBUTTON_MODE_LAST’
+    EEXT_FLOATINGBUTTON_MODE_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump1.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:39:3: error: conflicting declaration ‘typedef enum Eext_Floatingbutton_Mode Eext_Floatingbutton_Mode’
+ } Eext_Floatingbutton_Mode;
+   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:39:3: error: ‘Eext_Floatingbutton_Mode’ has a previous declaration as ‘typedef enum Eext_Floatingbutton_Mode Eext_Floatingbutton_Mode’
+ } Eext_Floatingbutton_Mode;
+   ^
+In file included from /tmp/mDISDW12yg/dump1.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:27:35: error: redeclaration of ‘EEXT_FLOATINGBUTTON_LEFT_OUT’
+    EEXT_FLOATINGBUTTON_LEFT_OUT = 0, /**< hides in the left, but small handler will show only */
+                                   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:27:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_LEFT_OUT’
+    EEXT_FLOATINGBUTTON_LEFT_OUT = 0, /**< hides in the left, but small handler will show only */
+    ^
+In file included from /tmp/mDISDW12yg/dump1.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:28:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_LEFT’
+    EEXT_FLOATINGBUTTON_LEFT, /**< shows all of buttons, but lies on the left */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:28:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_LEFT’
+    EEXT_FLOATINGBUTTON_LEFT, /**< shows all of buttons, but lies on the left */
+    ^
+In file included from /tmp/mDISDW12yg/dump1.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:29:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_CENTER’
+    EEXT_FLOATINGBUTTON_CENTER, /**< shows all of buttons, but lies on the center */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:29:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_CENTER’
+    EEXT_FLOATINGBUTTON_CENTER, /**< shows all of buttons, but lies on the center */
+    ^
+In file included from /tmp/mDISDW12yg/dump1.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:30:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_RIGHT’
+    EEXT_FLOATINGBUTTON_RIGHT, /**< shows all of buttons, but lies on the right */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:30:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_RIGHT’
+    EEXT_FLOATINGBUTTON_RIGHT, /**< shows all of buttons, but lies on the right */
+    ^
+In file included from /tmp/mDISDW12yg/dump1.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:31:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_RIGHT_OUT’
+    EEXT_FLOATINGBUTTON_RIGHT_OUT, /**< hides in the right, but small handler will show only */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:31:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_RIGHT_OUT’
+    EEXT_FLOATINGBUTTON_RIGHT_OUT, /**< hides in the right, but small handler will show only */
+    ^
+In file included from /tmp/mDISDW12yg/dump1.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:32:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_LAST’
+    EEXT_FLOATINGBUTTON_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:32:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_LAST’
+    EEXT_FLOATINGBUTTON_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /tmp/mDISDW12yg/dump1.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:33:3: error: conflicting declaration ‘typedef enum Eext_Floatingbutton_Pos Eext_Floatingbutton_Pos’
+ } Eext_Floatingbutton_Pos;
+   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:33:3: error: ‘Eext_Floatingbutton_Pos’ has a previous declaration as ‘typedef enum Eext_Floatingbutton_Pos Eext_Floatingbutton_Pos’
+ } Eext_Floatingbutton_Pos;
+   ^
+In file included from /tmp/mDISDW12yg/dump1.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:36:39: error: redeclaration of ‘EEXT_FLOATINGBUTTON_MODE_DEFAULT’
+    EEXT_FLOATINGBUTTON_MODE_DEFAULT = 0, /**< allows all positions */
+                                       ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:36:4: note: previous declaration ‘Eext_Floatingbutton_Mode EEXT_FLOATINGBUTTON_MODE_DEFAULT’
+    EEXT_FLOATINGBUTTON_MODE_DEFAULT = 0, /**< allows all positions */
+    ^
+In file included from /tmp/mDISDW12yg/dump1.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:37:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES’
+    EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES, /**< allows LEFT and RIGHT positions only */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:37:4: note: previous declaration ‘Eext_Floatingbutton_Mode EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES’
+    EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES, /**< allows LEFT and RIGHT positions only */
+    ^
+In file included from /tmp/mDISDW12yg/dump1.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:38:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_MODE_LAST’
+    EEXT_FLOATINGBUTTON_MODE_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:38:4: note: previous declaration ‘Eext_Floatingbutton_Mode EEXT_FLOATINGBUTTON_MODE_LAST’
+    EEXT_FLOATINGBUTTON_MODE_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /tmp/mDISDW12yg/dump1.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:39:3: error: conflicting declaration ‘typedef enum Eext_Floatingbutton_Mode Eext_Floatingbutton_Mode’
+ } Eext_Floatingbutton_Mode;
+   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/efl-extension/eext_floatingbutton_common.h:39:3: error: ‘Eext_Floatingbutton_Mode’ has a previous declaration as ‘typedef enum Eext_Floatingbutton_Mode Eext_Floatingbutton_Mode’
+ } Eext_Floatingbutton_Mode;
+   ^
+
+Temporary header file '/tmp/mDISDW12yg/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension_events.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_legacy.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/mDISDW12yg/dump2.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ethumb-client-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ethumb-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/elementary-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eldbus-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efreet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eet-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/edje-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-input-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-imf-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-file-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-con-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump2.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:27:35: error: redeclaration of ‘EEXT_FLOATINGBUTTON_LEFT_OUT’
+    EEXT_FLOATINGBUTTON_LEFT_OUT = 0, /**< hides in the left, but small handler will show only */
+                                   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:27:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_LEFT_OUT’
+    EEXT_FLOATINGBUTTON_LEFT_OUT = 0, /**< hides in the left, but small handler will show only */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump2.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:28:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_LEFT’
+    EEXT_FLOATINGBUTTON_LEFT, /**< shows all of buttons, but lies on the left */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:28:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_LEFT’
+    EEXT_FLOATINGBUTTON_LEFT, /**< shows all of buttons, but lies on the left */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump2.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:29:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_CENTER’
+    EEXT_FLOATINGBUTTON_CENTER, /**< shows all of buttons, but lies on the center */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:29:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_CENTER’
+    EEXT_FLOATINGBUTTON_CENTER, /**< shows all of buttons, but lies on the center */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump2.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:30:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_RIGHT’
+    EEXT_FLOATINGBUTTON_RIGHT, /**< shows all of buttons, but lies on the right */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:30:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_RIGHT’
+    EEXT_FLOATINGBUTTON_RIGHT, /**< shows all of buttons, but lies on the right */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump2.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:31:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_RIGHT_OUT’
+    EEXT_FLOATINGBUTTON_RIGHT_OUT, /**< hides in the right, but small handler will show only */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:31:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_RIGHT_OUT’
+    EEXT_FLOATINGBUTTON_RIGHT_OUT, /**< hides in the right, but small handler will show only */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump2.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:32:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_LAST’
+    EEXT_FLOATINGBUTTON_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:32:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_LAST’
+    EEXT_FLOATINGBUTTON_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump2.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:33:3: error: conflicting declaration ‘typedef enum Eext_Floatingbutton_Pos Eext_Floatingbutton_Pos’
+ } Eext_Floatingbutton_Pos;
+   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:33:3: error: ‘Eext_Floatingbutton_Pos’ has a previous declaration as ‘typedef enum Eext_Floatingbutton_Pos Eext_Floatingbutton_Pos’
+ } Eext_Floatingbutton_Pos;
+   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump2.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:36:39: error: redeclaration of ‘EEXT_FLOATINGBUTTON_MODE_DEFAULT’
+    EEXT_FLOATINGBUTTON_MODE_DEFAULT = 0, /**< allows all positions */
+                                       ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:36:4: note: previous declaration ‘Eext_Floatingbutton_Mode EEXT_FLOATINGBUTTON_MODE_DEFAULT’
+    EEXT_FLOATINGBUTTON_MODE_DEFAULT = 0, /**< allows all positions */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump2.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:37:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES’
+    EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES, /**< allows LEFT and RIGHT positions only */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:37:4: note: previous declaration ‘Eext_Floatingbutton_Mode EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES’
+    EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES, /**< allows LEFT and RIGHT positions only */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump2.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:38:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_MODE_LAST’
+    EEXT_FLOATINGBUTTON_MODE_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:38:4: note: previous declaration ‘Eext_Floatingbutton_Mode EEXT_FLOATINGBUTTON_MODE_LAST’
+    EEXT_FLOATINGBUTTON_MODE_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /tmp/mDISDW12yg/dump2.h:5:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:39:3: error: conflicting declaration ‘typedef enum Eext_Floatingbutton_Mode Eext_Floatingbutton_Mode’
+ } Eext_Floatingbutton_Mode;
+   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:39:3: error: ‘Eext_Floatingbutton_Mode’ has a previous declaration as ‘typedef enum Eext_Floatingbutton_Mode Eext_Floatingbutton_Mode’
+ } Eext_Floatingbutton_Mode;
+   ^
+In file included from /tmp/mDISDW12yg/dump2.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:27:35: error: redeclaration of ‘EEXT_FLOATINGBUTTON_LEFT_OUT’
+    EEXT_FLOATINGBUTTON_LEFT_OUT = 0, /**< hides in the left, but small handler will show only */
+                                   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:27:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_LEFT_OUT’
+    EEXT_FLOATINGBUTTON_LEFT_OUT = 0, /**< hides in the left, but small handler will show only */
+    ^
+In file included from /tmp/mDISDW12yg/dump2.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:28:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_LEFT’
+    EEXT_FLOATINGBUTTON_LEFT, /**< shows all of buttons, but lies on the left */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:28:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_LEFT’
+    EEXT_FLOATINGBUTTON_LEFT, /**< shows all of buttons, but lies on the left */
+    ^
+In file included from /tmp/mDISDW12yg/dump2.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:29:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_CENTER’
+    EEXT_FLOATINGBUTTON_CENTER, /**< shows all of buttons, but lies on the center */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:29:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_CENTER’
+    EEXT_FLOATINGBUTTON_CENTER, /**< shows all of buttons, but lies on the center */
+    ^
+In file included from /tmp/mDISDW12yg/dump2.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:30:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_RIGHT’
+    EEXT_FLOATINGBUTTON_RIGHT, /**< shows all of buttons, but lies on the right */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:30:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_RIGHT’
+    EEXT_FLOATINGBUTTON_RIGHT, /**< shows all of buttons, but lies on the right */
+    ^
+In file included from /tmp/mDISDW12yg/dump2.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:31:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_RIGHT_OUT’
+    EEXT_FLOATINGBUTTON_RIGHT_OUT, /**< hides in the right, but small handler will show only */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:31:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_RIGHT_OUT’
+    EEXT_FLOATINGBUTTON_RIGHT_OUT, /**< hides in the right, but small handler will show only */
+    ^
+In file included from /tmp/mDISDW12yg/dump2.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:32:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_LAST’
+    EEXT_FLOATINGBUTTON_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:32:4: note: previous declaration ‘Eext_Floatingbutton_Pos EEXT_FLOATINGBUTTON_LAST’
+    EEXT_FLOATINGBUTTON_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /tmp/mDISDW12yg/dump2.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:33:3: error: conflicting declaration ‘typedef enum Eext_Floatingbutton_Pos Eext_Floatingbutton_Pos’
+ } Eext_Floatingbutton_Pos;
+   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:33:3: error: ‘Eext_Floatingbutton_Pos’ has a previous declaration as ‘typedef enum Eext_Floatingbutton_Pos Eext_Floatingbutton_Pos’
+ } Eext_Floatingbutton_Pos;
+   ^
+In file included from /tmp/mDISDW12yg/dump2.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:36:39: error: redeclaration of ‘EEXT_FLOATINGBUTTON_MODE_DEFAULT’
+    EEXT_FLOATINGBUTTON_MODE_DEFAULT = 0, /**< allows all positions */
+                                       ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:36:4: note: previous declaration ‘Eext_Floatingbutton_Mode EEXT_FLOATINGBUTTON_MODE_DEFAULT’
+    EEXT_FLOATINGBUTTON_MODE_DEFAULT = 0, /**< allows all positions */
+    ^
+In file included from /tmp/mDISDW12yg/dump2.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:37:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES’
+    EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES, /**< allows LEFT and RIGHT positions only */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:37:4: note: previous declaration ‘Eext_Floatingbutton_Mode EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES’
+    EEXT_FLOATINGBUTTON_MODE_BOTH_SIDES, /**< allows LEFT and RIGHT positions only */
+    ^
+In file included from /tmp/mDISDW12yg/dump2.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:38:4: error: redeclaration of ‘EEXT_FLOATINGBUTTON_MODE_LAST’
+    EEXT_FLOATINGBUTTON_MODE_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:38:4: note: previous declaration ‘Eext_Floatingbutton_Mode EEXT_FLOATINGBUTTON_MODE_LAST’
+    EEXT_FLOATINGBUTTON_MODE_LAST /**< indicates the last, do not use this **/
+    ^
+In file included from /tmp/mDISDW12yg/dump2.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:39:3: error: conflicting declaration ‘typedef enum Eext_Floatingbutton_Mode Eext_Floatingbutton_Mode’
+ } Eext_Floatingbutton_Mode;
+   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton.h:44:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/efl_extension.h:25,
+                 from /tmp/mDISDW12yg/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/efl-extension/eext_floatingbutton_common.h:39:3: error: ‘Eext_Floatingbutton_Mode’ has a previous declaration as ‘typedef enum Eext_Floatingbutton_Mode Eext_Floatingbutton_Mode’
+ } Eext_Floatingbutton_Mode;
+   ^
+

@@ -1,0 +1,10 @@
+package refapp;
+
+public class ResultRow {
+	String name;
+	String binary;
+	String install;
+	String unistall;
+	String exploratory;
+	
+}

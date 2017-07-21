@@ -1,0 +1,3 @@
+player_set_x11_display_pixmap_error_cb
+player_set_x11_display_pixmap
+player_set_sound_type

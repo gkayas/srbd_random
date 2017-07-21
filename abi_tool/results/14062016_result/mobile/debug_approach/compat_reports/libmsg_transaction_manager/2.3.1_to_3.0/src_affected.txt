@@ -1,0 +1,6 @@
+_Z20MsgGetMsgTypeHandlerPK10_MSG_CMD_SPPc
+_Z33MsgGetConversationViewListHandlerPK10_MSG_CMD_SPPc
+_Z27MsgGetFolderViewListHandlerPK10_MSG_CMD_SPPc
+_Z18unique_ptr_deleterIiEvPPT_
+_ZnwjPv
+_ZdlPvS_

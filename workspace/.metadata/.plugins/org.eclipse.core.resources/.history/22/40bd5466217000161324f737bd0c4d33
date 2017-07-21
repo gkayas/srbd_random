@@ -1,0 +1,34 @@
+package suites;
+
+import base.TCBase;
+
+public class Calendar extends TCBase {
+
+	String appId; 
+	String binaryName; 
+	String profileName;
+	public Calendar() {
+		super();
+	}
+
+	public Calendar(String s, String binaryName, String profileName) {
+		super(s);
+		this.binaryName = binaryName;
+		this.profileName = profileName;
+		
+		//Extarct wgt to get appId
+	}
+
+	// ========================================================[TestCases]==========================================================
+
+	public void install() {
+		
+	}
+	
+	public void exp_test() {
+	}
+
+	public void uninstall() {
+		
+	}
+}

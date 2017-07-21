@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: libdrm_vigs
+Description: Userspace interface to VIGS kernel DRM services
+Version: 2.4.35
+Libs: -L${libdir} -ldrm_vigs
+Cflags: -I${includedir} -I${includedir}/libdrm -I${includedir}/vigs
+Requires.private: libdrm

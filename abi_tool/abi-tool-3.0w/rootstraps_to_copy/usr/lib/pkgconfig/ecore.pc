@@ -1,0 +1,18 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+modules=/usr/lib/ecore
+module_arch=v-1.16
+datarootdir=${prefix}/share
+datadir=/usr/share
+eoincludedir=/usr/share/eolian/include
+eolian_flags=-I${pc_sysrootdir}${eoincludedir}/ecore-1
+
+Name: ecore
+Description: Ecore event abstraction library
+Requires.private: libsystemd glib-2.0 gthread-2.0 efl >= 1.16.0 eina >= 1.16.0 eo >= 1.16.0  
+Version: 1.16.0
+Libs: -L${libdir} -lecore
+Libs.private:  -lm 
+Cflags: -I${includedir}/efl-1 -I${includedir}/ecore-1

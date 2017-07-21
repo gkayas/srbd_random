@@ -1,0 +1,20 @@
+Temporary header file '/tmp/768xsaIYUe/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/TCSErrorCodes.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/TCSImpl.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/TWPImpl.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/768xsaIYUe/dump1.h"
+
+Temporary header file '/tmp/768xsaIYUe/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csf/TCSErrorCodes.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csf/TCSImpl.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/csf/TWPImpl.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/768xsaIYUe/dump2.h"
+

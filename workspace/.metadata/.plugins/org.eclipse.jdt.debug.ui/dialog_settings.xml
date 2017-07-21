@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="112" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth2"/>
+	<item value="1" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.sortColumn"/>
+	<item value="194" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth1"/>
+	<item value="131" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth0"/>
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode&gt;=VncViewer/src&amp;lt;com.turbovnc.vncviewer{ImageDrawTest.java[ImageDrawTest&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=StoreAppAutomation/src&amp;lt;application{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=UIAInterface/src&amp;lt;fxviewer{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=RcpttRunner/src&amp;lt;{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=DIRunner/src&amp;lt;manager{MainRunner.java[MainRunner&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=VncViewer/src&amp;lt;com.turbovnc.vncviewer{VncViewer.java[VncViewer&lt;/infoNode&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="92" key="DIALOG_Y_ORIGIN"/>
+			<item value="252" key="DIALOG_X_ORIGIN"/>
+		</section>
+	</section>
+	<section name="org.eclipse.jdt.debug.ui.RUNTIME_CLASSPATH_ADVANCED_DIALOG">
+		<item value="251" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="333" key="DIALOG_HEIGHT"/>
+		<item value="129" key="DIALOG_Y_ORIGIN"/>
+		<item value="329" key="DIALOG_X_ORIGIN"/>
+	</section>
+</section>

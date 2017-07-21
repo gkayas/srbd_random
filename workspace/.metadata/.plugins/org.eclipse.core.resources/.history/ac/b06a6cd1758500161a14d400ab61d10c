@@ -1,0 +1,11 @@
+package fxviewer;
+
+
+public class CheckBoxCellFactory implements Callback {
+	@Override
+	public TableCell call(Object param) {
+		CheckBoxTableCell<Person,Boolean> checkBoxCell = new CheckBoxTableCell();
+		return checkBoxCell;
+	}
+}
+

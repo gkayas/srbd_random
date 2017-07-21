@@ -1,0 +1,67 @@
+Temporary header file '/tmp/n8Tzjp1eTu/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_activity.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_db.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_db_extension.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_db_status.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_errors.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_extension.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_filter.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_group.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_internal.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_list.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_person.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_phone_log.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_phone_log_internal.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_query.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_record.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_service.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_setting.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_sim.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_types.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_vcard.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc/contacts_views.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/n8Tzjp1eTu/dump1.h"  -I/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/contacts-svc -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/n8Tzjp1eTu/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_activity.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_db.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_db_extension.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_db_status.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_errors.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_extension.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_filter.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_group.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_internal.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_list.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_person.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_phone_log.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_phone_log_internal.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_query.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_record.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_service.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_setting.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_sim.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_types.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_vcard.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_views.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/n8Tzjp1eTu/dump2.h"  -I/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts.h:37:0,
+                 from /tmp/n8Tzjp1eTu/dump2.h:3:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_sim.h:81:44: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int contacts_sim_import_all_contacts(void) TIZEN_DEPRECATED_API;
+                                            ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/contacts-svc/contacts_sim.h:109:61: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int contacts_sim_get_initialization_status(bool *completed) TIZEN_DEPRECATED_API;
+                                                             ^
+

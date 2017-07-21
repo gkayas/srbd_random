@@ -1,0 +1,59 @@
+Temporary header file '/tmp/iS_hy0W35I/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/service-adaptor-client/service-adaptor-client.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/service-adaptor/service-adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/service-adaptor-client/service-adaptor-client-auth.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/service-adaptor-client/service-adaptor-client-contact.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/service-adaptor-client/service-adaptor-client-message.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/service-adaptor-client/service-adaptor-client-push.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/service-adaptor-client/service-adaptor-client-shop.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/service-adaptor-client/service-adaptor-client-storage.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/service-adaptor-client/service_adaptor_client_log.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/service-adaptor-client/service_adaptor_client_type.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/service-adaptor/dbus-server.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/service_adaptor_client.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/service_adaptor_client_plugin.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/service_adaptor_client_storage.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/service_adaptor_client_storage_internal.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/iS_hy0W35I/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/glib-2.0 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/dlog -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/lib/glib-2.0/include
+
+Temporary header file '/tmp/iS_hy0W35I/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/service-adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/service-adaptor-client.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/service-adaptor-client-auth.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/service-adaptor-client-contact.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/service-adaptor-client-message.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/service-adaptor-client-push.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/service-adaptor-client-shop.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/service-adaptor-client-storage.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/pluginConfig.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/pluginConfigTypes.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/service_adaptor_client.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/service_adaptor_client_plugin.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/service_adaptor_client_private.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/service_adaptor_client_storage_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/service_adaptor_client_type.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/plugin_message.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/dbus-server.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-provider/auth-adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-provider/contact-adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-provider/message-adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-provider/push-adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-provider/shop-adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-provider/storage-adaptor.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/iS_hy0W35I/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/glib-2.0 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/lib/glib-2.0/include
+
+In file included from /tmp/iS_hy0W35I/dump2.h:15:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/service-adaptor/service_adaptor_client_private.h:58:44: fatal error: private/service-adaptor-client.h: No such file or directory
+ #include "private/service-adaptor-client.h"
+                                            ^
+compilation terminated.
+

@@ -1,0 +1,9 @@
+
+public class Main {
+	static String SOURCE_XML_PATH = "tmp_results";
+	 
+	
+	public static void main(String [] args) {
+		
+	}
+}

@@ -1,0 +1,29 @@
+1462785933693	Rename resource 'MainScene.fxml'
+1462786063750	Delete element
+1462786652715	Delete element
+1462786660025	Copy file
+1462786920776	Rename resource 'res'
+1462787431447	Delete element
+1462787893373	Delete element
+1462787898214	Delete element
+1462787936882	Copy file
+1462787942579	Delete element
+1462788085659	Delete element
+1462788097213	Copy file
+1462788102028	Delete element
+1462791031226	Delete element
+1462854331094	Copy file
+1462854334626	Delete element
+1462856525589	Delete element
+1462864316647	Delete element
+1462866995265	Delete element
+1462872963169	Rename field 'staus'
+1462965519264	Rename type 'ConsoleUpdater'
+1463128225826	Rename type 'TCRunnertask'
+1463128981781	Delete element
+1463129014363	Delete element
+1463136513411	Delete element
+1463139395836	Delete element
+1463192238689	Encapsulate field 'testName'
+1463192247066	Encapsulate field 'tcStatus'
+1463192251048	Encapsulate field 'tcRemark'

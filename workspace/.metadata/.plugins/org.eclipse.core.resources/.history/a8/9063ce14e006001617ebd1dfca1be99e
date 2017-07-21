@@ -1,0 +1,13 @@
+
+public abstract class  Node {
+	
+	
+	protected String type;
+	protected String getvalue;
+
+	public abstract String getType(); 
+	
+	public abstract int getValue(); 
+	
+	public abstract int getOperation(); 
+}

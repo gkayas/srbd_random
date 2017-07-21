@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+apiversion=0.1.0
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: dali-adaptor
+Description: DALi adaptor using ecore
+Version: ${apiversion}
+Requires: dali-core
+Libs: -L${libdir} -ldali-adaptor
+Cflags: -I${includedir}/dali

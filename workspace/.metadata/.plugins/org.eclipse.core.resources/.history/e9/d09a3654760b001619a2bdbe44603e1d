@@ -1,0 +1,18 @@
+
+public class UnknownNode extends Node {
+
+	
+	public UnknownNode(int type) {
+		super(type);
+	}
+
+
+
+	@Override
+	public int getValue() {
+	
+		return value;
+	}
+
+	
+}

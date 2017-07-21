@@ -1,0 +1,35 @@
+Temporary header file '/tmp/AWsFVnEgeo/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/oauth2.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/oauth2_error.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/oauth2_manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/oauth2_request.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/oauth2_response.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/oauth2_types.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/AWsFVnEgeo/dump1.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/AWsFVnEgeo/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/oauth2.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/oauth2_error.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/oauth2_manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/oauth2_request.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/oauth2_response.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/oauth2_types.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/AWsFVnEgeo/dump2.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/curl/curl.h:35:0,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/oauth2_request.h:22,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/oauth2_manager.h:23,
+                 from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/oauth2.h:21,
+                 from /tmp/AWsFVnEgeo/dump2.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/curl/curlrules.h:143:41: error: size of array ‘__curl_rule_01__’ is negative
+     [CurlchkszEQ(long, CURL_SIZEOF_LONG)];
+                                         ^
+

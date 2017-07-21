@@ -1,0 +1,2133 @@
+Temporary header file '/tmp/SbSq85dDLH/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_canvas.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_canvas.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_object.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_object.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_box.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_box.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_clickable_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_clickable_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_common_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_common_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_draggable_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_draggable_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_grid.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_grid.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_image.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_image.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_line.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_line.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_object.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_object.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_object_smart.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_object_smart.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_out.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_out.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_polygon.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_polygon.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_rectangle.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_rectangle.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_scrollable_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_scrollable_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_selectable_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_selectable_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_signal_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_signal_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_smart_clipped.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_smart_clipped.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_table.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_table.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_text.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_text.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_textblock.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_textblock.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_textgrid.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_textgrid.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_vg.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_vg.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_zoomable_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_zoomable_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Engine_Buffer.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Engine_GL_X11.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Engine_Software_X11.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_GL.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_GL_GLES1_Helpers.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_GL_GLES2_Helpers.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_GL_GLES3_Helpers.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Loader.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/efl_vg_base.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/efl_vg_base.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/efl_vg_container.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/efl_vg_container.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/efl_vg_gradient.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/efl_vg_gradient.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/efl_vg_gradient_linear.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/efl_vg_gradient_linear.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/efl_vg_gradient_radial.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/efl_vg_gradient_radial.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/efl_vg_root_node.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/efl_vg_root_node.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/efl_vg_shape.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/efl_vg_shape.eo.legacy.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/SbSq85dDLH/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/widget_service -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /tmp/SbSq85dDLH/dump1.h:3:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:199:36: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_init(Evas_Object *win);
+                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:199:49: error: ‘win’ was not declared in this scope
+ extern int widget_viewer_evas_init(Evas_Object *win);
+                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:222:8: error: ‘Evas_Object’ does not name a type
+ extern Evas_Object *widget_viewer_evas_add_widget(Evas_Object *parent, const char *widget_id, const char *content_info, double period);
+        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:278:44: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_pause_widget(Evas_Object *widget);
+                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:278:57: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_pause_widget(Evas_Object *widget);
+                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:292:45: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_resume_widget(Evas_Object *widget);
+                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:292:58: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_resume_widget(Evas_Object *widget);
+                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:316:56: error: ‘Evas_Object’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_content_info(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:316:69: error: ‘widget’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_content_info(Evas_Object *widget);
+                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:327:56: error: ‘Evas_Object’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_title_string(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:327:69: error: ‘widget’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_title_string(Evas_Object *widget);
+                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:337:53: error: ‘Evas_Object’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_widget_id(Evas_Object *widget);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:337:66: error: ‘widget’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_widget_id(Evas_Object *widget);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:346:45: error: ‘Evas_Object’ was not declared in this scope
+ extern double widget_viewer_evas_get_period(Evas_Object *widget);
+                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:346:58: error: ‘widget’ was not declared in this scope
+ extern double widget_viewer_evas_get_period(Evas_Object *widget);
+                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:356:51: error: variable or field ‘widget_viewer_evas_cancel_click_event’ declared void
+ extern void widget_viewer_evas_cancel_click_event(Evas_Object *widget);
+                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:356:51: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:356:64: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_cancel_click_event(Evas_Object *widget);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:364:48: error: variable or field ‘widget_viewer_evas_disable_preview’ declared void
+ extern void widget_viewer_evas_disable_preview(Evas_Object *widget);
+                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:364:48: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:364:61: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_disable_preview(Evas_Object *widget);
+                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:373:53: error: variable or field ‘widget_viewer_evas_disable_overlay_text’ declared void
+ extern void widget_viewer_evas_disable_overlay_text(Evas_Object *widget);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:373:53: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:373:66: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_disable_overlay_text(Evas_Object *widget);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:382:48: error: variable or field ‘widget_viewer_evas_disable_loading’ declared void
+ extern void widget_viewer_evas_disable_loading(Evas_Object *widget);
+                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:382:48: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:382:61: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_disable_loading(Evas_Object *widget);
+                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:397:51: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_feed_mouse_up_event(Evas_Object *widget);
+                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:397:64: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_feed_mouse_up_event(Evas_Object *widget);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:407:56: error: variable or field ‘widget_viewer_evas_activate_faulted_widget’ declared void
+ extern void widget_viewer_evas_activate_faulted_widget(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:407:56: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:407:69: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_activate_faulted_widget(Evas_Object *widget);
+                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:417:43: error: ‘Evas_Object’ was not declared in this scope
+ extern bool widget_viewer_evas_is_faulted(Evas_Object *widget);
+                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:417:56: error: ‘widget’ was not declared in this scope
+ extern bool widget_viewer_evas_is_faulted(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:431:49: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_freeze_visibility(Evas_Object *widget, widget_visibility_status_e status);
+                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:431:62: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_freeze_visibility(Evas_Object *widget, widget_visibility_status_e status);
+                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:431:97: error: expected primary-expression before ‘status’
+ extern int widget_viewer_evas_freeze_visibility(Evas_Object *widget, widget_visibility_status_e status);
+                                                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:442:47: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_thaw_visibility(Evas_Object *widget);
+                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:442:60: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_thaw_visibility(Evas_Object *widget);
+                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:452:53: error: ‘Evas_Object’ was not declared in this scope
+ extern bool widget_viewer_evas_is_visibility_frozen(Evas_Object *widget);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:452:66: error: ‘widget’ was not declared in this scope
+ extern bool widget_viewer_evas_is_visibility_frozen(Evas_Object *widget);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:462:42: error: ‘Evas_Object’ was not declared in this scope
+ extern bool widget_viewer_evas_is_widget(Evas_Object *widget);
+                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:462:55: error: ‘widget’ was not declared in this scope
+ extern bool widget_viewer_evas_is_widget(Evas_Object *widget);
+                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:470:53: error: variable or field ‘widget_viewer_evas_set_permanent_delete’ declared void
+ extern void widget_viewer_evas_set_permanent_delete(Evas_Object *widget, int flag);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:470:53: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:470:66: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_set_permanent_delete(Evas_Object *widget, int flag);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/widget_viewer_evas/widget_viewer_evas.h:470:74: error: expected primary-expression before ‘int’
+ extern void widget_viewer_evas_set_permanent_delete(Evas_Object *widget, int flag);
+                                                                          ^
+In file included from /tmp/SbSq85dDLH/dump1.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:39:56: error: ‘Evas_Real’ does not name a type
+ EOAPI void  evas_3d_camera_projection_matrix_set(const Evas_Real *matrix);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:56:50: error: variable or field ‘evas_3d_camera_projection_matrix_get’ declared void
+ EOAPI void  evas_3d_camera_projection_matrix_get(Evas_Real *matrix);
+                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:56:50: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:56:61: error: ‘matrix’ was not declared in this scope
+ EOAPI void  evas_3d_camera_projection_matrix_get(Evas_Real *matrix);
+                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:79:55: error: variable or field ‘evas_3d_camera_projection_perspective_set’ declared void
+ EOAPI void  evas_3d_camera_projection_perspective_set(Evas_Real fovy, Evas_Real aspect, Evas_Real dnear, Evas_Real dfar);
+                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:79:55: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:79:71: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_camera_projection_perspective_set(Evas_Real fovy, Evas_Real aspect, Evas_Real dnear, Evas_Real dfar);
+                                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:79:89: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_camera_projection_perspective_set(Evas_Real fovy, Evas_Real aspect, Evas_Real dnear, Evas_Real dfar);
+                                                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:79:106: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_camera_projection_perspective_set(Evas_Real fovy, Evas_Real aspect, Evas_Real dnear, Evas_Real dfar);
+                                                                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:98:51: error: variable or field ‘evas_3d_camera_projection_frustum_set’ declared void
+ EOAPI void  evas_3d_camera_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:98:51: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:98:67: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_camera_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:98:84: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_camera_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:98:102: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_camera_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:98:117: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_camera_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                                                     ^
+In file included from /tmp/SbSq85dDLH/dump1.h:8:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:98:134: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_camera_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:117:49: error: variable or field ‘evas_3d_camera_projection_ortho_set’ declared void
+ EOAPI void  evas_3d_camera_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:117:49: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:117:65: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_camera_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:117:82: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_camera_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:117:100: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_camera_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:117:115: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_camera_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:117:132: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_camera_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:137:50: error: ‘Evas_3D_Node’ was not declared in this scope
+ EOAPI Eina_Bool  evas_3d_camera_node_visible_get(Evas_3D_Node *camera_node, Evas_3D_Node *node, Evas_3D_Frustum_Mode key);
+                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:137:64: error: ‘camera_node’ was not declared in this scope
+ EOAPI Eina_Bool  evas_3d_camera_node_visible_get(Evas_3D_Node *camera_node, Evas_3D_Node *node, Evas_3D_Frustum_Mode key);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:137:77: error: ‘Evas_3D_Node’ was not declared in this scope
+ EOAPI Eina_Bool  evas_3d_camera_node_visible_get(Evas_3D_Node *camera_node, Evas_3D_Node *node, Evas_3D_Frustum_Mode key);
+                                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:137:91: error: ‘node’ was not declared in this scope
+ EOAPI Eina_Bool  evas_3d_camera_node_visible_get(Evas_3D_Node *camera_node, Evas_3D_Node *node, Evas_3D_Frustum_Mode key);
+                                                                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_camera.eo.h:137:97: error: ‘Evas_3D_Frustum_Mode’ was not declared in this scope
+ EOAPI Eina_Bool  evas_3d_camera_node_visible_get(Evas_3D_Node *camera_node, Evas_3D_Node *node, Evas_3D_Frustum_Mode key);
+                                                                                                 ^
+In file included from /tmp/SbSq85dDLH/dump1.h:10:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:69:45: error: variable or field ‘evas_3d_light_spot_exponent_set’ declared void
+ EOAPI void  evas_3d_light_spot_exponent_set(Evas_Real exponent);
+                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:69:45: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:81:7: error: ‘Evas_Real’ does not name a type
+ EOAPI Evas_Real  evas_3d_light_spot_exponent_get(void);
+       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:97:43: error: variable or field ‘evas_3d_light_spot_cutoff_set’ declared void
+ EOAPI void  evas_3d_light_spot_cutoff_set(Evas_Real cutoff);
+                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:97:43: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:109:7: error: ‘Evas_Real’ does not name a type
+ EOAPI Evas_Real  evas_3d_light_spot_cutoff_get(void);
+       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:153:39: error: variable or field ‘evas_3d_light_ambient_set’ declared void
+ EOAPI void  evas_3d_light_ambient_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:153:39: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:153:52: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_ambient_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:153:65: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_ambient_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:153:78: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_ambient_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:170:39: error: variable or field ‘evas_3d_light_ambient_get’ declared void
+ EOAPI void  evas_3d_light_ambient_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:170:39: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:170:50: error: ‘r’ was not declared in this scope
+ EOAPI void  evas_3d_light_ambient_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:170:53: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_ambient_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:170:64: error: ‘g’ was not declared in this scope
+ EOAPI void  evas_3d_light_ambient_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:170:67: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_ambient_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:170:78: error: ‘b’ was not declared in this scope
+ EOAPI void  evas_3d_light_ambient_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:170:81: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_ambient_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:170:92: error: ‘a’ was not declared in this scope
+ EOAPI void  evas_3d_light_ambient_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:187:39: error: variable or field ‘evas_3d_light_diffuse_set’ declared void
+ EOAPI void  evas_3d_light_diffuse_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:187:39: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:187:52: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_diffuse_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:187:65: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_diffuse_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:187:78: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_diffuse_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:204:39: error: variable or field ‘evas_3d_light_diffuse_get’ declared void
+ EOAPI void  evas_3d_light_diffuse_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:204:39: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:204:50: error: ‘r’ was not declared in this scope
+ EOAPI void  evas_3d_light_diffuse_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:204:53: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_diffuse_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:204:64: error: ‘g’ was not declared in this scope
+ EOAPI void  evas_3d_light_diffuse_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:204:67: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_diffuse_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:204:78: error: ‘b’ was not declared in this scope
+ EOAPI void  evas_3d_light_diffuse_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:204:81: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_diffuse_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:204:92: error: ‘a’ was not declared in this scope
+ EOAPI void  evas_3d_light_diffuse_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:221:40: error: variable or field ‘evas_3d_light_specular_set’ declared void
+ EOAPI void  evas_3d_light_specular_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:221:40: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:221:53: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_specular_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:221:66: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_specular_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:221:79: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_specular_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:238:40: error: variable or field ‘evas_3d_light_specular_get’ declared void
+ EOAPI void  evas_3d_light_specular_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:238:40: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:238:51: error: ‘r’ was not declared in this scope
+ EOAPI void  evas_3d_light_specular_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:238:54: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_specular_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:238:65: error: ‘g’ was not declared in this scope
+ EOAPI void  evas_3d_light_specular_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:238:68: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_specular_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:238:79: error: ‘b’ was not declared in this scope
+ EOAPI void  evas_3d_light_specular_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:238:82: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_specular_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:238:93: error: ‘a’ was not declared in this scope
+ EOAPI void  evas_3d_light_specular_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:262:43: error: variable or field ‘evas_3d_light_attenuation_set’ declared void
+ EOAPI void  evas_3d_light_attenuation_set(Evas_Real constant, Evas_Real linear, Evas_Real quadratic);
+                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:262:43: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:262:63: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_attenuation_set(Evas_Real constant, Evas_Real linear, Evas_Real quadratic);
+                                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:262:81: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_attenuation_set(Evas_Real constant, Evas_Real linear, Evas_Real quadratic);
+                                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:278:43: error: variable or field ‘evas_3d_light_attenuation_get’ declared void
+ EOAPI void  evas_3d_light_attenuation_get(Evas_Real *constant, Evas_Real *linear, Evas_Real *quadratic);
+                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:278:43: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:278:54: error: ‘constant’ was not declared in this scope
+ EOAPI void  evas_3d_light_attenuation_get(Evas_Real *constant, Evas_Real *linear, Evas_Real *quadratic);
+                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:278:64: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_attenuation_get(Evas_Real *constant, Evas_Real *linear, Evas_Real *quadratic);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:278:75: error: ‘linear’ was not declared in this scope
+ EOAPI void  evas_3d_light_attenuation_get(Evas_Real *constant, Evas_Real *linear, Evas_Real *quadratic);
+                                                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:278:83: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_attenuation_get(Evas_Real *constant, Evas_Real *linear, Evas_Real *quadratic);
+                                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:278:94: error: ‘quadratic’ was not declared in this scope
+ EOAPI void  evas_3d_light_attenuation_get(Evas_Real *constant, Evas_Real *linear, Evas_Real *quadratic);
+                                                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:299:55: error: ‘Evas_Real’ does not name a type
+ EOAPI void  evas_3d_light_projection_matrix_set(const Evas_Real *matrix);
+                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:316:49: error: variable or field ‘evas_3d_light_projection_matrix_get’ declared void
+ EOAPI void  evas_3d_light_projection_matrix_get(Evas_Real *matrix);
+                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:316:49: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:316:60: error: ‘matrix’ was not declared in this scope
+ EOAPI void  evas_3d_light_projection_matrix_get(Evas_Real *matrix);
+                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:339:54: error: variable or field ‘evas_3d_light_projection_perspective_set’ declared void
+ EOAPI void  evas_3d_light_projection_perspective_set(Evas_Real fovy, Evas_Real aspect, Evas_Real dnear, Evas_Real dfar);
+                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:339:54: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:339:70: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_projection_perspective_set(Evas_Real fovy, Evas_Real aspect, Evas_Real dnear, Evas_Real dfar);
+                                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:339:88: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_projection_perspective_set(Evas_Real fovy, Evas_Real aspect, Evas_Real dnear, Evas_Real dfar);
+                                                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:339:105: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_projection_perspective_set(Evas_Real fovy, Evas_Real aspect, Evas_Real dnear, Evas_Real dfar);
+                                                                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:358:50: error: variable or field ‘evas_3d_light_projection_frustum_set’ declared void
+ EOAPI void  evas_3d_light_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:358:50: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:358:66: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:358:83: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:358:101: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:358:116: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                                                    ^
+In file included from /tmp/SbSq85dDLH/dump1.h:10:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:358:133: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:377:48: error: variable or field ‘evas_3d_light_projection_ortho_set’ declared void
+ EOAPI void  evas_3d_light_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:377:48: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:377:64: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:377:81: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:377:99: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:377:114: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_light.eo.h:377:131: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_light_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+                                                                                                                                   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:12:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:36:41: error: variable or field ‘evas_3d_material_enable_set’ declared void
+ EOAPI void  evas_3d_material_enable_set(Evas_3D_Material_Attrib attrib, Eina_Bool enable);
+                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:36:41: error: ‘Evas_3D_Material_Attrib’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:36:83: error: expected primary-expression before ‘enable’
+ EOAPI void  evas_3d_material_enable_set(Evas_3D_Material_Attrib attrib, Eina_Bool enable);
+                                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:50:46: error: ‘Evas_3D_Material_Attrib’ was not declared in this scope
+ EOAPI Eina_Bool  evas_3d_material_enable_get(Evas_3D_Material_Attrib attrib);
+                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:68:44: error: variable or field ‘evas_3d_material_shininess_set’ declared void
+ EOAPI void  evas_3d_material_shininess_set(Evas_Real shininess);
+                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:68:44: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:81:7: error: ‘Evas_Real’ does not name a type
+ EOAPI Evas_Real  evas_3d_material_shininess_get(void);
+       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:97:42: error: variable or field ‘evas_3d_material_texture_set’ declared void
+ EOAPI void  evas_3d_material_texture_set(Evas_3D_Material_Attrib attrib, Evas_3D_Texture *texture);
+                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:97:42: error: ‘Evas_3D_Material_Attrib’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:97:74: error: ‘Evas_3D_Texture’ was not declared in this scope
+ EOAPI void  evas_3d_material_texture_set(Evas_3D_Material_Attrib attrib, Evas_3D_Texture *texture);
+                                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:97:91: error: ‘texture’ was not declared in this scope
+ EOAPI void  evas_3d_material_texture_set(Evas_3D_Material_Attrib attrib, Evas_3D_Texture *texture);
+                                                                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:112:7: error: ‘Evas_3D_Texture’ does not name a type
+ EOAPI Evas_3D_Texture * evas_3d_material_texture_get(Evas_3D_Material_Attrib attrib);
+       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:141:40: error: variable or field ‘evas_3d_material_color_set’ declared void
+ EOAPI void  evas_3d_material_color_set(Evas_3D_Material_Attrib attrib, Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:141:40: error: ‘Evas_3D_Material_Attrib’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:141:72: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_material_color_set(Evas_3D_Material_Attrib attrib, Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:141:85: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_material_color_set(Evas_3D_Material_Attrib attrib, Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:141:98: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_material_color_set(Evas_3D_Material_Attrib attrib, Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:141:111: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_material_color_set(Evas_3D_Material_Attrib attrib, Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                                                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:159:40: error: variable or field ‘evas_3d_material_color_get’ declared void
+ EOAPI void  evas_3d_material_color_get(Evas_3D_Material_Attrib attrib, Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:159:40: error: ‘Evas_3D_Material_Attrib’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:159:72: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_material_color_get(Evas_3D_Material_Attrib attrib, Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:159:83: error: ‘r’ was not declared in this scope
+ EOAPI void  evas_3d_material_color_get(Evas_3D_Material_Attrib attrib, Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:159:86: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_material_color_get(Evas_3D_Material_Attrib attrib, Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:159:97: error: ‘g’ was not declared in this scope
+ EOAPI void  evas_3d_material_color_get(Evas_3D_Material_Attrib attrib, Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:159:100: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_material_color_get(Evas_3D_Material_Attrib attrib, Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:159:111: error: ‘b’ was not declared in this scope
+ EOAPI void  evas_3d_material_color_get(Evas_3D_Material_Attrib attrib, Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:159:114: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_material_color_get(Evas_3D_Material_Attrib attrib, Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_material.eo.h:159:125: error: ‘a’ was not declared in this scope
+ EOAPI void  evas_3d_material_color_get(Evas_3D_Material_Attrib attrib, Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                                                             ^
+In file included from /tmp/SbSq85dDLH/dump1.h:14:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:27:41: error: variable or field ‘evas_3d_mesh_shade_mode_set’ declared void
+ EOAPI void  evas_3d_mesh_shade_mode_set(Evas_3D_Shade_Mode mode);
+                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:27:41: error: ‘Evas_3D_Shade_Mode’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:35:7: error: ‘Evas_3D_Shade_Mode’ does not name a type
+ EOAPI Evas_3D_Shade_Mode  evas_3d_mesh_shade_mode_get(void);
+       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:80:46: error: variable or field ‘evas_3d_mesh_vertex_assembly_set’ declared void
+ EOAPI void  evas_3d_mesh_vertex_assembly_set(Evas_3D_Vertex_Assembly assembly);
+                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:80:46: error: ‘Evas_3D_Vertex_Assembly’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:88:7: error: ‘Evas_3D_Vertex_Assembly’ does not name a type
+ EOAPI Evas_3D_Vertex_Assembly  evas_3d_mesh_vertex_assembly_get(void);
+       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:124:59: error: ‘Evas_3D_Vertex_Attrib’ has not been declared
+ EOAPI void  evas_3d_mesh_frame_vertex_data_set(int frame, Evas_3D_Vertex_Attrib attrib, int stride, const void *data);
+                                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:147:64: error: ‘Evas_3D_Vertex_Attrib’ has not been declared
+ EOAPI void  evas_3d_mesh_frame_vertex_data_copy_set(int frame, Evas_3D_Vertex_Attrib attrib, int stride, const void *data);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:169:60: error: ‘Evas_3D_Vertex_Attrib’ has not been declared
+ EOAPI void * evas_3d_mesh_frame_vertex_data_map(int frame, Evas_3D_Vertex_Attrib attrib);
+                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:179:61: error: ‘Evas_3D_Vertex_Attrib’ has not been declared
+ EOAPI void  evas_3d_mesh_frame_vertex_data_unmap(int frame, Evas_3D_Vertex_Attrib attrib);
+                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:189:60: error: ‘Evas_3D_Vertex_Attrib’ has not been declared
+ EOAPI int  evas_3d_mesh_frame_vertex_stride_get(int frame, Evas_3D_Vertex_Attrib attrib);
+                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:200:41: error: variable or field ‘evas_3d_mesh_index_data_set’ declared void
+ EOAPI void  evas_3d_mesh_index_data_set(Evas_3D_Index_Format format, int count, const void *indices);
+                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:200:41: error: ‘Evas_3D_Index_Format’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:200:70: error: expected primary-expression before ‘int’
+ EOAPI void  evas_3d_mesh_index_data_set(Evas_3D_Index_Format format, int count, const void *indices);
+                                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:200:81: error: expected primary-expression before ‘const’
+ EOAPI void  evas_3d_mesh_index_data_set(Evas_3D_Index_Format format, int count, const void *indices);
+                                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:211:46: error: variable or field ‘evas_3d_mesh_index_data_copy_set’ declared void
+ EOAPI void  evas_3d_mesh_index_data_copy_set(Evas_3D_Index_Format format, int count, const void *indices);
+                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:211:46: error: ‘Evas_3D_Index_Format’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:211:75: error: expected primary-expression before ‘int’
+ EOAPI void  evas_3d_mesh_index_data_copy_set(Evas_3D_Index_Format format, int count, const void *indices);
+                                                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:211:86: error: expected primary-expression before ‘const’
+ EOAPI void  evas_3d_mesh_index_data_copy_set(Evas_3D_Index_Format format, int count, const void *indices);
+                                                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:219:7: error: ‘Evas_3D_Index_Format’ does not name a type
+ EOAPI Evas_3D_Index_Format  evas_3d_mesh_index_format_get(void);
+       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:304:40: error: variable or field ‘evas_3d_mesh_fog_color_set’ declared void
+ EOAPI void  evas_3d_mesh_fog_color_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:304:40: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:304:53: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_mesh_fog_color_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:304:66: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_mesh_fog_color_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:304:79: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_mesh_fog_color_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:316:40: error: variable or field ‘evas_3d_mesh_fog_color_get’ declared void
+ EOAPI void  evas_3d_mesh_fog_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:316:40: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:316:51: error: ‘r’ was not declared in this scope
+ EOAPI void  evas_3d_mesh_fog_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:316:54: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_mesh_fog_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:316:65: error: ‘g’ was not declared in this scope
+ EOAPI void  evas_3d_mesh_fog_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:316:68: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_mesh_fog_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:316:79: error: ‘b’ was not declared in this scope
+ EOAPI void  evas_3d_mesh_fog_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:316:82: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_mesh_fog_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:316:93: error: ‘a’ was not declared in this scope
+ EOAPI void  evas_3d_mesh_fog_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:326:44: error: variable or field ‘evas_3d_mesh_blending_func_set’ declared void
+ EOAPI void  evas_3d_mesh_blending_func_set(Evas_3D_Blend_Func sfactor, Evas_3D_Blend_Func dfactor);
+                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:326:44: error: ‘Evas_3D_Blend_Func’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:326:72: error: ‘Evas_3D_Blend_Func’ was not declared in this scope
+ EOAPI void  evas_3d_mesh_blending_func_set(Evas_3D_Blend_Func sfactor, Evas_3D_Blend_Func dfactor);
+                                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:336:44: error: variable or field ‘evas_3d_mesh_blending_func_get’ declared void
+ EOAPI void  evas_3d_mesh_blending_func_get(Evas_3D_Blend_Func *sfactor, Evas_3D_Blend_Func *dfactor);
+                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:336:44: error: ‘Evas_3D_Blend_Func’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:336:64: error: ‘sfactor’ was not declared in this scope
+ EOAPI void  evas_3d_mesh_blending_func_get(Evas_3D_Blend_Func *sfactor, Evas_3D_Blend_Func *dfactor);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:336:73: error: ‘Evas_3D_Blend_Func’ was not declared in this scope
+ EOAPI void  evas_3d_mesh_blending_func_get(Evas_3D_Blend_Func *sfactor, Evas_3D_Blend_Func *dfactor);
+                                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_mesh.eo.h:336:93: error: ‘dfactor’ was not declared in this scope
+ EOAPI void  evas_3d_mesh_blending_func_get(Evas_3D_Blend_Func *sfactor, Evas_3D_Blend_Func *dfactor);
+                                                                                             ^
+In file included from /tmp/SbSq85dDLH/dump1.h:16:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:239:38: error: variable or field ‘evas_3d_node_constructor’ declared void
+ EOAPI void  evas_3d_node_constructor(Evas_3D_Node_Type type);
+                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:239:38: error: ‘Evas_3D_Node_Type’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:254:7: error: ‘Evas_3D_Node_Type’ does not name a type
+ EOAPI Evas_3D_Node_Type  evas_3d_node_type_get(void);
+       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:336:39: error: variable or field ‘evas_3d_node_position_set’ declared void
+ EOAPI void  evas_3d_node_position_set(Evas_Real x, Evas_Real y, Evas_Real z);
+                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:336:39: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:336:52: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_position_set(Evas_Real x, Evas_Real y, Evas_Real z);
+                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:336:65: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_position_set(Evas_Real x, Evas_Real y, Evas_Real z);
+                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:358:42: error: variable or field ‘evas_3d_node_orientation_set’ declared void
+ EOAPI void  evas_3d_node_orientation_set(Evas_Real x, Evas_Real y, Evas_Real z, Evas_Real w);
+                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:358:42: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:358:55: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_orientation_set(Evas_Real x, Evas_Real y, Evas_Real z, Evas_Real w);
+                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:358:68: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_orientation_set(Evas_Real x, Evas_Real y, Evas_Real z, Evas_Real w);
+                                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:358:81: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_orientation_set(Evas_Real x, Evas_Real y, Evas_Real z, Evas_Real w);
+                                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:381:53: error: variable or field ‘evas_3d_node_orientation_angle_axis_set’ declared void
+ EOAPI void  evas_3d_node_orientation_angle_axis_set(Evas_Real angle, Evas_Real x, Evas_Real y, Evas_Real z);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:381:53: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:381:70: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_orientation_angle_axis_set(Evas_Real angle, Evas_Real x, Evas_Real y, Evas_Real z);
+                                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:381:83: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_orientation_angle_axis_set(Evas_Real angle, Evas_Real x, Evas_Real y, Evas_Real z);
+                                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:381:96: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_orientation_angle_axis_set(Evas_Real angle, Evas_Real x, Evas_Real y, Evas_Real z);
+                                                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:408:36: error: variable or field ‘evas_3d_node_scale_set’ declared void
+ EOAPI void  evas_3d_node_scale_set(Evas_Real x, Evas_Real y, Evas_Real z);
+                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:408:36: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:408:49: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_scale_set(Evas_Real x, Evas_Real y, Evas_Real z);
+                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:408:62: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_scale_set(Evas_Real x, Evas_Real y, Evas_Real z);
+                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:430:39: error: variable or field ‘evas_3d_node_position_get’ declared void
+ EOAPI void  evas_3d_node_position_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:430:39: error: ‘Evas_3D_Space’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:430:60: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_position_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:430:71: error: ‘x’ was not declared in this scope
+ EOAPI void  evas_3d_node_position_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+                                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:430:74: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_position_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+                                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:430:85: error: ‘y’ was not declared in this scope
+ EOAPI void  evas_3d_node_position_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+                                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:430:88: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_position_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+                                                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:430:99: error: ‘z’ was not declared in this scope
+ EOAPI void  evas_3d_node_position_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+                                                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:454:42: error: variable or field ‘evas_3d_node_orientation_get’ declared void
+ EOAPI void  evas_3d_node_orientation_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *w);
+                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:454:42: error: ‘Evas_3D_Space’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:454:63: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_orientation_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *w);
+                                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:454:74: error: ‘x’ was not declared in this scope
+ EOAPI void  evas_3d_node_orientation_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *w);
+                                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:454:77: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_orientation_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *w);
+                                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:454:88: error: ‘y’ was not declared in this scope
+ EOAPI void  evas_3d_node_orientation_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *w);
+                                                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:454:91: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_orientation_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *w);
+                                                                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:454:102: error: ‘z’ was not declared in this scope
+ EOAPI void  evas_3d_node_orientation_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *w);
+                                                                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:454:105: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_orientation_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *w);
+                                                                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:454:116: error: ‘w’ was not declared in this scope
+ EOAPI void  evas_3d_node_orientation_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *w);
+                                                                                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:476:36: error: variable or field ‘evas_3d_node_scale_get’ declared void
+ EOAPI void  evas_3d_node_scale_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:476:36: error: ‘Evas_3D_Space’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:476:57: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_scale_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:476:68: error: ‘x’ was not declared in this scope
+ EOAPI void  evas_3d_node_scale_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+                                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:476:71: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_scale_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+                                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:476:82: error: ‘y’ was not declared in this scope
+ EOAPI void  evas_3d_node_scale_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+                                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:476:85: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_scale_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+                                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:476:96: error: ‘z’ was not declared in this scope
+ EOAPI void  evas_3d_node_scale_get(Evas_3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+                                                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:511:38: error: variable or field ‘evas_3d_node_look_at_set’ declared void
+ EOAPI void  evas_3d_node_look_at_set(Evas_3D_Space target_space, Evas_Real x, Evas_Real y, Evas_Real z, Evas_3D_Space up_space, Evas_Real ux, Evas_Real uy, Evas_Real uz);
+                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:511:38: error: ‘Evas_3D_Space’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:511:66: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_look_at_set(Evas_3D_Space target_space, Evas_Real x, Evas_Real y, Evas_Real z, Evas_3D_Space up_space, Evas_Real ux, Evas_Real uy, Evas_Real uz);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:511:79: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_look_at_set(Evas_3D_Space target_space, Evas_Real x, Evas_Real y, Evas_Real z, Evas_3D_Space up_space, Evas_Real ux, Evas_Real uy, Evas_Real uz);
+                                                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:511:92: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_look_at_set(Evas_3D_Space target_space, Evas_Real x, Evas_Real y, Evas_Real z, Evas_3D_Space up_space, Evas_Real ux, Evas_Real uy, Evas_Real uz);
+                                                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:511:105: error: ‘Evas_3D_Space’ was not declared in this scope
+ EOAPI void  evas_3d_node_look_at_set(Evas_3D_Space target_space, Evas_Real x, Evas_Real y, Evas_Real z, Evas_3D_Space up_space, Evas_Real ux, Evas_Real uy, Evas_Real uz);
+                                                                                                         ^
+In file included from /tmp/SbSq85dDLH/dump1.h:16:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:511:129: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_look_at_set(Evas_3D_Space target_space, Evas_Real x, Evas_Real y, Evas_Real z, Evas_3D_Space up_space, Evas_Real ux, Evas_Real uy, Evas_Real uz);
+                                                                                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:511:143: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_look_at_set(Evas_3D_Space target_space, Evas_Real x, Evas_Real y, Evas_Real z, Evas_3D_Space up_space, Evas_Real ux, Evas_Real uy, Evas_Real uz);
+                                                                                                                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:511:157: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_look_at_set(Evas_3D_Space target_space, Evas_Real x, Evas_Real y, Evas_Real z, Evas_3D_Space up_space, Evas_Real ux, Evas_Real uy, Evas_Real uz);
+                                                                                                                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:585:43: error: variable or field ‘evas_3d_node_bounding_box_get’ declared void
+ EOAPI void  evas_3d_node_bounding_box_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *x2, Evas_Real *y2, Evas_Real *z2);
+                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:585:43: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:585:54: error: ‘x’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_box_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *x2, Evas_Real *y2, Evas_Real *z2);
+                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:585:57: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_box_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *x2, Evas_Real *y2, Evas_Real *z2);
+                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:585:68: error: ‘y’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_box_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *x2, Evas_Real *y2, Evas_Real *z2);
+                                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:585:71: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_box_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *x2, Evas_Real *y2, Evas_Real *z2);
+                                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:585:82: error: ‘z’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_box_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *x2, Evas_Real *y2, Evas_Real *z2);
+                                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:585:85: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_box_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *x2, Evas_Real *y2, Evas_Real *z2);
+                                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:585:96: error: ‘x2’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_box_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *x2, Evas_Real *y2, Evas_Real *z2);
+                                                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:585:100: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_box_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *x2, Evas_Real *y2, Evas_Real *z2);
+                                                                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:585:111: error: ‘y2’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_box_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *x2, Evas_Real *y2, Evas_Real *z2);
+                                                                                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:585:115: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_box_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *x2, Evas_Real *y2, Evas_Real *z2);
+                                                                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:585:126: error: ‘z2’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_box_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *x2, Evas_Real *y2, Evas_Real *z2);
+                                                                                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:597:46: error: variable or field ‘evas_3d_node_bounding_sphere_get’ declared void
+ EOAPI void  evas_3d_node_bounding_sphere_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *r);
+                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:597:46: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:597:57: error: ‘x’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_sphere_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *r);
+                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:597:60: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_sphere_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *r);
+                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:597:71: error: ‘y’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_sphere_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *r);
+                                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:597:74: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_sphere_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *r);
+                                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:597:85: error: ‘z’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_sphere_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *r);
+                                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:597:88: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_sphere_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *r);
+                                                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_node.eo.h:597:99: error: ‘r’ was not declared in this scope
+ EOAPI void  evas_3d_node_bounding_sphere_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *r);
+                                                                                                   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:18:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_object.eo.h:40:42: error: variable or field ‘evas_3d_object_change_notify’ declared void
+ EOAPI void  evas_3d_object_change_notify(Evas_3D_State state, Evas_3D_Object *ref);
+                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_object.eo.h:40:42: error: ‘Evas_3D_State’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_object.eo.h:40:78: error: expected primary-expression before ‘*’ token
+ EOAPI void  evas_3d_object_change_notify(Evas_3D_State state, Evas_3D_Object *ref);
+                                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_object.eo.h:40:79: error: ‘ref’ was not declared in this scope
+ EOAPI void  evas_3d_object_change_notify(Evas_3D_State state, Evas_3D_Object *ref);
+                                                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_object.eo.h:51:35: error: variable or field ‘evas_3d_object_change’ declared void
+ EOAPI void  evas_3d_object_change(Evas_3D_State state, Evas_3D_Object *ref);
+                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_object.eo.h:51:35: error: ‘Evas_3D_State’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_object.eo.h:51:71: error: expected primary-expression before ‘*’ token
+ EOAPI void  evas_3d_object_change(Evas_3D_State state, Evas_3D_Object *ref);
+                                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_object.eo.h:51:72: error: ‘ref’ was not declared in this scope
+ EOAPI void  evas_3d_object_change(Evas_3D_State state, Evas_3D_Object *ref);
+                                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_object.eo.h:60:7: error: ‘Evas_3D_Object_Type’ does not name a type
+ EOAPI Evas_3D_Object_Type  evas_3d_object_type_get(void);
+       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_object.eo.h:70:37: error: variable or field ‘evas_3d_object_type_set’ declared void
+ EOAPI void  evas_3d_object_type_set(Evas_3D_Object_Type type);
+                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_object.eo.h:70:37: error: ‘Evas_3D_Object_Type’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_object.eo.h:80:43: error: ‘Evas_3D_State’ was not declared in this scope
+ EOAPI Eina_Bool  evas_3d_object_dirty_get(Evas_3D_State state);
+                                           ^
+In file included from /tmp/SbSq85dDLH/dump1.h:20:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:84:48: error: variable or field ‘evas_3d_scene_background_color_set’ declared void
+ EOAPI void  evas_3d_scene_background_color_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:84:48: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:84:61: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_scene_background_color_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:84:74: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_scene_background_color_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:84:87: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_scene_background_color_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+                                                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:96:48: error: variable or field ‘evas_3d_scene_background_color_get’ declared void
+ EOAPI void  evas_3d_scene_background_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:96:48: error: ‘Evas_Real’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:96:59: error: ‘r’ was not declared in this scope
+ EOAPI void  evas_3d_scene_background_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:96:62: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_scene_background_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:96:73: error: ‘g’ was not declared in this scope
+ EOAPI void  evas_3d_scene_background_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:96:76: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_scene_background_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:96:87: error: ‘b’ was not declared in this scope
+ EOAPI void  evas_3d_scene_background_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:96:90: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI void  evas_3d_scene_background_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:96:101: error: ‘a’ was not declared in this scope
+ EOAPI void  evas_3d_scene_background_color_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+                                                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:110:37: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI Eina_Bool  evas_3d_scene_pick(Evas_Real x, Evas_Real y, Evas_3D_Node **node, Evas_3D_Mesh **mesh, Evas_Real *s, Evas_Real *t);
+                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:110:50: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI Eina_Bool  evas_3d_scene_pick(Evas_Real x, Evas_Real y, Evas_3D_Node **node, Evas_3D_Mesh **mesh, Evas_Real *s, Evas_Real *t);
+                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:110:76: error: expected primary-expression before ‘*’ token
+ EOAPI Eina_Bool  evas_3d_scene_pick(Evas_Real x, Evas_Real y, Evas_3D_Node **node, Evas_3D_Mesh **mesh, Evas_Real *s, Evas_Real *t);
+                                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:110:78: error: ‘node’ was not declared in this scope
+ EOAPI Eina_Bool  evas_3d_scene_pick(Evas_Real x, Evas_Real y, Evas_3D_Node **node, Evas_3D_Mesh **mesh, Evas_Real *s, Evas_Real *t);
+                                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:110:97: error: expected primary-expression before ‘*’ token
+ EOAPI Eina_Bool  evas_3d_scene_pick(Evas_Real x, Evas_Real y, Evas_3D_Node **node, Evas_3D_Mesh **mesh, Evas_Real *s, Evas_Real *t);
+                                                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:110:99: error: ‘mesh’ was not declared in this scope
+ EOAPI Eina_Bool  evas_3d_scene_pick(Evas_Real x, Evas_Real y, Evas_3D_Node **node, Evas_3D_Mesh **mesh, Evas_Real *s, Evas_Real *t);
+                                                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:110:105: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI Eina_Bool  evas_3d_scene_pick(Evas_Real x, Evas_Real y, Evas_3D_Node **node, Evas_3D_Mesh **mesh, Evas_Real *s, Evas_Real *t);
+                                                                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:110:116: error: ‘s’ was not declared in this scope
+ EOAPI Eina_Bool  evas_3d_scene_pick(Evas_Real x, Evas_Real y, Evas_3D_Node **node, Evas_3D_Mesh **mesh, Evas_Real *s, Evas_Real *t);
+                                                                                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:110:119: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI Eina_Bool  evas_3d_scene_pick(Evas_Real x, Evas_Real y, Evas_3D_Node **node, Evas_3D_Mesh **mesh, Evas_Real *s, Evas_Real *t);
+                                                                                                                       ^
+In file included from /tmp/SbSq85dDLH/dump1.h:20:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:110:130: error: ‘t’ was not declared in this scope
+ EOAPI Eina_Bool  evas_3d_scene_pick(Evas_Real x, Evas_Real y, Evas_3D_Node **node, Evas_3D_Mesh **mesh, Evas_Real *s, Evas_Real *t);
+                                                                                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:121:42: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI Evas_3D_Node * evas_3d_scene_exist(Evas_Real x, Evas_Real y, Evas_3D_Node *node);
+                                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:121:55: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI Evas_3D_Node * evas_3d_scene_exist(Evas_Real x, Evas_Real y, Evas_3D_Node *node);
+                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:121:81: error: expected primary-expression before ‘*’ token
+ EOAPI Evas_3D_Node * evas_3d_scene_exist(Evas_Real x, Evas_Real y, Evas_3D_Node *node);
+                                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:121:82: error: ‘node’ was not declared in this scope
+ EOAPI Evas_3D_Node * evas_3d_scene_exist(Evas_Real x, Evas_Real y, Evas_3D_Node *node);
+                                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:131:54: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI Eina_List * evas_3d_scene_pick_member_list_get(Evas_Real x, Evas_Real y);
+                                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_scene.eo.h:131:67: error: ‘Evas_Real’ was not declared in this scope
+ EOAPI Eina_List * evas_3d_scene_pick_member_list_get(Evas_Real x, Evas_Real y);
+                                                                   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:22:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:48:38: error: variable or field ‘evas_3d_texture_data_set’ declared void
+ EOAPI void  evas_3d_texture_data_set(Evas_3D_Color_Format color_format, Evas_3D_Pixel_Format pixel_format, int w, int h, const void *data);
+                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:48:38: error: ‘Evas_3D_Color_Format’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:48:73: error: ‘Evas_3D_Pixel_Format’ was not declared in this scope
+ EOAPI void  evas_3d_texture_data_set(Evas_3D_Color_Format color_format, Evas_3D_Pixel_Format pixel_format, int w, int h, const void *data);
+                                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:48:108: error: expected primary-expression before ‘int’
+ EOAPI void  evas_3d_texture_data_set(Evas_3D_Color_Format color_format, Evas_3D_Pixel_Format pixel_format, int w, int h, const void *data);
+                                                                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:48:115: error: expected primary-expression before ‘int’
+ EOAPI void  evas_3d_texture_data_set(Evas_3D_Color_Format color_format, Evas_3D_Pixel_Format pixel_format, int w, int h, const void *data);
+                                                                                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:48:122: error: expected primary-expression before ‘const’
+ EOAPI void  evas_3d_texture_data_set(Evas_3D_Color_Format color_format, Evas_3D_Pixel_Format pixel_format, int w, int h, const void *data);
+                                                                                                                          ^
+In file included from /tmp/SbSq85dDLH/dump1.h:22:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:75:7: error: ‘Evas_3D_Color_Format’ does not name a type
+ EOAPI Evas_3D_Color_Format  evas_3d_texture_color_format_get(void);
+       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:95:38: error: variable or field ‘evas_3d_texture_wrap_set’ declared void
+ EOAPI void  evas_3d_texture_wrap_set(Evas_3D_Wrap_Mode s, Evas_3D_Wrap_Mode t);
+                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:95:38: error: ‘Evas_3D_Wrap_Mode’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:95:59: error: ‘Evas_3D_Wrap_Mode’ was not declared in this scope
+ EOAPI void  evas_3d_texture_wrap_set(Evas_3D_Wrap_Mode s, Evas_3D_Wrap_Mode t);
+                                                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:105:38: error: variable or field ‘evas_3d_texture_wrap_get’ declared void
+ EOAPI void  evas_3d_texture_wrap_get(Evas_3D_Wrap_Mode *s, Evas_3D_Wrap_Mode *t);
+                                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:105:38: error: ‘Evas_3D_Wrap_Mode’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:105:57: error: ‘s’ was not declared in this scope
+ EOAPI void  evas_3d_texture_wrap_get(Evas_3D_Wrap_Mode *s, Evas_3D_Wrap_Mode *t);
+                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:105:60: error: ‘Evas_3D_Wrap_Mode’ was not declared in this scope
+ EOAPI void  evas_3d_texture_wrap_get(Evas_3D_Wrap_Mode *s, Evas_3D_Wrap_Mode *t);
+                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:105:79: error: ‘t’ was not declared in this scope
+ EOAPI void  evas_3d_texture_wrap_get(Evas_3D_Wrap_Mode *s, Evas_3D_Wrap_Mode *t);
+                                                                               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:115:40: error: variable or field ‘evas_3d_texture_filter_set’ declared void
+ EOAPI void  evas_3d_texture_filter_set(Evas_3D_Texture_Filter min, Evas_3D_Texture_Filter mag);
+                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:115:40: error: ‘Evas_3D_Texture_Filter’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:115:68: error: ‘Evas_3D_Texture_Filter’ was not declared in this scope
+ EOAPI void  evas_3d_texture_filter_set(Evas_3D_Texture_Filter min, Evas_3D_Texture_Filter mag);
+                                                                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:125:40: error: variable or field ‘evas_3d_texture_filter_get’ declared void
+ EOAPI void  evas_3d_texture_filter_get(Evas_3D_Texture_Filter *min, Evas_3D_Texture_Filter *mag);
+                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:125:40: error: ‘Evas_3D_Texture_Filter’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:125:64: error: ‘min’ was not declared in this scope
+ EOAPI void  evas_3d_texture_filter_get(Evas_3D_Texture_Filter *min, Evas_3D_Texture_Filter *mag);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:125:69: error: ‘Evas_3D_Texture_Filter’ was not declared in this scope
+ EOAPI void  evas_3d_texture_filter_get(Evas_3D_Texture_Filter *min, Evas_3D_Texture_Filter *mag);
+                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/canvas/evas_3d_texture.eo.h:125:93: error: ‘mag’ was not declared in this scope
+ EOAPI void  evas_3d_texture_filter_get(Evas_3D_Texture_Filter *min, Evas_3D_Texture_Filter *mag);
+                                                                                             ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:47:16: error: redefinition of ‘struct _Evas_Version’
+ typedef struct _Evas_Version
+                ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:47:16: error: previous definition of ‘struct _Evas_Version’
+ typedef struct _Evas_Version
+                ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:53:15: error: invalid type in declaration before ‘;’ token
+ } Evas_Version;
+               ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:53:15: error: conflicting declaration ‘typedef int Evas_Version’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:53:3: error: ‘Evas_Version’ has a previous declaration as ‘typedef struct _Evas_Version Evas_Version’
+ } Evas_Version;
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:68:14: error: multiple definition of ‘enum _Evas_BiDi_Direction’
+ typedef enum _Evas_BiDi_Direction
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:68:14: error: previous definition here
+ typedef enum _Evas_BiDi_Direction
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:74:22: error: invalid type in declaration before ‘;’ token
+ } Evas_BiDi_Direction;
+                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:74:22: error: conflicting declaration ‘typedef int Evas_BiDi_Direction’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:74:3: error: ‘Evas_BiDi_Direction’ has a previous declaration as ‘typedef enum _Evas_BiDi_Direction Evas_BiDi_Direction’
+ } Evas_BiDi_Direction;
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:89:14: error: multiple definition of ‘enum _Evas_Callback_Type’
+ typedef enum _Evas_Callback_Type
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:89:14: error: previous definition here
+ typedef enum _Evas_Callback_Type
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:144:21: error: invalid type in declaration before ‘;’ token
+ } Evas_Callback_Type; /**< The types of events triggering a callback */
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:144:21: error: conflicting declaration ‘typedef int Evas_Callback_Type’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:144:3: error: ‘Evas_Callback_Type’ has a previous declaration as ‘typedef enum _Evas_Callback_Type Evas_Callback_Type’
+ } Evas_Callback_Type; /**< The types of events triggering a callback */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:182:14: error: multiple definition of ‘enum _Evas_Button_Flags’
+ typedef enum _Evas_Button_Flags
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:182:14: error: previous definition here
+ typedef enum _Evas_Button_Flags
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:187:20: error: invalid type in declaration before ‘;’ token
+ } Evas_Button_Flags; /**< Flags for Mouse Button events */
+                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:187:20: error: conflicting declaration ‘typedef int Evas_Button_Flags’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:187:3: error: ‘Evas_Button_Flags’ has a previous declaration as ‘typedef enum _Evas_Button_Flags Evas_Button_Flags’
+ } Evas_Button_Flags; /**< Flags for Mouse Button events */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:192:14: error: multiple definition of ‘enum _Evas_Event_Flags’
+ typedef enum _Evas_Event_Flags
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:192:14: error: previous definition here
+ typedef enum _Evas_Event_Flags
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:197:19: error: invalid type in declaration before ‘;’ token
+ } Evas_Event_Flags; /**< Flags for Events */
+                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:197:19: error: conflicting declaration ‘typedef int Evas_Event_Flags’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:197:3: error: ‘Evas_Event_Flags’ has a previous declaration as ‘typedef enum _Evas_Event_Flags Evas_Event_Flags’
+ } Evas_Event_Flags; /**< Flags for Events */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:202:14: error: multiple definition of ‘enum _Evas_Touch_Point_State’
+ typedef enum _Evas_Touch_Point_State
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:202:14: error: previous definition here
+ typedef enum _Evas_Touch_Point_State
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:209:25: error: invalid type in declaration before ‘;’ token
+ } Evas_Touch_Point_State;
+                         ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:209:25: error: conflicting declaration ‘typedef int Evas_Touch_Point_State’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:209:3: error: ‘Evas_Touch_Point_State’ has a previous declaration as ‘typedef enum _Evas_Touch_Point_State Evas_Touch_Point_State’
+ } Evas_Touch_Point_State;
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:215:14: error: multiple definition of ‘enum _Evas_Font_Hinting_Flags’
+ typedef enum _Evas_Font_Hinting_Flags
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:215:14: error: previous definition here
+ typedef enum _Evas_Font_Hinting_Flags
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:220:26: error: invalid type in declaration before ‘;’ token
+ } Evas_Font_Hinting_Flags; /**< Flags for Font Hinting */
+                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:220:26: error: conflicting declaration ‘typedef int Evas_Font_Hinting_Flags’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:220:3: error: ‘Evas_Font_Hinting_Flags’ has a previous declaration as ‘typedef enum _Evas_Font_Hinting_Flags Evas_Font_Hinting_Flags’
+ } Evas_Font_Hinting_Flags; /**< Flags for Font Hinting */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:229:14: error: multiple definition of ‘enum _Evas_Object_Table_Homogeneous_Mode’
+ typedef enum _Evas_Object_Table_Homogeneous_Mode
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:229:14: error: previous definition here
+ typedef enum _Evas_Object_Table_Homogeneous_Mode
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:234:37: error: invalid type in declaration before ‘;’ token
+ } Evas_Object_Table_Homogeneous_Mode; /**< Table cell pack mode. */
+                                     ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:234:37: error: conflicting declaration ‘typedef int Evas_Object_Table_Homogeneous_Mode’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:234:3: error: ‘Evas_Object_Table_Homogeneous_Mode’ has a previous declaration as ‘typedef enum _Evas_Object_Table_Homogeneous_Mode Evas_Object_Table_Homogeneous_Mode’
+ } Evas_Object_Table_Homogeneous_Mode; /**< Table cell pack mode. */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:351:8: error: redefinition of ‘struct _Evas_Coord_Rectangle’
+ struct _Evas_Coord_Rectangle /** A rectangle in Evas_Coord */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:351:8: error: previous definition of ‘struct _Evas_Coord_Rectangle’
+ struct _Evas_Coord_Rectangle /** A rectangle in Evas_Coord */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:359:8: error: redefinition of ‘struct _Evas_Coord_Point’
+ struct _Evas_Coord_Point /** A Point in Evas_Coord */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:359:8: error: previous definition of ‘struct _Evas_Coord_Point’
+ struct _Evas_Coord_Point /** A Point in Evas_Coord */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:365:8: error: redefinition of ‘struct _Evas_Coord_Size’
+ struct _Evas_Coord_Size /** A size in Evas_Coord */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:365:8: error: previous definition of ‘struct _Evas_Coord_Size’
+ struct _Evas_Coord_Size /** A size in Evas_Coord */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:372:8: error: redefinition of ‘struct _Evas_Coord_Precision_Size’
+ struct _Evas_Coord_Precision_Size /** A size in Evas_Coord with subpixel precision*/
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:372:8: error: previous definition of ‘struct _Evas_Coord_Precision_Size’
+ struct _Evas_Coord_Precision_Size /** A size in Evas_Coord with subpixel precision*/
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:380:8: error: redefinition of ‘struct _Evas_Coord_Precision_Point’
+ struct _Evas_Coord_Precision_Point /** A point in Evas_Coord with subpixel precision*/
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:380:8: error: previous definition of ‘struct _Evas_Coord_Precision_Point’
+ struct _Evas_Coord_Precision_Point /** A point in Evas_Coord with subpixel precision*/
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:388:8: error: redefinition of ‘struct _Evas_Point’
+ struct _Evas_Point /** A point */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:388:8: error: previous definition of ‘struct _Evas_Point’
+ struct _Evas_Point /** A point */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:394:8: error: redefinition of ‘struct _Evas_Position’
+ struct _Evas_Position /** A position */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:394:8: error: previous definition of ‘struct _Evas_Position’
+ struct _Evas_Position /** A position */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:400:8: error: redefinition of ‘struct _Evas_Precision_Position’
+ struct _Evas_Precision_Position /** A position with precision*/
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:400:8: error: previous definition of ‘struct _Evas_Precision_Position’
+ struct _Evas_Precision_Position /** A position with precision*/
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:406:14: error: multiple definition of ‘enum _Evas_Aspect_Control’
+ typedef enum _Evas_Aspect_Control
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:406:14: error: previous definition here
+ typedef enum _Evas_Aspect_Control
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:413:22: error: invalid type in declaration before ‘;’ token
+ } Evas_Aspect_Control; /**< Aspect types/policies for scaling size hints, used for evas_object_size_hint_aspect_set() */
+                      ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:413:22: error: conflicting declaration ‘typedef int Evas_Aspect_Control’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:413:3: error: ‘Evas_Aspect_Control’ has a previous declaration as ‘typedef enum _Evas_Aspect_Control Evas_Aspect_Control’
+ } Evas_Aspect_Control; /**< Aspect types/policies for scaling size hints, used for evas_object_size_hint_aspect_set() */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:415:14: error: multiple definition of ‘enum _Evas_Display_Mode’
+ typedef enum _Evas_Display_Mode
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:415:14: error: previous definition here
+ typedef enum _Evas_Display_Mode
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:427:20: error: invalid type in declaration before ‘;’ token
+ } Evas_Display_Mode; /**< object's display mode type related with compress/expand or etc mode */
+                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:427:20: error: conflicting declaration ‘typedef int Evas_Display_Mode’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:427:3: error: ‘Evas_Display_Mode’ has a previous declaration as ‘typedef enum _Evas_Display_Mode Evas_Display_Mode’
+ } Evas_Display_Mode; /**< object's display mode type related with compress/expand or etc mode */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:448:14: error: multiple definition of ‘enum _Evas_Alloc_Error’
+ typedef enum _Evas_Alloc_Error
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:448:14: error: previous definition here
+ typedef enum _Evas_Alloc_Error
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:453:19: error: invalid type in declaration before ‘;’ token
+ } Evas_Alloc_Error; /**< Possible allocation errors */
+                   ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:453:19: error: conflicting declaration ‘typedef int Evas_Alloc_Error’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:453:3: error: ‘Evas_Alloc_Error’ has a previous declaration as ‘typedef enum _Evas_Alloc_Error Evas_Alloc_Error’
+ } Evas_Alloc_Error; /**< Possible allocation errors */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:463:14: error: multiple definition of ‘enum _Evas_Pixel_Import_Pixel_Format’
+ typedef enum _Evas_Pixel_Import_Pixel_Format
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:463:14: error: previous definition here
+ typedef enum _Evas_Pixel_Import_Pixel_Format
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:468:33: error: invalid type in declaration before ‘;’ token
+ } Evas_Pixel_Import_Pixel_Format; /**< Pixel format for import call. See evas_object_image_pixels_import() */
+                                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:468:33: error: conflicting declaration ‘typedef int Evas_Pixel_Import_Pixel_Format’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:468:3: error: ‘Evas_Pixel_Import_Pixel_Format’ has a previous declaration as ‘typedef enum _Evas_Pixel_Import_Pixel_Format Evas_Pixel_Import_Pixel_Format’
+ } Evas_Pixel_Import_Pixel_Format; /**< Pixel format for import call. See evas_object_image_pixels_import() */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:470:8: error: redefinition of ‘struct _Evas_Pixel_Import_Source’
+ struct _Evas_Pixel_Import_Source
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:470:8: error: previous definition of ‘struct _Evas_Pixel_Import_Source’
+ struct _Evas_Pixel_Import_Source
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:490:14: error: multiple definition of ‘enum _Evas_Native_Surface_Type’
+ typedef enum _Evas_Native_Surface_Type
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:490:14: error: previous definition here
+ typedef enum _Evas_Native_Surface_Type
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:504:27: error: invalid type in declaration before ‘;’ token
+ } Evas_Native_Surface_Type;
+                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:504:27: error: conflicting declaration ‘typedef int Evas_Native_Surface_Type’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:504:3: error: ‘Evas_Native_Surface_Type’ has a previous declaration as ‘typedef enum _Evas_Native_Surface_Type Evas_Native_Surface_Type’
+ } Evas_Native_Surface_Type;
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:531:8: error: redefinition of ‘struct _Evas_Native_Surface’
+ struct _Evas_Native_Surface
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:531:8: error: previous definition of ‘struct _Evas_Native_Surface’
+ struct _Evas_Native_Surface
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:594:8: error: redefinition of ‘struct _Evas_Video_Surface’
+ struct _Evas_Video_Surface
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:594:8: error: previous definition of ‘struct _Evas_Video_Surface’
+ struct _Evas_Video_Surface
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:612:14: error: multiple definition of ‘enum _Evas_Video_Surface_Caps’
+ typedef enum _Evas_Video_Surface_Caps
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:612:14: error: previous definition here
+ typedef enum _Evas_Video_Surface_Caps
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:620:26: error: invalid type in declaration before ‘;’ token
+ } Evas_Video_Surface_Caps;
+                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:620:26: error: conflicting declaration ‘typedef int Evas_Video_Surface_Caps’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:620:3: error: ‘Evas_Video_Surface_Caps’ has a previous declaration as ‘typedef enum _Evas_Video_Surface_Caps Evas_Video_Surface_Caps’
+ } Evas_Video_Surface_Caps;
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:673:14: error: multiple definition of ‘enum _Evas_Render_Op’
+ typedef enum _Evas_Render_Op
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:673:14: error: previous definition here
+ typedef enum _Evas_Render_Op
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:687:17: error: invalid type in declaration before ‘;’ token
+ } Evas_Render_Op; /**< How the object should be rendered to output. */
+                 ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:687:17: error: conflicting declaration ‘typedef int Evas_Render_Op’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:687:3: error: ‘Evas_Render_Op’ has a previous declaration as ‘typedef enum _Evas_Render_Op Evas_Render_Op’
+ } Evas_Render_Op; /**< How the object should be rendered to output. */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:689:14: error: multiple definition of ‘enum _Evas_Border_Fill_Mode’
+ typedef enum _Evas_Border_Fill_Mode
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:689:14: error: previous definition here
+ typedef enum _Evas_Border_Fill_Mode
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:694:24: error: invalid type in declaration before ‘;’ token
+ } Evas_Border_Fill_Mode; /**< How an image's center region (the complement to the border region) should be rendered by Evas */
+                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:694:24: error: conflicting declaration ‘typedef int Evas_Border_Fill_Mode’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:694:3: error: ‘Evas_Border_Fill_Mode’ has a previous declaration as ‘typedef enum _Evas_Border_Fill_Mode Evas_Border_Fill_Mode’
+ } Evas_Border_Fill_Mode; /**< How an image's center region (the complement to the border region) should be rendered by Evas */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:696:14: error: multiple definition of ‘enum _Evas_Engine_Render_Mode’
+ typedef enum _Evas_Engine_Render_Mode
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:696:14: error: previous definition here
+ typedef enum _Evas_Engine_Render_Mode
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:700:26: error: invalid type in declaration before ‘;’ token
+ } Evas_Engine_Render_Mode; /**< behaviour of the renderer*/
+                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:700:26: error: conflicting declaration ‘typedef int Evas_Engine_Render_Mode’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:700:3: error: ‘Evas_Engine_Render_Mode’ has a previous declaration as ‘typedef enum _Evas_Engine_Render_Mode Evas_Engine_Render_Mode’
+ } Evas_Engine_Render_Mode; /**< behaviour of the renderer*/
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:702:14: error: multiple definition of ‘enum _Evas_Image_Content_Hint’
+ typedef enum _Evas_Image_Content_Hint
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:702:14: error: previous definition here
+ typedef enum _Evas_Image_Content_Hint
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:707:26: error: invalid type in declaration before ‘;’ token
+ } Evas_Image_Content_Hint; /**< How an image's data is to be treated by Evas, for optimization */
+                          ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:707:26: error: conflicting declaration ‘typedef int Evas_Image_Content_Hint’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:707:3: error: ‘Evas_Image_Content_Hint’ has a previous declaration as ‘typedef enum _Evas_Image_Content_Hint Evas_Image_Content_Hint’
+ } Evas_Image_Content_Hint; /**< How an image's data is to be treated by Evas, for optimization */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:709:14: error: multiple definition of ‘enum _Evas_Device_Class’
+ typedef enum _Evas_Device_Class
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:709:14: error: previous definition here
+ typedef enum _Evas_Device_Class
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:719:20: error: invalid type in declaration before ‘;’ token
+ } Evas_Device_Class; /**< A general class of device @since 1.8 */
+                    ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:719:20: error: conflicting declaration ‘typedef int Evas_Device_Class’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:719:3: error: ‘Evas_Device_Class’ has a previous declaration as ‘typedef enum _Evas_Device_Class Evas_Device_Class’
+ } Evas_Device_Class; /**< A general class of device @since 1.8 */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:721:14: error: multiple definition of ‘enum _Evas_Device_Subclass’
+ typedef enum _Evas_Device_Subclass
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:721:14: error: previous definition here
+ typedef enum _Evas_Device_Subclass
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:734:23: error: invalid type in declaration before ‘;’ token
+ } Evas_Device_Subclass; /**< A general class of device @since 1.8 */
+                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:734:23: error: conflicting declaration ‘typedef int Evas_Device_Subclass’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:734:3: error: ‘Evas_Device_Subclass’ has a previous declaration as ‘typedef enum _Evas_Device_Subclass Evas_Device_Subclass’
+ } Evas_Device_Subclass; /**< A general class of device @since 1.8 */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:736:8: error: redefinition of ‘struct _Evas_Engine_Info’
+ struct _Evas_Engine_Info /** Generic engine information. Generic info is useless */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:736:8: error: previous definition of ‘struct _Evas_Engine_Info’
+ struct _Evas_Engine_Info /** Generic engine information. Generic info is useless */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:741:8: error: redefinition of ‘struct _Evas_Event_Mouse_Down’
+ struct _Evas_Event_Mouse_Down /** Mouse button press event */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:741:8: error: previous definition of ‘struct _Evas_Event_Mouse_Down’
+ struct _Evas_Event_Mouse_Down /** Mouse button press event */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:759:8: error: redefinition of ‘struct _Evas_Event_Mouse_Up’
+ struct _Evas_Event_Mouse_Up /** Mouse button release event */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:759:8: error: previous definition of ‘struct _Evas_Event_Mouse_Up’
+ struct _Evas_Event_Mouse_Up /** Mouse button release event */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:777:8: error: redefinition of ‘struct _Evas_Event_Mouse_In’
+ struct _Evas_Event_Mouse_In /** Mouse enter event */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:777:8: error: previous definition of ‘struct _Evas_Event_Mouse_In’
+ struct _Evas_Event_Mouse_In /** Mouse enter event */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:793:8: error: redefinition of ‘struct _Evas_Event_Mouse_Out’
+ struct _Evas_Event_Mouse_Out /** Mouse leave event */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:793:8: error: previous definition of ‘struct _Evas_Event_Mouse_Out’
+ struct _Evas_Event_Mouse_Out /** Mouse leave event */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:809:8: error: redefinition of ‘struct _Evas_Event_Mouse_Move’
+ struct _Evas_Event_Mouse_Move /** Mouse move event */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:809:8: error: previous definition of ‘struct _Evas_Event_Mouse_Move’
+ struct _Evas_Event_Mouse_Move /** Mouse move event */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:825:8: error: redefinition of ‘struct _Evas_Event_Mouse_Wheel’
+ struct _Evas_Event_Mouse_Wheel /** Wheel event */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:825:8: error: previous definition of ‘struct _Evas_Event_Mouse_Wheel’
+ struct _Evas_Event_Mouse_Wheel /** Wheel event */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:841:8: error: redefinition of ‘struct _Evas_Event_Multi_Down’
+ struct _Evas_Event_Multi_Down /** Multi button press event */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:841:8: error: previous definition of ‘struct _Evas_Event_Multi_Down’
+ struct _Evas_Event_Multi_Down /** Multi button press event */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:860:8: error: redefinition of ‘struct _Evas_Event_Multi_Up’
+ struct _Evas_Event_Multi_Up /** Multi button release event */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:860:8: error: previous definition of ‘struct _Evas_Event_Multi_Up’
+ struct _Evas_Event_Multi_Up /** Multi button release event */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:879:8: error: redefinition of ‘struct _Evas_Event_Multi_Move’
+ struct _Evas_Event_Multi_Move /** Multi button down event */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:879:8: error: previous definition of ‘struct _Evas_Event_Multi_Move’
+ struct _Evas_Event_Multi_Move /** Multi button down event */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:895:8: error: redefinition of ‘struct _Evas_Event_Key_Down’
+ struct _Evas_Event_Key_Down /** Key press event */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:895:8: error: previous definition of ‘struct _Evas_Event_Key_Down’
+ struct _Evas_Event_Key_Down /** Key press event */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:912:8: error: redefinition of ‘struct _Evas_Event_Key_Up’
+ struct _Evas_Event_Key_Up /** Key release event */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:912:8: error: previous definition of ‘struct _Evas_Event_Key_Up’
+ struct _Evas_Event_Key_Up /** Key release event */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:929:8: error: redefinition of ‘struct _Evas_Event_Render_Post’
+ struct _Evas_Event_Render_Post /** Send when the frame rendering is done @since 1.8 */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:929:8: error: previous definition of ‘struct _Evas_Event_Render_Post’
+ struct _Evas_Event_Render_Post /** Send when the frame rendering is done @since 1.8 */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:934:8: error: redefinition of ‘struct _Evas_Event_Hold’
+ struct _Evas_Event_Hold /** Hold change event */
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:934:8: error: previous definition of ‘struct _Evas_Event_Hold’
+ struct _Evas_Event_Hold /** Hold change event */
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:944:14: error: multiple definition of ‘enum _Evas_Axis_Label’
+ typedef enum _Evas_Axis_Label
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:944:14: error: previous definition here
+ typedef enum _Evas_Axis_Label
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:958:18: error: invalid type in declaration before ‘;’ token
+ } Evas_Axis_Label; /**< Types of recognized device axes @since 1.13 */
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:958:18: error: conflicting declaration ‘typedef int Evas_Axis_Label’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:958:3: error: ‘Evas_Axis_Label’ has a previous declaration as ‘typedef enum _Evas_Axis_Label Evas_Axis_Label’
+ } Evas_Axis_Label; /**< Types of recognized device axes @since 1.13 */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:960:8: error: redefinition of ‘struct _Evas_Axis’
+ struct _Evas_Axis
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:960:8: error: previous definition of ‘struct _Evas_Axis’
+ struct _Evas_Axis
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:966:8: error: redefinition of ‘struct _Evas_Event_Axis_Update’
+ struct _Evas_Event_Axis_Update
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:966:8: error: previous definition of ‘struct _Evas_Event_Axis_Update’
+ struct _Evas_Event_Axis_Update
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:994:14: error: multiple definition of ‘enum _Evas_Object_Pointer_Mode’
+ typedef enum _Evas_Object_Pointer_Mode
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:994:14: error: previous definition here
+ typedef enum _Evas_Object_Pointer_Mode
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:999:27: error: invalid type in declaration before ‘;’ token
+ } Evas_Object_Pointer_Mode; /**< How the mouse pointer should be handled by Evas. */
+                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:999:27: error: conflicting declaration ‘typedef int Evas_Object_Pointer_Mode’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:999:3: error: ‘Evas_Object_Pointer_Mode’ has a previous declaration as ‘typedef enum _Evas_Object_Pointer_Mode Evas_Object_Pointer_Mode’
+ } Evas_Object_Pointer_Mode; /**< How the mouse pointer should be handled by Evas. */
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3490:14: error: multiple definition of ‘enum _Evas_Text_Style_Type’
+ typedef enum _Evas_Text_Style_Type
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3490:14: error: previous definition here
+ typedef enum _Evas_Text_Style_Type
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3512:23: error: invalid type in declaration before ‘;’ token
+ } Evas_Text_Style_Type;
+                       ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3512:23: error: conflicting declaration ‘typedef int Evas_Text_Style_Type’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3512:3: error: ‘Evas_Text_Style_Type’ has a previous declaration as ‘typedef enum _Evas_Text_Style_Type Evas_Text_Style_Type’
+ } Evas_Text_Style_Type;
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3674:8: error: redefinition of ‘struct _Evas_Textblock_Rectangle’
+ struct _Evas_Textblock_Rectangle
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3674:8: error: previous definition of ‘struct _Evas_Textblock_Rectangle’
+ struct _Evas_Textblock_Rectangle
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3682:14: error: multiple definition of ‘enum _Evas_Textblock_Text_Type’
+ typedef enum _Evas_Textblock_Text_Type
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3682:14: error: previous definition here
+ typedef enum _Evas_Textblock_Text_Type
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3687:27: error: invalid type in declaration before ‘;’ token
+ } Evas_Textblock_Text_Type;
+                           ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3687:27: error: conflicting declaration ‘typedef int Evas_Textblock_Text_Type’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3687:3: error: ‘Evas_Textblock_Text_Type’ has a previous declaration as ‘typedef enum _Evas_Textblock_Text_Type Evas_Textblock_Text_Type’
+ } Evas_Textblock_Text_Type;
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3692:14: error: multiple definition of ‘enum _Evas_Textblock_Cursor_Type’
+ typedef enum _Evas_Textblock_Cursor_Type
+              ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3692:14: error: previous definition here
+ typedef enum _Evas_Textblock_Cursor_Type
+              ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3696:29: error: invalid type in declaration before ‘;’ token
+ } Evas_Textblock_Cursor_Type;
+                             ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3696:29: error: conflicting declaration ‘typedef int Evas_Textblock_Cursor_Type’
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:3696:3: error: ‘Evas_Textblock_Cursor_Type’ has a previous declaration as ‘typedef enum _Evas_Textblock_Cursor_Type Evas_Textblock_Cursor_Type’
+ } Evas_Textblock_Cursor_Type;
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4593:4: error: redeclaration of ‘EVAS_TEXTGRID_PALETTE_NONE’
+    EVAS_TEXTGRID_PALETTE_NONE,     /**< No palette is used */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4593:4: note: previous declaration ‘Evas_Textgrid_Palette EVAS_TEXTGRID_PALETTE_NONE’
+    EVAS_TEXTGRID_PALETTE_NONE,     /**< No palette is used */
+    ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4594:4: error: redeclaration of ‘EVAS_TEXTGRID_PALETTE_STANDARD’
+    EVAS_TEXTGRID_PALETTE_STANDARD, /**< standard palette (around 16 colors) */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4594:4: note: previous declaration ‘Evas_Textgrid_Palette EVAS_TEXTGRID_PALETTE_STANDARD’
+    EVAS_TEXTGRID_PALETTE_STANDARD, /**< standard palette (around 16 colors) */
+    ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4595:4: error: redeclaration of ‘EVAS_TEXTGRID_PALETTE_EXTENDED’
+    EVAS_TEXTGRID_PALETTE_EXTENDED, /**< extended palette (at max 256 colors) */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4595:4: note: previous declaration ‘Evas_Textgrid_Palette EVAS_TEXTGRID_PALETTE_EXTENDED’
+    EVAS_TEXTGRID_PALETTE_EXTENDED, /**< extended palette (at max 256 colors) */
+    ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4596:4: error: redeclaration of ‘EVAS_TEXTGRID_PALETTE_LAST’
+    EVAS_TEXTGRID_PALETTE_LAST      /**< ignore it */
+    ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4596:4: note: previous declaration ‘Evas_Textgrid_Palette EVAS_TEXTGRID_PALETTE_LAST’
+    EVAS_TEXTGRID_PALETTE_LAST      /**< ignore it */
+    ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4597:3: error: conflicting declaration ‘typedef enum Evas_Textgrid_Palette Evas_Textgrid_Palette’
+ } Evas_Textgrid_Palette;
+   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4597:3: error: ‘Evas_Textgrid_Palette’ has a previous declaration as ‘typedef enum Evas_Textgrid_Palette Evas_Textgrid_Palette’
+ } Evas_Textgrid_Palette;
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4608:45: error: redeclaration of ‘EVAS_TEXTGRID_FONT_STYLE_NORMAL’
+    EVAS_TEXTGRID_FONT_STYLE_NORMAL = (1 << 0), /**< Normal style */
+                                             ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4608:4: note: previous declaration ‘Evas_Textgrid_Font_Style EVAS_TEXTGRID_FONT_STYLE_NORMAL’
+    EVAS_TEXTGRID_FONT_STYLE_NORMAL = (1 << 0), /**< Normal style */
+    ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4609:45: error: redeclaration of ‘EVAS_TEXTGRID_FONT_STYLE_BOLD’
+    EVAS_TEXTGRID_FONT_STYLE_BOLD   = (1 << 1), /**< Bold style */
+                                             ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4609:4: note: previous declaration ‘Evas_Textgrid_Font_Style EVAS_TEXTGRID_FONT_STYLE_BOLD’
+    EVAS_TEXTGRID_FONT_STYLE_BOLD   = (1 << 1), /**< Bold style */
+    ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4610:45: error: redeclaration of ‘EVAS_TEXTGRID_FONT_STYLE_ITALIC’
+    EVAS_TEXTGRID_FONT_STYLE_ITALIC = (1 << 2)  /**< Oblique style */
+                                             ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4610:4: note: previous declaration ‘Evas_Textgrid_Font_Style EVAS_TEXTGRID_FONT_STYLE_ITALIC’
+    EVAS_TEXTGRID_FONT_STYLE_ITALIC = (1 << 2)  /**< Oblique style */
+    ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4611:3: error: conflicting declaration ‘typedef enum Evas_Textgrid_Font_Style Evas_Textgrid_Font_Style’
+ } Evas_Textgrid_Font_Style;
+   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4611:3: error: ‘Evas_Textgrid_Font_Style’ has a previous declaration as ‘typedef enum Evas_Textgrid_Font_Style Evas_Textgrid_Font_Style’
+ } Evas_Textgrid_Font_Style;
+   ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4629:8: error: redefinition of ‘struct _Evas_Textgrid_Cell’
+ struct _Evas_Textgrid_Cell
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4629:8: error: previous definition of ‘struct _Evas_Textgrid_Cell’
+ struct _Evas_Textgrid_Cell
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4714:8: error: redefinition of ‘struct _Evas_Smart_Class’
+ struct _Evas_Smart_Class
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4714:8: error: previous definition of ‘struct _Evas_Smart_Class’
+ struct _Evas_Smart_Class
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4755:8: error: redefinition of ‘struct _Evas_Smart_Interface’
+ struct _Evas_Smart_Interface
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4755:8: error: previous definition of ‘struct _Evas_Smart_Interface’
+ struct _Evas_Smart_Interface
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4774:8: error: redefinition of ‘struct _Evas_Smart_Cb_Description’
+ struct _Evas_Smart_Cb_Description
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:4774:8: error: previous definition of ‘struct _Evas_Smart_Cb_Description’
+ struct _Evas_Smart_Cb_Description
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5348:8: error: redefinition of ‘struct _Evas_Object_Smart_Clipped_Data’
+ struct _Evas_Object_Smart_Clipped_Data
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5348:8: error: previous definition of ‘struct _Evas_Object_Smart_Clipped_Data’
+ struct _Evas_Object_Smart_Clipped_Data
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5518:8: error: redefinition of ‘struct _Evas_Object_Box_Api’
+ struct _Evas_Object_Box_Api
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5518:8: error: previous definition of ‘struct _Evas_Object_Box_Api’
+ struct _Evas_Object_Box_Api
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5617:8: error: redefinition of ‘struct _Evas_Object_Box_Data’
+ struct _Evas_Object_Box_Data
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5617:8: error: previous definition of ‘struct _Evas_Object_Box_Data’
+ struct _Evas_Object_Box_Data
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5640:8: error: redefinition of ‘struct _Evas_Object_Box_Option’
+ struct _Evas_Object_Box_Option
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5640:8: error: previous definition of ‘struct _Evas_Object_Box_Option’
+ struct _Evas_Object_Box_Option
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5728:8: error: redefinition of ‘struct _Evas_Cserve_Stats’
+ struct _Evas_Cserve_Stats
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5728:8: error: previous definition of ‘struct _Evas_Cserve_Stats’
+ struct _Evas_Cserve_Stats
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5742:8: error: redefinition of ‘struct _Evas_Cserve_Image_Cache’
+ struct _Evas_Cserve_Image_Cache
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5742:8: error: previous definition of ‘struct _Evas_Cserve_Image_Cache’
+ struct _Evas_Cserve_Image_Cache
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5756:8: error: redefinition of ‘struct _Evas_Cserve_Image’
+ struct _Evas_Cserve_Image
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5756:8: error: previous definition of ‘struct _Evas_Cserve_Image’
+ struct _Evas_Cserve_Image
+        ^
+In file included from /tmp/SbSq85dDLH/dump1.h:68:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5779:8: error: redefinition of ‘struct _Evas_Cserve_Config’
+ struct _Evas_Cserve_Config
+        ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas.h:290:0,
+                 from /tmp/SbSq85dDLH/dump1.h:4:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/evas-1/Evas_Common.h:5779:8: error: previous definition of ‘struct _Evas_Cserve_Config’
+ struct _Evas_Cserve_Config
+        ^
+
+Temporary header file '/tmp/SbSq85dDLH/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/widget_viewer_evas/widget_viewer_evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_camera.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_camera.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_light.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_light.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_material.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_material.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_mesh.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_mesh.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_node.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_node.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_object.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_object.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_primitive.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_primitive.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_scene.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_scene.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_texture.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_canvas3d_texture.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_box.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_box.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_clickable_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_clickable_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_common_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_common_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_draggable_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_draggable_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_filter.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_filter.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_grid.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_grid.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_image.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_image.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_line.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_line.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_object.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_object.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_object_smart.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_object_smart.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_out.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_out.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_polygon.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_polygon.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_rectangle.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_rectangle.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_scrollable_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_scrollable_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_selectable_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_selectable_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_signal_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_signal_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_smart_clipped.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_smart_clipped.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_table.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_table.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_text.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_text.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_textblock.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_textblock.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_textgrid.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_textgrid.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_types.eot.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_vg.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_vg.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_zoomable_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/evas_zoomable_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/Evas_Common.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/Evas_Engine_Buffer.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/Evas_Engine_Drm.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/Evas_Engine_FB.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/Evas_Engine_GL_Drm.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/Evas_Engine_Wayland_Egl.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/Evas_Engine_Wayland_Shm.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/Evas_Eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/Evas_GL.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/Evas_GL_GLES1_Helpers.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/Evas_GL_GLES2_Helpers.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/Evas_GL_GLES3_Helpers.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/Evas_Legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/Evas_Loader.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/efl_vg_base.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/efl_vg_base.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/efl_vg_container.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/efl_vg_container.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/efl_vg_gradient.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/efl_vg_gradient.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/efl_vg_gradient_linear.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/efl_vg_gradient_linear.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/efl_vg_gradient_radial.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/efl_vg_gradient_radial.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/efl_vg_root_node.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/efl_vg_root_node.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/efl_vg_shape.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1/canvas/efl_vg_shape.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/mmf/mm_evas_renderer.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/SbSq85dDLH/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/widget_service -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/media -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/libdrm -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eeze-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-drm-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /tmp/SbSq85dDLH/dump2.h:100:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/mmf/mm_evas_renderer.h:39:22: fatal error: mm_types.h: No such file or directory
+ #include "mm_types.h"
+                      ^
+compilation terminated.
+

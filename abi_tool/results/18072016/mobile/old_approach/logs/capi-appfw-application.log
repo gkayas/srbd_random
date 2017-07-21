@@ -1,0 +1,42 @@
+Temporary header file '/tmp/g5egdMGrv9/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_alarm.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_common.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_control.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_control_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_event.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_extension.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_i18n.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_preference.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_preference_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_preference_log.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_resource_manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw/app_types.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/g5egdMGrv9/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/appfw -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/dlog -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/appcore
+
+Temporary header file '/tmp/g5egdMGrv9/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/appfw/app.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/appfw/app_alarm.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/appfw/app_common.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/appfw/app_control.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/appfw/app_control_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/appfw/app_event.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/appfw/app_extension.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/appfw/app_i18n.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/appfw/app_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/appfw/app_preference.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/appfw/app_preference_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/appfw/app_preference_log.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/appfw/app_resource_manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/appfw/app_types.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/g5egdMGrv9/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/appfw -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/dlog -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/appcore
+

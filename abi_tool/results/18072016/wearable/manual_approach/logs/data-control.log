@@ -1,0 +1,74 @@
+Temporary header file '/tmp/QC6ujMxuDc/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data-control.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data-control-map.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data-control-provider.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data-control-sql.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data-control-sql-cursor.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data-control-types.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data_control.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data_control_internal.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data_control_map.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data_control_provider.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data_control_sql.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data_control_sql_cursor.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data_control_types.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -fpreprocessed -x c++-header -fpermissive -w "/tmp/QC6ujMxuDc/dump1.i"  -I/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data-control.h:25:0,
+                 from /tmp/QC6ujMxuDc/dump1.h:3:
+/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data-control-sql.h:352:97: error: ‘bundle’ does not name a type
+ EXPORT_API int datacontrol_sql_insert(datacontrol_h provider, const bundle* insert_data, int *request_id);
+                                                                                                 ^
+In file included from /home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data-control.h:25:0,
+                 from /tmp/QC6ujMxuDc/dump1.h:3:
+/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data-control-sql.h:504:97: error: ‘bundle’ does not name a type
+ EXPORT_API int datacontrol_sql_update(datacontrol_h provider, const bundle* update_data, const char *where, int *request_id);
+                                                                                                 ^
+In file included from /home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data-control.h:27:0,
+                 from /tmp/QC6ujMxuDc/dump1.h:3:
+/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data-control-provider.h:43:3: error: ‘bundle’ has not been declared
+   bundle *insert_data, void *user_data);
+   ^
+In file included from /home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data-control.h:27:0,
+                 from /tmp/QC6ujMxuDc/dump1.h:3:
+/home/kayes/abi_tool/manual_execution/wearable/2.3.1/usr/include/appfw/data-control-provider.h:57:3: error: ‘bundle’ has not been declared
+   bundle *update_data, const char *where, void *user_data);
+   ^
+
+Temporary header file '/tmp/QC6ujMxuDc/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data-control.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data-control-map.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data-control-noti.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data-control-provider.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data-control-sql.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data-control-sql-cursor.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data-control-types.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data_control.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data_control_internal.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data_control_map.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data_control_noti.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data_control_provider.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data_control_sql.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data_control_sql_cursor.h"
+  #include "/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data_control_types.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -fpreprocessed -x c++-header -fpermissive -w "/tmp/QC6ujMxuDc/dump2.i"  -I/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data-control.h:25:0,
+                 from /tmp/QC6ujMxuDc/dump2.h:3:
+/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data-control-sql.h:351:97: error: ‘bundle’ does not name a type
+ EXPORT_API int datacontrol_sql_insert(datacontrol_h provider, const bundle *insert_data, int *request_id);
+                                                                                                 ^
+In file included from /home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data-control.h:25:0,
+                 from /tmp/QC6ujMxuDc/dump2.h:3:
+/home/kayes/abi_tool/manual_execution/wearable/3.0/usr/include/appfw/data-control-sql.h:503:97: error: ‘bundle’ does not name a type
+ EXPORT_API int datacontrol_sql_update(datacontrol_h provider, const bundle *update_data, const char *where, int *request_id);
+                                                                                                 ^
+

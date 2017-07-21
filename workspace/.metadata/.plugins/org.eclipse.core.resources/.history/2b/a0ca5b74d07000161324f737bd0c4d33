@@ -1,0 +1,101 @@
+package refapp;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import device.ResourceUtils;
+
+
+public class SuiteRunner {
+	
+	public static boolean isTCRerun = false;
+	
+	private static TCRunner runner = null;
+	
+	public static TCRunner getRunner() {
+		return runner;
+	}
+
+	public static TCRunner updateRunner() throws IOException {
+		return getAppRunner(runner.getProfileName());
+	}
+	
+	public static TCRunner getAppRunner(String profileName) throws IOException {
+		String xmlFilePath = "xml/storeapp_mobile.xml"; 
+		String resultPath = "reports/result_mobile.csv";
+		if(profileName.equals("Mobile")) {
+			xmlFilePath = "xml/storeapp_mobile.xml"; 
+		}else {
+			xmlFilePath = "xml/storeapp_mobile.xml"; 
+		}
+		
+		ArrayList<AppInfo> appInfos = JsoupXMLParser.parseXML(ResourceUtils.getResourcePath()+ xmlFilePath);
+		File resultFile = new File(resultPath);
+		
+		if(resultFile.exists()) {
+			ArrayList<AppInfo> resultApps = ResultUtils.readResultFile();
+			System.out.println(resultApps.size());
+			for (AppInfo appInfo : resultApps) {
+				if(appInfos.contains(appInfo)) {
+					System.out.println(appInfo+"?");
+					appInfos.get(appInfos.indexOf(appInfo)).copy(appInfo);
+				}
+			}
+		} else {
+			resultFile.createNewFile();
+			ResultUtils.writeResultFile(appInfos);
+		}
+		
+		runner = new TCRunner();
+	    runner.setProfileName(profileName);
+	    runner.setAppInfo(appInfos);
+		return runner;
+	}
+	
+	
+	public static void runModule(String profileName){
+		
+		try {
+			if(runner == null) {
+				runner = getAppRunner(profileName);	
+			}	
+			
+			runner.runAllApp(profileName);
+		} 
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public static void runTestCase(String moduleName,String testCaseName){
+		try {
+			if(runner == null) {
+				runner = getAppRunner(moduleName);	
+			}
+			runner.runSingleTC(moduleName,testCaseName);
+		} 
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public static void reRunTestCase(String moduleName,String testCaseName){
+		try {
+			isTCRerun = true;
+			if(runner == null) {
+				runner = getAppRunner(moduleName);	
+			}
+			runner.reRunTC(moduleName,testCaseName);
+			isTCRerun = false;
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static boolean isTCRerun()
+	{
+		return isTCRerun;
+	}
+}

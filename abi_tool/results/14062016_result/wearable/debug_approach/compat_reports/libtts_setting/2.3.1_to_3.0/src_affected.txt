@@ -1,0 +1,5 @@
+__tts_config_display_language_changed_cb
+tts_config_get_message_path
+__tts_config_screen_reader_changed_cb
+__tts_config_speech_rate_key_changed_cb
+tts_setting_foreach_surpported_voices

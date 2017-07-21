@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+	
+	public static int N,R;
+	
+	public static void main(String [] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		N = sc.nextInt();
+		R = sc.nextInt();
+		
+	}
+	
+	public static void solve(int i) {
+		
+		
+	}
+}

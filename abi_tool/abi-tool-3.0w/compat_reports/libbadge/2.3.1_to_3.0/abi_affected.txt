@@ -1,0 +1,5 @@
+badge_setting_db_get
+badge_db_insert
+badge_db_delete
+badge_foreach_existed
+badge_setting_db_set

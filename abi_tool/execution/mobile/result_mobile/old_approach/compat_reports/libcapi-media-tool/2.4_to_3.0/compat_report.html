@@ -1,0 +1,1021 @@
+<!-- kind:binary;verdict:incompatible;affected:3.6;added:23;removed:0;type_problems_high:0;type_problems_medium:1;type_problems_low:1;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:0;changed_constants:0;type_changes_other:38;tool_version:1.99.18 -->
+<!-- kind:source;verdict:compatible;affected:0;added:23;removed:0;type_problems_high:0;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:0;changed_constants:0;type_changes_other:40;tool_version:1.99.18 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="capi-media-tool, compatibility, API, ABI, report" />
+    <meta name="description" content="API/ABI compatibility report for the capi-media-tool library between 2.4 and 3.0 versions" />
+    <title>
+        capi-media-tool: 2.4 to 3.0 compatibility report
+    </title>
+    <style type="text/css">
+    body {
+    font-family:Arial, sans-serif;
+    background-color:White;
+    color:Black;
+}
+hr {
+    color:Black;
+    background-color:Black;
+    height:1px;
+    border:0;
+}
+h1 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.625em;
+}
+h2 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.25em;
+    white-space:nowrap;
+}
+span.section {
+    font-weight:bold;
+    cursor:pointer;
+    color:#003E69;
+    white-space:nowrap;
+    margin-left:5px;
+}
+span.new_sign {
+    font-weight:bold;
+    margin-left:26px;
+    color:#003E69;
+}
+span.new_sign_lbl {
+    margin-left:28px;
+    font-size:0.875em;
+    color:Black;
+}
+span:hover.section {
+    color:#336699;
+}
+span.sect_aff {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:#cc3300;
+}
+span.sect_info {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:Black;
+}
+span.ext {
+    font-weight:100;
+}
+span.h_name {
+    color:#cc3300;
+    font-size:0.875em;
+    font-weight:bold;
+}
+div.h_list, div.lib_list {
+    font-size:0.94em;
+    padding-left:5px;
+}
+span.ns {
+    color:#408080;
+    font-size:0.94em;
+}
+span.lib_name {
+    color:Green;
+    font-size:0.875em;
+    font-weight:bold;
+}
+span.iname {
+    font-weight:bold;
+    color:#003E69;
+    margin-left:5px;
+}
+span.iname_b {
+    font-weight:bold;
+    font-size:1.1em;
+}
+span.iname_a {
+    color:#333333;
+    font-weight:bold;
+    font-size:0.94em;
+}
+span.sym_p {
+    font-weight:normal;
+    white-space:normal;
+}
+div.affect {
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:0.87em;
+    font-style:italic;
+    line-height:0.75em;
+}
+div.affected {
+    padding-left:30px;
+    padding-top:10px;
+}
+table.ptable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:1em;
+    margin-left:15px;
+    margin-top:3px;
+    margin-bottom:3px;
+    width:900px;
+    
+}
+table.ptable td {
+    border:1px solid gray;
+    padding: 3px;
+    font-size:0.875em;
+    text-align:left;
+    vertical-align:top;
+}
+table.vtable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:16px;
+    margin-left:30px;
+    margin-top:10px;
+}
+table.vtable td {
+    border:1px solid gray;
+    word-wrap:break-word;
+    padding: 3px;
+    font-size:0.875em;
+    max-width:450px;
+    vertical-align:top;
+}
+table.ptable th, table.vtable th {
+    background-color:#eeeeee;
+    font-weight:bold;
+    color:#333333;
+    font-family:Verdana, Arial;
+    font-size:0.81em;
+    border:1px solid gray;
+    text-align:center;
+    vertical-align:top;
+    white-space:nowrap;
+    padding: 3px;
+}
+table.summary {
+    border-collapse:collapse;
+    border:1px outset black;
+}
+table.summary th {
+    background-color:#eeeeee;
+    font-weight:100;
+    text-align:left;
+    font-size:0.94em;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px;
+}
+table.summary td {
+    text-align:right;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px 5px 3px 10px;
+}
+span.mangled {
+    padding-left:15px;
+    font-size:0.875em;
+    cursor:text;
+    color:#444444;
+}
+span.sym_ver {
+    color:#333333;
+    white-space:nowrap;
+    font-family:"DejaVu Sans Mono", Monospace;
+}
+span.attr {
+    color:#333333;
+    font-weight:100;
+}
+span.color_p {
+    font-style:italic;
+    color:Brown;
+}
+span.p {
+    font-style:italic;
+}
+span.fp {
+    font-style:italic;
+    background-color:#FFCCCC;
+}
+span.ttype {
+    font-weight:100;
+}
+span.nowrap {
+    white-space:nowrap;
+}
+span.value {
+    white-space:nowrap;
+    font-weight:bold;
+}
+td.passed {
+    background-color:#CCFFCC;
+}
+td.warning {
+    background-color:#F4F4AF;
+}
+td.failed {
+    background-color:#FFCCCC;
+}
+td.new {
+    background-color:#C6DEFF;
+}
+.top_ref {
+    font-size:0.69em;
+}
+.footer {
+    font-size:0.75em;
+}
+
+.tabset {
+    float:left;
+}
+a.tab {
+    border:1px solid Black;
+    float:left;
+    margin:0px 5px -1px 0px;
+    padding:3px 5px 3px 5px;
+    position:relative;
+    font-size:0.875em;
+    background-color:#DDD;
+    text-decoration:none;
+    color:Black;
+}
+a.disabled:hover
+{
+    color:Black;
+    background:#EEE;
+}
+a.active:hover
+{
+    color:Black;
+    background:White;
+}
+a.active {
+    border-bottom-color:White;
+    background-color:White;
+}
+div.tab {
+    border-top:1px solid Black;
+    padding:0px;
+    width:100%;
+    clear:both;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+    function showContent(header, id)
+{
+    e = document.getElementById(id);
+    if(e.style.display == 'none')
+    {
+        e.style.display = 'block';
+        e.style.visibility = 'visible';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[&minus;]");
+    }
+    else
+    {
+        e.style.display = 'none';
+        e.style.visibility = 'hidden';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[+]");
+    }
+}
+function initTabs()
+{
+    var url = window.location.href;
+    if(url.indexOf('_Source_')!=-1 || url.indexOf('#Source')!=-1)
+    {
+        var tab1 = document.getElementById('BinaryID');
+        var tab2 = document.getElementById('SourceID');
+        tab1.className='tab disabled';
+        tab2.className='tab active';
+    }
+    var sets = document.getElementsByTagName('div');
+    for (var i = 0; i < sets.length; i++)
+    {
+        if (sets[i].className.indexOf('tabset') != -1)
+        {
+            var tabs = [];
+            var links = sets[i].getElementsByTagName('a');
+            for (var j = 0; j < links.length; j++)
+            {
+                if (links[j].className.indexOf('tab') != -1)
+                {
+                    tabs.push(links[j]);
+                    links[j].tabs = tabs;
+                    var tab = document.getElementById(links[j].href.substr(links[j].href.indexOf('#') + 1));
+                    //reset all tabs on start
+                    if (tab)
+                    {
+                        if (links[j].className.indexOf('active')!=-1) {
+                            tab.style.display = 'block';
+                        }
+                        else {
+                            tab.style.display = 'none';
+                        }
+                    }
+                    links[j].onclick = function()
+                    {
+                        var tab = document.getElementById(this.href.substr(this.href.indexOf('#') + 1));
+                        if (tab)
+                        {
+                            //reset all tabs before change
+                            for (var k = 0; k < this.tabs.length; k++)
+                            {
+                                document.getElementById(this.tabs[k].href.substr(this.tabs[k].href.indexOf('#') + 1)).style.display = 'none';
+                                this.tabs[k].className = this.tabs[k].className.replace('active', 'disabled');
+                            }
+                            this.className = 'tab active';
+                            tab.style.display = 'block';
+                            // window.location.hash = this.id.replace('ID', '');
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(url.indexOf('#')!=-1) {
+        location.href=location.href;
+    }
+}
+if (window.addEventListener) window.addEventListener('load', initTabs, false);
+else if (window.attachEvent) window.attachEvent('onload', initTabs);
+    -->
+    </script>
+    </head><body><a name='Source'></a><a name='Binary'></a><a name='Top'></a><h1>API compatibility report for the <span style='color:Blue;'>capi-media-tool</span> library between <span style='color:Red;'>2.4</span> and <span style='color:Red;'>3.0</span> versions on <span style='color:Blue;'>x86_64</span></h1>
+
+            <br/>
+            <div class='tabset'>
+            <a id='BinaryID' href='#BinaryTab' class='tab active'>Binary<br/>Compatibility</a>
+            <a id='SourceID' href='#SourceTab' style='margin-left:3px' class='tab disabled'>Source<br/>Compatibility</a>
+            </div><div id='BinaryTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Library Name</th><td>capi-media-tool</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>x86_64</td></tr>
+<tr><th>GCC Version</th><td>4.8</td></tr>
+<tr><th>Subject</th><td width='150px'>Binary Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>3</a></td></tr>
+<tr><th>Total Shared Libraries</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>56 / 31</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(3.6%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Binary_Added' style='color:Blue;'>23</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Type_Binary_Problems_Medium' style='color:Blue;'>1</a></td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Type_Binary_Problems_Low' style='color:Blue;'>1</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Binary_Changes_In_Types' style='color:Blue;'>38</a></td></tr>
+</table>
+
+<a name='Binary_Added'></a><h2>Added Symbols (23)</h2><hr/>
+<span class='h_name'>media_format.h</span>, <span class='lib_name'>libcapi-media-tool.so.0.1.5</span><br/>
+<span class="iname">media_format_get_audio_aac_header_type&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>enum media_format_aac_header_type_e* <span class='color_p'>aac_header_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_get_container_mime&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>enum media_format_mimetype_e* <span class='color_p'>mimetype</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_get_text_info&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, enum media_format_mimetype_e* <span class='color_p'>mimetype</span>, <span class='nowrap'>enum media_format_text_type_e* <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_get_type&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>enum media_format_type_e* <span class='color_p'>formattype</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_get_video_frame_rate&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>int* <span class='color_p'>frame_rate</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_set_audio_aac_header_type&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>enum media_format_aac_header_type_e <span class='color_p'>aac_header_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_set_container_mime&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>enum media_format_mimetype_e <span class='color_p'>mimetype</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_set_text_mime&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>enum media_format_mimetype_e <span class='color_p'>mimetype</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_set_text_type&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>enum media_format_text_type_e <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_set_video_frame_rate&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>int <span class='color_p'>frame_rate</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_packet.h</span>, <span class='lib_name'>libcapi-media-tool.so.0.1.5</span><br/>
+<span class="iname">media_packet_get_flags&#160;<span class='sym_p'>(&#160;media_packet_h <span class='color_p'>packet</span>, <span class='nowrap'>enum media_buffer_flags_e* <span class='color_p'>flags</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_is_text&#160;<span class='sym_p'>(&#160;media_packet_h <span class='color_p'>packet</span>, <span class='nowrap'>bool* <span class='color_p'>is_text</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_packet_internal.h</span>, <span class='lib_name'>libcapi-media-tool.so.0.1.5</span><br/>
+<span class="iname">media_packet_get_allocated_buffer_size&#160;<span class='sym_p'>(&#160;media_packet_h <span class='color_p'>packet</span>, <span class='nowrap'>int* <span class='color_p'>size</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_reset_flags&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_packet_h <span class='color_p'>packet</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_packet_pool.h</span>, <span class='lib_name'>libcapi-media-tool.so.0.1.5</span><br/>
+<span class="iname">media_packet_pool_acquire_packet&#160;<span class='sym_p'>(&#160;media_packet_pool_h <span class='color_p'>pool</span>, media_packet_h* <span class='color_p'>pkt</span>, <span class='nowrap'>long <span class='color_p'>timeout</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_allocate&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_packet_pool_h <span class='color_p'>pool</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_packet_pool_h* <span class='color_p'>pool</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_deallocate&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_packet_pool_h <span class='color_p'>pool</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_packet_pool_h <span class='color_p'>pool</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_get_size&#160;<span class='sym_p'>(&#160;media_packet_pool_h <span class='color_p'>pool</span>, int* <span class='color_p'>min_buffers</span>, int* <span class='color_p'>max_buffers</span>, <span class='nowrap'>int* <span class='color_p'>curr_buffers</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_release_packet&#160;<span class='sym_p'>(&#160;media_packet_pool_h <span class='color_p'>pool</span>, <span class='nowrap'>media_packet_h <span class='color_p'>pkt</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_set_media_format&#160;<span class='sym_p'>(&#160;media_packet_pool_h <span class='color_p'>pool</span>, <span class='nowrap'>media_format_h <span class='color_p'>fmt</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_set_size&#160;<span class='sym_p'>(&#160;media_packet_pool_h <span class='color_p'>pool</span>, <span class='nowrap'>int <span class='color_p'>min_buffers</span>,</span> <span class='nowrap'>int <span class='color_p'>max_buffers</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Medium_Risk_Binary_Problems'></a><a name='Type_Binary_Problems_Medium'></a>
+<h2>Problems with Data Types, Medium Severity (1)</h2><hr/>
+<span class='h_name'>media_format.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> media_format_mimetype_e (1)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Value of member <b>MEDIA_FORMAT_NATIVE_VIDEO</b> has been changed from <b>570437632</b> to <b>570454016</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (4)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>media_format_get_audio_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> enum media_format_mimetype_e* <span class='fp'>mimetype</span>, <span class='nowrap'>int* <i>channel</i>,</span> <span class='nowrap'>int* <i>samplerate</i>,</span> <span class='nowrap'>int* <i>bit</i>,</span> <span class='nowrap'>int* <i>avg_bps</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; (pointer) has base type &#39;enum media_format_mimetype_e&#39;.</div>
+<span class='iname_a'>media_format_get_video_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> enum media_format_mimetype_e* <span class='fp'>mimetype</span>, <span class='nowrap'>int* <i>width</i>,</span> <span class='nowrap'>int* <i>height</i>,</span> <span class='nowrap'>int* <i>avg_bps</i>,</span> <span class='nowrap'>int* <i>max_bps</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; (pointer) has base type &#39;enum media_format_mimetype_e&#39;.</div>
+<span class='iname_a'>media_format_set_audio_mime&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> <span class='nowrap'>enum media_format_mimetype_e <span class='fp'>mimetype</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; has type &#39;enum media_format_mimetype_e&#39;.</div>
+<span class='iname_a'>media_format_set_video_mime&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> <span class='nowrap'>enum media_format_mimetype_e <span class='fp'>mimetype</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; has type &#39;enum media_format_mimetype_e&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a><a name='Type_Binary_Problems_Low'></a>
+<h2>Problems with Data Types, Low Severity (1)</h2><hr/>
+<span class='h_name'>media_format.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> media_format_mimetype_e (1)</span>
+<br/>
+<div id="c_3" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Value of member <b>MEDIA_FORMAT_MAX</b> has been changed from <b>570437633</b> to <b>318799905</b>.</td>
+<td>Applications may execute a wrong branch of code in the library and therefore change the behavior.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_4')">
+[+] affected symbols (4)</span>
+<div id="c_4" style="display:none;">
+<div class='affected'><span class='iname_a'>media_format_get_audio_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> enum media_format_mimetype_e* <span class='fp'>mimetype</span>, <span class='nowrap'>int* <i>channel</i>,</span> <span class='nowrap'>int* <i>samplerate</i>,</span> <span class='nowrap'>int* <i>bit</i>,</span> <span class='nowrap'>int* <i>avg_bps</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; (pointer) has base type &#39;enum media_format_mimetype_e&#39;.</div>
+<span class='iname_a'>media_format_get_video_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> enum media_format_mimetype_e* <span class='fp'>mimetype</span>, <span class='nowrap'>int* <i>width</i>,</span> <span class='nowrap'>int* <i>height</i>,</span> <span class='nowrap'>int* <i>avg_bps</i>,</span> <span class='nowrap'>int* <i>max_bps</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; (pointer) has base type &#39;enum media_format_mimetype_e&#39;.</div>
+<span class='iname_a'>media_format_set_audio_mime&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> <span class='nowrap'>enum media_format_mimetype_e <span class='fp'>mimetype</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; has type &#39;enum media_format_mimetype_e&#39;.</div>
+<span class='iname_a'>media_format_set_video_mime&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> <span class='nowrap'>enum media_format_mimetype_e <span class='fp'>mimetype</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; has type &#39;enum media_format_mimetype_e&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Binary_Changes'></a><a name='Other_Binary_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (38)</h2><hr/>
+<span class='h_name'>media_format.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> media_format_mimetype_e (38)</span>
+<br/>
+<div id="c_5" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>MEDIA_FORMAT_BGRA</b> with value <b>570435040</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_3GP</b> with value <b>67121264</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_AAC_ADIF</b> with value <b>67125297</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_AAC_ADTS</b> with value <b>67125296</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>5</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_AVI</b> with value <b>67121184</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>6</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_MATROSKA</b> with value <b>67121232</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>7</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_MP4</b> with value <b>67121168</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>8</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_MPEG2PS</b> with value <b>67121216</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>9</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_MPEG2TS</b> with value <b>67121200</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>10</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_OGG</b> with value <b>67125280</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>11</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_WAV</b> with value <b>67125264</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>12</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_WEBM</b> with value <b>67121248</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>13</th>
+<td>The member <b>MEDIA_FORMAT_H263_BCP</b> with value <b>301998116</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>14</th>
+<td>The member <b>MEDIA_FORMAT_H263_BLP</b> with value <b>301998114</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>15</th>
+<td>The member <b>MEDIA_FORMAT_H263_CHCP</b> with value <b>301998119</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>16</th>
+<td>The member <b>MEDIA_FORMAT_H263_C_INTERLACEP</b> with value <b>301998121</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>17</th>
+<td>The member <b>MEDIA_FORMAT_H263_C_INTERNETP</b> with value <b>301998120</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>18</th>
+<td>The member <b>MEDIA_FORMAT_H263_H320_CEP</b> with value <b>301998115</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>19</th>
+<td>The member <b>MEDIA_FORMAT_H263_HLP</b> with value <b>301998122</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>20</th>
+<td>The member <b>MEDIA_FORMAT_H263_ISW2P</b> with value <b>301998117</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>21</th>
+<td>The member <b>MEDIA_FORMAT_H263_ISW3P</b> with value <b>301998118</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>22</th>
+<td>The member <b>MEDIA_FORMAT_H264_C444P</b> with value <b>301998135</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>23</th>
+<td>The member <b>MEDIA_FORMAT_H264_EXTP</b> with value <b>301998131</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>24</th>
+<td>The member <b>MEDIA_FORMAT_H264_H10P</b> with value <b>301998132</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>25</th>
+<td>The member <b>MEDIA_FORMAT_H264_H422P</b> with value <b>301998133</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>26</th>
+<td>The member <b>MEDIA_FORMAT_H264_H444P</b> with value <b>301998134</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>27</th>
+<td>The member <b>MEDIA_FORMAT_HEVC_M10P</b> with value <b>301998210</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>28</th>
+<td>The member <b>MEDIA_FORMAT_HEVC_MP</b> with value <b>301998209</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>29</th>
+<td>The member <b>MEDIA_FORMAT_PCM_F32BE</b> with value <b>553653527</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>30</th>
+<td>The member <b>MEDIA_FORMAT_PCM_F32LE</b> with value <b>553653526</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>31</th>
+<td>The member <b>MEDIA_FORMAT_PCM_S16BE</b> with value <b>553653523</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>32</th>
+<td>The member <b>MEDIA_FORMAT_PCM_S16LE</b> with value <b>553653520</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>33</th>
+<td>The member <b>MEDIA_FORMAT_PCM_S24BE</b> with value <b>553653524</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>34</th>
+<td>The member <b>MEDIA_FORMAT_PCM_S24LE</b> with value <b>553653521</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>35</th>
+<td>The member <b>MEDIA_FORMAT_PCM_S32BE</b> with value <b>553653525</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>36</th>
+<td>The member <b>MEDIA_FORMAT_PCM_S32LE</b> with value <b>553653522</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>37</th>
+<td>The member <b>MEDIA_FORMAT_TEXT_3GP</b> with value <b>318799904</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>38</th>
+<td>The member <b>MEDIA_FORMAT_TEXT_MP4</b> with value <b>318799888</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_6')">
+[+] affected symbols (4)</span>
+<div id="c_6" style="display:none;">
+<div class='affected'><span class='iname_a'>media_format_get_audio_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> enum media_format_mimetype_e* <span class='fp'>mimetype</span>, <span class='nowrap'>int* <i>channel</i>,</span> <span class='nowrap'>int* <i>samplerate</i>,</span> <span class='nowrap'>int* <i>bit</i>,</span> <span class='nowrap'>int* <i>avg_bps</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; (pointer) has base type &#39;enum media_format_mimetype_e&#39;.</div>
+<span class='iname_a'>media_format_get_video_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> enum media_format_mimetype_e* <span class='fp'>mimetype</span>, <span class='nowrap'>int* <i>width</i>,</span> <span class='nowrap'>int* <i>height</i>,</span> <span class='nowrap'>int* <i>avg_bps</i>,</span> <span class='nowrap'>int* <i>max_bps</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; (pointer) has base type &#39;enum media_format_mimetype_e&#39;.</div>
+<span class='iname_a'>media_format_set_audio_mime&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> <span class='nowrap'>enum media_format_mimetype_e <span class='fp'>mimetype</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; has type &#39;enum media_format_mimetype_e&#39;.</div>
+<span class='iname_a'>media_format_set_video_mime&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> <span class='nowrap'>enum media_format_mimetype_e <span class='fp'>mimetype</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; has type &#39;enum media_format_mimetype_e&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (3)</h2><hr/>
+<div class='h_list'>
+media_format.h<br/>
+media_packet.h<br/>
+media_packet_internal.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Shared Libraries (1)</h2><hr/>
+<div class='lib_list'>
+libcapi-media-tool.so.0.1.1<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><div id='SourceTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Library Name</th><td>capi-media-tool</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>x86_64</td></tr>
+<tr><th>GCC Version</th><td>4.8</td></tr>
+<tr><th>Subject</th><td width='150px'>Source Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>3</a></td></tr>
+<tr><th>Total Shared Libraries</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>56 / 31</td></tr>
+<tr><th>Verdict</th><td><span style='color:Green;'><b>Compatible</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Source_Added' style='color:Blue;'>23</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Types' style='color:Blue;'>40</a></td></tr>
+</table>
+
+<a name='Source_Added'></a><h2>Added Symbols (23)</h2><hr/>
+<span class='h_name'>media_format.h</span><br/>
+<span class="iname">media_format_get_audio_aac_header_type&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>enum media_format_aac_header_type_e* <span class='color_p'>aac_header_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_get_container_mime&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>enum media_format_mimetype_e* <span class='color_p'>mimetype</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_get_text_info&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, enum media_format_mimetype_e* <span class='color_p'>mimetype</span>, <span class='nowrap'>enum media_format_text_type_e* <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_get_type&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>enum media_format_type_e* <span class='color_p'>formattype</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_get_video_frame_rate&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>int* <span class='color_p'>frame_rate</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_set_audio_aac_header_type&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>enum media_format_aac_header_type_e <span class='color_p'>aac_header_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_set_container_mime&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>enum media_format_mimetype_e <span class='color_p'>mimetype</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_set_text_mime&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>enum media_format_mimetype_e <span class='color_p'>mimetype</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_set_text_type&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>enum media_format_text_type_e <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_format_set_video_frame_rate&#160;<span class='sym_p'>(&#160;media_format_h <span class='color_p'>fmt</span>, <span class='nowrap'>int <span class='color_p'>frame_rate</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_packet.h</span><br/>
+<span class="iname">media_packet_get_flags&#160;<span class='sym_p'>(&#160;media_packet_h <span class='color_p'>packet</span>, <span class='nowrap'>enum media_buffer_flags_e* <span class='color_p'>flags</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_is_text&#160;<span class='sym_p'>(&#160;media_packet_h <span class='color_p'>packet</span>, <span class='nowrap'>bool* <span class='color_p'>is_text</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_packet_internal.h</span><br/>
+<span class="iname">media_packet_get_allocated_buffer_size&#160;<span class='sym_p'>(&#160;media_packet_h <span class='color_p'>packet</span>, <span class='nowrap'>int* <span class='color_p'>size</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_reset_flags&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_packet_h <span class='color_p'>packet</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_packet_pool.h</span><br/>
+<span class="iname">media_packet_pool_acquire_packet&#160;<span class='sym_p'>(&#160;media_packet_pool_h <span class='color_p'>pool</span>, media_packet_h* <span class='color_p'>pkt</span>, <span class='nowrap'>long <span class='color_p'>timeout</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_allocate&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_packet_pool_h <span class='color_p'>pool</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_packet_pool_h* <span class='color_p'>pool</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_deallocate&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_packet_pool_h <span class='color_p'>pool</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_packet_pool_h <span class='color_p'>pool</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_get_size&#160;<span class='sym_p'>(&#160;media_packet_pool_h <span class='color_p'>pool</span>, int* <span class='color_p'>min_buffers</span>, int* <span class='color_p'>max_buffers</span>, <span class='nowrap'>int* <span class='color_p'>curr_buffers</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_release_packet&#160;<span class='sym_p'>(&#160;media_packet_pool_h <span class='color_p'>pool</span>, <span class='nowrap'>media_packet_h <span class='color_p'>pkt</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_set_media_format&#160;<span class='sym_p'>(&#160;media_packet_pool_h <span class='color_p'>pool</span>, <span class='nowrap'>media_format_h <span class='color_p'>fmt</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_packet_pool_set_size&#160;<span class='sym_p'>(&#160;media_packet_pool_h <span class='color_p'>pool</span>, <span class='nowrap'>int <span class='color_p'>min_buffers</span>,</span> <span class='nowrap'>int <span class='color_p'>max_buffers</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes'></a><a name='Other_Source_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (40)</h2><hr/>
+<span class='h_name'>media_format.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_7')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> media_format_mimetype_e (40)</span>
+<br/>
+<div id="c_7" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>MEDIA_FORMAT_BGRA</b> with value <b>570435040</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_3GP</b> with value <b>67121264</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_AAC_ADIF</b> with value <b>67125297</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_AAC_ADTS</b> with value <b>67125296</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>5</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_AVI</b> with value <b>67121184</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>6</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_MATROSKA</b> with value <b>67121232</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>7</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_MP4</b> with value <b>67121168</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>8</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_MPEG2PS</b> with value <b>67121216</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>9</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_MPEG2TS</b> with value <b>67121200</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>10</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_OGG</b> with value <b>67125280</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>11</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_WAV</b> with value <b>67125264</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>12</th>
+<td>The member <b>MEDIA_FORMAT_CONTAINER_WEBM</b> with value <b>67121248</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>13</th>
+<td>The member <b>MEDIA_FORMAT_H263_BCP</b> with value <b>301998116</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>14</th>
+<td>The member <b>MEDIA_FORMAT_H263_BLP</b> with value <b>301998114</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>15</th>
+<td>The member <b>MEDIA_FORMAT_H263_CHCP</b> with value <b>301998119</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>16</th>
+<td>The member <b>MEDIA_FORMAT_H263_C_INTERLACEP</b> with value <b>301998121</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>17</th>
+<td>The member <b>MEDIA_FORMAT_H263_C_INTERNETP</b> with value <b>301998120</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>18</th>
+<td>The member <b>MEDIA_FORMAT_H263_H320_CEP</b> with value <b>301998115</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>19</th>
+<td>The member <b>MEDIA_FORMAT_H263_HLP</b> with value <b>301998122</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>20</th>
+<td>The member <b>MEDIA_FORMAT_H263_ISW2P</b> with value <b>301998117</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>21</th>
+<td>The member <b>MEDIA_FORMAT_H263_ISW3P</b> with value <b>301998118</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>22</th>
+<td>The member <b>MEDIA_FORMAT_H264_C444P</b> with value <b>301998135</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>23</th>
+<td>The member <b>MEDIA_FORMAT_H264_EXTP</b> with value <b>301998131</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>24</th>
+<td>The member <b>MEDIA_FORMAT_H264_H10P</b> with value <b>301998132</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>25</th>
+<td>The member <b>MEDIA_FORMAT_H264_H422P</b> with value <b>301998133</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>26</th>
+<td>The member <b>MEDIA_FORMAT_H264_H444P</b> with value <b>301998134</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>27</th>
+<td>The member <b>MEDIA_FORMAT_HEVC_M10P</b> with value <b>301998210</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>28</th>
+<td>The member <b>MEDIA_FORMAT_HEVC_MP</b> with value <b>301998209</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>29</th>
+<td>The member <b>MEDIA_FORMAT_PCM_F32BE</b> with value <b>553653527</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>30</th>
+<td>The member <b>MEDIA_FORMAT_PCM_F32LE</b> with value <b>553653526</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>31</th>
+<td>The member <b>MEDIA_FORMAT_PCM_S16BE</b> with value <b>553653523</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>32</th>
+<td>The member <b>MEDIA_FORMAT_PCM_S16LE</b> with value <b>553653520</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>33</th>
+<td>The member <b>MEDIA_FORMAT_PCM_S24BE</b> with value <b>553653524</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>34</th>
+<td>The member <b>MEDIA_FORMAT_PCM_S24LE</b> with value <b>553653521</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>35</th>
+<td>The member <b>MEDIA_FORMAT_PCM_S32BE</b> with value <b>553653525</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>36</th>
+<td>The member <b>MEDIA_FORMAT_PCM_S32LE</b> with value <b>553653522</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>37</th>
+<td>The member <b>MEDIA_FORMAT_TEXT_3GP</b> with value <b>318799904</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>38</th>
+<td>The member <b>MEDIA_FORMAT_TEXT_MP4</b> with value <b>318799888</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>39</th>
+<td>Value of member <b>MEDIA_FORMAT_MAX</b> has been changed from <b>570437633</b> to <b>318799905</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>40</th>
+<td>Value of member <b>MEDIA_FORMAT_NATIVE_VIDEO</b> has been changed from <b>570437632</b> to <b>570454016</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_8')">
+[+] affected symbols (4)</span>
+<div id="c_8" style="display:none;">
+<div class='affected'><span class='iname_a'>media_format_get_audio_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> enum media_format_mimetype_e* <span class='fp'>mimetype</span>, <span class='nowrap'>int* <i>channel</i>,</span> <span class='nowrap'>int* <i>samplerate</i>,</span> <span class='nowrap'>int* <i>bit</i>,</span> <span class='nowrap'>int* <i>avg_bps</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; (pointer) has base type &#39;enum media_format_mimetype_e&#39;.</div>
+<span class='iname_a'>media_format_get_video_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> enum media_format_mimetype_e* <span class='fp'>mimetype</span>, <span class='nowrap'>int* <i>width</i>,</span> <span class='nowrap'>int* <i>height</i>,</span> <span class='nowrap'>int* <i>avg_bps</i>,</span> <span class='nowrap'>int* <i>max_bps</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; (pointer) has base type &#39;enum media_format_mimetype_e&#39;.</div>
+<span class='iname_a'>media_format_set_audio_mime&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> <span class='nowrap'>enum media_format_mimetype_e <span class='fp'>mimetype</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; has type &#39;enum media_format_mimetype_e&#39;.</div>
+<span class='iname_a'>media_format_set_video_mime&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_format_h <i>fmt</i>,</span> <span class='nowrap'>enum media_format_mimetype_e <span class='fp'>mimetype</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;mimetype&#39; has type &#39;enum media_format_mimetype_e&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (3)</h2><hr/>
+<div class='h_list'>
+media_format.h<br/>
+media_packet.h<br/>
+media_packet_internal.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Shared Libraries (1)</h2><hr/>
+<div class='lib_list'>
+libcapi-media-tool.so.0.1.1<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><hr/>
+<div class='footer' align='right'><i>Generated by <a href='http://lvc.github.io/abi-compliance-checker/'>ABI Compliance Checker</a> 1.99.18 &#160;</i>
+</div>
+<br/>
+
+</body></html>

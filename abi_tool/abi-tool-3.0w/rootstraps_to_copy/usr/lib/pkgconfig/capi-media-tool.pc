@@ -1,0 +1,15 @@
+
+# Package Information for pkg-config
+
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/media
+
+Name: capi-media-tool
+Description: 
+Version: 
+Requires: dlog capi-base-common libtbm
+Libs: -L${libdir} -lcapi-media-tool
+Cflags: -I${includedir}
+

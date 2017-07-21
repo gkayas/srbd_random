@@ -1,0 +1,1030 @@
+<!-- kind:binary;verdict:incompatible;affected:21.3;added:61;removed:31;type_problems_high:0;type_problems_medium:0;type_problems_low:2;interface_problems_high:0;interface_problems_medium:2;interface_problems_low:1;changed_constants:0;type_changes_other:2;tool_version:1.99.18 -->
+<!-- kind:source;verdict:incompatible;affected:21.3;added:63;removed:31;type_problems_high:0;type_problems_medium:0;type_problems_low:2;interface_problems_high:0;interface_problems_medium:2;interface_problems_low:0;changed_constants:0;type_changes_other:2;interface_changes_other:1;tool_version:1.99.18 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="libpkgmgr-info, compatibility, API, ABI, report" />
+    <meta name="description" content="API/ABI compatibility report for the libpkgmgr-info object between 2.3.1 and 3.0 versions" />
+    <title>
+        libpkgmgr-info: 2.3.1 to 3.0 compatibility report
+    </title>
+    <style type="text/css">
+    body {
+    font-family:Arial, sans-serif;
+    background-color:White;
+    color:Black;
+}
+hr {
+    color:Black;
+    background-color:Black;
+    height:1px;
+    border:0;
+}
+h1 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.625em;
+}
+h2 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.25em;
+    white-space:nowrap;
+}
+span.section {
+    font-weight:bold;
+    cursor:pointer;
+    color:#003E69;
+    white-space:nowrap;
+    margin-left:5px;
+}
+span.new_sign {
+    font-weight:bold;
+    margin-left:26px;
+    color:#003E69;
+}
+span.new_sign_lbl {
+    margin-left:28px;
+    font-size:0.875em;
+    color:Black;
+}
+span:hover.section {
+    color:#336699;
+}
+span.sect_aff {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:#cc3300;
+}
+span.sect_info {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:Black;
+}
+span.ext {
+    font-weight:100;
+}
+span.h_name {
+    color:#cc3300;
+    font-size:0.875em;
+    font-weight:bold;
+}
+div.h_list, div.lib_list {
+    font-size:0.94em;
+    padding-left:5px;
+}
+span.ns {
+    color:#408080;
+    font-size:0.94em;
+}
+span.lib_name {
+    color:Green;
+    font-size:0.875em;
+    font-weight:bold;
+}
+span.iname {
+    font-weight:bold;
+    color:#003E69;
+    margin-left:5px;
+}
+span.iname_b {
+    font-weight:bold;
+    font-size:1.1em;
+}
+span.iname_a {
+    color:#333333;
+    font-weight:bold;
+    font-size:0.94em;
+}
+span.sym_p {
+    font-weight:normal;
+    white-space:normal;
+}
+div.affect {
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:0.87em;
+    font-style:italic;
+    line-height:0.75em;
+}
+div.affected {
+    padding-left:30px;
+    padding-top:10px;
+}
+table.ptable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:1em;
+    margin-left:15px;
+    margin-top:3px;
+    margin-bottom:3px;
+    width:900px;
+    
+}
+table.ptable td {
+    border:1px solid gray;
+    padding: 3px;
+    font-size:0.875em;
+    text-align:left;
+    vertical-align:top;
+}
+table.vtable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:16px;
+    margin-left:30px;
+    margin-top:10px;
+}
+table.vtable td {
+    border:1px solid gray;
+    word-wrap:break-word;
+    padding: 3px;
+    font-size:0.875em;
+    max-width:450px;
+    vertical-align:top;
+}
+table.ptable th, table.vtable th {
+    background-color:#eeeeee;
+    font-weight:bold;
+    color:#333333;
+    font-family:Verdana, Arial;
+    font-size:0.81em;
+    border:1px solid gray;
+    text-align:center;
+    vertical-align:top;
+    white-space:nowrap;
+    padding: 3px;
+}
+table.summary {
+    border-collapse:collapse;
+    border:1px outset black;
+}
+table.summary th {
+    background-color:#eeeeee;
+    font-weight:100;
+    text-align:left;
+    font-size:0.94em;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px;
+}
+table.summary td {
+    text-align:right;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px 5px 3px 10px;
+}
+span.mangled {
+    padding-left:15px;
+    font-size:0.875em;
+    cursor:text;
+    color:#444444;
+}
+span.sym_ver {
+    color:#333333;
+    white-space:nowrap;
+    font-family:"DejaVu Sans Mono", Monospace;
+}
+span.attr {
+    color:#333333;
+    font-weight:100;
+}
+span.color_p {
+    font-style:italic;
+    color:Brown;
+}
+span.p {
+    font-style:italic;
+}
+span.fp {
+    font-style:italic;
+    background-color:#FFCCCC;
+}
+span.ttype {
+    font-weight:100;
+}
+span.nowrap {
+    white-space:nowrap;
+}
+span.value {
+    white-space:nowrap;
+    font-weight:bold;
+}
+td.passed {
+    background-color:#CCFFCC;
+}
+td.warning {
+    background-color:#F4F4AF;
+}
+td.failed {
+    background-color:#FFCCCC;
+}
+td.new {
+    background-color:#C6DEFF;
+}
+.top_ref {
+    font-size:0.69em;
+}
+.footer {
+    font-size:0.75em;
+}
+
+.tabset {
+    float:left;
+}
+a.tab {
+    border:1px solid Black;
+    float:left;
+    margin:0px 5px -1px 0px;
+    padding:3px 5px 3px 5px;
+    position:relative;
+    font-size:0.875em;
+    background-color:#DDD;
+    text-decoration:none;
+    color:Black;
+}
+a.disabled:hover
+{
+    color:Black;
+    background:#EEE;
+}
+a.active:hover
+{
+    color:Black;
+    background:White;
+}
+a.active {
+    border-bottom-color:White;
+    background-color:White;
+}
+div.tab {
+    border-top:1px solid Black;
+    padding:0px;
+    width:100%;
+    clear:both;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+    function showContent(header, id)
+{
+    e = document.getElementById(id);
+    if(e.style.display == 'none')
+    {
+        e.style.display = 'block';
+        e.style.visibility = 'visible';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[&minus;]");
+    }
+    else
+    {
+        e.style.display = 'none';
+        e.style.visibility = 'hidden';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[+]");
+    }
+}
+function initTabs()
+{
+    var url = window.location.href;
+    if(url.indexOf('_Source_')!=-1 || url.indexOf('#Source')!=-1)
+    {
+        var tab1 = document.getElementById('BinaryID');
+        var tab2 = document.getElementById('SourceID');
+        tab1.className='tab disabled';
+        tab2.className='tab active';
+    }
+    var sets = document.getElementsByTagName('div');
+    for (var i = 0; i < sets.length; i++)
+    {
+        if (sets[i].className.indexOf('tabset') != -1)
+        {
+            var tabs = [];
+            var links = sets[i].getElementsByTagName('a');
+            for (var j = 0; j < links.length; j++)
+            {
+                if (links[j].className.indexOf('tab') != -1)
+                {
+                    tabs.push(links[j]);
+                    links[j].tabs = tabs;
+                    var tab = document.getElementById(links[j].href.substr(links[j].href.indexOf('#') + 1));
+                    //reset all tabs on start
+                    if (tab)
+                    {
+                        if (links[j].className.indexOf('active')!=-1) {
+                            tab.style.display = 'block';
+                        }
+                        else {
+                            tab.style.display = 'none';
+                        }
+                    }
+                    links[j].onclick = function()
+                    {
+                        var tab = document.getElementById(this.href.substr(this.href.indexOf('#') + 1));
+                        if (tab)
+                        {
+                            //reset all tabs before change
+                            for (var k = 0; k < this.tabs.length; k++)
+                            {
+                                document.getElementById(this.tabs[k].href.substr(this.tabs[k].href.indexOf('#') + 1)).style.display = 'none';
+                                this.tabs[k].className = this.tabs[k].className.replace('active', 'disabled');
+                            }
+                            this.className = 'tab active';
+                            tab.style.display = 'block';
+                            // window.location.hash = this.id.replace('ID', '');
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(url.indexOf('#')!=-1) {
+        location.href=location.href;
+    }
+}
+if (window.addEventListener) window.addEventListener('load', initTabs, false);
+else if (window.attachEvent) window.attachEvent('onload', initTabs);
+    -->
+    </script>
+    </head><body><a name='Source'></a><a name='Binary'></a><a name='Top'></a><h1>API compatibility report for the <span style='color:Blue;'>libpkgmgr-info.so</span> object between <span style='color:Red;'>2.3.1</span> and <span style='color:Red;'>3.0</span> versions on <span style='color:Blue;'>ARM</span></h1>
+
+            <br/>
+            <div class='tabset'>
+            <a id='BinaryID' href='#BinaryTab' class='tab active'>Binary<br/>Compatibility</a>
+            <a id='SourceID' href='#SourceTab' style='margin-left:3px' class='tab disabled'>Source<br/>Compatibility</a>
+            </div><div id='BinaryTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libpkgmgr-info</td></tr>
+<tr><th>Version #1</th><td>2.3.1 (gcc 4.6.4)</td></tr>
+<tr><th>Version #2</th><td>3.0 (gcc 4.9.2)</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>Subject</th><td width='150px'>Binary Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>2</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>7</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>150 / 68</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(21.3%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Binary_Added' style='color:Blue;'>61</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td class='failed'><a href='#Binary_Removed' style='color:Blue;'>31</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Type_Binary_Problems_Low' style='color:Blue;'>2</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Symbol_Binary_Problems_Medium' style='color:Blue;'>2</a></td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Symbol_Binary_Problems_Low' style='color:Blue;'>1</a></td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Binary_Changes_In_Types' style='color:Blue;'>2</a></td></tr>
+</table>
+
+<a name='Binary_Added'></a><h2>Added Symbols (61)</h2><hr/>
+<span class='h_name'>pkgmgr-info.h</span>, <span class='lib_name'>libpkgmgr-info.so.0.1.0</span><br/>
+<span class="iname">getUserPkgCertDBPathUID&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">getUserPkgParserDBPathUID&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_appinfo.c</span>, <span class='lib_name'>libpkgmgr-info.so.0.1.0</span><br/>
+<span class="iname">pkgmgrinfo_appinfo_clone_appinfo&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>pkgmgrinfo_appinfo_h* <span class='color_p'>clone</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_foreach_background_category&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, pkgmgrinfo_app_background_category_list_cb <span class='color_p'>category_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_foreach_splash_screen&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, pkgmgrinfo_app_splash_screen_list_cb <span class='color_p'>splash_screen_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_alias_appid&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>alias_appid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_api_version&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>api_version</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_applist_for_amd&#160;<span class='sym_p'>(&#160;pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_effective_appid&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>effective_appid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_installed_storage_location&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>pkgmgrinfo_installed_storage* <span class='color_p'>storage</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_launch_mode&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>mode</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_root_path&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>root_path</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_splash_screen_display&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>splash_screen_display</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_tep_name&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>tep_name</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_usr_appinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>pkgmgrinfo_appinfo_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_usr_applist_for_amd&#160;<span class='sym_p'>(&#160;pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_usr_disabled_appinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>pkgmgrinfo_appinfo_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_usr_installed_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_usr_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, enum pkgmgrinfo_app_component <span class='color_p'>component</span>, pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_zip_mount_file&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>zip_mount_file</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_is_disabled&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>disabled</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_is_global&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>global</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_is_guestmode_visibility&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>status</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_usr_filter_count&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_filter_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>count</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_usr_filter_foreach_appinfo&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_filter_h <span class='color_p'>handle</span>, pkgmgrinfo_app_list_cb <span class='color_p'>app_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_usr_get_datacontrol_appid&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>providerid</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>char** <span class='color_p'>appid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_usr_get_datacontrol_info&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>providerid</span>, char const* <span class='color_p'>type</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>char** <span class='color_p'>appid</span>,</span> <span class='nowrap'>char** <span class='color_p'>access</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_usr_get_localed_label&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, char const* <span class='color_p'>locale</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>char** <span class='color_p'>label</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_usr_metadata_filter_foreach&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_metadata_filter_h <span class='color_p'>handle</span>, pkgmgrinfo_app_list_cb <span class='color_p'>app_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_basic.h</span>, <span class='lib_name'>libpkgmgr-info.so.0.1.0</span><br/>
+<span class="iname">pkgmgrinfo_basic_free_application&#160;<span class='sym_p'>(&#160;<span class='nowrap'>application_x* <span class='color_p'>application</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_basic_free_package&#160;<span class='sym_p'>(&#160;<span class='nowrap'>package_x* <span class='color_p'>package</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_certinfo.c</span>, <span class='lib_name'>libpkgmgr-info.so.0.1.0</span><br/>
+<span class="iname">pkgmgrinfo_delete_usr_certinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_compare_usr_app_cert_info&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>lhs_app_id</span>, char const* <span class='color_p'>rhs_app_id</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>pkgmgrinfo_cert_compare_result_type_e* <span class='color_p'>compare_result</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_compare_usr_pkg_cert_info&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>lhs_package_id</span>, char const* <span class='color_p'>rhs_package_id</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>pkgmgrinfo_cert_compare_result_type_e* <span class='color_p'>compare_result</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_db.c</span>, <span class='lib_name'>libpkgmgr-info.so.0.1.0</span><br/>
+<span class="iname">getIconPath&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>_Bool <span class='color_p'>readonly</span> )</span></span></span><br/>
+<span class="iname">getUserManifestPath&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>_Bool <span class='color_p'>readonly</span> )</span></span></span><br/>
+<span class="iname">getUserPkgCertDBPath&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">getUserPkgParserDBPath&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_set_guestmode_visibility&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool <span class='color_p'>status</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_set_usr_default_label&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, char const* <span class='color_p'>label</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_set_usr_guestmode_visibility&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>_Bool <span class='color_p'>status</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_set_usr_state_enabled&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, <span class='nowrap'>_Bool <span class='color_p'>enabled</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_set_usr_installed_storage&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, enum INSTALL_LOCATION <span class='color_p'>location</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_pkginfo.c</span>, <span class='lib_name'>libpkgmgr-info.so.0.1.0</span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_api_version&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>api_version</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_data_size&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>size</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_location_from_xml&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>manifest</span>, <span class='nowrap'>pkgmgrinfo_install_location* <span class='color_p'>location</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_package_size&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>size</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_size_from_xml&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>manifest</span>, <span class='nowrap'>int* <span class='color_p'>size</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_tep_name&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>tep_name</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_total_size&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>size</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_usr_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkg_list_cb <span class='color_p'>pkg_list_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_usr_pkginfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>pkgmgrinfo_pkginfo_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_zip_mount_file&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>zip_mount_file</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_is_for_all_users&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>for_all_users</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_is_global&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>global</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_usr_filter_count&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_filter_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>count</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_usr_filter_foreach_pkginfo&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_filter_h <span class='color_p'>handle</span>, pkgmgrinfo_pkg_list_cb <span class='color_p'>pkg_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>tzplatform_config.h</span>, <span class='lib_name'>libpkgmgr-info.so.0.1.0</span><br/>
+<span class="iname">tzplatform_getenv&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum tzplatform_variable <span class='color_p'>p1</span> )</span></span></span><br/>
+<span class="iname">tzplatform_getuid&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum tzplatform_variable <span class='color_p'>p1</span> )</span></span></span><br/>
+<span class="iname">tzplatform_mkpath&#160;<span class='sym_p'>(&#160;enum tzplatform_variable <span class='color_p'>p1</span>, <span class='nowrap'>char const* <span class='color_p'>p2</span> )</span></span></span><br/>
+<span class="iname">tzplatform_mkpath3&#160;<span class='sym_p'>(&#160;enum tzplatform_variable <span class='color_p'>p1</span>, <span class='nowrap'>char const* <span class='color_p'>p2</span>,</span> <span class='nowrap'>char const* <span class='color_p'>p3</span> )</span></span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Binary_Removed'></a><a name='Binary_Withdrawn'></a><h2>Removed Symbols (31)</h2><hr/>
+<span class='h_name'>pkgmgrinfo_appinfo.c</span>, <span class='lib_name'>libpkgmgr-info.so.0.0.17</span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_aliasid&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, <span class='nowrap'>char** <span class='color_p'>alias_id</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_ambient_support&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>ambient_support</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_install_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_installed_time&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>installed_time</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_mounted_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_multi_instance_mainid&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>multi_instance_mainid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_small_icon&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>icon</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_support_feature&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>support_feature</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_support_mode&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>support_mode</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_uginfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>ug_name</span>, <span class='nowrap'>pkgmgrinfo_appinfo_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_unmounted_appinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, <span class='nowrap'>pkgmgrinfo_appinfo_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_unmounted_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_is_multi_instance&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>multi_instance</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_is_multi_window&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>multi_window</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_is_removable&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>removable</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_is_system&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>system</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_basic.c</span>, <span class='lib_name'>libpkgmgr-info.so.0.0.17</span><br/>
+<span class="iname">_pkgmgrinfo_basic_free_manifest_x&#160;<span class='sym_p'>(&#160;<span class='nowrap'>manifest_x* <span class='color_p'>mfx</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_basic_generate_hash_for_file&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>file</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_db.c</span>, <span class='lib_name'>libpkgmgr-info.so.0.0.17</span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_set_preload&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, <span class='nowrap'>int <span class='color_p'>preload</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_feature.c</span>, <span class='lib_name'>libpkgmgr-info.so.0.0.17</span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_disabled_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, enum pkgmgrinfo_app_component <span class='color_p'>component</span>, pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_disabled_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkg_list_cb <span class='color_p'>pkg_list_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_disabled_pkginfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, <span class='nowrap'>pkgmgrinfo_pkginfo_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_pkginfo.c</span>, <span class='lib_name'>libpkgmgr-info.so.0.0.17</span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_groupid&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>groupid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_hash&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>hash</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_mounted_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkg_list_cb <span class='color_p'>pkg_list_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_support_mode&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>support_mode</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_support_reset&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>support_reset</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_unmounted_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkg_list_cb <span class='color_p'>pkg_list_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_unmounted_pkginfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, <span class='nowrap'>pkgmgrinfo_pkginfo_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_is_mother_package&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>mother_package</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_privilege_filter_foreach&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>privilege</span>, pkgmgrinfo_pkg_list_cb <span class='color_p'>pkg_list_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Medium_Risk_Binary_Problems'></a><a name='Symbol_Binary_Problems_Medium'></a><a name='Interface_Binary_Problems_Medium'></a>
+<h2>Problems with Symbols, Medium Severity (2)</h2><hr/>
+<span class='h_name'>pkgmgrinfo_certinfo.c</span>, <span class='lib_name'>libpkgmgr-info.so.0.0.17</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='ext'>[+]</span> pkgmgrinfo_pkginfo_load_certinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, <span class='nowrap'>pkgmgrinfo_certinfo_h <span class='color_p'>handle</span> )</span></span> (1)</span>
+<br/>
+<div id="c_1" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>pkgmgrinfo_pkginfo_load_certinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, pkgmgrinfo_certinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>uid</b> of type <b>uid_t</b> has been added to the calling stack.</td>
+<td>This parameter will not be initialized by old clients.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_2')">
+<span class='ext'>[+]</span> pkgmgrinfo_save_certinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, <span class='nowrap'>pkgmgrinfo_instcertinfo_h <span class='color_p'>handle</span> )</span></span> (1)</span>
+<br/>
+<div id="c_2" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>pkgmgrinfo_save_certinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, pkgmgrinfo_instcertinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>uid</b> of type <b>uid_t</b> has been added to the calling stack.</td>
+<td>This parameter will not be initialized by old clients.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a><a name='Type_Binary_Problems_Low'></a>
+<h2>Problems with Data Types, Low Severity (2)</h2><hr/>
+<span class='h_name'>pkgmgrinfo_type.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='ext'>[+]</span> <span class='ttype'>typedef</span> pkgmgrinfo_app_control_list_cb (1)</span>
+<br/>
+<div id="c_3" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Base type has been changed from <span class='value'>int(*)(void*, void*)</span> to <span class='value'>int(*)(char const*, char const*, char const*, void*)</span>.</td>
+<td>Replacement of the base data type may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_4')">
+[+] affected symbols (1)</span>
+<div id="c_4" style="display:none;">
+<div class='affected'><span class='iname_a'>pkgmgrinfo_appinfo_foreach_appcontrol&#160;<span class='sym_p'>(&#160;<span class='nowrap'>pkgmgrinfo_appinfo_h <i>handle</i>,</span> int(*<span class='fp'>appcontrol_func</span>)(pkgmgrinfo_appcontrol_h, void*), <span class='nowrap'>void* <i>user_data</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;appcontrol_func&#39; has type &#39;pkgmgrinfo_app_control_list_cb&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+<span class='ext'>[+]</span> <span class='ttype'>typedef</span> pkgmgrinfo_handler (1)</span>
+<br/>
+<div id="c_5" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Base type has been changed from <span class='value'>int(*)(int, char const*, char const*, char const*, char const*, void const*, void*)</span> to <span class='value'>int(*)(unsigned int, int, char const*, char const*, char const*, char const*, void const*, void*)</span>.</td>
+<td>Replacement of the base data type may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_6')">
+[+] affected symbols (1)</span>
+<div id="c_6" style="display:none;">
+<div class='affected'><span class='iname_a'>pkgmgrinfo_client_listen_status&#160;<span class='sym_p'>(&#160;<span class='nowrap'>pkgmgrinfo_client* <i>pc</i>,</span> int(*<span class='fp'>event_cb</span>)(int, char const*, char const*, char const*, char const*, void const*, void*), <span class='nowrap'>void* <i>data</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;event_cb&#39; has type &#39;pkgmgrinfo_handler&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Symbol_Binary_Problems_Low'></a><a name='Interface_Binary_Problems_Low'></a>
+<h2>Problems with Symbols, Low Severity (1)</h2><hr/>
+<span class='h_name'>pkgmgrinfo_appinfo.c</span>, <span class='lib_name'>libpkgmgr-info.so.0.0.17</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_7')">
+<span class='ext'>[+]</span> pkgmgrinfo_appinfo_get_effectimage_type&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>effectimg_type</span> )</span></span> (1)</span>
+<br/>
+<div id="c_7" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>pkgmgrinfo_appinfo_get_effectimage_type&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>effectimage_type</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>effectimg_type</b> has been renamed to <b>effectimage_type</b>.</td>
+<td>Renaming of a parameter may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Binary_Changes'></a><a name='Other_Binary_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (2)</h2><hr/>
+<span class='h_name'>pkgmgrinfo_type.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_8')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> pkgmgrinfo_app_component (2)</span>
+<br/>
+<div id="c_8" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>PMINFO_WATCH_APP</b> with value <b>4</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>PMINFO_WIDGET_APP</b> with value <b>3</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_9')">
+[+] affected symbols (2)</span>
+<div id="c_9" style="display:none;">
+<div class='affected'><span class='iname_a'>pkgmgrinfo_appinfo_get_component&#160;<span class='sym_p'>(&#160;<span class='nowrap'>pkgmgrinfo_appinfo_h <i>handle</i>,</span> <span class='nowrap'>pkgmgrinfo_app_component* <span class='fp'>component</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;component&#39; (pointer) has base type &#39;enum pkgmgrinfo_app_component&#39;.</div>
+<span class='iname_a'>pkgmgrinfo_appinfo_get_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>pkgmgrinfo_pkginfo_h <i>handle</i>,</span> enum pkgmgrinfo_app_component <span class='fp'>component</span>, <span class='nowrap'>pkgmgrinfo_app_list_cb <i>app_func</i>,</span> <span class='nowrap'>void* <i>user_data</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;component&#39; has type &#39;enum pkgmgrinfo_app_component&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (2)</h2><hr/>
+<div class='h_list'>
+pkgmgrinfo_basic.h<br/>
+pkgmgrinfo_type.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (7)</h2><hr/>
+<div class='h_list'>
+pkgmgrinfo_appinfo.c<br/>
+pkgmgrinfo_basic.c<br/>
+pkgmgrinfo_certinfo.c<br/>
+pkgmgrinfo_client.c<br/>
+pkgmgrinfo_db.c<br/>
+pkgmgrinfo_feature.c<br/>
+pkgmgrinfo_pkginfo.c<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libpkgmgr-info.so.0.0.17<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><div id='SourceTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libpkgmgr-info</td></tr>
+<tr><th>Version #1</th><td>2.3.1 (gcc 4.6.4)</td></tr>
+<tr><th>Version #2</th><td>3.0 (gcc 4.9.2)</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>Subject</th><td width='150px'>Source Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>2</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>7</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>150 / 68</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(21.3%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Source_Added' style='color:Blue;'>63</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td class='failed'><a href='#Source_Removed' style='color:Blue;'>31</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Type_Source_Problems_Low' style='color:Blue;'>2</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Symbol_Source_Problems_Medium' style='color:Blue;'>2</a></td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Types' style='color:Blue;'>2</a></td></tr>
+<tr><th>Other Changes<br/>in Symbols</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Symbols' style='color:Blue;'>1</a></td></tr>
+</table>
+
+<a name='Source_Added'></a><h2>Added Symbols (63)</h2><hr/>
+<span class='h_name'>pkgmgr-info.h</span><br/>
+<span class="iname">getUserPkgCertDBPathUID&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">getUserPkgParserDBPathUID&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_appinfo.c</span><br/>
+<span class="iname">pkgmgrinfo_appinfo_clone_appinfo&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>pkgmgrinfo_appinfo_h* <span class='color_p'>clone</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_foreach_background_category&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, pkgmgrinfo_app_background_category_list_cb <span class='color_p'>category_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_foreach_splash_screen&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, pkgmgrinfo_app_splash_screen_list_cb <span class='color_p'>splash_screen_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_alias_appid&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>alias_appid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_api_version&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>api_version</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_applist_for_amd&#160;<span class='sym_p'>(&#160;pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_effective_appid&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>effective_appid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_installed_storage_location&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>pkgmgrinfo_installed_storage* <span class='color_p'>storage</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_launch_mode&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>mode</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_root_path&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>root_path</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_splash_screen_display&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>splash_screen_display</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_tep_name&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>tep_name</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_usr_appinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>pkgmgrinfo_appinfo_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_usr_applist_for_amd&#160;<span class='sym_p'>(&#160;pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_usr_disabled_appinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>pkgmgrinfo_appinfo_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_usr_installed_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_usr_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, enum pkgmgrinfo_app_component <span class='color_p'>component</span>, pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_zip_mount_file&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>zip_mount_file</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_is_disabled&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>disabled</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_is_global&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>global</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_is_guestmode_visibility&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>status</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_usr_filter_count&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_filter_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>count</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_usr_filter_foreach_appinfo&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_filter_h <span class='color_p'>handle</span>, pkgmgrinfo_app_list_cb <span class='color_p'>app_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_usr_get_datacontrol_appid&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>providerid</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>char** <span class='color_p'>appid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_usr_get_datacontrol_info&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>providerid</span>, char const* <span class='color_p'>type</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>char** <span class='color_p'>appid</span>,</span> <span class='nowrap'>char** <span class='color_p'>access</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_usr_get_localed_label&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, char const* <span class='color_p'>locale</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>char** <span class='color_p'>label</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_usr_metadata_filter_foreach&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_metadata_filter_h <span class='color_p'>handle</span>, pkgmgrinfo_app_list_cb <span class='color_p'>app_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_basic.h</span><br/>
+<span class="iname">pkgmgrinfo_basic_free_application&#160;<span class='sym_p'>(&#160;<span class='nowrap'>application_x* <span class='color_p'>application</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_basic_free_package&#160;<span class='sym_p'>(&#160;<span class='nowrap'>package_x* <span class='color_p'>package</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_certinfo.c</span><br/>
+<span class="iname">pkgmgrinfo_delete_usr_certinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_compare_usr_app_cert_info&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>lhs_app_id</span>, char const* <span class='color_p'>rhs_app_id</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>pkgmgrinfo_cert_compare_result_type_e* <span class='color_p'>compare_result</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_compare_usr_pkg_cert_info&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>lhs_package_id</span>, char const* <span class='color_p'>rhs_package_id</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>pkgmgrinfo_cert_compare_result_type_e* <span class='color_p'>compare_result</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_db.c</span><br/>
+<span class="iname">getIconPath&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>_Bool <span class='color_p'>readonly</span> )</span></span></span><br/>
+<span class="iname">getUserManifestPath&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>_Bool <span class='color_p'>readonly</span> )</span></span></span><br/>
+<span class="iname">getUserPkgCertDBPath&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">getUserPkgParserDBPath&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_set_guestmode_visibility&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool <span class='color_p'>status</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_set_usr_default_label&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, char const* <span class='color_p'>label</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_set_usr_guestmode_visibility&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>_Bool <span class='color_p'>status</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_set_usr_state_enabled&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, <span class='nowrap'>_Bool <span class='color_p'>enabled</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_set_usr_installed_storage&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, enum INSTALL_LOCATION <span class='color_p'>location</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_pkginfo.c</span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_api_version&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>api_version</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_data_size&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>size</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_location_from_xml&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>manifest</span>, <span class='nowrap'>pkgmgrinfo_install_location* <span class='color_p'>location</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_package_size&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>size</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_size_from_xml&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>manifest</span>, <span class='nowrap'>int* <span class='color_p'>size</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_tep_name&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>tep_name</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_total_size&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>size</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_usr_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkg_list_cb <span class='color_p'>pkg_list_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_usr_pkginfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span>,</span> <span class='nowrap'>pkgmgrinfo_pkginfo_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_zip_mount_file&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>zip_mount_file</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_is_for_all_users&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>for_all_users</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_is_global&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>global</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_usr_filter_count&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_filter_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>count</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_usr_filter_foreach_pkginfo&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_filter_h <span class='color_p'>handle</span>, pkgmgrinfo_pkg_list_cb <span class='color_p'>pkg_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_private.h</span><br/>
+<span class="iname">cert_db <span class='attr'>[data]</span></span><br/>
+<span class="iname">manifest_db <span class='attr'>[data]</span></span><br/>
+<br/>
+<span class='h_name'>tzplatform_config.h</span><br/>
+<span class="iname">tzplatform_getenv&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum tzplatform_variable <span class='color_p'>p1</span> )</span></span></span><br/>
+<span class="iname">tzplatform_getuid&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum tzplatform_variable <span class='color_p'>p1</span> )</span></span></span><br/>
+<span class="iname">tzplatform_mkpath&#160;<span class='sym_p'>(&#160;enum tzplatform_variable <span class='color_p'>p1</span>, <span class='nowrap'>char const* <span class='color_p'>p2</span> )</span></span></span><br/>
+<span class="iname">tzplatform_mkpath3&#160;<span class='sym_p'>(&#160;enum tzplatform_variable <span class='color_p'>p1</span>, <span class='nowrap'>char const* <span class='color_p'>p2</span>,</span> <span class='nowrap'>char const* <span class='color_p'>p3</span> )</span></span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Source_Removed'></a><a name='Source_Withdrawn'></a><h2>Removed Symbols (31)</h2><hr/>
+<span class='h_name'>pkgmgrinfo_appinfo.c</span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_aliasid&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, <span class='nowrap'>char** <span class='color_p'>alias_id</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_ambient_support&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>ambient_support</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_install_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_installed_time&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>installed_time</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_mounted_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_multi_instance_mainid&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>multi_instance_mainid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_small_icon&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>icon</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_support_feature&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>support_feature</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_support_mode&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>support_mode</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_uginfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>ug_name</span>, <span class='nowrap'>pkgmgrinfo_appinfo_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_unmounted_appinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>appid</span>, <span class='nowrap'>pkgmgrinfo_appinfo_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_unmounted_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_is_multi_instance&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>multi_instance</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_is_multi_window&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>multi_window</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_is_removable&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>removable</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_appinfo_is_system&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>system</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_basic.c</span><br/>
+<span class="iname">_pkgmgrinfo_basic_free_manifest_x&#160;<span class='sym_p'>(&#160;<span class='nowrap'>manifest_x* <span class='color_p'>mfx</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_basic_generate_hash_for_file&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>file</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_db.c</span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_set_preload&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, <span class='nowrap'>int <span class='color_p'>preload</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_feature.c</span><br/>
+<span class="iname">pkgmgrinfo_appinfo_get_disabled_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, enum pkgmgrinfo_app_component <span class='color_p'>component</span>, pkgmgrinfo_app_list_cb <span class='color_p'>app_func</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_disabled_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkg_list_cb <span class='color_p'>pkg_list_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_disabled_pkginfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, <span class='nowrap'>pkgmgrinfo_pkginfo_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>pkgmgrinfo_pkginfo.c</span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_groupid&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>groupid</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_hash&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>hash</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_mounted_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkg_list_cb <span class='color_p'>pkg_list_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_support_mode&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>int* <span class='color_p'>support_mode</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_support_reset&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>support_reset</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_unmounted_list&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkg_list_cb <span class='color_p'>pkg_list_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_get_unmounted_pkginfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, <span class='nowrap'>pkgmgrinfo_pkginfo_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_is_mother_package&#160;<span class='sym_p'>(&#160;pkgmgrinfo_pkginfo_h <span class='color_p'>handle</span>, <span class='nowrap'>_Bool* <span class='color_p'>mother_package</span> )</span></span></span><br/>
+<span class="iname">pkgmgrinfo_pkginfo_privilege_filter_foreach&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>privilege</span>, pkgmgrinfo_pkg_list_cb <span class='color_p'>pkg_list_cb</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Medium_Risk_Source_Problems'></a><a name='Symbol_Source_Problems_Medium'></a><a name='Interface_Source_Problems_Medium'></a>
+<h2>Problems with Symbols, Medium Severity (2)</h2><hr/>
+<span class='h_name'>pkgmgrinfo_certinfo.c</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_10')">
+<span class='ext'>[+]</span> pkgmgrinfo_pkginfo_load_certinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, <span class='nowrap'>pkgmgrinfo_certinfo_h <span class='color_p'>handle</span> )</span></span> (1)</span>
+<br/>
+<div id="c_10" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>pkgmgrinfo_pkginfo_load_certinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, pkgmgrinfo_certinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>uid</b> of type <b>uid_t</b> has been added to the calling stack.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_11')">
+<span class='ext'>[+]</span> pkgmgrinfo_save_certinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, <span class='nowrap'>pkgmgrinfo_instcertinfo_h <span class='color_p'>handle</span> )</span></span> (1)</span>
+<br/>
+<div id="c_11" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>pkgmgrinfo_save_certinfo&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>pkgid</span>, pkgmgrinfo_instcertinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>uid_t <span class='color_p'>uid</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Parameter <b>uid</b> of type <b>uid_t</b> has been added to the calling stack.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Source_Problems'></a><a name='Type_Source_Problems_Low'></a>
+<h2>Problems with Data Types, Low Severity (2)</h2><hr/>
+<span class='h_name'>pkgmgrinfo_type.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_12')">
+<span class='ext'>[+]</span> <span class='ttype'>typedef</span> pkgmgrinfo_app_control_list_cb (1)</span>
+<br/>
+<div id="c_12" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Base type has been changed from <span class='value'>int(*)(void*, void*)</span> to <span class='value'>int(*)(char const*, char const*, char const*, void*)</span>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_13')">
+[+] affected symbols (1)</span>
+<div id="c_13" style="display:none;">
+<div class='affected'><span class='iname_a'>pkgmgrinfo_appinfo_foreach_appcontrol&#160;<span class='sym_p'>(&#160;<span class='nowrap'>pkgmgrinfo_appinfo_h <i>handle</i>,</span> int(*<span class='fp'>appcontrol_func</span>)(pkgmgrinfo_appcontrol_h, void*), <span class='nowrap'>void* <i>user_data</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;appcontrol_func&#39; has type &#39;pkgmgrinfo_app_control_list_cb&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_14')">
+<span class='ext'>[+]</span> <span class='ttype'>typedef</span> pkgmgrinfo_handler (1)</span>
+<br/>
+<div id="c_14" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Base type has been changed from <span class='value'>int(*)(int, char const*, char const*, char const*, char const*, void const*, void*)</span> to <span class='value'>int(*)(unsigned int, int, char const*, char const*, char const*, char const*, void const*, void*)</span>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_15')">
+[+] affected symbols (1)</span>
+<div id="c_15" style="display:none;">
+<div class='affected'><span class='iname_a'>pkgmgrinfo_client_listen_status&#160;<span class='sym_p'>(&#160;<span class='nowrap'>pkgmgrinfo_client* <i>pc</i>,</span> int(*<span class='fp'>event_cb</span>)(int, char const*, char const*, char const*, char const*, void const*, void*), <span class='nowrap'>void* <i>data</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;event_cb&#39; has type &#39;pkgmgrinfo_handler&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes'></a><a name='Other_Source_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (2)</h2><hr/>
+<span class='h_name'>pkgmgrinfo_type.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_16')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> pkgmgrinfo_app_component (2)</span>
+<br/>
+<div id="c_16" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>PMINFO_WATCH_APP</b> with value <b>4</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>PMINFO_WIDGET_APP</b> with value <b>3</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_17')">
+[+] affected symbols (2)</span>
+<div id="c_17" style="display:none;">
+<div class='affected'><span class='iname_a'>pkgmgrinfo_appinfo_get_component&#160;<span class='sym_p'>(&#160;<span class='nowrap'>pkgmgrinfo_appinfo_h <i>handle</i>,</span> <span class='nowrap'>pkgmgrinfo_app_component* <span class='fp'>component</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;component&#39; (pointer) has base type &#39;enum pkgmgrinfo_app_component&#39;.</div>
+<span class='iname_a'>pkgmgrinfo_appinfo_get_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>pkgmgrinfo_pkginfo_h <i>handle</i>,</span> enum pkgmgrinfo_app_component <span class='fp'>component</span>, <span class='nowrap'>pkgmgrinfo_app_list_cb <i>app_func</i>,</span> <span class='nowrap'>void* <i>user_data</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;component&#39; has type &#39;enum pkgmgrinfo_app_component&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes_In_Symbols'></a><a name='Other_Source_Changes_In_Interfaces'></a>
+<h2>Other Changes in Symbols (1)</h2><hr/>
+<span class='h_name'>pkgmgrinfo_appinfo.c</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_18')">
+<span class='ext'>[+]</span> pkgmgrinfo_appinfo_get_effectimage_type&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>effectimg_type</span> )</span></span> (1)</span>
+<br/>
+<div id="c_18" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>pkgmgrinfo_appinfo_get_effectimage_type&#160;<span class='sym_p'>(&#160;pkgmgrinfo_appinfo_h <span class='color_p'>handle</span>, <span class='nowrap'>char** <span class='color_p'>effectimage_type</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>effectimg_type</b> has been renamed to <b>effectimage_type</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (2)</h2><hr/>
+<div class='h_list'>
+pkgmgrinfo_basic.h<br/>
+pkgmgrinfo_type.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (7)</h2><hr/>
+<div class='h_list'>
+pkgmgrinfo_appinfo.c<br/>
+pkgmgrinfo_basic.c<br/>
+pkgmgrinfo_certinfo.c<br/>
+pkgmgrinfo_client.c<br/>
+pkgmgrinfo_db.c<br/>
+pkgmgrinfo_feature.c<br/>
+pkgmgrinfo_pkginfo.c<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libpkgmgr-info.so.0.0.17<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><hr/>
+<div class='footer' align='right'><i>Generated by <a href='http://lvc.github.io/abi-compliance-checker/'>ABI Compliance Checker</a> 1.99.18 &#160;</i>
+</div>
+<br/>
+
+</body></html>

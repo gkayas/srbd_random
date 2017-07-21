@@ -1,0 +1,1303 @@
+<!-- kind:binary;verdict:compatible;affected:0;added:318;removed:0;type_problems_high:0;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:0;changed_constants:0;tool_version:1.99.18 -->
+<!-- kind:source;verdict:compatible;affected:0;added:320;removed:0;type_problems_high:0;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:0;changed_constants:0;tool_version:1.99.18 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="libcapi-network-nfc, compatibility, API, ABI, report" />
+    <meta name="description" content="API/ABI compatibility report for the libcapi-network-nfc object between 2.4 and 3.0 versions" />
+    <title>
+        libcapi-network-nfc: 2.4 to 3.0 compatibility report
+    </title>
+    <style type="text/css">
+    body {
+    font-family:Arial, sans-serif;
+    background-color:White;
+    color:Black;
+}
+hr {
+    color:Black;
+    background-color:Black;
+    height:1px;
+    border:0;
+}
+h1 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.625em;
+}
+h2 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.25em;
+    white-space:nowrap;
+}
+span.section {
+    font-weight:bold;
+    cursor:pointer;
+    color:#003E69;
+    white-space:nowrap;
+    margin-left:5px;
+}
+span.new_sign {
+    font-weight:bold;
+    margin-left:26px;
+    color:#003E69;
+}
+span.new_sign_lbl {
+    margin-left:28px;
+    font-size:0.875em;
+    color:Black;
+}
+span:hover.section {
+    color:#336699;
+}
+span.sect_aff {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:#cc3300;
+}
+span.sect_info {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:Black;
+}
+span.ext {
+    font-weight:100;
+}
+span.h_name {
+    color:#cc3300;
+    font-size:0.875em;
+    font-weight:bold;
+}
+div.h_list, div.lib_list {
+    font-size:0.94em;
+    padding-left:5px;
+}
+span.ns {
+    color:#408080;
+    font-size:0.94em;
+}
+span.lib_name {
+    color:Green;
+    font-size:0.875em;
+    font-weight:bold;
+}
+span.iname {
+    font-weight:bold;
+    color:#003E69;
+    margin-left:5px;
+}
+span.iname_b {
+    font-weight:bold;
+    font-size:1.1em;
+}
+span.iname_a {
+    color:#333333;
+    font-weight:bold;
+    font-size:0.94em;
+}
+span.sym_p {
+    font-weight:normal;
+    white-space:normal;
+}
+div.affect {
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:0.87em;
+    font-style:italic;
+    line-height:0.75em;
+}
+div.affected {
+    padding-left:30px;
+    padding-top:10px;
+}
+table.ptable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:1em;
+    margin-left:15px;
+    margin-top:3px;
+    margin-bottom:3px;
+    width:900px;
+    
+}
+table.ptable td {
+    border:1px solid gray;
+    padding: 3px;
+    font-size:0.875em;
+    text-align:left;
+    vertical-align:top;
+}
+table.vtable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:16px;
+    margin-left:30px;
+    margin-top:10px;
+}
+table.vtable td {
+    border:1px solid gray;
+    word-wrap:break-word;
+    padding: 3px;
+    font-size:0.875em;
+    max-width:450px;
+    vertical-align:top;
+}
+table.ptable th, table.vtable th {
+    background-color:#eeeeee;
+    font-weight:bold;
+    color:#333333;
+    font-family:Verdana, Arial;
+    font-size:0.81em;
+    border:1px solid gray;
+    text-align:center;
+    vertical-align:top;
+    white-space:nowrap;
+    padding: 3px;
+}
+table.summary {
+    border-collapse:collapse;
+    border:1px outset black;
+}
+table.summary th {
+    background-color:#eeeeee;
+    font-weight:100;
+    text-align:left;
+    font-size:0.94em;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px;
+}
+table.summary td {
+    text-align:right;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px 5px 3px 10px;
+}
+span.mangled {
+    padding-left:15px;
+    font-size:0.875em;
+    cursor:text;
+    color:#444444;
+}
+span.sym_ver {
+    color:#333333;
+    white-space:nowrap;
+    font-family:"DejaVu Sans Mono", Monospace;
+}
+span.attr {
+    color:#333333;
+    font-weight:100;
+}
+span.color_p {
+    font-style:italic;
+    color:Brown;
+}
+span.p {
+    font-style:italic;
+}
+span.fp {
+    font-style:italic;
+    background-color:#FFCCCC;
+}
+span.ttype {
+    font-weight:100;
+}
+span.nowrap {
+    white-space:nowrap;
+}
+span.value {
+    white-space:nowrap;
+    font-weight:bold;
+}
+td.passed {
+    background-color:#CCFFCC;
+}
+td.warning {
+    background-color:#F4F4AF;
+}
+td.failed {
+    background-color:#FFCCCC;
+}
+td.new {
+    background-color:#C6DEFF;
+}
+.top_ref {
+    font-size:0.69em;
+}
+.footer {
+    font-size:0.75em;
+}
+
+.tabset {
+    float:left;
+}
+a.tab {
+    border:1px solid Black;
+    float:left;
+    margin:0px 5px -1px 0px;
+    padding:3px 5px 3px 5px;
+    position:relative;
+    font-size:0.875em;
+    background-color:#DDD;
+    text-decoration:none;
+    color:Black;
+}
+a.disabled:hover
+{
+    color:Black;
+    background:#EEE;
+}
+a.active:hover
+{
+    color:Black;
+    background:White;
+}
+a.active {
+    border-bottom-color:White;
+    background-color:White;
+}
+div.tab {
+    border-top:1px solid Black;
+    padding:0px;
+    width:100%;
+    clear:both;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+    function showContent(header, id)
+{
+    e = document.getElementById(id);
+    if(e.style.display == 'none')
+    {
+        e.style.display = 'block';
+        e.style.visibility = 'visible';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[&minus;]");
+    }
+    else
+    {
+        e.style.display = 'none';
+        e.style.visibility = 'hidden';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[+]");
+    }
+}
+function initTabs()
+{
+    var url = window.location.href;
+    if(url.indexOf('_Source_')!=-1 || url.indexOf('#Source')!=-1)
+    {
+        var tab1 = document.getElementById('BinaryID');
+        var tab2 = document.getElementById('SourceID');
+        tab1.className='tab disabled';
+        tab2.className='tab active';
+    }
+    var sets = document.getElementsByTagName('div');
+    for (var i = 0; i < sets.length; i++)
+    {
+        if (sets[i].className.indexOf('tabset') != -1)
+        {
+            var tabs = [];
+            var links = sets[i].getElementsByTagName('a');
+            for (var j = 0; j < links.length; j++)
+            {
+                if (links[j].className.indexOf('tab') != -1)
+                {
+                    tabs.push(links[j]);
+                    links[j].tabs = tabs;
+                    var tab = document.getElementById(links[j].href.substr(links[j].href.indexOf('#') + 1));
+                    //reset all tabs on start
+                    if (tab)
+                    {
+                        if (links[j].className.indexOf('active')!=-1) {
+                            tab.style.display = 'block';
+                        }
+                        else {
+                            tab.style.display = 'none';
+                        }
+                    }
+                    links[j].onclick = function()
+                    {
+                        var tab = document.getElementById(this.href.substr(this.href.indexOf('#') + 1));
+                        if (tab)
+                        {
+                            //reset all tabs before change
+                            for (var k = 0; k < this.tabs.length; k++)
+                            {
+                                document.getElementById(this.tabs[k].href.substr(this.tabs[k].href.indexOf('#') + 1)).style.display = 'none';
+                                this.tabs[k].className = this.tabs[k].className.replace('active', 'disabled');
+                            }
+                            this.className = 'tab active';
+                            tab.style.display = 'block';
+                            // window.location.hash = this.id.replace('ID', '');
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(url.indexOf('#')!=-1) {
+        location.href=location.href;
+    }
+}
+if (window.addEventListener) window.addEventListener('load', initTabs, false);
+else if (window.attachEvent) window.attachEvent('onload', initTabs);
+    -->
+    </script>
+    </head><body><a name='Source'></a><a name='Binary'></a><a name='Top'></a><h1>API compatibility report for the <span style='color:Blue;'>libcapi-network-nfc.so</span> object between <span style='color:Red;'>2.4</span> and <span style='color:Red;'>3.0</span> versions on <span style='color:Blue;'>ARM</span></h1>
+
+            <br/>
+            <div class='tabset'>
+            <a id='BinaryID' href='#BinaryTab' class='tab active'>Binary<br/>Compatibility</a>
+            <a id='SourceID' href='#SourceTab' style='margin-left:3px' class='tab disabled'>Source<br/>Compatibility</a>
+            </div><div id='BinaryTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libcapi-network-nfc</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>GCC Version</th><td>4.9.2</td></tr>
+<tr><th>Subject</th><td width='150px'>Binary Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>6</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>7</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>139 / 135</td></tr>
+<tr><th>Verdict</th><td><span style='color:Green;'><b>Compatible</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Binary_Added' style='color:Blue;'>318</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+</table>
+
+<a name='Binary_Added'></a><h2>Added Symbols (318)</h2><hr/>
+<span class='h_name'>net_nfc_client.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">lib_fini&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">lib_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_gdbus_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_gdbus_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_context.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_is_nfc_supported&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int* <span class='color_p'>state</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_context.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_deinitialize&#160;<span class='sym_p'>(&#160;<span class='nowrap'>... )</span></span></span><br/>
+<span class="iname">net_nfc_client_get_nfc_state&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int* <span class='color_p'>state</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_initialize&#160;<span class='sym_p'>(&#160;<span class='nowrap'>... )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_data.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_create_data_only&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h* <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_data&#160;<span class='sym_p'>(&#160;data_h const <span class='color_p'>data</span>, <span class='nowrap'>uint8_t** <span class='color_p'>bytes</span>,</span> <span class='nowrap'>size_t* <span class='color_p'>length</span> )</span></span></span><br/>
+<span class="iname">net_nfc_set_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h <span class='color_p'>data</span>,</span> uint8_t const* <span class='color_p'>bytes</span>, <span class='nowrap'>size_t <span class='color_p'>length</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_handover.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_handover_free_alternative_carrier_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_connection_handover_info_h <span class='color_p'>info_handle</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_handover_get_alternative_carrier_data&#160;<span class='sym_p'>(&#160;net_nfc_connection_handover_info_h <span class='color_p'>info_handle</span>, <span class='nowrap'>data_h* <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_handover_get_alternative_carrier_type&#160;<span class='sym_p'>(&#160;net_nfc_connection_handover_info_h <span class='color_p'>info_handle</span>, <span class='nowrap'>net_nfc_conn_handover_carrier_type_e* <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_handover_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_p2p_connection_handover_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, enum net_nfc_conn_handover_carrier_type_e <span class='color_p'>arg_type</span>, net_nfc_conn_handover_carrier_type_e* <span class='color_p'>out_carrier</span>, <span class='nowrap'>data_h* <span class='color_p'>out_ac_data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_handover.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_handover_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_handover_set_handover_event_cb&#160;<span class='sym_p'>(&#160;net_nfc_connection_handover_event_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_handover_unset_handover_event_cb&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_p2p_connection_handover&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, enum net_nfc_conn_handover_carrier_type_e <span class='color_p'>arg_type</span>, net_nfc_p2p_connection_handover_completed_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>cb_data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_hce.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_hce_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_hce.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_hce_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_hce_process_received_event&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>event</span>,</span> net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_hce_response_apdu_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>resp_apdu_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_hce_set_event_received_cb&#160;<span class='sym_p'>(&#160;net_nfc_client_hce_event_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_hce_unset_event_received_cb&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_hce_ipc.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_hce_ipc_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_hce_ipc_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_hce_ipc_is_initialized&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_server_hce_ipc_send_to_server&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>type</span>,</span> net_nfc_target_handle_s* <span class='color_p'>handle</span>, <span class='nowrap'>data_s* <span class='color_p'>data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_llcp.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">llcp_socket_data_append&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_internal_socket_s* <span class='color_p'>socket_data</span> )</span></span></span><br/>
+<span class="iname">llcp_socket_data_find&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_socket_t <span class='color_p'>socket</span> )</span></span></span><br/>
+<span class="iname">llcp_socket_data_remove&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_internal_socket_s* <span class='color_p'>socket_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_accept&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, net_nfc_client_llcp_accept_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_accept_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_socket_t <span class='color_p'>socket</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_close&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, net_nfc_client_llcp_close_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_close_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_socket_t <span class='color_p'>socket</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_config&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, net_nfc_client_llcp_config_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_config_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_config_info_h <span class='color_p'>config</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_connect&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, char const* <span class='color_p'>service_name</span>, net_nfc_client_llcp_connect_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_connect_sap&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> net_nfc_client_llcp_connect_sap_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_connect_sap_sync&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> <span class='nowrap'>net_nfc_llcp_socket_t* <span class='color_p'>out_socket</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_connect_sync&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, char const* <span class='color_p'>service_name</span>, <span class='nowrap'>net_nfc_llcp_socket_t* <span class='color_p'>out_socket</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_create_config&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h* <span class='color_p'>config</span>, <span class='nowrap'>uint16_t <span class='color_p'>miu</span>,</span> <span class='nowrap'>uint16_t <span class='color_p'>wks</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>lto</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>option</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_create_config_default&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_config_info_h* <span class='color_p'>config</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_create_socket&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t* <span class='color_p'>socket</span>, <span class='nowrap'>net_nfc_llcp_socket_option_h <span class='color_p'>option</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_create_socket_option&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_option_h* <span class='color_p'>option</span>, <span class='nowrap'>uint16_t <span class='color_p'>miu</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>rw</span>,</span> <span class='nowrap'>enum net_nfc_socket_type_e <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_create_socket_option_default&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_socket_option_h* <span class='color_p'>option</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_disconnect&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, net_nfc_client_llcp_disconnect_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_disconnect_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_socket_t <span class='color_p'>socket</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_free_config&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_config_info_h <span class='color_p'>config</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_free_socket_option&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_socket_option_h <span class='color_p'>option</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_config&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_config_info_h* <span class='color_p'>config</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_config_lto&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint8_t* <span class='color_p'>lto</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_config_miu&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint16_t* <span class='color_p'>miu</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_config_option&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint8_t* <span class='color_p'>option</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_config_wks&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint16_t* <span class='color_p'>wks</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_local_config&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_config_info_h* <span class='color_p'>config</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_local_socket_option&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, <span class='nowrap'>net_nfc_llcp_socket_option_h* <span class='color_p'>info</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_socket_option_miu&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_option_h <span class='color_p'>option</span>, <span class='nowrap'>uint16_t* <span class='color_p'>miu</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_socket_option_rw&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_option_h <span class='color_p'>option</span>, <span class='nowrap'>uint8_t* <span class='color_p'>rw</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_socket_option_type&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_option_h <span class='color_p'>option</span>, <span class='nowrap'>net_nfc_socket_type_e* <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_llcp_listen&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, char const* <span class='color_p'>service_name</span>, <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> net_nfc_client_llcp_listen_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_listen_sync&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, char const* <span class='color_p'>service_name</span>, <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> <span class='nowrap'>net_nfc_llcp_socket_t* <span class='color_p'>out_socket</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_receive&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, size_t <span class='color_p'>request_length</span>, net_nfc_client_llcp_receive_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_receive_from&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, size_t <span class='color_p'>request_length</span>, net_nfc_client_llcp_receive_from_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_receive_from_sync&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, size_t <span class='color_p'>request_length</span>, <span class='nowrap'>sap_t* <span class='color_p'>out_sap</span>,</span> <span class='nowrap'>data_h* <span class='color_p'>out_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_receive_sync&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, size_t <span class='color_p'>request_length</span>, <span class='nowrap'>data_h* <span class='color_p'>out_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_reject&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, net_nfc_client_llcp_reject_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_reject_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_socket_t <span class='color_p'>socket</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_send&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, <span class='nowrap'>data_h <span class='color_p'>data</span>,</span> net_nfc_client_llcp_send_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_send_sync&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, <span class='nowrap'>data_h <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_send_to&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> <span class='nowrap'>data_h <span class='color_p'>data</span>,</span> net_nfc_client_llcp_send_to_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_send_to_sync&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> <span class='nowrap'>data_h <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_set_config_lto&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint8_t <span class='color_p'>lto</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_set_config_miu&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint16_t <span class='color_p'>miu</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_set_config_option&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint8_t <span class='color_p'>option</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_set_config_wks&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint16_t <span class='color_p'>wks</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_set_socket_option_miu&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_option_h <span class='color_p'>option</span>, <span class='nowrap'>uint16_t <span class='color_p'>miu</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_set_socket_option_rw&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_option_h <span class='color_p'>option</span>, <span class='nowrap'>uint8_t <span class='color_p'>rw</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_set_socket_option_type&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_option_h <span class='color_p'>option</span>, <span class='nowrap'>enum net_nfc_socket_type_e <span class='color_p'>type</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_llcp.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_llcp_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_manager.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_manager_get_server_state&#160;<span class='sym_p'>(&#160;net_nfc_client_manager_get_server_state_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_manager_get_server_state_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>unsigned int* <span class='color_p'>state</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_manager_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_manager_set_active_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>state</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_manager.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_manager_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_manager_is_activated&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_manager_set_activated&#160;<span class='sym_p'>(&#160;net_nfc_client_manager_activated <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_manager_set_active&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>state</span>,</span> net_nfc_client_manager_set_active_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_manager_unset_activated&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_ndef.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_ndef_format_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>key</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_ndef_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_ndef_make_read_only&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, net_nfc_client_ndef_make_read_only_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_ndef_make_read_only_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_target_handle_h <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_ndef_read_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>ndef_message_h* <span class='color_p'>message</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_ndef_write_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>ndef_message_h <span class='color_p'>message</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_ndef.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_ndef_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_ndef_format&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>key</span>,</span> net_nfc_client_ndef_format_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_ndef_read&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, net_nfc_client_ndef_read_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_ndef_write&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, ndef_message_h <span class='color_p'>message</span>, net_nfc_client_ndef_write_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_ndef_message.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_ndef_print_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>ndef_message_h <span class='color_p'>ndef_message</span> )</span></span></span><br/>
+<span class="iname">net_nfc_search_record_by_type&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, enum net_nfc_record_tnf_e <span class='color_p'>tnf</span>, <span class='nowrap'>data_h <span class='color_p'>type</span>,</span> <span class='nowrap'>ndef_record_h* <span class='color_p'>record</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_ndef_message_handover.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_add_carrier_config_group_property&#160;<span class='sym_p'>(&#160;net_nfc_property_group_h <span class='color_p'>group</span>, uint16_t <span class='color_p'>attribute</span>, <span class='nowrap'>uint16_t <span class='color_p'>size</span>,</span> <span class='nowrap'>uint8_t* <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_add_carrier_config_property&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h <span class='color_p'>config</span>, uint16_t <span class='color_p'>attribute</span>, <span class='nowrap'>uint16_t <span class='color_p'>size</span>,</span> <span class='nowrap'>uint8_t* <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_append_carrier_config_group&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h <span class='color_p'>config</span>, <span class='nowrap'>net_nfc_property_group_h <span class='color_p'>group</span> )</span></span></span><br/>
+<span class="iname">net_nfc_append_handover_auxiliary_record&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>ndef_record_h <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_append_handover_carrier&#160;<span class='sym_p'>(&#160;net_nfc_ch_message_h <span class='color_p'>message</span>, <span class='nowrap'>net_nfc_ch_carrier_h <span class='color_p'>carrier</span> )</span></span></span><br/>
+<span class="iname">net_nfc_append_handover_carrier_record&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>ndef_record_h <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_carrier_config&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h* <span class='color_p'>config</span>, <span class='nowrap'>enum net_nfc_conn_handover_carrier_type_e <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_carrier_config_from_config_record&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h* <span class='color_p'>config</span>, <span class='nowrap'>ndef_record_h <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_carrier_config_group&#160;<span class='sym_p'>(&#160;net_nfc_property_group_h* <span class='color_p'>group</span>, <span class='nowrap'>uint16_t <span class='color_p'>attribute</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_handover_carrier&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h* <span class='color_p'>carrier</span>, <span class='nowrap'>enum net_nfc_conn_handover_carrier_state_e <span class='color_p'>cps</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_handover_error_record&#160;<span class='sym_p'>(&#160;ndef_record_h* <span class='color_p'>record</span>, <span class='nowrap'>uint8_t <span class='color_p'>reason</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_handover_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_ch_message_h* <span class='color_p'>message</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_ndef_record_with_carrier_config&#160;<span class='sym_p'>(&#160;ndef_record_h* <span class='color_p'>record</span>, <span class='nowrap'>net_nfc_carrier_config_h <span class='color_p'>config</span> )</span></span></span><br/>
+<span class="iname">net_nfc_duplicate_handover_carrier&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h* <span class='color_p'>dest</span>, <span class='nowrap'>net_nfc_ch_carrier_h <span class='color_p'>src</span> )</span></span></span><br/>
+<span class="iname">net_nfc_export_handover_to_ndef_message&#160;<span class='sym_p'>(&#160;net_nfc_ch_message_h <span class='color_p'>message</span>, <span class='nowrap'>ndef_message_h* <span class='color_p'>result</span> )</span></span></span><br/>
+<span class="iname">net_nfc_free_carrier_group&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_property_group_h <span class='color_p'>group</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_carrier_config_group&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h <span class='color_p'>config</span>, uint16_t <span class='color_p'>attribute</span>, <span class='nowrap'>net_nfc_property_group_h* <span class='color_p'>group</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_carrier_config_group_property&#160;<span class='sym_p'>(&#160;net_nfc_property_group_h <span class='color_p'>group</span>, uint16_t <span class='color_p'>attribute</span>, <span class='nowrap'>uint16_t* <span class='color_p'>size</span>,</span> <span class='nowrap'>uint8_t** <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_remove_carrier_config_group&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h <span class='color_p'>config</span>, <span class='nowrap'>net_nfc_property_group_h <span class='color_p'>group</span> )</span></span></span><br/>
+<span class="iname">net_nfc_remove_carrier_config_group_property&#160;<span class='sym_p'>(&#160;net_nfc_property_group_h <span class='color_p'>group</span>, <span class='nowrap'>uint16_t <span class='color_p'>attribute</span> )</span></span></span><br/>
+<span class="iname">net_nfc_remove_carrier_config_property&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h <span class='color_p'>config</span>, <span class='nowrap'>uint16_t <span class='color_p'>attribute</span> )</span></span></span><br/>
+<span class="iname">net_nfc_remove_handover_auxiliary_record&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>ndef_record_h <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_remove_handover_carrier_record&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_ch_carrier_h <span class='color_p'>carrier</span> )</span></span></span><br/>
+<span class="iname">net_nfc_set_handover_carrier_cps&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>enum net_nfc_conn_handover_carrier_state_e <span class='color_p'>cps</span> )</span></span></span><br/>
+<span class="iname">net_nfc_set_handover_carrier_type&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>enum net_nfc_conn_handover_carrier_type_e <span class='color_p'>type</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_ndef_record.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_get_record_cf&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint8_t <span class='color_p'>flag</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_flags&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>uint8_t* <span class='color_p'>flag</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_il&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint8_t <span class='color_p'>flag</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_mb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint8_t <span class='color_p'>flag</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_me&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint8_t <span class='color_p'>flag</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_sr&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint8_t <span class='color_p'>flag</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_p2p.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_p2p_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_p2p_send_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_p2p.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_p2p_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_p2p_send&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>data</span>,</span> net_nfc_client_p2p_send_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_p2p_set_data_received&#160;<span class='sym_p'>(&#160;net_nfc_client_p2p_data_received <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_p2p_set_device_detached&#160;<span class='sym_p'>(&#160;net_nfc_client_p2p_device_detached <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_p2p_set_device_discovered&#160;<span class='sym_p'>(&#160;net_nfc_client_p2p_device_discovered <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_p2p_unset_data_received&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_p2p_unset_device_detached&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_p2p_unset_device_discovered&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_se.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_se_close_internal_secure_element&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, net_nfc_se_close_se_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_get_atr&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, net_nfc_se_get_atr_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_get_handler_storage_info_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, <span class='nowrap'>int* <span class='color_p'>used</span>,</span> <span class='nowrap'>int* <span class='color_p'>max</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_se_open_internal_secure_element&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, net_nfc_se_open_se_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_send_apdu&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, data_h <span class='color_p'>apdu_data</span>, net_nfc_se_send_apdu_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_ese_detection_cb&#160;<span class='sym_p'>(&#160;net_nfc_client_se_ese_detected_event <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_secure_element_type&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, net_nfc_se_set_se_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_unregister_aids_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, <span class='nowrap'>enum net_nfc_card_emulation_category_t <span class='color_p'>category</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_unset_ese_detection_cb&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_se.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_se_add_route_aid_sync&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>package</span>, enum net_nfc_se_type_e <span class='color_p'>se_type</span>, enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, <span class='nowrap'>char const* <span class='color_p'>aid</span>,</span> _Bool <span class='color_p'>unlock_required</span>, <span class='nowrap'>int <span class='color_p'>power</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_close_internal_secure_element_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_target_handle_h <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_se_foreach_registered_aids_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, net_nfc_client_se_registered_aid_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_foreach_registered_handlers_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, net_nfc_client_se_registered_handler_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_get_atr_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h* <span class='color_p'>atr</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_get_conflict_handlers_sync&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>package</span>, enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, <span class='nowrap'>char const* <span class='color_p'>aid</span>,</span> <span class='nowrap'>char*** <span class='color_p'>handlers</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_get_registered_aids_count_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, <span class='nowrap'>size_t* <span class='color_p'>count</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_get_secure_element_type_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_se_type_e* <span class='color_p'>se_type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_is_activated_aid_handler_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, <span class='nowrap'>char const* <span class='color_p'>aid</span>,</span> <span class='nowrap'>_Bool* <span class='color_p'>activated</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_is_activated_category_handler_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, <span class='nowrap'>_Bool* <span class='color_p'>activated</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_open_internal_secure_element_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, <span class='nowrap'>net_nfc_target_handle_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_register_aids_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, <span class='nowrap'>char const* <span class='color_p'>aid</span>,</span> <span class='nowrap'>... )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_remove_package_aids_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>package</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_remove_route_aid_sync&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>package</span>, <span class='nowrap'>char const* <span class='color_p'>aid</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_send_apdu_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, data_h <span class='color_p'>apdu_data</span>, <span class='nowrap'>data_h* <span class='color_p'>response</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_default_route_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>switch_on</span>, enum net_nfc_se_type_e <span class='color_p'>switch_off</span>, <span class='nowrap'>enum net_nfc_se_type_e <span class='color_p'>battery_off</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_event_cb&#160;<span class='sym_p'>(&#160;net_nfc_client_se_event <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_preferred_handler_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>_Bool <span class='color_p'>state</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_secure_element_type_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum net_nfc_se_type_e <span class='color_p'>se_type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_transaction_event_cb&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, net_nfc_client_se_transaction_event <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_transaction_fg_dispatch&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>mode</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_unregister_aid_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, <span class='nowrap'>char const* <span class='color_p'>aid</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_unset_event_cb&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_se_unset_transaction_event_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum net_nfc_se_type_e <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_card_emulation_mode_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_card_emulation_mode_t* <span class='color_p'>se_type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_set_card_emulation_mode_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum net_nfc_card_emulation_mode_t <span class='color_p'>mode</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_sign_record.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_sign_ndef_message&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>msg</span>, <span class='nowrap'>char* <span class='color_p'>cert_file</span>,</span> <span class='nowrap'>char* <span class='color_p'>password</span> )</span></span></span><br/>
+<span class="iname">net_nfc_sign_records&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>msg</span>, <span class='nowrap'>int <span class='color_p'>begin_index</span>,</span> <span class='nowrap'>int <span class='color_p'>end_index</span>,</span> <span class='nowrap'>char* <span class='color_p'>cert_file</span>,</span> <span class='nowrap'>char* <span class='color_p'>password</span> )</span></span></span><br/>
+<span class="iname">net_nfc_verify_signature_ndef_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>ndef_message_h <span class='color_p'>msg</span> )</span></span></span><br/>
+<span class="iname">net_nfc_verify_signature_records&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>begin_record</span>, <span class='nowrap'>ndef_record_h <span class='color_p'>sign_record</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_snep.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_snep_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_snep.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_snep_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_snep_register_server&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>san</span>,</span> <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> net_nfc_client_snep_event_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_snep_send_client_request&#160;<span class='sym_p'>(&#160;net_nfc_snep_handle_h <span class='color_p'>target</span>, enum net_nfc_snep_type_t <span class='color_p'>snep_type</span>, ndef_message_h <span class='color_p'>msg</span>, net_nfc_client_snep_event_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_snep_start_client&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>target</span>, <span class='nowrap'>char const* <span class='color_p'>san</span>,</span> <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> net_nfc_client_snep_event_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_snep_start_server&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>target</span>, <span class='nowrap'>char const* <span class='color_p'>san</span>,</span> <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> net_nfc_client_snep_event_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_snep_stop_service_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>target</span>, <span class='nowrap'>net_nfc_snep_handle_h <span class='color_p'>service</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_snep_unregister_server&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>san</span>,</span> <span class='nowrap'>sap_t <span class='color_p'>sap</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_system_handler.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_sys_handler_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_sys_handler_set_state&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>state</span>,</span> net_nfc_client_popup_set_state_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_sys_handler_set_state_force&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>state</span>,</span> net_nfc_client_popup_set_state_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_sys_handler_set_state_force_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>state</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_sys_handler_set_state_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>state</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_system_handler.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_sys_handler_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_sys_handler_get_launch_popup_state&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int* <span class='color_p'>state</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_sys_handler_set_launch_popup_state&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>enable</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_sys_handler_set_launch_popup_state_force&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>enable</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_tag.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_tag_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_tag_is_tag_connected_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_target_type_e* <span class='color_p'>dev_type</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_tag.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_barcode_get_barcode_sync&#160;<span class='sym_p'>(&#160;unsigned char** <span class='color_p'>barcode</span>, <span class='nowrap'>int* <span class='color_p'>barcode_len</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_tag_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_tag_get_current_tag_info_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_target_info_h* <span class='color_p'>info</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_tag_get_current_target_handle_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_target_handle_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_tag_get_filter&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_tag_set_filter&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum net_nfc_event_filter_e <span class='color_p'>filter</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_tag_set_tag_detached&#160;<span class='sym_p'>(&#160;net_nfc_client_tag_tag_detached <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_tag_set_tag_discovered&#160;<span class='sym_p'>(&#160;net_nfc_client_tag_tag_discovered <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_tag_unset_tag_detached&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_tag_unset_tag_discovered&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_tag_felica.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_felica_poll&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, enum net_nfc_felica_poll_request_code_e <span class='color_p'>req_code</span>, uint8_t <span class='color_p'>time_slote</span>, nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_felica_read_without_encryption&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, uint8_t <span class='color_p'>number_of_services</span>, uint16_t* <span class='color_p'>service_list</span>, uint8_t <span class='color_p'>number_of_blocks</span>, uint8_t* <span class='color_p'>block_list</span>, nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_felica_request_response&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_felica_request_service&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, uint8_t <span class='color_p'>number_of_area_service</span>, uint16_t* <span class='color_p'>area_service_list</span>, uint8_t <span class='color_p'>number_of_services</span>, nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_felica_request_system_code&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_felica_write_without_encryption&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, uint8_t <span class='color_p'>number_of_services</span>, uint16_t* <span class='color_p'>service_list</span>, uint8_t <span class='color_p'>number_of_blocks</span>, uint8_t* <span class='color_p'>block_list</span>, <span class='nowrap'>data_h <span class='color_p'>data</span>,</span> nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_tag_internal.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_tag_get_client_target_info&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_tag_is_connected&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_tag_jewel.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_jewel_read_all&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_jewel_read_byte&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>block</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>byte</span>,</span> nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_jewel_read_id&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_jewel_write_with_erase&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>block</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>byte</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>data</span>,</span> nfc_transceive_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_jewel_write_with_no_erase&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>block</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>byte</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>data</span>,</span> nfc_transceive_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_tag_mifare.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_mifare_create_application_directory_key&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h* <span class='color_p'>key</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_create_default_key&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h* <span class='color_p'>key</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_create_net_nfc_forum_key&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h* <span class='color_p'>key</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_target_info.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_duplicate_target_info&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>origin</span>, <span class='nowrap'>net_nfc_target_info_h* <span class='color_p'>result</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_test.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_test_ese_test&#160;<span class='sym_p'>(&#160;net_nfc_client_test_ese_test_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_ese_test_sync&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_test_get_firmware_version&#160;<span class='sym_p'>(&#160;net_nfc_client_test_get_firmware_version_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_get_firmware_version_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char** <span class='color_p'>version</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_test_prbs_test&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint32_t <span class='color_p'>tech</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>rate</span>,</span> net_nfc_client_test_prbs_test_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_prbs_test_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint32_t <span class='color_p'>tech</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>rate</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_set_ee_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>mode</span>,</span> <span class='nowrap'>int <span class='color_p'>reg_id</span>,</span> <span class='nowrap'>data_h <span class='color_p'>data</span>,</span> net_nfc_client_test_set_ee_data_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_set_ee_data_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>mode</span>,</span> <span class='nowrap'>int <span class='color_p'>reg_id</span>,</span> <span class='nowrap'>data_h <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_set_listen_tech_mask_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint32_t <span class='color_p'>tech</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_set_se_tech_type_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>type</span>, <span class='nowrap'>int <span class='color_p'>tech</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_sim_test&#160;<span class='sym_p'>(&#160;net_nfc_client_test_sim_test_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_sim_test_sync&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_test.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_test_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_transceive.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_transceive_data_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>rawdata</span>,</span> <span class='nowrap'>data_h* <span class='color_p'>response</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_transceive_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_transceive_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>rawdata</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_transceive.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_transceive&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>rawdata</span>,</span> nfc_transceive_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_transceive_data&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>rawdata</span>,</span> nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_transceive_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_data.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_create_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h* <span class='color_p'>data</span>,</span> uint8_t const* <span class='color_p'>bytes</span>, <span class='nowrap'>size_t <span class='color_p'>length</span> )</span></span></span><br/>
+<span class="iname">net_nfc_free_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_data_buffer&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h const <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_data_length&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h const <span class='color_p'>data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_ndef_message.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_append_record_by_index&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, <span class='nowrap'>int <span class='color_p'>index</span>,</span> <span class='nowrap'>ndef_record_h <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_append_record_to_ndef_message&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, <span class='nowrap'>ndef_record_h <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_ndef_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>ndef_message_h* <span class='color_p'>ndef_message</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_ndef_message_from_rawdata&#160;<span class='sym_p'>(&#160;ndef_message_h* <span class='color_p'>ndef_message</span>, <span class='nowrap'>data_h <span class='color_p'>rawdata</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_rawdata_from_ndef_message&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, <span class='nowrap'>data_h* <span class='color_p'>rawdata</span> )</span></span></span><br/>
+<span class="iname">net_nfc_free_ndef_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>ndef_message_h <span class='color_p'>ndef_message</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_ndef_message_byte_length&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, <span class='nowrap'>uint32_t* <span class='color_p'>length</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_ndef_message_record_count&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, <span class='nowrap'>int* <span class='color_p'>count</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_by_index&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, <span class='nowrap'>int <span class='color_p'>index</span>,</span> <span class='nowrap'>ndef_record_h* <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_remove_record_by_index&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, <span class='nowrap'>int <span class='color_p'>index</span> )</span></span></span><br/>
+<span class="iname">net_nfc_retrieve_current_ndef_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>ndef_message_h* <span class='color_p'>ndef_message</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_ndef_message_handover.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_create_carrier_config_from_carrier&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h* <span class='color_p'>config</span>, <span class='nowrap'>net_nfc_ch_carrier_h <span class='color_p'>carrier</span> )</span></span></span><br/>
+<span class="iname">net_nfc_free_carrier_config&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_carrier_config_h <span class='color_p'>config</span> )</span></span></span><br/>
+<span class="iname">net_nfc_free_handover_carrier&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_ch_carrier_h <span class='color_p'>carrier</span> )</span></span></span><br/>
+<span class="iname">net_nfc_free_handover_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_ch_message_h <span class='color_p'>message</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_carrier_config_property&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h <span class='color_p'>config</span>, uint16_t <span class='color_p'>attribute</span>, <span class='nowrap'>uint16_t* <span class='color_p'>size</span>,</span> <span class='nowrap'>uint8_t** <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_auxiliary_record&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>int <span class='color_p'>index</span>,</span> <span class='nowrap'>ndef_record_h* <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_auxiliary_record_count&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>uint32_t* <span class='color_p'>count</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_carrier&#160;<span class='sym_p'>(&#160;net_nfc_ch_message_h <span class='color_p'>message</span>, <span class='nowrap'>int <span class='color_p'>index</span>,</span> <span class='nowrap'>net_nfc_ch_carrier_h* <span class='color_p'>carrier</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_carrier_by_type&#160;<span class='sym_p'>(&#160;net_nfc_ch_message_h <span class='color_p'>message</span>, enum net_nfc_conn_handover_carrier_type_e <span class='color_p'>type</span>, <span class='nowrap'>net_nfc_ch_carrier_h* <span class='color_p'>carrier</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_carrier_count&#160;<span class='sym_p'>(&#160;net_nfc_ch_message_h <span class='color_p'>message</span>, <span class='nowrap'>uint32_t* <span class='color_p'>count</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_carrier_cps&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>net_nfc_conn_handover_carrier_state_e* <span class='color_p'>cps</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_carrier_record&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>ndef_record_h* <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_carrier_type&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>net_nfc_conn_handover_carrier_type_e* <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_random_number&#160;<span class='sym_p'>(&#160;net_nfc_ch_message_h <span class='color_p'>message</span>, <span class='nowrap'>uint16_t* <span class='color_p'>random_number</span> )</span></span></span><br/>
+<span class="iname">net_nfc_import_handover_from_ndef_message&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>msg</span>, <span class='nowrap'>net_nfc_ch_message_h* <span class='color_p'>result</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_ndef_record.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_create_record&#160;<span class='sym_p'>(&#160;ndef_record_h* <span class='color_p'>record</span>, enum net_nfc_record_tnf_e <span class='color_p'>tnf</span>, <span class='nowrap'>data_h <span class='color_p'>typeName</span>,</span> <span class='nowrap'>data_h <span class='color_p'>id</span>,</span> <span class='nowrap'>data_h <span class='color_p'>payload</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_text_string_from_text_record&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>char** <span class='color_p'>buffer</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_text_type_record&#160;<span class='sym_p'>(&#160;ndef_record_h* <span class='color_p'>record</span>, char const* <span class='color_p'>text</span>, char const* <span class='color_p'>language_code_str</span>, <span class='nowrap'>enum net_nfc_encode_type_e <span class='color_p'>encode</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_uri_string_from_uri_record&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>char** <span class='color_p'>uri</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_uri_type_record&#160;<span class='sym_p'>(&#160;ndef_record_h* <span class='color_p'>record</span>, <span class='nowrap'>char const* <span class='color_p'>uri</span>,</span> <span class='nowrap'>enum net_nfc_schema_type_e <span class='color_p'>protocol_schema</span> )</span></span></span><br/>
+<span class="iname">net_nfc_free_record&#160;<span class='sym_p'>(&#160;<span class='nowrap'>ndef_record_h <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_encoding_type_from_text_record&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>net_nfc_encode_type_e* <span class='color_p'>encoding</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_languange_code_string_from_text_record&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>char** <span class='color_p'>lang_code_str</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_id&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>data_h* <span class='color_p'>id</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_payload&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>data_h* <span class='color_p'>payload</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_tnf&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>net_nfc_record_tnf_e* <span class='color_p'>TNF</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_type&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>data_h* <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_set_record_id&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>data_h <span class='color_p'>id</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_tag_mifare.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_client_mifare_authenticate_with_keyA&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>sector</span>,</span> <span class='nowrap'>data_h <span class='color_p'>auth_key</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_authenticate_with_keyB&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>sector</span>,</span> <span class='nowrap'>data_h <span class='color_p'>auth_key</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_decrement&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>addr</span>,</span> <span class='nowrap'>int <span class='color_p'>value</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_increment&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>addr</span>,</span> <span class='nowrap'>int <span class='color_p'>value</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_read&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>addr</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_restore&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>addr</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_transfer&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>addr</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_write_block&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>addr</span>,</span> <span class='nowrap'>data_h <span class='color_p'>data</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_write_page&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>addr</span>,</span> <span class='nowrap'>data_h <span class='color_p'>data</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_target_info.h</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">net_nfc_get_tag_actual_data_size&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>uint32_t* <span class='color_p'>actual_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_handle&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>net_nfc_target_handle_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_info_keys&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>char*** <span class='color_p'>keys</span>,</span> <span class='nowrap'>int* <span class='color_p'>number_of_keys</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_info_value&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> <span class='nowrap'>data_h* <span class='color_p'>value</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_max_data_size&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>uint32_t* <span class='color_p'>max_size</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_ndef_message&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>ndef_message_h* <span class='color_p'>msg</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_ndef_state&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>net_nfc_ndef_card_state_e* <span class='color_p'>state</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_ndef_support&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>_Bool* <span class='color_p'>is_support</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_type&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>net_nfc_target_type_e* <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_release_tag_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_target_info_h <span class='color_p'>target_info</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>nfc_card_emulation.c</span>, <span class='lib_name'>libcapi-network-nfc.so.0.3.3</span><br/>
+<span class="iname">nfc_se_foreach_registered_handlers&#160;<span class='sym_p'>(&#160;enum nfc_card_emulation_category_type_e <span class='color_p'>category</span>, nfc_se_registered_handler_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">nfc_se_get_conflict_handlers_internal&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>package</span>, enum nfc_card_emulation_category_type_e <span class='color_p'>category</span>, <span class='nowrap'>char const* <span class='color_p'>aid</span>,</span> <span class='nowrap'>char*** <span class='color_p'>handlers</span> )</span></span></span><br/>
+<span class="iname">nfc_se_set_preferred_handler&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">nfc_se_unset_preferred_handler&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (6)</h2><hr/>
+<div class='h_list'>
+net_nfc_typedef.h<br/>
+nfc.h<br/>
+nfc_common.h<br/>
+nfc_internal.h<br/>
+types.h<br/>
+unistd.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (7)</h2><hr/>
+<div class='h_list'>
+nfc_card_emulation.c<br/>
+nfc_common.c<br/>
+nfc_manager.c<br/>
+nfc_ndef.c<br/>
+nfc_p2p.c<br/>
+nfc_p2p_handover.c<br/>
+nfc_tag.c<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libcapi-network-nfc.so.0.2.0<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><div id='SourceTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libcapi-network-nfc</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>GCC Version</th><td>4.9.2</td></tr>
+<tr><th>Subject</th><td width='150px'>Source Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>6</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>7</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>139 / 135</td></tr>
+<tr><th>Verdict</th><td><span style='color:Green;'><b>Compatible</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Source_Added' style='color:Blue;'>320</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+</table>
+
+<a name='Source_Added'></a><h2>Added Symbols (320)</h2><hr/>
+<span class='h_name'>net_nfc_client.c</span><br/>
+<span class="iname">lib_fini&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">lib_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client.h</span><br/>
+<span class="iname">net_nfc_client_gdbus_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_gdbus_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_context.c</span><br/>
+<span class="iname">net_nfc_client_is_nfc_supported&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int* <span class='color_p'>state</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_context.h</span><br/>
+<span class="iname">net_nfc_client_deinitialize&#160;<span class='sym_p'>(&#160;<span class='nowrap'>... )</span></span></span><br/>
+<span class="iname">net_nfc_client_get_nfc_state&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int* <span class='color_p'>state</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_initialize&#160;<span class='sym_p'>(&#160;<span class='nowrap'>... )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_data.c</span><br/>
+<span class="iname">net_nfc_create_data_only&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h* <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_data&#160;<span class='sym_p'>(&#160;data_h const <span class='color_p'>data</span>, <span class='nowrap'>uint8_t** <span class='color_p'>bytes</span>,</span> <span class='nowrap'>size_t* <span class='color_p'>length</span> )</span></span></span><br/>
+<span class="iname">net_nfc_set_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h <span class='color_p'>data</span>,</span> uint8_t const* <span class='color_p'>bytes</span>, <span class='nowrap'>size_t <span class='color_p'>length</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_handover.c</span><br/>
+<span class="iname">net_nfc_client_handover_free_alternative_carrier_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_connection_handover_info_h <span class='color_p'>info_handle</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_handover_get_alternative_carrier_data&#160;<span class='sym_p'>(&#160;net_nfc_connection_handover_info_h <span class='color_p'>info_handle</span>, <span class='nowrap'>data_h* <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_handover_get_alternative_carrier_type&#160;<span class='sym_p'>(&#160;net_nfc_connection_handover_info_h <span class='color_p'>info_handle</span>, <span class='nowrap'>net_nfc_conn_handover_carrier_type_e* <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_handover_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_p2p_connection_handover_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, enum net_nfc_conn_handover_carrier_type_e <span class='color_p'>arg_type</span>, net_nfc_conn_handover_carrier_type_e* <span class='color_p'>out_carrier</span>, <span class='nowrap'>data_h* <span class='color_p'>out_ac_data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_handover.h</span><br/>
+<span class="iname">net_nfc_client_handover_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_handover_set_handover_event_cb&#160;<span class='sym_p'>(&#160;net_nfc_connection_handover_event_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_handover_unset_handover_event_cb&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_p2p_connection_handover&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, enum net_nfc_conn_handover_carrier_type_e <span class='color_p'>arg_type</span>, net_nfc_p2p_connection_handover_completed_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>cb_data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_hce.c</span><br/>
+<span class="iname">net_nfc_client_hce_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_hce.h</span><br/>
+<span class="iname">net_nfc_client_hce_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_hce_process_received_event&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>event</span>,</span> net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_hce_response_apdu_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>resp_apdu_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_hce_set_event_received_cb&#160;<span class='sym_p'>(&#160;net_nfc_client_hce_event_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_hce_unset_event_received_cb&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_hce_ipc.c</span><br/>
+<span class="iname">net_nfc_client_ipc_lock&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_ipc_unlock&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_hce_ipc.h</span><br/>
+<span class="iname">net_nfc_client_hce_ipc_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_hce_ipc_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_hce_ipc_is_initialized&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_server_hce_ipc_send_to_server&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>type</span>,</span> net_nfc_target_handle_s* <span class='color_p'>handle</span>, <span class='nowrap'>data_s* <span class='color_p'>data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_llcp.c</span><br/>
+<span class="iname">llcp_socket_data_append&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_internal_socket_s* <span class='color_p'>socket_data</span> )</span></span></span><br/>
+<span class="iname">llcp_socket_data_find&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_socket_t <span class='color_p'>socket</span> )</span></span></span><br/>
+<span class="iname">llcp_socket_data_remove&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_internal_socket_s* <span class='color_p'>socket_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_accept&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, net_nfc_client_llcp_accept_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_accept_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_socket_t <span class='color_p'>socket</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_close&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, net_nfc_client_llcp_close_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_close_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_socket_t <span class='color_p'>socket</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_config&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, net_nfc_client_llcp_config_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_config_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_config_info_h <span class='color_p'>config</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_connect&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, char const* <span class='color_p'>service_name</span>, net_nfc_client_llcp_connect_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_connect_sap&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> net_nfc_client_llcp_connect_sap_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_connect_sap_sync&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> <span class='nowrap'>net_nfc_llcp_socket_t* <span class='color_p'>out_socket</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_connect_sync&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, char const* <span class='color_p'>service_name</span>, <span class='nowrap'>net_nfc_llcp_socket_t* <span class='color_p'>out_socket</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_create_config&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h* <span class='color_p'>config</span>, <span class='nowrap'>uint16_t <span class='color_p'>miu</span>,</span> <span class='nowrap'>uint16_t <span class='color_p'>wks</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>lto</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>option</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_create_config_default&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_config_info_h* <span class='color_p'>config</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_create_socket&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t* <span class='color_p'>socket</span>, <span class='nowrap'>net_nfc_llcp_socket_option_h <span class='color_p'>option</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_create_socket_option&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_option_h* <span class='color_p'>option</span>, <span class='nowrap'>uint16_t <span class='color_p'>miu</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>rw</span>,</span> <span class='nowrap'>enum net_nfc_socket_type_e <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_create_socket_option_default&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_socket_option_h* <span class='color_p'>option</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_disconnect&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, net_nfc_client_llcp_disconnect_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_disconnect_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_socket_t <span class='color_p'>socket</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_free_config&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_config_info_h <span class='color_p'>config</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_free_socket_option&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_socket_option_h <span class='color_p'>option</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_config&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_config_info_h* <span class='color_p'>config</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_config_lto&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint8_t* <span class='color_p'>lto</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_config_miu&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint16_t* <span class='color_p'>miu</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_config_option&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint8_t* <span class='color_p'>option</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_config_wks&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint16_t* <span class='color_p'>wks</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_local_config&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_config_info_h* <span class='color_p'>config</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_local_socket_option&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, <span class='nowrap'>net_nfc_llcp_socket_option_h* <span class='color_p'>info</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_socket_option_miu&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_option_h <span class='color_p'>option</span>, <span class='nowrap'>uint16_t* <span class='color_p'>miu</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_socket_option_rw&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_option_h <span class='color_p'>option</span>, <span class='nowrap'>uint8_t* <span class='color_p'>rw</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_get_socket_option_type&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_option_h <span class='color_p'>option</span>, <span class='nowrap'>net_nfc_socket_type_e* <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_llcp_listen&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, char const* <span class='color_p'>service_name</span>, <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> net_nfc_client_llcp_listen_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_listen_sync&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, char const* <span class='color_p'>service_name</span>, <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> <span class='nowrap'>net_nfc_llcp_socket_t* <span class='color_p'>out_socket</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_receive&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, size_t <span class='color_p'>request_length</span>, net_nfc_client_llcp_receive_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_receive_from&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, size_t <span class='color_p'>request_length</span>, net_nfc_client_llcp_receive_from_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_receive_from_sync&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, size_t <span class='color_p'>request_length</span>, <span class='nowrap'>sap_t* <span class='color_p'>out_sap</span>,</span> <span class='nowrap'>data_h* <span class='color_p'>out_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_receive_sync&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, size_t <span class='color_p'>request_length</span>, <span class='nowrap'>data_h* <span class='color_p'>out_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_reject&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, net_nfc_client_llcp_reject_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_reject_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_llcp_socket_t <span class='color_p'>socket</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_send&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, <span class='nowrap'>data_h <span class='color_p'>data</span>,</span> net_nfc_client_llcp_send_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_send_sync&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, <span class='nowrap'>data_h <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_send_to&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> <span class='nowrap'>data_h <span class='color_p'>data</span>,</span> net_nfc_client_llcp_send_to_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_send_to_sync&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_t <span class='color_p'>socket</span>, <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> <span class='nowrap'>data_h <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_set_config_lto&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint8_t <span class='color_p'>lto</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_set_config_miu&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint16_t <span class='color_p'>miu</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_set_config_option&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint8_t <span class='color_p'>option</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_set_config_wks&#160;<span class='sym_p'>(&#160;net_nfc_llcp_config_info_h <span class='color_p'>config</span>, <span class='nowrap'>uint16_t <span class='color_p'>wks</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_set_socket_option_miu&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_option_h <span class='color_p'>option</span>, <span class='nowrap'>uint16_t <span class='color_p'>miu</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_set_socket_option_rw&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_option_h <span class='color_p'>option</span>, <span class='nowrap'>uint8_t <span class='color_p'>rw</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_llcp_set_socket_option_type&#160;<span class='sym_p'>(&#160;net_nfc_llcp_socket_option_h <span class='color_p'>option</span>, <span class='nowrap'>enum net_nfc_socket_type_e <span class='color_p'>type</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_llcp.h</span><br/>
+<span class="iname">net_nfc_client_llcp_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_manager.c</span><br/>
+<span class="iname">net_nfc_client_manager_get_server_state&#160;<span class='sym_p'>(&#160;net_nfc_client_manager_get_server_state_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_manager_get_server_state_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>unsigned int* <span class='color_p'>state</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_manager_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_manager_set_active_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>state</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_manager.h</span><br/>
+<span class="iname">net_nfc_client_manager_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_manager_is_activated&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_manager_set_activated&#160;<span class='sym_p'>(&#160;net_nfc_client_manager_activated <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_manager_set_active&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>state</span>,</span> net_nfc_client_manager_set_active_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_manager_unset_activated&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_ndef.c</span><br/>
+<span class="iname">net_nfc_client_ndef_format_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>key</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_ndef_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_ndef_make_read_only&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, net_nfc_client_ndef_make_read_only_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_ndef_make_read_only_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_target_handle_h <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_ndef_read_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>ndef_message_h* <span class='color_p'>message</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_ndef_write_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>ndef_message_h <span class='color_p'>message</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_ndef.h</span><br/>
+<span class="iname">net_nfc_client_ndef_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_ndef_format&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>key</span>,</span> net_nfc_client_ndef_format_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_ndef_read&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, net_nfc_client_ndef_read_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_ndef_write&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, ndef_message_h <span class='color_p'>message</span>, net_nfc_client_ndef_write_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_ndef_message.c</span><br/>
+<span class="iname">net_nfc_ndef_print_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>ndef_message_h <span class='color_p'>ndef_message</span> )</span></span></span><br/>
+<span class="iname">net_nfc_search_record_by_type&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, enum net_nfc_record_tnf_e <span class='color_p'>tnf</span>, <span class='nowrap'>data_h <span class='color_p'>type</span>,</span> <span class='nowrap'>ndef_record_h* <span class='color_p'>record</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_ndef_message_handover.c</span><br/>
+<span class="iname">net_nfc_add_carrier_config_group_property&#160;<span class='sym_p'>(&#160;net_nfc_property_group_h <span class='color_p'>group</span>, uint16_t <span class='color_p'>attribute</span>, <span class='nowrap'>uint16_t <span class='color_p'>size</span>,</span> <span class='nowrap'>uint8_t* <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_add_carrier_config_property&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h <span class='color_p'>config</span>, uint16_t <span class='color_p'>attribute</span>, <span class='nowrap'>uint16_t <span class='color_p'>size</span>,</span> <span class='nowrap'>uint8_t* <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_append_carrier_config_group&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h <span class='color_p'>config</span>, <span class='nowrap'>net_nfc_property_group_h <span class='color_p'>group</span> )</span></span></span><br/>
+<span class="iname">net_nfc_append_handover_auxiliary_record&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>ndef_record_h <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_append_handover_carrier&#160;<span class='sym_p'>(&#160;net_nfc_ch_message_h <span class='color_p'>message</span>, <span class='nowrap'>net_nfc_ch_carrier_h <span class='color_p'>carrier</span> )</span></span></span><br/>
+<span class="iname">net_nfc_append_handover_carrier_record&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>ndef_record_h <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_carrier_config&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h* <span class='color_p'>config</span>, <span class='nowrap'>enum net_nfc_conn_handover_carrier_type_e <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_carrier_config_from_config_record&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h* <span class='color_p'>config</span>, <span class='nowrap'>ndef_record_h <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_carrier_config_group&#160;<span class='sym_p'>(&#160;net_nfc_property_group_h* <span class='color_p'>group</span>, <span class='nowrap'>uint16_t <span class='color_p'>attribute</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_handover_carrier&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h* <span class='color_p'>carrier</span>, <span class='nowrap'>enum net_nfc_conn_handover_carrier_state_e <span class='color_p'>cps</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_handover_error_record&#160;<span class='sym_p'>(&#160;ndef_record_h* <span class='color_p'>record</span>, <span class='nowrap'>uint8_t <span class='color_p'>reason</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_handover_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_ch_message_h* <span class='color_p'>message</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_ndef_record_with_carrier_config&#160;<span class='sym_p'>(&#160;ndef_record_h* <span class='color_p'>record</span>, <span class='nowrap'>net_nfc_carrier_config_h <span class='color_p'>config</span> )</span></span></span><br/>
+<span class="iname">net_nfc_duplicate_handover_carrier&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h* <span class='color_p'>dest</span>, <span class='nowrap'>net_nfc_ch_carrier_h <span class='color_p'>src</span> )</span></span></span><br/>
+<span class="iname">net_nfc_export_handover_to_ndef_message&#160;<span class='sym_p'>(&#160;net_nfc_ch_message_h <span class='color_p'>message</span>, <span class='nowrap'>ndef_message_h* <span class='color_p'>result</span> )</span></span></span><br/>
+<span class="iname">net_nfc_free_carrier_group&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_property_group_h <span class='color_p'>group</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_carrier_config_group&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h <span class='color_p'>config</span>, uint16_t <span class='color_p'>attribute</span>, <span class='nowrap'>net_nfc_property_group_h* <span class='color_p'>group</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_carrier_config_group_property&#160;<span class='sym_p'>(&#160;net_nfc_property_group_h <span class='color_p'>group</span>, uint16_t <span class='color_p'>attribute</span>, <span class='nowrap'>uint16_t* <span class='color_p'>size</span>,</span> <span class='nowrap'>uint8_t** <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_remove_carrier_config_group&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h <span class='color_p'>config</span>, <span class='nowrap'>net_nfc_property_group_h <span class='color_p'>group</span> )</span></span></span><br/>
+<span class="iname">net_nfc_remove_carrier_config_group_property&#160;<span class='sym_p'>(&#160;net_nfc_property_group_h <span class='color_p'>group</span>, <span class='nowrap'>uint16_t <span class='color_p'>attribute</span> )</span></span></span><br/>
+<span class="iname">net_nfc_remove_carrier_config_property&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h <span class='color_p'>config</span>, <span class='nowrap'>uint16_t <span class='color_p'>attribute</span> )</span></span></span><br/>
+<span class="iname">net_nfc_remove_handover_auxiliary_record&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>ndef_record_h <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_remove_handover_carrier_record&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_ch_carrier_h <span class='color_p'>carrier</span> )</span></span></span><br/>
+<span class="iname">net_nfc_set_handover_carrier_cps&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>enum net_nfc_conn_handover_carrier_state_e <span class='color_p'>cps</span> )</span></span></span><br/>
+<span class="iname">net_nfc_set_handover_carrier_type&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>enum net_nfc_conn_handover_carrier_type_e <span class='color_p'>type</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_ndef_record.c</span><br/>
+<span class="iname">net_nfc_get_record_cf&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint8_t <span class='color_p'>flag</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_flags&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>uint8_t* <span class='color_p'>flag</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_il&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint8_t <span class='color_p'>flag</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_mb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint8_t <span class='color_p'>flag</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_me&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint8_t <span class='color_p'>flag</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_sr&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint8_t <span class='color_p'>flag</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_p2p.c</span><br/>
+<span class="iname">net_nfc_client_p2p_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_p2p_send_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_p2p.h</span><br/>
+<span class="iname">net_nfc_client_p2p_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_p2p_send&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>data</span>,</span> net_nfc_client_p2p_send_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_p2p_set_data_received&#160;<span class='sym_p'>(&#160;net_nfc_client_p2p_data_received <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_p2p_set_device_detached&#160;<span class='sym_p'>(&#160;net_nfc_client_p2p_device_detached <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_p2p_set_device_discovered&#160;<span class='sym_p'>(&#160;net_nfc_client_p2p_device_discovered <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_p2p_unset_data_received&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_p2p_unset_device_detached&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_p2p_unset_device_discovered&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_se.c</span><br/>
+<span class="iname">net_nfc_client_se_close_internal_secure_element&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, net_nfc_se_close_se_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_get_atr&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, net_nfc_se_get_atr_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_get_handler_storage_info_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, <span class='nowrap'>int* <span class='color_p'>used</span>,</span> <span class='nowrap'>int* <span class='color_p'>max</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_se_open_internal_secure_element&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, net_nfc_se_open_se_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_send_apdu&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, data_h <span class='color_p'>apdu_data</span>, net_nfc_se_send_apdu_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_ese_detection_cb&#160;<span class='sym_p'>(&#160;net_nfc_client_se_ese_detected_event <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_secure_element_type&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, net_nfc_se_set_se_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_unregister_aids_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, <span class='nowrap'>enum net_nfc_card_emulation_category_t <span class='color_p'>category</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_unset_ese_detection_cb&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_se.h</span><br/>
+<span class="iname">net_nfc_client_se_add_route_aid_sync&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>package</span>, enum net_nfc_se_type_e <span class='color_p'>se_type</span>, enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, <span class='nowrap'>char const* <span class='color_p'>aid</span>,</span> _Bool <span class='color_p'>unlock_required</span>, <span class='nowrap'>int <span class='color_p'>power</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_close_internal_secure_element_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_target_handle_h <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_se_foreach_registered_aids_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, net_nfc_client_se_registered_aid_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_foreach_registered_handlers_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, net_nfc_client_se_registered_handler_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_get_atr_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h* <span class='color_p'>atr</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_get_conflict_handlers_sync&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>package</span>, enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, <span class='nowrap'>char const* <span class='color_p'>aid</span>,</span> <span class='nowrap'>char*** <span class='color_p'>handlers</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_get_registered_aids_count_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, <span class='nowrap'>size_t* <span class='color_p'>count</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_get_secure_element_type_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_se_type_e* <span class='color_p'>se_type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_is_activated_aid_handler_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, <span class='nowrap'>char const* <span class='color_p'>aid</span>,</span> <span class='nowrap'>_Bool* <span class='color_p'>activated</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_is_activated_category_handler_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, <span class='nowrap'>_Bool* <span class='color_p'>activated</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_open_internal_secure_element_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, <span class='nowrap'>net_nfc_target_handle_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_register_aids_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, <span class='nowrap'>char const* <span class='color_p'>aid</span>,</span> <span class='nowrap'>... )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_remove_package_aids_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>package</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_remove_route_aid_sync&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>package</span>, <span class='nowrap'>char const* <span class='color_p'>aid</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_send_apdu_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, data_h <span class='color_p'>apdu_data</span>, <span class='nowrap'>data_h* <span class='color_p'>response</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_default_route_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>switch_on</span>, enum net_nfc_se_type_e <span class='color_p'>switch_off</span>, <span class='nowrap'>enum net_nfc_se_type_e <span class='color_p'>battery_off</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_event_cb&#160;<span class='sym_p'>(&#160;net_nfc_client_se_event <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_preferred_handler_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>_Bool <span class='color_p'>state</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_secure_element_type_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum net_nfc_se_type_e <span class='color_p'>se_type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_transaction_event_cb&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, net_nfc_client_se_transaction_event <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_set_transaction_fg_dispatch&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>mode</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_unregister_aid_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>se_type</span>, enum net_nfc_card_emulation_category_t <span class='color_p'>category</span>, <span class='nowrap'>char const* <span class='color_p'>aid</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_se_unset_event_cb&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_se_unset_transaction_event_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum net_nfc_se_type_e <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_card_emulation_mode_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_card_emulation_mode_t* <span class='color_p'>se_type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_set_card_emulation_mode_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum net_nfc_card_emulation_mode_t <span class='color_p'>mode</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_sign_record.c</span><br/>
+<span class="iname">net_nfc_sign_ndef_message&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>msg</span>, <span class='nowrap'>char* <span class='color_p'>cert_file</span>,</span> <span class='nowrap'>char* <span class='color_p'>password</span> )</span></span></span><br/>
+<span class="iname">net_nfc_sign_records&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>msg</span>, <span class='nowrap'>int <span class='color_p'>begin_index</span>,</span> <span class='nowrap'>int <span class='color_p'>end_index</span>,</span> <span class='nowrap'>char* <span class='color_p'>cert_file</span>,</span> <span class='nowrap'>char* <span class='color_p'>password</span> )</span></span></span><br/>
+<span class="iname">net_nfc_verify_signature_ndef_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>ndef_message_h <span class='color_p'>msg</span> )</span></span></span><br/>
+<span class="iname">net_nfc_verify_signature_records&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>begin_record</span>, <span class='nowrap'>ndef_record_h <span class='color_p'>sign_record</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_snep.c</span><br/>
+<span class="iname">net_nfc_client_snep_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_snep.h</span><br/>
+<span class="iname">net_nfc_client_snep_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_snep_register_server&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>san</span>,</span> <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> net_nfc_client_snep_event_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_snep_send_client_request&#160;<span class='sym_p'>(&#160;net_nfc_snep_handle_h <span class='color_p'>target</span>, enum net_nfc_snep_type_t <span class='color_p'>snep_type</span>, ndef_message_h <span class='color_p'>msg</span>, net_nfc_client_snep_event_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_snep_start_client&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>target</span>, <span class='nowrap'>char const* <span class='color_p'>san</span>,</span> <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> net_nfc_client_snep_event_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_snep_start_server&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>target</span>, <span class='nowrap'>char const* <span class='color_p'>san</span>,</span> <span class='nowrap'>sap_t <span class='color_p'>sap</span>,</span> net_nfc_client_snep_event_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_snep_stop_service_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>target</span>, <span class='nowrap'>net_nfc_snep_handle_h <span class='color_p'>service</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_snep_unregister_server&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>san</span>,</span> <span class='nowrap'>sap_t <span class='color_p'>sap</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_system_handler.c</span><br/>
+<span class="iname">net_nfc_client_sys_handler_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_sys_handler_set_state&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>state</span>,</span> net_nfc_client_popup_set_state_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_sys_handler_set_state_force&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>state</span>,</span> net_nfc_client_popup_set_state_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_sys_handler_set_state_force_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>state</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_sys_handler_set_state_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>state</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_system_handler.h</span><br/>
+<span class="iname">net_nfc_client_sys_handler_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_sys_handler_get_launch_popup_state&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int* <span class='color_p'>state</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_sys_handler_set_launch_popup_state&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>enable</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_sys_handler_set_launch_popup_state_force&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>enable</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_tag.c</span><br/>
+<span class="iname">net_nfc_client_tag_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_tag_is_tag_connected_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_target_type_e* <span class='color_p'>dev_type</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_tag.h</span><br/>
+<span class="iname">net_nfc_client_barcode_get_barcode_sync&#160;<span class='sym_p'>(&#160;unsigned char** <span class='color_p'>barcode</span>, <span class='nowrap'>int* <span class='color_p'>barcode_len</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_tag_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_tag_get_current_tag_info_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_target_info_h* <span class='color_p'>info</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_tag_get_current_target_handle_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_target_handle_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_tag_get_filter&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_tag_set_filter&#160;<span class='sym_p'>(&#160;<span class='nowrap'>enum net_nfc_event_filter_e <span class='color_p'>filter</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_tag_set_tag_detached&#160;<span class='sym_p'>(&#160;net_nfc_client_tag_tag_detached <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_tag_set_tag_discovered&#160;<span class='sym_p'>(&#160;net_nfc_client_tag_tag_discovered <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_tag_unset_tag_detached&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_tag_unset_tag_discovered&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_tag_felica.c</span><br/>
+<span class="iname">net_nfc_client_felica_poll&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, enum net_nfc_felica_poll_request_code_e <span class='color_p'>req_code</span>, uint8_t <span class='color_p'>time_slote</span>, nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_felica_read_without_encryption&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, uint8_t <span class='color_p'>number_of_services</span>, uint16_t* <span class='color_p'>service_list</span>, uint8_t <span class='color_p'>number_of_blocks</span>, uint8_t* <span class='color_p'>block_list</span>, nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_felica_request_response&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_felica_request_service&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, uint8_t <span class='color_p'>number_of_area_service</span>, uint16_t* <span class='color_p'>area_service_list</span>, uint8_t <span class='color_p'>number_of_services</span>, nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_felica_request_system_code&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_felica_write_without_encryption&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, uint8_t <span class='color_p'>number_of_services</span>, uint16_t* <span class='color_p'>service_list</span>, uint8_t <span class='color_p'>number_of_blocks</span>, uint8_t* <span class='color_p'>block_list</span>, <span class='nowrap'>data_h <span class='color_p'>data</span>,</span> nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_tag_internal.h</span><br/>
+<span class="iname">net_nfc_client_tag_get_client_target_info&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_tag_is_connected&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_tag_jewel.c</span><br/>
+<span class="iname">net_nfc_client_jewel_read_all&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_jewel_read_byte&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>block</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>byte</span>,</span> nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_jewel_read_id&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_jewel_write_with_erase&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>block</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>byte</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>data</span>,</span> nfc_transceive_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_jewel_write_with_no_erase&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>block</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>byte</span>,</span> <span class='nowrap'>uint8_t <span class='color_p'>data</span>,</span> nfc_transceive_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_tag_mifare.c</span><br/>
+<span class="iname">net_nfc_client_mifare_create_application_directory_key&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h* <span class='color_p'>key</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_create_default_key&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h* <span class='color_p'>key</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_create_net_nfc_forum_key&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h* <span class='color_p'>key</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_target_info.c</span><br/>
+<span class="iname">net_nfc_duplicate_target_info&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>origin</span>, <span class='nowrap'>net_nfc_target_info_h* <span class='color_p'>result</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_test.c</span><br/>
+<span class="iname">net_nfc_client_test_ese_test&#160;<span class='sym_p'>(&#160;net_nfc_client_test_ese_test_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_ese_test_sync&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_test_get_firmware_version&#160;<span class='sym_p'>(&#160;net_nfc_client_test_get_firmware_version_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_get_firmware_version_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char** <span class='color_p'>version</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_test_prbs_test&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint32_t <span class='color_p'>tech</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>rate</span>,</span> net_nfc_client_test_prbs_test_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_prbs_test_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint32_t <span class='color_p'>tech</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>rate</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_set_ee_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>mode</span>,</span> <span class='nowrap'>int <span class='color_p'>reg_id</span>,</span> <span class='nowrap'>data_h <span class='color_p'>data</span>,</span> net_nfc_client_test_set_ee_data_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_set_ee_data_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>mode</span>,</span> <span class='nowrap'>int <span class='color_p'>reg_id</span>,</span> <span class='nowrap'>data_h <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_set_listen_tech_mask_sync&#160;<span class='sym_p'>(&#160;<span class='nowrap'>uint32_t <span class='color_p'>tech</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_set_se_tech_type_sync&#160;<span class='sym_p'>(&#160;enum net_nfc_se_type_e <span class='color_p'>type</span>, <span class='nowrap'>int <span class='color_p'>tech</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_sim_test&#160;<span class='sym_p'>(&#160;net_nfc_client_test_sim_test_completed <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_test_sim_test_sync&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_test.h</span><br/>
+<span class="iname">net_nfc_client_test_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_transceive.c</span><br/>
+<span class="iname">net_nfc_client_transceive_data_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>rawdata</span>,</span> <span class='nowrap'>data_h* <span class='color_p'>response</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_transceive_init&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">net_nfc_client_transceive_sync&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>rawdata</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_client_transceive.h</span><br/>
+<span class="iname">net_nfc_client_transceive&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>rawdata</span>,</span> nfc_transceive_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_transceive_data&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>data_h <span class='color_p'>rawdata</span>,</span> nfc_transceive_data_callback <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_transceive_deinit&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_data.h</span><br/>
+<span class="iname">net_nfc_create_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h* <span class='color_p'>data</span>,</span> uint8_t const* <span class='color_p'>bytes</span>, <span class='nowrap'>size_t <span class='color_p'>length</span> )</span></span></span><br/>
+<span class="iname">net_nfc_free_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_data_buffer&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h const <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_data_length&#160;<span class='sym_p'>(&#160;<span class='nowrap'>data_h const <span class='color_p'>data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_ndef_message.h</span><br/>
+<span class="iname">net_nfc_append_record_by_index&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, <span class='nowrap'>int <span class='color_p'>index</span>,</span> <span class='nowrap'>ndef_record_h <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_append_record_to_ndef_message&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, <span class='nowrap'>ndef_record_h <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_ndef_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>ndef_message_h* <span class='color_p'>ndef_message</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_ndef_message_from_rawdata&#160;<span class='sym_p'>(&#160;ndef_message_h* <span class='color_p'>ndef_message</span>, <span class='nowrap'>data_h <span class='color_p'>rawdata</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_rawdata_from_ndef_message&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, <span class='nowrap'>data_h* <span class='color_p'>rawdata</span> )</span></span></span><br/>
+<span class="iname">net_nfc_free_ndef_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>ndef_message_h <span class='color_p'>ndef_message</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_ndef_message_byte_length&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, <span class='nowrap'>uint32_t* <span class='color_p'>length</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_ndef_message_record_count&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, <span class='nowrap'>int* <span class='color_p'>count</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_by_index&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, <span class='nowrap'>int <span class='color_p'>index</span>,</span> <span class='nowrap'>ndef_record_h* <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_remove_record_by_index&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>ndef_message</span>, <span class='nowrap'>int <span class='color_p'>index</span> )</span></span></span><br/>
+<span class="iname">net_nfc_retrieve_current_ndef_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>ndef_message_h* <span class='color_p'>ndef_message</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_ndef_message_handover.h</span><br/>
+<span class="iname">net_nfc_create_carrier_config_from_carrier&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h* <span class='color_p'>config</span>, <span class='nowrap'>net_nfc_ch_carrier_h <span class='color_p'>carrier</span> )</span></span></span><br/>
+<span class="iname">net_nfc_free_carrier_config&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_carrier_config_h <span class='color_p'>config</span> )</span></span></span><br/>
+<span class="iname">net_nfc_free_handover_carrier&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_ch_carrier_h <span class='color_p'>carrier</span> )</span></span></span><br/>
+<span class="iname">net_nfc_free_handover_message&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_ch_message_h <span class='color_p'>message</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_carrier_config_property&#160;<span class='sym_p'>(&#160;net_nfc_carrier_config_h <span class='color_p'>config</span>, uint16_t <span class='color_p'>attribute</span>, <span class='nowrap'>uint16_t* <span class='color_p'>size</span>,</span> <span class='nowrap'>uint8_t** <span class='color_p'>data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_auxiliary_record&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>int <span class='color_p'>index</span>,</span> <span class='nowrap'>ndef_record_h* <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_auxiliary_record_count&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>uint32_t* <span class='color_p'>count</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_carrier&#160;<span class='sym_p'>(&#160;net_nfc_ch_message_h <span class='color_p'>message</span>, <span class='nowrap'>int <span class='color_p'>index</span>,</span> <span class='nowrap'>net_nfc_ch_carrier_h* <span class='color_p'>carrier</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_carrier_by_type&#160;<span class='sym_p'>(&#160;net_nfc_ch_message_h <span class='color_p'>message</span>, enum net_nfc_conn_handover_carrier_type_e <span class='color_p'>type</span>, <span class='nowrap'>net_nfc_ch_carrier_h* <span class='color_p'>carrier</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_carrier_count&#160;<span class='sym_p'>(&#160;net_nfc_ch_message_h <span class='color_p'>message</span>, <span class='nowrap'>uint32_t* <span class='color_p'>count</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_carrier_cps&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>net_nfc_conn_handover_carrier_state_e* <span class='color_p'>cps</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_carrier_record&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>ndef_record_h* <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_carrier_type&#160;<span class='sym_p'>(&#160;net_nfc_ch_carrier_h <span class='color_p'>carrier</span>, <span class='nowrap'>net_nfc_conn_handover_carrier_type_e* <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_handover_random_number&#160;<span class='sym_p'>(&#160;net_nfc_ch_message_h <span class='color_p'>message</span>, <span class='nowrap'>uint16_t* <span class='color_p'>random_number</span> )</span></span></span><br/>
+<span class="iname">net_nfc_import_handover_from_ndef_message&#160;<span class='sym_p'>(&#160;ndef_message_h <span class='color_p'>msg</span>, <span class='nowrap'>net_nfc_ch_message_h* <span class='color_p'>result</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_ndef_record.h</span><br/>
+<span class="iname">net_nfc_create_record&#160;<span class='sym_p'>(&#160;ndef_record_h* <span class='color_p'>record</span>, enum net_nfc_record_tnf_e <span class='color_p'>tnf</span>, <span class='nowrap'>data_h <span class='color_p'>typeName</span>,</span> <span class='nowrap'>data_h <span class='color_p'>id</span>,</span> <span class='nowrap'>data_h <span class='color_p'>payload</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_text_string_from_text_record&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>char** <span class='color_p'>buffer</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_text_type_record&#160;<span class='sym_p'>(&#160;ndef_record_h* <span class='color_p'>record</span>, char const* <span class='color_p'>text</span>, char const* <span class='color_p'>language_code_str</span>, <span class='nowrap'>enum net_nfc_encode_type_e <span class='color_p'>encode</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_uri_string_from_uri_record&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>char** <span class='color_p'>uri</span> )</span></span></span><br/>
+<span class="iname">net_nfc_create_uri_type_record&#160;<span class='sym_p'>(&#160;ndef_record_h* <span class='color_p'>record</span>, <span class='nowrap'>char const* <span class='color_p'>uri</span>,</span> <span class='nowrap'>enum net_nfc_schema_type_e <span class='color_p'>protocol_schema</span> )</span></span></span><br/>
+<span class="iname">net_nfc_free_record&#160;<span class='sym_p'>(&#160;<span class='nowrap'>ndef_record_h <span class='color_p'>record</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_encoding_type_from_text_record&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>net_nfc_encode_type_e* <span class='color_p'>encoding</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_languange_code_string_from_text_record&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>char** <span class='color_p'>lang_code_str</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_id&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>data_h* <span class='color_p'>id</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_payload&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>data_h* <span class='color_p'>payload</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_tnf&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>net_nfc_record_tnf_e* <span class='color_p'>TNF</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_record_type&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>data_h* <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_set_record_id&#160;<span class='sym_p'>(&#160;ndef_record_h <span class='color_p'>record</span>, <span class='nowrap'>data_h <span class='color_p'>id</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_tag_mifare.h</span><br/>
+<span class="iname">net_nfc_client_mifare_authenticate_with_keyA&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>sector</span>,</span> <span class='nowrap'>data_h <span class='color_p'>auth_key</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_authenticate_with_keyB&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>sector</span>,</span> <span class='nowrap'>data_h <span class='color_p'>auth_key</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_decrement&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>addr</span>,</span> <span class='nowrap'>int <span class='color_p'>value</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_increment&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>addr</span>,</span> <span class='nowrap'>int <span class='color_p'>value</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_read&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>addr</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_restore&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>addr</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_transfer&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>addr</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_write_block&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>addr</span>,</span> <span class='nowrap'>data_h <span class='color_p'>data</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_client_mifare_write_page&#160;<span class='sym_p'>(&#160;net_nfc_target_handle_h <span class='color_p'>handle</span>, <span class='nowrap'>uint8_t <span class='color_p'>addr</span>,</span> <span class='nowrap'>data_h <span class='color_p'>data</span>,</span> <span class='nowrap'>void* <span class='color_p'>callback</span>,</span> <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>net_nfc_target_info.h</span><br/>
+<span class="iname">net_nfc_get_tag_actual_data_size&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>uint32_t* <span class='color_p'>actual_data</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_handle&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>net_nfc_target_handle_h* <span class='color_p'>handle</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_info_keys&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>char*** <span class='color_p'>keys</span>,</span> <span class='nowrap'>int* <span class='color_p'>number_of_keys</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_info_value&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>char const* <span class='color_p'>key</span>,</span> <span class='nowrap'>data_h* <span class='color_p'>value</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_max_data_size&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>uint32_t* <span class='color_p'>max_size</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_ndef_message&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>ndef_message_h* <span class='color_p'>msg</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_ndef_state&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>net_nfc_ndef_card_state_e* <span class='color_p'>state</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_ndef_support&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>_Bool* <span class='color_p'>is_support</span> )</span></span></span><br/>
+<span class="iname">net_nfc_get_tag_type&#160;<span class='sym_p'>(&#160;net_nfc_target_info_h <span class='color_p'>target_info</span>, <span class='nowrap'>net_nfc_target_type_e* <span class='color_p'>type</span> )</span></span></span><br/>
+<span class="iname">net_nfc_release_tag_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>net_nfc_target_info_h <span class='color_p'>target_info</span> )</span></span></span><br/>
+<br/>
+<span class='h_name'>nfc_card_emulation.c</span><br/>
+<span class="iname">nfc_se_foreach_registered_handlers&#160;<span class='sym_p'>(&#160;enum nfc_card_emulation_category_type_e <span class='color_p'>category</span>, nfc_se_registered_handler_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span></span><br/>
+<span class="iname">nfc_se_get_conflict_handlers_internal&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>package</span>, enum nfc_card_emulation_category_type_e <span class='color_p'>category</span>, <span class='nowrap'>char const* <span class='color_p'>aid</span>,</span> <span class='nowrap'>char*** <span class='color_p'>handlers</span> )</span></span></span><br/>
+<span class="iname">nfc_se_set_preferred_handler&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<span class="iname">nfc_se_unset_preferred_handler&#160;<span class='sym_p'>(&#160;)</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (6)</h2><hr/>
+<div class='h_list'>
+net_nfc_typedef.h<br/>
+nfc.h<br/>
+nfc_common.h<br/>
+nfc_internal.h<br/>
+types.h<br/>
+unistd.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (7)</h2><hr/>
+<div class='h_list'>
+nfc_card_emulation.c<br/>
+nfc_common.c<br/>
+nfc_manager.c<br/>
+nfc_ndef.c<br/>
+nfc_p2p.c<br/>
+nfc_p2p_handover.c<br/>
+nfc_tag.c<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libcapi-network-nfc.so.0.2.0<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><hr/>
+<div class='footer' align='right'><i>Generated by <a href='http://lvc.github.io/abi-compliance-checker/'>ABI Compliance Checker</a> 1.99.18 &#160;</i>
+</div>
+<br/>
+
+</body></html>

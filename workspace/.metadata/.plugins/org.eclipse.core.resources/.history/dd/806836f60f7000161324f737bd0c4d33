@@ -1,0 +1,7 @@
+
+public class Custom  {
+	
+	public String toString() {
+		return "I am custom";
+	}
+}

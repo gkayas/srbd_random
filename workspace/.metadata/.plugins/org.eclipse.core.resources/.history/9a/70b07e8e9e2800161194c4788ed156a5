@@ -1,0 +1,673 @@
+import java.awt.image.ReplicateScaleFilter;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.security.GeneralSecurityException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Main {
+	private static final String OLD_PACKAGES_NOT_DOWNLOADED_LOG = "logs/old_packages_not_downloaded.log";
+	static final String DOWNLOADED_PKGS_LOG = "logs/downloaded_pkgs.log";
+	static String OLD_REPO, OLD_PKG_LIST, OLD_RPM_DIR, OLD_VER;
+	static String NEW_REPO, NEW_PKG_LIST, NEW_RPM_DIR, NEW_VER;
+	static String MODE;
+	static HashMap<String, String> confMap;
+
+	static final String CONF_FILE_PATH = "abi.conf";
+	static final String OLD_PKG_FILE = "old-pkg.list";
+	static final String OLD_PKG_MOD_FILE = "old-pkg-mod.list";
+	static final String NOT_SELECTED_OLD_PKG_LOG_FILE = "logs/not_selected_old_packages.log";
+	static final String NOT_SELECTED_NEW_PKG_LOG_FILE = "logs/not_selected_new_packages.log";
+	static final String NEW_PKG_FILE = "new-pkg.list";
+	static final String NEW_PKG_MOD_FILE = "new-pkg-mod.list";
+	static final String MODULE_GIT_REPO_FILE = "modules_git_repo.txt";
+	private static final String OLD_PKG_DOWNLOAD_DIR = "OLD_PKG_DOWNLOAD_DIR";
+	private static final String NEW_PKG_DOWNLOAD_DIR = "NEW_PKG_DOWNLOAD_DIR";
+
+	private static HashMap<String, String> oldToNew = new HashMap<String, String>();
+	private static HashMap<String, String> newToOld= new HashMap<String, String>();
+	private static HashMap<String, ArrayList<String>> oneToMultiple = new HashMap<String, ArrayList<String>>();
+
+	public static void main(String [] args) throws IOException {
+		//ExecutorService executor = Executors.newFixedThreadPool(10);//creating a pool of 5 threads  
+		confMap = getConfMap();
+
+		createDirs();
+		changeShPermissions();
+		//		Reading data from conf file
+		OLD_REPO = confMap.get("OLD_REPO");
+		NEW_REPO = confMap.get("NEW_REPO");
+		OLD_PKG_LIST = confMap.get("OLD_PKG_LIST");
+		NEW_PKG_LIST = confMap.get("NEW_PKG_LIST");
+		OLD_RPM_DIR = confMap.get("OLD_PKG_DOWNLOAD_DIR");
+		NEW_RPM_DIR = confMap.get("NEW_PKG_DOWNLOAD_DIR");
+		OLD_VER = confMap.get("OLD_VER");
+		NEW_VER = confMap.get("NEW_VER");
+		MODE = "all";
+
+		try{
+			populateOldToNewMap();
+		} catch (FileNotFoundException e) {
+			System.out.println("Old to new map file not found");
+		}
+
+		try{
+			populateoneToMultipleMap();
+		} catch (FileNotFoundException e) {
+			System.out.println("Old to new map file not found");
+		}
+
+		FileUtil.runShFile("html_start.sh", "");
+		//		Downloading .package files
+		downloadFile("",OLD_PKG_LIST, OLD_PKG_FILE );
+		downloadFile("",NEW_PKG_LIST, NEW_PKG_FILE);
+
+		//		Creating automated modules_git_repo.txt for -all option
+		if(MODE.equals("all")) {
+			gitRepoParser();
+		}
+
+		//		Creating old-pkg-mod.list
+		createOldPkgModList();
+		//		Creating new-pkg-mod.list
+		createNewPkgModList();
+
+		//				Downloading old RPMs
+		downLoadOldRpms();
+		//				Downloading new RPMs
+
+		downLoadNewRpms();
+
+		extractOldRpm();
+
+		//		Find the correct lib files from old rpm
+		String libsName = FileUtil.grepSoFilesFromFolder(OLD_RPM_DIR+"/usr");
+		Scanner sc = new Scanner(libsName);
+		ArrayList<LibObject> oldLibFiles = new ArrayList<LibObject>();
+		System.out.println("Checking symbolic links");
+		while(sc.hasNextLine()) {
+			String libName = sc.nextLine();
+			File libFile = new File(libName);
+			boolean isLink = FileUtil.isSymlink(libFile);
+			if(!isLink) {
+
+				libName = libName.split("\\.so\\.")[0];
+				String pices[] = libName.split("/");
+				libName = pices[pices.length-1];
+				oldLibFiles.add(new LibObject(libName, libFile));
+			}
+		}
+		sc.close();
+
+		extractNewRpm();
+
+		//		Find the correct lib files from new rpm
+		libsName = FileUtil.grepSoFilesFromFolder(NEW_RPM_DIR+"/usr");
+		System.err.println("for NEW: "+libsName);
+		sc = new Scanner(libsName);
+		ArrayList<LibObject> newLibFiles = new ArrayList<LibObject>();
+
+		while(sc.hasNextLine()) {
+			String libName = sc.nextLine();
+			File libFile = new File(libName);
+			boolean isLink = FileUtil.isSymlink(libFile);
+			if(!isLink) {
+				libName = libName.split("\\.so\\.")[0];
+				String pices[] = libName.split("/");
+				libName = pices[pices.length-1];
+				newLibFiles.add(new LibObject(libName, libFile));
+			}
+		}
+		sc.close();
+
+		System.err.println(oldLibFiles.size()+" "+newLibFiles.size());
+
+		//		Dump lib files and compare them
+		for (LibObject lib : oldLibFiles) {
+
+			if(newLibFiles.contains(lib)) {
+				LibObject newLib = newLibFiles.get(newLibFiles.indexOf(lib));
+				System.out.println("Start DUMPing old and new libs.....");
+				boolean oldDumpResult = FileUtil.dumpLibToFile(lib.soFile.getAbsolutePath(), OLD_RPM_DIR+"/ABI-old.dump", OLD_VER);
+				boolean newDumpResult = FileUtil.dumpLibToFile(newLib.soFile.getAbsolutePath(), NEW_RPM_DIR+"/ABI-new.dump", NEW_VER);
+				System.out.println("Old lib DUMP Result: "+ oldDumpResult+"\nNew lib DUMP Result:  "+newDumpResult);
+
+				if(oldDumpResult && newDumpResult) {
+					System.out.println("Comparison new and old libs started.");
+					FileUtil.checkAbiComplaiance(lib.libName, OLD_RPM_DIR+"/ABI-old.dump", NEW_RPM_DIR+"/ABI-new.dump");
+					System.out.println("Comparison Ends.");
+					FileUtil.runShFile("html_populate.sh", lib.libName);
+				} else {
+					System.err.println("Dumping libs failed.");
+				}
+			}
+		}
+		FileUtil.runShFile("html_ends.sh", "");
+
+		//		deleteFolders();
+		System.out.println("JOB DONE!!!!!");
+	}
+
+	private static void deleteFolders() {
+		deleteFolder(OLD_RPM_DIR+"/usr");
+		deleteFolder(NEW_RPM_DIR+"/usr");
+	}
+
+	private static void populateoneToMultipleMap() throws FileNotFoundException {
+		Scanner sc = new Scanner(new File("one_to_multiple.map"));
+		while(sc.hasNextLine()) {
+			String line = sc.nextLine();
+			String [] lineSplite = line.split(":");
+			String oldPkgName = lineSplite[0].trim();
+
+
+			Scanner lineSc = new Scanner(lineSplite[1]);
+			ArrayList<String> newPkgList = new ArrayList<String>();
+			while(lineSc.hasNext()) {
+				String newPkg = lineSc.next();
+				//System.out.print(newPkg+"\t");
+				newPkgList.add(newPkg);
+			}
+			System.out.println();
+			lineSc.close();
+			oneToMultiple.put(oldPkgName, newPkgList);
+
+		}
+		sc.close();
+
+	}
+
+	private static void populateOldToNewMap() throws FileNotFoundException {
+		Scanner sc = new Scanner(new File("old_to_new.map"));
+		while(sc.hasNextLine()) {
+			String line = sc.nextLine();
+			String [] lineSplite = line.split(":");
+			String oldPkgName = lineSplite[0].trim();
+
+			Scanner lineSc = new Scanner(lineSplite[1]);
+			lineSc.close();
+			oldToNew.put(oldPkgName, lineSplite[1].trim());
+			newToOld.put(lineSplite[1].trim(), oldPkgName);
+
+		}
+		sc.close();
+	}
+
+	private static void extractAndDump(String line) {
+
+		//Old Extract
+		String rpmNameOld = FileUtil.grepFilesFromFolder(OLD_RPM_DIR, line);
+		rpmNameOld = rpmNameOld.trim().split("\\r?\\n")[0];
+		System.err.println("[Old Package]Extraction Started :"+ rpmNameOld+"#############");
+		ProcessResult resultOld = FileUtil.extractRpm(OLD_RPM_DIR, rpmNameOld);
+
+		if(resultOld.process.exitValue() != 0) {
+			System.out.println("[Old Package]Extraction : "+ rpmNameOld+"----------------------[FAILED]");
+		} else {
+			System.err.println("[Old Package]Extraction : "+ rpmNameOld+"----------------------[SUCCESS]");
+		}
+		
+		//New Extract
+		String oldLibName = line.split("-debuginfo")[0];
+		//				String newLibName = oldToNew.get(oldLibName);
+		System.err.println(oldLibName);
+		ArrayList<String> multipleNewLibs = getOneToMultiple(oldLibName);
+
+		for (String newLib : multipleNewLibs) {
+			newLib = newLib + "-debuginfo";
+			String rpmNameNew = FileUtil.grepFilesFromFolder(NEW_RPM_DIR, newLib);
+
+			rpmNameNew = rpmNameNew.trim().split("\\r?\\n")[0];
+			if(rpmNameNew.length() != 0) {
+				System.out.println("[New Package]Extraction Started :"+ rpmNameNew);
+				ProcessResult resultNew = FileUtil.extractRpm(NEW_RPM_DIR, rpmNameNew);
+
+				if(resultNew.process.exitValue() != 0) {
+					System.out.println("[New Package]Extraction : "+rpmNameNew+"----------------------[FAILED]");
+				} else {
+					System.out.println("[New Package]Extraction : "+rpmNameNew+"----------------------[SUCCESS]");
+				}
+			} else {
+				System.out.println("[New Package]No New Pkg for extraction. ");
+			}
+		}
+		
+	}
+
+	private static void extractOldRpm() {
+		System.out.println("Extracting old Pkg/s");
+		try {
+			Scanner sc = new Scanner(new File(DOWNLOADED_PKGS_LOG));
+
+			while(sc.hasNextLine()) {
+				String line = sc.nextLine();
+				String rpmNameOld = FileUtil.grepFilesFromFolder(OLD_RPM_DIR, line);
+				rpmNameOld = rpmNameOld.trim().split("\\r?\\n")[0];
+				System.err.println("[Old Package]Extraction Started :"+ rpmNameOld+"#############");
+				ProcessResult resultOld = FileUtil.extractRpm(OLD_RPM_DIR, rpmNameOld);
+
+				if(resultOld.process.exitValue() != 0) {
+					System.out.println("[Old Package]Extraction : "+ rpmNameOld+"----------------------[FAILED]");
+				} else {
+					System.err.println("[Old Package]Extraction : "+ rpmNameOld+"----------------------[SUCCESS]");
+				}
+			}
+
+			sc.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void extractNewRpm() {
+		System.out.println("Extracting new Pkg/s");
+		try {
+			Scanner sc = new Scanner(new File(DOWNLOADED_PKGS_LOG));
+
+			while(sc.hasNextLine()) {
+				String line = sc.nextLine();
+				String oldLibName = line.split("-debuginfo")[0];
+				//				String newLibName = oldToNew.get(oldLibName);
+				System.err.println(oldLibName);
+				ArrayList<String> multipleNewLibs = getOneToMultiple(oldLibName);
+
+				for (String newLib : multipleNewLibs) {
+					newLib = newLib + "-debuginfo";
+					String rpmNameNew = FileUtil.grepFilesFromFolder(NEW_RPM_DIR, newLib);
+
+					rpmNameNew = rpmNameNew.trim().split("\\r?\\n")[0];
+					if(rpmNameNew.length() != 0) {
+						System.out.println("[New Package]Extraction Started :"+ rpmNameNew);
+						ProcessResult resultNew = FileUtil.extractRpm(NEW_RPM_DIR, rpmNameNew);
+
+						if(resultNew.process.exitValue() != 0) {
+							System.out.println("[New Package]Extraction : "+rpmNameNew+"----------------------[FAILED]");
+						} else {
+							System.out.println("[New Package]Extraction : "+rpmNameNew+"----------------------[SUCCESS]");
+						}
+					} else {
+						System.out.println("[New Package]No New Pkg for extraction. ");
+					}
+				}
+
+			}
+
+			sc.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	//	private static void rpmExtraction() {
+	//		try {
+	//			Scanner sc = new Scanner(new File(DOWNLOADED_PKGS_LOG));
+	//
+	//			while(sc.hasNextLine()) {
+	//				String line = sc.nextLine();
+	//				//				String moduleName = line.split("-debuginfo")[0];	
+	//
+	//				//				Extracting OLD packages
+	//				String rpmNameOld = FileUtil.grepFilesFromFolder(OLD_RPM_DIR, line);
+	//				rpmNameOld = rpmNameOld.trim();
+	//				System.out.println("[Old Package]Extraction Started :"+ rpmNameOld);
+	//				ProcessResult resultOld = FileUtil.extractRpm(OLD_RPM_DIR, rpmNameOld);
+	//
+	//				if(resultOld.process.exitValue() != 0) {
+	//					System.out.println("[Old Package]Extraction : "+ rpmNameOld+"----------------------[FAILED]");
+	//				} else {
+	//					System.out.println("[Old Package]Extraction : "+ rpmNameOld+"----------------------[SUCCESS]");
+	//				}
+	//
+	//				//				Extracting NEW packages
+	//				String rpmNameNew = FileUtil.grepFilesFromFolder(NEW_RPM_DIR, line);
+	//				rpmNameNew = rpmNameNew.trim();
+	//				if(rpmNameNew.length() != 0) {
+	//					System.out.println("[New Package]Extraction Started :"+ rpmNameNew);
+	//					ProcessResult resultNew = FileUtil.extractRpm(NEW_RPM_DIR, rpmNameNew);
+	//
+	//					if(resultNew.process.exitValue() != 0) {
+	//						System.out.println("[New Package]Extraction : "+rpmNameNew+"----------------------[FAILED]");
+	//					} else {
+	//						System.out.println("[New Package]Extraction : "+rpmNameNew+"----------------------[SUCCESS]");
+	//					}
+	//				} else {
+	//					System.out.println("[New Package]No New Pkg for extraction. ");
+	//				}
+	//
+	//			}
+	//
+	//			sc.close();
+	//		} catch (FileNotFoundException e) {
+	//			e.printStackTrace();
+	//		}
+	//	}	
+
+	private static void createNewPkgModList() {
+		System.out.println("Creating new-pkg-mod.list");
+		try {
+			Scanner sc = new Scanner(new File(MODULE_GIT_REPO_FILE));
+			PrintWriter pwSelected = new PrintWriter(new File(NEW_PKG_MOD_FILE));
+			PrintWriter pwNotSelected = new PrintWriter(new File(NOT_SELECTED_NEW_PKG_LOG_FILE));
+			pwNotSelected.write("");
+			pwSelected.write("");
+			int selectedCount = 0;
+			while(sc.hasNextLine()) {
+				String moduleName = sc.nextLine().trim();
+				String newPkg = getOldToNew(moduleName);
+
+				if(newPkg == null) {
+					newPkg = moduleName;
+				}
+
+				newPkg = newPkg +"\\.";
+				System.out.println("###"+newPkg);
+				String pkgInfo = FileUtil.grepFromFile(NEW_PKG_FILE, newPkg);
+				if(pkgInfo.length() == 0) {
+					pwNotSelected.append(newPkg+"\n");
+					System.out.println("Not selected New pkg :"+newPkg);
+				} else {
+					pwSelected.append(pkgInfo+"\n");
+					System.out.println("Selected New pkg/s : "+pkgInfo);
+					selectedCount++;
+				}
+
+			}
+			System.out.println("Total Selected new packages for download : "+selectedCount);
+			sc.close();
+			pwSelected.flush();
+			pwSelected.close();
+			pwNotSelected.flush();
+			pwNotSelected.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void createOldPkgModList() {
+		try {
+			System.out.println("Creating old-pkg-mod.list");
+			Scanner sc = new Scanner(new File(MODULE_GIT_REPO_FILE));
+			PrintWriter pwSelected = new PrintWriter(new File(OLD_PKG_MOD_FILE));
+			PrintWriter pwNotSelected = new PrintWriter(new File(NOT_SELECTED_OLD_PKG_LOG_FILE));
+			pwNotSelected.write("");
+			pwSelected.write("");
+			int selectedCount = 0;
+			while(sc.hasNextLine()) {
+				String moduleName = sc.nextLine()+"\\.";
+				System.out.println("###"+moduleName);
+				String pkgInfo = FileUtil.grepFromFile(OLD_PKG_FILE, moduleName);
+				if(pkgInfo.length() == 0) {
+					pwNotSelected.append(moduleName+"\n");
+					System.out.println("Not selected Old pkg :"+moduleName);
+				} else {
+					pwSelected.append(pkgInfo+"\n");
+					System.out.println("Selected Old pkg :"+pkgInfo);
+					selectedCount++;
+				}
+
+			}
+			System.out.println("Total Selected old packages for download : "+selectedCount);
+			pwSelected.flush();
+			pwSelected.close();
+			pwNotSelected.flush();
+			pwNotSelected.close();
+			sc.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			System.out.println(MODULE_GIT_REPO_FILE+" not found");
+		}
+	}
+
+	private static void createDirs() {
+		File oldPkgDir = new File(confMap.get(OLD_PKG_DOWNLOAD_DIR));
+		createDir(oldPkgDir);
+		File newPkgDir = new File(confMap.get(NEW_PKG_DOWNLOAD_DIR));
+		createDir(newPkgDir);
+		File logDir = new File("./logs");
+		createDir(logDir);
+		File compatReporstDir = new File("./compat_reports");
+		createDir(compatReporstDir);
+	}
+
+
+
+	private static void createDir(File dir) {
+		if (!dir.exists()) {
+			System.out.println("creating directory: " + dir.getName());
+			boolean result = false;
+
+			try{
+				dir.mkdir();
+				result = true;
+			} 
+			catch(SecurityException se){
+				//handle it
+			}        
+			if(result) {    
+				System.out.println(dir.getName()+" directory created.");  
+			}
+		}
+	}
+
+	static boolean downloadFile(String msg, String url, String desPath) {
+		URL website;
+		//PrintWriter pw = null;
+		System.out.printf(msg+" Download started: %s \n", desPath);
+		try { 
+			//File file = new File("log/failed_to_download.log");
+			//pw = new PrintWriter("log/failed_to_download.log");
+			website = new URL(url);
+
+			ReadableByteChannel rbc = Channels.newChannel(website.openStream());
+			FileOutputStream fos = new FileOutputStream(desPath);
+			fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+			fos.close();
+			System.out.printf(msg+" Downloading ended %s ----------------- [SUCCESS]\n", desPath);
+		} catch (Exception e) {
+			e.printStackTrace();
+			//pw.append(msg+": "+desPath+"\n");
+			System.err.printf(msg+" Downloading ended %s ----------------- [FAILED]\n", desPath);
+			//pw.close();
+			return false;
+		} 
+		return true;
+	}
+
+	static HashMap<String, String> getConfMap() {
+		HashMap<String, String> map = new HashMap<String, String>();
+		try {
+			Scanner sc = new Scanner(new File(CONF_FILE_PATH));
+			while(sc.hasNextLine()) {
+				String line = sc.nextLine();
+				Scanner cut = new Scanner(line);
+				String key = cut.next().split(":")[0].trim();
+				String value = cut.next().trim();
+				map.put(key, value);
+				cut.close();
+			}
+			sc.close();
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			System.err.println("Conf file not found");
+		}
+
+		return map;
+	}
+
+	public static void gitRepoParser(){
+		ArrayList<String> list = new ArrayList<String>();
+		try {
+			PrintWriter pw = new PrintWriter(new File("modules_git_repo.txt"));
+			Scanner sc = new Scanner(new File("old-pkg.list"));
+			while(sc.hasNext()){
+				String s = sc.nextLine();
+				String [] ar = s.split(" ");
+				if(!list.contains(ar[ar.length-1])){
+					list.add(ar[ar.length-1]);
+					int index = ar[ar.length-1].indexOf('#');
+					if(index >= 0){
+						ar[ar.length-1] = ar[ar.length-1].substring(0, index);//removing the part after "#" from git package path
+						String []parts = ar[ar.length-1].split("/");
+						String maduleName = parts[parts.length-1];
+						pw.append(maduleName+"\n");
+
+					}
+				}
+			}
+			sc.close();
+			pw.flush();
+			pw.close();
+
+		} catch (FileNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+	private static void downLoadOldRpms() {
+		System.out.println("Downloading OLD packages......");
+		try {
+			PrintWriter pwDownLoaded = new PrintWriter(DOWNLOADED_PKGS_LOG);
+			PrintWriter pwNotDownLoaded = new PrintWriter(OLD_PACKAGES_NOT_DOWNLOADED_LOG);
+			pwDownLoaded.write("");
+			pwNotDownLoaded.append("\n==================================================================\n");
+			pwNotDownLoaded.append(Calendar.getInstance().getTime().toString()+"\n");
+			pwNotDownLoaded.append("\n==================================================================\n");
+			int downloadedCount = 0;
+			Scanner sc = new Scanner(new File(OLD_PKG_MOD_FILE));
+			while(sc.hasNextLine()) {
+				String line = sc.nextLine();
+				if(line.trim().length() == 0) continue;
+				Scanner lineSc = new Scanner(line);
+				String string = lineSc.next();
+				String pkgName = string.split("\\.armv7l")[0];
+				String version = lineSc.next();
+				lineSc.close();
+				String downLoadName = pkgName+"-debuginfo-"+version+".armv7l.rpm";
+
+				boolean isDownloaded = downloadFile("[Old Package]", OLD_REPO+downLoadName, OLD_RPM_DIR+"/"+downLoadName);
+
+				if(isDownloaded) {
+					pwDownLoaded.append(pkgName+"-debuginfo\n");
+					downloadedCount++;
+				} else {
+					pwNotDownLoaded.append(downLoadName);
+				}
+			}
+			System.out.println("Total Downloaded Old Packages: "+downloadedCount);
+			pwDownLoaded.flush();
+			pwDownLoaded.close();
+			pwNotDownLoaded.flush();
+			pwNotDownLoaded.close();
+			sc.close();
+		} catch (FileNotFoundException e) {
+
+			e.printStackTrace();
+		}
+	}
+
+	private static void downLoadNewRpms () {
+		System.out.println("Downloading NEW packages......");
+		try {
+
+			int downloadedCount = 0;
+			Scanner sc = new Scanner(new File(NEW_PKG_MOD_FILE));
+			while(sc.hasNextLine()) {
+				String line = sc.nextLine();
+				if(line.trim().length()==0)continue;
+				Scanner lineSc = new Scanner(line);
+				String pkgName = lineSc.next().split("\\.armv7l")[0];
+				String version = lineSc.next();
+				lineSc.close();
+				ArrayList<String> multiplePkgList = getOneToMultiple(getNewToOld(pkgName));
+
+				for (String newPkg: multiplePkgList) {
+					String downLoadName = newPkg+"-debuginfo-"+version+".armv7l.rpm";
+					System.out.println("Downloading "+newPkg+" in place of "+pkgName);
+					boolean isDownloaded = downloadFile("[New Package]", NEW_REPO+downLoadName, NEW_RPM_DIR+"/"+downLoadName);
+
+					if(isDownloaded) {
+						downloadedCount++;
+					} 
+				}
+
+
+			}
+			System.out.println("Total Downloaded New Packages: "+downloadedCount);
+			sc.close();
+		} catch (FileNotFoundException e) {
+
+			e.printStackTrace();
+		}
+	}
+
+	private static void changeShPermissions() {
+		FileUtil.giveAllPermission("git_repo_parser.sh");
+		FileUtil.giveAllPermission("verdict.sh");
+		FileUtil.giveAllPermission("rpt-gen.sh");
+		FileUtil.giveAllPermission("git_repo_parser.sh");
+		FileUtil.giveAllPermission("html_ends.sh");
+		FileUtil.giveAllPermission("html_populate.sh");
+		FileUtil.giveAllPermission("html_start.sh");
+	}
+
+	private static String getOldToNew(String oldPkg) {
+		String s = oldToNew.get(oldPkg);
+		return (s!=null)?s:oldPkg;
+	}
+
+	private static String getNewToOld(String newPkg) {
+		String s = newToOld.get(newPkg);
+		return (s!=null)?s:newPkg;
+	}
+
+	private static ArrayList<String> getOneToMultiple(String one) {
+		ArrayList<String> s = oneToMultiple.get(one);
+		if (s==null){
+			s = new ArrayList<String>();
+			s.add(getOldToNew(one));
+		}
+		return s;
+	}
+
+	private static void deleteFolder(String folderPath) {
+		try {
+			Path directory = Paths.get(folderPath);
+			Files.walkFileTree(directory, new SimpleFileVisitor<Path>() {
+				@Override
+				public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+					Files.delete(file);
+					return FileVisitResult.CONTINUE;
+				}
+
+				@Override
+				public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+					Files.delete(dir);
+					return FileVisitResult.CONTINUE;
+				}
+			});
+		} catch (Exception e) {
+
+			//e.printStackTrace();
+			System.out.println("Folder not found: "+folderPath);
+		}
+	}
+}

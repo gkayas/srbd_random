@@ -1,0 +1,262 @@
+package manager;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Device {
+
+	private int screenHeight;
+	private int screenWidth;
+	private String version;
+	private String profile;
+	private boolean isShapeCircle;
+	private boolean isArchArm;
+	private String recommendedVNCtype;
+	private String defaultWatchAppId;
+	private String defaultWatchAppPackageId;
+	private String serial;
+	private String status;
+	private String name;
+	private String vncPort;
+	private String rmiPort;
+	private Socket s; 
+
+	public Device(String serial, String status, String name) {
+		this.name = name;
+		this.serial = serial;
+		this.status = status;
+		System.out.println(""+status+":");
+		if(status.equals("device")) {
+			setConfig();
+			vncPort = getAvailablePort(5900);
+			rmiPort = getAvailablePort(1099);
+		}
+		
+	}
+	
+	public void closeSocket() {
+		if( s != null){
+            try {
+                s.close();
+            } catch (IOException e) {
+                throw new RuntimeException("You should handle this error." , e);
+            }
+		}
+	}
+	
+	public boolean isShapeCircle() {
+		return isShapeCircle;
+	}
+
+	public void setShapeCircle(boolean isShapeCircle) {
+		this.isShapeCircle = isShapeCircle;
+	}
+
+	public boolean isArchArm() {
+		return isArchArm;
+	}
+
+	public void setArchArm(boolean isArchArm) {
+		this.isArchArm = isArchArm;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setScreenHeight(int screenHeight) {
+		this.screenHeight = screenHeight;
+	}
+
+	public void setScreenWidth(int screenWidth) {
+		this.screenWidth = screenWidth;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	public String getVncPort() {
+		return vncPort;
+	}
+
+	public void setVncPort(String vncPort) {
+		this.vncPort = vncPort;
+	}
+
+	public String getRmiPort() {
+		return rmiPort;
+	}
+
+	public void setRmiPort(String rmiPort) {
+		this.rmiPort = rmiPort;
+	}
+	
+//	private void checkDevice() throws Exception {
+//		int deviceCount = 0;
+//		String deviceStatusLine = null;
+//		ArrayList<String> commandOutLines = UtilsCLI.runCommand("sdb devices", null);
+//		for (String line : commandOutLines) {
+//			if(line.matches(Constant.EXPRESOIN)) {
+//				deviceStatusLine = line;
+//				deviceCount++;
+//			}
+//		}
+//		if (deviceCount == 0) throw new Exception("Target not found, please connect device!!");
+//		else if (deviceCount > 1) throw new Exception("More than one device connected, please connect only one device!!");
+//		
+//		if (!isDeviceReady(commandOutLines)) throw new Exception("Target is " + deviceStatusLine + " state!!");
+//	}
+
+	private boolean isDeviceReady(ArrayList<String> commandOutLines)
+	{
+		for (String line : commandOutLines) {
+			if(line.matches(Constant.EXPRESOIN)) {
+				Scanner scanner = new Scanner(line);
+				scanner.next();
+				String deviceStatusLine = scanner.next();
+				scanner.close();
+				if (deviceStatusLine.contains("device")) return true;
+			}
+		}
+		return false;
+	}
+	
+	private void setConfig() {
+		UtilsCLI.runCommand("sdb -s "+ serial +" root on", null);
+		ArrayList<String> commandOutLines = UtilsCLI.runCommand("sdb -s "+ serial +" shell cat "+Constant.CONFIG_MODEL, null);
+		for (String line : commandOutLines) {
+			if (line.contains(Constant.MODEL_CONFIG_TAG_PROFILE))
+				this.profile = getProfileFromModelConf(line);//getTagValue(line,Constant.MODEL_CONFIG_TAG_PROFILE).toLowerCase().contains("mobile")?Constant.DEVICE_PROFILE_MOBILE:Constant.DEVICE_PROFILE_WEARABLE;
+			else if (line.contains(Constant.MODEL_CONFIG_TAG_VERSION))
+				this.version = getTagValue(line,Constant.MODEL_CONFIG_TAG_VERSION);
+			else if (line.contains(Constant.MODEL_CONFIG_TAG_SHAPE))
+				this.isShapeCircle = Boolean.parseBoolean(getTagValue(line,Constant.MODEL_CONFIG_TAG_SHAPE));
+			else if (line.contains(Constant.MODEL_CONFIG_TAG_ARCH))
+				this.isArchArm = Boolean.parseBoolean(getTagValue(line,Constant.MODEL_CONFIG_TAG_ARCH));
+			else if (line.contains(Constant.MODEL_CONFIG_TAG_SCREEN_HEIGHT))
+				this.screenHeight = Integer.parseInt(getTagValue(line,Constant.MODEL_CONFIG_TAG_SCREEN_HEIGHT));
+			else if (line.contains(Constant.MODEL_CONFIG_TAG_SCREEN_WIDTH))
+				this.screenWidth = Integer.parseInt(getTagValue(line,Constant.MODEL_CONFIG_TAG_SCREEN_WIDTH));
+		}
+		
+		if(version.contains("3.0"))
+			recommendedVNCtype = "waylandvnc";
+		else
+			recommendedVNCtype = "x11vnc";
+		if(profile.equals(Constant.DEVICE_PROFILE_WEARABLE)){
+			commandOutLines = UtilsCLI.runCommand("sdb -s "+ serial +"  shell vconftool get -t string db/wms/clocks_set_idle", null);
+			for (String line : commandOutLines) {
+				if(line.toLowerCase().contains("value") && line.toLowerCase().contains("string")){
+					this.defaultWatchAppPackageId = line.split("=")[1].trim().split("\\(")[0].trim();
+				}
+			}
+		}
+		
+		
+	}
+	
+	private String getProfileFromModelConf(String line) {
+		
+		String [] parts = line.split(">");
+		
+		if(parts.length > 1) {
+			parts = parts[1].split("<");
+			return parts[0];
+		}
+		
+		return null;
+	}
+
+	public String getSerial() {
+		return serial;
+	}
+
+	public void setSerial(String serial) {
+		this.serial = serial;
+	}
+
+	private String getTagValue(String line, String tag) {
+		return line.split(">")[1].trim().split("<")[0].trim();
+	}
+
+	
+	public void waitForReady() throws Exception {
+		long waitMilisecon = 0;
+		while(!isDeviceReady(UtilsCLI.runCommand("sdb devices", null))){
+			if (Constant.DEVICE_MAX_REBOOT_TIME_MILIS<waitMilisecon)
+				throw new Exception("Device reboot timeout waited more than "+ (Constant.DEVICE_MAX_REBOOT_TIME_MILIS/1000) + " second");
+			Thread.sleep(1000);
+		}
+	}
+
+	public int getScreenHeight() {
+		return screenHeight;
+	}
+
+	public int getScreenWidth() {
+		return screenWidth;
+	}
+
+	public String getVersion() {
+		return version;
+	}
+
+	public String getProfile() {
+		return profile;
+	}
+
+	public String getShape() {
+		return isShapeCircle?Constant.DEVICE_SHAPE_CIRCLE:Constant.DEVICE_SHAPE_RECTANGLE;
+	}
+
+	public String getType() {
+		return isArchArm?Constant.DEVICE:Constant.EMULATOR;
+	}
+
+	public String getRecommendedVNCtype() {
+		return recommendedVNCtype;
+	}
+	
+
+	private String getAvailablePort(int initPort) {
+		while(!isPortAvailable(initPort)) {
+			System.out.println("Increase Port value from: "+initPort);
+			initPort++;
+		}
+		return ""+initPort;
+	}
+	
+	private boolean isPortAvailable(int port) {
+		  
+	    s = null;
+	    try {
+	        s = new Socket("localhost", port);
+
+	        // If the code makes it this far without an exception it means
+	        // something is using the port and has responded.
+	        System.out.println("--------------Port " + port + " is not available");
+	        return false;
+	    } catch (IOException e) {
+	        System.out.println("--------------Port " + port + " is available");
+	        return true;
+	    } finally {
+	        if( s != null){
+	            try {
+	                s.close();
+	            } catch (IOException e) {
+	                throw new RuntimeException("You should handle this error." , e);
+	            }
+	        }
+	    }
+	}
+}

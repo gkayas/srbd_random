@@ -1,0 +1,1293 @@
+<!-- kind:binary;verdict:incompatible;affected:14.4;added:8;removed:4;type_problems_high:0;type_problems_medium:4;type_problems_low:6;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:4;changed_constants:0;tool_version:1.99.18 -->
+<!-- kind:source;verdict:incompatible;affected:21.7;added:8;removed:4;type_problems_high:3;type_problems_medium:0;type_problems_low:1;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:4;changed_constants:0;tool_version:1.99.18 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="libmsg_framework_handler, compatibility, API, ABI, report" />
+    <meta name="description" content="API/ABI compatibility report for the libmsg_framework_handler object between 2.3.1 and 3.0 versions" />
+    <title>
+        libmsg_framework_handler: 2.3.1 to 3.0 compatibility report
+    </title>
+    <style type="text/css">
+    body {
+    font-family:Arial, sans-serif;
+    background-color:White;
+    color:Black;
+}
+hr {
+    color:Black;
+    background-color:Black;
+    height:1px;
+    border:0;
+}
+h1 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.625em;
+}
+h2 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.25em;
+    white-space:nowrap;
+}
+span.section {
+    font-weight:bold;
+    cursor:pointer;
+    color:#003E69;
+    white-space:nowrap;
+    margin-left:5px;
+}
+span.new_sign {
+    font-weight:bold;
+    margin-left:26px;
+    color:#003E69;
+}
+span.new_sign_lbl {
+    margin-left:28px;
+    font-size:0.875em;
+    color:Black;
+}
+span:hover.section {
+    color:#336699;
+}
+span.sect_aff {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:#cc3300;
+}
+span.sect_info {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:Black;
+}
+span.ext {
+    font-weight:100;
+}
+span.h_name {
+    color:#cc3300;
+    font-size:0.875em;
+    font-weight:bold;
+}
+div.h_list, div.lib_list {
+    font-size:0.94em;
+    padding-left:5px;
+}
+span.ns {
+    color:#408080;
+    font-size:0.94em;
+}
+span.lib_name {
+    color:Green;
+    font-size:0.875em;
+    font-weight:bold;
+}
+span.iname {
+    font-weight:bold;
+    color:#003E69;
+    margin-left:5px;
+}
+span.iname_b {
+    font-weight:bold;
+    font-size:1.1em;
+}
+span.iname_a {
+    color:#333333;
+    font-weight:bold;
+    font-size:0.94em;
+}
+span.sym_p {
+    font-weight:normal;
+    white-space:normal;
+}
+div.affect {
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:0.87em;
+    font-style:italic;
+    line-height:0.75em;
+}
+div.affected {
+    padding-left:30px;
+    padding-top:10px;
+}
+table.ptable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:1em;
+    margin-left:15px;
+    margin-top:3px;
+    margin-bottom:3px;
+    width:900px;
+    
+}
+table.ptable td {
+    border:1px solid gray;
+    padding: 3px;
+    font-size:0.875em;
+    text-align:left;
+    vertical-align:top;
+}
+table.vtable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:16px;
+    margin-left:30px;
+    margin-top:10px;
+}
+table.vtable td {
+    border:1px solid gray;
+    word-wrap:break-word;
+    padding: 3px;
+    font-size:0.875em;
+    max-width:450px;
+    vertical-align:top;
+}
+table.ptable th, table.vtable th {
+    background-color:#eeeeee;
+    font-weight:bold;
+    color:#333333;
+    font-family:Verdana, Arial;
+    font-size:0.81em;
+    border:1px solid gray;
+    text-align:center;
+    vertical-align:top;
+    white-space:nowrap;
+    padding: 3px;
+}
+table.summary {
+    border-collapse:collapse;
+    border:1px outset black;
+}
+table.summary th {
+    background-color:#eeeeee;
+    font-weight:100;
+    text-align:left;
+    font-size:0.94em;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px;
+}
+table.summary td {
+    text-align:right;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px 5px 3px 10px;
+}
+span.mangled {
+    padding-left:15px;
+    font-size:0.875em;
+    cursor:text;
+    color:#444444;
+}
+span.sym_ver {
+    color:#333333;
+    white-space:nowrap;
+    font-family:"DejaVu Sans Mono", Monospace;
+}
+span.attr {
+    color:#333333;
+    font-weight:100;
+}
+span.color_p {
+    font-style:italic;
+    color:Brown;
+}
+span.p {
+    font-style:italic;
+}
+span.fp {
+    font-style:italic;
+    background-color:#FFCCCC;
+}
+span.ttype {
+    font-weight:100;
+}
+span.nowrap {
+    white-space:nowrap;
+}
+span.value {
+    white-space:nowrap;
+    font-weight:bold;
+}
+td.passed {
+    background-color:#CCFFCC;
+}
+td.warning {
+    background-color:#F4F4AF;
+}
+td.failed {
+    background-color:#FFCCCC;
+}
+td.new {
+    background-color:#C6DEFF;
+}
+.top_ref {
+    font-size:0.69em;
+}
+.footer {
+    font-size:0.75em;
+}
+
+.tabset {
+    float:left;
+}
+a.tab {
+    border:1px solid Black;
+    float:left;
+    margin:0px 5px -1px 0px;
+    padding:3px 5px 3px 5px;
+    position:relative;
+    font-size:0.875em;
+    background-color:#DDD;
+    text-decoration:none;
+    color:Black;
+}
+a.disabled:hover
+{
+    color:Black;
+    background:#EEE;
+}
+a.active:hover
+{
+    color:Black;
+    background:White;
+}
+a.active {
+    border-bottom-color:White;
+    background-color:White;
+}
+div.tab {
+    border-top:1px solid Black;
+    padding:0px;
+    width:100%;
+    clear:both;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+    function showContent(header, id)
+{
+    e = document.getElementById(id);
+    if(e.style.display == 'none')
+    {
+        e.style.display = 'block';
+        e.style.visibility = 'visible';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[&minus;]");
+    }
+    else
+    {
+        e.style.display = 'none';
+        e.style.visibility = 'hidden';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[+]");
+    }
+}
+function initTabs()
+{
+    var url = window.location.href;
+    if(url.indexOf('_Source_')!=-1 || url.indexOf('#Source')!=-1)
+    {
+        var tab1 = document.getElementById('BinaryID');
+        var tab2 = document.getElementById('SourceID');
+        tab1.className='tab disabled';
+        tab2.className='tab active';
+    }
+    var sets = document.getElementsByTagName('div');
+    for (var i = 0; i < sets.length; i++)
+    {
+        if (sets[i].className.indexOf('tabset') != -1)
+        {
+            var tabs = [];
+            var links = sets[i].getElementsByTagName('a');
+            for (var j = 0; j < links.length; j++)
+            {
+                if (links[j].className.indexOf('tab') != -1)
+                {
+                    tabs.push(links[j]);
+                    links[j].tabs = tabs;
+                    var tab = document.getElementById(links[j].href.substr(links[j].href.indexOf('#') + 1));
+                    //reset all tabs on start
+                    if (tab)
+                    {
+                        if (links[j].className.indexOf('active')!=-1) {
+                            tab.style.display = 'block';
+                        }
+                        else {
+                            tab.style.display = 'none';
+                        }
+                    }
+                    links[j].onclick = function()
+                    {
+                        var tab = document.getElementById(this.href.substr(this.href.indexOf('#') + 1));
+                        if (tab)
+                        {
+                            //reset all tabs before change
+                            for (var k = 0; k < this.tabs.length; k++)
+                            {
+                                document.getElementById(this.tabs[k].href.substr(this.tabs[k].href.indexOf('#') + 1)).style.display = 'none';
+                                this.tabs[k].className = this.tabs[k].className.replace('active', 'disabled');
+                            }
+                            this.className = 'tab active';
+                            tab.style.display = 'block';
+                            // window.location.hash = this.id.replace('ID', '');
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(url.indexOf('#')!=-1) {
+        location.href=location.href;
+    }
+}
+if (window.addEventListener) window.addEventListener('load', initTabs, false);
+else if (window.attachEvent) window.attachEvent('onload', initTabs);
+    -->
+    </script>
+    </head><body><a name='Source'></a><a name='Binary'></a><a name='Top'></a><h1>API compatibility report for the <span style='color:Blue;'>libmsg_framework_handler.so</span> object between <span style='color:Red;'>2.3.1</span> and <span style='color:Red;'>3.0</span> versions on <span style='color:Blue;'>ARM</span></h1>
+
+            <br/>
+            <div class='tabset'>
+            <a id='BinaryID' href='#BinaryTab' class='tab active'>Binary<br/>Compatibility</a>
+            <a id='SourceID' href='#SourceTab' style='margin-left:3px' class='tab disabled'>Source<br/>Compatibility</a>
+            </div><div id='BinaryTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libmsg_framework_handler</td></tr>
+<tr><th>Version #1</th><td>2.3.1 (gcc 4.6.4)</td></tr>
+<tr><th>Version #2</th><td>3.0 (gcc 4.9.2)</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>Subject</th><td width='150px'>Binary Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>23</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>13</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>118 / 184</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(14.4%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Binary_Added' style='color:Blue;'>8</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td class='failed'><a href='#Binary_Removed' style='color:Blue;'>4</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td class='failed'><a href='#Type_Binary_Problems_Medium' style='color:Blue;'>4</a></td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Type_Binary_Problems_Low' style='color:Blue;'>6</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Symbol_Binary_Problems_Low' style='color:Blue;'>4</a></td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+</table>
+
+<a name='Binary_Added'></a><h2>Added Symbols (8)</h2><hr/>
+<span class='h_name'>MsgSettingHandler.cpp</span>, <span class='lib_name'>libmsg_framework_handler.so</span><br/>
+<span class="iname">g_generalOpt <span class='attr'>[data]</span></span><br/>
+<span class="iname">g_mmsRecvOpt <span class='attr'>[data]</span></span><br/>
+<span class="iname">g_mmsSendOpt <span class='attr'>[data]</span></span><br/>
+<span class="iname">g_mmsStyleOpt <span class='attr'>[data]</span></span><br/>
+<span class="iname">g_pushMsgOpt <span class='attr'>[data]</span></span><br/>
+<span class="iname">g_smscList <span class='attr'>[data]</span></span><br/>
+<span class="iname">g_smsSendOpt <span class='attr'>[data]</span></span><br/>
+<br/>
+<span class='h_name'>MsgStorageMessage.cpp</span>, <span class='lib_name'>libmsg_framework_handler.so</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+MsgStoSetTempAddressTable&#160;<span class='sym_p'>(&#160;MSG_ADDRESS_INFO_S* <span class='color_p'>pAddrInfo</span>, <span class='nowrap'>int <span class='color_p'>addr_cnt</span> )</span></span></span>
+<br/>
+<div id="c_1" style="display:none;">
+<span class='mangled'>[symbol: <b>_Z25MsgStoSetTempAddressTableP18MSG_ADDRESS_INFO_Si</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Binary_Removed'></a><a name='Binary_Withdrawn'></a><h2>Removed Symbols (4)</h2><hr/>
+<span class='h_name'>MsgDeliverHandler.cpp</span>, <span class='lib_name'>libmsg_framework_handler.so</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_2')">
+MsgPlayTTSMode&#160;<span class='sym_p'>(&#160;MSG_SUB_TYPE_T <span class='color_p'>msgSubType</span>, msg_message_id_t <span class='color_p'>msgId</span>, <span class='nowrap'>bool <span class='color_p'>isFavorites</span> )</span></span></span>
+<br/>
+<div id="c_2" style="display:none;">
+<span class='mangled'>[symbol: <b>_Z14MsgPlayTTSModehjb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>MsgStorageManager.cpp</span>, <span class='lib_name'>libmsg_framework_handler.so</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+MsgfreeMmapMutex&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_3" style="display:none;">
+<span class='mangled'>[symbol: <b>_Z16MsgfreeMmapMutexv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>MsgSubmitHandler.cpp</span>, <span class='lib_name'>libmsg_framework_handler.so</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_4')">
+MsgCancelReq&#160;<span class='sym_p'>(&#160;<span class='nowrap'>msg_request_id_t <span class='color_p'>reqId</span> )</span></span></span>
+<br/>
+<div id="c_4" style="display:none;">
+<span class='mangled'>[symbol: <b>_Z12MsgCancelReqj</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>new</span>, <span class='lib_name'>libmsg_framework_handler.so</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+operator new&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::size_t <span class='color_p'>p1</span>,</span> <span class='nowrap'>void* <span class='color_p'>__p</span> )</span></span></span>
+<br/>
+<div id="c_5" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZnwjPv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Medium_Risk_Binary_Problems'></a><a name='Type_Binary_Problems_Medium'></a>
+<h2>Problems with Data Types, Medium Severity (4)</h2><hr/>
+<span class='h_name'>MsgInternalTypes.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_6')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> MSG_REQUEST_INFO_S (1)</span>
+<br/>
+<div id="c_6" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Size of field <b>msgInfo</b> has been changed from <b>3076</b> bytes to <b>3180</b> bytes.</td>
+<td>1) Size of the inclusive type has been changed.<br/>2) Previous accesses of applications and library functions to this field and fields at higher positions of the structure definition may be broken.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_7')">
+[+] affected symbols (4)</span>
+<div id="c_7" style="display:none;">
+<div class='affected'><span class='iname_a'>MsgSubmitReq&#160;<span class='sym_p'>(&#160;MSG_REQUEST_INFO_S* <span class='fp'>pReqInfo</span>, <span class='nowrap'>bool <i>bScheduled</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pReqInfo&#39; (pointer) has base type &#39;struct MSG_REQUEST_INFO_S&#39;.</div>
+<span class='iname_a'>MsgCopyReqInfo&#160;<span class='sym_p'>(&#160;MSG_REQUEST_INFO_S* <span class='fp'>pSrc</span>, <span class='nowrap'>int <i>addrIdx</i>,</span> <span class='nowrap'>MSG_REQUEST_INFO_S* <i>pDest</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pSrc&#39; (pointer) has base type &#39;struct MSG_REQUEST_INFO_S&#39;.</div>
+<span class='iname_a'>MsgSubmitReqMMS&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_REQUEST_INFO_S* <span class='fp'>pReqInfo</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pReqInfo&#39; (pointer) has base type &#39;struct MSG_REQUEST_INFO_S&#39;.</div>
+<span class='iname_a'>MsgSubmitReqSMS&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_REQUEST_INFO_S* <span class='fp'>pReqInfo</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pReqInfo&#39; (pointer) has base type &#39;struct MSG_REQUEST_INFO_S&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_8')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> MSG_THREAD_VIEW_S (1)</span>
+<br/>
+<div id="c_8" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Field <b>simIndex</b> has been removed from this type.</td>
+<td>1) Applications will access incorrect memory when attempting to access this field.<br/>2) Size of the inclusive type has been changed.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_9')">
+[+] affected symbols (1)</span>
+<div id="c_9" style="display:none;">
+<div class='affected'><span class='iname_a'>MsgStoGetThreadInfo&#160;<span class='sym_p'>(&#160;<span class='nowrap'>msg_thread_id_t <i>threadId</i>,</span> <span class='nowrap'>MSG_THREAD_VIEW_S* <span class='fp'>pThreadInfo</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;pThreadInfo&#39; (pointer) has base type &#39;struct MSG_THREAD_VIEW_S&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<span class='h_name'>MsgSettingTypes.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_10')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> MSG_GENERAL_OPT_S (1)</span>
+<br/>
+<div id="c_10" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Field <b>searchTags</b> has been removed from this type.</td>
+<td>1) Applications will access incorrect memory when attempting to access this field.<br/>2) Size of the inclusive type has been changed.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_11')">
+[+] affected symbols (21)</span>
+<div id="c_11" style="display:none;">
+<div class='affected'><span class='iname_a'>MsgGetCBMsgOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetSMSCList&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgSetCBMsgOpt&#160;<span class='sym_p'>(&#160;MSG_SETTING_S const* <span class='fp'>pSetting</span>, <span class='nowrap'>bool <i>bSetSim</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgSetSMSCList&#160;<span class='sym_p'>(&#160;MSG_SETTING_S const* <span class='fp'>pSetting</span>, <span class='nowrap'>bool <i>bSetSim</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetConfigData&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetGeneralOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetMMSRecvOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetMMSSendOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetPushMsgOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetSMSSendOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+ <b>...</b>
+<br/>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_12')">
+<span class='ext'>[+]</span> <span class='ttype'>union</span> MSG_SETTING_S::anon-union-MsgSettingTypes.h-428 (1)</span>
+<br/>
+<div id="c_12" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Size of field <b>generalOpt</b> has been changed from <b>1048</b> bytes to <b>1044</b> bytes.</td>
+<td>Previous accesses of applications and library functions to this field may be broken.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_13')">
+[+] affected symbols (21)</span>
+<div id="c_13" style="display:none;">
+<div class='affected'><span class='iname_a'>MsgGetCBMsgOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option&#39; in 1st parameter &#39;pSetting&#39; (pointer) has type &#39;MSG_SETTING_S::anon-union-MsgSettingTypes.h-428&#39;.</div>
+<span class='iname_a'>MsgGetSMSCList&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option&#39; in 1st parameter &#39;pSetting&#39; (pointer) has type &#39;MSG_SETTING_S::anon-union-MsgSettingTypes.h-428&#39;.</div>
+<span class='iname_a'>MsgSetCBMsgOpt&#160;<span class='sym_p'>(&#160;MSG_SETTING_S const* <span class='fp'>pSetting</span>, <span class='nowrap'>bool <i>bSetSim</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option&#39; in 1st parameter &#39;pSetting&#39; (pointer) has type &#39;MSG_SETTING_S::anon-union-MsgSettingTypes.h-428&#39;.</div>
+<span class='iname_a'>MsgSetSMSCList&#160;<span class='sym_p'>(&#160;MSG_SETTING_S const* <span class='fp'>pSetting</span>, <span class='nowrap'>bool <i>bSetSim</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option&#39; in 1st parameter &#39;pSetting&#39; (pointer) has type &#39;MSG_SETTING_S::anon-union-MsgSettingTypes.h-428&#39;.</div>
+<span class='iname_a'>MsgGetConfigData&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option&#39; in 1st parameter &#39;pSetting&#39; (pointer) has type &#39;MSG_SETTING_S::anon-union-MsgSettingTypes.h-428&#39;.</div>
+<span class='iname_a'>MsgGetGeneralOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option&#39; in 1st parameter &#39;pSetting&#39; (pointer) has type &#39;MSG_SETTING_S::anon-union-MsgSettingTypes.h-428&#39;.</div>
+<span class='iname_a'>MsgGetMMSRecvOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option&#39; in 1st parameter &#39;pSetting&#39; (pointer) has type &#39;MSG_SETTING_S::anon-union-MsgSettingTypes.h-428&#39;.</div>
+<span class='iname_a'>MsgGetMMSSendOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option&#39; in 1st parameter &#39;pSetting&#39; (pointer) has type &#39;MSG_SETTING_S::anon-union-MsgSettingTypes.h-428&#39;.</div>
+<span class='iname_a'>MsgGetPushMsgOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option&#39; in 1st parameter &#39;pSetting&#39; (pointer) has type &#39;MSG_SETTING_S::anon-union-MsgSettingTypes.h-428&#39;.</div>
+<span class='iname_a'>MsgGetSMSSendOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option&#39; in 1st parameter &#39;pSetting&#39; (pointer) has type &#39;MSG_SETTING_S::anon-union-MsgSettingTypes.h-428&#39;.</div>
+ <b>...</b>
+<br/>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a><a name='Type_Binary_Problems_Low'></a>
+<h2>Problems with Data Types, Low Severity (6)</h2><hr/>
+<span class='h_name'>MsgInternalTypes.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_14')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> MSG_MESSAGE_INFO_S (2)</span>
+<br/>
+<div id="c_14" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Field <b>msgURL</b> has been added to this type.</td>
+<td>1) This field will not be initialized by old clients.<br/>2) Size of the inclusive type has been changed.<br/><b>NOTE</b>: this field should be accessed only from the new library functions, otherwise it may result in crash or incorrect behavior of applications.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Size of this type has been changed from <b>3076</b> bytes to <b>3180</b> bytes.</td>
+<td>The fields or parameters of such data type may be incorrectly initialized or accessed by old client applications.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_15')">
+[+] affected symbols (25)</span>
+<div id="c_15" style="display:none;">
+<div class='affected'><span class='iname_a'>MsgHandleMMS&#160;<span class='sym_p'>(&#160;MSG_MESSAGE_INFO_S* <span class='fp'>pMsgInfo</span>, <span class='nowrap'>bool* <i>pSendNoti</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pMsgInfo&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgHandleSMS&#160;<span class='sym_p'>(&#160;MSG_MESSAGE_INFO_S* <span class='fp'>pMsgInfo</span>, <span class='nowrap'>bool* <i>pSendNoti</i>,</span> <span class='nowrap'>bool* <i>bOnlyNoti</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pMsgInfo&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgSubmitReq&#160;<span class='sym_p'>(&#160;MSG_REQUEST_INFO_S* <span class='fp'>pReqInfo</span>, <span class='nowrap'>bool <i>bScheduled</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pReqInfo.msgInfo&#39; in 1st parameter &#39;pReqInfo&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgCopyReqInfo&#160;<span class='sym_p'>(&#160;MSG_REQUEST_INFO_S* <span class='fp'>pSrc</span>, <span class='nowrap'>int <i>addrIdx</i>,</span> <span class='nowrap'>MSG_REQUEST_INFO_S* <i>pDest</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSrc.msgInfo&#39; in 1st parameter &#39;pSrc&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgStoAddCBMsg&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_MESSAGE_INFO_S* <span class='fp'>pMsgInfo</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pMsgInfo&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgStoAddWAPMsg&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_MESSAGE_INFO_S* <span class='fp'>pMsgInfo</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pMsgInfo&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgStoUpdateMms&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_MESSAGE_INFO_S* <span class='fp'>pMsg</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pMsg&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgSubmitReqMMS&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_REQUEST_INFO_S* <span class='fp'>pReqInfo</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pReqInfo.msgInfo&#39; in 1st parameter &#39;pReqInfo&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgSubmitReqSMS&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_REQUEST_INFO_S* <span class='fp'>pReqInfo</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pReqInfo.msgInfo&#39; in 1st parameter &#39;pReqInfo&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgStoAddMessage&#160;<span class='sym_p'>(&#160;MSG_MESSAGE_INFO_S* <span class='fp'>pMsg</span>, <span class='nowrap'>MSG_SENDINGOPT_INFO_S* <i>pSendOptInfo</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pMsg&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+ <b>...</b>
+<br/>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_16')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> MSG_REQUEST_INFO_S (1)</span>
+<br/>
+<div id="c_16" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Size of this type has been changed from <b>3104</b> bytes to <b>3208</b> bytes.</td>
+<td>The fields or parameters of such data type may be incorrectly initialized or accessed by old client applications.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_17')">
+[+] affected symbols (4)</span>
+<div id="c_17" style="display:none;">
+<div class='affected'><span class='iname_a'>MsgSubmitReq&#160;<span class='sym_p'>(&#160;MSG_REQUEST_INFO_S* <span class='fp'>pReqInfo</span>, <span class='nowrap'>bool <i>bScheduled</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pReqInfo&#39; (pointer) has base type &#39;struct MSG_REQUEST_INFO_S&#39;.</div>
+<span class='iname_a'>MsgCopyReqInfo&#160;<span class='sym_p'>(&#160;MSG_REQUEST_INFO_S* <span class='fp'>pSrc</span>, <span class='nowrap'>int <i>addrIdx</i>,</span> <span class='nowrap'>MSG_REQUEST_INFO_S* <i>pDest</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pSrc&#39; (pointer) has base type &#39;struct MSG_REQUEST_INFO_S&#39;.</div>
+<span class='iname_a'>MsgSubmitReqMMS&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_REQUEST_INFO_S* <span class='fp'>pReqInfo</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pReqInfo&#39; (pointer) has base type &#39;struct MSG_REQUEST_INFO_S&#39;.</div>
+<span class='iname_a'>MsgSubmitReqSMS&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_REQUEST_INFO_S* <span class='fp'>pReqInfo</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pReqInfo&#39; (pointer) has base type &#39;struct MSG_REQUEST_INFO_S&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_18')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> MSG_THREAD_VIEW_S (1)</span>
+<br/>
+<div id="c_18" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Size of this type has been changed from <b>360</b> bytes to <b>356</b> bytes.</td>
+<td>The fields or parameters of such data type may be incorrectly initialized or accessed by old client applications.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_19')">
+[+] affected symbols (1)</span>
+<div id="c_19" style="display:none;">
+<div class='affected'><span class='iname_a'>MsgStoGetThreadInfo&#160;<span class='sym_p'>(&#160;<span class='nowrap'>msg_thread_id_t <i>threadId</i>,</span> <span class='nowrap'>MSG_THREAD_VIEW_S* <span class='fp'>pThreadInfo</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;pThreadInfo&#39; (pointer) has base type &#39;struct MSG_THREAD_VIEW_S&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<span class='h_name'>MsgSettingTypes.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_20')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> MSG_GENERAL_OPT_S (1)</span>
+<br/>
+<div id="c_20" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Size of this type has been changed from <b>1048</b> bytes to <b>1044</b> bytes.</td>
+<td>The fields or parameters of such data type may be incorrectly initialized or accessed by old client applications.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_21')">
+[+] affected symbols (21)</span>
+<div id="c_21" style="display:none;">
+<div class='affected'><span class='iname_a'>MsgGetCBMsgOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetSMSCList&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgSetCBMsgOpt&#160;<span class='sym_p'>(&#160;MSG_SETTING_S const* <span class='fp'>pSetting</span>, <span class='nowrap'>bool <i>bSetSim</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgSetSMSCList&#160;<span class='sym_p'>(&#160;MSG_SETTING_S const* <span class='fp'>pSetting</span>, <span class='nowrap'>bool <i>bSetSim</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetConfigData&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetGeneralOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetMMSRecvOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetMMSSendOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetPushMsgOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetSMSSendOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+ <b>...</b>
+<br/>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_22')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> MSG_MMS_RECVOPT_S (1)</span>
+<br/>
+<div id="c_22" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Field <b>abroadNetwok</b> has been renamed to <b>abroadNetwork</b>.</td>
+<td>Renaming of a field in data type may indicate a change in the semantic meaning of the field.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_23')">
+[+] affected symbols (21)</span>
+<div id="c_23" style="display:none;">
+<div class='affected'><span class='iname_a'>MsgGetCBMsgOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgGetSMSCList&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgSetCBMsgOpt&#160;<span class='sym_p'>(&#160;MSG_SETTING_S const* <span class='fp'>pSetting</span>, <span class='nowrap'>bool <i>bSetSim</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgSetSMSCList&#160;<span class='sym_p'>(&#160;MSG_SETTING_S const* <span class='fp'>pSetting</span>, <span class='nowrap'>bool <i>bSetSim</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgGetConfigData&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgGetGeneralOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgGetMMSRecvOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgGetMMSSendOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgGetPushMsgOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgGetSMSSendOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+ <b>...</b>
+<br/>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Symbol_Binary_Problems_Low'></a><a name='Interface_Binary_Problems_Low'></a>
+<h2>Problems with Symbols, Low Severity (4)</h2><hr/>
+<span class='h_name'>MsgStorageMessage.cpp</span>, <span class='lib_name'>libmsg_framework_handler.so</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_24')">
+<span class='ext'>[+]</span> delLogcv <span class='attr'>[data]</span> (1)</span>
+<br/>
+<div id="c_24" style="display:none;">
+
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of this global data has been changed from <b>CndVar</b> to <b>MsgCndVar</b>.</td>
+<td>Replacement of data type may indicate a change in semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_25')">
+<span class='ext'>[+]</span> delLogMx <span class='attr'>[data]</span> (1)</span>
+<br/>
+<div id="c_25" style="display:none;">
+
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of this global data has been changed from <b>Mutex</b> to <b>MsgMutex</b>.</td>
+<td>Replacement of data type may indicate a change in semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_26')">
+<span class='ext'>[+]</span> delNoticv <span class='attr'>[data]</span> (1)</span>
+<br/>
+<div id="c_26" style="display:none;">
+
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of this global data has been changed from <b>CndVar</b> to <b>MsgCndVar</b>.</td>
+<td>Replacement of data type may indicate a change in semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_27')">
+<span class='ext'>[+]</span> delNotiMx <span class='attr'>[data]</span> (1)</span>
+<br/>
+<div id="c_27" style="display:none;">
+
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of this global data has been changed from <b>Mutex</b> to <b>MsgMutex</b>.</td>
+<td>Replacement of data type may indicate a change in semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (23)</h2><hr/>
+<div class='h_list'>
+allocator.h<br/>
+c++config.h<br/>
+deque.tcc<br/>
+move.h<br/>
+msg_storage_types.h<br/>
+msg_types.h<br/>
+MsgCppTypes.h<br/>
+MsgFilterTypes.h<br/>
+MsgInternalTypes.h<br/>
+MsgMutex.h<br/>
+MsgSettingTypes.h<br/>
+MsgStorageTypes.h<br/>
+MsgTypes.h<br/>
+new_allocator.h<br/>
+pthreadtypes.h<br/>
+stddef.h<br/>
+stl_algobase.h<br/>
+stl_deque.h<br/>
+stl_iterator_base_types.h<br/>
+stl_queue.h<br/>
+time.h<br/>
+types.h<br/>
+unique_ptr.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (13)</h2><hr/>
+<div class='h_list'>
+MsgDeliverHandler.cpp<br/>
+MsgSettingHandler.cpp<br/>
+MsgStorageFilter.cpp<br/>
+MsgStorageFolder.cpp<br/>
+MsgStorageManager.cpp<br/>
+MsgStorageMessage.cpp<br/>
+MsgStorageMms.cpp<br/>
+MsgStorageSim.cpp<br/>
+MsgStorageUtil.cpp<br/>
+MsgSubmitHandler.cpp<br/>
+new<br/>
+tuple<br/>
+type_traits<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libmsg_framework_handler.so<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><div id='SourceTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libmsg_framework_handler</td></tr>
+<tr><th>Version #1</th><td>2.3.1 (gcc 4.6.4)</td></tr>
+<tr><th>Version #2</th><td>3.0 (gcc 4.9.2)</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>Subject</th><td width='150px'>Source Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>23</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>13</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>120 / 186</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(21.7%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Source_Added' style='color:Blue;'>8</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td class='failed'><a href='#Source_Removed' style='color:Blue;'>4</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td class='failed'><a href='#Type_Source_Problems_High' style='color:Blue;'>3</a></td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Type_Source_Problems_Low' style='color:Blue;'>1</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Symbol_Source_Problems_Low' style='color:Blue;'>4</a></td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+</table>
+
+<a name='Source_Added'></a><h2>Added Symbols (8)</h2><hr/>
+<span class='h_name'>MsgSettingHandler.cpp</span><br/>
+<span class="iname">g_generalOpt <span class='attr'>[data]</span></span><br/>
+<span class="iname">g_mmsRecvOpt <span class='attr'>[data]</span></span><br/>
+<span class="iname">g_mmsSendOpt <span class='attr'>[data]</span></span><br/>
+<span class="iname">g_mmsStyleOpt <span class='attr'>[data]</span></span><br/>
+<span class="iname">g_pushMsgOpt <span class='attr'>[data]</span></span><br/>
+<span class="iname">g_smscList <span class='attr'>[data]</span></span><br/>
+<span class="iname">g_smsSendOpt <span class='attr'>[data]</span></span><br/>
+<br/>
+<span class='h_name'>MsgStorageMessage.cpp</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_28')">
+MsgStoSetTempAddressTable&#160;<span class='sym_p'>(&#160;MSG_ADDRESS_INFO_S* <span class='color_p'>pAddrInfo</span>, <span class='nowrap'>int <span class='color_p'>addr_cnt</span> )</span></span></span>
+<br/>
+<div id="c_28" style="display:none;">
+<span class='mangled'>[symbol: <b>_Z25MsgStoSetTempAddressTableP18MSG_ADDRESS_INFO_Si</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Source_Removed'></a><a name='Source_Withdrawn'></a><h2>Removed Symbols (4)</h2><hr/>
+<span class='h_name'>MsgDeliverHandler.cpp</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_29')">
+MsgPlayTTSMode&#160;<span class='sym_p'>(&#160;MSG_SUB_TYPE_T <span class='color_p'>msgSubType</span>, msg_message_id_t <span class='color_p'>msgId</span>, <span class='nowrap'>bool <span class='color_p'>isFavorites</span> )</span></span></span>
+<br/>
+<div id="c_29" style="display:none;">
+<span class='mangled'>[symbol: <b>_Z14MsgPlayTTSModehjb</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>MsgStorageManager.cpp</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_30')">
+MsgfreeMmapMutex&#160;<span class='sym_p'>(&#160;)</span></span>
+<br/>
+<div id="c_30" style="display:none;">
+<span class='mangled'>[symbol: <b>_Z16MsgfreeMmapMutexv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>MsgSubmitHandler.cpp</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_31')">
+MsgCancelReq&#160;<span class='sym_p'>(&#160;<span class='nowrap'>msg_request_id_t <span class='color_p'>reqId</span> )</span></span></span>
+<br/>
+<div id="c_31" style="display:none;">
+<span class='mangled'>[symbol: <b>_Z12MsgCancelReqj</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>new</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_32')">
+operator new&#160;<span class='sym_p'>(&#160;<span class='nowrap'>std::size_t <span class='color_p'>p1</span>,</span> <span class='nowrap'>void* <span class='color_p'>__p</span> )</span></span></span>
+<br/>
+<div id="c_32" style="display:none;">
+<span class='mangled'>[symbol: <b>_ZnwjPv</b>]</span>
+<br/>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='High_Risk_Source_Problems'></a><a name='Type_Source_Problems_High'></a>
+<h2>Problems with Data Types, High Severity (3)</h2><hr/>
+<span class='h_name'>MsgInternalTypes.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_33')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> MSG_THREAD_VIEW_S (1)</span>
+<br/>
+<div id="c_33" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Field <b>simIndex</b> has been removed from this type.</td>
+<td>Recompilation of a client program may be broken with the error message: '<span class='value'>struct MSG_THREAD_VIEW_S</span>' has no member named '<b>simIndex</b>'.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_34')">
+[+] affected symbols (1)</span>
+<div id="c_34" style="display:none;">
+<div class='affected'><span class='iname_a'>MsgStoGetThreadInfo&#160;<span class='sym_p'>(&#160;<span class='nowrap'>msg_thread_id_t <i>threadId</i>,</span> <span class='nowrap'>MSG_THREAD_VIEW_S* <span class='fp'>pThreadInfo</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;pThreadInfo&#39; (pointer) has base type &#39;struct MSG_THREAD_VIEW_S&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<span class='h_name'>MsgSettingTypes.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_35')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> MSG_GENERAL_OPT_S (1)</span>
+<br/>
+<div id="c_35" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Field <b>searchTags</b> has been removed from this type.</td>
+<td>Recompilation of a client program may be broken with the error message: '<span class='value'>struct MSG_GENERAL_OPT_S</span>' has no member named '<b>searchTags</b>'.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_36')">
+[+] affected symbols (21)</span>
+<div id="c_36" style="display:none;">
+<div class='affected'><span class='iname_a'>MsgGetCBMsgOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetSMSCList&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgSetCBMsgOpt&#160;<span class='sym_p'>(&#160;MSG_SETTING_S const* <span class='fp'>pSetting</span>, <span class='nowrap'>bool <i>bSetSim</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgSetSMSCList&#160;<span class='sym_p'>(&#160;MSG_SETTING_S const* <span class='fp'>pSetting</span>, <span class='nowrap'>bool <i>bSetSim</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetConfigData&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetGeneralOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetMMSRecvOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetMMSSendOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetPushMsgOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+<span class='iname_a'>MsgGetSMSSendOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.generalOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_GENERAL_OPT_S&#39;.</div>
+ <b>...</b>
+<br/>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_37')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> MSG_MMS_RECVOPT_S (1)</span>
+<br/>
+<div id="c_37" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Field <b>abroadNetwok</b> has been renamed to <b>abroadNetwork</b>.</td>
+<td>Recompilation of a client program may be broken with the error message: <span class='value'>struct MSG_MMS_RECVOPT_S</span> has no member named <b>abroadNetwok</b>.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_38')">
+[+] affected symbols (21)</span>
+<div id="c_38" style="display:none;">
+<div class='affected'><span class='iname_a'>MsgGetCBMsgOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgGetSMSCList&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgSetCBMsgOpt&#160;<span class='sym_p'>(&#160;MSG_SETTING_S const* <span class='fp'>pSetting</span>, <span class='nowrap'>bool <i>bSetSim</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgSetSMSCList&#160;<span class='sym_p'>(&#160;MSG_SETTING_S const* <span class='fp'>pSetting</span>, <span class='nowrap'>bool <i>bSetSim</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgGetConfigData&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgGetGeneralOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgGetMMSRecvOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgGetMMSSendOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgGetPushMsgOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+<span class='iname_a'>MsgGetSMSSendOpt&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_SETTING_S* <span class='fp'>pSetting</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSetting.option.mmsRecvOpt&#39; in 1st parameter &#39;pSetting&#39; (pointer) has base type &#39;struct MSG_MMS_RECVOPT_S&#39;.</div>
+ <b>...</b>
+<br/>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Source_Problems'></a><a name='Type_Source_Problems_Low'></a>
+<h2>Problems with Data Types, Low Severity (1)</h2><hr/>
+<span class='h_name'>MsgInternalTypes.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_39')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> MSG_MESSAGE_INFO_S (1)</span>
+<br/>
+<div id="c_39" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Field <b>msgURL</b> has been added to this type.</td>
+<td>This field will not be initialized or used by old client applications.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_40')">
+[+] affected symbols (25)</span>
+<div id="c_40" style="display:none;">
+<div class='affected'><span class='iname_a'>MsgHandleMMS&#160;<span class='sym_p'>(&#160;MSG_MESSAGE_INFO_S* <span class='fp'>pMsgInfo</span>, <span class='nowrap'>bool* <i>pSendNoti</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pMsgInfo&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgHandleSMS&#160;<span class='sym_p'>(&#160;MSG_MESSAGE_INFO_S* <span class='fp'>pMsgInfo</span>, <span class='nowrap'>bool* <i>pSendNoti</i>,</span> <span class='nowrap'>bool* <i>bOnlyNoti</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pMsgInfo&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgSubmitReq&#160;<span class='sym_p'>(&#160;MSG_REQUEST_INFO_S* <span class='fp'>pReqInfo</span>, <span class='nowrap'>bool <i>bScheduled</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pReqInfo.msgInfo&#39; in 1st parameter &#39;pReqInfo&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgCopyReqInfo&#160;<span class='sym_p'>(&#160;MSG_REQUEST_INFO_S* <span class='fp'>pSrc</span>, <span class='nowrap'>int <i>addrIdx</i>,</span> <span class='nowrap'>MSG_REQUEST_INFO_S* <i>pDest</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;pSrc.msgInfo&#39; in 1st parameter &#39;pSrc&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgStoAddCBMsg&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_MESSAGE_INFO_S* <span class='fp'>pMsgInfo</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pMsgInfo&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgStoAddWAPMsg&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_MESSAGE_INFO_S* <span class='fp'>pMsgInfo</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pMsgInfo&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgStoUpdateMms&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_MESSAGE_INFO_S* <span class='fp'>pMsg</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pMsg&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgSubmitReqMMS&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_REQUEST_INFO_S* <span class='fp'>pReqInfo</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pReqInfo.msgInfo&#39; in 1st parameter &#39;pReqInfo&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgSubmitReqSMS&#160;<span class='sym_p'>(&#160;<span class='nowrap'>MSG_REQUEST_INFO_S* <span class='fp'>pReqInfo</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;pReqInfo.msgInfo&#39; in 1st parameter &#39;pReqInfo&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+<span class='iname_a'>MsgStoAddMessage&#160;<span class='sym_p'>(&#160;MSG_MESSAGE_INFO_S* <span class='fp'>pMsg</span>, <span class='nowrap'>MSG_SENDINGOPT_INFO_S* <i>pSendOptInfo</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;pMsg&#39; (pointer) has base type &#39;struct MSG_MESSAGE_INFO_S&#39;.</div>
+ <b>...</b>
+<br/>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Symbol_Source_Problems_Low'></a><a name='Interface_Source_Problems_Low'></a>
+<h2>Problems with Symbols, Low Severity (4)</h2><hr/>
+<span class='h_name'>MsgStorageMessage.cpp</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_41')">
+<span class='ext'>[+]</span> delLogcv <span class='attr'>[data]</span> (1)</span>
+<br/>
+<div id="c_41" style="display:none;">
+
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of this global data has been changed from <b>CndVar</b> to <b>MsgCndVar</b>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_42')">
+<span class='ext'>[+]</span> delLogMx <span class='attr'>[data]</span> (1)</span>
+<br/>
+<div id="c_42" style="display:none;">
+
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of this global data has been changed from <b>Mutex</b> to <b>MsgMutex</b>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_43')">
+<span class='ext'>[+]</span> delNoticv <span class='attr'>[data]</span> (1)</span>
+<br/>
+<div id="c_43" style="display:none;">
+
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of this global data has been changed from <b>CndVar</b> to <b>MsgCndVar</b>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_44')">
+<span class='ext'>[+]</span> delNotiMx <span class='attr'>[data]</span> (1)</span>
+<br/>
+<div id="c_44" style="display:none;">
+
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of this global data has been changed from <b>Mutex</b> to <b>MsgMutex</b>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (23)</h2><hr/>
+<div class='h_list'>
+allocator.h<br/>
+c++config.h<br/>
+deque.tcc<br/>
+move.h<br/>
+msg_storage_types.h<br/>
+msg_types.h<br/>
+MsgCppTypes.h<br/>
+MsgFilterTypes.h<br/>
+MsgInternalTypes.h<br/>
+MsgMutex.h<br/>
+MsgSettingTypes.h<br/>
+MsgStorageTypes.h<br/>
+MsgTypes.h<br/>
+new_allocator.h<br/>
+pthreadtypes.h<br/>
+stddef.h<br/>
+stl_algobase.h<br/>
+stl_deque.h<br/>
+stl_iterator_base_types.h<br/>
+stl_queue.h<br/>
+time.h<br/>
+types.h<br/>
+unique_ptr.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (13)</h2><hr/>
+<div class='h_list'>
+MsgDeliverHandler.cpp<br/>
+MsgSettingHandler.cpp<br/>
+MsgStorageFilter.cpp<br/>
+MsgStorageFolder.cpp<br/>
+MsgStorageManager.cpp<br/>
+MsgStorageMessage.cpp<br/>
+MsgStorageMms.cpp<br/>
+MsgStorageSim.cpp<br/>
+MsgStorageUtil.cpp<br/>
+MsgSubmitHandler.cpp<br/>
+new<br/>
+tuple<br/>
+type_traits<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libmsg_framework_handler.so<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><hr/>
+<div class='footer' align='right'><i>Generated by <a href='http://lvc.github.io/abi-compliance-checker/'>ABI Compliance Checker</a> 1.99.18 &#160;</i>
+</div>
+<br/>
+
+</body></html>

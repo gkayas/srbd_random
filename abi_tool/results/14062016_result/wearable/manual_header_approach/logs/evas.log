@@ -1,0 +1,259 @@
+Temporary header file '/tmp/CjEpf43WHZ/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/evas-1/Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/evas-1/Evas_Engine_Buffer.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/evas-1/Evas_Engine_FB.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/evas-1/Evas_Engine_GL_X11.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/evas-1/Evas_Engine_Software_X11.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/evas-1/Evas_GL.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/evas-1/Evas_GL_GLES1_Helpers.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/evas-1/Evas_GL_GLES2_Helpers.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/CjEpf43WHZ/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/widget_service -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /tmp/CjEpf43WHZ/dump1.h:3:0:
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:129:36: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_init(Evas_Object *win);
+                                    ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:129:49: error: ‘win’ was not declared in this scope
+ extern int widget_viewer_evas_init(Evas_Object *win);
+                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:152:8: error: ‘Evas_Object’ does not name a type
+ extern Evas_Object *widget_viewer_evas_add_widget(Evas_Object *parent, const char *widget_id, const char *content_info, double period);
+        ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:208:44: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_pause_widget(Evas_Object *widget);
+                                            ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:208:57: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_pause_widget(Evas_Object *widget);
+                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:222:45: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_resume_widget(Evas_Object *widget);
+                                             ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:222:58: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_resume_widget(Evas_Object *widget);
+                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:246:56: error: ‘Evas_Object’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_content_info(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:246:69: error: ‘widget’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_content_info(Evas_Object *widget);
+                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:257:56: error: ‘Evas_Object’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_title_string(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:257:69: error: ‘widget’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_title_string(Evas_Object *widget);
+                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:267:53: error: ‘Evas_Object’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_widget_id(Evas_Object *widget);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:267:66: error: ‘widget’ was not declared in this scope
+ extern const char *widget_viewer_evas_get_widget_id(Evas_Object *widget);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:276:45: error: ‘Evas_Object’ was not declared in this scope
+ extern double widget_viewer_evas_get_period(Evas_Object *widget);
+                                             ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:276:58: error: ‘widget’ was not declared in this scope
+ extern double widget_viewer_evas_get_period(Evas_Object *widget);
+                                                          ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:286:51: error: variable or field ‘widget_viewer_evas_cancel_click_event’ declared void
+ extern void widget_viewer_evas_cancel_click_event(Evas_Object *widget);
+                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:286:51: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:286:64: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_cancel_click_event(Evas_Object *widget);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:294:48: error: variable or field ‘widget_viewer_evas_disable_preview’ declared void
+ extern void widget_viewer_evas_disable_preview(Evas_Object *widget);
+                                                ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:294:48: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:294:61: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_disable_preview(Evas_Object *widget);
+                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:303:53: error: variable or field ‘widget_viewer_evas_disable_overlay_text’ declared void
+ extern void widget_viewer_evas_disable_overlay_text(Evas_Object *widget);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:303:53: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:303:66: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_disable_overlay_text(Evas_Object *widget);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:312:48: error: variable or field ‘widget_viewer_evas_disable_loading’ declared void
+ extern void widget_viewer_evas_disable_loading(Evas_Object *widget);
+                                                ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:312:48: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:312:61: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_disable_loading(Evas_Object *widget);
+                                                             ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:327:51: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_feed_mouse_up_event(Evas_Object *widget);
+                                                   ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:327:64: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_feed_mouse_up_event(Evas_Object *widget);
+                                                                ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:337:56: error: variable or field ‘widget_viewer_evas_activate_faulted_widget’ declared void
+ extern void widget_viewer_evas_activate_faulted_widget(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:337:56: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:337:69: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_activate_faulted_widget(Evas_Object *widget);
+                                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:347:43: error: ‘Evas_Object’ was not declared in this scope
+ extern bool widget_viewer_evas_is_faulted(Evas_Object *widget);
+                                           ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:347:56: error: ‘widget’ was not declared in this scope
+ extern bool widget_viewer_evas_is_faulted(Evas_Object *widget);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:361:49: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_freeze_visibility(Evas_Object *widget, widget_visibility_status_e status);
+                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:361:62: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_freeze_visibility(Evas_Object *widget, widget_visibility_status_e status);
+                                                              ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:361:97: error: expected primary-expression before ‘status’
+ extern int widget_viewer_evas_freeze_visibility(Evas_Object *widget, widget_visibility_status_e status);
+                                                                                                 ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:372:47: error: ‘Evas_Object’ was not declared in this scope
+ extern int widget_viewer_evas_thaw_visibility(Evas_Object *widget);
+                                               ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:372:60: error: ‘widget’ was not declared in this scope
+ extern int widget_viewer_evas_thaw_visibility(Evas_Object *widget);
+                                                            ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:382:53: error: ‘Evas_Object’ was not declared in this scope
+ extern bool widget_viewer_evas_is_visibility_frozen(Evas_Object *widget);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:382:66: error: ‘widget’ was not declared in this scope
+ extern bool widget_viewer_evas_is_visibility_frozen(Evas_Object *widget);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:392:42: error: ‘Evas_Object’ was not declared in this scope
+ extern bool widget_viewer_evas_is_widget(Evas_Object *widget);
+                                          ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:392:55: error: ‘widget’ was not declared in this scope
+ extern bool widget_viewer_evas_is_widget(Evas_Object *widget);
+                                                       ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:400:53: error: variable or field ‘widget_viewer_evas_set_permanent_delete’ declared void
+ extern void widget_viewer_evas_set_permanent_delete(Evas_Object *widget, int flag);
+                                                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:400:53: error: ‘Evas_Object’ was not declared in this scope
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:400:66: error: ‘widget’ was not declared in this scope
+ extern void widget_viewer_evas_set_permanent_delete(Evas_Object *widget, int flag);
+                                                                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas.h:400:74: error: expected primary-expression before ‘int’
+ extern void widget_viewer_evas_set_permanent_delete(Evas_Object *widget, int flag);
+                                                                          ^
+
+Temporary header file '/tmp/CjEpf43WHZ/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_viewer_evas/widget_viewer_evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/Evas.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_camera.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_camera.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_light.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_light.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_material.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_material.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_mesh.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_mesh.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_node.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_node.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_object.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_object.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_primitive.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_primitive.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_scene.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_scene.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_texture.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_canvas3d_texture.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_box.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_box.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_clickable_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_clickable_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_common_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_common_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_draggable_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_draggable_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_filter.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_filter.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_grid.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_grid.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_image.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_image.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_line.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_line.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_object.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_object.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_object_smart.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_object_smart.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_out.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_out.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_polygon.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_polygon.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_rectangle.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_rectangle.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_scrollable_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_scrollable_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_selectable_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_selectable_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_signal_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_signal_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_smart_clipped.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_smart_clipped.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_table.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_table.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_text.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_text.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_textblock.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_textblock.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_textgrid.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_textgrid.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_types.eot.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_vg.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_vg.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_zoomable_interface.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/evas_zoomable_interface.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/Evas_Common.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/Evas_Engine_Buffer.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/Evas_Engine_Drm.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/Evas_Engine_FB.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/Evas_Engine_GL_Drm.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/Evas_Engine_Wayland_Egl.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/Evas_Engine_Wayland_Shm.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/Evas_Eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/Evas_GL.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/Evas_GL_GLES1_Helpers.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/Evas_GL_GLES2_Helpers.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/Evas_GL_GLES3_Helpers.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/Evas_Legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/Evas_Loader.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/efl_vg_base.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/efl_vg_base.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/efl_vg_container.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/efl_vg_container.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/efl_vg_gradient.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/efl_vg_gradient.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/efl_vg_gradient_linear.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/efl_vg_gradient_linear.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/efl_vg_gradient_radial.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/efl_vg_gradient_radial.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/efl_vg_root_node.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/efl_vg_root_node.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/efl_vg_shape.eo.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1/canvas/efl_vg_shape.eo.legacy.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/mmf/mm_evas_renderer.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/CjEpf43WHZ/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/widget_service -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/media -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/libdrm -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eeze-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-drm-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /tmp/CjEpf43WHZ/dump2.h:100:0:
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/mmf/mm_evas_renderer.h:39:22: fatal error: mm_types.h: No such file or directory
+ #include "mm_types.h"
+                      ^
+compilation terminated.
+

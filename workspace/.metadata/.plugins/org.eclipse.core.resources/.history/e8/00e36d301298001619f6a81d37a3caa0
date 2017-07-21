@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+	
+	public static int N,R;
+	public static int [] data; 
+	public static int [] used; 
+	public static void main(String [] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		N = sc.nextInt();
+		R = sc.nextInt();
+		used = new int [N];
+		data = new int [R];
+		
+	}
+	
+	public static void solve(int i) {
+		
+		if(i == R) {
+			for (int n : data) {
+				System.out.print(n);
+			}
+			System.out.println();
+			return;
+		}
+		
+		for(int j = 0; j<R ; j++) {
+			
+		}
+	}
+}

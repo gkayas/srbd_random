@@ -1,0 +1,31 @@
+package uva;
+
+public class Limit {
+	Integer x = new Integer(3);
+	
+	public static void inc(Limit l) {
+		l.x = new Integer(l.x.intValue() + 1);
+	}
+	
+	public static void incx(Integer x, Limit l) {
+		x = new Integer(x.intValue()+2);
+	}
+	
+	public static void dec(Limit l) {
+		l.x--;
+	}
+	
+	public static void print(Limit l){
+		System.out.println(l.x);
+	}
+	
+	
+	public static void main(String []args) {
+		
+		Limit l1 = new Limit();
+		inc(l1);
+		print(l1);
+		incx(l1.x);
+		print(l1);
+	}
+}

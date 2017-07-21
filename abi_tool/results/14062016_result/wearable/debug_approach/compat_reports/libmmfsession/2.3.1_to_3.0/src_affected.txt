@@ -1,0 +1,9 @@
+_asm_watch_cb
+_asm_monitor_cb
+g_mutex_monitor
+g_watch_data
+asm_monitor_callback
+g_monitor_data
+g_monitor_asm_handle
+g_asm_handle
+asm_watch_callback

@@ -1,0 +1,3 @@
+1472710128361	Rename local variable 'suiteNme'
+1472710727851	Rename local variable 't'
+1472796142748	Extract method 'getTestInfo'

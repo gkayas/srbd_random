@@ -1,0 +1,5 @@
+emcore_load_PFX_file_from_string
+emcore_verify_certificate
+emcore_add_public_certificate
+emcore_free_certificate
+emcore_delete_public_certificate

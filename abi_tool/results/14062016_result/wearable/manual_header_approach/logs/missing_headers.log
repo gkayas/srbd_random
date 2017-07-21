@@ -1,0 +1,47 @@
+====================
+মঙ্গল জুন 14 20:09:28 BDT 2016
+====================
+====================
+বুধ জুন 15 14:35:44 BDT 2016
+====================
+====================
+বুধ জুন 15 19:00:55 BDT 2016
+====================
+====================
+বৃহঃ জুন 16 09:51:00 BDT 2016
+====================
+./logs/capi-media-player.log:20:/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-wayland-1/Ecore_Wayland.h:12:29: fatal error: wayland-client.h: No such file or directory
+./logs/capi-media-codec.log:18:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media/media_codec.h:23:31: fatal error: media_packet_pool.h: No such file or directory
+./logs/notification.log:41:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/notification/notification_db.h:22:31: fatal error: tzplatform_config.h: No such file or directory
+./logs/libwidget_service.log:167:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_instance.h:21:17: fatal error: aul.h: No such file or directory
+./logs/libwidget_viewer_evas.log:11:/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:26:37: fatal error: widget_service_internal.h: No such file or directory
+./logs/evas.log:19:/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_viewer_evas/widget_viewer_evas_internal.h:26:37: fatal error: widget_service_internal.h: No such file or directory
+./logs/capi-network-nfc.log:47:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/network/net_nfc.h:20:29: fatal error: net_nfc_typedef.h: No such file or directory
+./logs/capi-appfw-application.log:41:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/appfw/app_internal.h:23:31: fatal error: tzplatform_config.h: No such file or directory
+./logs/ecore.log:107:/usr/include/xf86drm.h:40:17: fatal error: drm.h: No such file or directory
+./logs/elementary.log:165:/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/elementary-1/elm_widget_panel.h:6:21: fatal error: els_box.h: No such file or directory
+====================
+বৃহঃ জুন 16 13:26:01 BDT 2016
+====================
+./logs/evas.log:255:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/mmf/mm_evas_renderer.h:39:22: fatal error: mm_types.h: No such file or directory
+./logs/capi-network-nfc.log:47:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/network/net_nfc.h:20:29: fatal error: net_nfc_typedef.h: No such file or directory
+./logs/elementary.log:165:/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/elementary-1/elm_widget_panel.h:6:21: fatal error: els_box.h: No such file or directory
+====================
+বৃহঃ জুন 16 15:23:42 BDT 2016
+====================
+./logs/evas.log:255:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/mmf/mm_evas_renderer.h:39:22: fatal error: mm_types.h: No such file or directory
+./logs/capi-network-nfc.log:47:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/network/net_nfc.h:20:29: fatal error: net_nfc_typedef.h: No such file or directory
+./logs/elementary.log:165:/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/elementary-1/elm_widget_panel.h:6:21: fatal error: els_box.h: No such file or directory
+====================
+শুক্র জুন 17 10:25:44 BDT 2016
+====================
+./logs/evas.log:255:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/mmf/mm_evas_renderer.h:39:22: fatal error: mm_types.h: No such file or directory
+./logs/capi-network-nfc.log:47:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/network/net_nfc.h:20:29: fatal error: net_nfc_typedef.h: No such file or directory
+./logs/elementary.log:165:/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/elementary-1/elm_widget_panel.h:6:21: fatal error: els_box.h: No such file or directory
+====================
+শুক্র জুন 17 11:03:42 BDT 2016
+====================
+./logs/evas.log:255:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/mmf/mm_evas_renderer.h:39:22: fatal error: mm_types.h: No such file or directory
+./logs/capi-network-nfc.log:47:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/network/net_nfc.h:20:29: fatal error: net_nfc_typedef.h: No such file or directory
+./logs/appcore-agent.log:18:/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/appcore-agent/appcore-agent.h:31:34: fatal error: app_control_internal.h: No such file or directory
+./logs/elementary.log:165:/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/elementary-1/elm_widget_panel.h:6:21: fatal error: els_box.h: No such file or directory

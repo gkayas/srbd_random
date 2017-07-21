@@ -1,0 +1,40 @@
+Temporary header file '/tmp/Mmwg0tnHuR/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/calendar-service2/calendar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/calendar-service2/calendar_db.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/calendar-service2/calendar_errors.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/calendar-service2/calendar_filter.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/calendar-service2/calendar_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/calendar-service2/calendar_list.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/calendar-service2/calendar_query.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/calendar-service2/calendar_record.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/calendar-service2/calendar_reminder.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/calendar-service2/calendar_service.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/calendar-service2/calendar_types.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/calendar-service2/calendar_vcalendar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/calendar-service2/calendar_view.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/Mmwg0tnHuR/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/calendar-service2 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/Mmwg0tnHuR/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/calendar-service2/calendar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/calendar-service2/calendar_db.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/calendar-service2/calendar_errors.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/calendar-service2/calendar_filter.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/calendar-service2/calendar_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/calendar-service2/calendar_list.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/calendar-service2/calendar_query.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/calendar-service2/calendar_record.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/calendar-service2/calendar_reminder.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/calendar-service2/calendar_service.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/calendar-service2/calendar_types.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/calendar-service2/calendar_vcalendar.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/calendar-service2/calendar_view.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/Mmwg0tnHuR/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/calendar-service2 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+

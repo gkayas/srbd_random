@@ -1,0 +1,63 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+public class PerCustom {
+	static int N;
+	static int R;
+	static boolean visited[];
+	static String [] input; 
+	static String [] out;
+	static int index = 0;
+	
+	public static void main(String [] ar) throws FileNotFoundException {
+		Scanner sc = new Scanner(new File("input.txt"));//System.in);
+		int T = sc.nextInt();
+		int tc = 1;
+		while(tc <= T) {
+			index = 0;
+			N = sc.nextInt();
+			R = sc.nextInt();
+			input = new String [N];
+			visited = new boolean [N];
+			out = new String[R];
+			for(int i = 0; i< N ; i++) {
+				input[i] = sc.next();
+			}
+			
+			customPer(index);
+			
+			tc++;
+		}
+		
+	}
+
+	private static void customPer(int i) {
+		if(index == R) {
+			print();
+			index--;
+			visited[] = false;
+			return;
+		}
+		if( i == N) {
+			return;
+		}
+		
+		for (int j = 0; j < N; j++) {
+			if(!visited[j]) {
+				out[index] = input[j];
+				index++;
+				visited[j] = true;
+				customPer(i+1);
+			}
+		}
+	}
+
+	private static void print() {
+		for (int i = 0; i<R ; i++) {
+			System.out.println(out[i]);
+		}
+		
+	}
+}

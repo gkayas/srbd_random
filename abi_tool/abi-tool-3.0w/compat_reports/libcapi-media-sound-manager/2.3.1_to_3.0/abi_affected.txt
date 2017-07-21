@@ -1,0 +1,2 @@
+sound_manager_set_call_session_mode
+sound_manager_get_call_session_mode

@@ -1,0 +1,921 @@
+<!-- kind:binary;verdict:compatible;affected:0;added:1;removed:0;type_problems_high:0;type_problems_medium:0;type_problems_low:4;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:6;changed_constants:0;tool_version:1.99.18 -->
+<!-- kind:source;verdict:compatible;affected:0;added:1;removed:0;type_problems_high:0;type_problems_medium:0;type_problems_low:4;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:4;changed_constants:0;interface_changes_other:2;tool_version:1.99.18 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="libemail-ipc, compatibility, API, ABI, report" />
+    <meta name="description" content="API/ABI compatibility report for the libemail-ipc object between 2.4 and 3.0 versions" />
+    <title>
+        libemail-ipc: 2.4 to 3.0 compatibility report
+    </title>
+    <style type="text/css">
+    body {
+    font-family:Arial, sans-serif;
+    background-color:White;
+    color:Black;
+}
+hr {
+    color:Black;
+    background-color:Black;
+    height:1px;
+    border:0;
+}
+h1 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.625em;
+}
+h2 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.25em;
+    white-space:nowrap;
+}
+span.section {
+    font-weight:bold;
+    cursor:pointer;
+    color:#003E69;
+    white-space:nowrap;
+    margin-left:5px;
+}
+span.new_sign {
+    font-weight:bold;
+    margin-left:26px;
+    color:#003E69;
+}
+span.new_sign_lbl {
+    margin-left:28px;
+    font-size:0.875em;
+    color:Black;
+}
+span:hover.section {
+    color:#336699;
+}
+span.sect_aff {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:#cc3300;
+}
+span.sect_info {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:Black;
+}
+span.ext {
+    font-weight:100;
+}
+span.h_name {
+    color:#cc3300;
+    font-size:0.875em;
+    font-weight:bold;
+}
+div.h_list, div.lib_list {
+    font-size:0.94em;
+    padding-left:5px;
+}
+span.ns {
+    color:#408080;
+    font-size:0.94em;
+}
+span.lib_name {
+    color:Green;
+    font-size:0.875em;
+    font-weight:bold;
+}
+span.iname {
+    font-weight:bold;
+    color:#003E69;
+    margin-left:5px;
+}
+span.iname_b {
+    font-weight:bold;
+    font-size:1.1em;
+}
+span.iname_a {
+    color:#333333;
+    font-weight:bold;
+    font-size:0.94em;
+}
+span.sym_p {
+    font-weight:normal;
+    white-space:normal;
+}
+div.affect {
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:0.87em;
+    font-style:italic;
+    line-height:0.75em;
+}
+div.affected {
+    padding-left:30px;
+    padding-top:10px;
+}
+table.ptable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:1em;
+    margin-left:15px;
+    margin-top:3px;
+    margin-bottom:3px;
+    width:900px;
+    
+}
+table.ptable td {
+    border:1px solid gray;
+    padding: 3px;
+    font-size:0.875em;
+    text-align:left;
+    vertical-align:top;
+}
+table.vtable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:16px;
+    margin-left:30px;
+    margin-top:10px;
+}
+table.vtable td {
+    border:1px solid gray;
+    word-wrap:break-word;
+    padding: 3px;
+    font-size:0.875em;
+    max-width:450px;
+    vertical-align:top;
+}
+table.ptable th, table.vtable th {
+    background-color:#eeeeee;
+    font-weight:bold;
+    color:#333333;
+    font-family:Verdana, Arial;
+    font-size:0.81em;
+    border:1px solid gray;
+    text-align:center;
+    vertical-align:top;
+    white-space:nowrap;
+    padding: 3px;
+}
+table.summary {
+    border-collapse:collapse;
+    border:1px outset black;
+}
+table.summary th {
+    background-color:#eeeeee;
+    font-weight:100;
+    text-align:left;
+    font-size:0.94em;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px;
+}
+table.summary td {
+    text-align:right;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px 5px 3px 10px;
+}
+span.mangled {
+    padding-left:15px;
+    font-size:0.875em;
+    cursor:text;
+    color:#444444;
+}
+span.sym_ver {
+    color:#333333;
+    white-space:nowrap;
+    font-family:"DejaVu Sans Mono", Monospace;
+}
+span.attr {
+    color:#333333;
+    font-weight:100;
+}
+span.color_p {
+    font-style:italic;
+    color:Brown;
+}
+span.p {
+    font-style:italic;
+}
+span.fp {
+    font-style:italic;
+    background-color:#FFCCCC;
+}
+span.ttype {
+    font-weight:100;
+}
+span.nowrap {
+    white-space:nowrap;
+}
+span.value {
+    white-space:nowrap;
+    font-weight:bold;
+}
+td.passed {
+    background-color:#CCFFCC;
+}
+td.warning {
+    background-color:#F4F4AF;
+}
+td.failed {
+    background-color:#FFCCCC;
+}
+td.new {
+    background-color:#C6DEFF;
+}
+.top_ref {
+    font-size:0.69em;
+}
+.footer {
+    font-size:0.75em;
+}
+
+.tabset {
+    float:left;
+}
+a.tab {
+    border:1px solid Black;
+    float:left;
+    margin:0px 5px -1px 0px;
+    padding:3px 5px 3px 5px;
+    position:relative;
+    font-size:0.875em;
+    background-color:#DDD;
+    text-decoration:none;
+    color:Black;
+}
+a.disabled:hover
+{
+    color:Black;
+    background:#EEE;
+}
+a.active:hover
+{
+    color:Black;
+    background:White;
+}
+a.active {
+    border-bottom-color:White;
+    background-color:White;
+}
+div.tab {
+    border-top:1px solid Black;
+    padding:0px;
+    width:100%;
+    clear:both;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+    function showContent(header, id)
+{
+    e = document.getElementById(id);
+    if(e.style.display == 'none')
+    {
+        e.style.display = 'block';
+        e.style.visibility = 'visible';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[&minus;]");
+    }
+    else
+    {
+        e.style.display = 'none';
+        e.style.visibility = 'hidden';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[+]");
+    }
+}
+function initTabs()
+{
+    var url = window.location.href;
+    if(url.indexOf('_Source_')!=-1 || url.indexOf('#Source')!=-1)
+    {
+        var tab1 = document.getElementById('BinaryID');
+        var tab2 = document.getElementById('SourceID');
+        tab1.className='tab disabled';
+        tab2.className='tab active';
+    }
+    var sets = document.getElementsByTagName('div');
+    for (var i = 0; i < sets.length; i++)
+    {
+        if (sets[i].className.indexOf('tabset') != -1)
+        {
+            var tabs = [];
+            var links = sets[i].getElementsByTagName('a');
+            for (var j = 0; j < links.length; j++)
+            {
+                if (links[j].className.indexOf('tab') != -1)
+                {
+                    tabs.push(links[j]);
+                    links[j].tabs = tabs;
+                    var tab = document.getElementById(links[j].href.substr(links[j].href.indexOf('#') + 1));
+                    //reset all tabs on start
+                    if (tab)
+                    {
+                        if (links[j].className.indexOf('active')!=-1) {
+                            tab.style.display = 'block';
+                        }
+                        else {
+                            tab.style.display = 'none';
+                        }
+                    }
+                    links[j].onclick = function()
+                    {
+                        var tab = document.getElementById(this.href.substr(this.href.indexOf('#') + 1));
+                        if (tab)
+                        {
+                            //reset all tabs before change
+                            for (var k = 0; k < this.tabs.length; k++)
+                            {
+                                document.getElementById(this.tabs[k].href.substr(this.tabs[k].href.indexOf('#') + 1)).style.display = 'none';
+                                this.tabs[k].className = this.tabs[k].className.replace('active', 'disabled');
+                            }
+                            this.className = 'tab active';
+                            tab.style.display = 'block';
+                            // window.location.hash = this.id.replace('ID', '');
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(url.indexOf('#')!=-1) {
+        location.href=location.href;
+    }
+}
+if (window.addEventListener) window.addEventListener('load', initTabs, false);
+else if (window.attachEvent) window.attachEvent('onload', initTabs);
+    -->
+    </script>
+    </head><body><a name='Source'></a><a name='Binary'></a><a name='Top'></a><h1>API compatibility report for the <span style='color:Blue;'>libemail-ipc.so</span> object between <span style='color:Red;'>2.4</span> and <span style='color:Red;'>3.0</span> versions on <span style='color:Blue;'>ARM</span></h1>
+
+            <br/>
+            <div class='tabset'>
+            <a id='BinaryID' href='#BinaryTab' class='tab active'>Binary<br/>Compatibility</a>
+            <a id='SourceID' href='#SourceTab' style='margin-left:3px' class='tab disabled'>Source<br/>Compatibility</a>
+            </div><div id='BinaryTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libemail-ipc</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>GCC Version</th><td>4.9.2</td></tr>
+<tr><th>Subject</th><td width='150px'>Binary Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>22</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>15</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>81 / 53</td></tr>
+<tr><th>Verdict</th><td><span style='color:Green;'><b>Compatible</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Binary_Added' style='color:Blue;'>1</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Type_Binary_Problems_Low' style='color:Blue;'>4</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Symbol_Binary_Problems_Low' style='color:Blue;'>6</a></td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+</table>
+
+<a name='Binary_Added'></a><h2>Added Symbols (1)</h2><hr/>
+<span class='h_name'>email-ipc-api.c</span>, <span class='lib_name'>libemail-ipc.so.1.1.0</span><br/>
+<span class="iname">emipc_get_response_id&#160;<span class='sym_p'>(&#160;<span class='nowrap'>HIPC_API <span class='color_p'>api</span> )</span></span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a><a name='Type_Binary_Problems_Low'></a>
+<h2>Problems with Data Types, Low Severity (4)</h2><hr/>
+<span class='h_name'>email-ipc-api-info.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> emipc_email_api_info (3)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Type of field <b>api_id</b> has been changed from <b>long</b> to <span class='value'>unsigned int</span>.</td>
+<td>Replacement of the field data type may indicate a change in the semantic meaning of the field.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Type of field <b>app_id</b> has been changed from <b>long</b> to <b>int</b>.</td>
+<td>Replacement of the field data type may indicate a change in the semantic meaning of the field.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Type of field <b>response_id</b> has been changed from <b>long</b> to <span class='value'>unsigned int</span>.</td>
+<td>Replacement of the field data type may indicate a change in the semantic meaning of the field.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (12)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>emipc_deserialize_api_info&#160;<span class='sym_p'>(&#160;emipc_email_api_info* <span class='fp'>api_info</span>, <span class='nowrap'>enum EPARAMETER_DIRECTION <i>direction</i>,</span> <span class='nowrap'>void* <i>stream</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_execute_api_of_proxy_main&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_execute_api_proxy_to_stub&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_execute_api_stub_to_proxy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_free_api_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_free_email_task&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_task* <span class='fp'>task</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;task.api_info&#39; in 1st parameter &#39;task&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_get_api_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_task* <span class='fp'>task</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;task.api_info&#39; in 1st parameter &#39;task&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_get_parameters_of_api_info&#160;<span class='sym_p'>(&#160;emipc_email_api_info* <span class='fp'>api_info</span>, <span class='nowrap'>enum EPARAMETER_DIRECTION <i>direction</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_get_response_channel&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_task* <span class='fp'>task</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;task.api_info&#39; in 1st parameter &#39;task&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_parse_stream_email_task&#160;<span class='sym_p'>(&#160;emipc_email_task* <span class='fp'>task</span>, <span class='nowrap'>void* <i>stream</i>,</span> <span class='nowrap'>int <i>response_id</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;task.api_info&#39; in 1st parameter &#39;task&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+ <b>...</b>
+<br/>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<span class='h_name'>email-ipc-param-list.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> emipc_param_list (1)</span>
+<br/>
+<div id="c_3" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Type of field <b>param_count</b> has been changed from <b>long</b> to <b>int</b>.</td>
+<td>Replacement of the field data type may indicate a change in the semantic meaning of the field.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_4')">
+[+] affected symbols (21)</span>
+<div id="c_4" style="display:none;">
+<div class='affected'><span class='iname_a'>emipc_add_dynamic_param_to_param_list&#160;<span class='sym_p'>(&#160;emipc_param_list* <span class='fp'>param_list</span>, <span class='nowrap'>void* <i>data</i>,</span> <span class='nowrap'>int <i>len</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;param_list&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_add_param_to_param_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_param_list* <span class='fp'>p1</span>,</span> <span class='nowrap'>void* <i>p2</i>,</span> <span class='nowrap'>int <i>p3</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;p1&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_create_param_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>... )</span></span></span><br/>
+<div class='affect'>Return value (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_deserialize_api_info&#160;<span class='sym_p'>(&#160;emipc_email_api_info* <span class='fp'>api_info</span>, <span class='nowrap'>enum EPARAMETER_DIRECTION <i>direction</i>,</span> <span class='nowrap'>void* <i>stream</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;api_info.params&#39; in 1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_destroy_param_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_param_list* <span class='fp'>param_list</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;param_list&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_execute_api_of_proxy_main&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;api_info.params&#39; in 1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_execute_api_proxy_to_stub&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;api_info.params&#39; in 1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_execute_api_stub_to_proxy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;api_info.params&#39; in 1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_free_api_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;api_info.params&#39; in 1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_free_email_task&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_task* <span class='fp'>task</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;task.api_info.params&#39; in 1st parameter &#39;task&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+ <b>...</b>
+<br/>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Symbol_Binary_Problems_Low'></a><a name='Interface_Binary_Problems_Low'></a>
+<h2>Problems with Symbols, Low Severity (6)</h2><hr/>
+<span class='h_name'>email-ipc-api.c</span>, <span class='lib_name'>libemail-ipc.so.1.1.0</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+<span class='ext'>[+]</span> emipc_get_api_id&#160;<span class='sym_p'>(&#160;<span class='nowrap'>HIPC_API <span class='color_p'>api</span> )</span></span> (1)</span>
+<br/>
+<div id="c_5" style="display:none;">
+
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of return value has been changed from <b>long</b> to <span class='value'>unsigned int</span>.</td>
+<td>Replacement of return type may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_6')">
+<span class='ext'>[+]</span> emipc_get_app_id&#160;<span class='sym_p'>(&#160;<span class='nowrap'>HIPC_API <span class='color_p'>api</span> )</span></span> (1)</span>
+<br/>
+<div id="c_6" style="display:none;">
+
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of return value has been changed from <b>long</b> to <b>int</b>.</td>
+<td>Replacement of return type may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>email-ipc-param-list.h</span>, <span class='lib_name'>libemail-ipc.so.1.1.0</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_7')">
+<span class='ext'>[+]</span> emipc_parse_stream_of_param_list&#160;<span class='sym_p'>(&#160;emipc_param_list* <span class='color_p'>param_list</span>, <span class='nowrap'>void* <span class='color_p'>stream</span> )</span></span> (4)</span>
+<br/>
+<div id="c_7" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>emipc_parse_stream_of_param_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>void* <span class='color_p'>stream</span>,</span> <span class='nowrap'>emipc_param_list* <span class='color_p'>param_list</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of <b>1st</b> parameter <b>param_list</b> has been changed from <b>emipc_param_list*</b> to <b>void*</b>.</td>
+<td>Replacement of parameter data type may indicate a change in its semantic meaning.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Type of <b>2nd</b> parameter <b>stream</b> has been changed from <b>void*</b> to <b>emipc_param_list*</b>.</td>
+<td>Replacement of parameter data type may indicate a change in its semantic meaning.</td>
+</tr>
+<tr>
+<th>3</th>
+<td><b>1st</b> parameter <b>param_list</b> has been renamed to <b>stream</b>.</td>
+<td>Renaming of a parameter may indicate a change in its semantic meaning.</td>
+</tr>
+<tr>
+<th>4</th>
+<td><b>2nd</b> parameter <b>stream</b> has been renamed to <b>param_list</b>.</td>
+<td>Renaming of a parameter may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (22)</h2><hr/>
+<div class='h_list'>
+email-dbus-activation.h<br/>
+email-ipc-api-info.h<br/>
+email-ipc-param-list.h<br/>
+email-ipc-param.h<br/>
+email-ipc-socket.h<br/>
+email-ipc.h<br/>
+email-proxy-callback-info.h<br/>
+email-proxy-main.h<br/>
+email-proxy-socket.h<br/>
+email-stub-main.h<br/>
+email-stub-socket.h<br/>
+email-stub-task-manager.h<br/>
+email-stub-task.h<br/>
+email-types.h<br/>
+gcancellable.h<br/>
+gdataset.h<br/>
+giotypes.h<br/>
+glibconfig.h<br/>
+gobject.h<br/>
+gtype.h<br/>
+gtypes.h<br/>
+gvariant.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (15)</h2><hr/>
+<div class='h_list'>
+email-dbus-activation.c<br/>
+email-ipc-api-info.c<br/>
+email-ipc-api.c<br/>
+email-ipc-param-list.c<br/>
+email-ipc-param.c<br/>
+email-ipc-proxy.c<br/>
+email-ipc-socket.c<br/>
+email-ipc-stub.c<br/>
+email-proxy-callback-info.c<br/>
+email-proxy-main.c<br/>
+email-proxy-socket.c<br/>
+email-stub-main.c<br/>
+email-stub-socket.c<br/>
+email-stub-task-manager.c<br/>
+email-stub-task.c<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libemail-ipc.so.1.1.0<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><div id='SourceTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Module Name</th><td>libemail-ipc</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>ARM</td></tr>
+<tr><th>GCC Version</th><td>4.9.2</td></tr>
+<tr><th>Subject</th><td width='150px'>Source Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>22</a></td></tr>
+<tr><th>Total Source Files</th><td><a href='#Sources' style='color:Blue;'>15</a></td></tr>
+<tr><th>Total Objects</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>81 / 53</td></tr>
+<tr><th>Verdict</th><td><span style='color:Green;'><b>Compatible</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Source_Added' style='color:Blue;'>1</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Type_Source_Problems_Low' style='color:Blue;'>4</a></td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Symbol_Source_Problems_Low' style='color:Blue;'>4</a></td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Symbols</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Symbols' style='color:Blue;'>2</a></td></tr>
+</table>
+
+<a name='Source_Added'></a><h2>Added Symbols (1)</h2><hr/>
+<span class='h_name'>email-ipc-api.c</span><br/>
+<span class="iname">emipc_get_response_id&#160;<span class='sym_p'>(&#160;<span class='nowrap'>HIPC_API <span class='color_p'>api</span> )</span></span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Source_Problems'></a><a name='Type_Source_Problems_Low'></a>
+<h2>Problems with Data Types, Low Severity (4)</h2><hr/>
+<span class='h_name'>email-ipc-api-info.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_8')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> emipc_email_api_info (3)</span>
+<br/>
+<div id="c_8" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Type of field <b>api_id</b> has been changed from <b>long</b> to <span class='value'>unsigned int</span>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Type of field <b>app_id</b> has been changed from <b>long</b> to <b>int</b>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Type of field <b>response_id</b> has been changed from <b>long</b> to <span class='value'>unsigned int</span>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_9')">
+[+] affected symbols (12)</span>
+<div id="c_9" style="display:none;">
+<div class='affected'><span class='iname_a'>emipc_deserialize_api_info&#160;<span class='sym_p'>(&#160;emipc_email_api_info* <span class='fp'>api_info</span>, <span class='nowrap'>enum EPARAMETER_DIRECTION <i>direction</i>,</span> <span class='nowrap'>void* <i>stream</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_execute_api_of_proxy_main&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_execute_api_proxy_to_stub&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_execute_api_stub_to_proxy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_free_api_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_free_email_task&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_task* <span class='fp'>task</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;task.api_info&#39; in 1st parameter &#39;task&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_get_api_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_task* <span class='fp'>task</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;task.api_info&#39; in 1st parameter &#39;task&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_get_parameters_of_api_info&#160;<span class='sym_p'>(&#160;emipc_email_api_info* <span class='fp'>api_info</span>, <span class='nowrap'>enum EPARAMETER_DIRECTION <i>direction</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_get_response_channel&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_task* <span class='fp'>task</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;task.api_info&#39; in 1st parameter &#39;task&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+<span class='iname_a'>emipc_parse_stream_email_task&#160;<span class='sym_p'>(&#160;emipc_email_task* <span class='fp'>task</span>, <span class='nowrap'>void* <i>stream</i>,</span> <span class='nowrap'>int <i>response_id</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;task.api_info&#39; in 1st parameter &#39;task&#39; (pointer) has base type &#39;struct emipc_email_api_info&#39;.</div>
+ <b>...</b>
+<br/>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<span class='h_name'>email-ipc-param-list.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_10')">
+<span class='ext'>[+]</span> <span class='ttype'>struct</span> emipc_param_list (1)</span>
+<br/>
+<div id="c_10" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>Type of field <b>param_count</b> has been changed from <b>long</b> to <b>int</b>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_11')">
+[+] affected symbols (21)</span>
+<div id="c_11" style="display:none;">
+<div class='affected'><span class='iname_a'>emipc_add_dynamic_param_to_param_list&#160;<span class='sym_p'>(&#160;emipc_param_list* <span class='fp'>param_list</span>, <span class='nowrap'>void* <i>data</i>,</span> <span class='nowrap'>int <i>len</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;param_list&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_add_param_to_param_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_param_list* <span class='fp'>p1</span>,</span> <span class='nowrap'>void* <i>p2</i>,</span> <span class='nowrap'>int <i>p3</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;p1&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_create_param_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>... )</span></span></span><br/>
+<div class='affect'>Return value (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_deserialize_api_info&#160;<span class='sym_p'>(&#160;emipc_email_api_info* <span class='fp'>api_info</span>, <span class='nowrap'>enum EPARAMETER_DIRECTION <i>direction</i>,</span> <span class='nowrap'>void* <i>stream</i> )</span></span></span><br/>
+<div class='affect'>Field &#39;api_info.params&#39; in 1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_destroy_param_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_param_list* <span class='fp'>param_list</span> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;param_list&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_execute_api_of_proxy_main&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;api_info.params&#39; in 1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_execute_api_proxy_to_stub&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;api_info.params&#39; in 1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_execute_api_stub_to_proxy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;api_info.params&#39; in 1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_free_api_info&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_api_info* <span class='fp'>api_info</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;api_info.params&#39; in 1st parameter &#39;api_info&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+<span class='iname_a'>emipc_free_email_task&#160;<span class='sym_p'>(&#160;<span class='nowrap'>emipc_email_task* <span class='fp'>task</span> )</span></span></span><br/>
+<div class='affect'>Field &#39;task.api_info.params&#39; in 1st parameter &#39;task&#39; (pointer) has base type &#39;struct emipc_param_list&#39;.</div>
+ <b>...</b>
+<br/>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Symbol_Source_Problems_Low'></a><a name='Interface_Source_Problems_Low'></a>
+<h2>Problems with Symbols, Low Severity (4)</h2><hr/>
+<span class='h_name'>email-ipc-api.c</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_12')">
+<span class='ext'>[+]</span> emipc_get_api_id&#160;<span class='sym_p'>(&#160;<span class='nowrap'>HIPC_API <span class='color_p'>api</span> )</span></span> (1)</span>
+<br/>
+<div id="c_12" style="display:none;">
+
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of return value has been changed from <b>long</b> to <span class='value'>unsigned int</span>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_13')">
+<span class='ext'>[+]</span> emipc_get_app_id&#160;<span class='sym_p'>(&#160;<span class='nowrap'>HIPC_API <span class='color_p'>api</span> )</span></span> (1)</span>
+<br/>
+<div id="c_13" style="display:none;">
+
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of return value has been changed from <b>long</b> to <b>int</b>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<span class='h_name'>email-ipc-param-list.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_14')">
+<span class='ext'>[+]</span> emipc_parse_stream_of_param_list&#160;<span class='sym_p'>(&#160;emipc_param_list* <span class='color_p'>param_list</span>, <span class='nowrap'>void* <span class='color_p'>stream</span> )</span></span> (2)</span>
+<br/>
+<div id="c_14" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>emipc_parse_stream_of_param_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>void* <span class='color_p'>stream</span>,</span> <span class='nowrap'>emipc_param_list* <span class='color_p'>param_list</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>Type of <b>1st</b> parameter <b>param_list</b> has been changed from <b>emipc_param_list*</b> to <b>void*</b>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Type of <b>2nd</b> parameter <b>stream</b> has been changed from <b>void*</b> to <b>emipc_param_list*</b>.</td>
+<td>Recompilation of a client program may be broken.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes'></a><a name='Other_Source_Changes_In_Symbols'></a><a name='Other_Source_Changes_In_Interfaces'></a>
+<h2>Other Changes in Symbols (2)</h2><hr/>
+<span class='h_name'>email-ipc-param-list.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_15')">
+<span class='ext'>[+]</span> emipc_parse_stream_of_param_list&#160;<span class='sym_p'>(&#160;emipc_param_list* <span class='color_p'>param_list</span>, <span class='nowrap'>void* <span class='color_p'>stream</span> )</span></span> (2)</span>
+<br/>
+<div id="c_15" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>emipc_parse_stream_of_param_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>void* <span class='color_p'>stream</span>,</span> <span class='nowrap'>emipc_param_list* <span class='color_p'>param_list</span> )</span></span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>1st</b> parameter <b>param_list</b> has been renamed to <b>stream</b>.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td><b>2nd</b> parameter <b>stream</b> has been renamed to <b>param_list</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (22)</h2><hr/>
+<div class='h_list'>
+email-dbus-activation.h<br/>
+email-ipc-api-info.h<br/>
+email-ipc-param-list.h<br/>
+email-ipc-param.h<br/>
+email-ipc-socket.h<br/>
+email-ipc.h<br/>
+email-proxy-callback-info.h<br/>
+email-proxy-main.h<br/>
+email-proxy-socket.h<br/>
+email-stub-main.h<br/>
+email-stub-socket.h<br/>
+email-stub-task-manager.h<br/>
+email-stub-task.h<br/>
+email-types.h<br/>
+gcancellable.h<br/>
+gdataset.h<br/>
+giotypes.h<br/>
+glibconfig.h<br/>
+gobject.h<br/>
+gtype.h<br/>
+gtypes.h<br/>
+gvariant.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Sources'></a><h2>Source Files (15)</h2><hr/>
+<div class='h_list'>
+email-dbus-activation.c<br/>
+email-ipc-api-info.c<br/>
+email-ipc-api.c<br/>
+email-ipc-param-list.c<br/>
+email-ipc-param.c<br/>
+email-ipc-proxy.c<br/>
+email-ipc-socket.c<br/>
+email-ipc-stub.c<br/>
+email-proxy-callback-info.c<br/>
+email-proxy-main.c<br/>
+email-proxy-socket.c<br/>
+email-stub-main.c<br/>
+email-stub-socket.c<br/>
+email-stub-task-manager.c<br/>
+email-stub-task.c<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Objects (1)</h2><hr/>
+<div class='lib_list'>
+libemail-ipc.so.1.1.0<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><hr/>
+<div class='footer' align='right'><i>Generated by <a href='http://lvc.github.io/abi-compliance-checker/'>ABI Compliance Checker</a> 1.99.18 &#160;</i>
+</div>
+<br/>
+
+</body></html>

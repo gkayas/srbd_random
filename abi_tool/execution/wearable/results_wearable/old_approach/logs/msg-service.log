@@ -1,0 +1,37 @@
+Temporary header file '/tmp/9TOZrJSczs/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/msg-service/msg.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/msg-service/msg_storage.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/msg-service/msg_storage_types.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/msg-service/msg_transport.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/msg-service/msg_transport_types.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/msg-service/msg_types.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/9TOZrJSczs/dump1.h"
+
+Temporary header file '/tmp/9TOZrJSczs/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/msg-service/msg.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/msg-service/msg_storage.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/msg-service/msg_storage_types.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/msg-service/msg_transport.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/msg-service/msg_transport_types.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/msg-service/msg_types.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/9TOZrJSczs/dump2.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /tmp/9TOZrJSczs/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/msg-service/msg_storage.h:448:93: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int msg_get_vobject_data(msg_handle_t handle, msg_message_id_t msg_id, void** encoded_data) TIZEN_DEPRECATED_API;;
+                                                                                             ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/msg-service/msg_storage.h:742:106: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int msg_backup_message(msg_handle_t handle, msg_message_backup_type_t type, const char *backup_filepath) TIZEN_DEPRECATED_API;
+                                                                                                          ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/msg-service/msg_storage.h:766:75: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int msg_restore_message(msg_handle_t handle, const char *backup_filepath) TIZEN_DEPRECATED_API;
+                                                                           ^
+

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxviewer.SampleAppSettingsController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="600.0">
+         <children>
+            <HBox prefHeight="542.0" prefWidth="617.0">
+               <children>
+                  <VBox alignment="TOP_RIGHT" prefHeight="502.0" prefWidth="143.0" spacing="10.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="130.0" text="SDK Path : " textAlignment="RIGHT">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="6.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Save Report File : ">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="6.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Arch : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Sample App Profile : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Compiler : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Build Config : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Sample Server : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="User Name : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="User Password : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Key Path : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Key Name : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Key Password : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Exploratory Mode : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="40.0" />
+                     </HBox.margin></VBox>
+                  <VBox alignment="TOP_RIGHT" prefHeight="352.0" prefWidth="412.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="sdkPathTxt" />
+                        <TextField fx:id="reportPathTxt" />
+                        <ComboBox fx:id="archCombo" prefHeight="25.0" prefWidth="412.0" />
+                        <ComboBox fx:id="profileCombo" prefHeight="25.0" prefWidth="412.0" />
+                        <ComboBox fx:id="compilerCombo" prefHeight="25.0" prefWidth="412.0" />
+                        <ComboBox fx:id="buildConfigCombo" prefHeight="25.0" prefWidth="412.0" />
+                        <TextField fx:id="sampleServerTxt" />
+                        <TextField fx:id="userNameTxt" />
+                        <PasswordField fx:id="userPassTxt" />
+                        <TextField fx:id="keyPathTxt" />
+                        <TextField fx:id="keyNameTxt" />
+                        <PasswordField fx:id="keyPassTxt" />
+                        <ComboBox fx:id="expolatoryModeCombo" prefHeight="25.0" prefWidth="412.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets top="40.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding></VBox>
+                  <VBox prefHeight="405.0" prefWidth="41.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="browseSDKPathBtn" mnemonicParsing="false" onAction="#browseBtnClicked" text="..." />
+                        <Button fx:id="browseReprotPathBtn" mnemonicParsing="false" onAction="#browseBtnClicked" text="..." />
+                        <Button fx:id="browseKeyPathBtn" mnemonicParsing="false" onAction="#browseBtnClicked" prefHeight="25.0" prefWidth="22.0" text="...">
+                           <VBox.margin>
+                              <Insets top="323.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="40.0" />
+                     </HBox.margin></VBox>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveBtnClicked" prefHeight="30.0" prefWidth="100.0" text="Save" />
+                  <Button fx:id="closeBtn" mnemonicParsing="false" onAction="#closeBtnClicked" prefHeight="30.0" prefWidth="100.0" text="Close" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

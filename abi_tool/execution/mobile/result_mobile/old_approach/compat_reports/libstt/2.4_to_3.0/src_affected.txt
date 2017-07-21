@@ -1,0 +1,3 @@
+sttp_get_engine_info
+sttp_load_engine
+sttp_unload_engine

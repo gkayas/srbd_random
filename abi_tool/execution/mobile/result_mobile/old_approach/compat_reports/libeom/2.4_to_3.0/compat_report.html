@@ -1,0 +1,1155 @@
+<!-- kind:binary;verdict:compatible;affected:0;added:1;removed:0;type_problems_high:0;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:0;changed_constants:0;constant_changes_other:10;tool_version:1.99.18 -->
+<!-- kind:source;verdict:compatible;affected:0;added:185;removed:0;type_problems_high:0;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:0;changed_constants:0;constant_changes_other:16;tool_version:1.99.18 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="libeom, compatibility, API, ABI, report" />
+    <meta name="description" content="API/ABI compatibility report for the libeom library between 2.4 and 3.0 versions" />
+    <title>
+        libeom: 2.4 to 3.0 compatibility report
+    </title>
+    <style type="text/css">
+    body {
+    font-family:Arial, sans-serif;
+    background-color:White;
+    color:Black;
+}
+hr {
+    color:Black;
+    background-color:Black;
+    height:1px;
+    border:0;
+}
+h1 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.625em;
+}
+h2 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.25em;
+    white-space:nowrap;
+}
+span.section {
+    font-weight:bold;
+    cursor:pointer;
+    color:#003E69;
+    white-space:nowrap;
+    margin-left:5px;
+}
+span.new_sign {
+    font-weight:bold;
+    margin-left:26px;
+    color:#003E69;
+}
+span.new_sign_lbl {
+    margin-left:28px;
+    font-size:0.875em;
+    color:Black;
+}
+span:hover.section {
+    color:#336699;
+}
+span.sect_aff {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:#cc3300;
+}
+span.sect_info {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:Black;
+}
+span.ext {
+    font-weight:100;
+}
+span.h_name {
+    color:#cc3300;
+    font-size:0.875em;
+    font-weight:bold;
+}
+div.h_list, div.lib_list {
+    font-size:0.94em;
+    padding-left:5px;
+}
+span.ns {
+    color:#408080;
+    font-size:0.94em;
+}
+span.lib_name {
+    color:Green;
+    font-size:0.875em;
+    font-weight:bold;
+}
+span.iname {
+    font-weight:bold;
+    color:#003E69;
+    margin-left:5px;
+}
+span.iname_b {
+    font-weight:bold;
+    font-size:1.1em;
+}
+span.iname_a {
+    color:#333333;
+    font-weight:bold;
+    font-size:0.94em;
+}
+span.sym_p {
+    font-weight:normal;
+    white-space:normal;
+}
+div.affect {
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:0.87em;
+    font-style:italic;
+    line-height:0.75em;
+}
+div.affected {
+    padding-left:30px;
+    padding-top:10px;
+}
+table.ptable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:1em;
+    margin-left:15px;
+    margin-top:3px;
+    margin-bottom:3px;
+    width:900px;
+    
+}
+table.ptable td {
+    border:1px solid gray;
+    padding: 3px;
+    font-size:0.875em;
+    text-align:left;
+    vertical-align:top;
+}
+table.vtable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:16px;
+    margin-left:30px;
+    margin-top:10px;
+}
+table.vtable td {
+    border:1px solid gray;
+    word-wrap:break-word;
+    padding: 3px;
+    font-size:0.875em;
+    max-width:450px;
+    vertical-align:top;
+}
+table.ptable th, table.vtable th {
+    background-color:#eeeeee;
+    font-weight:bold;
+    color:#333333;
+    font-family:Verdana, Arial;
+    font-size:0.81em;
+    border:1px solid gray;
+    text-align:center;
+    vertical-align:top;
+    white-space:nowrap;
+    padding: 3px;
+}
+table.summary {
+    border-collapse:collapse;
+    border:1px outset black;
+}
+table.summary th {
+    background-color:#eeeeee;
+    font-weight:100;
+    text-align:left;
+    font-size:0.94em;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px;
+}
+table.summary td {
+    text-align:right;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px 5px 3px 10px;
+}
+span.mangled {
+    padding-left:15px;
+    font-size:0.875em;
+    cursor:text;
+    color:#444444;
+}
+span.sym_ver {
+    color:#333333;
+    white-space:nowrap;
+    font-family:"DejaVu Sans Mono", Monospace;
+}
+span.attr {
+    color:#333333;
+    font-weight:100;
+}
+span.color_p {
+    font-style:italic;
+    color:Brown;
+}
+span.p {
+    font-style:italic;
+}
+span.fp {
+    font-style:italic;
+    background-color:#FFCCCC;
+}
+span.ttype {
+    font-weight:100;
+}
+span.nowrap {
+    white-space:nowrap;
+}
+span.value {
+    white-space:nowrap;
+    font-weight:bold;
+}
+td.passed {
+    background-color:#CCFFCC;
+}
+td.warning {
+    background-color:#F4F4AF;
+}
+td.failed {
+    background-color:#FFCCCC;
+}
+td.new {
+    background-color:#C6DEFF;
+}
+.top_ref {
+    font-size:0.69em;
+}
+.footer {
+    font-size:0.75em;
+}
+
+.tabset {
+    float:left;
+}
+a.tab {
+    border:1px solid Black;
+    float:left;
+    margin:0px 5px -1px 0px;
+    padding:3px 5px 3px 5px;
+    position:relative;
+    font-size:0.875em;
+    background-color:#DDD;
+    text-decoration:none;
+    color:Black;
+}
+a.disabled:hover
+{
+    color:Black;
+    background:#EEE;
+}
+a.active:hover
+{
+    color:Black;
+    background:White;
+}
+a.active {
+    border-bottom-color:White;
+    background-color:White;
+}
+div.tab {
+    border-top:1px solid Black;
+    padding:0px;
+    width:100%;
+    clear:both;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+    function showContent(header, id)
+{
+    e = document.getElementById(id);
+    if(e.style.display == 'none')
+    {
+        e.style.display = 'block';
+        e.style.visibility = 'visible';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[&minus;]");
+    }
+    else
+    {
+        e.style.display = 'none';
+        e.style.visibility = 'hidden';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[+]");
+    }
+}
+function initTabs()
+{
+    var url = window.location.href;
+    if(url.indexOf('_Source_')!=-1 || url.indexOf('#Source')!=-1)
+    {
+        var tab1 = document.getElementById('BinaryID');
+        var tab2 = document.getElementById('SourceID');
+        tab1.className='tab disabled';
+        tab2.className='tab active';
+    }
+    var sets = document.getElementsByTagName('div');
+    for (var i = 0; i < sets.length; i++)
+    {
+        if (sets[i].className.indexOf('tabset') != -1)
+        {
+            var tabs = [];
+            var links = sets[i].getElementsByTagName('a');
+            for (var j = 0; j < links.length; j++)
+            {
+                if (links[j].className.indexOf('tab') != -1)
+                {
+                    tabs.push(links[j]);
+                    links[j].tabs = tabs;
+                    var tab = document.getElementById(links[j].href.substr(links[j].href.indexOf('#') + 1));
+                    //reset all tabs on start
+                    if (tab)
+                    {
+                        if (links[j].className.indexOf('active')!=-1) {
+                            tab.style.display = 'block';
+                        }
+                        else {
+                            tab.style.display = 'none';
+                        }
+                    }
+                    links[j].onclick = function()
+                    {
+                        var tab = document.getElementById(this.href.substr(this.href.indexOf('#') + 1));
+                        if (tab)
+                        {
+                            //reset all tabs before change
+                            for (var k = 0; k < this.tabs.length; k++)
+                            {
+                                document.getElementById(this.tabs[k].href.substr(this.tabs[k].href.indexOf('#') + 1)).style.display = 'none';
+                                this.tabs[k].className = this.tabs[k].className.replace('active', 'disabled');
+                            }
+                            this.className = 'tab active';
+                            tab.style.display = 'block';
+                            // window.location.hash = this.id.replace('ID', '');
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(url.indexOf('#')!=-1) {
+        location.href=location.href;
+    }
+}
+if (window.addEventListener) window.addEventListener('load', initTabs, false);
+else if (window.attachEvent) window.attachEvent('onload', initTabs);
+    -->
+    </script>
+    </head><body><a name='Source'></a><a name='Binary'></a><a name='Top'></a><h1>API compatibility report for the <span style='color:Blue;'>libeom</span> library between <span style='color:Red;'>2.4</span> and <span style='color:Red;'>3.0</span> versions on <span style='color:Blue;'>x86_64</span></h1>
+
+            <br/>
+            <div class='tabset'>
+            <a id='BinaryID' href='#BinaryTab' class='tab active'>Binary<br/>Compatibility</a>
+            <a id='SourceID' href='#SourceTab' style='margin-left:3px' class='tab disabled'>Source<br/>Compatibility</a>
+            </div><div id='BinaryTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Library Name</th><td>libeom</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>x86_64</td></tr>
+<tr><th>GCC Version</th><td>4.8</td></tr>
+<tr><th>Subject</th><td width='150px'>Binary Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>3</a></td></tr>
+<tr><th>Total Shared Libraries</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>19 / 23</td></tr>
+<tr><th>Verdict</th><td><span style='color:Green;'><b>Compatible</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Binary_Added' style='color:Blue;'>1</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Constants</th><td>-</td><td class='passed'><a href='#Other_Binary_Changes_In_Constants' style='color:Blue;'>10</a></td></tr>
+</table>
+
+<a name='Binary_Added'></a><h2>Added Symbols (1)</h2><hr/>
+<span class='h_name'>eom-server-protocol.h</span>, <span class='lib_name'>libeom.so.0.0.0</span><br/>
+<span class="iname">wl_eom_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Binary_Changes'></a><a name='Other_Binary_Changes_In_Constants'></a><h2>Other Changes in Constants (10)</h2><hr/>
+<span class='h_name'>eom-server-protocol.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_ATTRIBUTE</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_ATTRIBUTE</b> with value <b>4</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_2')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_COUNT</span>
+<br/>
+<div id="c_2" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_COUNT</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_INFO</span>
+<br/>
+<div id="c_3" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_INFO</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_4')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_MODE</span>
+<br/>
+<div id="c_4" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_MODE</b> with value <b>3</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_SET_WINDOW</span>
+<br/>
+<div id="c_5" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_SET_WINDOW</b> with value <b>5</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_6')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_TYPE</span>
+<br/>
+<div id="c_6" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_TYPE</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>wayland-server-core.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_7')">
+<span class='ext'>[+]</span> WL_EVENT_ERROR</span>
+<br/>
+<div id="c_7" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EVENT_ERROR</b> with value <b>8</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_8')">
+<span class='ext'>[+]</span> WL_EVENT_HANGUP</span>
+<br/>
+<div id="c_8" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EVENT_HANGUP</b> with value <b>4</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_9')">
+<span class='ext'>[+]</span> WL_EVENT_READABLE</span>
+<br/>
+<div id="c_9" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EVENT_READABLE</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_10')">
+<span class='ext'>[+]</span> WL_EVENT_WRITABLE</span>
+<br/>
+<div id="c_10" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EVENT_WRITABLE</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (3)</h2><hr/>
+<div class='h_list'>
+eom-connect.h<br/>
+eom.h<br/>
+eom_internal.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Shared Libraries (1)</h2><hr/>
+<div class='lib_list'>
+libeom.so.0.0.0<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><div id='SourceTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Library Name</th><td>libeom</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>x86_64</td></tr>
+<tr><th>GCC Version</th><td>4.8</td></tr>
+<tr><th>Subject</th><td width='150px'>Source Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>3</a></td></tr>
+<tr><th>Total Shared Libraries</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>20 / 23</td></tr>
+<tr><th>Verdict</th><td><span style='color:Green;'><b>Compatible</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Source_Added' style='color:Blue;'>185</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Constants</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Constants' style='color:Blue;'>16</a></td></tr>
+</table>
+
+<a name='Source_Added'></a><h2>Added Symbols (185)</h2><hr/>
+<span class='h_name'>eom-server-protocol.h</span><br/>
+<span class="iname">wl_eom_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_eom_send_output_attribute&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, uint32_t <span class='color_p'>output_id</span>, uint32_t <span class='color_p'>attribute</span>, uint32_t <span class='color_p'>attribute_state</span>, <span class='nowrap'>uint32_t <span class='color_p'>error</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_eom_send_output_count&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>count</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_eom_send_output_info&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, uint32_t <span class='color_p'>output_id</span>, <span class='nowrap'>uint32_t <span class='color_p'>type</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>mode</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>w</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>h</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>w_mm</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>h_mm</span>,</span> uint32_t <span class='color_p'>connection</span>, <span class='nowrap'>uint32_t <span class='color_p'>skip</span>,</span> uint32_t <span class='color_p'>attribute</span>, uint32_t <span class='color_p'>attribute_state</span>, <span class='nowrap'>uint32_t <span class='color_p'>error</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_eom_send_output_mode&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, uint32_t <span class='color_p'>output_id</span>, <span class='nowrap'>uint32_t <span class='color_p'>mode</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_eom_send_output_set_window&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, uint32_t <span class='color_p'>output_id</span>, <span class='nowrap'>uint32_t <span class='color_p'>error</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_eom_send_output_type&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, uint32_t <span class='color_p'>output_id</span>, <span class='nowrap'>uint32_t <span class='color_p'>type</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>status</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<br/>
+<span class='h_name'>wayland-server-core.h</span><br/>
+<span class="iname">wl_client_add_destroy_listener&#160;<span class='sym_p'>(&#160;struct wl_client* <span class='color_p'>client</span>, <span class='nowrap'>struct wl_listener* <span class='color_p'>listener</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_client_create&#160;<span class='sym_p'>(&#160;struct wl_display* <span class='color_p'>display</span>, <span class='nowrap'>int <span class='color_p'>fd</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_client*</span></span><br/>
+<span class="iname">wl_client_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_client* <span class='color_p'>client</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_client_flush&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_client* <span class='color_p'>client</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_client_from_link&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_list* <span class='color_p'>link</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_client*</span></span><br/>
+<span class="iname">wl_client_get_credentials&#160;<span class='sym_p'>(&#160;struct wl_client* <span class='color_p'>client</span>, <span class='nowrap'>pid_t* <span class='color_p'>pid</span>,</span> <span class='nowrap'>uid_t* <span class='color_p'>uid</span>,</span> <span class='nowrap'>gid_t* <span class='color_p'>gid</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_client_get_destroy_listener&#160;<span class='sym_p'>(&#160;struct wl_client* <span class='color_p'>client</span>, <span class='nowrap'>wl_notify_func_t <span class='color_p'>notify</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_listener*</span></span><br/>
+<span class="iname">wl_client_get_display&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_client* <span class='color_p'>client</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_display*</span></span><br/>
+<span class="iname">wl_client_get_fd&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_client* <span class='color_p'>client</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">wl_client_get_link&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_client* <span class='color_p'>client</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_list*</span></span><br/>
+<span class="iname">wl_client_get_object&#160;<span class='sym_p'>(&#160;struct wl_client* <span class='color_p'>client</span>, <span class='nowrap'>uint32_t <span class='color_p'>id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_resource*</span></span><br/>
+<span class="iname">wl_client_get_resources&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_client* <span class='color_p'>client</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_map*</span></span><br/>
+<span class="iname">wl_client_post_no_memory&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_client* <span class='color_p'>client</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_display_add_destroy_listener&#160;<span class='sym_p'>(&#160;struct wl_display* <span class='color_p'>display</span>, <span class='nowrap'>struct wl_listener* <span class='color_p'>listener</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_display_add_shm_format&#160;<span class='sym_p'>(&#160;struct wl_display* <span class='color_p'>display</span>, <span class='nowrap'>uint32_t <span class='color_p'>format</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;uint32_t*</span></span><br/>
+<span class="iname">wl_display_add_socket&#160;<span class='sym_p'>(&#160;struct wl_display* <span class='color_p'>display</span>, <span class='nowrap'>char const* <span class='color_p'>name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">wl_display_add_socket_auto&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_display* <span class='color_p'>display</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;char const*</span></span><br/>
+<span class="iname">wl_display_add_socket_fd&#160;<span class='sym_p'>(&#160;struct wl_display* <span class='color_p'>display</span>, <span class='nowrap'>int <span class='color_p'>sock_fd</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">wl_display_create&#160;<span class='sym_p'>(&#160;)</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_display*</span></span><br/>
+<span class="iname">wl_display_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_display* <span class='color_p'>display</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_display_flush_clients&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_display* <span class='color_p'>display</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_display_get_client_list&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_display* <span class='color_p'>display</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_list*</span></span><br/>
+<span class="iname">wl_display_get_destroy_listener&#160;<span class='sym_p'>(&#160;struct wl_display* <span class='color_p'>display</span>, <span class='nowrap'>wl_notify_func_t <span class='color_p'>notify</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_listener*</span></span><br/>
+<span class="iname">wl_display_get_event_loop&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_display* <span class='color_p'>display</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_event_loop*</span></span><br/>
+<span class="iname">wl_display_get_serial&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_display* <span class='color_p'>display</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;uint32_t</span></span><br/>
+<span class="iname">wl_display_init_shm&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_display* <span class='color_p'>display</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">wl_display_next_serial&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_display* <span class='color_p'>display</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;uint32_t</span></span><br/>
+<span class="iname">wl_display_run&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_display* <span class='color_p'>display</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_display_terminate&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_display* <span class='color_p'>display</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_event_loop_add_destroy_listener&#160;<span class='sym_p'>(&#160;struct wl_event_loop* <span class='color_p'>loop</span>, <span class='nowrap'>struct wl_listener* <span class='color_p'>listener</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_event_loop_add_fd&#160;<span class='sym_p'>(&#160;struct wl_event_loop* <span class='color_p'>loop</span>, <span class='nowrap'>int <span class='color_p'>fd</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>mask</span>,</span> wl_event_loop_fd_func_t <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_event_source*</span></span><br/>
+<span class="iname">wl_event_loop_add_idle&#160;<span class='sym_p'>(&#160;struct wl_event_loop* <span class='color_p'>loop</span>, wl_event_loop_idle_func_t <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_event_source*</span></span><br/>
+<span class="iname">wl_event_loop_add_signal&#160;<span class='sym_p'>(&#160;struct wl_event_loop* <span class='color_p'>loop</span>, int <span class='color_p'>signal_number</span>, wl_event_loop_signal_func_t <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_event_source*</span></span><br/>
+<span class="iname">wl_event_loop_add_timer&#160;<span class='sym_p'>(&#160;struct wl_event_loop* <span class='color_p'>loop</span>, wl_event_loop_timer_func_t <span class='color_p'>func</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_event_source*</span></span><br/>
+<span class="iname">wl_event_loop_create&#160;<span class='sym_p'>(&#160;)</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_event_loop*</span></span><br/>
+<span class="iname">wl_event_loop_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_event_loop* <span class='color_p'>loop</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_event_loop_dispatch&#160;<span class='sym_p'>(&#160;struct wl_event_loop* <span class='color_p'>loop</span>, <span class='nowrap'>int <span class='color_p'>timeout</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">wl_event_loop_dispatch_idle&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_event_loop* <span class='color_p'>loop</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_event_loop_get_destroy_listener&#160;<span class='sym_p'>(&#160;struct wl_event_loop* <span class='color_p'>loop</span>, <span class='nowrap'>wl_notify_func_t <span class='color_p'>notify</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_listener*</span></span><br/>
+<span class="iname">wl_event_loop_get_fd&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_event_loop* <span class='color_p'>loop</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">wl_event_source_check&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_event_source* <span class='color_p'>source</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_event_source_fd_update&#160;<span class='sym_p'>(&#160;struct wl_event_source* <span class='color_p'>source</span>, <span class='nowrap'>uint32_t <span class='color_p'>mask</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">wl_event_source_remove&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_event_source* <span class='color_p'>source</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">wl_event_source_timer_update&#160;<span class='sym_p'>(&#160;struct wl_event_source* <span class='color_p'>source</span>, <span class='nowrap'>int <span class='color_p'>ms_delay</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">wl_global_create&#160;<span class='sym_p'>(&#160;struct wl_display* <span class='color_p'>display</span>, struct wl_interface const* <span class='color_p'>interface</span>, <span class='nowrap'>int <span class='color_p'>version</span>,</span> <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>wl_global_bind_func_t <span class='color_p'>bind</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_global*</span></span><br/>
+<span class="iname">wl_global_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_global* <span class='color_p'>global</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_log_set_handler_server&#160;<span class='sym_p'>(&#160;<span class='nowrap'>wl_log_func_t <span class='color_p'>handler</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_resource_add_destroy_listener&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource</span>, <span class='nowrap'>struct wl_listener* <span class='color_p'>listener</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_resource_create&#160;<span class='sym_p'>(&#160;struct wl_client* <span class='color_p'>client</span>, struct wl_interface const* <span class='color_p'>interface</span>, <span class='nowrap'>int <span class='color_p'>version</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_resource*</span></span><br/>
+<span class="iname">wl_resource_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_resource_find_for_client&#160;<span class='sym_p'>(&#160;struct wl_list* <span class='color_p'>list</span>, <span class='nowrap'>struct wl_client* <span class='color_p'>client</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_resource*</span></span><br/>
+<span class="iname">wl_resource_from_link&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_list* <span class='color_p'>resource</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_resource*</span></span><br/>
+<span class="iname">wl_resource_get_client&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_client*</span></span><br/>
+<span class="iname">wl_resource_get_destroy_listener&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource</span>, <span class='nowrap'>wl_notify_func_t <span class='color_p'>notify</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_listener*</span></span><br/>
+<span class="iname">wl_resource_get_id&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;uint32_t</span></span><br/>
+<span class="iname">wl_resource_get_link&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_list*</span></span><br/>
+<span class="iname">wl_resource_get_name&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;char const*</span></span><br/>
+<span class="iname">wl_resource_get_user_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void*</span></span><br/>
+<span class="iname">wl_resource_get_version&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">wl_resource_instance_of&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource</span>, struct wl_interface const* <span class='color_p'>interface</span>, <span class='nowrap'>void const* <span class='color_p'>implementation</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">wl_resource_post_error&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource</span>, <span class='nowrap'>uint32_t <span class='color_p'>code</span>,</span> <span class='nowrap'>char const* <span class='color_p'>msg</span>,</span> <span class='nowrap'>... )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_resource_post_event&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource</span>, <span class='nowrap'>uint32_t <span class='color_p'>opcode</span>,</span> <span class='nowrap'>... )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_resource_post_event_array&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource</span>, <span class='nowrap'>uint32_t <span class='color_p'>opcode</span>,</span> <span class='nowrap'>union wl_argument* <span class='color_p'>args</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_resource_post_no_memory&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_resource_queue_event&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource</span>, <span class='nowrap'>uint32_t <span class='color_p'>opcode</span>,</span> <span class='nowrap'>... )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_resource_queue_event_array&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource</span>, <span class='nowrap'>uint32_t <span class='color_p'>opcode</span>,</span> <span class='nowrap'>union wl_argument* <span class='color_p'>args</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_resource_set_destructor&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource</span>, <span class='nowrap'>wl_resource_destroy_func_t <span class='color_p'>destroy</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_resource_set_dispatcher&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource</span>, wl_dispatcher_func_t <span class='color_p'>dispatcher</span>, void const* <span class='color_p'>implementation</span>, <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>wl_resource_destroy_func_t <span class='color_p'>destroy</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_resource_set_implementation&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource</span>, void const* <span class='color_p'>implementation</span>, <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>wl_resource_destroy_func_t <span class='color_p'>destroy</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_resource_set_user_data&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_shm_buffer_begin_access&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_shm_buffer* <span class='color_p'>buffer</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_shm_buffer_create&#160;<span class='sym_p'>(&#160;struct wl_client* <span class='color_p'>client</span>, <span class='nowrap'>uint32_t <span class='color_p'>id</span>,</span> <span class='nowrap'>int32_t <span class='color_p'>width</span>,</span> <span class='nowrap'>int32_t <span class='color_p'>height</span>,</span> <span class='nowrap'>int32_t <span class='color_p'>stride</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>format</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_shm_buffer*</span></span><br/>
+<span class="iname">wl_shm_buffer_end_access&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_shm_buffer* <span class='color_p'>buffer</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_shm_buffer_get&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_shm_buffer*</span></span><br/>
+<span class="iname">wl_shm_buffer_get_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_shm_buffer* <span class='color_p'>buffer</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void*</span></span><br/>
+<span class="iname">wl_shm_buffer_get_format&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_shm_buffer* <span class='color_p'>buffer</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;uint32_t</span></span><br/>
+<span class="iname">wl_shm_buffer_get_height&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_shm_buffer* <span class='color_p'>buffer</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int32_t</span></span><br/>
+<span class="iname">wl_shm_buffer_get_stride&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_shm_buffer* <span class='color_p'>buffer</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int32_t</span></span><br/>
+<span class="iname">wl_shm_buffer_get_width&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_shm_buffer* <span class='color_p'>buffer</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int32_t</span></span><br/>
+<span class="iname">wl_shm_buffer_ref_pool&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_shm_buffer* <span class='color_p'>buffer</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_shm_pool*</span></span><br/>
+<span class="iname">wl_shm_pool_unref&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_shm_pool* <span class='color_p'>pool</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_signal_add&#160;<span class='sym_p'>(&#160;struct wl_signal* <span class='color_p'>signal</span>, <span class='nowrap'>struct wl_listener* <span class='color_p'>listener</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_signal_emit&#160;<span class='sym_p'>(&#160;struct wl_signal* <span class='color_p'>signal</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_signal_get&#160;<span class='sym_p'>(&#160;struct wl_signal* <span class='color_p'>signal</span>, <span class='nowrap'>wl_notify_func_t <span class='color_p'>notify</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_listener*</span></span><br/>
+<span class="iname">wl_signal_init&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_signal* <span class='color_p'>signal</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<br/>
+<span class='h_name'>wayland-server-protocol.h</span><br/>
+<span class="iname">wl_buffer_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_buffer_send_release&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource_</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_callback_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_callback_send_done&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>callback_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_compositor_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_data_device_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_data_device_manager_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_data_device_send_data_offer&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>struct wl_resource* <span class='color_p'>id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_data_device_send_drop&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource_</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_data_device_send_enter&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>serial</span>,</span> struct wl_resource* <span class='color_p'>surface</span>, <span class='nowrap'>wl_fixed_t <span class='color_p'>x</span>,</span> <span class='nowrap'>wl_fixed_t <span class='color_p'>y</span>,</span> <span class='nowrap'>struct wl_resource* <span class='color_p'>id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_data_device_send_leave&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource_</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_data_device_send_motion&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>time</span>,</span> <span class='nowrap'>wl_fixed_t <span class='color_p'>x</span>,</span> <span class='nowrap'>wl_fixed_t <span class='color_p'>y</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_data_device_send_selection&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>struct wl_resource* <span class='color_p'>id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_data_offer_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_data_offer_send_action&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>dnd_action</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_data_offer_send_offer&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>char const* <span class='color_p'>mime_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_data_offer_send_source_actions&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>source_actions</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_data_source_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_data_source_send_action&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>dnd_action</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_data_source_send_cancelled&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource_</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_data_source_send_dnd_drop_performed&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource_</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_data_source_send_dnd_finished&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource_</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_data_source_send_send&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, char const* <span class='color_p'>mime_type</span>, <span class='nowrap'>int32_t <span class='color_p'>fd</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_data_source_send_target&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>char const* <span class='color_p'>mime_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_display_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_keyboard_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_keyboard_send_enter&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>serial</span>,</span> struct wl_resource* <span class='color_p'>surface</span>, <span class='nowrap'>struct wl_array* <span class='color_p'>keys</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_keyboard_send_key&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>serial</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>time</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>key</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>state</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_keyboard_send_keymap&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>format</span>,</span> <span class='nowrap'>int32_t <span class='color_p'>fd</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>size</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_keyboard_send_leave&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>serial</span>,</span> <span class='nowrap'>struct wl_resource* <span class='color_p'>surface</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_keyboard_send_modifiers&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>serial</span>,</span> uint32_t <span class='color_p'>mods_depressed</span>, uint32_t <span class='color_p'>mods_latched</span>, uint32_t <span class='color_p'>mods_locked</span>, <span class='nowrap'>uint32_t <span class='color_p'>group</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_keyboard_send_repeat_info&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>int32_t <span class='color_p'>rate</span>,</span> <span class='nowrap'>int32_t <span class='color_p'>delay</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_output_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_output_send_done&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource_</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_output_send_geometry&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>int32_t <span class='color_p'>x</span>,</span> <span class='nowrap'>int32_t <span class='color_p'>y</span>,</span> int32_t <span class='color_p'>physical_width</span>, int32_t <span class='color_p'>physical_height</span>, int32_t <span class='color_p'>subpixel</span>, char const* <span class='color_p'>make</span>, char const* <span class='color_p'>model</span>, <span class='nowrap'>int32_t <span class='color_p'>transform</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_output_send_mode&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>flags</span>,</span> <span class='nowrap'>int32_t <span class='color_p'>width</span>,</span> <span class='nowrap'>int32_t <span class='color_p'>height</span>,</span> <span class='nowrap'>int32_t <span class='color_p'>refresh</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_output_send_scale&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>int32_t <span class='color_p'>factor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_pointer_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_pointer_send_axis&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>time</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>axis</span>,</span> <span class='nowrap'>wl_fixed_t <span class='color_p'>value</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_pointer_send_axis_discrete&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>axis</span>,</span> <span class='nowrap'>int32_t <span class='color_p'>discrete</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_pointer_send_axis_source&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>axis_source</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_pointer_send_axis_stop&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>time</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>axis</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_pointer_send_button&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>serial</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>time</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>button</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>state</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_pointer_send_enter&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>serial</span>,</span> struct wl_resource* <span class='color_p'>surface</span>, wl_fixed_t <span class='color_p'>surface_x</span>, <span class='nowrap'>wl_fixed_t <span class='color_p'>surface_y</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_pointer_send_frame&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource_</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_pointer_send_leave&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>serial</span>,</span> <span class='nowrap'>struct wl_resource* <span class='color_p'>surface</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_pointer_send_motion&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>time</span>,</span> wl_fixed_t <span class='color_p'>surface_x</span>, <span class='nowrap'>wl_fixed_t <span class='color_p'>surface_y</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_region_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_registry_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_registry_send_global&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>name</span>,</span> char const* <span class='color_p'>interface</span>, <span class='nowrap'>uint32_t <span class='color_p'>version</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_registry_send_global_remove&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_seat_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_seat_send_capabilities&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>capabilities</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_seat_send_name&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>char const* <span class='color_p'>name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_shell_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_shell_surface_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_shell_surface_send_configure&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>edges</span>,</span> <span class='nowrap'>int32_t <span class='color_p'>width</span>,</span> <span class='nowrap'>int32_t <span class='color_p'>height</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_shell_surface_send_ping&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>serial</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_shell_surface_send_popup_done&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource_</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_shm_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_shm_pool_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_shm_send_format&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>format</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_subcompositor_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_subsurface_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_surface_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_surface_send_enter&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>struct wl_resource* <span class='color_p'>output</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_surface_send_leave&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>struct wl_resource* <span class='color_p'>output</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_touch_interface <span class='attr'>[data]</span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_interface const</span></span><br/>
+<span class="iname">wl_touch_send_cancel&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource_</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_touch_send_down&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>serial</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>time</span>,</span> struct wl_resource* <span class='color_p'>surface</span>, <span class='nowrap'>int32_t <span class='color_p'>id</span>,</span> <span class='nowrap'>wl_fixed_t <span class='color_p'>x</span>,</span> <span class='nowrap'>wl_fixed_t <span class='color_p'>y</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_touch_send_frame&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_resource* <span class='color_p'>resource_</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_touch_send_motion&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>time</span>,</span> <span class='nowrap'>int32_t <span class='color_p'>id</span>,</span> <span class='nowrap'>wl_fixed_t <span class='color_p'>x</span>,</span> <span class='nowrap'>wl_fixed_t <span class='color_p'>y</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_touch_send_up&#160;<span class='sym_p'>(&#160;struct wl_resource* <span class='color_p'>resource_</span>, <span class='nowrap'>uint32_t <span class='color_p'>serial</span>,</span> <span class='nowrap'>uint32_t <span class='color_p'>time</span>,</span> <span class='nowrap'>int32_t <span class='color_p'>id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<br/>
+<span class='h_name'>wayland-server.h</span><br/>
+<span class="iname">wl_client_add_object&#160;<span class='sym_p'>(&#160;struct wl_client* <span class='color_p'>client</span>, struct wl_interface const* <span class='color_p'>interface</span>, void const* <span class='color_p'>implementation</span>, <span class='nowrap'>uint32_t <span class='color_p'>id</span>,</span> <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_resource*</span></span><br/>
+<span class="iname">wl_client_add_resource&#160;<span class='sym_p'>(&#160;struct wl_client* <span class='color_p'>client</span>, <span class='nowrap'>struct wl_resource* <span class='color_p'>resource</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;uint32_t</span></span><br/>
+<span class="iname">wl_client_new_object&#160;<span class='sym_p'>(&#160;struct wl_client* <span class='color_p'>client</span>, struct wl_interface const* <span class='color_p'>interface</span>, void const* <span class='color_p'>implementation</span>, <span class='nowrap'>void* <span class='color_p'>data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_resource*</span></span><br/>
+<span class="iname">wl_debug_server_debug_func_set&#160;<span class='sym_p'>(&#160;<span class='nowrap'>wl_server_debug_func_ptr <span class='color_p'>debug_func</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;wl_server_debug_func_ptr</span></span><br/>
+<span class="iname">wl_display_add_global&#160;<span class='sym_p'>(&#160;struct wl_display* <span class='color_p'>display</span>, struct wl_interface const* <span class='color_p'>interface</span>, <span class='nowrap'>void* <span class='color_p'>data</span>,</span> <span class='nowrap'>wl_global_bind_func_t <span class='color_p'>bind</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;struct wl_global*</span></span><br/>
+<span class="iname">wl_display_remove_global&#160;<span class='sym_p'>(&#160;struct wl_display* <span class='color_p'>display</span>, <span class='nowrap'>struct wl_global* <span class='color_p'>global</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<br/>
+<span class='h_name'>wayland-util.h</span><br/>
+<span class="iname">wl_array_add&#160;<span class='sym_p'>(&#160;struct wl_array* <span class='color_p'>array</span>, <span class='nowrap'>size_t <span class='color_p'>size</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void*</span></span><br/>
+<span class="iname">wl_array_copy&#160;<span class='sym_p'>(&#160;struct wl_array* <span class='color_p'>array</span>, <span class='nowrap'>struct wl_array* <span class='color_p'>source</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">wl_array_init&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_array* <span class='color_p'>array</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_array_release&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_array* <span class='color_p'>array</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_fixed_from_double&#160;<span class='sym_p'>(&#160;<span class='nowrap'>double <span class='color_p'>d</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;wl_fixed_t</span></span><br/>
+<span class="iname">wl_fixed_from_int&#160;<span class='sym_p'>(&#160;<span class='nowrap'>int <span class='color_p'>i</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;wl_fixed_t</span></span><br/>
+<span class="iname">wl_fixed_to_double&#160;<span class='sym_p'>(&#160;<span class='nowrap'>wl_fixed_t <span class='color_p'>f</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;double</span></span><br/>
+<span class="iname">wl_fixed_to_int&#160;<span class='sym_p'>(&#160;<span class='nowrap'>wl_fixed_t <span class='color_p'>f</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">wl_list_empty&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_list const* <span class='color_p'>list</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">wl_list_init&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_list* <span class='color_p'>list</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_list_insert&#160;<span class='sym_p'>(&#160;struct wl_list* <span class='color_p'>list</span>, <span class='nowrap'>struct wl_list* <span class='color_p'>elm</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_list_insert_list&#160;<span class='sym_p'>(&#160;struct wl_list* <span class='color_p'>list</span>, <span class='nowrap'>struct wl_list* <span class='color_p'>other</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<span class="iname">wl_list_length&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_list const* <span class='color_p'>list</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">wl_list_remove&#160;<span class='sym_p'>(&#160;<span class='nowrap'>struct wl_list* <span class='color_p'>elm</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;void</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes'></a><a name='Other_Source_Changes_In_Constants'></a><h2>Other Changes in Constants (16)</h2><hr/>
+<span class='h_name'>eom-server-protocol.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_11')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_ATTRIBUTE</span>
+<br/>
+<div id="c_11" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_ATTRIBUTE</b> with value <b>4</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_12')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_ATTRIBUTE_SINCE_VERSION</span>
+<br/>
+<div id="c_12" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_ATTRIBUTE_SINCE_VERSION</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_13')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_COUNT</span>
+<br/>
+<div id="c_13" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_COUNT</b> with value <b>0</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_14')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_COUNT_SINCE_VERSION</span>
+<br/>
+<div id="c_14" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_COUNT_SINCE_VERSION</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_15')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_INFO</span>
+<br/>
+<div id="c_15" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_INFO</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_16')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_INFO_SINCE_VERSION</span>
+<br/>
+<div id="c_16" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_INFO_SINCE_VERSION</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_17')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_MODE</span>
+<br/>
+<div id="c_17" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_MODE</b> with value <b>3</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_18')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_MODE_SINCE_VERSION</span>
+<br/>
+<div id="c_18" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_MODE_SINCE_VERSION</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_19')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_SET_WINDOW</span>
+<br/>
+<div id="c_19" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_SET_WINDOW</b> with value <b>5</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_20')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_SET_WINDOW_SINCE_VERSION</span>
+<br/>
+<div id="c_20" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_SET_WINDOW_SINCE_VERSION</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_21')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_TYPE</span>
+<br/>
+<div id="c_21" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_TYPE</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_22')">
+<span class='ext'>[+]</span> WL_EOM_OUTPUT_TYPE_SINCE_VERSION</span>
+<br/>
+<div id="c_22" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EOM_OUTPUT_TYPE_SINCE_VERSION</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<span class='h_name'>wayland-server-core.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_23')">
+<span class='ext'>[+]</span> WL_EVENT_ERROR</span>
+<br/>
+<div id="c_23" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EVENT_ERROR</b> with value <b>8</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_24')">
+<span class='ext'>[+]</span> WL_EVENT_HANGUP</span>
+<br/>
+<div id="c_24" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EVENT_HANGUP</b> with value <b>4</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_25')">
+<span class='ext'>[+]</span> WL_EVENT_READABLE</span>
+<br/>
+<div id="c_25" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EVENT_READABLE</b> with value <b>1</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_26')">
+<span class='ext'>[+]</span> WL_EVENT_WRITABLE</span>
+<br/>
+<div id="c_26" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>WL_EVENT_WRITABLE</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (3)</h2><hr/>
+<div class='h_list'>
+eom-connect.h<br/>
+eom.h<br/>
+eom_internal.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Shared Libraries (1)</h2><hr/>
+<div class='lib_list'>
+libeom.so.0.0.0<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><hr/>
+<div class='footer' align='right'><i>Generated by <a href='http://lvc.github.io/abi-compliance-checker/'>ABI Compliance Checker</a> 1.99.18 &#160;</i>
+</div>
+<br/>
+
+</body></html>

@@ -1,0 +1,20 @@
+package refapp;
+
+public class ResultRow {
+	String name;
+	String binary;
+	String install;
+	String exploratory;
+	String unistall;
+	
+	public ResultRow(String name, String binary, String install, String exploratory, String unistall) {
+		
+		this.name = name;
+		this.binary = binary;
+		this.install = install;
+		this.unistall = unistall;
+		this.exploratory = exploratory;
+	}
+	
+
+}

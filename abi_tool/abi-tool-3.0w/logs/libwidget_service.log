@@ -1,0 +1,305 @@
+Temporary header file '/tmp/LopZW23Mxj/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_service.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_service_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_util.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_abi.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_buffer.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_cmd_list.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_errno.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_script.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/LopZW23Mxj/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /tmp/LopZW23Mxj/dump1.h:9:0:
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:58:18: error: duplicate ‘const’
+ extern const int const widget_conf_is_loaded(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:71:18: error: duplicate ‘const’
+ extern const int const widget_conf_use_xmonitor(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:97:18: error: duplicate ‘const’
+ extern const int const widget_conf_check_lcd(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:109:18: error: duplicate ‘const’
+ extern const int const widget_conf_use_event_time(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:122:18: error: duplicate ‘const’
+ extern const int const widget_conf_auto_align(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:150:18: error: duplicate ‘const’
+ extern const int const widget_conf_use_sw_backend(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:178:18: error: duplicate ‘const’
+ extern const int const widget_conf_debug_mode(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:189:18: error: duplicate ‘const’
+ extern const int const widget_conf_overwrite_content(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:194:18: error: duplicate ‘const’
+ extern const int const widget_conf_com_core_thread(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:199:27: error: duplicate ‘const’
+ extern const unsigned int const widget_conf_base_width(void);
+                           ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:204:27: error: duplicate ‘const’
+ extern const unsigned int const widget_conf_base_height(void);
+                           ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:209:21: error: duplicate ‘const’
+ extern const double const widget_conf_minimum_period(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:214:18: error: duplicate ‘const’
+ extern const int const widget_conf_default_pixels(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:234:21: error: duplicate ‘const’
+ extern const double const widget_conf_default_period(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:239:21: error: duplicate ‘const’
+ extern const double const widget_conf_default_packet_time(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:254:28: error: duplicate ‘const’
+ extern const unsigned long const widget_conf_minimum_space(void);
+                            ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:264:21: error: duplicate ‘const’
+ extern const double const widget_conf_slave_ttl(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:269:21: error: duplicate ‘const’
+ extern const double const widget_conf_slave_activate_time(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:271:21: error: duplicate ‘const’
+ extern const double const widget_conf_slave_terminate_time(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:276:21: error: duplicate ‘const’
+ extern const double const widget_conf_slave_relaunch_time(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:281:18: error: duplicate ‘const’
+ extern const int const widget_conf_slave_relaunch_count(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:286:18: error: duplicate ‘const’
+ extern const int const widget_conf_max_log_line(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:291:18: error: duplicate ‘const’
+ extern const int const widget_conf_max_log_file(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:296:28: error: duplicate ‘const’
+ extern const unsigned long const widget_conf_sqlite_flush_max(void);
+                            ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:351:21: error: duplicate ‘const’
+ extern const double const widget_conf_ping_time(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:356:18: error: duplicate ‘const’
+ extern const int const widget_conf_slave_max_load(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:370:18: error: duplicate ‘const’
+ extern const int const widget_conf_premultiplied_alpha(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:375:21: error: duplicate ‘const’
+ extern const double const widget_conf_gbar_request_timeout(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:380:21: error: duplicate ‘const’
+ extern const double const widget_conf_scale_width_factor(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:385:21: error: duplicate ‘const’
+ extern const double const widget_conf_scale_height_factor(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:420:18: error: duplicate ‘const’
+ extern const int const widget_conf_extra_buffer_count(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:425:18: error: duplicate ‘const’
+ extern const int const widget_conf_use_gettimeofday(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:430:18: error: duplicate ‘const’
+ extern const int const widget_conf_slave_event_boost_off(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:435:18: error: duplicate ‘const’
+ extern const int const widget_conf_slave_event_boost_on(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:440:21: error: duplicate ‘const’
+ extern const double const widget_conf_event_filter(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:445:18: error: duplicate ‘const’
+ extern const int const widget_conf_slave_limit_to_ttl(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:450:18: error: duplicate ‘const’
+ extern const int const widget_conf_frame_skip(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:455:18: error: duplicate ‘const’
+ extern const int const widget_conf_slave_auto_cache_flush(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:467:18: error: duplicate ‘const’
+ extern const int const widget_conf_force_to_terminate(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:469:21: error: duplicate ‘const’
+ extern const double const widget_conf_fault_detect_in_time(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:470:18: error: duplicate ‘const’
+ extern const int const widget_conf_fault_detect_count(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:471:18: error: duplicate ‘const’
+ extern const int const widget_conf_reactivate_on_pause(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:473:21: error: duplicate ‘const’
+ extern const double const widget_conf_visibility_change_delay(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:474:18: error: duplicate ‘const’
+ extern const int const widget_conf_click_region(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/widget_service/widget_conf.h:476:18: error: duplicate ‘const’
+ extern const int const widget_conf_update_on_pause(void);
+                  ^
+
+Temporary header file '/tmp/LopZW23Mxj/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_service.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_service_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_errno.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_instance.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/LopZW23Mxj/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/aul
+
+In file included from /tmp/LopZW23Mxj/dump2.h:5:0:
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:58:18: error: duplicate ‘const’
+ extern const int const widget_conf_is_loaded(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:71:18: error: duplicate ‘const’
+ extern const int const widget_conf_use_xmonitor(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:97:18: error: duplicate ‘const’
+ extern const int const widget_conf_check_lcd(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:109:18: error: duplicate ‘const’
+ extern const int const widget_conf_use_event_time(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:122:18: error: duplicate ‘const’
+ extern const int const widget_conf_auto_align(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:150:18: error: duplicate ‘const’
+ extern const int const widget_conf_use_sw_backend(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:178:18: error: duplicate ‘const’
+ extern const int const widget_conf_debug_mode(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:189:18: error: duplicate ‘const’
+ extern const int const widget_conf_overwrite_content(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:194:18: error: duplicate ‘const’
+ extern const int const widget_conf_com_core_thread(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:199:27: error: duplicate ‘const’
+ extern const unsigned int const widget_conf_base_width(void);
+                           ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:204:27: error: duplicate ‘const’
+ extern const unsigned int const widget_conf_base_height(void);
+                           ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:209:21: error: duplicate ‘const’
+ extern const double const widget_conf_minimum_period(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:214:18: error: duplicate ‘const’
+ extern const int const widget_conf_default_pixels(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:234:21: error: duplicate ‘const’
+ extern const double const widget_conf_default_period(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:239:21: error: duplicate ‘const’
+ extern const double const widget_conf_default_packet_time(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:254:28: error: duplicate ‘const’
+ extern const unsigned long const widget_conf_minimum_space(void);
+                            ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:264:21: error: duplicate ‘const’
+ extern const double const widget_conf_slave_ttl(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:269:21: error: duplicate ‘const’
+ extern const double const widget_conf_slave_activate_time(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:271:21: error: duplicate ‘const’
+ extern const double const widget_conf_slave_terminate_time(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:276:21: error: duplicate ‘const’
+ extern const double const widget_conf_slave_relaunch_time(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:281:18: error: duplicate ‘const’
+ extern const int const widget_conf_slave_relaunch_count(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:286:18: error: duplicate ‘const’
+ extern const int const widget_conf_max_log_line(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:291:18: error: duplicate ‘const’
+ extern const int const widget_conf_max_log_file(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:296:28: error: duplicate ‘const’
+ extern const unsigned long const widget_conf_sqlite_flush_max(void);
+                            ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:351:21: error: duplicate ‘const’
+ extern const double const widget_conf_ping_time(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:356:18: error: duplicate ‘const’
+ extern const int const widget_conf_slave_max_load(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:370:18: error: duplicate ‘const’
+ extern const int const widget_conf_premultiplied_alpha(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:375:21: error: duplicate ‘const’
+ extern const double const widget_conf_gbar_request_timeout(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:380:21: error: duplicate ‘const’
+ extern const double const widget_conf_scale_width_factor(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:385:21: error: duplicate ‘const’
+ extern const double const widget_conf_scale_height_factor(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:425:18: error: duplicate ‘const’
+ extern const int const widget_conf_extra_buffer_count(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:430:18: error: duplicate ‘const’
+ extern const int const widget_conf_use_gettimeofday(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:435:18: error: duplicate ‘const’
+ extern const int const widget_conf_slave_event_boost_off(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:440:18: error: duplicate ‘const’
+ extern const int const widget_conf_slave_event_boost_on(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:445:21: error: duplicate ‘const’
+ extern const double const widget_conf_event_filter(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:450:18: error: duplicate ‘const’
+ extern const int const widget_conf_slave_limit_to_ttl(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:455:18: error: duplicate ‘const’
+ extern const int const widget_conf_frame_skip(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:460:18: error: duplicate ‘const’
+ extern const int const widget_conf_slave_auto_cache_flush(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:472:18: error: duplicate ‘const’
+ extern const int const widget_conf_force_to_terminate(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:474:21: error: duplicate ‘const’
+ extern const double const widget_conf_fault_detect_in_time(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:475:18: error: duplicate ‘const’
+ extern const int const widget_conf_fault_detect_count(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:476:18: error: duplicate ‘const’
+ extern const int const widget_conf_reactivate_on_pause(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:478:21: error: duplicate ‘const’
+ extern const double const widget_conf_visibility_change_delay(void);
+                     ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:479:18: error: duplicate ‘const’
+ extern const int const widget_conf_click_region(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:481:18: error: duplicate ‘const’
+ extern const int const widget_conf_update_on_pause(void);
+                  ^
+/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/widget_service/widget_conf.h:482:18: error: duplicate ‘const’
+ extern const int const widget_conf_enable_resource_lock(void);
+                  ^
+

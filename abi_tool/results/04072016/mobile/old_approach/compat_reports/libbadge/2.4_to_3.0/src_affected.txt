@@ -1,0 +1,7 @@
+_badget_get_count
+_badget_set_count
+badge_foreach_existed
+badge_setting_property_get
+_badget_set_display
+_badget_get_display
+badge_setting_property_set

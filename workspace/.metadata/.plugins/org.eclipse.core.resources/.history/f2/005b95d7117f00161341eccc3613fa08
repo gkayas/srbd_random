@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="892.0" prefWidth="1144.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxviewer.MainController">
+   <children>
+      <SplitPane dividerPositions="0.15384615384615385" orientation="VERTICAL" prefHeight="598.0" prefWidth="613.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane maxHeight="88.0" minHeight="88.0" prefHeight="88.0" prefWidth="802.0">
+               <children>
+                  <HBox fx:id="containerBtn" alignment="CENTER_LEFT" maxHeight="88.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="browseBtn" mnemonicParsing="false" onAction="browseBtnClicked" prefHeight="40.0" prefWidth="100.0" text="Browse">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="runServerBtn" mnemonicParsing="false" onAction="#runServerBtnClicked" prefHeight="40.0" prefWidth="125.0" text="Run Server">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="runBtn" mnemonicParsing="false" onAction="#runBtnClicked" prefHeight="40.0" prefWidth="125.0" text="Run App">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="rerunBtn" layoutX="68.0" layoutY="42.0" mnemonicParsing="false" onAction="#rerunBtnClicked" prefHeight="40.0" prefWidth="125.0" text="Re-Run App">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="runSingleBtn" layoutX="169.0" layoutY="42.0" mnemonicParsing="false" onAction="#runsingleBtnClicked" prefHeight="40.0" prefWidth="135.0" text="Run Single App">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="interfaceBtn" mnemonicParsing="false" onAction="#interfaceBtnClicked" prefHeight="40.0" prefWidth="125.0" text="Run Interface">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.29797979797979796" prefHeight="498.0" prefWidth="734.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="57.0" layoutY="119.0" prefHeight="496.0" prefWidth="214.0" spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <CheckBox fx:id="installCheck" alignment="CENTER" mnemonicParsing="false" prefHeight="18.0" prefWidth="112.0" text="Install" textFill="#141313" />
+                                    <CheckBox fx:id="launchCheck" alignment="CENTER" mnemonicParsing="false" prefHeight="18.0" prefWidth="112.0" text="Launch" />
+                                    <CheckBox fx:id="exploratoryCheck" alignment="CENTER" mnemonicParsing="false" prefHeight="18.0" prefWidth="112.0" text="Exploratory" />
+                                    <CheckBox fx:id="closeCheck" alignment="CENTER" mnemonicParsing="false" prefHeight="12.0" prefWidth="112.0" text="Close" />
+                                    <CheckBox fx:id="uninstallCheck" alignment="CENTER" mnemonicParsing="false" prefHeight="18.0" prefWidth="112.0" text="Uninstall" />
+                                    <CheckBox fx:id="crashCheck" alignment="CENTER" mnemonicParsing="false" prefHeight="18.0" prefWidth="112.0" text="Detect Crash" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <SplitPane dividerPositions="0.7400793650793651" orientation="VERTICAL" prefHeight="506.0" prefWidth="586.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="261.0" prefWidth="609.0">
+                                       <children>
+                                          <TableView fx:id="tcTable" layoutX="1.0" layoutY="-2.0" prefHeight="363.0" prefWidth="732.0" styleClass="custom-align" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columns>
+                                                <TableColumn fx:id="appName" prefWidth="260.0" text="App Name" />
+                                                <TableColumn fx:id="install" prefWidth="72.0" text="Install" />
+                                                <TableColumn fx:id="launch" prefWidth="71.0" text="Launch" />
+                                                <TableColumn fx:id="exploratory" prefWidth="106.0" text="Exploratory" />
+                                                <TableColumn fx:id="close" prefWidth="93.0" text="Close" />
+                                                <TableColumn fx:id="uninstall" prefWidth="106.0" text="Uninstall" />
+                                                <TableColumn fx:id="crash" prefWidth="78.0" text="Crash" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="191.0" prefWidth="609.0">
+                                       <children>
+                                          <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                                            </content>
+                                          </ScrollPane>
+                                          <TextArea fx:id="console" layoutX="186.0" layoutY="26.0" prefHeight="251.0" prefWidth="609.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

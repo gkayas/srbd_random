@@ -1,0 +1,44 @@
+Temporary header file '/tmp/ApAs4X193d/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/notification/notification.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/notification/notification_error.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/notification/notification_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/notification/notification_list.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/notification/notification_ongoing_flag.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/notification/notification_setting.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/notification/notification_setting_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/notification/notification_status.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/notification/notification_status_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/notification/notification_text_domain.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/notification/notification_type.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/notification/service/notification_setting_service.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/notification/service/notification_ipc.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/notification/service/notification_noti.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/ApAs4X193d/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/notification -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/appfw
+
+Temporary header file '/tmp/ApAs4X193d/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_db.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_error.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_ipc.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_list.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_noti.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_ongoing.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_ongoing_flag.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_setting.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_setting_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_setting_service.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_status.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_status_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_text_domain.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification/notification_type.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/ApAs4X193d/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/notification -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/glib-2.0 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/appfw -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/lib/glib-2.0/include
+

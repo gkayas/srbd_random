@@ -1,0 +1,466 @@
+Temporary header file '/tmp/x1lgqlhApA/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/service-adaptor-client/service-adaptor-client.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/service-adaptor/service-adaptor.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/service-adaptor-client/service-adaptor-client-auth.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/service-adaptor-client/service-adaptor-client-contact.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/service-adaptor-client/service-adaptor-client-message.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/service-adaptor-client/service-adaptor-client-push.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/service-adaptor-client/service-adaptor-client-shop.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/service-adaptor-client/service-adaptor-client-storage.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/service-adaptor-client/service_adaptor_client_log.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/service-adaptor-client/service_adaptor_client_type.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/service-adaptor/dbus-server.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/service_adaptor_client.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/service_adaptor_client_plugin.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/service_adaptor_client_storage.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include/service_adaptor_client_storage_internal.h"
+
+  // add classes
+  _GArray* tmp_add_class_0;
+  _GByteArray* tmp_add_class_1;
+  _GCompletion* tmp_add_class_2;
+  _GCond* tmp_add_class_3;
+  _GDate* tmp_add_class_4;
+  _GDebugKey* tmp_add_class_5;
+  _GDoubleIEEE754* tmp_add_class_6;
+  _GError* tmp_add_class_7;
+  _GFloatIEEE754* tmp_add_class_8;
+  _GHashTableIter* tmp_add_class_9;
+  _GHook* tmp_add_class_10;
+  _GHookList* tmp_add_class_11;
+  _GIOChannel* tmp_add_class_12;
+  _GIOFuncs* tmp_add_class_13;
+  _GList* tmp_add_class_14;
+  _GMarkupParser* tmp_add_class_15;
+  _GMemVTable* tmp_add_class_16;
+  _GMutex* tmp_add_class_17;
+  _GNode* tmp_add_class_18;
+  _GOnce* tmp_add_class_19;
+  _GOptionEntry* tmp_add_class_20;
+  _GPollFD* tmp_add_class_21;
+  _GPrivate* tmp_add_class_22;
+  _GPtrArray* tmp_add_class_23;
+  _GQueue* tmp_add_class_24;
+  _GRWLock* tmp_add_class_25;
+  _GRecMutex* tmp_add_class_26;
+  _GSList* tmp_add_class_27;
+  _GScanner* tmp_add_class_28;
+  _GScannerConfig* tmp_add_class_29;
+  _GSource* tmp_add_class_30;
+  _GSourceCallbackFuncs* tmp_add_class_31;
+  _GSourceFuncs* tmp_add_class_32;
+  _GStaticPrivate* tmp_add_class_33;
+  _GStaticRWLock* tmp_add_class_34;
+  _GStaticRecMutex* tmp_add_class_35;
+  _GString* tmp_add_class_36;
+  _GThread* tmp_add_class_37;
+  _GThreadFunctions* tmp_add_class_38;
+  _GThreadPool* tmp_add_class_39;
+  _GTimeVal* tmp_add_class_40;
+  _GTokenValue* tmp_add_class_41;
+  _GTrashStack* tmp_add_class_42;
+  _GTuples* tmp_add_class_43;
+  _GVariantBuilder* tmp_add_class_44;
+  _GVariantDict* tmp_add_class_45;
+  _GVariantIter* tmp_add_class_46;
+  _libc_fpstate* tmp_add_class_47;
+  _service_adaptor_chat_id_s* tmp_add_class_48;
+  _service_adaptor_chat_msg_s* tmp_add_class_49;
+  _service_adaptor_contact_info_req_s* tmp_add_class_50;
+  _service_adaptor_contact_info_res_s* tmp_add_class_51;
+  _service_adaptor_contact_req_s* tmp_add_class_52;
+  _service_adaptor_contact_res_s* tmp_add_class_53;
+  _service_adaptor_delivery_ack_s* tmp_add_class_54;
+  _service_adaptor_did_violation_users_s* tmp_add_class_55;
+  _service_adaptor_end_chat_s* tmp_add_class_56;
+  _service_adaptor_error_s* tmp_add_class_57;
+  _service_adaptor_file_path_s* tmp_add_class_58;
+  _service_adaptor_file_s* tmp_add_class_59;
+  _service_adaptor_file_status_s* tmp_add_class_60;
+  _service_adaptor_inbox_message_s* tmp_add_class_61;
+  _service_adaptor_ordered_chat_member_s* tmp_add_class_62;
+  _service_adaptor_phone_number_s* tmp_add_class_63;
+  _service_adaptor_plugin_s* tmp_add_class_64;
+  _service_adaptor_presence_req_s* tmp_add_class_65;
+  _service_adaptor_privacy_info_req_s* tmp_add_class_66;
+  _service_adaptor_privacy_req_s* tmp_add_class_67;
+  _service_adaptor_privacy_res_s* tmp_add_class_68;
+  _service_adaptor_processed_msg_s* tmp_add_class_69;
+  _service_adaptor_profile_req_s* tmp_add_class_70;
+  _service_adaptor_profile_res_s* tmp_add_class_71;
+  _service_adaptor_push_notification_s* tmp_add_class_72;
+  _service_adaptor_read_ack_s* tmp_add_class_73;
+  _service_adaptor_shop_info_s* tmp_add_class_74;
+  _service_adaptor_shop_item_s* tmp_add_class_75;
+  _service_adaptor_task_s* tmp_add_class_76;
+  _service_adaptor_wrong_receiver_s* tmp_add_class_77;
+  _service_storage_cloud_meta_s* tmp_add_class_78;
+  _service_storage_file_s* tmp_add_class_79;
+  _service_storage_media_meta_s* tmp_add_class_80;
+  _service_storage_task_s* tmp_add_class_81;
+  dirent* tmp_add_class_82;
+  dirent64* tmp_add_class_83;
+  pthread_attr_t* tmp_add_class_84;
+  service_adaptor_internal_error_s* tmp_add_class_85;
+  service_adaptor_internal_plugin_s* tmp_add_class_86;
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/x1lgqlhApA/dump1.h"  -I/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/2.4/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/glib-2.0 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/dlog -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/lib/glib-2.0/include
+
+Temporary header file '/tmp/x1lgqlhApA/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service-adaptor.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service-adaptor-client.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service-adaptor-client-auth.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service-adaptor-client-contact.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service-adaptor-client-message.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service-adaptor-client-push.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service-adaptor-client-shop.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service-adaptor-client-storage.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/pluginConfig.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/pluginConfigTypes.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_plugin.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_private.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage_internal.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_type.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/plugin_message.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/private/service-adaptor-client.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/dbus-server.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-provider/auth-adaptor.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-provider/contact-adaptor.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-provider/message-adaptor.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-provider/push-adaptor.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-provider/shop-adaptor.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-provider/storage-adaptor.h"
+
+  // add classes
+  _GArray* tmp_add_class_0;
+  _GByteArray* tmp_add_class_1;
+  _GCompletion* tmp_add_class_2;
+  _GCond* tmp_add_class_3;
+  _GDate* tmp_add_class_4;
+  _GDebugKey* tmp_add_class_5;
+  _GDoubleIEEE754* tmp_add_class_6;
+  _GError* tmp_add_class_7;
+  _GFloatIEEE754* tmp_add_class_8;
+  _GHashTableIter* tmp_add_class_9;
+  _GHook* tmp_add_class_10;
+  _GHookList* tmp_add_class_11;
+  _GIOChannel* tmp_add_class_12;
+  _GIOFuncs* tmp_add_class_13;
+  _GList* tmp_add_class_14;
+  _GMarkupParser* tmp_add_class_15;
+  _GMemVTable* tmp_add_class_16;
+  _GMutex* tmp_add_class_17;
+  _GNode* tmp_add_class_18;
+  _GOnce* tmp_add_class_19;
+  _GOptionEntry* tmp_add_class_20;
+  _GPollFD* tmp_add_class_21;
+  _GPrivate* tmp_add_class_22;
+  _GPtrArray* tmp_add_class_23;
+  _GQueue* tmp_add_class_24;
+  _GRWLock* tmp_add_class_25;
+  _GRecMutex* tmp_add_class_26;
+  _GSList* tmp_add_class_27;
+  _GScanner* tmp_add_class_28;
+  _GScannerConfig* tmp_add_class_29;
+  _GSource* tmp_add_class_30;
+  _GSourceCallbackFuncs* tmp_add_class_31;
+  _GSourceFuncs* tmp_add_class_32;
+  _GStaticPrivate* tmp_add_class_33;
+  _GStaticRWLock* tmp_add_class_34;
+  _GStaticRecMutex* tmp_add_class_35;
+  _GString* tmp_add_class_36;
+  _GThread* tmp_add_class_37;
+  _GThreadFunctions* tmp_add_class_38;
+  _GThreadPool* tmp_add_class_39;
+  _GTimeVal* tmp_add_class_40;
+  _GTokenValue* tmp_add_class_41;
+  _GTrashStack* tmp_add_class_42;
+  _GTuples* tmp_add_class_43;
+  _GVariantBuilder* tmp_add_class_44;
+  _GVariantDict* tmp_add_class_45;
+  _GVariantIter* tmp_add_class_46;
+  _libc_fpstate* tmp_add_class_47;
+  _message_inboxentry* tmp_add_class_48;
+  _plugin_entry_s* tmp_add_class_49;
+  _service_adaptor_chat_id_s* tmp_add_class_50;
+  _service_adaptor_chat_msg_s* tmp_add_class_51;
+  _service_adaptor_contact_info_req_s* tmp_add_class_52;
+  _service_adaptor_contact_info_res_s* tmp_add_class_53;
+  _service_adaptor_contact_req_s* tmp_add_class_54;
+  _service_adaptor_contact_res_s* tmp_add_class_55;
+  _service_adaptor_delivery_ack_s* tmp_add_class_56;
+  _service_adaptor_did_violation_users_s* tmp_add_class_57;
+  _service_adaptor_end_chat_s* tmp_add_class_58;
+  _service_adaptor_error_s* tmp_add_class_59;
+  _service_adaptor_file_path_s* tmp_add_class_60;
+  _service_adaptor_file_s* tmp_add_class_61;
+  _service_adaptor_file_status_s* tmp_add_class_62;
+  _service_adaptor_inbox_message_s* tmp_add_class_63;
+  _service_adaptor_ordered_chat_member_s* tmp_add_class_64;
+  _service_adaptor_phone_number_s* tmp_add_class_65;
+  _service_adaptor_plugin_s* tmp_add_class_66;
+  _service_adaptor_presence_req_s* tmp_add_class_67;
+  _service_adaptor_privacy_info_req_s* tmp_add_class_68;
+  _service_adaptor_privacy_req_s* tmp_add_class_69;
+  _service_adaptor_privacy_res_s* tmp_add_class_70;
+  _service_adaptor_processed_msg_s* tmp_add_class_71;
+  _service_adaptor_profile_req_s* tmp_add_class_72;
+  _service_adaptor_profile_res_s* tmp_add_class_73;
+  _service_adaptor_push_notification_s* tmp_add_class_74;
+  _service_adaptor_read_ack_s* tmp_add_class_75;
+  _service_adaptor_s* tmp_add_class_76;
+  _service_adaptor_shop_info_s* tmp_add_class_77;
+  _service_adaptor_shop_item_s* tmp_add_class_78;
+  _service_adaptor_task_s* tmp_add_class_79;
+  _service_adaptor_wrong_receiver_s* tmp_add_class_80;
+  _service_plugin_s* tmp_add_class_81;
+  _service_storage_cloud_meta_s* tmp_add_class_82;
+  _service_storage_file_s* tmp_add_class_83;
+  _service_storage_media_meta_s* tmp_add_class_84;
+  _service_storage_task_s* tmp_add_class_85;
+  _storage_adaptor_cloud_meta_s* tmp_add_class_86;
+  _storage_adaptor_media_meta_s* tmp_add_class_87;
+  auth_adaptor_error_code_s* tmp_add_class_88;
+  auth_adaptor_listener_s* tmp_add_class_89;
+  auth_adaptor_plugin_context_s* tmp_add_class_90;
+  auth_adaptor_plugin_handle_s* tmp_add_class_91;
+  auth_adaptor_plugin_listener_s* tmp_add_class_92;
+  contact_adaptor_contact_image_s* tmp_add_class_93;
+  contact_adaptor_contact_info_req_s* tmp_add_class_94;
+  contact_adaptor_contact_info_res_s* tmp_add_class_95;
+  contact_adaptor_contact_req_s* tmp_add_class_96;
+  contact_adaptor_contact_res_s* tmp_add_class_97;
+  contact_adaptor_error_code_s* tmp_add_class_98;
+  contact_adaptor_file_path_s* tmp_add_class_99;
+  contact_adaptor_listener_s* tmp_add_class_100;
+  contact_adaptor_plugin_context_s* tmp_add_class_101;
+  contact_adaptor_plugin_handle_s* tmp_add_class_102;
+  contact_adaptor_plugin_listener_s* tmp_add_class_103;
+  contact_adaptor_presence_info_s* tmp_add_class_104;
+  contact_adaptor_privacy_info_req_s* tmp_add_class_105;
+  contact_adaptor_privacy_req_s* tmp_add_class_106;
+  contact_adaptor_privacy_res_s* tmp_add_class_107;
+  contact_adaptor_profile_req_s* tmp_add_class_108;
+  contact_adaptor_profile_res_s* tmp_add_class_109;
+  curl_cb_data_s* tmp_add_class_110;
+  dirent* tmp_add_class_111;
+  dirent64* tmp_add_class_112;
+  f_owner_ex* tmp_add_class_113;
+  file_handle* tmp_add_class_114;
+  flock64* tmp_add_class_115;
+  group_filter* tmp_add_class_116;
+  group_req* tmp_add_class_117;
+  group_source_req* tmp_add_class_118;
+  in6_addr* tmp_add_class_119;
+  in6_pktinfo* tmp_add_class_120;
+  in_addr* tmp_add_class_121;
+  in_pktinfo* tmp_add_class_122;
+  iovec* tmp_add_class_123;
+  ip6_mtuinfo* tmp_add_class_124;
+  ip_mreq* tmp_add_class_125;
+  ip_mreq_source* tmp_add_class_126;
+  ip_mreqn* tmp_add_class_127;
+  ip_msfilter* tmp_add_class_128;
+  ip_opts* tmp_add_class_129;
+  ipv6_mreq* tmp_add_class_130;
+  linger* tmp_add_class_131;
+  message_adaptor_did_violation_users_s* tmp_add_class_132;
+  message_adaptor_error_code_s* tmp_add_class_133;
+  message_adaptor_listener_s* tmp_add_class_134;
+  message_adaptor_plugin_context_s* tmp_add_class_135;
+  message_adaptor_plugin_handle_s* tmp_add_class_136;
+  message_adaptor_plugin_listener_s* tmp_add_class_137;
+  mmsghdr* tmp_add_class_138;
+  msghdr* tmp_add_class_139;
+  osockaddr* tmp_add_class_140;
+  pthread_attr_t* tmp_add_class_141;
+  push_adaptor_error_code_s* tmp_add_class_142;
+  push_adaptor_listener_s* tmp_add_class_143;
+  push_adaptor_notification_data_s* tmp_add_class_144;
+  push_adaptor_plugin_context_s* tmp_add_class_145;
+  push_adaptor_plugin_handle_s* tmp_add_class_146;
+  push_adaptor_plugin_listener_s* tmp_add_class_147;
+  service_adaptor_internal_error_s* tmp_add_class_148;
+  service_adaptor_internal_plugin_s* tmp_add_class_149;
+  shop_adaptor_error_code_s* tmp_add_class_150;
+  shop_adaptor_listener_s* tmp_add_class_151;
+  shop_adaptor_plugin_context_s* tmp_add_class_152;
+  shop_adaptor_plugin_handle_s* tmp_add_class_153;
+  shop_adaptor_plugin_listener_s* tmp_add_class_154;
+  shop_plugin_error_s* tmp_add_class_155;
+  sockaddr* tmp_add_class_156;
+  sockaddr_in* tmp_add_class_157;
+  sockaddr_in6* tmp_add_class_158;
+  sockaddr_storage* tmp_add_class_159;
+  storage_adaptor_error_code_s* tmp_add_class_160;
+  storage_adaptor_file_info_s* tmp_add_class_161;
+  storage_adaptor_file_share_token_s* tmp_add_class_162;
+  storage_adaptor_listener_s* tmp_add_class_163;
+  storage_adaptor_plugin_context_s* tmp_add_class_164;
+  storage_adaptor_plugin_handle_s* tmp_add_class_165;
+  storage_adaptor_plugin_listener_s* tmp_add_class_166;
+  ucred* tmp_add_class_167;
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/x1lgqlhApA/dump2.h"  -I/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include -I/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/glib-2.0 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/lib/glib-2.0/include
+
+In file included from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client.h:22:0,
+                 from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service-adaptor-client.h:34,
+                 from /tmp/x1lgqlhApA/dump2.h:4:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_plugin.h:94:53: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int service_plugin_destroy(service_plugin_h plugin) TIZEN_DEPRECATED_API;
+                                                     ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_plugin.h:120:26: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       const char *value) TIZEN_DEPRECATED_API;
+                          ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_plugin.h:139:24: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       const char *key) TIZEN_DEPRECATED_API;
+                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_plugin.h:163:21: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       char **value) TIZEN_DEPRECATED_API;
+                     ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_plugin.h:190:25: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       int service_mask) TIZEN_DEPRECATED_API;
+                         ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_plugin.h:209:50: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int service_plugin_stop(service_plugin_h plugin) TIZEN_DEPRECATED_API;
+                                                  ^
+In file included from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client.h:23:0,
+                 from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service-adaptor-client.h:34,
+                 from /tmp/x1lgqlhApA/dump2.h:4:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:200:24: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       void *user_data) TIZEN_DEPRECATED_API;
+                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:233:24: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       void *user_data) TIZEN_DEPRECATED_API;
+                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:271:37: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       service_storage_task_h *task) TIZEN_DEPRECATED_API;
+                                     ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:309:37: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       service_storage_task_h *task) TIZEN_DEPRECATED_API;
+                                     ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:351:37: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       service_storage_task_h *task) TIZEN_DEPRECATED_API;
+                                     ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:371:63: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int service_storage_destroy_task(service_storage_task_h task) TIZEN_DEPRECATED_API;
+                                                               ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:392:61: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int service_storage_start_task(service_storage_task_h task) TIZEN_DEPRECATED_API;
+                                                             ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:412:62: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int service_storage_cancel_task(service_storage_task_h task) TIZEN_DEPRECATED_API;
+                                                              ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:437:24: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       void *user_data) TIZEN_DEPRECATED_API;
+                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:452:73: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int service_storage_unset_task_progress_cb(service_storage_task_h task) TIZEN_DEPRECATED_API;
+                                                                         ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:478:24: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       void *user_data) TIZEN_DEPRECATED_API;
+                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:493:78: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int service_storage_unset_task_state_changed_cb(service_storage_task_h task) TIZEN_DEPRECATED_API;
+                                                                              ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:510:46: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       service_storage_file_list_h *dst_list) TIZEN_DEPRECATED_API;
+                                              ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:525:73: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int service_storage_file_list_destroy(service_storage_file_list_h list) TIZEN_DEPRECATED_API;
+                                                                         ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:539:20: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       int *length) TIZEN_DEPRECATED_API;
+                    ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:557:24: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       void *user_data) TIZEN_DEPRECATED_API;
+                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:574:41: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       service_storage_file_h *dst_file) TIZEN_DEPRECATED_API;
+                                         ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:589:63: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int service_storage_file_destroy(service_storage_file_h file) TIZEN_DEPRECATED_API;
+                                                               ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:604:21: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       bool *is_dir) TIZEN_DEPRECATED_API;
+                     ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:619:33: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       unsigned long long *size) TIZEN_DEPRECATED_API;
+                                 ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:637:20: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       char **path) TIZEN_DEPRECATED_API;
+                    ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client_storage.h:655:20: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       char **path) TIZEN_DEPRECATED_API;
+                    ^
+In file included from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service-adaptor-client.h:34:0,
+                 from /tmp/x1lgqlhApA/dump2.h:4:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client.h:109:64: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int service_adaptor_create(service_adaptor_h *service_adaptor) TIZEN_DEPRECATED_API;
+                                                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client.h:125:64: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int service_adaptor_destroy(service_adaptor_h service_adaptor) TIZEN_DEPRECATED_API;
+                                                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client.h:145:24: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       void *user_data) TIZEN_DEPRECATED_API;
+                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client.h:166:33: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       service_plugin_h *plugin) TIZEN_DEPRECATED_API;
+                                 ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client.h:186:47: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int service_adaptor_get_last_result(int *err) TIZEN_DEPRECATED_API;
+                                               ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client.h:206:60: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int service_adaptor_get_last_error_message(char **message) TIZEN_DEPRECATED_API;
+                                                            ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client.h:229:21: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+       char **value) TIZEN_DEPRECATED_API;
+                     ^
+In file included from /tmp/x1lgqlhApA/dump2.h:26:0:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-provider/shop-adaptor.h:82:16: error: redefinition of ‘struct _service_adaptor_shop_info_s’
+ typedef struct _service_adaptor_shop_info_s {
+                ^
+In file included from /tmp/x1lgqlhApA/dump2.h:9:0:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service-adaptor-client-shop.h:39:16: error: previous definition of ‘struct _service_adaptor_shop_info_s’
+ typedef struct _service_adaptor_shop_info_s {
+                ^
+In file included from /tmp/x1lgqlhApA/dump2.h:26:0:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-provider/shop-adaptor.h:92:27: error: invalid type in declaration before ‘;’ token
+ } shop_adaptor_shop_info_s;
+                           ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-provider/shop-adaptor.h:97:16: error: redefinition of ‘struct _service_adaptor_shop_item_s’
+ typedef struct _service_adaptor_shop_item_s {
+                ^
+In file included from /tmp/x1lgqlhApA/dump2.h:9:0:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service-adaptor-client-shop.h:54:16: error: previous definition of ‘struct _service_adaptor_shop_item_s’
+ typedef struct _service_adaptor_shop_item_s {
+                ^
+In file included from /tmp/x1lgqlhApA/dump2.h:26:0:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-provider/shop-adaptor.h:115:27: error: invalid type in declaration before ‘;’ token
+ } shop_adaptor_shop_item_s;
+                           ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-provider/shop-adaptor.h:143:31: error: redeclaration of ‘SERVICE_ADAPTOR_ERROR_NONE’
+  SERVICE_ADAPTOR_ERROR_NONE = 0,
+                               ^
+In file included from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service-adaptor-client.h:34:0,
+                 from /tmp/x1lgqlhApA/dump2.h:4:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service_adaptor_client.h:49:2: note: previous declaration ‘service_adaptor_error_e SERVICE_ADAPTOR_ERROR_NONE’
+  SERVICE_ADAPTOR_ERROR_NONE   = TIZEN_ERROR_NONE,   /**< Success */
+  ^
+In file included from /tmp/x1lgqlhApA/dump2.h:26:0:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-provider/shop-adaptor.h:145:32: error: redeclaration of ‘SERVICE_ADAPTOR_ERROR_DBUS’
+  SERVICE_ADAPTOR_ERROR_DBUS = -2,
+                                ^
+In file included from /tmp/x1lgqlhApA/dump2.h:4:0:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/manual_approach/3.0/usr/include/service-adaptor/service-adaptor-client.h:70:2: note: previous declaration ‘_private_service_adaptor_error_e SERVICE_ADAPTOR_ERROR_DBUS’
+  SERVICE_ADAPTOR_ERROR_DBUS   = 20,
+  ^
+

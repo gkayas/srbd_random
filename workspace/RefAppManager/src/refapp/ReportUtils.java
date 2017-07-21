@@ -1,0 +1,164 @@
+package refapp;
+
+import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Hashtable;
+
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.ss.usermodel.*;
+
+
+public class ReportUtils {
+
+	private static String TEMPLATE_REPORT_FILE_PATH =  "res/report_temp/report.xls";
+	private static String REPORT_DATE_TIME_FORMAT = "yyyy_MM_dd_HH_mm_ss";
+	private static String CURRENT_REPORT_FILE_PATH; 
+
+
+	public static void initialize()
+	{
+
+		//createReport();
+		createReport_updated();
+		//cleanErrorPath();
+	}
+
+	private static String getReportTime()
+	{
+		DateFormat dateFormat = new SimpleDateFormat(REPORT_DATE_TIME_FORMAT);
+		Calendar cal = Calendar.getInstance();
+		return dateFormat.format(cal.getTime());
+	}
+
+	private static void createReport_updated(){
+		FileInputStream templateFile;
+		HSSFWorkbook workbook = null;
+		try{
+			CURRENT_REPORT_FILE_PATH = "reports/report.xls";
+
+			File currentReportFile = new File(CURRENT_REPORT_FILE_PATH);
+			if(currentReportFile.exists())
+			{
+				templateFile = new FileInputStream(CURRENT_REPORT_FILE_PATH);
+			}
+			else
+			{
+				templateFile = new FileInputStream(TEMPLATE_REPORT_FILE_PATH);
+			}
+			workbook = new HSSFWorkbook(templateFile);
+			templateFile.close();
+			FileOutputStream outFile =new FileOutputStream(currentReportFile);
+			System.out.println("[Report] File path: " + currentReportFile.getAbsolutePath());
+			workbook.write(outFile);
+			outFile.close();
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
+
+	private static Cell findRow(HSSFSheet sheet, String cellContent) {
+		for (Row row : sheet) {
+			for (Cell cell : row) {
+				if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
+					if (cell.getRichStringCellValue().getString().trim().equals(cellContent)) {
+						return cell;
+					}
+				}
+			}
+		}               
+		return null;
+	}
+
+	static Hashtable<String , String> getTestCaseResultMap(String moduleName) {
+		Hashtable<String, String> map = null;
+		FileInputStream templateFile;
+		HSSFWorkbook workbook = null;
+		try{
+			map = new Hashtable<String, String>();
+			File file = new File(CURRENT_REPORT_FILE_PATH);
+			if(file.exists())
+			{
+				templateFile = new FileInputStream(CURRENT_REPORT_FILE_PATH);
+			}
+			else
+			{
+				templateFile = new FileInputStream(TEMPLATE_REPORT_FILE_PATH);
+			}
+			workbook = new HSSFWorkbook(templateFile);
+			HSSFSheet sheet = workbook.getSheet(moduleName);
+			for (Row row : sheet) {
+				Cell tcName = row.getCell(0);
+				Cell tcResult = row.getCell(1);
+				map.put(tcName.getStringCellValue(), tcResult.getStringCellValue());
+			}
+			templateFile.close();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return map;
+	}
+
+	public static void resetAllTcResutl(String moduleName) {
+
+		FileInputStream templateFile;
+		HSSFWorkbook workbook = null;
+		try{
+			File file = new File(CURRENT_REPORT_FILE_PATH);
+			if(file.exists())
+			{
+
+				templateFile = new FileInputStream(CURRENT_REPORT_FILE_PATH);
+			}
+			else
+			{
+
+				templateFile = new FileInputStream(TEMPLATE_REPORT_FILE_PATH);
+			}
+			workbook = new HSSFWorkbook(templateFile);
+			HSSFSheet sheet = workbook.getSheet(moduleName);
+			for (Row row : sheet) {
+				Cell tcName = row.getCell(0);
+				Cell tcResult = row.getCell(1);
+				tcResult.setCellValue(TCResult.NR.toString());
+			}
+			templateFile.close();
+
+			FileOutputStream outFile = new FileOutputStream(file);
+			workbook.write(outFile);
+			outFile.close();
+
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+	static void updateExcelResult(String module, String tcid,String result){
+		try{
+			
+			FileInputStream file = new FileInputStream(CURRENT_REPORT_FILE_PATH);
+			HSSFWorkbook workbook = new HSSFWorkbook(file);
+			HSSFSheet sheet = workbook.getSheet(module);
+
+			Cell cell = findRow(sheet,tcid);
+			Cell resultCell = null;
+			HSSFRow sheetrow = sheet.getRow(cell.getRowIndex());
+			resultCell = sheetrow.getCell(cell.getColumnIndex() + 1);
+			resultCell.setCellValue(result);
+			file.close();
+			System.out.println("[Report] updated, Module : " + module + ", TC : " + tcid + ", Result : "+result);
+
+			FileOutputStream outFile =new FileOutputStream(new File(CURRENT_REPORT_FILE_PATH));
+			workbook.write(outFile);
+			outFile.close();
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+}

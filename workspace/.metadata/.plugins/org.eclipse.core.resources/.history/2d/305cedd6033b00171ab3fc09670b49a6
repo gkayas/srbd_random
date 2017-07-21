@@ -1,0 +1,244 @@
+package manager;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Device {
+
+	private String platform;
+	private int screenHeight;
+	private int screenWidth;
+	private String version;
+	private String profile;
+	private boolean isShapeCircle;
+	private boolean isArchArm;
+	private String recommendedVNCtype;
+	private String defaultWatchAppId;
+	private String defaultWatchAppPackageId;
+	private int rotation;
+	private boolean isAndroidConnected;
+	private boolean isTizenConnected;
+	private boolean isReady;
+
+	public Device() throws Exception {
+		isAndroidConnected = false;
+		isTizenConnected = false;
+		isReady = false;
+		checkDevice();
+		setConfig();
+		this.rotation = 0;
+	}
+
+	private void checkDevice() throws Exception {
+		int deviceCount = 0;
+		String deviceStatusLine = null;
+		ArrayList<String> commandOutLines = UtilsCLI.runCommand("sdb devices", null);
+		for (String line : commandOutLines) {
+			if(line.matches(Constant.TIZEN_DEVICES_REGEX)) {
+				Scanner scanner = new Scanner(line);
+				scanner.next();
+				deviceStatusLine = scanner.next();
+				scanner.close();
+				if (deviceStatusLine.contains("device"))
+					isReady = true;
+				deviceCount++;
+				isTizenConnected = true;
+			}
+		}
+
+		String adb = UtilsCLI.getadb();
+
+		commandOutLines = UtilsCLI.runCommand(adb+" devices", null);
+		for (String line : commandOutLines) {
+
+			if(line.matches(Constant.ANDROID_DEVICES_REGEX)) {
+				Scanner scanner = new Scanner(line);
+				scanner.next();
+				deviceStatusLine = scanner.next();
+				scanner.close();
+				System.out.println(deviceStatusLine);
+				if (deviceStatusLine.contains("device"))
+					isReady = true;
+				deviceCount++;
+				isAndroidConnected = true;
+			}
+		}
+
+
+		if (deviceCount == 0) throw new Exception("Target or emulator not found, please connect device or run emulator!!");
+		else if (deviceCount > 1) throw new Exception("More than one device connected, please connect only one device!!");
+
+		if (!isReady) throw new Exception("Target is " + deviceStatusLine + " state!!");
+	}
+
+//	private boolean isDeviceReady(ArrayList<String> commandOutLines)
+//	{
+//		for (String line : commandOutLines) {
+//			if(line.matches(Constant.TIZEN_DEVICES_REGEX)) {
+//				Scanner scanner = new Scanner(line);
+//				scanner.next();
+//				String deviceStatusLine = scanner.next();
+//				scanner.close();
+//				if (deviceStatusLine.contains("device")) return true;
+//			}
+//		}
+//		return false;
+//	}
+
+private String getProfileFromModelConf(String line) {
+
+		String [] parts = line.split(">");
+
+		if(parts.length > 1) {
+			parts = parts[1].split("<");
+
+			if(parts[0].equalsIgnoreCase("mobile")) {
+				return "Mobile";
+			} else if(parts[0].equalsIgnoreCase("wearable")) {
+				return "Wearable";
+			} else if(parts[0].equalsIgnoreCase("tv")) {
+				return "TV";
+			}
+
+			return parts[0];
+		}
+
+		return null;
+	}
+
+       public boolean isAndroid() {
+             return isAndroidConnected;
+      }
+     public boolean isTizen() {
+              return isTizenConnected;
+              this.rotation = 0;
+        }
+ 
+
+
+	private void setConfig() {
+		if(isTizen()){
+			UtilsCLI.runCommand("sdb root on", null);
+			ArrayList<String> commandOutLines = UtilsCLI.runCommand("sdb shell cat " + Constant.CONFIG_MODEL, null);
+			for (String line : commandOutLines) {
+				if (line.contains(Constant.MODEL_CONFIG_TAG_PROFILE))
+					this.profile = getProfileFromModelConf(line);
+				else if (line.contains(Constant.MODEL_CONFIG_TAG_VERSION))
+					this.version = getTagValue(line,Constant.MODEL_CONFIG_TAG_VERSION);
+				else if (line.contains(Constant.MODEL_CONFIG_TAG_SHAPE))
+					this.isShapeCircle = Boolean.parseBoolean(getTagValue(line,Constant.MODEL_CONFIG_TAG_SHAPE));
+				else if (line.contains(Constant.MODEL_CONFIG_TAG_ARCH))
+					this.isArchArm = Boolean.parseBoolean(getTagValue(line,Constant.MODEL_CONFIG_TAG_ARCH));
+				else if (line.contains(Constant.MODEL_CONFIG_TAG_SCREEN_HEIGHT))
+					this.screenHeight = Integer.parseInt(getTagValue(line,Constant.MODEL_CONFIG_TAG_SCREEN_HEIGHT));
+				else if (line.contains(Constant.MODEL_CONFIG_TAG_SCREEN_WIDTH))
+					this.screenWidth = Integer.parseInt(getTagValue(line,Constant.MODEL_CONFIG_TAG_SCREEN_WIDTH));
+			}
+
+			if(version.contains("3.0"))
+				recommendedVNCtype = "waylandvnc";
+			else
+				recommendedVNCtype = "x11vnc";
+			if(profile.equals(Constant.DEVICE_PROFILE_WEARABLE)){
+				commandOutLines = UtilsCLI.runCommand("sdb shell vconftool get -t string db/wms/clocks_set_idle", null);
+				for (String line : commandOutLines) {
+					if(line.toLowerCase().contains("value") && line.toLowerCase().contains("string")){
+						this.defaultWatchAppPackageId = line.split("=")[1].trim().split("\\(")[0].trim();
+					}
+				}
+			}
+			this.platform = "Tizen";
+		}else if(isAndroid()){
+			this.platform = "Android";
+			this.profile = Constant.DEVICE_PROFILE_MOBILE; //FIXME currently only mobile is supported
+		}
+
+	}
+
+	private String getTagValue(String line, String tag) {
+		return line.split(">")[1].trim().split("<")[0].trim();
+	}
+
+	public void updateConfig() throws IOException {
+		BufferedReader bufferedReader = new BufferedReader(new FileReader(Constant.CONFIG_DEVICE));
+		ArrayList<String> lines = new ArrayList<String>();
+		String lineReaded = null;
+		while( (lineReaded = bufferedReader.readLine()) != null)
+		{
+			if (lineReaded.contains(Constant.DEVICE_CONFIG_TAG_PLATFORM))
+				lines.add(Constant.DEVICE_CONFIG_TAG_PLATFORM+"="+platform);
+			else if (lineReaded.contains(Constant.DEVICE_CONFIG_TAG_PROFILE))
+				lines.add(Constant.DEVICE_CONFIG_TAG_PROFILE+"="+profile);
+			else if (lineReaded.contains(Constant.DEVICE_CONFIG_TAG_VERSION))
+				lines.add(Constant.DEVICE_CONFIG_TAG_VERSION+"="+version);
+			else if (lineReaded.contains(Constant.DEVICE_CONFIG_TAG_SHAPE))
+				lines.add(Constant.DEVICE_CONFIG_TAG_SHAPE+"="+getShape());
+			else if (lineReaded.contains(Constant.DEVICE_CONFIG_TAG_SCREEN_HEIGHT))
+				lines.add(Constant.DEVICE_CONFIG_TAG_SCREEN_HEIGHT+"="+screenHeight);
+			else if (lineReaded.contains(Constant.DEVICE_CONFIG_TAG_SCREEN_WIDTH))
+				lines.add(Constant.DEVICE_CONFIG_TAG_SCREEN_WIDTH+"="+screenWidth);
+			else if (lineReaded.contains(Constant.DEVICE_CONFIG_TAG_DEFAULT_WATCHAPP_PACKAGEID))
+				lines.add(Constant.DEVICE_CONFIG_TAG_DEFAULT_WATCHAPP_PACKAGEID + "=" + defaultWatchAppPackageId);
+			else if (lineReaded.contains(Constant.DEVICE_CONFIG_TAG_ROTATION))
+				lines.add(Constant.DEVICE_CONFIG_TAG_ROTATION + "=" + getRotation());
+			else
+				lines.add(lineReaded);
+		}
+		bufferedReader.close();
+		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(Constant.CONFIG_DEVICE));
+		for (String line : lines) {
+			bufferedWriter.write(line+System.lineSeparator());
+		}
+		bufferedWriter.close();
+	}
+
+	public void waitForReady() throws Exception {
+		long waitMilisecon = 0;
+		while(!isDeviceReady(UtilsCLI.runCommand("sdb devices", null))){
+			if (Constant.DEVICE_MAX_REBOOT_TIME_MILIS<waitMilisecon)
+				throw new Exception("Device reboot timeout waited more than "+ (Constant.DEVICE_MAX_REBOOT_TIME_MILIS/1000) + " second");
+			Thread.sleep(1000);
+		}
+	}
+
+
+	public int getRotation() {
+		return rotation;
+	}
+
+	public void setRotation(int rotation) {
+		this.rotation = rotation;
+	}
+
+	public int getScreenHeight() {
+		return screenHeight;
+	}
+
+	public int getScreenWidth() {
+		return screenWidth;
+	}
+
+	public String getVersion() {
+		return version;
+	}
+
+	public String getProfile() {
+		return profile;
+	}
+
+	public String getShape() {
+		return isShapeCircle?Constant.DEVICE_SHAPE_CIRCLE:Constant.DEVICE_SHAPE_RECTANGLE;
+	}
+
+	public String getType() {
+		return isArchArm?Constant.DEVICE:Constant.EMULATOR;
+	}
+
+	public String getRecommendedVNCtype() {
+		return recommendedVNCtype;
+	}
+}

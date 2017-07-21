@@ -1,0 +1,14 @@
+
+# Package Information for pkg-config
+
+prefix=
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/media
+
+Name: mmsvc-recorder
+Description: 
+Version: 
+Requires: dlog
+Cflags: -I${includedir}
+

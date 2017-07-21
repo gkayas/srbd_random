@@ -1,0 +1,1 @@
+badge_foreach_existed

@@ -1,0 +1,9 @@
+eina_rectangle_pool_get
+eina_rectangle_pool_packing_set
+eina_rectangle_pool_count
+eina_rectangle_pool_geometry_get
+eina_rectangle_pool_free
+eina_rectangle_pool_data_set
+eina_rectangle_pool_data_get
+eina_rectangle_pool_new
+eina_rectangle_pool_request

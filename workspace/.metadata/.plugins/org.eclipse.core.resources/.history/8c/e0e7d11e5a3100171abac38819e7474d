@@ -1,0 +1,18 @@
+// This class represents a single sequence.
+public class Sequence {
+    	// Constructor.
+	public Sequence(String header, String seq){
+		
+	}
+	// Return the header of the sequence.
+	public String getHeader(){
+		
+	}
+	public String getSeq(){
+		
+	}
+	// Return the usage for word length k and window step size w.
+	public Usage getUsage(int k, int w){
+		
+	}
+}

@@ -1,0 +1,4 @@
+1. Get Abi tool 2.7 version.
+2. List all the packages you want to run in "modules_git_repo.txt" file.
+3. then follow the manual described in issue
+

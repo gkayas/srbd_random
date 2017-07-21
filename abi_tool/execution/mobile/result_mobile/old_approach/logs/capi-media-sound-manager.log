@@ -1,0 +1,77 @@
+Temporary header file '/tmp/ivmWe7vzXA/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/media/sound_manager.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/media/sound_manager_internal.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/ivmWe7vzXA/dump1.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/ivmWe7vzXA/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager_internal.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/ivmWe7vzXA/dump2.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /tmp/ivmWe7vzXA/dump2.h:3:0:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:547:61: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_set_current_sound_type(sound_type_e type) TIZEN_DEPRECATED_API;
+                                                             ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:575:50: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_unset_current_sound_type(void) TIZEN_DEPRECATED_API;
+                                                  ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:592:100: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_set_volume_changed_cb(sound_manager_volume_changed_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                                    ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:603:49: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_unset_volume_changed_cb(void) TIZEN_DEPRECATED_API;
+                                                 ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:1046:63: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_set_session_type(sound_session_type_e type) TIZEN_DEPRECATED_API;
+                                                               ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:1065:64: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_get_session_type(sound_session_type_e *type) TIZEN_DEPRECATED_API;
+                                                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:1085:139: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_set_media_session_option(sound_session_option_for_starting_e s_option, sound_session_option_for_during_play_e d_option) TIZEN_DEPRECATED_API;
+                                                                                                                                           ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:1105:141: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_get_media_session_option(sound_session_option_for_starting_e *s_option, sound_session_option_for_during_play_e *d_option) TIZEN_DEPRECATED_API;
+                                                                                                                                             ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:1124:101: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_set_media_session_resumption_option(sound_session_option_for_resumption_e option) TIZEN_DEPRECATED_API;
+                                                                                                     ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:1143:102: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_get_media_session_resumption_option(sound_session_option_for_resumption_e *option) TIZEN_DEPRECATED_API;
+                                                                                                      ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:1162:73: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_set_voip_session_mode(sound_session_voip_mode_e mode) TIZEN_DEPRECATED_API;
+                                                                         ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:1181:74: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_get_voip_session_mode(sound_session_voip_mode_e *mode) TIZEN_DEPRECATED_API;
+                                                                          ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:1198:102: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_set_session_interrupted_cb(sound_session_interrupted_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                                      ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:1210:54: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_unset_session_interrupted_cb(void) TIZEN_DEPRECATED_API;
+                                                      ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:1245:110: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_get_current_device_list(sound_device_mask_e device_mask, sound_device_list_h *device_list) TIZEN_DEPRECATED_API;
+                                                                                                              ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:1463:129: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_set_device_connected_cb(sound_device_mask_e device_mask, sound_device_connected_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                                                                 ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:1475:51: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_unset_device_connected_cb(void) TIZEN_DEPRECATED_API;
+                                                   ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:1526:149: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_set_device_information_changed_cb(sound_device_mask_e device_mask, sound_device_information_changed_cb callback, void *user_data) TIZEN_DEPRECATED_API;
+                                                                                                                                                     ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/media/sound_manager.h:1538:61: error: expected initializer before ‘TIZEN_DEPRECATED_API’
+ int sound_manager_unset_device_information_changed_cb(void) TIZEN_DEPRECATED_API;
+                                                             ^
+

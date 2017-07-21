@@ -1,0 +1,452 @@
+Temporary header file '/tmp/HsrBkdAo43/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -fpreprocessed -x c++-header -fpermissive -w "/tmp/HsrBkdAo43/dump1.i"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf
+
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:60:42: error: redeclaration of ‘VCONFKEY_SYSMAN_USB_HOST_DISCONNECTED’
+  VCONFKEY_SYSMAN_USB_HOST_DISCONNECTED = 0,
+                                          ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:36:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-sysman-keys.h:69:2: note: previous declaration ‘<anonymous enum> VCONFKEY_SYSMAN_USB_HOST_DISCONNECTED’
+  VCONFKEY_SYSMAN_USB_HOST_DISCONNECTED = 0,
+  ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:61:2: error: redeclaration of ‘VCONFKEY_SYSMAN_USB_HOST_CONNECTED’
+  VCONFKEY_SYSMAN_USB_HOST_CONNECTED,
+  ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:36:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-sysman-keys.h:70:3: note: previous declaration ‘<anonymous enum> VCONFKEY_SYSMAN_USB_HOST_CONNECTED’
+   VCONFKEY_SYSMAN_USB_HOST_CONNECTED,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:62:2: error: redeclaration of ‘VCONFKEY_SYSMAN_USB_HOST_OVERCURRENT’
+  VCONFKEY_SYSMAN_USB_HOST_OVERCURRENT
+  ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:36:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-sysman-keys.h:71:3: note: previous declaration ‘<anonymous enum> VCONFKEY_SYSMAN_USB_HOST_OVERCURRENT’
+   VCONFKEY_SYSMAN_USB_HOST_OVERCURRENT
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:74:32: error: redeclaration of ‘VCONFKEY_SYSMAN_MMC_REMOVED’
+  VCONFKEY_SYSMAN_MMC_REMOVED = 0,
+                                ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:36:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-sysman-keys.h:106:2: note: previous declaration ‘<anonymous enum> VCONFKEY_SYSMAN_MMC_REMOVED’
+  VCONFKEY_SYSMAN_MMC_REMOVED = 0,
+  ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:75:2: error: redeclaration of ‘VCONFKEY_SYSMAN_MMC_MOUNTED’
+  VCONFKEY_SYSMAN_MMC_MOUNTED,
+  ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:36:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-sysman-keys.h:107:3: note: previous declaration ‘<anonymous enum> VCONFKEY_SYSMAN_MMC_MOUNTED’
+   VCONFKEY_SYSMAN_MMC_MOUNTED,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:76:2: error: redeclaration of ‘VCONFKEY_SYSMAN_MMC_INSERTED_NOT_MOUNTED’
+  VCONFKEY_SYSMAN_MMC_INSERTED_NOT_MOUNTED
+  ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:36:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-sysman-keys.h:108:3: note: previous declaration ‘<anonymous enum> VCONFKEY_SYSMAN_MMC_INSERTED_NOT_MOUNTED’
+   VCONFKEY_SYSMAN_MMC_INSERTED_NOT_MOUNTED
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:122:37: error: redeclaration of ‘VCONFKEY_WIFI_DIRECT_DEACTIVATED’
+  VCONFKEY_WIFI_DIRECT_DEACTIVATED  = 0,
+                                     ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:42:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-wifi-keys.h:130:2: note: previous declaration ‘<anonymous enum> VCONFKEY_WIFI_DIRECT_DEACTIVATED’
+  VCONFKEY_WIFI_DIRECT_DEACTIVATED = 0,
+  ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:124:2: error: redeclaration of ‘VCONFKEY_WIFI_DIRECT_ACTIVATED’
+  VCONFKEY_WIFI_DIRECT_ACTIVATED,
+  ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:42:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-wifi-keys.h:131:3: note: previous declaration ‘<anonymous enum> VCONFKEY_WIFI_DIRECT_ACTIVATED’
+   VCONFKEY_WIFI_DIRECT_ACTIVATED,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:126:2: error: redeclaration of ‘VCONFKEY_WIFI_DIRECT_DISCOVERING’
+  VCONFKEY_WIFI_DIRECT_DISCOVERING,
+  ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:42:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-wifi-keys.h:132:3: note: previous declaration ‘<anonymous enum> VCONFKEY_WIFI_DIRECT_DISCOVERING’
+   VCONFKEY_WIFI_DIRECT_DISCOVERING,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:128:2: error: redeclaration of ‘VCONFKEY_WIFI_DIRECT_CONNECTED’
+  VCONFKEY_WIFI_DIRECT_CONNECTED,
+  ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:42:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-wifi-keys.h:133:3: note: previous declaration ‘<anonymous enum> VCONFKEY_WIFI_DIRECT_CONNECTED’
+   VCONFKEY_WIFI_DIRECT_CONNECTED,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:130:2: error: redeclaration of ‘VCONFKEY_WIFI_DIRECT_GROUP_OWNER’
+  VCONFKEY_WIFI_DIRECT_GROUP_OWNER
+  ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:42:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-wifi-keys.h:134:3: note: previous declaration ‘<anonymous enum> VCONFKEY_WIFI_DIRECT_GROUP_OWNER’
+   VCONFKEY_WIFI_DIRECT_GROUP_OWNER,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:160:27: error: redeclaration of ‘VCONFKEY_BT_STATUS_OFF’
+  VCONFKEY_BT_STATUS_OFF = 0x0000,
+                           ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:8:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-bt-keys.h:56:2: note: previous declaration ‘<anonymous enum> VCONFKEY_BT_STATUS_OFF’
+  VCONFKEY_BT_STATUS_OFF = 0x0000,
+  ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:162:26: error: redeclaration of ‘VCONFKEY_BT_STATUS_ON’
+  VCONFKEY_BT_STATUS_ON = 0x0001,
+                          ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:8:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-bt-keys.h:57:3: note: previous declaration ‘<anonymous enum> VCONFKEY_BT_STATUS_ON’
+   VCONFKEY_BT_STATUS_ON = 0x0001,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:164:34: error: redeclaration of ‘VCONFKEY_BT_STATUS_BT_VISIBLE’
+  VCONFKEY_BT_STATUS_BT_VISIBLE = 0x0002,
+                                  ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:8:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-bt-keys.h:58:3: note: previous declaration ‘<anonymous enum> VCONFKEY_BT_STATUS_BT_VISIBLE’
+   VCONFKEY_BT_STATUS_BT_VISIBLE = 0x0002,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:166:32: error: redeclaration of ‘VCONFKEY_BT_STATUS_TRANSFER’
+  VCONFKEY_BT_STATUS_TRANSFER = 0x0004
+                                ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:8:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-bt-keys.h:59:3: note: previous declaration ‘<anonymous enum> VCONFKEY_BT_STATUS_TRANSFER’
+   VCONFKEY_BT_STATUS_TRANSFER = 0x0004
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:186:28: error: redeclaration of ‘VCONFKEY_BT_DEVICE_NONE’
+  VCONFKEY_BT_DEVICE_NONE = 0x0000,
+                            ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:8:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-bt-keys.h:65:2: note: previous declaration ‘<anonymous enum> VCONFKEY_BT_DEVICE_NONE’
+  VCONFKEY_BT_DEVICE_NONE = 0x00000,
+  ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:188:41: error: redeclaration of ‘VCONFKEY_BT_DEVICE_HEADSET_CONNECTED’
+  VCONFKEY_BT_DEVICE_HEADSET_CONNECTED = 0x0001,
+                                         ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:8:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-bt-keys.h:66:3: note: previous declaration ‘<anonymous enum> VCONFKEY_BT_DEVICE_HEADSET_CONNECTED’
+   VCONFKEY_BT_DEVICE_HEADSET_CONNECTED = 0x00001,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:190:46: error: redeclaration of ‘VCONFKEY_BT_DEVICE_A2DP_HEADSET_CONNECTED’
+  VCONFKEY_BT_DEVICE_A2DP_HEADSET_CONNECTED = 0x0002,
+                                              ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:8:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-bt-keys.h:67:3: note: previous declaration ‘<anonymous enum> VCONFKEY_BT_DEVICE_A2DP_HEADSET_CONNECTED’
+   VCONFKEY_BT_DEVICE_A2DP_HEADSET_CONNECTED = 0x00002,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:192:37: error: redeclaration of ‘VCONFKEY_BT_DEVICE_HID_CONNECTED’
+  VCONFKEY_BT_DEVICE_HID_CONNECTED = 0x0004,
+                                     ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:8:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-bt-keys.h:68:3: note: previous declaration ‘<anonymous enum> VCONFKEY_BT_DEVICE_HID_CONNECTED’
+   VCONFKEY_BT_DEVICE_HID_CONNECTED = 0x00004,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:194:37: error: redeclaration of ‘VCONFKEY_BT_DEVICE_PAN_CONNECTED’
+  VCONFKEY_BT_DEVICE_PAN_CONNECTED = 0x0008,
+                                     ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:8:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-bt-keys.h:69:3: note: previous declaration ‘<anonymous enum> VCONFKEY_BT_DEVICE_PAN_CONNECTED’
+   VCONFKEY_BT_DEVICE_PAN_CONNECTED = 0x00008,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:196:37: error: redeclaration of ‘VCONFKEY_BT_DEVICE_SAP_CONNECTED’
+  VCONFKEY_BT_DEVICE_SAP_CONNECTED = 0x0010,
+                                     ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:8:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-bt-keys.h:70:3: note: previous declaration ‘<anonymous enum> VCONFKEY_BT_DEVICE_SAP_CONNECTED’
+   VCONFKEY_BT_DEVICE_SAP_CONNECTED = 0x00010,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:198:38: error: redeclaration of ‘VCONFKEY_BT_DEVICE_PBAP_CONNECTED’
+  VCONFKEY_BT_DEVICE_PBAP_CONNECTED = 0x0020,
+                                      ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:8:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-bt-keys.h:71:3: note: previous declaration ‘<anonymous enum> VCONFKEY_BT_DEVICE_PBAP_CONNECTED’
+   VCONFKEY_BT_DEVICE_PBAP_CONNECTED = 0x00020,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:200:46: error: redeclaration of ‘VCONFKEY_BT_DEVICE_HID_KEYBOARD_CONNECTED’
+  VCONFKEY_BT_DEVICE_HID_KEYBOARD_CONNECTED = 0x0040,
+                                              ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:8:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-bt-keys.h:72:3: note: previous declaration ‘<anonymous enum> VCONFKEY_BT_DEVICE_HID_KEYBOARD_CONNECTED’
+   VCONFKEY_BT_DEVICE_HID_KEYBOARD_CONNECTED = 0x00040,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:201:43: error: redeclaration of ‘VCONFKEY_BT_DEVICE_HID_MOUSE_CONNECTED’
+  VCONFKEY_BT_DEVICE_HID_MOUSE_CONNECTED = 0x00080,
+                                           ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:8:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-bt-keys.h:73:3: note: previous declaration ‘<anonymous enum> VCONFKEY_BT_DEVICE_HID_MOUSE_CONNECTED’
+   VCONFKEY_BT_DEVICE_HID_MOUSE_CONNECTED = 0x00080,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:203:36: error: redeclaration of ‘VCONFKEY_BT_DEVICE_AG_CONNECTED’
+  VCONFKEY_BT_DEVICE_AG_CONNECTED = 0x1000
+                                    ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:8:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-bt-keys.h:74:3: note: previous declaration ‘<anonymous enum> VCONFKEY_BT_DEVICE_AG_CONNECTED’
+   VCONFKEY_BT_DEVICE_AG_CONNECTED = 0x1000
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:241:25: error: redeclaration of ‘VCONFKEY_IDLE_UNLOCK’
+  VCONFKEY_IDLE_UNLOCK = 0x00,
+                         ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:19:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-idle-lock-keys.h:27:2: note: previous declaration ‘<anonymous enum> VCONFKEY_IDLE_UNLOCK’
+  VCONFKEY_IDLE_UNLOCK = 0,
+  ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:243:2: error: redeclaration of ‘VCONFKEY_IDLE_LOCK’
+  VCONFKEY_IDLE_LOCK,
+  ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:19:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-idle-lock-keys.h:28:3: note: previous declaration ‘<anonymous enum> VCONFKEY_IDLE_LOCK’
+   VCONFKEY_IDLE_LOCK,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:245:2: error: redeclaration of ‘VCONFKEY_IDLE_LAUNCHING_LOCK’
+  VCONFKEY_IDLE_LAUNCHING_LOCK
+  ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:19:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-idle-lock-keys.h:29:3: note: previous declaration ‘<anonymous enum> VCONFKEY_IDLE_LAUNCHING_LOCK’
+   VCONFKEY_IDLE_LAUNCHING_LOCK
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:284:35: error: redeclaration of ‘VCONFKEY_PWLOCK_BOOTING_UNLOCK’
+  VCONFKEY_PWLOCK_BOOTING_UNLOCK = 0x00,
+                                   ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:27:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-moved-from.h:48:2: note: previous declaration ‘<anonymous enum> VCONFKEY_PWLOCK_BOOTING_UNLOCK’
+  VCONFKEY_PWLOCK_BOOTING_UNLOCK = 0x00,
+  ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:286:2: error: redeclaration of ‘VCONFKEY_PWLOCK_BOOTING_LOCK’
+  VCONFKEY_PWLOCK_BOOTING_LOCK,
+  ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:27:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-moved-from.h:49:3: note: previous declaration ‘<anonymous enum> VCONFKEY_PWLOCK_BOOTING_LOCK’
+   VCONFKEY_PWLOCK_BOOTING_LOCK,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:288:2: error: redeclaration of ‘VCONFKEY_PWLOCK_RUNNING_UNLOCK’
+  VCONFKEY_PWLOCK_RUNNING_UNLOCK,
+  ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:27:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-moved-from.h:50:3: note: previous declaration ‘<anonymous enum> VCONFKEY_PWLOCK_RUNNING_UNLOCK’
+   VCONFKEY_PWLOCK_RUNNING_UNLOCK,
+   ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25:0,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:290:2: error: redeclaration of ‘VCONFKEY_PWLOCK_RUNNING_LOCK’
+  VCONFKEY_PWLOCK_RUNNING_LOCK
+  ^
+In file included from /home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-keys.h:27:0,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf-keys.h:25,
+                 from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/vconf/vconf.h:25,
+                 from /tmp/HsrBkdAo43/dump1.h:3:
+/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/vconf/vconf-internal-moved-from.h:51:3: note: previous declaration ‘<anonymous enum> VCONFKEY_PWLOCK_RUNNING_LOCK’
+   VCONFKEY_PWLOCK_RUNNING_LOCK
+   ^
+
+Temporary header file '/tmp/HsrBkdAo43/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-account-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-alarm-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-aul-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-boot-animation-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-browser-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-bt-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-call-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-camera-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-ciss-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-contacts-svc-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-desktop-mode-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-dnet-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-dr-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-email-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-filemanager-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-homescreen-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-hotfix.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-idle-lock-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-indicator-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-isf-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-livebox-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-location-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-lockscreen-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-miracast-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-mobile-hotspot-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-moved-from.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-msg-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-mtp-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-nfc-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-ode-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-oma-dm-agent-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-pm-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-pwlock-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-radio-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-setting-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-softap-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-sound-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-starter-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-stt-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-sysman-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-system-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-telephony-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-tts-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-uncategorized-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-usb-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-webkit-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-wifi-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-internal-wms-keys.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/vconf/vconf-keys.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -fpreprocessed -x c++-header -fpermissive -w "/tmp/HsrBkdAo43/dump2.i"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+

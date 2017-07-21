@@ -1,0 +1,10 @@
+accounts-svc
+appcore-widget
+cairo
+appcore-agent
+capi-media-screen-mirroring
+capi-network-nfc
+dali-adaptor
+dali
+libslp-tapi
+

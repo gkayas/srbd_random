@@ -1,0 +1,14 @@
+
+public class Main {
+	
+	public static void main(String [] args) {
+		Node [] [] nodes = new Node[10][10];
+		
+		Node node = new NumberNode(10);
+		
+		
+		Grid grid = new Grid(nodes, 10, 10, 5, 5);
+		
+	}
+
+}

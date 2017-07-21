@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apiobjectcollection>
+
+	<apiobject objectname="device">		
+	<api>verifyImage(String image)</api>
+	<api>verifyImage(Double similarity, String image)</api>
+	<api>verifyImage(Double[] area, String image)</api>
+	<api>verifyImage(Double[] area, Double similarity, String image)</api>
+	<api>verifyImage(String image, String innerImage)</api>
+	<api>verifyImage(Double similarity, String image, String innerImage)</api>
+	<api>verifyImage(Double[] area, String image, String innerImage)</api>
+	<api>verifyImage(Double[] area, Double similarity, String image, String innerImage)</api>
+	<api>tapImage(String image)</api>
+	<api>tapImage( Double similarity,String image)</api>
+	<api>tapImage( Double[] area,String image)</api>
+	<api>tapImage( Double[] area, Double similarity, String image)</api>
+	<api>tapImage(String image, String innerImage)</api>
+	<api>tapImage(Double[] area, String image, String innerImage)</api>
+	<api>tapImage(Double[] area, Double similarity, String image, String innerImage)</api>
+	<api>longPressImage(String image)</api>
+	<api>longPressImage(Double[] area, String image)</api>
+	<api>longPressImage(Double similarity, String image)</api>
+	<api>longPressImage(Double[] area, Double similarity, String image)</api>
+	<api>longPressImage(String image, String innerImage)</api>
+	<api>longPressImage(Double[] area, String image, String innerImage)</api>
+	<api>longPressImage(Double similarity, String image, String innerImage)</api>
+	<api>longPressImage(Double[] area, Double similarity, String image, String innerImage)</api>
+	<api>waitForImage(long waitMilisecond, String image)</api>
+	
+	<api>verifyText(String... textList)</api>
+	<api>verifyText(Double[] area,String... textList)</api>
+	<api>verifyText(Double similarity,String... textList)</api>
+	<api>verifyText(Double[] area,Double similarity, String... textList)</api>
+	<api>verifyAnyText(String... textList)</api>
+	<api>verifyAnyText(Double[] area,String... textList)</api>
+	<api>verifyAnyText(Double similarity,String... textList)</api>
+	<api>verifyAnyText(Double[] area,Double similarity, String... textList)</api>
+	<api>tapText(String text)</api>
+	<api>tapText(Double similarity, String  text)</api>
+	<api>tapText(Double[] area, String  text)</api>
+	<api>tapText(Double[] area, Double similarity, String  text)</api>
+	<api>tapAnyText(String... textList)</api>
+	<api>tapAnyText(Double similarity, String... textList)</api>
+	<api>tapAnyText(Double[] area, String... textList)</api>
+	<api>tapAnyText(Double[] area, Double similarity, String... textList)</api>
+	<api>longPressText(String text)</api>
+	<api>longPressText(Double[] area, String text)</api>
+	<api>longPressText(Double similarity, String text)</api>
+	<api>longPressText(Double[] area, Double similarity, String text)</api>
+	<api>typeText(String text)</api>
+	<api>showAllText()</api>
+	<api>showAllText(Double[] area)</api>
+	<api>showAllText(Double similarity)</api>
+	<api>showAllText(Double[] area, Double similarity)</api>
+	<api>getAllText()</api>
+	<api>getAllText(Double[] area)</api>
+	<api>getAllText(Double similarity)</api>
+	<api>getAllText(Double[] area, Double similarity)</api>
+	<api>waitForText(long waitMilisecond,String... textList)</api>	
+	<api>focus()</api>
+	<api>getRegion()</api>
+	<api>pressMenu()</api>
+	<api>pressEnter()</api>
+	<api>pressBack()</api>
+	<api>pressHome()</api>
+	<api>pressVolPlus()</api>
+	<api>pressVolMinus()</api>
+	<api>pressMute()</api>
+	<api>pressChannelPlus()</api>
+	<api>pressChannelMinus()</api>
+	<api>pressUp()</api>
+	<api>pressDown()</api>
+	<api>pressRight()</api>
+	<api>pressLeft()</api>
+	<api>pressPower()</api>
+	<api>pressOne()</api>
+	<api>pressTwo()</api>
+	<api>pressThree()</api>
+	<api>pressFour()</api>
+	<api>pressFive()</api>
+	<api>pressSix()</api>
+	<api>pressSeven()</api>
+	<api>pressEight()</api>
+	<api>pressNine()</api>
+	<api>pressZero()</api>
+	<api>pressOneTwoThree()</api>
+	<api>pressDotDotDot()</api>
+	<api>pressPlay()</api>
+	<api>pressOk()</api>
+	<api>longPressHome()</api>
+	<api>pressCoord(Double xCord, Double yCord)</api>
+	<api>longPressCoord(Double xCord, Double yCord)</api>
+	<api>swipe(double srcx, double srcy, double desx, double desy)</api>
+	<api>setAssertMode(boolean assertMode)</api>
+	<api>waitForMiliSeconds(long miliSeconds)</api>
+	<api>runCommand(String arguments)</api>
+	<api>installApp(String packageID, String path)</api>
+	<api>launchApp(String appID)</api>
+	<api>launchAppParam(String appID, String argV)</api>
+	<api>closeApp(String packageID, String appID)</api>
+	<api>restartApp(String packageID, String appID)</api>
+	<api>restartApp(long waitMilisecond, String packageID, String appID)</api>
+	<api>uninstallApp(String packageID)</api>
+	<api>saveDeviceScreen(String path,String name)</api>
+	<api>saveDeviceScreen(Double[] area, String path,String name)</api>
+
+	</apiobject>
+	
+</apiobjectcollection>
+
+

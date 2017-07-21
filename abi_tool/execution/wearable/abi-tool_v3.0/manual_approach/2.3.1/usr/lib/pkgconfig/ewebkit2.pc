@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+datadir=${prefix}/share/ewebkit-0
+
+Name: WebKit2-EFL
+Description: Web content engine for EFL applications
+Version: 152340_0.10.254.0
+Requires: cairo evas ecore harfbuzz libsoup-2.4 ecore-input
+Libs: -L${libdir} -lewebkit2
+Libs.private: 
+Cflags: -I${includedir}/ewebkit2-0 -I${includedir}/ewebkit2-0/WebKit2 -I${includedir}/ewebkit2-0/NPAPI -DWEBKIT_UPVERSION=1 -DTHEME_PATH="/usr/share/edje/webkit.edj" -DLEGACY_THEME_PATH="/usr/share/edje/legacyWebkit.edj"

@@ -1,0 +1,5 @@
+_ZN5MutexD0Ev
+_ZN5MutexD2Ev
+_ZN5MutexD1Ev
+_ZN21MsgTransactionManager11getTMStatusEv
+_ZN21MsgTransactionManager11setTMStatusEv

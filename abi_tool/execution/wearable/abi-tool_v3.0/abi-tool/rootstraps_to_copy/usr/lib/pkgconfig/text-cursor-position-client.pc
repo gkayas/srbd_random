@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=/usr
+datarootdir=${prefix}/share
+pkgdatadir=/usr/share/wayland-extension
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: text-cursor-position client
+Description: text-cursor-position client library
+Version: 1.0.0
+Requires: wayland-client
+Cflags: -I${includedir}/wayland-extension
+Libs: -L${libdir} -ltext-cursor-position-client

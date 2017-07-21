@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RcpttRunnerSettingsController">
+   <children>
+      <VBox prefHeight="410.0" prefWidth="490.0">
+         <children>
+            <HBox prefHeight="380.0" prefWidth="490.0">
+               <children>
+                  <VBox alignment="TOP_RIGHT" prefHeight="502.0" prefWidth="140.0" spacing="10.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="130.0" text="SDK Path : " textAlignment="RIGHT">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="6.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Save Report File : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Sample Server : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text=" Server ID : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Server Password : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Project Name : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="RCPTT Version : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="RCPTT Launcher : ">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="40.0" />
+                     </HBox.margin></VBox>
+                  <VBox alignment="TOP_RIGHT" prefHeight="352.0" prefWidth="300.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="sdkPathTxt" />
+                        <TextField fx:id="reportPathTxt" />
+                        <TextField fx:id="sampleServerTxt" />
+                        <TextField fx:id="serverIdlTxt" />
+                        <PasswordField fx:id="serverPassTxt" />
+                        <TextField fx:id="projectNameTxt" />
+                        <TextField fx:id="rcpttVersionTxt" />
+                        <TextField fx:id="rcpttLauncherTxt" />
+                     </children>
+                     <HBox.margin>
+                        <Insets top="40.0" />
+                     </HBox.margin></VBox>
+                  <VBox prefHeight="420.0" prefWidth="40.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="browseSDKPathBtn" mnemonicParsing="false" onAction="#browseBtnClicked" text="..." />
+                        <Button fx:id="browseReprotPathBtn" mnemonicParsing="false" onAction="#browseBtnClicked" text="..." />
+                     </children>
+                     <HBox.margin>
+                        <Insets top="40.0" />
+                     </HBox.margin></VBox>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="490.0" spacing="10.0">
+               <children>
+                  <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveBtnClicked" prefHeight="30.0" prefWidth="100.0" text="Save" />
+                  <Button fx:id="closeBtn" mnemonicParsing="false" onAction="#closeBtnClicked" prefHeight="30.0" prefWidth="100.0" text="Close" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

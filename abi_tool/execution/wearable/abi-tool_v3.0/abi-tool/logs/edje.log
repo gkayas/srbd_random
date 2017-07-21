@@ -1,0 +1,468 @@
+Temporary header file '/tmp/2xJWG4nv0Y/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/2.3.1/usr/include/edje-1/Edje.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/2xJWG4nv0Y/dump1.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/ecore-imf-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+Temporary header file '/tmp/2xJWG4nv0Y/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/edje_edit.eo.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/edje_edit.eo.legacy.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Eo.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Legacy.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/edje_object.eo.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/edje_object.eo.legacy.h"
+  #include "/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/edje_types.eot.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/2xJWG4nv0Y/dump2.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/evas-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eo-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/emile-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/efl-1 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/eina-1/eina
+
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:11:16: error: redefinition of ‘struct _Edje_Version’
+ typedef struct _Edje_Version
+                ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:11:16: error: previous definition of ‘struct _Edje_Version’
+ typedef struct _Edje_Version
+                ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:17:15: error: invalid type in declaration before ‘;’ token
+ } Edje_Version;
+               ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:17:15: error: conflicting declaration ‘typedef int Edje_Version’
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:17:3: error: ‘Edje_Version’ has a previous declaration as ‘typedef struct _Edje_Version Edje_Version’
+ } Edje_Version;
+   ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:34:8: error: redefinition of ‘struct _Edje_Color_Class’
+ struct _Edje_Color_Class
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:34:8: error: previous definition of ‘struct _Edje_Color_Class’
+ struct _Edje_Color_Class
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:49:8: error: redefinition of ‘struct _Edje_Text_Class’
+ struct _Edje_Text_Class
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:49:8: error: previous definition of ‘struct _Edje_Text_Class’
+ struct _Edje_Text_Class
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:61:8: error: redefinition of ‘struct _Edje_Size_Class’
+ struct _Edje_Size_Class
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:61:8: error: previous definition of ‘struct _Edje_Size_Class’
+ struct _Edje_Size_Class
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:402:14: error: multiple definition of ‘enum _Edje_External_Param_Flags’
+ typedef enum _Edje_External_Param_Flags
+              ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:402:14: error: previous definition here
+ typedef enum _Edje_External_Param_Flags
+              ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:412:28: error: invalid type in declaration before ‘;’ token
+ } Edje_External_Param_Flags;
+                            ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:412:28: error: conflicting declaration ‘typedef int Edje_External_Param_Flags’
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:412:3: error: ‘Edje_External_Param_Flags’ has a previous declaration as ‘typedef enum _Edje_External_Param_Flags Edje_External_Param_Flags’
+ } Edje_External_Param_Flags;
+   ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:461:8: error: redefinition of ‘struct _Edje_External_Param_Info’
+ struct _Edje_External_Param_Info
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:461:8: error: previous definition of ‘struct _Edje_External_Param_Info’
+ struct _Edje_External_Param_Info
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:588:8: error: redefinition of ‘struct _Edje_External_Type’
+ struct _Edje_External_Type
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:588:8: error: previous definition of ‘struct _Edje_External_Type’
+ struct _Edje_External_Type
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:627:8: error: redefinition of ‘struct _Edje_External_Type_Info’
+ struct _Edje_External_Type_Info
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:627:8: error: previous definition of ‘struct _Edje_External_Type_Info’
+ struct _Edje_External_Type_Info
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1070:8: error: redefinition of ‘struct _Edje_Entry_Change_Info’
+ struct _Edje_Entry_Change_Info
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1070:8: error: previous definition of ‘struct _Edje_Entry_Change_Info’
+ struct _Edje_Entry_Change_Info
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1098:14: error: multiple definition of ‘enum _Edje_Text_Filter_Type’
+ typedef enum _Edje_Text_Filter_Type
+              ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1098:14: error: previous definition here
+ typedef enum _Edje_Text_Filter_Type
+              ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1103:24: error: invalid type in declaration before ‘;’ token
+ } Edje_Text_Filter_Type;
+                        ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1103:24: error: conflicting declaration ‘typedef int Edje_Text_Filter_Type’
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1103:3: error: ‘Edje_Text_Filter_Type’ has a previous declaration as ‘typedef enum _Edje_Text_Filter_Type Edje_Text_Filter_Type’
+ } Edje_Text_Filter_Type;
+   ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1107:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL,         /**< The plain normal layout @since 1.12 */
+    ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1107:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL,         /**< The plain normal layout @since 1.12 */
+    ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1108:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME,       /**< Filename layout. Symbols such as '/' should be disabled. @since 1.12 */
+    ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1108:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME,       /**< Filename layout. Symbols such as '/' should be disabled. @since 1.12 */
+    ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1109:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME     /**< The name of a person. @since 1.12 */
+    ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1109:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME’
+    EDJE_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME     /**< The name of a person. @since 1.12 */
+    ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1114:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL,             /**< The plain normal number layout @since 1.8 */
+    ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1114:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL,             /**< The plain normal number layout @since 1.8 */
+    ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1115:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED,             /**< The number layout to allow a positive or negative sign at the start @since 1.8 */
+    ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1115:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED,             /**< The number layout to allow a positive or negative sign at the start @since 1.8 */
+    ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1116:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL,            /**< The number layout to allow decimal point to provide fractional value @since 1.8 */
+    ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1116:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL,            /**< The number layout to allow decimal point to provide fractional value @since 1.8 */
+    ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1117:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL  /**< The number layout to allow decimal point and negative sign @since 1.8 */
+    ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1117:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL’
+    EDJE_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL  /**< The number layout to allow decimal point and negative sign @since 1.8 */
+    ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1122:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL,       /**< The normal password layout @since 1.12 */
+    ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1122:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL’
+    EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL,       /**< The normal password layout @since 1.12 */
+    ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1123:4: error: redeclaration of ‘EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY’
+    EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY    /**< The password layout to allow only number @since 1.12 */
+    ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1123:4: note: previous declaration ‘<anonymous enum> EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY’
+    EDJE_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY    /**< The password layout to allow only number @since 1.12 */
+    ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1391:14: error: multiple definition of ‘enum _Edje_Part_Type’
+ typedef enum _Edje_Part_Type
+              ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1391:14: error: previous definition here
+ typedef enum _Edje_Part_Type
+              ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1412:17: error: invalid type in declaration before ‘;’ token
+ } Edje_Part_Type;
+                 ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1412:17: error: conflicting declaration ‘typedef int Edje_Part_Type’
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1412:3: error: ‘Edje_Part_Type’ has a previous declaration as ‘typedef enum _Edje_Part_Type Edje_Part_Type’
+ } Edje_Part_Type;
+   ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1446:14: error: multiple definition of ‘enum _Edje_Text_Effect’
+ typedef enum _Edje_Text_Effect
+              ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1446:14: error: previous definition here
+ typedef enum _Edje_Text_Effect
+              ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1470:19: error: invalid type in declaration before ‘;’ token
+ } Edje_Text_Effect;
+                   ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1470:19: error: conflicting declaration ‘typedef int Edje_Text_Effect’
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1470:3: error: ‘Edje_Text_Effect’ has a previous declaration as ‘typedef enum _Edje_Text_Effect Edje_Text_Effect’
+ } Edje_Text_Effect;
+   ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1473:14: error: multiple definition of ‘enum _Edje_Text_Ellipsize_Mode’
+ typedef enum _Edje_Text_Ellipsize_Mode
+              ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1473:14: error: previous definition here
+ typedef enum _Edje_Text_Ellipsize_Mode
+              ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1483:27: error: invalid type in declaration before ‘;’ token
+ } Edje_Text_Ellipsize_Mode;
+                           ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1483:27: error: conflicting declaration ‘typedef int Edje_Text_Ellipsize_Mode’
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1483:3: error: ‘Edje_Text_Ellipsize_Mode’ has a previous declaration as ‘typedef enum _Edje_Text_Ellipsize_Mode Edje_Text_Ellipsize_Mode’
+ } Edje_Text_Ellipsize_Mode;
+   ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1564:14: error: multiple definition of ‘enum _Edje_Aspect_Control’
+ typedef enum _Edje_Aspect_Control
+              ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1564:14: error: previous definition here
+ typedef enum _Edje_Aspect_Control
+              ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1571:22: error: invalid type in declaration before ‘;’ token
+ } Edje_Aspect_Control;
+                      ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1571:22: error: conflicting declaration ‘typedef int Edje_Aspect_Control’
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1571:3: error: ‘Edje_Aspect_Control’ has a previous declaration as ‘typedef enum _Edje_Aspect_Control Edje_Aspect_Control’
+ } Edje_Aspect_Control;
+   ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1685:14: error: multiple definition of ‘enum _Edje_Object_Table_Homogeneous_Mode’
+ typedef enum _Edje_Object_Table_Homogeneous_Mode
+              ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1685:14: error: previous definition here
+ typedef enum _Edje_Object_Table_Homogeneous_Mode
+              ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1690:37: error: invalid type in declaration before ‘;’ token
+ } Edje_Object_Table_Homogeneous_Mode;
+                                     ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1690:37: error: conflicting declaration ‘typedef int Edje_Object_Table_Homogeneous_Mode’
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:1690:3: error: ‘Edje_Object_Table_Homogeneous_Mode’ has a previous declaration as ‘typedef enum _Edje_Object_Table_Homogeneous_Mode Edje_Object_Table_Homogeneous_Mode’
+ } Edje_Object_Table_Homogeneous_Mode;
+   ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2072:14: error: multiple definition of ‘enum _Edje_Tween_Mode’
+ typedef enum _Edje_Tween_Mode
+              ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2072:14: error: previous definition here
+ typedef enum _Edje_Tween_Mode
+              ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2089:18: error: invalid type in declaration before ‘;’ token
+ } Edje_Tween_Mode;
+                  ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2089:18: error: conflicting declaration ‘typedef int Edje_Tween_Mode’
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2089:3: error: ‘Edje_Tween_Mode’ has a previous declaration as ‘typedef enum _Edje_Tween_Mode Edje_Tween_Mode’
+ } Edje_Tween_Mode;
+   ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2101:14: error: multiple definition of ‘enum _Edje_Action_Type’
+ typedef enum _Edje_Action_Type
+              ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2101:14: error: previous definition here
+ typedef enum _Edje_Action_Type
+              ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2137:19: error: invalid type in declaration before ‘;’ token
+ } Edje_Action_Type;
+                   ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2137:19: error: conflicting declaration ‘typedef int Edje_Action_Type’
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2137:3: error: ‘Edje_Action_Type’ has a previous declaration as ‘typedef enum _Edje_Action_Type Edje_Action_Type’
+ } Edje_Action_Type;
+   ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2298:8: error: redefinition of ‘struct _Edje_Message_String’
+ struct _Edje_Message_String
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2298:8: error: previous definition of ‘struct _Edje_Message_String’
+ struct _Edje_Message_String
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2303:8: error: redefinition of ‘struct _Edje_Message_Int’
+ struct _Edje_Message_Int
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2303:8: error: previous definition of ‘struct _Edje_Message_Int’
+ struct _Edje_Message_Int
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2308:8: error: redefinition of ‘struct _Edje_Message_Float’
+ struct _Edje_Message_Float
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2308:8: error: previous definition of ‘struct _Edje_Message_Float’
+ struct _Edje_Message_Float
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2313:8: error: redefinition of ‘struct _Edje_Message_String_Set’
+ struct _Edje_Message_String_Set
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2313:8: error: previous definition of ‘struct _Edje_Message_String_Set’
+ struct _Edje_Message_String_Set
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2319:8: error: redefinition of ‘struct _Edje_Message_Int_Set’
+ struct _Edje_Message_Int_Set
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2319:8: error: previous definition of ‘struct _Edje_Message_Int_Set’
+ struct _Edje_Message_Int_Set
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2325:8: error: redefinition of ‘struct _Edje_Message_Float_Set’
+ struct _Edje_Message_Float_Set
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2325:8: error: previous definition of ‘struct _Edje_Message_Float_Set’
+ struct _Edje_Message_Float_Set
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2331:8: error: redefinition of ‘struct _Edje_Message_String_Int’
+ struct _Edje_Message_String_Int
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2331:8: error: previous definition of ‘struct _Edje_Message_String_Int’
+ struct _Edje_Message_String_Int
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2337:8: error: redefinition of ‘struct _Edje_Message_String_Float’
+ struct _Edje_Message_String_Float
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2337:8: error: previous definition of ‘struct _Edje_Message_String_Float’
+ struct _Edje_Message_String_Float
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2343:8: error: redefinition of ‘struct _Edje_Message_String_Int_Set’
+ struct _Edje_Message_String_Int_Set
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2343:8: error: previous definition of ‘struct _Edje_Message_String_Int_Set’
+ struct _Edje_Message_String_Int_Set
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2350:8: error: redefinition of ‘struct _Edje_Message_String_Float_Set’
+ struct _Edje_Message_String_Float_Set
+        ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2350:8: error: previous definition of ‘struct _Edje_Message_String_Float_Set’
+ struct _Edje_Message_String_Float_Set
+        ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2546:14: error: multiple definition of ‘enum _Edje_Channel’
+ typedef enum _Edje_Channel
+              ^
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2546:14: error: previous definition here
+ typedef enum _Edje_Channel
+              ^
+In file included from /tmp/2xJWG4nv0Y/dump2.h:4:0:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2556:15: error: invalid type in declaration before ‘;’ token
+ } Edje_Channel;
+               ^
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2556:15: error: conflicting declaration ‘typedef int Edje_Channel’
+In file included from /home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje.h:252:0,
+                 from /tmp/2xJWG4nv0Y/dump2.h:3:
+/home/kayes/abi_tool/execution/wearable/abi-tool_v3.0/abi-tool/3.0/usr/include/edje-1/Edje_Common.h:2556:3: error: ‘Edje_Channel’ has a previous declaration as ‘typedef enum _Edje_Channel Edje_Channel’
+ } Edje_Channel;
+   ^
+

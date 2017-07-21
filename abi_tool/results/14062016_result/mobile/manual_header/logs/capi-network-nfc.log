@@ -1,0 +1,51 @@
+Temporary header file '/tmp/mWz15bq0fm/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/network/nfc.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/network/nfc_internal.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/mWz15bq0fm/dump1.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/mWz15bq0fm/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_util_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_context.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_handover.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_hce.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_hce_ipc.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_llcp.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_ndef.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_p2p.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_se.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_snep.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_system_handler.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_tag.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_tag_felica.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_tag_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_tag_jewel.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_test.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_client_transceive.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_data.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_ndef_message.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_ndef_message_handover.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_ndef_record.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_sign_record.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_tag_mifare.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc_target_info.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/nfc.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/nfc_internal.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/mWz15bq0fm/dump2.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include/glib-2.0 -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/lib/glib-2.0/include
+
+In file included from /tmp/mWz15bq0fm/dump2.h:3:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/network/net_nfc.h:20:29: fatal error: net_nfc_typedef.h: No such file or directory
+ #include "net_nfc_typedef.h"
+                             ^
+compilation terminated.
+

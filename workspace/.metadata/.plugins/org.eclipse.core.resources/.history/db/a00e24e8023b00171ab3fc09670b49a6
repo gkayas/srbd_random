@@ -1,0 +1,43 @@
+package manager;
+
+public class Constant {
+
+	public static final String DEVICE="Device";
+	public static final String EMULATOR="Emulator";
+
+	public static final String VNC_SERVER_PATH="vncserver";
+
+	public static final String LOG_FILE_NAME="device-interface.log";
+	public static final String LOGGER_PROPERTY_FILE=".dirunner.properties";
+	public static final String CONFIG_DEVICE="device_config.ini";
+	public static final String CONFIG_MODEL="/etc/config/model-config.xml";
+
+	public static final String VNC_CLIENT_CONFIG_PATH = "temp/TurboVNC";
+
+	public static final String DEVICE_INTERFACE_PATH="device-interface.jar";
+	public static final String DEVICE_PROFILE_MOBILE="Mobile";
+	public static final String DEVICE_PROFILE_WEARABLE="Wearable";
+	public static final String DEVICE_PROFILE_TV="TV";
+	public static final String DEVICE_SHAPE_CIRCLE="Circle";
+	public static final String DEVICE_SHAPE_RECTANGLE="Rectangle";
+
+	public static final String DEVICE_CONFIG_TAG_ROTATION = "ROTATION";
+	public static final String DEVICE_CONFIG_TAG_PROFILE="PROFILE_NAME";
+	public static final String DEVICE_CONFIG_TAG_PLATFORM="PLATFORM_NAME";
+	public static final String DEVICE_CONFIG_TAG_VERSION="PLATFORM_VERSION";
+	public static final String DEVICE_CONFIG_TAG_SHAPE="PROFILE_TYPE";
+	public static final String DEVICE_CONFIG_TAG_SCREEN_HEIGHT="SCREEN_HEIGHT";
+	public static final String DEVICE_CONFIG_TAG_SCREEN_WIDTH="SCREEN_WIDTH";
+	public static final String DEVICE_CONFIG_TAG_DEFAULT_WATCHAPP_PACKAGEID="DEFAULT_WATCHAPP_PACKAGEID";
+	public static final long DEVICE_MAX_REBOOT_TIME_MILIS=60000;
+
+	public static final String MODEL_CONFIG_TAG_PROFILE="profile\"";
+	public static final String MODEL_CONFIG_TAG_VERSION="platform.version\"";
+	public static final String MODEL_CONFIG_TAG_SHAPE="screen.shape.circle";
+	public static final String MODEL_CONFIG_TAG_SCREEN_HEIGHT="screen.height";
+	public static final String MODEL_CONFIG_TAG_SCREEN_WIDTH="screen.width";
+	public static final String MODEL_CONFIG_TAG_ARCH="platform.core.cpu.arch.armv7";
+
+	public static final String EXPRESOIN = "^([a-zA-Z0-9_.-]+)\\s+([a-zA-Z0-9_.-]+)\\s+[a-zA-Z0-9_.-]+$";
+
+}

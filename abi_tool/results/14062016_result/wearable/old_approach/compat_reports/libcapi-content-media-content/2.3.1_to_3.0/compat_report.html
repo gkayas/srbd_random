@@ -1,0 +1,1390 @@
+<!-- kind:binary;verdict:incompatible;affected:0.6;added:71;removed:0;type_problems_high:0;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:5;changed_constants:0;type_changes_other:3;constant_changes_other:10;tool_version:1.99.18 -->
+<!-- kind:source;verdict:compatible;affected:0;added:71;removed:0;type_problems_high:0;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:0;changed_constants:0;type_changes_other:3;interface_changes_other:5;constant_changes_other:10;tool_version:1.99.18 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="capi-content-media-content, compatibility, API, ABI, report" />
+    <meta name="description" content="API/ABI compatibility report for the capi-content-media-content library between 2.3.1 and 3.0 versions" />
+    <title>
+        capi-content-media-content: 2.3.1 to 3.0 compatibility report
+    </title>
+    <style type="text/css">
+    body {
+    font-family:Arial, sans-serif;
+    background-color:White;
+    color:Black;
+}
+hr {
+    color:Black;
+    background-color:Black;
+    height:1px;
+    border:0;
+}
+h1 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.625em;
+}
+h2 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.25em;
+    white-space:nowrap;
+}
+span.section {
+    font-weight:bold;
+    cursor:pointer;
+    color:#003E69;
+    white-space:nowrap;
+    margin-left:5px;
+}
+span.new_sign {
+    font-weight:bold;
+    margin-left:26px;
+    color:#003E69;
+}
+span.new_sign_lbl {
+    margin-left:28px;
+    font-size:0.875em;
+    color:Black;
+}
+span:hover.section {
+    color:#336699;
+}
+span.sect_aff {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:#cc3300;
+}
+span.sect_info {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:Black;
+}
+span.ext {
+    font-weight:100;
+}
+span.h_name {
+    color:#cc3300;
+    font-size:0.875em;
+    font-weight:bold;
+}
+div.h_list, div.lib_list {
+    font-size:0.94em;
+    padding-left:5px;
+}
+span.ns {
+    color:#408080;
+    font-size:0.94em;
+}
+span.lib_name {
+    color:Green;
+    font-size:0.875em;
+    font-weight:bold;
+}
+span.iname {
+    font-weight:bold;
+    color:#003E69;
+    margin-left:5px;
+}
+span.iname_b {
+    font-weight:bold;
+    font-size:1.1em;
+}
+span.iname_a {
+    color:#333333;
+    font-weight:bold;
+    font-size:0.94em;
+}
+span.sym_p {
+    font-weight:normal;
+    white-space:normal;
+}
+div.affect {
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:0.87em;
+    font-style:italic;
+    line-height:0.75em;
+}
+div.affected {
+    padding-left:30px;
+    padding-top:10px;
+}
+table.ptable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:1em;
+    margin-left:15px;
+    margin-top:3px;
+    margin-bottom:3px;
+    width:900px;
+    
+}
+table.ptable td {
+    border:1px solid gray;
+    padding: 3px;
+    font-size:0.875em;
+    text-align:left;
+    vertical-align:top;
+}
+table.vtable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:16px;
+    margin-left:30px;
+    margin-top:10px;
+}
+table.vtable td {
+    border:1px solid gray;
+    word-wrap:break-word;
+    padding: 3px;
+    font-size:0.875em;
+    max-width:450px;
+    vertical-align:top;
+}
+table.ptable th, table.vtable th {
+    background-color:#eeeeee;
+    font-weight:bold;
+    color:#333333;
+    font-family:Verdana, Arial;
+    font-size:0.81em;
+    border:1px solid gray;
+    text-align:center;
+    vertical-align:top;
+    white-space:nowrap;
+    padding: 3px;
+}
+table.summary {
+    border-collapse:collapse;
+    border:1px outset black;
+}
+table.summary th {
+    background-color:#eeeeee;
+    font-weight:100;
+    text-align:left;
+    font-size:0.94em;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px;
+}
+table.summary td {
+    text-align:right;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px 5px 3px 10px;
+}
+span.mangled {
+    padding-left:15px;
+    font-size:0.875em;
+    cursor:text;
+    color:#444444;
+}
+span.sym_ver {
+    color:#333333;
+    white-space:nowrap;
+    font-family:"DejaVu Sans Mono", Monospace;
+}
+span.attr {
+    color:#333333;
+    font-weight:100;
+}
+span.color_p {
+    font-style:italic;
+    color:Brown;
+}
+span.p {
+    font-style:italic;
+}
+span.fp {
+    font-style:italic;
+    background-color:#FFCCCC;
+}
+span.ttype {
+    font-weight:100;
+}
+span.nowrap {
+    white-space:nowrap;
+}
+span.value {
+    white-space:nowrap;
+    font-weight:bold;
+}
+td.passed {
+    background-color:#CCFFCC;
+}
+td.warning {
+    background-color:#F4F4AF;
+}
+td.failed {
+    background-color:#FFCCCC;
+}
+td.new {
+    background-color:#C6DEFF;
+}
+.top_ref {
+    font-size:0.69em;
+}
+.footer {
+    font-size:0.75em;
+}
+
+.tabset {
+    float:left;
+}
+a.tab {
+    border:1px solid Black;
+    float:left;
+    margin:0px 5px -1px 0px;
+    padding:3px 5px 3px 5px;
+    position:relative;
+    font-size:0.875em;
+    background-color:#DDD;
+    text-decoration:none;
+    color:Black;
+}
+a.disabled:hover
+{
+    color:Black;
+    background:#EEE;
+}
+a.active:hover
+{
+    color:Black;
+    background:White;
+}
+a.active {
+    border-bottom-color:White;
+    background-color:White;
+}
+div.tab {
+    border-top:1px solid Black;
+    padding:0px;
+    width:100%;
+    clear:both;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+    function showContent(header, id)
+{
+    e = document.getElementById(id);
+    if(e.style.display == 'none')
+    {
+        e.style.display = 'block';
+        e.style.visibility = 'visible';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[&minus;]");
+    }
+    else
+    {
+        e.style.display = 'none';
+        e.style.visibility = 'hidden';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[+]");
+    }
+}
+function initTabs()
+{
+    var url = window.location.href;
+    if(url.indexOf('_Source_')!=-1 || url.indexOf('#Source')!=-1)
+    {
+        var tab1 = document.getElementById('BinaryID');
+        var tab2 = document.getElementById('SourceID');
+        tab1.className='tab disabled';
+        tab2.className='tab active';
+    }
+    var sets = document.getElementsByTagName('div');
+    for (var i = 0; i < sets.length; i++)
+    {
+        if (sets[i].className.indexOf('tabset') != -1)
+        {
+            var tabs = [];
+            var links = sets[i].getElementsByTagName('a');
+            for (var j = 0; j < links.length; j++)
+            {
+                if (links[j].className.indexOf('tab') != -1)
+                {
+                    tabs.push(links[j]);
+                    links[j].tabs = tabs;
+                    var tab = document.getElementById(links[j].href.substr(links[j].href.indexOf('#') + 1));
+                    //reset all tabs on start
+                    if (tab)
+                    {
+                        if (links[j].className.indexOf('active')!=-1) {
+                            tab.style.display = 'block';
+                        }
+                        else {
+                            tab.style.display = 'none';
+                        }
+                    }
+                    links[j].onclick = function()
+                    {
+                        var tab = document.getElementById(this.href.substr(this.href.indexOf('#') + 1));
+                        if (tab)
+                        {
+                            //reset all tabs before change
+                            for (var k = 0; k < this.tabs.length; k++)
+                            {
+                                document.getElementById(this.tabs[k].href.substr(this.tabs[k].href.indexOf('#') + 1)).style.display = 'none';
+                                this.tabs[k].className = this.tabs[k].className.replace('active', 'disabled');
+                            }
+                            this.className = 'tab active';
+                            tab.style.display = 'block';
+                            // window.location.hash = this.id.replace('ID', '');
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(url.indexOf('#')!=-1) {
+        location.href=location.href;
+    }
+}
+if (window.addEventListener) window.addEventListener('load', initTabs, false);
+else if (window.attachEvent) window.attachEvent('onload', initTabs);
+    -->
+    </script>
+    </head><body><a name='Source'></a><a name='Binary'></a><a name='Top'></a><h1>API compatibility report for the <span style='color:Blue;'>capi-content-media-content</span> library between <span style='color:Red;'>2.3.1</span> and <span style='color:Red;'>3.0</span> versions on <span style='color:Blue;'>x86_64</span></h1>
+
+            <br/>
+            <div class='tabset'>
+            <a id='BinaryID' href='#BinaryTab' class='tab active'>Binary<br/>Compatibility</a>
+            <a id='SourceID' href='#SourceTab' style='margin-left:3px' class='tab disabled'>Source<br/>Compatibility</a>
+            </div><div id='BinaryTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Library Name</th><td>capi-content-media-content</td></tr>
+<tr><th>Version #1</th><td>2.3.1</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>x86_64</td></tr>
+<tr><th>GCC Version</th><td>4.8</td></tr>
+<tr><th>Subject</th><td width='150px'>Binary Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>12</a></td></tr>
+<tr><th>Total Shared Libraries</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>208 / 98</td></tr>
+<tr><th>Verdict</th><td><span style='color:Red;'><b>Incompatible<br/>(0.6%)</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Binary_Added' style='color:Blue;'>71</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td class='warning'><a href='#Symbol_Binary_Problems_Low' style='color:Blue;'>5</a></td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Binary_Changes_In_Types' style='color:Blue;'>3</a></td></tr>
+<tr><th>Other Changes<br/>in Constants</th><td>-</td><td class='passed'><a href='#Other_Binary_Changes_In_Constants' style='color:Blue;'>10</a></td></tr>
+</table>
+
+<a name='Binary_Added'></a><h2>Added Symbols (71)</h2><hr/>
+<span class='h_name'>media_content.h</span>, <span class='lib_name'>libcapi-content-media-content.so.0.2.79</span><br/>
+<span class="iname">media_content_add_db_updated_cb&#160;<span class='sym_p'>(&#160;media_content_db_update_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>media_content_noti_h* <span class='color_p'>noti_handle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_content_cancel_scan_folder&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>path</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_content_remove_db_updated_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_content_noti_h <span class='color_p'>noti_handle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_content_internal.h</span>, <span class='lib_name'>libcapi-content-media-content.so.0.2.79</span><br/>
+<span class="iname">media_content_set_db_updated_cb_v2&#160;<span class='sym_p'>(&#160;media_content_noti_h* <span class='color_p'>noti_handle</span>, media_content_db_update_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_content_unset_db_updated_cb_v2&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_content_noti_h <span class='color_p'>noti_handle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_duration&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>int <span class='color_p'>duration</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_height&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>int <span class='color_p'>height</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_media_type&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>enum media_content_type_e <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_mime_type&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>mime_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_modified_time&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>time_t <span class='color_p'>modified_time</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_size&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>unsigned long long <span class='color_p'>size</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_storage_id&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>storage_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_storage_type&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>enum media_content_storage_e <span class='color_p'>storage_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_thumbnail_path&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>thumbnail_path</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_width&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>int <span class='color_p'>width</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_delete_from_db&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>storage_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_scan_status&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>storage_uuid</span>, <span class='nowrap'>enum media_storage_scan_status_e* <span class='color_p'>scan_status</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_storage_account&#160;<span class='sym_p'>(&#160;media_storage_h <span class='color_p'>storage</span>, <span class='nowrap'>char** <span class='color_p'>storage_account</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_insert_to_db&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>storage_name</span>, char const* <span class='color_p'>storage_path</span>, char const* <span class='color_p'>storage_account</span>, enum media_content_storage_e <span class='color_p'>storage_type</span>, <span class='nowrap'>media_storage_h* <span class='color_p'>storage</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_face.h</span>, <span class='lib_name'>libcapi-content-media-content.so.0.2.79</span><br/>
+<span class="iname">media_face_clone&#160;<span class='sym_p'>(&#160;media_face_h* <span class='color_p'>dst</span>, <span class='nowrap'>media_face_h <span class='color_p'>src</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_create&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>media_id</span>, <span class='nowrap'>media_face_h* <span class='color_p'>face</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_delete_from_db&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>face_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_face_h <span class='color_p'>face</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_get_face_id&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, <span class='nowrap'>char** <span class='color_p'>face_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_get_face_rect&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, unsigned int* <span class='color_p'>rect_x</span>, unsigned int* <span class='color_p'>rect_y</span>, unsigned int* <span class='color_p'>rect_w</span>, <span class='nowrap'>unsigned int* <span class='color_p'>rect_h</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_get_media_id&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, <span class='nowrap'>char** <span class='color_p'>media_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_get_orientation&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, <span class='nowrap'>enum media_content_orientation_e* <span class='color_p'>orientation</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_get_tag&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, <span class='nowrap'>char** <span class='color_p'>tag</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_insert_to_db&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_face_h <span class='color_p'>face</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_set_face_rect&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, unsigned int <span class='color_p'>rect_x</span>, unsigned int <span class='color_p'>rect_y</span>, unsigned int <span class='color_p'>rect_w</span>, <span class='nowrap'>unsigned int <span class='color_p'>rect_h</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_set_orientation&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, <span class='nowrap'>enum media_content_orientation_e <span class='color_p'>orientation</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_set_tag&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, <span class='nowrap'>char const* <span class='color_p'>tag</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_update_to_db&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_face_h <span class='color_p'>face</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_filter.h</span>, <span class='lib_name'>libcapi-content-media-content.so.0.2.79</span><br/>
+<span class="iname">media_filter_get_storage&#160;<span class='sym_p'>(&#160;<span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> <span class='nowrap'>char** <span class='color_p'>storage_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_filter_set_storage&#160;<span class='sym_p'>(&#160;<span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> <span class='nowrap'>char const* <span class='color_p'>storage_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_folder.h</span>, <span class='lib_name'>libcapi-content-media-content.so.0.2.79</span><br/>
+<span class="iname">media_folder_get_order&#160;<span class='sym_p'>(&#160;media_folder_h <span class='color_p'>folder</span>, <span class='nowrap'>int* <span class='color_p'>order</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_folder_get_parent_folder_id&#160;<span class='sym_p'>(&#160;media_folder_h <span class='color_p'>folder</span>, <span class='nowrap'>char** <span class='color_p'>parent_folder_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_folder_get_storage_id&#160;<span class='sym_p'>(&#160;media_folder_h <span class='color_p'>folder</span>, <span class='nowrap'>char** <span class='color_p'>storage_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_folder_set_order&#160;<span class='sym_p'>(&#160;media_folder_h <span class='color_p'>folder</span>, <span class='nowrap'>int <span class='color_p'>order</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_image.h</span>, <span class='lib_name'>libcapi-content-media-content.so.0.2.79</span><br/>
+<span class="iname">image_meta_get_exposure_time&#160;<span class='sym_p'>(&#160;image_meta_h <span class='color_p'>image</span>, <span class='nowrap'>char** <span class='color_p'>exposure_time</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">image_meta_get_fnumber&#160;<span class='sym_p'>(&#160;image_meta_h <span class='color_p'>image</span>, <span class='nowrap'>double* <span class='color_p'>fnumber</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">image_meta_get_iso&#160;<span class='sym_p'>(&#160;image_meta_h <span class='color_p'>image</span>, <span class='nowrap'>int* <span class='color_p'>iso</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">image_meta_get_model&#160;<span class='sym_p'>(&#160;image_meta_h <span class='color_p'>image</span>, <span class='nowrap'>char** <span class='color_p'>model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_info.h</span>, <span class='lib_name'>libcapi-content-media-content.so.0.2.79</span><br/>
+<span class="iname">media_info_create&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>path</span>, <span class='nowrap'>media_info_h* <span class='color_p'>media</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_foreach_face_from_db&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>media_id</span>, <span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> media_face_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_get_face_count_from_db&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>media_id</span>, <span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> <span class='nowrap'>int* <span class='color_p'>face_count</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_get_played_count&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>int* <span class='color_p'>played_count</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_get_played_time&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>time_t* <span class='color_p'>played_time</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_get_storage_id&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char** <span class='color_p'>storage_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_increase_played_count&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_info_h <span class='color_p'>media</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_insert_to_db_with_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_info_h <span class='color_p'>media</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_is_360_content&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>bool* <span class='color_p'>is_360</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_album&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>album</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_artist&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>artist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_genre&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>genre</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_played_time&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_info_h <span class='color_p'>media</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_recorded_date&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>recorded_date</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_title&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>title</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_playlist.h</span>, <span class='lib_name'>libcapi-content-media-content.so.0.2.79</span><br/>
+<span class="iname">media_playlist_export_to_file&#160;<span class='sym_p'>(&#160;media_playlist_h <span class='color_p'>playlist</span>, <span class='nowrap'>char const* <span class='color_p'>path</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_playlist_import_from_file&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>playlist_name</span>, char const* <span class='color_p'>path</span>, <span class='nowrap'>media_playlist_h* <span class='color_p'>playlist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_storage.h</span>, <span class='lib_name'>libcapi-content-media-content.so.0.2.79</span><br/>
+<span class="iname">media_storage_clone&#160;<span class='sym_p'>(&#160;media_storage_h* <span class='color_p'>dst</span>, <span class='nowrap'>media_storage_h <span class='color_p'>src</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_storage_h <span class='color_p'>storage</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_foreach_media_from_db&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>storage_id</span>, <span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> media_info_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_foreach_storage_from_db&#160;<span class='sym_p'>(&#160;<span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> media_storage_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_id&#160;<span class='sym_p'>(&#160;media_storage_h <span class='color_p'>storage</span>, <span class='nowrap'>char** <span class='color_p'>storage_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_media_count_from_db&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>storage_id</span>, <span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> <span class='nowrap'>int* <span class='color_p'>media_count</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_name&#160;<span class='sym_p'>(&#160;media_storage_h <span class='color_p'>storage</span>, <span class='nowrap'>char** <span class='color_p'>storage_name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_path&#160;<span class='sym_p'>(&#160;media_storage_h <span class='color_p'>storage</span>, <span class='nowrap'>char** <span class='color_p'>storage_path</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_storage_count_from_db&#160;<span class='sym_p'>(&#160;<span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> <span class='nowrap'>int* <span class='color_p'>storage_count</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_storage_info_from_db&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>storage_id</span>, <span class='nowrap'>media_storage_h* <span class='color_p'>storage</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_type&#160;<span class='sym_p'>(&#160;media_storage_h <span class='color_p'>storage</span>, <span class='nowrap'>enum media_content_storage_e* <span class='color_p'>storage_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Low_Risk_Binary_Problems'></a><a name='Symbol_Binary_Problems_Low'></a><a name='Interface_Binary_Problems_Low'></a>
+<h2>Problems with Symbols, Low Severity (5)</h2><hr/>
+<span class='h_name'>media_audio.h</span>, <span class='lib_name'>libcapi-content-media-content.so.0.2.136</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='ext'>[+]</span> audio_meta_get_album&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>album_name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_1" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>audio_meta_get_album&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>album</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>album_name</b> has been renamed to <b>album</b>.</td>
+<td>Renaming of a parameter may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_2')">
+<span class='ext'>[+]</span> audio_meta_get_album_artist&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>album_artist_name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_2" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>audio_meta_get_album_artist&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>album_artist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>album_artist_name</b> has been renamed to <b>album_artist</b>.</td>
+<td>Renaming of a parameter may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='ext'>[+]</span> audio_meta_get_artist&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>artist_name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_3" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>audio_meta_get_artist&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>artist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>artist_name</b> has been renamed to <b>artist</b>.</td>
+<td>Renaming of a parameter may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_4')">
+<span class='ext'>[+]</span> audio_meta_get_composer&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>composer_name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_4" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>audio_meta_get_composer&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>composer</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>composer_name</b> has been renamed to <b>composer</b>.</td>
+<td>Renaming of a parameter may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+<span class='ext'>[+]</span> audio_meta_get_genre&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>genre_name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_5" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>audio_meta_get_genre&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>genre</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>genre_name</b> has been renamed to <b>genre</b>.</td>
+<td>Renaming of a parameter may indicate a change in its semantic meaning.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Binary_Changes'></a><a name='Other_Binary_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (3)</h2><hr/>
+<span class='h_name'>media_content_type.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_6')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> media_content_order_e (1)</span>
+<br/>
+<div id="c_6" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>MEDIA_CONTENT_ORDER_OTHER</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_7')">
+[+] affected symbols (2)</span>
+<div id="c_7" style="display:none;">
+<div class='affected'><span class='iname_a'>media_filter_get_order&#160;<span class='sym_p'>(&#160;<span class='nowrap'>filter_h <i>filter</i>,</span> enum media_content_order_e* <span class='fp'>order_type</span>, <span class='nowrap'>char** <i>order_keyword</i>,</span> <span class='nowrap'>enum media_content_collation_e* <i>collate_type</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;order_type&#39; (pointer) has base type &#39;enum media_content_order_e&#39;.</div>
+<span class='iname_a'>media_filter_set_order&#160;<span class='sym_p'>(&#160;<span class='nowrap'>filter_h <i>filter</i>,</span> enum media_content_order_e <span class='fp'>order_type</span>, <span class='nowrap'>char const* <i>order_keyword</i>,</span> <span class='nowrap'>enum media_content_collation_e <i>collate_type</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;order_type&#39; has type &#39;enum media_content_order_e&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_8')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> media_content_storage_e (2)</span>
+<br/>
+<div id="c_8" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>MEDIA_CONTENT_STORAGE_CLOUD</b> with value <b>100</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>MEDIA_CONTENT_STORAGE_EXTERNAL_USB</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_9')">
+[+] affected symbols (2)</span>
+<div id="c_9" style="display:none;">
+<div class='affected'><span class='iname_a'>media_folder_get_storage_type&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_folder_h <i>folder</i>,</span> <span class='nowrap'>enum media_content_storage_e* <span class='fp'>storage_type</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;storage_type&#39; (pointer) has base type &#39;enum media_content_storage_e&#39;.</div>
+<span class='iname_a'>media_info_get_storage_type&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_info_h <i>media</i>,</span> <span class='nowrap'>enum media_content_storage_e* <span class='fp'>storage_type</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;storage_type&#39; (pointer) has base type &#39;enum media_content_storage_e&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Binary_Changes_In_Constants'></a><h2>Other Changes in Constants (10)</h2><hr/>
+<span class='h_name'>media_content_type.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_10')">
+<span class='ext'>[+]</span> FOLDER_ORDER</span>
+<br/>
+<div id="c_10" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>FOLDER_ORDER</b> with value <b>&quot;FOLDER_ORDER&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_11')">
+<span class='ext'>[+]</span> FOLDER_PARENT_FOLDER_ID</span>
+<br/>
+<div id="c_11" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>FOLDER_PARENT_FOLDER_ID</b> with value <b>&quot;FOLDER_PARENT_FOLDER_ID&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_12')">
+<span class='ext'>[+]</span> MEDIA_360</span>
+<br/>
+<div id="c_12" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_360</b> with value <b>&quot;MEDIA_360&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_13')">
+<span class='ext'>[+]</span> MEDIA_EXPOSURE_TIME</span>
+<br/>
+<div id="c_13" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_EXPOSURE_TIME</b> with value <b>&quot;MEDIA_EXPOSURE_TIME&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_14')">
+<span class='ext'>[+]</span> MEDIA_FACE_TAG</span>
+<br/>
+<div id="c_14" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_FACE_TAG</b> with value <b>&quot;MEDIA_FACE_TAG&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_15')">
+<span class='ext'>[+]</span> MEDIA_FNUMBER</span>
+<br/>
+<div id="c_15" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_FNUMBER</b> with value <b>&quot;MEDIA_FNUMBER&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_16')">
+<span class='ext'>[+]</span> MEDIA_ISO</span>
+<br/>
+<div id="c_16" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_ISO</b> with value <b>&quot;MEDIA_ISO&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_17')">
+<span class='ext'>[+]</span> MEDIA_MODEL</span>
+<br/>
+<div id="c_17" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_MODEL</b> with value <b>&quot;MEDIA_MODEL&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_18')">
+<span class='ext'>[+]</span> MEDIA_STORAGE_ID</span>
+<br/>
+<div id="c_18" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_STORAGE_ID</b> with value <b>&quot;STORAGE_ID&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_19')">
+<span class='ext'>[+]</span> MEDIA_STORAGE_PATH</span>
+<br/>
+<div id="c_19" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_STORAGE_PATH</b> with value <b>&quot;STORAGE_PATH&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (12)</h2><hr/>
+<div class='h_list'>
+media_audio.h<br/>
+media_bookmark.h<br/>
+media_content.h<br/>
+media_content_type.h<br/>
+media_filter.h<br/>
+media_folder.h<br/>
+media_group.h<br/>
+media_image.h<br/>
+media_info.h<br/>
+media_playlist.h<br/>
+media_tag.h<br/>
+media_video.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Shared Libraries (1)</h2><hr/>
+<div class='lib_list'>
+libcapi-content-media-content.so.0.2.136<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><div id='SourceTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Library Name</th><td>capi-content-media-content</td></tr>
+<tr><th>Version #1</th><td>2.3.1</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>x86_64</td></tr>
+<tr><th>GCC Version</th><td>4.8</td></tr>
+<tr><th>Subject</th><td width='150px'>Source Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>12</a></td></tr>
+<tr><th>Total Shared Libraries</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>208 / 98</td></tr>
+<tr><th>Verdict</th><td><span style='color:Green;'><b>Compatible</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Source_Added' style='color:Blue;'>71</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Types' style='color:Blue;'>3</a></td></tr>
+<tr><th>Other Changes<br/>in Symbols</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Symbols' style='color:Blue;'>5</a></td></tr>
+<tr><th>Other Changes<br/>in Constants</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Constants' style='color:Blue;'>10</a></td></tr>
+</table>
+
+<a name='Source_Added'></a><h2>Added Symbols (71)</h2><hr/>
+<span class='h_name'>media_content.h</span><br/>
+<span class="iname">media_content_add_db_updated_cb&#160;<span class='sym_p'>(&#160;media_content_db_update_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>media_content_noti_h* <span class='color_p'>noti_handle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_content_cancel_scan_folder&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>path</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_content_remove_db_updated_cb&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_content_noti_h <span class='color_p'>noti_handle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_content_internal.h</span><br/>
+<span class="iname">media_content_set_db_updated_cb_v2&#160;<span class='sym_p'>(&#160;media_content_noti_h* <span class='color_p'>noti_handle</span>, media_content_db_update_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_content_unset_db_updated_cb_v2&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_content_noti_h <span class='color_p'>noti_handle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_duration&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>int <span class='color_p'>duration</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_height&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>int <span class='color_p'>height</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_media_type&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>enum media_content_type_e <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_mime_type&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>mime_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_modified_time&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>time_t <span class='color_p'>modified_time</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_size&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>unsigned long long <span class='color_p'>size</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_storage_id&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>storage_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_storage_type&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>enum media_content_storage_e <span class='color_p'>storage_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_thumbnail_path&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>thumbnail_path</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_width&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>int <span class='color_p'>width</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_delete_from_db&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>storage_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_scan_status&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>storage_uuid</span>, <span class='nowrap'>enum media_storage_scan_status_e* <span class='color_p'>scan_status</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_storage_account&#160;<span class='sym_p'>(&#160;media_storage_h <span class='color_p'>storage</span>, <span class='nowrap'>char** <span class='color_p'>storage_account</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_insert_to_db&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>storage_name</span>, char const* <span class='color_p'>storage_path</span>, char const* <span class='color_p'>storage_account</span>, enum media_content_storage_e <span class='color_p'>storage_type</span>, <span class='nowrap'>media_storage_h* <span class='color_p'>storage</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_face.h</span><br/>
+<span class="iname">media_face_clone&#160;<span class='sym_p'>(&#160;media_face_h* <span class='color_p'>dst</span>, <span class='nowrap'>media_face_h <span class='color_p'>src</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_create&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>media_id</span>, <span class='nowrap'>media_face_h* <span class='color_p'>face</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_delete_from_db&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>face_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_face_h <span class='color_p'>face</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_get_face_id&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, <span class='nowrap'>char** <span class='color_p'>face_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_get_face_rect&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, unsigned int* <span class='color_p'>rect_x</span>, unsigned int* <span class='color_p'>rect_y</span>, unsigned int* <span class='color_p'>rect_w</span>, <span class='nowrap'>unsigned int* <span class='color_p'>rect_h</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_get_media_id&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, <span class='nowrap'>char** <span class='color_p'>media_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_get_orientation&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, <span class='nowrap'>enum media_content_orientation_e* <span class='color_p'>orientation</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_get_tag&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, <span class='nowrap'>char** <span class='color_p'>tag</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_insert_to_db&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_face_h <span class='color_p'>face</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_set_face_rect&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, unsigned int <span class='color_p'>rect_x</span>, unsigned int <span class='color_p'>rect_y</span>, unsigned int <span class='color_p'>rect_w</span>, <span class='nowrap'>unsigned int <span class='color_p'>rect_h</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_set_orientation&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, <span class='nowrap'>enum media_content_orientation_e <span class='color_p'>orientation</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_set_tag&#160;<span class='sym_p'>(&#160;media_face_h <span class='color_p'>face</span>, <span class='nowrap'>char const* <span class='color_p'>tag</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_face_update_to_db&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_face_h <span class='color_p'>face</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_filter.h</span><br/>
+<span class="iname">media_filter_get_storage&#160;<span class='sym_p'>(&#160;<span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> <span class='nowrap'>char** <span class='color_p'>storage_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_filter_set_storage&#160;<span class='sym_p'>(&#160;<span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> <span class='nowrap'>char const* <span class='color_p'>storage_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_folder.h</span><br/>
+<span class="iname">media_folder_get_order&#160;<span class='sym_p'>(&#160;media_folder_h <span class='color_p'>folder</span>, <span class='nowrap'>int* <span class='color_p'>order</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_folder_get_parent_folder_id&#160;<span class='sym_p'>(&#160;media_folder_h <span class='color_p'>folder</span>, <span class='nowrap'>char** <span class='color_p'>parent_folder_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_folder_get_storage_id&#160;<span class='sym_p'>(&#160;media_folder_h <span class='color_p'>folder</span>, <span class='nowrap'>char** <span class='color_p'>storage_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_folder_set_order&#160;<span class='sym_p'>(&#160;media_folder_h <span class='color_p'>folder</span>, <span class='nowrap'>int <span class='color_p'>order</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_image.h</span><br/>
+<span class="iname">image_meta_get_exposure_time&#160;<span class='sym_p'>(&#160;image_meta_h <span class='color_p'>image</span>, <span class='nowrap'>char** <span class='color_p'>exposure_time</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">image_meta_get_fnumber&#160;<span class='sym_p'>(&#160;image_meta_h <span class='color_p'>image</span>, <span class='nowrap'>double* <span class='color_p'>fnumber</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">image_meta_get_iso&#160;<span class='sym_p'>(&#160;image_meta_h <span class='color_p'>image</span>, <span class='nowrap'>int* <span class='color_p'>iso</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">image_meta_get_model&#160;<span class='sym_p'>(&#160;image_meta_h <span class='color_p'>image</span>, <span class='nowrap'>char** <span class='color_p'>model</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_info.h</span><br/>
+<span class="iname">media_info_create&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>path</span>, <span class='nowrap'>media_info_h* <span class='color_p'>media</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_foreach_face_from_db&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>media_id</span>, <span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> media_face_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_get_face_count_from_db&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>media_id</span>, <span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> <span class='nowrap'>int* <span class='color_p'>face_count</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_get_played_count&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>int* <span class='color_p'>played_count</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_get_played_time&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>time_t* <span class='color_p'>played_time</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_get_storage_id&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char** <span class='color_p'>storage_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_increase_played_count&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_info_h <span class='color_p'>media</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_insert_to_db_with_data&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_info_h <span class='color_p'>media</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_is_360_content&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>bool* <span class='color_p'>is_360</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_album&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>album</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_artist&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>artist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_genre&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>genre</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_played_time&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_info_h <span class='color_p'>media</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_recorded_date&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>recorded_date</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_info_set_title&#160;<span class='sym_p'>(&#160;media_info_h <span class='color_p'>media</span>, <span class='nowrap'>char const* <span class='color_p'>title</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_playlist.h</span><br/>
+<span class="iname">media_playlist_export_to_file&#160;<span class='sym_p'>(&#160;media_playlist_h <span class='color_p'>playlist</span>, <span class='nowrap'>char const* <span class='color_p'>path</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_playlist_import_from_file&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>playlist_name</span>, char const* <span class='color_p'>path</span>, <span class='nowrap'>media_playlist_h* <span class='color_p'>playlist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>media_storage.h</span><br/>
+<span class="iname">media_storage_clone&#160;<span class='sym_p'>(&#160;media_storage_h* <span class='color_p'>dst</span>, <span class='nowrap'>media_storage_h <span class='color_p'>src</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_storage_h <span class='color_p'>storage</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_foreach_media_from_db&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>storage_id</span>, <span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> media_info_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_foreach_storage_from_db&#160;<span class='sym_p'>(&#160;<span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> media_storage_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_id&#160;<span class='sym_p'>(&#160;media_storage_h <span class='color_p'>storage</span>, <span class='nowrap'>char** <span class='color_p'>storage_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_media_count_from_db&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>storage_id</span>, <span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> <span class='nowrap'>int* <span class='color_p'>media_count</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_name&#160;<span class='sym_p'>(&#160;media_storage_h <span class='color_p'>storage</span>, <span class='nowrap'>char** <span class='color_p'>storage_name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_path&#160;<span class='sym_p'>(&#160;media_storage_h <span class='color_p'>storage</span>, <span class='nowrap'>char** <span class='color_p'>storage_path</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_storage_count_from_db&#160;<span class='sym_p'>(&#160;<span class='nowrap'>filter_h <span class='color_p'>filter</span>,</span> <span class='nowrap'>int* <span class='color_p'>storage_count</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_storage_info_from_db&#160;<span class='sym_p'>(&#160;char const* <span class='color_p'>storage_id</span>, <span class='nowrap'>media_storage_h* <span class='color_p'>storage</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">media_storage_get_type&#160;<span class='sym_p'>(&#160;media_storage_h <span class='color_p'>storage</span>, <span class='nowrap'>enum media_content_storage_e* <span class='color_p'>storage_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes'></a><a name='Other_Source_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (3)</h2><hr/>
+<span class='h_name'>media_content_type.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_20')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> media_content_order_e (1)</span>
+<br/>
+<div id="c_20" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>MEDIA_CONTENT_ORDER_OTHER</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_21')">
+[+] affected symbols (2)</span>
+<div id="c_21" style="display:none;">
+<div class='affected'><span class='iname_a'>media_filter_get_order&#160;<span class='sym_p'>(&#160;<span class='nowrap'>filter_h <i>filter</i>,</span> enum media_content_order_e* <span class='fp'>order_type</span>, <span class='nowrap'>char** <i>order_keyword</i>,</span> <span class='nowrap'>enum media_content_collation_e* <i>collate_type</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;order_type&#39; (pointer) has base type &#39;enum media_content_order_e&#39;.</div>
+<span class='iname_a'>media_filter_set_order&#160;<span class='sym_p'>(&#160;<span class='nowrap'>filter_h <i>filter</i>,</span> enum media_content_order_e <span class='fp'>order_type</span>, <span class='nowrap'>char const* <i>order_keyword</i>,</span> <span class='nowrap'>enum media_content_collation_e <i>collate_type</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;order_type&#39; has type &#39;enum media_content_order_e&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_22')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> media_content_storage_e (2)</span>
+<br/>
+<div id="c_22" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>MEDIA_CONTENT_STORAGE_CLOUD</b> with value <b>100</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>MEDIA_CONTENT_STORAGE_EXTERNAL_USB</b> with value <b>2</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_23')">
+[+] affected symbols (2)</span>
+<div id="c_23" style="display:none;">
+<div class='affected'><span class='iname_a'>media_folder_get_storage_type&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_folder_h <i>folder</i>,</span> <span class='nowrap'>enum media_content_storage_e* <span class='fp'>storage_type</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;storage_type&#39; (pointer) has base type &#39;enum media_content_storage_e&#39;.</div>
+<span class='iname_a'>media_info_get_storage_type&#160;<span class='sym_p'>(&#160;<span class='nowrap'>media_info_h <i>media</i>,</span> <span class='nowrap'>enum media_content_storage_e* <span class='fp'>storage_type</span> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;storage_type&#39; (pointer) has base type &#39;enum media_content_storage_e&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes_In_Symbols'></a><a name='Other_Source_Changes_In_Interfaces'></a>
+<h2>Other Changes in Symbols (5)</h2><hr/>
+<span class='h_name'>media_audio.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_24')">
+<span class='ext'>[+]</span> audio_meta_get_album&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>album_name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_24" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>audio_meta_get_album&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>album</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>album_name</b> has been renamed to <b>album</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_25')">
+<span class='ext'>[+]</span> audio_meta_get_album_artist&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>album_artist_name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_25" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>audio_meta_get_album_artist&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>album_artist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>album_artist_name</b> has been renamed to <b>album_artist</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_26')">
+<span class='ext'>[+]</span> audio_meta_get_artist&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>artist_name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_26" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>audio_meta_get_artist&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>artist</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>artist_name</b> has been renamed to <b>artist</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_27')">
+<span class='ext'>[+]</span> audio_meta_get_composer&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>composer_name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_27" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>audio_meta_get_composer&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>composer</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>composer_name</b> has been renamed to <b>composer</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+<span class="section" onclick="javascript:showContent(this, 'c_28')">
+<span class='ext'>[+]</span> audio_meta_get_genre&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>genre_name</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span> (1)</span>
+<br/>
+<div id="c_28" style="display:none;">
+
+
+<span class='new_sign_lbl'>changed to:</span>
+<br/>
+<span class='new_sign'>audio_meta_get_genre&#160;<span class='sym_p'>(&#160;audio_meta_h <span class='color_p'>audio</span>, <span class='nowrap'>char** <span class='color_p'>genre</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td><b>2nd</b> parameter <b>genre_name</b> has been renamed to <b>genre</b>.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes_In_Constants'></a><h2>Other Changes in Constants (10)</h2><hr/>
+<span class='h_name'>media_content_type.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_29')">
+<span class='ext'>[+]</span> FOLDER_ORDER</span>
+<br/>
+<div id="c_29" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>FOLDER_ORDER</b> with value <b>&quot;FOLDER_ORDER&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_30')">
+<span class='ext'>[+]</span> FOLDER_PARENT_FOLDER_ID</span>
+<br/>
+<div id="c_30" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>FOLDER_PARENT_FOLDER_ID</b> with value <b>&quot;FOLDER_PARENT_FOLDER_ID&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_31')">
+<span class='ext'>[+]</span> MEDIA_360</span>
+<br/>
+<div id="c_31" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_360</b> with value <b>&quot;MEDIA_360&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_32')">
+<span class='ext'>[+]</span> MEDIA_EXPOSURE_TIME</span>
+<br/>
+<div id="c_32" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_EXPOSURE_TIME</b> with value <b>&quot;MEDIA_EXPOSURE_TIME&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_33')">
+<span class='ext'>[+]</span> MEDIA_FACE_TAG</span>
+<br/>
+<div id="c_33" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_FACE_TAG</b> with value <b>&quot;MEDIA_FACE_TAG&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_34')">
+<span class='ext'>[+]</span> MEDIA_FNUMBER</span>
+<br/>
+<div id="c_34" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_FNUMBER</b> with value <b>&quot;MEDIA_FNUMBER&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_35')">
+<span class='ext'>[+]</span> MEDIA_ISO</span>
+<br/>
+<div id="c_35" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_ISO</b> with value <b>&quot;MEDIA_ISO&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_36')">
+<span class='ext'>[+]</span> MEDIA_MODEL</span>
+<br/>
+<div id="c_36" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_MODEL</b> with value <b>&quot;MEDIA_MODEL&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_37')">
+<span class='ext'>[+]</span> MEDIA_STORAGE_ID</span>
+<br/>
+<div id="c_37" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_STORAGE_ID</b> with value <b>&quot;STORAGE_ID&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_38')">
+<span class='ext'>[+]</span> MEDIA_STORAGE_PATH</span>
+<br/>
+<div id="c_38" style="display:none;">
+<table class='ptable'>
+<tr>
+<th width='2%'></th>
+<th width='47%'>Change</th>
+<th>Effect</th>
+</tr>
+<tr>
+<th>1</th>
+<td>The constant <b>MEDIA_STORAGE_PATH</b> with value <b>&quot;STORAGE_PATH&quot;</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<br/>
+</div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (12)</h2><hr/>
+<div class='h_list'>
+media_audio.h<br/>
+media_bookmark.h<br/>
+media_content.h<br/>
+media_content_type.h<br/>
+media_filter.h<br/>
+media_folder.h<br/>
+media_group.h<br/>
+media_image.h<br/>
+media_info.h<br/>
+media_playlist.h<br/>
+media_tag.h<br/>
+media_video.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Shared Libraries (1)</h2><hr/>
+<div class='lib_list'>
+libcapi-content-media-content.so.0.2.136<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><hr/>
+<div class='footer' align='right'><i>Generated by <a href='http://lvc.github.io/abi-compliance-checker/'>ABI Compliance Checker</a> 1.99.18 &#160;</i>
+</div>
+<br/>
+
+</body></html>

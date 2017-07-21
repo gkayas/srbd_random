@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+modules=/usr/lib/ecore_imf/modules
+module_arch=v-1.16
+
+Name: ecore-imf
+Description: E core library, IMF module
+Version: 1.16.0
+Requires.private: eina >= 1.16.0 eo >= 1.16.0 ecore-input >= 1.16.0 ecore >= 1.16.0  
+Libs: -L${libdir} -lecore_imf
+Cflags: -I${includedir}/efl-1 -I${includedir}/ecore-imf-1

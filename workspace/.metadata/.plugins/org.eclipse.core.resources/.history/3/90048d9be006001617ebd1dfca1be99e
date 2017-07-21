@@ -1,0 +1,21 @@
+
+public class NumberNode extends Node{
+	
+	
+	public NumberNode(int type) {
+		super(type);
+	}
+
+
+	@Override
+	public int getValue() {
+		return 0;
+	}
+
+	@Override
+	public int getOperation() {
+		return 0;
+	}
+
+
+}

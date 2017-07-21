@@ -1,0 +1,17 @@
+
+public class Unknown extends Node {
+
+	@Override
+	public String getType() {
+		
+		return "non";
+	}
+
+	@Override
+	public int getValue() {
+		// TODO Auto-generated method stub
+		return -1;
+	}
+
+	
+}

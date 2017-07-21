@@ -1,0 +1,533 @@
+package fxviewer;
+
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+import java.util.Scanner;
+
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
+import apprunner.AppInfo;
+import apprunner.JsoupXMLParser;
+import javafx.application.Platform;
+
+import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.CheckBoxBuilder;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
+
+public class MainController implements Initializable  /*,ChangeListener*/{
+
+//	public static final String SUITE_FILES_FOLDER = ResourceUtils.getXmlPath();
+
+	static LaunchInterfaceTask interfaceTask;
+	static RunServerTask runServerTask;
+
+	@FXML
+	private TableView<AppInfo> tcTable;
+
+	@FXML
+	private TableColumn<AppInfo, String> appName;
+	
+	@FXML
+	private TableColumn<AppInfo, String> install;
+	
+	@FXML
+	private TableColumn<AppInfo, String> launch;
+	
+	@FXML
+	private TableColumn<AppInfo, String> exploratory;
+	
+	@FXML
+	private TableColumn<AppInfo, String> close;
+	
+	@FXML
+	private TableColumn<AppInfo, String> uninstall;
+	
+	@FXML
+	private TableColumn<AppInfo, String> crash;
+	
+	@FXML
+	private CheckBox installCheck;
+	
+	@FXML
+	private CheckBox launchCheck;
+	
+	@FXML
+	private CheckBox exploratoryCheck;
+	
+	@FXML
+	private CheckBox closeCheck;
+	
+	@FXML
+	private CheckBox uninstallCheck;
+	
+	@FXML
+	private CheckBox crashCheck;
+	
+	@FXML
+	private Button browseBtn;
+
+	@FXML
+	private Button runBtn;
+
+	@FXML
+	private Button rerunBtn;
+
+	@FXML
+	private Button runsingleBtn;
+	
+	@FXML
+	private Button runServerBtn;
+	
+	@FXML
+	private Button interfaceBtn;
+
+	@FXML
+	private TextArea console;
+	
+	public void runBtnClicked() {
+		clearConsole();
+		JsoupXMLParser.writeXml(this);
+		generateJavaFile();
+//		TCRunner runner = SuiteRunner.getRunner();
+//		new TCRunTask(runner, this).execute();
+	}
+	
+	private void generateJavaFile() {
+		
+		try {
+			Scanner sc = new Scanner(new File("./template"));
+			StringBuffer sb = new StringBuffer();
+			while(sc.hasNextLine()) {
+				sb.append(sc.nextLine()+"\n");
+			}
+			sc.close();
+			
+			
+			List<AppInfo> apps = getTableRows();
+			for (AppInfo appInfo : apps) {
+				String appName = appInfo.getName().getValue();
+				PrintWriter pw = new PrintWriter(new File("./src/storeapp/StoreApp_"+appName));
+				String temp = sb.toString();
+				temp = temp.replaceAll("ClassName","StoreApp_"+appName);
+				pw.write(temp);
+				pw.flush();
+				pw.close();
+			}
+			
+	
+		} catch (FileNotFoundException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+
+	public void setRunButtonDisable(boolean value) {
+		runBtn.setDisable(value);
+	}
+	
+	public List<AppInfo> getTableRows() {
+		
+		return tcTable.getItems();
+	}
+	
+	public boolean isInstall() {
+		return installCheck.selectedProperty().getValue();
+	}
+	
+	public boolean isLaunch() {
+		return launchCheck.selectedProperty().getValue();
+	}
+	
+	public boolean isExploratory() {
+		return exploratoryCheck.selectedProperty().getValue();
+	}
+	
+	public boolean isCloseCheck() {
+		return closeCheck.selectedProperty().getValue();
+	}
+	
+	public boolean isUninstallCheck() {
+		return uninstallCheck.selectedProperty().getValue();
+	}
+	
+	public boolean isCrash() {
+		return crashCheck.selectedProperty().getValue();
+	}
+	
+	public void toggleRunServerBtn() {
+		runServerBtn.setDisable(!runServerBtn.isDisabled());
+	}
+	
+	public void toggleInterfaceBtn() {
+		interfaceBtn.setDisable(!interfaceBtn.isDisabled());
+	}
+	
+	public void browseBtnClicked() {
+		File file = new File(System.getProperty("user.home"));
+		
+		JFileChooser jFileChooser = new JFileChooser(file);
+		jFileChooser.setMultiSelectionEnabled(true);
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("App File", "tpk", "wgt", "rpm");
+		jFileChooser.setAcceptAllFileFilterUsed(false);
+		jFileChooser.addChoosableFileFilter(filter);
+		int rVal = jFileChooser.showSaveDialog(jFileChooser);
+
+		if (rVal == JFileChooser.APPROVE_OPTION) {
+			File [] selectedFiles = jFileChooser.getSelectedFiles();
+			ArrayList<AppInfo> appList = new ArrayList<AppInfo>();
+			for (File f : selectedFiles) {
+				System.out.println(f.getName());
+				AppInfo app = new AppInfo(f.getName().replaceAll(".wgt", "").replaceAll(".tpk", ""));
+				appList.add(app);
+			}
+			addAllToTcTable(appList);
+		}
+	}
+	
+	public void runServerBtnClicked() {
+		clearConsole();
+		runServerTask = new RunServerTask(this);
+		runServerTask.execute();
+	}
+	
+	public void interfaceBtnClicked() {
+		clearConsole();
+	 	interfaceTask = new LaunchInterfaceTask(this);
+	 	interfaceTask.execute();
+	}
+	
+	
+	
+	public TextArea getConsole() {
+		return console;
+	}
+
+	public void rerunBtnClicked() {
+//		clearConsole();
+//		TCRunner runner = SuiteRunner.getRunner();
+//		new TCReRunTask(runner, this).execute();
+	}
+
+	public void runsingleBtnClicked() {
+//		clearConsole();
+//		TCRunner runner = SuiteRunner.getRunner();
+//		AppInfo selectedTc =  tcTable.getSelectionModel().getSelectedItem();
+//		System.out.println(selectedTc.getTcName());
+//		new TCRunSingle(runner, selectedTc.getTcName()).execute();;
+	}
+
+	public void listFilesForFolder(final File folder, TreeItem<String> root) {
+//		List<String> suiteNames = new ArrayList<String>();
+//		for (final File fileEntry : folder.listFiles()) {
+//			if (fileEntry.isDirectory()) {
+//				listFilesForFolder(fileEntry, root);
+//			} else {
+//				// System.out.println(fileEntry.getName());
+//				//TreeItem<String> item = new TreeItem<>(fileEntry.getName().split("\\.")[0]);
+//				//root.getChildren().add(item);
+//				suiteNames.add(fileEntry.getName().split("\\.")[0]);
+//			}
+//		}
+//		
+//		Collections.sort(suiteNames);
+//		for (String string : suiteNames) {
+//			TreeItem<String> item = new TreeItem<>(string);
+//			root.getChildren().add(item);
+//		}
+		
+//		root.getChildren().add(new TreeItem<String>("Mobile"));
+//		root.getChildren().add(new TreeItem<String>("Wearable"));
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		if(console == null) 
+			System.out.println("Console null");
+		
+		CustomConsole customConsole = new CustomConsole(console);
+		PrintStream ps = new PrintStream(customConsole);
+		
+		//System.setOut(ps);
+		//System.setErr(ps);
+
+		TreeItem<String> treeRoot = new TreeItem<>("Store App");
+//		listFilesForFolder(new File(SUITE_FILES_FOLDER), treeRoot);
+
+//		suiteTree.getSelectionModel().selectedItemProperty().addListener(this);
+		treeRoot.setExpanded(true);
+		
+		tcTable.setOnMouseClicked( new EventHandler<MouseEvent>() {
+
+			@Override
+			public void handle(MouseEvent event) {
+//				
+//				 if ( event.getClickCount() == 2  ) {
+//					    TestInfo selectedTcInfo = tcTable.getSelectionModel().getSelectedItem();
+//			            System.out.println(ResourceUtils.getErrorScreenshotPath()+SuiteRunner.getRunner().getSuiteName()+"/"+tcTable.getSelectionModel().getSelectedItem().getTcName()+".png");
+//			            if(selectedTcInfo.getResult().equals(TCResult.Fail)) {
+//			            	 imagePopupWindowShow(ResourceUtils.getErrorScreenshotPath()+SuiteRunner.getRunner().getSuiteName()+"/"+selectedTcInfo.getTcName()+".png");
+//			            }
+//			           
+//			     }
+			}
+		});
+
+//		suiteTree.setRoot(treeRoot);
+
+		install.setStyle("-fx-alignment: CENTER;");
+		exploratory.setStyle("-fx-alignment: CENTER;");
+		uninstall.setStyle("-fx-alignment: CENTER;");
+		
+		appName.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("appName"));
+		
+		install.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("install"));
+		
+		launch.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("launch"));
+		
+		exploratory.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("exploratory"));
+		
+		close.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("close"));
+		
+		uninstall.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("uninstall"));
+		
+		crash.setCellValueFactory(new PropertyValueFactory<AppInfo, String>("crash"));
+	}
+
+	public void clearConsole() {
+
+		Platform.runLater(() -> console.clear());
+	}
+	
+    public void imagePopupWindowShow(String imgPath) {
+
+        File imageFile;
+        Image image;
+        ImageView imageView; 
+        BorderPane pane;
+        Scene scene;
+        Stage stage;
+        
+        imageFile = new File(imgPath);
+        image = new Image(imageFile.toURI().toString());
+        imageView = new ImageView(image);
+
+        // Image will sit in the middle of our popup.
+        pane = new BorderPane();
+        pane.setCenter(imageView);
+        scene = new Scene(pane);
+
+        // Create the actual window and display it.
+        stage = new Stage();
+        stage.setScene(scene);
+        // Without this, the audio won't stop!
+        stage.setOnCloseRequest(
+            e -> {
+                e.consume();
+                stage.close();
+            }
+        );
+        stage.showAndWait();
+    }
+
+//	@Override
+//	public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+//
+//		TreeItem<String> selectedItem = (TreeItem<String>) newValue;
+//
+//		if(selectedItem.getValue().equals("Storeapp Automation")) {
+//			return;
+//		}
+//
+//		TCRunner runner = null;
+//		try {
+//			runner = SuiteRunner.getAppRunner(selectedItem.getValue());
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//
+//		resetTctable(runner.getAppInfoList());
+//	}
+
+	public void addToTcTable(AppInfo tc) {
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				tcTable.getItems().add(tc);
+			}
+		});
+
+	}
+
+	public void addAllToTcTable(List<AppInfo> appList) {
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				for (AppInfo app : appList) {
+					addToTcTable(app);
+				}
+			}
+		});
+	}
+
+	public void removeAllFromTcTable() {
+
+
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				ObservableList<AppInfo> data = tcTable.getItems();				
+				data.remove(0, data.size());
+
+			}
+		});
+	} 
+
+	public void resetTctable(List<AppInfo> newList) {
+
+		removeAllFromTcTable();
+		addAllToTcTable(newList);
+	}
+	private void performCompileRun() {
+//		codeBox.getConsoleArea().setText("");
+		
+		new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				String currentWorkingDirectory1 = System.getProperty("user.dir");
+				ProcessBuilder compile, run;
+				Process compileProcess, runProcess;
+
+				try {
+					if (!isWindows()) {
+						compile = new ProcessBuilder("javac", "-d",
+								currentWorkingDirectory1 + "/AFEngine/bin", "-cp", currentWorkingDirectory1
+										+ "/AFEngine/lib/*" + ":" + currentWorkingDirectory1 + "/AFEngine/src",
+								currentWorkingDirectory1 + "/AFEngine/src/Main.java");
+					} else {
+						compile = new ProcessBuilder("cmd", "/c", "javac", "-d",
+								currentWorkingDirectory1 + "/AFEngine/bin", "-cp", currentWorkingDirectory1
+									+ "/AFEngine/lib/*" + ";" + currentWorkingDirectory1 + "/AFEngine/src",
+								currentWorkingDirectory1 + "/AFEngine/src/Main.java");
+					}
+					
+					compileProcess = compile.start();
+					
+					String line = "";
+					BufferedReader msgReader = new BufferedReader(new InputStreamReader(compileProcess.getErrorStream()));
+					BufferedReader errReader = new BufferedReader(new InputStreamReader(compileProcess.getErrorStream()));
+					
+					while ((line = msgReader.readLine()) != null) {
+//						codeBox.getConsoleArea().setText(codeBox.getConsoleArea().getText()+line + "\n");
+					}
+
+					int returnCode = compileProcess.waitFor();
+					
+					msgReader.close();
+					errReader.close();					
+					compileProcess.destroy();
+
+					if (returnCode == 0) {
+						if (!isWindows()) {
+							run = new ProcessBuilder(
+									"java", "-cp", currentWorkingDirectory1 + "/AFEngine/lib/*:"
+											+ currentWorkingDirectory1 + "/AFEngine/bin",
+									"Main");
+						} else {
+							run = new ProcessBuilder("cmd", "/c",
+									"java", "-cp", currentWorkingDirectory1 + "/AFEngine/lib/*;"
+											+ currentWorkingDirectory1 + "/AFEngine/bin",
+									"Main");
+						}
+						
+						runProcess = run.start();
+						msgReader = new BufferedReader(new InputStreamReader(runProcess.getInputStream()));
+						errReader = new BufferedReader(new InputStreamReader(runProcess.getErrorStream()));	
+						
+						StringBuffer msgSb = new StringBuffer();
+						StringBuffer errSb = new StringBuffer();
+						char m = 0 ;	
+						char e = 0 ;
+						while(true) {
+							try{
+								runProcess.exitValue();
+								break;
+							}catch(IllegalThreadStateException ex){
+
+							}
+							
+							while (msgReader.ready()) {
+								m = (char)msgReader.read();
+								msgSb.append(m);
+								if(m == 10) {
+//									codeBox.getConsoleArea().setText(codeBox.getConsoleArea().getText()+msgSb.toString()+"");
+									msgSb = new StringBuffer();
+								}
+									
+							}
+							
+							while (errReader.ready()) {
+								e = (char)errReader.read();
+								errSb.append(e);
+								if(e == 10) {
+//									codeBox.getConsoleArea().setText(codeBox.getConsoleArea().getText()+errSb.toString()+"");
+									errSb = new StringBuffer();
+								}
+							}
+							Thread.sleep(10);
+						}
+						
+						msgReader.close();
+						errReader.close();
+						runProcess.destroy();
+					}
+
+				} catch (Exception e) {
+
+					e.printStackTrace();
+				}
+
+				
+			}
+		}).start();
+	}
+	
+	private boolean isWindows() {
+		String osName = System.getProperty("os.name");
+
+		if (osName.toLowerCase().contains("windows")) {
+			return true;
+		}
+		return false;
+	}
+}

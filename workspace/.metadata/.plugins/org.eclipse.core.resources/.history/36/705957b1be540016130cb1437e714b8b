@@ -1,0 +1,451 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import com.hp.gagawa.java.elements.Body;
+import com.hp.gagawa.java.elements.H1;
+import com.hp.gagawa.java.elements.Head;
+import com.hp.gagawa.java.elements.Html;
+import com.hp.gagawa.java.elements.Style;
+import com.hp.gagawa.java.elements.Table;
+import com.hp.gagawa.java.elements.Td;
+import com.hp.gagawa.java.elements.Text;
+import com.hp.gagawa.java.elements.Th;
+import com.hp.gagawa.java.elements.Title;
+import com.hp.gagawa.java.elements.Tr;
+
+
+public class Main {
+	static String SOURCE_XML_PATH = "../tmp_results/results.junit.xml";
+	static String FAILLIST_PATH = "../results/faillist"; 
+	static String RESULT_FILE_PATH = "../results/result.html"; 
+	static int failCount,passCount;
+	static double executionTime;
+	
+	public static void main(String [] args) {
+		
+		if(args.length <= 0) {
+			System.out.println("Argument is not correct...");
+			return;
+		}
+		try {
+			
+			
+			Html html = new Html();
+
+			Head head = new Head();
+			Title title = new Title();
+			Style style = new Style("");
+			style.appendText("table { "+
+					"color: #333;"+
+					"font-family: Helvetica, Arial, sans-serif;"+
+					"width: 80%; "+
+					"border-collapse: "+
+					"collapse; border-spacing: 2; "+
+					"aling: center; "+
+					"margin-left:auto;"+ 
+				    "margin-right:auto;"+
+					"}"+
+					"body {"+				    
+					" vertical-align: middle;"+
+					"}"+
+					"td, th { "+
+					"border: 1px solid transparent;"+
+					"height: 30px; "+
+					"transition: all 0.3s; "+
+					"}"+
+					"th {"+
+					"background: #DFDFDF; "+
+					"font-weight: bold;"+
+					"}"+
+					"td {"+
+					"background: #FAFAFA;"+
+					"text-align: center;"+
+					"}  "+
+					"tr:nth-child(even) td { background: #F1F1F1; }   "+
+					"tr:nth-child(odd) td { background: #FEFEFE; }  "+
+					"tr:hover { background: #CCC; color: #55F; } "+
+					"h1{"+
+					"aling: center; "+
+					"text-align: center;"+
+					"}"
+					);
+			
+			head.appendChild(style);
+			
+			
+			title.appendChild( new Text("SDK Automation Report.") );
+			head.appendChild( title );
+			html.appendChild( head );
+			Body body = new Body();
+			html.appendChild( body );
+			
+			H1 summaryHeader = new H1();
+			summaryHeader.appendChild( new Text("Automation Result") );
+			
+			H1 h1 = new H1();
+			h1.appendChild( new Text("Automation Result") );
+			
+			Table summaryTable = new Table();
+			summaryTable.setAttribute("id", "summaryTable");
+			
+			Tr rowS = new Tr();
+			rowS.setAttribute("id", "header");
+			Th th1S = new Th();
+			th1S.setAttribute("id", "total");
+			th1S.appendChild(new Text("Total TCs"));
+			rowS.appendChild(th1S);
+			Th th2S = new Th();
+			th2S.setAttribute("id", "passed");
+			th2S.appendChild(new Text("Passed TCs"));
+			rowS.appendChild(th2S);
+			Th th3S = new Th();
+			th1S.setAttribute("id", "failed");
+			th3S.appendChild(new Text("Failed TCs"));
+			rowS.appendChild(th3S);
+			Th th4S = new Th();
+			th1S.setAttribute("id", "execution");
+			th4S.appendChild(new Text("Execution"));
+			rowS.appendChild(th4S);
+
+			summaryTable.appendChild(rowS);
+			
+			body.appendChild(summaryHeader);
+			body.appendChild(summaryTable);
+			
+			Table tcTable = new Table();
+			tcTable.setAttribute("id", "tcTable");
+
+			Tr rowF = new Tr();
+			rowF.setAttribute("id", "header");
+			Th th1 = new Th();
+			th1.appendChild(new Text("Suite"));
+			rowF.appendChild(th1);
+			Th th2 = new Th();
+			th2.appendChild(new Text("TC ID"));
+			rowF.appendChild(th2);
+			Th th3 = new Th();
+			th3.appendChild(new Text("Status"));
+			rowF.appendChild(th3);
+			Th th4 = new Th();
+			th4.appendChild(new Text("Time"));
+			rowF.appendChild(th4);
+			Th th5 = new Th();
+			th5.appendChild(new Text("Message"));
+			rowF.appendChild(th5);
+			
+			tcTable.appendChild(rowF);
+			
+			body.appendChild(h1);
+			body.appendChild(tcTable);
+			
+			if(args[0].equals("run")) {
+				if(args.length < 2) {
+					System.out.println("Please enter module name (ex:IDE-N)...");
+					return;
+				}
+				
+				String suiteName = args[1];
+				run(html, tcTable, summaryTable, suiteName);
+			} else if(args[0].equals("rerun")){
+				reRun();
+			}
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void run(Html html, Table tcTable, Table summaryTable, String suiteName) throws IOException {
+		
+		Document doc = Jsoup.parse(new File(SOURCE_XML_PATH), "UTF-8");
+		Elements elements = doc.select("testcase");
+		
+		File file =new File(FAILLIST_PATH);
+		if(!file.exists()){
+			file.createNewFile();
+		}
+		
+		FileWriter fw = new FileWriter(file,true);
+		BufferedWriter bw = new BufferedWriter(fw);
+		PrintWriter pw = new PrintWriter(bw);
+		
+		
+		ArrayList<TestCase> testCaseList = new ArrayList<TestCase>();
+		File resultFile =new File(RESULT_FILE_PATH);
+		
+		if(resultFile.exists()) {
+			Document resultDoc = Jsoup.parse(new File(RESULT_FILE_PATH), "UTF-8");
+			Elements oldTcTable = resultDoc.select("table tbody");
+			Elements oldtableContent = oldTcTable.get(1).children();
+			
+			int rownumber = 0;
+			for (Element element : oldtableContent) {
+				if(rownumber == 0) {
+					rownumber++;
+					continue;
+				}
+				
+				TestCase tc = new TestCase();
+
+				Elements cols = element.children();
+				for (Element col : cols) {
+					
+					if(col.attr("id").equals("suite")) {
+			
+						tc.setSuiteName(col.text());
+						
+					} else if(col.attr("id").equals("name")) {
+						
+						tc.setName(col.text());
+						
+					} else if(col.attr("id").equals("status")) {
+						tc.setStatus(col.text());
+						
+					} else if(col.attr("id").equals("time")) {
+						tc.setTime(col.text());
+						executionTime += Double.parseDouble(col.text());
+						
+					} else if(col.attr("id").equals("msg")) {
+						tc.setMsg(col.text());
+						
+					}
+				}
+				
+				testCaseList.add(tc);
+			}			
+		}  
+		
+
+		for (Element element : elements) {
+			TestCase tc = new TestCase();
+			
+			tc.setSuiteName(suiteName);
+			
+			tc.setName(element.attr("name"));
+			
+			Elements children = element.children();
+
+			if(children.size() > 0) {
+				pw.append(element.attr("name")+"\n");
+				
+				tc.setStatus("Fail");
+				
+				for (Element child : children) {
+					
+					tc.setMsg(child.attr("message"));
+				}
+				
+			} else {
+				
+				tc.setStatus("Pass");
+			}
+			
+			Td time = new Td();
+			time.setAttribute("id", "time");
+			time.appendChild(new Text(element.attr("time")));
+			
+			tc.setTime(element.attr("time"));
+			
+			if(!testCaseList.contains(tc)) {
+				testCaseList.add(tc);
+				
+			} else {
+				TestCase prevTc = testCaseList.get(testCaseList.indexOf(tc));
+				prevTc.copy(tc);
+			}
+			executionTime += Double.parseDouble(tc.getTime());
+		}
+		
+		pw.flush();
+		pw.close();
+
+		dumpListToTable(tcTable, testCaseList);
+		
+		Tr rowS = new Tr();
+		Th th1S = new Th();
+		th1S.appendChild(new Text(""+(passCount+failCount)));
+		rowS.appendChild(th1S);
+		Th th2S = new Th();
+		th2S.appendChild(new Text(""+passCount));
+		rowS.appendChild(th2S);
+		Th th3S = new Th();
+		th3S.appendChild(new Text(""+failCount));
+		rowS.appendChild(th3S);
+		Th th4S = new Th();
+		th4S.appendChild(new Text(""+executionTime));
+		rowS.appendChild(th4S);
+
+		summaryTable.appendChild(rowS);
+		
+		writeToFile(html.write(), RESULT_FILE_PATH);
+		System.out.println("Automation report for run completed...");
+	}
+	
+	private static void reRun() throws IOException {
+		Document docResult = Jsoup.parse(new File(RESULT_FILE_PATH), "UTF-8");
+		Element summaryTable = docResult.select("table tbody").get(0);
+		Elements summaryContent = summaryTable.children();
+		for (Element element : summaryContent) {
+			if(element.attr("id").equals("passed")) {
+				passCount = Integer.parseInt(element.text());
+			} else if(element.attr("id").equals("failed")) {
+				failCount = Integer.parseInt(element.text());
+			} if(element.attr("id").equals("execution")) {
+				executionTime = Double.parseDouble(element.text());
+			}
+		}
+		
+		PrintWriter pw = new PrintWriter(new FileWriter(new File(FAILLIST_PATH)));
+
+		Document doc = Jsoup.parse(new File(SOURCE_XML_PATH), "UTF-8");
+		
+		Elements elements = doc.select("testcase");
+		for (Element element : elements) {
+			Elements children = element.children();
+			
+			Element line = docResult.getElementById(element.attr("name"));
+			if(line == null) {
+				pw.close();
+				return;
+			}
+			
+			Elements childern = line.children();
+
+			String statusS = "";
+			String msgS = "";
+			Tr row = new Tr();
+			row.setAttribute("id", element.attr("name"));
+		
+			Td suite = new Td();
+			suite.appendChild(new Text(""));
+			
+			Td name = new Td();
+			name.appendChild(new Text(element.attr("name")));
+			
+			Td time = new Td();
+			time.appendChild(new Text(element.attr("time")));
+			
+			Td status = new Td();
+			Td msg = new Td();
+			
+			if(children.size() > 0) {
+				pw.append(element.attr("name")+"\n");
+				
+				status.appendChild(new Text("Fail"));
+				statusS = "Fail";
+				
+				for (Element child : children) {
+					msg.setStyle("text-align: left");
+					msg.appendChild(new Text(child.attr("message")));
+					msgS = child.attr("message");
+				}
+			} else {
+				status.appendChild(new Text("Pass"));
+				statusS = "Pass";
+			
+			}
+			
+			for (Element child : childern) {
+				if(child.attr("id").equals("time")) {
+					executionTime += Double.parseDouble(element.attr("time"));
+					child.empty();
+					child.append(element.attr("time"));
+					
+				} else if(child.attr("id").equals("status")) {
+					String previousStatus = child.text();
+					if(!previousStatus.equals(statusS)) {
+						passCount++;
+						failCount--;
+					}
+					child.empty();
+					child.append(statusS);
+					
+				} else if(child.attr("id").equals("msg")) {
+					child.empty();
+					child.append(msgS);
+				}
+			}
+			
+			row.appendChild(suite);
+			row.appendChild(name);
+			row.appendChild(status);
+			row.appendChild(time);
+			row.appendChild(msg);			
+		}
+		
+		
+		writeToFile(docResult.html(), RESULT_FILE_PATH);
+		pw.flush();
+		pw.close();
+		System.out.println("Automation report for rerun completed...");
+	}
+	
+	private static void writeToFile(String content, String path) {
+		try {
+			PrintWriter pw = new PrintWriter(new FileWriter(new File(path)));
+			
+			pw.write(content);
+			pw.flush();
+			pw.close();
+			
+			
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+
+	private static void dumpListToTable(Table tcTable, ArrayList<TestCase> list) {
+		for (TestCase tc : list) {
+			Tr row = new Tr();
+			row.setAttribute("id", tc.getName());
+			
+		
+			Td suite = new Td();
+			suite.setAttribute("id", "suite");
+			row.appendChild(suite);
+			suite.appendChild(new Text(tc.getSuiteName()));
+			
+		
+			Td name = new Td();
+			name.setAttribute("id", "name");
+			row.appendChild(name);
+			name.appendChild(new Text(tc.getName()));
+
+	
+			Td status = new Td();
+			status.setAttribute("id", "status");
+			row.appendChild(status);
+			status.appendChild(new Text(tc.getStatus()));
+
+			if(tc.getStatus().trim().equals("Pass")) {
+				passCount++;
+			} else {
+				failCount++;
+			}
+			
+			Td time = new Td();
+			time.setAttribute("id", "time");
+			row.appendChild(time);
+			time.appendChild(new Text(tc.getTime()));
+
+			
+			Td msg = new Td();
+			msg.setAttribute("id", "msg");
+			row.appendChild(msg);
+			msg.appendChild(new Text(tc.getMsg()));
+
+			tcTable.appendChild(row);
+		}
+	}
+}

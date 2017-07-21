@@ -1,0 +1,46 @@
+package storeapp;
+
+import base.TCBase;
+import apprunner.BinaryData;
+
+public class StoreApp_000000002265_AnimalTrain extends TCBase {
+
+	BinaryData b;
+	
+	public StoreApp_000000002265_AnimalTrain() {
+		super();
+	}
+
+	public StoreApp_000000002265_AnimalTrain(String tcName, BinaryData binary) {
+		super(tcName);
+		this.b = binary;
+	}
+
+	//========================================================[TestCases]==========================================================
+
+	public void install() {
+		assertTrue(device.installApp(b.getPackageId(), b.getPath()));
+	}
+	
+	public void launch() {
+		assertTrue(device.launchApp(b.getAppId()));	
+	}
+	
+	public void exploratory() {
+		device.focus();
+		
+		//Write your exploratory code here
+	}
+
+	public void close() {
+		assertTrue(device.closeApp(b.getPackageId()));	
+	}
+	
+	public void uninstall() {
+		assertTrue(device.uninstallApp(b.getPackageId()));
+	}
+	
+	public void detectCrash() {
+	
+	}
+}

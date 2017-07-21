@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: alarm-service
+Description: alarm library
+Version: 
+Requires: glib-2.0 gobject-2.0 dlog
+Libs: -L${libdir} -lalarm
+Cflags: -I${includedir}

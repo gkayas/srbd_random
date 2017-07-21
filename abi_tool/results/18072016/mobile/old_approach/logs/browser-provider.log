@@ -1,0 +1,32 @@
+Temporary header file '/tmp/9RtfG6sDrv/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/web/web_bookmark.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/web/web_bookmark_csc.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/web/web_history.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/web/web_scrap.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/web/web_tab.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/web/bookmark-adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/web/bookmark-csc-adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/web/history-adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/web/scrap-adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/web/tab-adaptor.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/9RtfG6sDrv/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/web
+
+Temporary header file '/tmp/9RtfG6sDrv/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/web/web_bookmark.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/web/web_bookmark_csc.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/web/web_history.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/web/web_tab.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/web/bookmark-adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/web/bookmark-csc-adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/web/history-adaptor.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/web/tab-adaptor.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/9RtfG6sDrv/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/web
+

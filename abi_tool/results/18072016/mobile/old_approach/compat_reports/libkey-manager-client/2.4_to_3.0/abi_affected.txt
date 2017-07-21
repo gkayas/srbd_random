@@ -1,0 +1,9 @@
+_ZN3CKM12ManagerAsyncD1Ev
+_ZN3CKM12ManagerAsyncD2Ev
+_ZN3CKM12ManagerAsyncC1Ev
+_ZN3CKM12ManagerAsyncD0Ev
+_ZNK3CKM6PKCS125emptyEv
+_ZN3CKM12ManagerAsyncC2Ev
+_ZNK3CKM6PKCS1227getCaCertificateShPtrVectorEv
+_ZNK3CKM3Key6getDEREv
+_ZN3CKM13ErrorToStringEi

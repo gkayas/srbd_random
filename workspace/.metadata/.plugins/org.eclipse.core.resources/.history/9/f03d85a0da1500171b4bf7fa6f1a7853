@@ -1,0 +1,22 @@
+package com.turbovnc.vncviewer;
+
+
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class CustomFrame extends JFrame {
+	public CustomFrame() {
+		//JPanel creating
+		JPanel newPanel = new JPanel(new BorderLayout());
+		JLabel label = new JLabel("Enter username:");
+		JTextField userName = new JTextField(20);
+		newPanel.add(label, BorderLayout.NORTH);
+		newPanel.add(userName, BorderLayout.SOUTH);
+		newPanel.setVisible(true);
+		add(newPanel);
+	}
+}

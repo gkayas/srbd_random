@@ -1,0 +1,64 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String [] args) {
+		Node [] [] nodes = new Node[5][5];
+		
+		for(int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++ ){
+							
+				int value = randInt(2, 20);
+				int type = randInt(1, 2); 
+				int operation = randInt(1, 4); 
+				
+				Node node = (Node.NumberType == type)? new NumberNode(value, operation) : new UnknownNode(value, operation);
+				
+				nodes[i][j] = node;
+ 			}
+		}
+		printGrid(nodes);
+		Grid grid = new Grid(nodes, 5, 5, 2, 2);
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNext()) {
+			
+			switch(Integer.valueOf(sc.next())) {
+			case 6:
+				grid.moveRight();
+				break;
+			case 4:
+				grid.moveLeft();
+				break;
+			case 8:
+				grid.moveUp();
+				break;
+			case 5:
+				grid.moveDown();
+				break;
+			}
+			System.out.println("Current X: "+grid.getCurrent().getPositionX()+" Y: "+grid.getCurrent().getPositionY() +" value : "+grid.getCurrent().value);
+		}
+	}
+
+	public static int randInt(int min, int max) {
+
+
+	    Random rand = new Random();
+	    int randomNum = rand.nextInt((max - min) + 1) + min;
+
+	    return randomNum;
+	}
+	
+	public static void printGrid(Node [][] nodes) {
+		for(int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++ ){
+				Node node = nodes[i][j];
+				
+				System.out.print("#"+node.getValue()+" "+node.getType()+" "+node.getOperation()/*String() */+" # \t");
+ 			}
+			System.out.println();
+		}
+	}
+}

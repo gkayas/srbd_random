@@ -1,0 +1,41 @@
+Temporary header file '/tmp/KvJsCDMu1C/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media-content/media_audio.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media-content/media_bookmark.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media-content/media_content.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media-content/media_content_type.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media-content/media_filter.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media-content/media_folder.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media-content/media_group.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media-content/media_image.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media-content/media_info.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media-content/media_playlist.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media-content/media_tag.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media-content/media_video.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/KvJsCDMu1C/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/media-content -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/KvJsCDMu1C/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content/media_audio.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content/media_bookmark.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content/media_content.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content/media_content_internal.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content/media_content_type.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content/media_face.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content/media_filter.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content/media_folder.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content/media_group.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content/media_image.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content/media_info.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content/media_playlist.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content/media_storage.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content/media_tag.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content/media_video.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/KvJsCDMu1C/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/media-content -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+

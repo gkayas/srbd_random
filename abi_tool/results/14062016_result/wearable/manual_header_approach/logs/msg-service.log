@@ -1,0 +1,26 @@
+Temporary header file '/tmp/coJRaGWNCL/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/msg-service/msg.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/msg-service/msg_storage.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/msg-service/msg_storage_types.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/msg-service/msg_transport.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/msg-service/msg_transport_types.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/2.3.1_w/usr/include/msg-service/msg_types.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/coJRaGWNCL/dump1.h"
+
+Temporary header file '/tmp/coJRaGWNCL/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/msg-service/msg.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/msg-service/msg_storage.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/msg-service/msg_storage_types.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/msg-service/msg_transport.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/msg-service/msg_transport_types.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7w/3.0_w/usr/include/msg-service/msg_types.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/coJRaGWNCL/dump2.h"
+

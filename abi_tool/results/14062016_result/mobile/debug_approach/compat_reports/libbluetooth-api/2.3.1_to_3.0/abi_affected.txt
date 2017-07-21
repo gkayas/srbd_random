@@ -1,0 +1,3 @@
+bluetooth_gatt_add_descriptor
+bluetooth_gatt_send_response
+bluetooth_gatt_add_new_characteristic

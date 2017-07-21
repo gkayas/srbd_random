@@ -1,0 +1,31 @@
+
+public abstract class  Node {
+	static int NumberType = 0;
+	static int UnknownType = 1;
+	
+	static int OPERATION_ADD = 1;
+	static int OPERATION_SUB = 2;
+	static int OPERATION_MUL = 3;
+	static int OPERATION_DIV = 4;
+	static int OPERATION_INC = 5;
+	static int OPERATION_DEC = 6;
+	
+	private int type, operation;
+	protected String value;
+	
+	public Node(int type) {
+		this.type = type;
+	}
+	
+	public int getType() {
+		return type;
+	}
+	public abstract void setValue(int value); 
+	public abstract int getValue(); 
+	
+	public void setOperation(int operation) {
+		this.operation = operation;
+	}
+	
+	
+}

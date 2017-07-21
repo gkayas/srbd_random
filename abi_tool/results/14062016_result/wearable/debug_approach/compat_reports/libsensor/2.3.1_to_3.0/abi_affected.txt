@@ -1,0 +1,6 @@
+sensord_register_hub_event
+sensord_get_sensor_list
+sensord_get_sensor
+sensord_get_type
+sensord_change_event_max_batch_latency
+sf_connect

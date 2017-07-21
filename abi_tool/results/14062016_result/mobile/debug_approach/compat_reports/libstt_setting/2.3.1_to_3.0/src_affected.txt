@@ -1,0 +1,4 @@
+stt_parser_set_engine
+stt_parser_find_config_changed
+__stt_config_language_changed_cb
+__config_engine_changed_cb

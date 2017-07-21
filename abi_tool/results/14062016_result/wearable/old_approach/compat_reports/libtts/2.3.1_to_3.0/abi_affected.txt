@@ -1,0 +1,4 @@
+ttsp_unload_engine
+ttsp_get_engine_info
+ttsp_load_engine
+tts_setting_foreach_surpported_voices

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Custom.java&apos; to &apos;TestConstSuper/src/test&apos;&#x0A;- Original project: &apos;TestConstSuper&apos;&#x0A;- Destination element: &apos;TestConstSuper/src/test&apos;&#x0A;- Original element: &apos;Custom.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;test" element1="/src&lt;{Custom.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1472712453937" units="1" version="1.0"/>
+</session>

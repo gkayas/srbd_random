@@ -1,0 +1,2 @@
+device_set_property
+device_get_property

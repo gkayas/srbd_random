@@ -1,0 +1,978 @@
+<!-- kind:binary;verdict:compatible;affected:0;added:116;removed:0;type_problems_high:0;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:0;changed_constants:0;type_changes_other:8;tool_version:1.99.18 -->
+<!-- kind:source;verdict:compatible;affected:0;added:131;removed:0;type_problems_high:0;type_problems_medium:0;type_problems_low:0;interface_problems_high:0;interface_problems_medium:0;interface_problems_low:0;changed_constants:0;type_changes_other:8;tool_version:1.99.18 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="capi-maps-service, compatibility, API, ABI, report" />
+    <meta name="description" content="API/ABI compatibility report for the capi-maps-service library between 2.4 and 3.0 versions" />
+    <title>
+        capi-maps-service: 2.4 to 3.0 compatibility report
+    </title>
+    <style type="text/css">
+    body {
+    font-family:Arial, sans-serif;
+    background-color:White;
+    color:Black;
+}
+hr {
+    color:Black;
+    background-color:Black;
+    height:1px;
+    border:0;
+}
+h1 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.625em;
+}
+h2 {
+    margin-bottom:0px;
+    padding-bottom:0px;
+    font-size:1.25em;
+    white-space:nowrap;
+}
+span.section {
+    font-weight:bold;
+    cursor:pointer;
+    color:#003E69;
+    white-space:nowrap;
+    margin-left:5px;
+}
+span.new_sign {
+    font-weight:bold;
+    margin-left:26px;
+    color:#003E69;
+}
+span.new_sign_lbl {
+    margin-left:28px;
+    font-size:0.875em;
+    color:Black;
+}
+span:hover.section {
+    color:#336699;
+}
+span.sect_aff {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:#cc3300;
+}
+span.sect_info {
+    cursor:pointer;
+    margin-left:7px;
+    padding-left:15px;
+    font-size:0.875em;
+    color:Black;
+}
+span.ext {
+    font-weight:100;
+}
+span.h_name {
+    color:#cc3300;
+    font-size:0.875em;
+    font-weight:bold;
+}
+div.h_list, div.lib_list {
+    font-size:0.94em;
+    padding-left:5px;
+}
+span.ns {
+    color:#408080;
+    font-size:0.94em;
+}
+span.lib_name {
+    color:Green;
+    font-size:0.875em;
+    font-weight:bold;
+}
+span.iname {
+    font-weight:bold;
+    color:#003E69;
+    margin-left:5px;
+}
+span.iname_b {
+    font-weight:bold;
+    font-size:1.1em;
+}
+span.iname_a {
+    color:#333333;
+    font-weight:bold;
+    font-size:0.94em;
+}
+span.sym_p {
+    font-weight:normal;
+    white-space:normal;
+}
+div.affect {
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:0.87em;
+    font-style:italic;
+    line-height:0.75em;
+}
+div.affected {
+    padding-left:30px;
+    padding-top:10px;
+}
+table.ptable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:1em;
+    margin-left:15px;
+    margin-top:3px;
+    margin-bottom:3px;
+    width:900px;
+    
+}
+table.ptable td {
+    border:1px solid gray;
+    padding: 3px;
+    font-size:0.875em;
+    text-align:left;
+    vertical-align:top;
+}
+table.vtable {
+    border-collapse:collapse;
+    border:1px outset black;
+    line-height:16px;
+    margin-left:30px;
+    margin-top:10px;
+}
+table.vtable td {
+    border:1px solid gray;
+    word-wrap:break-word;
+    padding: 3px;
+    font-size:0.875em;
+    max-width:450px;
+    vertical-align:top;
+}
+table.ptable th, table.vtable th {
+    background-color:#eeeeee;
+    font-weight:bold;
+    color:#333333;
+    font-family:Verdana, Arial;
+    font-size:0.81em;
+    border:1px solid gray;
+    text-align:center;
+    vertical-align:top;
+    white-space:nowrap;
+    padding: 3px;
+}
+table.summary {
+    border-collapse:collapse;
+    border:1px outset black;
+}
+table.summary th {
+    background-color:#eeeeee;
+    font-weight:100;
+    text-align:left;
+    font-size:0.94em;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px;
+}
+table.summary td {
+    text-align:right;
+    white-space:nowrap;
+    border:1px inset gray;
+    padding: 3px 5px 3px 10px;
+}
+span.mangled {
+    padding-left:15px;
+    font-size:0.875em;
+    cursor:text;
+    color:#444444;
+}
+span.sym_ver {
+    color:#333333;
+    white-space:nowrap;
+    font-family:"DejaVu Sans Mono", Monospace;
+}
+span.attr {
+    color:#333333;
+    font-weight:100;
+}
+span.color_p {
+    font-style:italic;
+    color:Brown;
+}
+span.p {
+    font-style:italic;
+}
+span.fp {
+    font-style:italic;
+    background-color:#FFCCCC;
+}
+span.ttype {
+    font-weight:100;
+}
+span.nowrap {
+    white-space:nowrap;
+}
+span.value {
+    white-space:nowrap;
+    font-weight:bold;
+}
+td.passed {
+    background-color:#CCFFCC;
+}
+td.warning {
+    background-color:#F4F4AF;
+}
+td.failed {
+    background-color:#FFCCCC;
+}
+td.new {
+    background-color:#C6DEFF;
+}
+.top_ref {
+    font-size:0.69em;
+}
+.footer {
+    font-size:0.75em;
+}
+
+.tabset {
+    float:left;
+}
+a.tab {
+    border:1px solid Black;
+    float:left;
+    margin:0px 5px -1px 0px;
+    padding:3px 5px 3px 5px;
+    position:relative;
+    font-size:0.875em;
+    background-color:#DDD;
+    text-decoration:none;
+    color:Black;
+}
+a.disabled:hover
+{
+    color:Black;
+    background:#EEE;
+}
+a.active:hover
+{
+    color:Black;
+    background:White;
+}
+a.active {
+    border-bottom-color:White;
+    background-color:White;
+}
+div.tab {
+    border-top:1px solid Black;
+    padding:0px;
+    width:100%;
+    clear:both;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+    function showContent(header, id)
+{
+    e = document.getElementById(id);
+    if(e.style.display == 'none')
+    {
+        e.style.display = 'block';
+        e.style.visibility = 'visible';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[&minus;]");
+    }
+    else
+    {
+        e.style.display = 'none';
+        e.style.visibility = 'hidden';
+        header.innerHTML = header.innerHTML.replace(/\[[^0-9 ]\]/gi,"[+]");
+    }
+}
+function initTabs()
+{
+    var url = window.location.href;
+    if(url.indexOf('_Source_')!=-1 || url.indexOf('#Source')!=-1)
+    {
+        var tab1 = document.getElementById('BinaryID');
+        var tab2 = document.getElementById('SourceID');
+        tab1.className='tab disabled';
+        tab2.className='tab active';
+    }
+    var sets = document.getElementsByTagName('div');
+    for (var i = 0; i < sets.length; i++)
+    {
+        if (sets[i].className.indexOf('tabset') != -1)
+        {
+            var tabs = [];
+            var links = sets[i].getElementsByTagName('a');
+            for (var j = 0; j < links.length; j++)
+            {
+                if (links[j].className.indexOf('tab') != -1)
+                {
+                    tabs.push(links[j]);
+                    links[j].tabs = tabs;
+                    var tab = document.getElementById(links[j].href.substr(links[j].href.indexOf('#') + 1));
+                    //reset all tabs on start
+                    if (tab)
+                    {
+                        if (links[j].className.indexOf('active')!=-1) {
+                            tab.style.display = 'block';
+                        }
+                        else {
+                            tab.style.display = 'none';
+                        }
+                    }
+                    links[j].onclick = function()
+                    {
+                        var tab = document.getElementById(this.href.substr(this.href.indexOf('#') + 1));
+                        if (tab)
+                        {
+                            //reset all tabs before change
+                            for (var k = 0; k < this.tabs.length; k++)
+                            {
+                                document.getElementById(this.tabs[k].href.substr(this.tabs[k].href.indexOf('#') + 1)).style.display = 'none';
+                                this.tabs[k].className = this.tabs[k].className.replace('active', 'disabled');
+                            }
+                            this.className = 'tab active';
+                            tab.style.display = 'block';
+                            // window.location.hash = this.id.replace('ID', '');
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(url.indexOf('#')!=-1) {
+        location.href=location.href;
+    }
+}
+if (window.addEventListener) window.addEventListener('load', initTabs, false);
+else if (window.attachEvent) window.attachEvent('onload', initTabs);
+    -->
+    </script>
+    </head><body><a name='Source'></a><a name='Binary'></a><a name='Top'></a><h1>API compatibility report for the <span style='color:Blue;'>capi-maps-service</span> library between <span style='color:Red;'>2.4</span> and <span style='color:Red;'>3.0</span> versions on <span style='color:Blue;'>x86_64</span></h1>
+
+            <br/>
+            <div class='tabset'>
+            <a id='BinaryID' href='#BinaryTab' class='tab active'>Binary<br/>Compatibility</a>
+            <a id='SourceID' href='#SourceTab' style='margin-left:3px' class='tab disabled'>Source<br/>Compatibility</a>
+            </div><div id='BinaryTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Library Name</th><td>capi-maps-service</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>x86_64</td></tr>
+<tr><th>GCC Version</th><td>4.8</td></tr>
+<tr><th>Subject</th><td width='150px'>Binary Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>37</a></td></tr>
+<tr><th>Total Shared Libraries</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>324 / 171</td></tr>
+<tr><th>Verdict</th><td><span style='color:Green;'><b>Compatible</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Binary_Added' style='color:Blue;'>116</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Binary_Changes_In_Types' style='color:Blue;'>8</a></td></tr>
+</table>
+
+<a name='Binary_Added'></a><h2>Added Symbols (116)</h2><hr/>
+<span class='h_name'>maps_address.h</span>, <span class='lib_name'>libcapi-maps-service.so.0.6.1</span><br/>
+<span class="iname">maps_address_list_append&#160;<span class='sym_p'>(&#160;maps_address_list_h <span class='color_p'>address_list</span>, <span class='nowrap'>maps_address_h <span class='color_p'>address</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_address_list_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_address_list_h* <span class='color_p'>address_list</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_address_list_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_address_list_h <span class='color_p'>address_list</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_address_list_foreach&#160;<span class='sym_p'>(&#160;maps_address_list_h <span class='color_p'>address_list</span>, maps_address_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_address_list_get_length&#160;<span class='sym_p'>(&#160;maps_address_list_h <span class='color_p'>address_list</span>, <span class='nowrap'>int* <span class='color_p'>length</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_address_list_remove&#160;<span class='sym_p'>(&#160;maps_address_list_h <span class='color_p'>address_list</span>, <span class='nowrap'>maps_address_h <span class='color_p'>address</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_coordinates.h</span>, <span class='lib_name'>libcapi-maps-service.so.0.6.1</span><br/>
+<span class="iname">maps_coordinates_get_latitude_longitude&#160;<span class='sym_p'>(&#160;maps_coordinates_h const <span class='color_p'>coordinates</span>, double* <span class='color_p'>latitude</span>, <span class='nowrap'>double* <span class='color_p'>longitude</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_coordinates_list_append&#160;<span class='sym_p'>(&#160;maps_coordinates_list_h <span class='color_p'>coordinates_list</span>, <span class='nowrap'>maps_coordinates_h <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_coordinates_list_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_coordinates_list_h* <span class='color_p'>coordinates_list</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_coordinates_list_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_coordinates_list_h <span class='color_p'>coordinates_list</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_coordinates_list_foreach&#160;<span class='sym_p'>(&#160;maps_coordinates_list_h <span class='color_p'>coordinates_list</span>, maps_coordinates_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_coordinates_list_get_length&#160;<span class='sym_p'>(&#160;maps_coordinates_list_h <span class='color_p'>coordinates_list</span>, <span class='nowrap'>int* <span class='color_p'>length</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_coordinates_list_remove&#160;<span class='sym_p'>(&#160;maps_coordinates_list_h <span class='color_p'>coordinates_list</span>, <span class='nowrap'>maps_coordinates_h <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_coordinates_set_latitude_longitude&#160;<span class='sym_p'>(&#160;maps_coordinates_h <span class='color_p'>coordinates</span>, double const <span class='color_p'>latitude</span>, <span class='nowrap'>double const <span class='color_p'>longitude</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_extra_types.h</span>, <span class='lib_name'>libcapi-maps-service.so.0.6.1</span><br/>
+<span class="iname">maps_int_hashtable_clone&#160;<span class='sym_p'>(&#160;maps_int_hashtable_h const <span class='color_p'>origin</span>, <span class='nowrap'>maps_int_hashtable_h* <span class='color_p'>cloned</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_int_hashtable_contains&#160;<span class='sym_p'>(&#160;maps_int_hashtable_h <span class='color_p'>table</span>, <span class='nowrap'>int const <span class='color_p'>key</span>,</span> <span class='nowrap'>bool* <span class='color_p'>contains</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_int_hashtable_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_int_hashtable_h* <span class='color_p'>table</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_int_hashtable_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_int_hashtable_h <span class='color_p'>table</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_int_hashtable_foreach&#160;<span class='sym_p'>(&#160;maps_int_hashtable_h <span class='color_p'>table</span>, maps_int_hashtable_foreach_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_int_hashtable_get&#160;<span class='sym_p'>(&#160;maps_int_hashtable_h <span class='color_p'>table</span>, <span class='nowrap'>int const <span class='color_p'>key</span>,</span> <span class='nowrap'>int* <span class='color_p'>value</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_int_hashtable_remove&#160;<span class='sym_p'>(&#160;maps_int_hashtable_h <span class='color_p'>table</span>, <span class='nowrap'>int const <span class='color_p'>key</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_int_hashtable_set&#160;<span class='sym_p'>(&#160;maps_int_hashtable_h <span class='color_p'>table</span>, <span class='nowrap'>int const <span class='color_p'>key</span>,</span> <span class='nowrap'>int const <span class='color_p'>value</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_item_list_foreach_noclone&#160;<span class='sym_p'>(&#160;maps_item_list_h <span class='color_p'>list</span>, maps_item_list_foreach_noclone_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_item_list_remove&#160;<span class='sym_p'>(&#160;maps_item_list_h <span class='color_p'>list</span>, <span class='nowrap'>void* <span class='color_p'>item</span>,</span> <span class='nowrap'>maps_item_list_free_cb <span class='color_p'>free_func</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_place.h</span>, <span class='lib_name'>libcapi-maps-service.so.0.6.1</span><br/>
+<span class="iname">maps_place_list_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_place_list_h <span class='color_p'>place_list</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_place_list_foreach&#160;<span class='sym_p'>(&#160;maps_place_list_h const <span class='color_p'>place_list</span>, maps_place_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_place_filter.h</span>, <span class='lib_name'>libcapi-maps-service.so.0.6.1</span><br/>
+<span class="iname">maps_place_filter_get_place_address&#160;<span class='sym_p'>(&#160;maps_place_filter_h const <span class='color_p'>filter</span>, <span class='nowrap'>char** <span class='color_p'>place_address</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_place_filter_set_place_address&#160;<span class='sym_p'>(&#160;maps_place_filter_h <span class='color_p'>filter</span>, <span class='nowrap'>char const* <span class='color_p'>place_address</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_place_plugin.h</span>, <span class='lib_name'>libcapi-maps-service.so.0.6.1</span><br/>
+<span class="iname">maps_place_list_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_place_list_h* <span class='color_p'>place_list</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_preference.h</span>, <span class='lib_name'>libcapi-maps-service.so.0.6.1</span><br/>
+<span class="iname">maps_preference_get_route_alternatives_enabled&#160;<span class='sym_p'>(&#160;maps_preference_h const <span class='color_p'>preference</span>, <span class='nowrap'>bool* <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_preference_set_route_alternatives_enabled&#160;<span class='sym_p'>(&#160;maps_preference_h <span class='color_p'>preference</span>, <span class='nowrap'>bool <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_service.h</span>, <span class='lib_name'>libcapi-maps-service.so.0.6.1</span><br/>
+<span class="iname">maps_service_get_place_details&#160;<span class='sym_p'>(&#160;maps_service_h const <span class='color_p'>maps</span>, <span class='nowrap'>char const* <span class='color_p'>uri</span>,</span> maps_service_get_place_details_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_service_multi_reverse_geocode&#160;<span class='sym_p'>(&#160;maps_service_h const <span class='color_p'>maps</span>, maps_coordinates_list_h <span class='color_p'>coordinates_list</span>, maps_preference_h const <span class='color_p'>preference</span>, maps_service_multi_reverse_geocode_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_service_search_place_list&#160;<span class='sym_p'>(&#160;maps_service_h const <span class='color_p'>maps</span>, maps_area_h const <span class='color_p'>boundary</span>, maps_place_filter_h const <span class='color_p'>filter</span>, maps_preference_h <span class='color_p'>preference</span>, maps_service_search_place_list_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_view.h</span>, <span class='lib_name'>libcapi-maps-service.so.0.6.1</span><br/>
+<span class="iname">maps_view_add_object&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>maps_view_object_h <span class='color_p'>object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_create&#160;<span class='sym_p'>(&#160;maps_service_h <span class='color_p'>maps</span>, <span class='nowrap'>Evas_Image* <span class='color_p'>obj</span>,</span> <span class='nowrap'>maps_view_h* <span class='color_p'>view</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_view_h <span class='color_p'>view</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_foreach_object&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, maps_view_object_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_geolocation_to_screen&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, maps_coordinates_h const <span class='color_p'>coordinates</span>, <span class='nowrap'>int* <span class='color_p'>x</span>,</span> <span class='nowrap'>int* <span class='color_p'>y</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_buildings_enabled&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>bool* <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_center&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>maps_coordinates_h* <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_gesture_enabled&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, maps_view_gesture_e <span class='color_p'>gesture</span>, <span class='nowrap'>bool* <span class='color_p'>enabled</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_language&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>char** <span class='color_p'>language</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_max_zoom_level&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>int* <span class='color_p'>max_zoom_level</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_min_zoom_level&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>int* <span class='color_p'>min_zoom_level</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_orientation&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>double* <span class='color_p'>rotation_angle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_public_transit_enabled&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>bool* <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_scalebar_enabled&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>bool* <span class='color_p'>enabled</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_screen_location&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>int* <span class='color_p'>x</span>,</span> <span class='nowrap'>int* <span class='color_p'>y</span>,</span> <span class='nowrap'>int* <span class='color_p'>width</span>,</span> <span class='nowrap'>int* <span class='color_p'>height</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_traffic_enabled&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>bool* <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_type&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>maps_view_type_e* <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_viewport&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>Evas_Image** <span class='color_p'>viewport</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_visibility&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>bool* <span class='color_p'>visible</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_zoom_level&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>int* <span class='color_p'>level</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_move&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>int <span class='color_p'>x</span>,</span> <span class='nowrap'>int <span class='color_p'>y</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_remove_all_objects&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_view_h <span class='color_p'>view</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_remove_object&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>maps_view_object_h <span class='color_p'>object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_resize&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>int <span class='color_p'>width</span>,</span> <span class='nowrap'>int <span class='color_p'>height</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_screen_to_geolocation&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>int <span class='color_p'>x</span>,</span> <span class='nowrap'>int <span class='color_p'>y</span>,</span> <span class='nowrap'>maps_coordinates_h* <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_buildings_enabled&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>bool <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_center&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>maps_coordinates_h <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_event_cb&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, maps_view_event_type_e <span class='color_p'>type</span>, maps_view_on_event_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_gesture_enabled&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, maps_view_gesture_e <span class='color_p'>gesture</span>, <span class='nowrap'>bool <span class='color_p'>enabled</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_language&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>char const* <span class='color_p'>language</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_orientation&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>double <span class='color_p'>angle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_public_transit_enabled&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>bool <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_scalebar_enabled&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>bool <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_screen_location&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>int <span class='color_p'>x</span>,</span> <span class='nowrap'>int <span class='color_p'>y</span>,</span> <span class='nowrap'>int <span class='color_p'>width</span>,</span> <span class='nowrap'>int <span class='color_p'>height</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_traffic_enabled&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>bool <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_type&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>maps_view_type_e <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_visibility&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>bool <span class='color_p'>visible</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_zoom_level&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>int <span class='color_p'>level</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_unset_event_cb&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>maps_view_event_type_e <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_view_event_data.h</span>, <span class='lib_name'>libcapi-maps-service.so.0.6.1</span><br/>
+<span class="iname">maps_view_event_data_clone&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>origin</span>, <span class='nowrap'>maps_view_event_data_h* <span class='color_p'>cloned</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_view_event_data_h <span class='color_p'>event</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_action_type&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>maps_view_action_e* <span class='color_p'>action_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_center&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>maps_coordinates_h* <span class='color_p'>center</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_delta&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>int* <span class='color_p'>delta_x</span>,</span> <span class='nowrap'>int* <span class='color_p'>delta_y</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_fingers&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>int* <span class='color_p'>fingers</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_gesture_type&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>maps_view_gesture_e* <span class='color_p'>gesture_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_object&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>maps_view_object_h* <span class='color_p'>object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_position&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>int* <span class='color_p'>x</span>,</span> <span class='nowrap'>int* <span class='color_p'>y</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_rotation_angle&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>double* <span class='color_p'>rotation_angle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_type&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>maps_view_event_type_e* <span class='color_p'>event_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_zoom_factor&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>double* <span class='color_p'>zoom_factor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_view_object.h</span>, <span class='lib_name'>libcapi-maps-service.so.0.6.1</span><br/>
+<span class="iname">maps_view_object_create_marker&#160;<span class='sym_p'>(&#160;maps_coordinates_h <span class='color_p'>coordinates</span>, char const* <span class='color_p'>image_file_path</span>, maps_view_marker_type_e <span class='color_p'>type</span>, <span class='nowrap'>maps_view_object_h* <span class='color_p'>marker</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_create_polygon&#160;<span class='sym_p'>(&#160;maps_coordinates_list_h <span class='color_p'>coordinates</span>, <span class='nowrap'>unsigned char <span class='color_p'>r</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>g</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>b</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>a</span>,</span> <span class='nowrap'>maps_view_object_h* <span class='color_p'>polygon</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_create_polyline&#160;<span class='sym_p'>(&#160;maps_coordinates_list_h <span class='color_p'>coordinates</span>, <span class='nowrap'>unsigned char <span class='color_p'>r</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>g</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>b</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>a</span>,</span> <span class='nowrap'>int <span class='color_p'>width</span>,</span> <span class='nowrap'>maps_view_object_h* <span class='color_p'>polyline</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_view_object_h <span class='color_p'>object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_get_type&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>object</span>, <span class='nowrap'>maps_view_object_type_e* <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_get_visible&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>object</span>, <span class='nowrap'>bool* <span class='color_p'>visible</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_get_coordinates&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>marker</span>, <span class='nowrap'>maps_coordinates_h* <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_get_image_file&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>marker</span>, <span class='nowrap'>char** <span class='color_p'>file_path</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_get_size&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>marker</span>, <span class='nowrap'>int* <span class='color_p'>width</span>,</span> <span class='nowrap'>int* <span class='color_p'>height</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_get_type&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>marker</span>, <span class='nowrap'>maps_view_marker_type_e* <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_get_z_order&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>marker</span>, <span class='nowrap'>int* <span class='color_p'>z_order</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_resize&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>marker</span>, <span class='nowrap'>int <span class='color_p'>width</span>,</span> <span class='nowrap'>int <span class='color_p'>height</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_set_coordinates&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>marker</span>, <span class='nowrap'>maps_coordinates_h <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_set_image_file&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>marker</span>, <span class='nowrap'>char const* <span class='color_p'>file_path</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_set_z_order&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>marker</span>, <span class='nowrap'>int <span class='color_p'>z_order</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polygon_foreach_point&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>polygon</span>, maps_coordinates_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polygon_get_fill_color&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>polygon</span>, unsigned char* <span class='color_p'>r</span>, unsigned char* <span class='color_p'>g</span>, unsigned char* <span class='color_p'>b</span>, <span class='nowrap'>unsigned char* <span class='color_p'>a</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polygon_set_fill_color&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>polygon</span>, <span class='nowrap'>unsigned char <span class='color_p'>r</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>g</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>b</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>a</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polygon_set_polygon&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>polygon</span>, <span class='nowrap'>maps_coordinates_list_h <span class='color_p'>points</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polyline_foreach_point&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>polyline</span>, maps_coordinates_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polyline_get_color&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>polyline</span>, unsigned char* <span class='color_p'>r</span>, unsigned char* <span class='color_p'>g</span>, unsigned char* <span class='color_p'>b</span>, <span class='nowrap'>unsigned char* <span class='color_p'>a</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polyline_get_width&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>polyline</span>, <span class='nowrap'>int* <span class='color_p'>width</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polyline_set_color&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>polyline</span>, <span class='nowrap'>unsigned char <span class='color_p'>r</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>g</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>b</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>a</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polyline_set_polyline&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>polyline</span>, <span class='nowrap'>maps_coordinates_list_h <span class='color_p'>points</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polyline_set_width&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>polyline</span>, <span class='nowrap'>int <span class='color_p'>width</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_set_visible&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>object</span>, <span class='nowrap'>bool <span class='color_p'>visible</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_view_object_plugin.h</span>, <span class='lib_name'>libcapi-maps-service.so.0.6.1</span><br/>
+<span class="iname">maps_view_object_marker_set_size&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>marker</span>, <span class='nowrap'>int <span class='color_p'>width</span>,</span> <span class='nowrap'>int <span class='color_p'>height</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_view_plugin.h</span>, <span class='lib_name'>libcapi-maps-service.so.0.6.1</span><br/>
+<span class="iname">maps_view_get_maps_plugin_view_handle&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>hView</span>, <span class='nowrap'>void** <span class='color_p'>maps_plugin_view_handle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_zoom_factor&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>double* <span class='color_p'>zoom_factor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_maps_plugin_view_handle&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>hView</span>, <span class='nowrap'>void* <span class='color_p'>maps_plugin_view_handle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_zoom_factor&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>double <span class='color_p'>zoom_factor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Binary_Changes'></a><a name='Other_Binary_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (8)</h2><hr/>
+<span class='h_name'>maps_service.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_1')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> _maps_service_data_e (4)</span>
+<br/>
+<div id="c_1" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>MAPS_VIEW_BUILDING</b> with value <b>258</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>MAPS_VIEW_PUBLIC_TRANSIT</b> with value <b>257</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>MAPS_VIEW_SCALEBAR</b> with value <b>259</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>MAPS_VIEW_TRAFFIC</b> with value <b>256</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_2')">
+[+] affected symbols (1)</span>
+<div id="c_2" style="display:none;">
+<div class='affected'><span class='iname_a'>maps_service_provider_is_data_supported&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_service_h const <i>maps</i>,</span> maps_service_data_e <span class='fp'>data</span>, <span class='nowrap'>bool* <i>supported</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;data&#39; has base type &#39;enum _maps_service_data_e&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_3')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> _maps_service_e (4)</span>
+<br/>
+<div id="c_3" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>MAPS_SERVICE_MULTI_REVERSE_GEOCODE</b> with value <b>10</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>MAPS_SERVICE_SEARCH_GET_PLACE_DETAILS</b> with value <b>12</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>MAPS_SERVICE_SEARCH_PLACE_LIST</b> with value <b>11</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>MAPS_SERVICE_VIEW</b> with value <b>256</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_4')">
+[+] affected symbols (1)</span>
+<div id="c_4" style="display:none;">
+<div class='affected'><span class='iname_a'>maps_service_provider_is_service_supported&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_service_h const <i>maps</i>,</span> maps_service_e <span class='fp'>service</span>, <span class='nowrap'>bool* <i>supported</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;service&#39; has base type &#39;enum _maps_service_e&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (37)</h2><hr/>
+<div class='h_list'>
+maps_address.h<br/>
+maps_area.h<br/>
+maps_coordinates.h<br/>
+maps_error.h<br/>
+maps_extra_types.h<br/>
+maps_place.h<br/>
+maps_place_attribute.h<br/>
+maps_place_attribute_plugin.h<br/>
+maps_place_category.h<br/>
+maps_place_contact.h<br/>
+maps_place_contact_plugin.h<br/>
+maps_place_editorial.h<br/>
+maps_place_editorial_plugin.h<br/>
+maps_place_filter.h<br/>
+maps_place_image.h<br/>
+maps_place_image_plugin.h<br/>
+maps_place_link_object.h<br/>
+maps_place_link_object_plugin.h<br/>
+maps_place_media.h<br/>
+maps_place_media_plugin.h<br/>
+maps_place_plugin.h<br/>
+maps_place_rating.h<br/>
+maps_place_rating_plugin.h<br/>
+maps_place_review.h<br/>
+maps_place_review_plugin.h<br/>
+maps_place_url.h<br/>
+maps_place_url_plugin.h<br/>
+maps_plugin.h<br/>
+maps_plugin_info.h<br/>
+maps_preference.h<br/>
+maps_route.h<br/>
+maps_route_maneuver.h<br/>
+maps_route_maneuver_plugin.h<br/>
+maps_route_plugin.h<br/>
+maps_route_segment.h<br/>
+maps_route_segment_plugin.h<br/>
+maps_service.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Shared Libraries (1)</h2><hr/>
+<div class='lib_list'>
+libcapi-maps-service.so.0.4.6<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><div id='SourceTab' class='tab'>
+<h2>Test Info</h2><hr/>
+<table class='summary'>
+<tr><th>Library Name</th><td>capi-maps-service</td></tr>
+<tr><th>Version #1</th><td>2.4</td></tr>
+<tr><th>Version #2</th><td>3.0</td></tr>
+<tr><th>CPU Type</th><td>x86_64</td></tr>
+<tr><th>GCC Version</th><td>4.8</td></tr>
+<tr><th>Subject</th><td width='150px'>Source Compatibility</td></tr>
+</table>
+<h2>Test Results</h2><hr/>
+<table class='summary'><tr><th>Total Header Files</th><td><a href='#Headers' style='color:Blue;'>37</a></td></tr>
+<tr><th>Total Shared Libraries</th><td><a href='#Libs' style='color:Blue;'>1</a></td></tr>
+<tr><th>Total Symbols / Types</th><td>343 / 173</td></tr>
+<tr><th>Verdict</th><td><span style='color:Green;'><b>Compatible</b></span></td></tr>
+</table>
+<h2>Problem Summary</h2><hr/>
+<table class='summary'><tr><th></th><th style='text-align:center;'>Severity</th><th style='text-align:center;'>Count</th></tr><tr><th>Added Symbols</th><td>-</td><td class='new'><a href='#Source_Added' style='color:Blue;'>131</a></td></tr>
+<tr><th>Removed Symbols</th><td>High</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Data Types</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th rowspan='3'>Problems with<br/>Symbols</th><td>High</td><td>0</td></tr>
+<tr><td>Medium</td><td>0</td></tr>
+<tr><td>Low</td><td>0</td></tr>
+<tr><th>Problems with<br/>Constants</th><td>Low</td><td>0</td></tr>
+<tr><th>Other Changes<br/>in Data Types</th><td>-</td><td class='passed'><a href='#Other_Source_Changes_In_Types' style='color:Blue;'>8</a></td></tr>
+</table>
+
+<a name='Source_Added'></a><h2>Added Symbols (131)</h2><hr/>
+<span class='h_name'>maps_address.h</span><br/>
+<span class="iname">maps_address_list_append&#160;<span class='sym_p'>(&#160;maps_address_list_h <span class='color_p'>address_list</span>, <span class='nowrap'>maps_address_h <span class='color_p'>address</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_address_list_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_address_list_h* <span class='color_p'>address_list</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_address_list_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_address_list_h <span class='color_p'>address_list</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_address_list_foreach&#160;<span class='sym_p'>(&#160;maps_address_list_h <span class='color_p'>address_list</span>, maps_address_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_address_list_get_length&#160;<span class='sym_p'>(&#160;maps_address_list_h <span class='color_p'>address_list</span>, <span class='nowrap'>int* <span class='color_p'>length</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_address_list_remove&#160;<span class='sym_p'>(&#160;maps_address_list_h <span class='color_p'>address_list</span>, <span class='nowrap'>maps_address_h <span class='color_p'>address</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_coordinates.h</span><br/>
+<span class="iname">maps_coordinates_get_latitude_longitude&#160;<span class='sym_p'>(&#160;maps_coordinates_h const <span class='color_p'>coordinates</span>, double* <span class='color_p'>latitude</span>, <span class='nowrap'>double* <span class='color_p'>longitude</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_coordinates_list_append&#160;<span class='sym_p'>(&#160;maps_coordinates_list_h <span class='color_p'>coordinates_list</span>, <span class='nowrap'>maps_coordinates_h <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_coordinates_list_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_coordinates_list_h* <span class='color_p'>coordinates_list</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_coordinates_list_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_coordinates_list_h <span class='color_p'>coordinates_list</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_coordinates_list_foreach&#160;<span class='sym_p'>(&#160;maps_coordinates_list_h <span class='color_p'>coordinates_list</span>, maps_coordinates_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_coordinates_list_get_length&#160;<span class='sym_p'>(&#160;maps_coordinates_list_h <span class='color_p'>coordinates_list</span>, <span class='nowrap'>int* <span class='color_p'>length</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_coordinates_list_remove&#160;<span class='sym_p'>(&#160;maps_coordinates_list_h <span class='color_p'>coordinates_list</span>, <span class='nowrap'>maps_coordinates_h <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_coordinates_set_latitude_longitude&#160;<span class='sym_p'>(&#160;maps_coordinates_h <span class='color_p'>coordinates</span>, double const <span class='color_p'>latitude</span>, <span class='nowrap'>double const <span class='color_p'>longitude</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_extra_types.h</span><br/>
+<span class="iname">maps_int_hashtable_clone&#160;<span class='sym_p'>(&#160;maps_int_hashtable_h const <span class='color_p'>origin</span>, <span class='nowrap'>maps_int_hashtable_h* <span class='color_p'>cloned</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_int_hashtable_contains&#160;<span class='sym_p'>(&#160;maps_int_hashtable_h <span class='color_p'>table</span>, <span class='nowrap'>int const <span class='color_p'>key</span>,</span> <span class='nowrap'>bool* <span class='color_p'>contains</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_int_hashtable_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_int_hashtable_h* <span class='color_p'>table</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_int_hashtable_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_int_hashtable_h <span class='color_p'>table</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_int_hashtable_foreach&#160;<span class='sym_p'>(&#160;maps_int_hashtable_h <span class='color_p'>table</span>, maps_int_hashtable_foreach_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_int_hashtable_get&#160;<span class='sym_p'>(&#160;maps_int_hashtable_h <span class='color_p'>table</span>, <span class='nowrap'>int const <span class='color_p'>key</span>,</span> <span class='nowrap'>int* <span class='color_p'>value</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_int_hashtable_remove&#160;<span class='sym_p'>(&#160;maps_int_hashtable_h <span class='color_p'>table</span>, <span class='nowrap'>int const <span class='color_p'>key</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_int_hashtable_set&#160;<span class='sym_p'>(&#160;maps_int_hashtable_h <span class='color_p'>table</span>, <span class='nowrap'>int const <span class='color_p'>key</span>,</span> <span class='nowrap'>int const <span class='color_p'>value</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_item_list_foreach_noclone&#160;<span class='sym_p'>(&#160;maps_item_list_h <span class='color_p'>list</span>, maps_item_list_foreach_noclone_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_item_list_remove&#160;<span class='sym_p'>(&#160;maps_item_list_h <span class='color_p'>list</span>, <span class='nowrap'>void* <span class='color_p'>item</span>,</span> <span class='nowrap'>maps_item_list_free_cb <span class='color_p'>free_func</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_place.h</span><br/>
+<span class="iname">maps_place_list_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_place_list_h <span class='color_p'>place_list</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_place_list_foreach&#160;<span class='sym_p'>(&#160;maps_place_list_h const <span class='color_p'>place_list</span>, maps_place_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_place_filter.h</span><br/>
+<span class="iname">maps_place_filter_get_place_address&#160;<span class='sym_p'>(&#160;maps_place_filter_h const <span class='color_p'>filter</span>, <span class='nowrap'>char** <span class='color_p'>place_address</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_place_filter_set_place_address&#160;<span class='sym_p'>(&#160;maps_place_filter_h <span class='color_p'>filter</span>, <span class='nowrap'>char const* <span class='color_p'>place_address</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_place_plugin.h</span><br/>
+<span class="iname">maps_place_list_create&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_place_list_h* <span class='color_p'>place_list</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_plugin.h</span><br/>
+<span class="iname">maps_plugin_create_map_view&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>maps_plugin_map_view_ready_cb <span class='color_p'>callback</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_plugin_destroy_map_view&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_view_h <span class='color_p'>view</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_plugin_geography_to_screen&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, maps_coordinates_h const <span class='color_p'>coordinates</span>, <span class='nowrap'>int* <span class='color_p'>x</span>,</span> <span class='nowrap'>int* <span class='color_p'>y</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_plugin_get_center&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>maps_coordinates_h* <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_plugin_get_max_zoom_level&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>int* <span class='color_p'>max_zoom_level</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_plugin_get_min_zoom_level&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>int* <span class='color_p'>min_zoom_level</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_plugin_get_place_details&#160;<span class='sym_p'>(&#160;<span class='nowrap'>char const* <span class='color_p'>url</span>,</span> maps_service_get_place_details_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_plugin_get_scalebar&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>bool* <span class='color_p'>enabled</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_plugin_move_center&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>int <span class='color_p'>delta_x</span>,</span> <span class='nowrap'>int <span class='color_p'>delta_y</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_plugin_multi_reverse_geocode&#160;<span class='sym_p'>(&#160;maps_coordinates_list_h const <span class='color_p'>geocode_list</span>, maps_preference_h const <span class='color_p'>preference</span>, maps_service_multi_reverse_geocode_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_plugin_on_object&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, maps_view_object_h const <span class='color_p'>object</span>, <span class='nowrap'>maps_view_object_operation_e <span class='color_p'>operation</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_plugin_render_map&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, maps_coordinates_h const <span class='color_p'>coordinates</span>, double <span class='color_p'>zoom_factor</span>, <span class='nowrap'>double <span class='color_p'>rotation_angle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_plugin_screen_to_geography&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>int <span class='color_p'>x</span>,</span> <span class='nowrap'>int <span class='color_p'>y</span>,</span> <span class='nowrap'>maps_coordinates_h* <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_plugin_search_place_list&#160;<span class='sym_p'>(&#160;maps_area_h const <span class='color_p'>boundary</span>, maps_place_filter_h const <span class='color_p'>filter</span>, maps_preference_h <span class='color_p'>preference</span>, maps_service_search_place_list_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_plugin_set_scalebar&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>bool <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_preference.h</span><br/>
+<span class="iname">maps_preference_get_route_alternatives_enabled&#160;<span class='sym_p'>(&#160;maps_preference_h const <span class='color_p'>preference</span>, <span class='nowrap'>bool* <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_preference_set_route_alternatives_enabled&#160;<span class='sym_p'>(&#160;maps_preference_h <span class='color_p'>preference</span>, <span class='nowrap'>bool <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_service.h</span><br/>
+<span class="iname">maps_service_get_place_details&#160;<span class='sym_p'>(&#160;maps_service_h const <span class='color_p'>maps</span>, <span class='nowrap'>char const* <span class='color_p'>uri</span>,</span> maps_service_get_place_details_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_service_multi_reverse_geocode&#160;<span class='sym_p'>(&#160;maps_service_h const <span class='color_p'>maps</span>, maps_coordinates_list_h <span class='color_p'>coordinates_list</span>, maps_preference_h const <span class='color_p'>preference</span>, maps_service_multi_reverse_geocode_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_service_search_place_list&#160;<span class='sym_p'>(&#160;maps_service_h const <span class='color_p'>maps</span>, maps_area_h const <span class='color_p'>boundary</span>, maps_place_filter_h const <span class='color_p'>filter</span>, maps_preference_h <span class='color_p'>preference</span>, maps_service_search_place_list_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span>,</span> <span class='nowrap'>int* <span class='color_p'>request_id</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_view.h</span><br/>
+<span class="iname">maps_view_add_object&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>maps_view_object_h <span class='color_p'>object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_create&#160;<span class='sym_p'>(&#160;maps_service_h <span class='color_p'>maps</span>, <span class='nowrap'>Evas_Image* <span class='color_p'>obj</span>,</span> <span class='nowrap'>maps_view_h* <span class='color_p'>view</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_view_h <span class='color_p'>view</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_foreach_object&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, maps_view_object_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_geolocation_to_screen&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, maps_coordinates_h const <span class='color_p'>coordinates</span>, <span class='nowrap'>int* <span class='color_p'>x</span>,</span> <span class='nowrap'>int* <span class='color_p'>y</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_buildings_enabled&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>bool* <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_center&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>maps_coordinates_h* <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_gesture_enabled&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, maps_view_gesture_e <span class='color_p'>gesture</span>, <span class='nowrap'>bool* <span class='color_p'>enabled</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_language&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>char** <span class='color_p'>language</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_max_zoom_level&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>int* <span class='color_p'>max_zoom_level</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_min_zoom_level&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>int* <span class='color_p'>min_zoom_level</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_orientation&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>double* <span class='color_p'>rotation_angle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_public_transit_enabled&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>bool* <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_scalebar_enabled&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>bool* <span class='color_p'>enabled</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_screen_location&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>int* <span class='color_p'>x</span>,</span> <span class='nowrap'>int* <span class='color_p'>y</span>,</span> <span class='nowrap'>int* <span class='color_p'>width</span>,</span> <span class='nowrap'>int* <span class='color_p'>height</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_traffic_enabled&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>bool* <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_type&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>maps_view_type_e* <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_viewport&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>Evas_Image** <span class='color_p'>viewport</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_visibility&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>bool* <span class='color_p'>visible</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_zoom_level&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>int* <span class='color_p'>level</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_move&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>int <span class='color_p'>x</span>,</span> <span class='nowrap'>int <span class='color_p'>y</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_remove_all_objects&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_view_h <span class='color_p'>view</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_remove_object&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>maps_view_object_h <span class='color_p'>object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_resize&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>int <span class='color_p'>width</span>,</span> <span class='nowrap'>int <span class='color_p'>height</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_screen_to_geolocation&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>int <span class='color_p'>x</span>,</span> <span class='nowrap'>int <span class='color_p'>y</span>,</span> <span class='nowrap'>maps_coordinates_h* <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_buildings_enabled&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>bool <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_center&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>maps_coordinates_h <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_event_cb&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, maps_view_event_type_e <span class='color_p'>type</span>, maps_view_on_event_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_gesture_enabled&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, maps_view_gesture_e <span class='color_p'>gesture</span>, <span class='nowrap'>bool <span class='color_p'>enabled</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_language&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>char const* <span class='color_p'>language</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_orientation&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>double <span class='color_p'>angle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_public_transit_enabled&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>bool <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_scalebar_enabled&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>bool <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_screen_location&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>int <span class='color_p'>x</span>,</span> <span class='nowrap'>int <span class='color_p'>y</span>,</span> <span class='nowrap'>int <span class='color_p'>width</span>,</span> <span class='nowrap'>int <span class='color_p'>height</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_traffic_enabled&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>bool <span class='color_p'>enable</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_type&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>maps_view_type_e <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_visibility&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>bool <span class='color_p'>visible</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_zoom_level&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>int <span class='color_p'>level</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_unset_event_cb&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>maps_view_event_type_e <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_view_event_data.h</span><br/>
+<span class="iname">maps_view_event_data_clone&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>origin</span>, <span class='nowrap'>maps_view_event_data_h* <span class='color_p'>cloned</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_view_event_data_h <span class='color_p'>event</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_action_type&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>maps_view_action_e* <span class='color_p'>action_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_center&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>maps_coordinates_h* <span class='color_p'>center</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_delta&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>int* <span class='color_p'>delta_x</span>,</span> <span class='nowrap'>int* <span class='color_p'>delta_y</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_fingers&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>int* <span class='color_p'>fingers</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_gesture_type&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>maps_view_gesture_e* <span class='color_p'>gesture_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_object&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>maps_view_object_h* <span class='color_p'>object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_position&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>int* <span class='color_p'>x</span>,</span> <span class='nowrap'>int* <span class='color_p'>y</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_rotation_angle&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>double* <span class='color_p'>rotation_angle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_type&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>maps_view_event_type_e* <span class='color_p'>event_type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_event_data_get_zoom_factor&#160;<span class='sym_p'>(&#160;maps_view_event_data_h const <span class='color_p'>event</span>, <span class='nowrap'>double* <span class='color_p'>zoom_factor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_view_object.h</span><br/>
+<span class="iname">maps_view_object_create_marker&#160;<span class='sym_p'>(&#160;maps_coordinates_h <span class='color_p'>coordinates</span>, char const* <span class='color_p'>image_file_path</span>, maps_view_marker_type_e <span class='color_p'>type</span>, <span class='nowrap'>maps_view_object_h* <span class='color_p'>marker</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_create_polygon&#160;<span class='sym_p'>(&#160;maps_coordinates_list_h <span class='color_p'>coordinates</span>, <span class='nowrap'>unsigned char <span class='color_p'>r</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>g</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>b</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>a</span>,</span> <span class='nowrap'>maps_view_object_h* <span class='color_p'>polygon</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_create_polyline&#160;<span class='sym_p'>(&#160;maps_coordinates_list_h <span class='color_p'>coordinates</span>, <span class='nowrap'>unsigned char <span class='color_p'>r</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>g</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>b</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>a</span>,</span> <span class='nowrap'>int <span class='color_p'>width</span>,</span> <span class='nowrap'>maps_view_object_h* <span class='color_p'>polyline</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_destroy&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_view_object_h <span class='color_p'>object</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_get_type&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>object</span>, <span class='nowrap'>maps_view_object_type_e* <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_get_visible&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>object</span>, <span class='nowrap'>bool* <span class='color_p'>visible</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_get_coordinates&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>marker</span>, <span class='nowrap'>maps_coordinates_h* <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_get_image_file&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>marker</span>, <span class='nowrap'>char** <span class='color_p'>file_path</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_get_size&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>marker</span>, <span class='nowrap'>int* <span class='color_p'>width</span>,</span> <span class='nowrap'>int* <span class='color_p'>height</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_get_type&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>marker</span>, <span class='nowrap'>maps_view_marker_type_e* <span class='color_p'>type</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_get_z_order&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>marker</span>, <span class='nowrap'>int* <span class='color_p'>z_order</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_resize&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>marker</span>, <span class='nowrap'>int <span class='color_p'>width</span>,</span> <span class='nowrap'>int <span class='color_p'>height</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_set_coordinates&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>marker</span>, <span class='nowrap'>maps_coordinates_h <span class='color_p'>coordinates</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_set_image_file&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>marker</span>, <span class='nowrap'>char const* <span class='color_p'>file_path</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_marker_set_z_order&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>marker</span>, <span class='nowrap'>int <span class='color_p'>z_order</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polygon_foreach_point&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>polygon</span>, maps_coordinates_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polygon_get_fill_color&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>polygon</span>, unsigned char* <span class='color_p'>r</span>, unsigned char* <span class='color_p'>g</span>, unsigned char* <span class='color_p'>b</span>, <span class='nowrap'>unsigned char* <span class='color_p'>a</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polygon_set_fill_color&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>polygon</span>, <span class='nowrap'>unsigned char <span class='color_p'>r</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>g</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>b</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>a</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polygon_set_polygon&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>polygon</span>, <span class='nowrap'>maps_coordinates_list_h <span class='color_p'>points</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polyline_foreach_point&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>polyline</span>, maps_coordinates_cb <span class='color_p'>callback</span>, <span class='nowrap'>void* <span class='color_p'>user_data</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polyline_get_color&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>polyline</span>, unsigned char* <span class='color_p'>r</span>, unsigned char* <span class='color_p'>g</span>, unsigned char* <span class='color_p'>b</span>, <span class='nowrap'>unsigned char* <span class='color_p'>a</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polyline_get_width&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>polyline</span>, <span class='nowrap'>int* <span class='color_p'>width</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polyline_set_color&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>polyline</span>, <span class='nowrap'>unsigned char <span class='color_p'>r</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>g</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>b</span>,</span> <span class='nowrap'>unsigned char <span class='color_p'>a</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polyline_set_polyline&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>polyline</span>, <span class='nowrap'>maps_coordinates_list_h <span class='color_p'>points</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_polyline_set_width&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>polyline</span>, <span class='nowrap'>int <span class='color_p'>width</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_object_set_visible&#160;<span class='sym_p'>(&#160;maps_view_object_h <span class='color_p'>object</span>, <span class='nowrap'>bool <span class='color_p'>visible</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_view_object_plugin.h</span><br/>
+<span class="iname">maps_view_object_marker_set_size&#160;<span class='sym_p'>(&#160;maps_view_object_h const <span class='color_p'>marker</span>, <span class='nowrap'>int <span class='color_p'>width</span>,</span> <span class='nowrap'>int <span class='color_p'>height</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<span class='h_name'>maps_view_plugin.h</span><br/>
+<span class="iname">maps_view_get_maps_plugin_view_handle&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>hView</span>, <span class='nowrap'>void** <span class='color_p'>maps_plugin_view_handle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_get_zoom_factor&#160;<span class='sym_p'>(&#160;maps_view_h const <span class='color_p'>view</span>, <span class='nowrap'>double* <span class='color_p'>zoom_factor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_maps_plugin_view_handle&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>hView</span>, <span class='nowrap'>void* <span class='color_p'>maps_plugin_view_handle</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<span class="iname">maps_view_set_zoom_factor&#160;<span class='sym_p'>(&#160;maps_view_h <span class='color_p'>view</span>, <span class='nowrap'>double <span class='color_p'>zoom_factor</span> )</span></span><span class='sym_p nowrap'> &#160;<b>:</b>&#160;&#160;int</span></span><br/>
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Other_Source_Changes'></a><a name='Other_Source_Changes_In_Types'></a>
+<h2>Other Changes in Data Types (8)</h2><hr/>
+<span class='h_name'>maps_service.h</span><br/>
+<span class="section" onclick="javascript:showContent(this, 'c_5')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> _maps_service_data_e (4)</span>
+<br/>
+<div id="c_5" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>MAPS_VIEW_BUILDING</b> with value <b>258</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>MAPS_VIEW_PUBLIC_TRANSIT</b> with value <b>257</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>MAPS_VIEW_SCALEBAR</b> with value <b>259</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>MAPS_VIEW_TRAFFIC</b> with value <b>256</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_6')">
+[+] affected symbols (2)</span>
+<div id="c_6" style="display:none;">
+<div class='affected'><span class='iname_a'>maps_plugin_is_data_supported&#160;<span class='sym_p'>(&#160;maps_service_data_e <span class='fp'>data</span>, <span class='nowrap'>bool* <i>supported</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;data&#39; has base type &#39;enum _maps_service_data_e&#39;.</div>
+<span class='iname_a'>maps_service_provider_is_data_supported&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_service_h const <i>maps</i>,</span> maps_service_data_e <span class='fp'>data</span>, <span class='nowrap'>bool* <i>supported</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;data&#39; has base type &#39;enum _maps_service_data_e&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<span class="section" onclick="javascript:showContent(this, 'c_7')">
+<span class='ext'>[+]</span> <span class='ttype'>enum</span> _maps_service_e (4)</span>
+<br/>
+<div id="c_7" style="display:none;">
+<table class='ptable'><tr>
+<th width='2%'></th><th width='47%'>Change</th>
+<th>Effect</th></tr><tr>
+<th>1</th>
+<td>The member <b>MAPS_SERVICE_MULTI_REVERSE_GEOCODE</b> with value <b>10</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>2</th>
+<td>The member <b>MAPS_SERVICE_SEARCH_GET_PLACE_DETAILS</b> with value <b>12</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>3</th>
+<td>The member <b>MAPS_SERVICE_SEARCH_PLACE_LIST</b> with value <b>11</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+<tr>
+<th>4</th>
+<td>The member <b>MAPS_SERVICE_VIEW</b> with value <b>256</b> has been added.</td>
+<td>No effect.</td>
+</tr>
+</table>
+<span class="sect_aff" onclick="javascript:showContent(this, 'c_8')">
+[+] affected symbols (2)</span>
+<div id="c_8" style="display:none;">
+<div class='affected'><span class='iname_a'>maps_plugin_is_service_supported&#160;<span class='sym_p'>(&#160;maps_service_e <span class='fp'>service</span>, <span class='nowrap'>bool* <i>supported</i> )</span></span></span><br/>
+<div class='affect'>1st parameter &#39;service&#39; has base type &#39;enum _maps_service_e&#39;.</div>
+<span class='iname_a'>maps_service_provider_is_service_supported&#160;<span class='sym_p'>(&#160;<span class='nowrap'>maps_service_h const <i>maps</i>,</span> maps_service_e <span class='fp'>service</span>, <span class='nowrap'>bool* <i>supported</i> )</span></span></span><br/>
+<div class='affect'>2nd parameter &#39;service&#39; has base type &#39;enum _maps_service_e&#39;.</div>
+</div>
+</div>
+<br/><br/></div>
+
+<br/>
+<a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Headers'></a><h2>Header Files (37)</h2><hr/>
+<div class='h_list'>
+maps_address.h<br/>
+maps_area.h<br/>
+maps_coordinates.h<br/>
+maps_error.h<br/>
+maps_extra_types.h<br/>
+maps_place.h<br/>
+maps_place_attribute.h<br/>
+maps_place_attribute_plugin.h<br/>
+maps_place_category.h<br/>
+maps_place_contact.h<br/>
+maps_place_contact_plugin.h<br/>
+maps_place_editorial.h<br/>
+maps_place_editorial_plugin.h<br/>
+maps_place_filter.h<br/>
+maps_place_image.h<br/>
+maps_place_image_plugin.h<br/>
+maps_place_link_object.h<br/>
+maps_place_link_object_plugin.h<br/>
+maps_place_media.h<br/>
+maps_place_media_plugin.h<br/>
+maps_place_plugin.h<br/>
+maps_place_rating.h<br/>
+maps_place_rating_plugin.h<br/>
+maps_place_review.h<br/>
+maps_place_review_plugin.h<br/>
+maps_place_url.h<br/>
+maps_place_url_plugin.h<br/>
+maps_plugin.h<br/>
+maps_plugin_info.h<br/>
+maps_preference.h<br/>
+maps_route.h<br/>
+maps_route_maneuver.h<br/>
+maps_route_maneuver_plugin.h<br/>
+maps_route_plugin.h<br/>
+maps_route_segment.h<br/>
+maps_route_segment_plugin.h<br/>
+maps_service.h<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<a name='Libs'></a><h2>Shared Libraries (1)</h2><hr/>
+<div class='lib_list'>
+libcapi-maps-service.so.0.4.6<br/>
+</div>
+<br/><a class='top_ref' href='#Top'>to the top</a><br/>
+<br/><br/><br/></div><hr/>
+<div class='footer' align='right'><i>Generated by <a href='http://lvc.github.io/abi-compliance-checker/'>ABI Compliance Checker</a> 1.99.18 &#160;</i>
+</div>
+<br/>
+
+</body></html>

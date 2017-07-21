@@ -1,0 +1,18 @@
+Temporary header file '/tmp/b_F6trPxJx/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/wifi-direct/wifi-direct.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/wifi-direct/wifi-direct-internal.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/b_F6trPxJx/dump1.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/b_F6trPxJx/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/wifi-direct/wifi-direct.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/wifi-direct/wifi-direct-internal.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/b_F6trPxJx/dump2.h"  -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+

@@ -1,0 +1,17 @@
+libaccounts-svc-debuginfo
+appcore-widget-debuginfo
+cairo-debuginfo
+appcore-agent-debuginfo
+capi-media-screen-mirroring-debuginfo
+capi-message-port-debuginfo
+capi-network-nfc-debuginfo
+dali-adaptor-debuginfo
+dali-debuginfo
+dali-toolkit-debuginfo
+service-adaptor-debuginfo
+libslp-tapi-debuginfo
+csr-framework-debuginfo
+ui-gadget-1-debuginfo
+email-service-debuginfo
+msg-service-debuginfo
+browser-provider-debuginfo

@@ -1,0 +1,7 @@
+stt_parser_find_config_changed
+stt_dbus_request_initialize
+stt_dbus_request_set_current_engine
+__stt_config_language_changed_cb
+stt_parser_set_engine
+__stt_cb_error
+stt_dbus_request_start

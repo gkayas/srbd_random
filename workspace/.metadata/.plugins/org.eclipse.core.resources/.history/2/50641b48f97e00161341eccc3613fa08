@@ -1,0 +1,182 @@
+package apprunner;
+
+import java.util.ArrayList;
+
+import javafx.beans.property.SimpleStringProperty;
+
+public class AppInfo {
+
+	private SimpleStringProperty name;
+	private SimpleStringProperty install;
+	private SimpleStringProperty launch;
+	private SimpleStringProperty exploratory ;
+	private SimpleStringProperty close;
+	private SimpleStringProperty uninstall;
+	private SimpleStringProperty crash;
+	
+	
+//	private ArrayList<TestInfo> tcList;
+//	private String appName;
+//	
+//	public void setTCResult(String tcName, TCResult result) {
+//		getTestInfo(tcName).setResult(result);
+//	}
+//	
+//	public String getTCResult(String tcName) {
+//		TestInfo testInfo = getTestInfo(tcName);
+//		if(testInfo != null)
+//			return testInfo.getResult().toString();
+//		return "NR";
+//	}
+//	
+//	private TestInfo getTestInfo(String testInfoType) {
+//		TestInfo installTest = null;
+//		for (TestInfo testInfo : tcList) {
+//			if(testInfo.getTcName().equals(testInfoType)) {
+//				installTest = testInfo;
+//			}
+//		}
+//		return installTest;
+//	}
+
+	public AppInfo() {
+//		this.tcList = new ArrayList<TestInfo>();
+		this.install = new SimpleStringProperty();
+		this.exploratory = new SimpleStringProperty();
+		this.uninstall = new SimpleStringProperty();
+	}
+	
+	public AppInfo(String name) {
+		this.name = new SimpleStringProperty(name);
+		this.install = new SimpleStringProperty("NT");
+		this.launch = new SimpleStringProperty("NT");
+		this.exploratory = new SimpleStringProperty("NT");
+		this.close = new SimpleStringProperty("NT");
+		this.uninstall = new SimpleStringProperty("NT");
+		this.crash = new SimpleStringProperty("NT");
+	}
+	
+//	public AppInfo (ArrayList<TestInfo> testCaseList, String name) {
+//		
+//		this.tcList = testCaseList;
+//		this.appName = name;		
+//		this.name = new SimpleStringProperty(name);
+//		this.binary = new SimpleStringProperty(binaryName);
+//		this.install = new SimpleStringProperty();
+//		this.exploratory = new SimpleStringProperty();
+//		this.uninstall = new SimpleStringProperty();
+//	}
+//	
+//	public ArrayList<TestInfo> getTcList() {
+//		return tcList;
+//	}
+//	public void setTcList(ArrayList<TestInfo> tcList) {
+//		this.tcList = tcList;
+//	}
+//	public String getAppName() {
+//		return appName;
+//	}
+//	public void setAppName(String appName) {
+//		this.appName = appName;
+//	}
+//	public String getBinary() {
+//		return binaryName;
+//	}
+//
+//	public void setBinaryName(String binaryName) {
+//		this.binaryName = binaryName;
+//	}
+
+	public SimpleStringProperty nameProperty() {
+//		this.name.set(appName);
+		return name;
+	}
+	
+//	public SimpleStringProperty binaryProperty() {
+//		this.binary.set(binaryName);
+//		return binary;
+//	}
+//	
+	public SimpleStringProperty installProperty() {
+//		TestInfo installTest = getTestInfo("install");
+//		
+//		if(installTest != null)
+//			install.set(installTest.getResult().toString());
+		
+		return install;
+	}
+	
+	public SimpleStringProperty uninstallProperty() {
+//		TestInfo uninstallTest = getTestInfo("uninstall");
+//		
+//		if(uninstallTest != null)
+//			uninstall.set(uninstallTest.getResult().toString());
+		
+		return uninstall;
+	}
+	
+	public SimpleStringProperty exploratoryProperty() {
+//		TestInfo exploratoryTest =  getTestInfo("exploratory");
+//		
+//		if(exploratoryTest != null)
+//			exploratory.set(exploratoryTest.getResult().toString());
+		
+		return exploratory;
+	}
+	
+	public void setName(SimpleStringProperty name) {
+		this.name = name;
+	}
+	
+//	public void setBinary(SimpleStringProperty name) {
+//		this.binary = name;
+//	}
+	
+	public void setInstall(SimpleStringProperty name) {
+		this.install = name;
+	}
+	
+	public void setExploratory(SimpleStringProperty name) {
+		this.exploratory = name;
+	}
+	
+	public void setUninstall(SimpleStringProperty name) {
+		this.uninstall = name;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof AppInfo)) {
+			return false;
+		}
+		AppInfo target = (AppInfo) obj;
+		
+		return this.getName().equals(target.getName());
+	}
+	
+//	public void copy(AppInfo target) {
+//		this.tcList = target.getTcList();
+//	}
+
+	public SimpleStringProperty getName() {
+		return name;
+	}
+
+	public SimpleStringProperty getInstall() {
+		return install;
+	}
+
+	public SimpleStringProperty getExploratory() {
+		return exploratory;
+	}
+
+	public SimpleStringProperty getUninstall() {
+		return uninstall;
+	}
+
+	
+//	@Override
+//	public String toString() {
+//		return appName + "," + binaryName + "," + getTCResult("install") + "," + getTCResult("exploratory") + "," + getTCResult("uninstall");
+//	}
+}

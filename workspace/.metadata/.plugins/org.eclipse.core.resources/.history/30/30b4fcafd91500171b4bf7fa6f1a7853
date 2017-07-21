@@ -1,0 +1,8 @@
+package com.turbovnc.vncviewer;
+
+
+import javax.swing.JPanel;
+
+public class CustomPanel extends JPanel {
+
+}

@@ -1,0 +1,668 @@
+Temporary header file '/tmp/sPVqGaY4cY/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/dali-toolkit.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/builder/builder.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/controls/bloom-view/bloom-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/controls/effects-view/effects-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/controls/magnifier/magnifier.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/controls/page-turn-view/page-turn-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/controls/popup/popup.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/controls/shadow-view/shadow-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/controls/slider/slider.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/controls/super-blur-view/super-blur-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/controls/tool-bar/tool-bar.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/accessibility-manager/accessibility-manager.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/alignment/alignment.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/gaussian-blur-view/gaussian-blur-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/image-view/image-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/scroll-bar/scroll-bar.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/scrollable.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/table-view/table-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/scripting/script.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/buttons/button.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/control.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/focus-manager/keyinput-focus-manager.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-view-declarations.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view-constraints.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view-page-path-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/focus-manager/keyboard-focus-manager.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/controls/bubble-effect/bubble-emitter.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/controls/page-turn-view/page-factory.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/controls/page-turn-view/page-turn-landscape-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/controls/page-turn-view/page-turn-portrait-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/controls/text-controls/text-selection-popup.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/controls/text-controls/text-selection-toolbar.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/scripting/script-plugin.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/alpha-discard-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/bendy-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/blind-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/bouncing-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/carousel-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/displacement-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/dissolve-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/dissolve-local-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/distance-field-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/image-region-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/iris-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/mask-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/mirror-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/motion-blur-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/motion-stretch-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/nine-patch-mask-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/overlay-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/ripple-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/ripple2d-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/shear-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/soft-button-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/spot-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/square-dissolve-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/swirl-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-cross-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-fold-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-wave-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/buttons/check-box-button.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/buttons/radio-button.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/control-impl.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/default-item-layout.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-factory.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-layout.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/text-controls/text-field.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/text-controls/text-label.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/dali-toolkit-version.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/builder/json-parser.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/builder/tree-node.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/shader-effects/quadratic-bezier.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/devel-api/styling/style-manager.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/controls/default-controls/solid-color-actor.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/enums.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include/dali-toolkit/public-api/text/rendering-backend.h"
+
+  // add namespaces
+  namespace Dali{typedef int tmp_add_type_1;}
+  Dali::tmp_add_type_1 tmp_add_func_1(){return 0;};
+  namespace Dali{namespace AnchorPoint{typedef int tmp_add_type_2;}}
+  Dali::AnchorPoint::tmp_add_type_2 tmp_add_func_2(){return 0;};
+  namespace Dali{namespace BlendingEquation{typedef int tmp_add_type_3;}}
+  Dali::BlendingEquation::tmp_add_type_3 tmp_add_func_3(){return 0;};
+  namespace Dali{namespace BlendingFactor{typedef int tmp_add_type_4;}}
+  Dali::BlendingFactor::tmp_add_type_4 tmp_add_func_4(){return 0;};
+  namespace Dali{namespace BlendingMode{typedef int tmp_add_type_5;}}
+  Dali::BlendingMode::tmp_add_type_5 tmp_add_func_5(){return 0;};
+  namespace Dali{namespace Camera{typedef int tmp_add_type_6;}}
+  Dali::Camera::tmp_add_type_6 tmp_add_func_6(){return 0;};
+  namespace Dali{namespace Color{typedef int tmp_add_type_7;}}
+  Dali::Color::tmp_add_type_7 tmp_add_func_7(){return 0;};
+  namespace Dali{namespace Configuration{typedef int tmp_add_type_8;}}
+  Dali::Configuration::tmp_add_type_8 tmp_add_func_8(){return 0;};
+  namespace Dali{namespace Dimension{typedef int tmp_add_type_9;}}
+  Dali::Dimension::tmp_add_type_9 tmp_add_func_9(){return 0;};
+  namespace Dali{namespace DrawMode{typedef int tmp_add_type_10;}}
+  Dali::DrawMode::tmp_add_type_10 tmp_add_func_10(){return 0;};
+  namespace Dali{namespace FilterMode{typedef int tmp_add_type_11;}}
+  Dali::FilterMode::tmp_add_type_11 tmp_add_func_11(){return 0;};
+  namespace Dali{namespace FittingMode{typedef int tmp_add_type_12;}}
+  Dali::FittingMode::tmp_add_type_12 tmp_add_func_12(){return 0;};
+  namespace Dali{namespace HorizontalAlignment{typedef int tmp_add_type_13;}}
+  Dali::HorizontalAlignment::tmp_add_type_13 tmp_add_func_13(){return 0;};
+  namespace Dali{namespace InputMethod{typedef int tmp_add_type_14;}}
+  Dali::InputMethod::tmp_add_type_14 tmp_add_func_14(){return 0;};
+  namespace Dali{namespace Internal{typedef int tmp_add_type_15;}}
+  Dali::Internal::tmp_add_type_15 tmp_add_func_15(){return 0;};
+  namespace Dali{namespace Internal{namespace Adaptor{typedef int tmp_add_type_16;}}}
+  Dali::Internal::Adaptor::tmp_add_type_16 tmp_add_func_16(){return 0;};
+  namespace Dali{namespace Math{typedef int tmp_add_type_17;}}
+  Dali::Math::tmp_add_type_17 tmp_add_func_17(){return 0;};
+  namespace Dali{namespace ParentOrigin{typedef int tmp_add_type_18;}}
+  Dali::ParentOrigin::tmp_add_type_18 tmp_add_func_18(){return 0;};
+  namespace Dali{namespace Pixel{typedef int tmp_add_type_19;}}
+  Dali::Pixel::tmp_add_type_19 tmp_add_func_19(){return 0;};
+  namespace Dali{namespace PointState{typedef int tmp_add_type_20;}}
+  Dali::PointState::tmp_add_type_20 tmp_add_func_20(){return 0;};
+  namespace Dali{namespace PropertyTypes{typedef int tmp_add_type_21;}}
+  Dali::PropertyTypes::tmp_add_type_21 tmp_add_func_21(){return 0;};
+  namespace Dali{namespace Random{typedef int tmp_add_type_22;}}
+  Dali::Random::tmp_add_type_22 tmp_add_func_22(){return 0;};
+  namespace Dali{namespace RenderBuffer{typedef int tmp_add_type_23;}}
+  Dali::RenderBuffer::tmp_add_type_23 tmp_add_func_23(){return 0;};
+  namespace Dali{namespace ResizePolicy{typedef int tmp_add_type_24;}}
+  Dali::ResizePolicy::tmp_add_type_24 tmp_add_func_24(){return 0;};
+  namespace Dali{namespace SamplingMode{typedef int tmp_add_type_25;}}
+  Dali::SamplingMode::tmp_add_type_25 tmp_add_func_25(){return 0;};
+  namespace Dali{namespace SizeScalePolicy{typedef int tmp_add_type_26;}}
+  Dali::SizeScalePolicy::tmp_add_type_26 tmp_add_func_26(){return 0;};
+  namespace Dali{namespace StyleChange{typedef int tmp_add_type_27;}}
+  Dali::StyleChange::tmp_add_type_27 tmp_add_func_27(){return 0;};
+  namespace Dali{namespace Toolkit{typedef int tmp_add_type_28;}}
+  Dali::Toolkit::tmp_add_type_28 tmp_add_func_28(){return 0;};
+  namespace Dali{namespace Toolkit{namespace ControlOrientation{typedef int tmp_add_type_29;}}}
+  Dali::Toolkit::ControlOrientation::tmp_add_type_29 tmp_add_func_29(){return 0;};
+  namespace Dali{namespace Toolkit{namespace DefaultItemLayout{typedef int tmp_add_type_30;}}}
+  Dali::Toolkit::DefaultItemLayout::tmp_add_type_30 tmp_add_func_30(){return 0;};
+  namespace Dali{namespace Toolkit{namespace Internal{typedef int tmp_add_type_31;}}}
+  Dali::Toolkit::Internal::tmp_add_type_31 tmp_add_func_31(){return 0;};
+  namespace Dali{namespace Toolkit{namespace NinePatchMaskEffect{typedef int tmp_add_type_32;}}}
+  Dali::Toolkit::NinePatchMaskEffect::tmp_add_type_32 tmp_add_func_32(){return 0;};
+  namespace Dali{namespace Toolkit{namespace Text{typedef int tmp_add_type_33;}}}
+  Dali::Toolkit::Text::tmp_add_type_33 tmp_add_func_33(){return 0;};
+  namespace Dali{namespace VerticalAlignment{typedef int tmp_add_type_34;}}
+  Dali::VerticalAlignment::tmp_add_type_34 tmp_add_func_34(){return 0;};
+  namespace Dali{namespace WeightObject{typedef int tmp_add_type_35;}}
+  Dali::WeightObject::tmp_add_type_35 tmp_add_func_35(){return 0;};
+  namespace Dali{namespace WrapMode{typedef int tmp_add_type_36;}}
+  Dali::WrapMode::tmp_add_type_36 tmp_add_func_36(){return 0;};
+
+  // add classes
+  pthread_attr_t* tmp_add_class_0;
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/sPVqGaY4cY/dump1.h"  -I/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/2.4/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+Temporary header file '/tmp/sPVqGaY4cY/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/dali-toolkit.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/builder/builder.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/bloom-view/bloom-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/effects-view/effects-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/gaussian-blur-view/gaussian-blur-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/magnifier/magnifier.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/page-turn-view/page-turn-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/popup/popup.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/shadow-view/shadow-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/super-blur-view/super-blur-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/tool-bar/tool-bar.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/visual-factory/visual-factory.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/accessibility-manager/accessibility-manager.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/alignment/alignment.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/flex-container/flex-container.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/image-view/image-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/model3d-view/model3d-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/scroll-bar/scroll-bar.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/scrollable.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/slider/slider.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/table-view/table-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/video-view/video-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/scripting/script.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/control.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/popup/confirmation-popup.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/focus-manager/keyinput-focus-manager.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/doc/dali-toolkit-doc.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-view-declarations.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view-constraints.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/scroll-view/scroll-view-page-path-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/focus-manager/keyboard-focus-manager.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/image-loader/async-image-loader.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/image-loader/sync-image-loader.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/bubble-effect/bubble-emitter.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/control-depth-index-ranges.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/page-turn-view/page-factory.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/page-turn-view/page-turn-landscape-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/page-turn-view/page-turn-portrait-view.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/text-controls/text-selection-popup.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/controls/text-controls/text-selection-toolbar.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/image-loader/image-atlas.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/scripting/script-plugin.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/alpha-discard-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/bendy-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/blind-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/bouncing-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/carousel-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/displacement-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/dissolve-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/dissolve-local-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/distance-field-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/image-region-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/iris-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/mask-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/mirror-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/motion-blur-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/motion-stretch-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/overlay-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/ripple-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/ripple2d-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/shear-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/soft-button-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/spot-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/square-dissolve-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/swirl-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-cross-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-fold-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/transition-effects/cube-transition-wave-effect.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/visual-factory/visual-base.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/check-box-button.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/radio-button.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/control-impl.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/default-item-layout.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-factory.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/scrollable/item-view/item-layout.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/text-controls/text-editor.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/text-controls/text-field.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/text-controls/text-label.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/dali-toolkit-version.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/toolkit-property-index-ranges.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/visuals/border-visual-properties.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/visuals/color-visual-properties.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/visuals/gradient-visual-properties.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/visuals/image-visual-properties.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/visuals/mesh-visual-properties.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/visuals/primitive-visual-properties.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/visuals/visual-properties.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/builder/json-parser.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/builder/tree-node.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/image-loader/atlas-upload-observer.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/devel-api/shader-effects/quadratic-bezier.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/enums.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/styling/style-manager.h"
+  #include "/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/text/rendering-backend.h"
+
+  // add namespaces
+  namespace Dali{typedef int tmp_add_type_1;}
+  Dali::tmp_add_type_1 tmp_add_func_1(){return 0;};
+  namespace Dali{namespace AnchorPoint{typedef int tmp_add_type_2;}}
+  Dali::AnchorPoint::tmp_add_type_2 tmp_add_func_2(){return 0;};
+  namespace Dali{namespace BlendingEquation{typedef int tmp_add_type_3;}}
+  Dali::BlendingEquation::tmp_add_type_3 tmp_add_func_3(){return 0;};
+  namespace Dali{namespace BlendingFactor{typedef int tmp_add_type_4;}}
+  Dali::BlendingFactor::tmp_add_type_4 tmp_add_func_4(){return 0;};
+  namespace Dali{namespace BlendingMode{typedef int tmp_add_type_5;}}
+  Dali::BlendingMode::tmp_add_type_5 tmp_add_func_5(){return 0;};
+  namespace Dali{namespace Camera{typedef int tmp_add_type_6;}}
+  Dali::Camera::tmp_add_type_6 tmp_add_func_6(){return 0;};
+  namespace Dali{namespace Color{typedef int tmp_add_type_7;}}
+  Dali::Color::tmp_add_type_7 tmp_add_func_7(){return 0;};
+  namespace Dali{namespace Configuration{typedef int tmp_add_type_8;}}
+  Dali::Configuration::tmp_add_type_8 tmp_add_func_8(){return 0;};
+  namespace Dali{namespace CubeMapLayer{typedef int tmp_add_type_9;}}
+  Dali::CubeMapLayer::tmp_add_type_9 tmp_add_func_9(){return 0;};
+  namespace Dali{namespace Dimension{typedef int tmp_add_type_10;}}
+  Dali::Dimension::tmp_add_type_10 tmp_add_func_10(){return 0;};
+  namespace Dali{namespace DrawMode{typedef int tmp_add_type_11;}}
+  Dali::DrawMode::tmp_add_type_11 tmp_add_func_11(){return 0;};
+  namespace Dali{namespace FilterMode{typedef int tmp_add_type_12;}}
+  Dali::FilterMode::tmp_add_type_12 tmp_add_func_12(){return 0;};
+  namespace Dali{namespace FittingMode{typedef int tmp_add_type_13;}}
+  Dali::FittingMode::tmp_add_type_13 tmp_add_func_13(){return 0;};
+  namespace Dali{namespace HorizontalAlignment{typedef int tmp_add_type_14;}}
+  Dali::HorizontalAlignment::tmp_add_type_14 tmp_add_func_14(){return 0;};
+  namespace Dali{namespace InputMethod{typedef int tmp_add_type_15;}}
+  Dali::InputMethod::tmp_add_type_15 tmp_add_func_15(){return 0;};
+  namespace Dali{namespace Internal{typedef int tmp_add_type_16;}}
+  Dali::Internal::tmp_add_type_16 tmp_add_func_16(){return 0;};
+  namespace Dali{namespace Internal{namespace Adaptor{typedef int tmp_add_type_17;}}}
+  Dali::Internal::Adaptor::tmp_add_type_17 tmp_add_func_17(){return 0;};
+  namespace Dali{namespace Math{typedef int tmp_add_type_18;}}
+  Dali::Math::tmp_add_type_18 tmp_add_func_18(){return 0;};
+  namespace Dali{namespace ParentOrigin{typedef int tmp_add_type_19;}}
+  Dali::ParentOrigin::tmp_add_type_19 tmp_add_func_19(){return 0;};
+  namespace Dali{namespace Pixel{typedef int tmp_add_type_20;}}
+  Dali::Pixel::tmp_add_type_20 tmp_add_func_20(){return 0;};
+  namespace Dali{namespace PointState{typedef int tmp_add_type_21;}}
+  Dali::PointState::tmp_add_type_21 tmp_add_func_21(){return 0;};
+  namespace Dali{namespace PropertyTypes{typedef int tmp_add_type_22;}}
+  Dali::PropertyTypes::tmp_add_type_22 tmp_add_func_22(){return 0;};
+  namespace Dali{namespace Random{typedef int tmp_add_type_23;}}
+  Dali::Random::tmp_add_type_23 tmp_add_func_23(){return 0;};
+  namespace Dali{namespace RenderBuffer{typedef int tmp_add_type_24;}}
+  Dali::RenderBuffer::tmp_add_type_24 tmp_add_func_24(){return 0;};
+  namespace Dali{namespace ResizePolicy{typedef int tmp_add_type_25;}}
+  Dali::ResizePolicy::tmp_add_type_25 tmp_add_func_25(){return 0;};
+  namespace Dali{namespace SamplingMode{typedef int tmp_add_type_26;}}
+  Dali::SamplingMode::tmp_add_type_26 tmp_add_func_26(){return 0;};
+  namespace Dali{namespace SizeScalePolicy{typedef int tmp_add_type_27;}}
+  Dali::SizeScalePolicy::tmp_add_type_27 tmp_add_func_27(){return 0;};
+  namespace Dali{namespace StyleChange{typedef int tmp_add_type_28;}}
+  Dali::StyleChange::tmp_add_type_28 tmp_add_func_28(){return 0;};
+  namespace Dali{namespace TextureType{typedef int tmp_add_type_29;}}
+  Dali::TextureType::tmp_add_type_29 tmp_add_func_29(){return 0;};
+  namespace Dali{namespace Toolkit{typedef int tmp_add_type_30;}}
+  Dali::Toolkit::tmp_add_type_30 tmp_add_func_30(){return 0;};
+  namespace Dali{namespace Toolkit{namespace BorderVisual{typedef int tmp_add_type_31;}}}
+  Dali::Toolkit::BorderVisual::tmp_add_type_31 tmp_add_func_31(){return 0;};
+  namespace Dali{namespace Toolkit{namespace BorderVisual{namespace Property{typedef int tmp_add_type_32;}}}}
+  Dali::Toolkit::BorderVisual::Property::tmp_add_type_32 tmp_add_func_32(){return 0;};
+  namespace Dali{namespace Toolkit{namespace ColorVisual{typedef int tmp_add_type_33;}}}
+  Dali::Toolkit::ColorVisual::tmp_add_type_33 tmp_add_func_33(){return 0;};
+  namespace Dali{namespace Toolkit{namespace ColorVisual{namespace Property{typedef int tmp_add_type_34;}}}}
+  Dali::Toolkit::ColorVisual::Property::tmp_add_type_34 tmp_add_func_34(){return 0;};
+  namespace Dali{namespace Toolkit{namespace ControlOrientation{typedef int tmp_add_type_35;}}}
+  Dali::Toolkit::ControlOrientation::tmp_add_type_35 tmp_add_func_35(){return 0;};
+  namespace Dali{namespace Toolkit{namespace DefaultItemLayout{typedef int tmp_add_type_36;}}}
+  Dali::Toolkit::DefaultItemLayout::tmp_add_type_36 tmp_add_func_36(){return 0;};
+  namespace Dali{namespace Toolkit{namespace DepthIndex{typedef int tmp_add_type_37;}}}
+  Dali::Toolkit::DepthIndex::tmp_add_type_37 tmp_add_func_37(){return 0;};
+  namespace Dali{namespace Toolkit{namespace GradientVisual{typedef int tmp_add_type_38;}}}
+  Dali::Toolkit::GradientVisual::tmp_add_type_38 tmp_add_func_38(){return 0;};
+  namespace Dali{namespace Toolkit{namespace GradientVisual{namespace Property{typedef int tmp_add_type_39;}}}}
+  Dali::Toolkit::GradientVisual::Property::tmp_add_type_39 tmp_add_func_39(){return 0;};
+  namespace Dali{namespace Toolkit{namespace GradientVisual{namespace SpreadMethod{typedef int tmp_add_type_40;}}}}
+  Dali::Toolkit::GradientVisual::SpreadMethod::tmp_add_type_40 tmp_add_func_40(){return 0;};
+  namespace Dali{namespace Toolkit{namespace GradientVisual{namespace Units{typedef int tmp_add_type_41;}}}}
+  Dali::Toolkit::GradientVisual::Units::tmp_add_type_41 tmp_add_func_41(){return 0;};
+  namespace Dali{namespace Toolkit{namespace ImageVisual{typedef int tmp_add_type_42;}}}
+  Dali::Toolkit::ImageVisual::tmp_add_type_42 tmp_add_func_42(){return 0;};
+  namespace Dali{namespace Toolkit{namespace ImageVisual{namespace Property{typedef int tmp_add_type_43;}}}}
+  Dali::Toolkit::ImageVisual::Property::tmp_add_type_43 tmp_add_func_43(){return 0;};
+  namespace Dali{namespace Toolkit{namespace Internal{typedef int tmp_add_type_44;}}}
+  Dali::Toolkit::Internal::tmp_add_type_44 tmp_add_func_44(){return 0;};
+  namespace Dali{namespace Toolkit{namespace Internal{namespace Visual{typedef int tmp_add_type_45;}}}}
+  Dali::Toolkit::Internal::Visual::tmp_add_type_45 tmp_add_func_45(){return 0;};
+  namespace Dali{namespace Toolkit{namespace MeshVisual{typedef int tmp_add_type_46;}}}
+  Dali::Toolkit::MeshVisual::tmp_add_type_46 tmp_add_func_46(){return 0;};
+  namespace Dali{namespace Toolkit{namespace MeshVisual{namespace Property{typedef int tmp_add_type_47;}}}}
+  Dali::Toolkit::MeshVisual::Property::tmp_add_type_47 tmp_add_func_47(){return 0;};
+  namespace Dali{namespace Toolkit{namespace MeshVisual{namespace ShadingMode{typedef int tmp_add_type_48;}}}}
+  Dali::Toolkit::MeshVisual::ShadingMode::tmp_add_type_48 tmp_add_func_48(){return 0;};
+  namespace Dali{namespace Toolkit{namespace PrimitiveVisual{typedef int tmp_add_type_49;}}}
+  Dali::Toolkit::PrimitiveVisual::tmp_add_type_49 tmp_add_func_49(){return 0;};
+  namespace Dali{namespace Toolkit{namespace PrimitiveVisual{namespace Property{typedef int tmp_add_type_50;}}}}
+  Dali::Toolkit::PrimitiveVisual::Property::tmp_add_type_50 tmp_add_func_50(){return 0;};
+  namespace Dali{namespace Toolkit{namespace PrimitiveVisual{namespace Shape{typedef int tmp_add_type_51;}}}}
+  Dali::Toolkit::PrimitiveVisual::Shape::tmp_add_type_51 tmp_add_func_51(){return 0;};
+  namespace Dali{namespace Toolkit{namespace SyncImageLoader{typedef int tmp_add_type_52;}}}
+  Dali::Toolkit::SyncImageLoader::tmp_add_type_52 tmp_add_func_52(){return 0;};
+  namespace Dali{namespace Toolkit{namespace Text{typedef int tmp_add_type_53;}}}
+  Dali::Toolkit::Text::tmp_add_type_53 tmp_add_func_53(){return 0;};
+  namespace Dali{namespace Toolkit{namespace Visual{typedef int tmp_add_type_54;}}}
+  Dali::Toolkit::Visual::tmp_add_type_54 tmp_add_func_54(){return 0;};
+  namespace Dali{namespace Toolkit{namespace Visual{namespace Property{typedef int tmp_add_type_55;}}}}
+  Dali::Toolkit::Visual::Property::tmp_add_type_55 tmp_add_func_55(){return 0;};
+  namespace Dali{namespace Toolkit{namespace Visual{namespace Shader{typedef int tmp_add_type_56;}}}}
+  Dali::Toolkit::Visual::Shader::tmp_add_type_56 tmp_add_func_56(){return 0;};
+  namespace Dali{namespace Toolkit{namespace Visual{namespace Shader{namespace Property{typedef int tmp_add_type_57;}}}}}
+  Dali::Toolkit::Visual::Shader::Property::tmp_add_type_57 tmp_add_func_57(){return 0;};
+  namespace Dali{namespace VerticalAlignment{typedef int tmp_add_type_58;}}
+  Dali::VerticalAlignment::tmp_add_type_58 tmp_add_func_58(){return 0;};
+  namespace Dali{namespace WeightObject{typedef int tmp_add_type_59;}}
+  Dali::WeightObject::tmp_add_type_59 tmp_add_func_59(){return 0;};
+  namespace Dali{namespace WrapMode{typedef int tmp_add_type_60;}}
+  Dali::WrapMode::tmp_add_type_60 tmp_add_func_60(){return 0;};
+
+  // add classes
+  pthread_attr_t* tmp_add_class_0;
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/sPVqGaY4cY/dump2.h"  -I/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/alignment/alignment.h:22:0,
+                 from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/dali-toolkit.h:23,
+                 from /tmp/sPVqGaY4cY/dump2.h:3:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/control.h:333:32: error: expected ‘;’ at end of member declaration
+   Vector4 GetBackgroundColor() const DALI_DEPRECATED_API;
+                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/control.h:333:38: error: ‘DALI_DEPRECATED_API’ does not name a type
+   Vector4 GetBackgroundColor() const DALI_DEPRECATED_API;
+                                      ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/control.h:343:40: error: expected ‘;’ at end of member declaration
+   void SetBackgroundImage( Image image ) DALI_DEPRECATED_API;
+                                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/control.h:343:42: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetBackgroundImage( Image image ) DALI_DEPRECATED_API;
+                                          ^
+In file included from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/dali-toolkit.h:24:0,
+                 from /tmp/sPVqGaY4cY/dump2.h:3:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:187:35: error: expected ‘;’ at end of member declaration
+   void SetDisabled( bool disabled ) DALI_DEPRECATED_API;
+                                   ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:187:37: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetDisabled( bool disabled ) DALI_DEPRECATED_API;
+                                     ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:196:21: error: expected ‘;’ at end of member declaration
+   bool IsDisabled() const DALI_DEPRECATED_API;
+                     ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:196:27: error: ‘DALI_DEPRECATED_API’ does not name a type
+   bool IsDisabled() const DALI_DEPRECATED_API;
+                           ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:209:45: error: expected ‘;’ at end of member declaration
+   void SetAutoRepeating( bool autoRepeating ) DALI_DEPRECATED_API;
+                                             ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:209:47: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetAutoRepeating( bool autoRepeating ) DALI_DEPRECATED_API;
+                                               ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:218:26: error: expected ‘;’ at end of member declaration
+   bool IsAutoRepeating() const DALI_DEPRECATED_API;
+                          ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:218:32: error: ‘DALI_DEPRECATED_API’ does not name a type
+   bool IsAutoRepeating() const DALI_DEPRECATED_API;
+                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:231:70: error: expected ‘;’ at end of member declaration
+   void SetInitialAutoRepeatingDelay( float initialAutoRepeatingDelay ) DALI_DEPRECATED_API;
+                                                                      ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:231:72: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetInitialAutoRepeatingDelay( float initialAutoRepeatingDelay ) DALI_DEPRECATED_API;
+                                                                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:240:40: error: expected ‘;’ at end of member declaration
+   float GetInitialAutoRepeatingDelay() const DALI_DEPRECATED_API;
+                                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:240:46: error: ‘DALI_DEPRECATED_API’ does not name a type
+   float GetInitialAutoRepeatingDelay() const DALI_DEPRECATED_API;
+                                              ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:253:64: error: expected ‘;’ at end of member declaration
+   void SetNextAutoRepeatingDelay( float nextAutoRepeatingDelay ) DALI_DEPRECATED_API;
+                                                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:253:66: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetNextAutoRepeatingDelay( float nextAutoRepeatingDelay ) DALI_DEPRECATED_API;
+                                                                  ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:262:37: error: expected ‘;’ at end of member declaration
+   float GetNextAutoRepeatingDelay() const DALI_DEPRECATED_API;
+                                     ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:262:43: error: ‘DALI_DEPRECATED_API’ does not name a type
+   float GetNextAutoRepeatingDelay() const DALI_DEPRECATED_API;
+                                           ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:274:43: error: expected ‘;’ at end of member declaration
+   void SetTogglableButton( bool togglable ) DALI_DEPRECATED_API;
+                                           ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:274:45: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetTogglableButton( bool togglable ) DALI_DEPRECATED_API;
+                                             ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:283:28: error: expected ‘;’ at end of member declaration
+   bool IsTogglableButton() const DALI_DEPRECATED_API;
+                            ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:283:34: error: ‘DALI_DEPRECATED_API’ does not name a type
+   bool IsTogglableButton() const DALI_DEPRECATED_API;
+                                  ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:297:35: error: expected ‘;’ at end of member declaration
+   void SetSelected( bool selected ) DALI_DEPRECATED_API;
+                                   ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:297:37: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetSelected( bool selected ) DALI_DEPRECATED_API;
+                                     ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:306:21: error: expected ‘;’ at end of member declaration
+   bool IsSelected() const DALI_DEPRECATED_API;
+                     ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:306:27: error: ‘DALI_DEPRECATED_API’ does not name a type
+   bool IsSelected() const DALI_DEPRECATED_API;
+                           ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:316:46: error: expected ‘;’ at end of member declaration
+   void SetAnimationTime( float animationTime ) DALI_DEPRECATED_API;
+                                              ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:316:48: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetAnimationTime( float animationTime ) DALI_DEPRECATED_API;
+                                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:326:28: error: expected ‘;’ at end of member declaration
+   float GetAnimationTime() const DALI_DEPRECATED_API;
+                            ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:326:34: error: ‘DALI_DEPRECATED_API’ does not name a type
+   float GetAnimationTime() const DALI_DEPRECATED_API;
+                                  ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:336:47: error: expected ‘;’ at end of member declaration
+   void SetLabelText( const std::string& label ) DALI_DEPRECATED_API;
+                                               ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:336:49: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetLabelText( const std::string& label ) DALI_DEPRECATED_API;
+                                                 ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:346:30: error: expected ‘;’ at end of member declaration
+   std::string GetLabelText() const DALI_DEPRECATED_API;
+                              ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:346:36: error: ‘DALI_DEPRECATED_API’ does not name a type
+   std::string GetLabelText() const DALI_DEPRECATED_API;
+                                    ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:356:56: error: expected ‘;’ at end of member declaration
+   void SetUnselectedImage( const std::string& filename ) DALI_DEPRECATED_API;
+                                                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:356:58: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetUnselectedImage( const std::string& filename ) DALI_DEPRECATED_API;
+                                                          ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:366:56: error: expected ‘;’ at end of member declaration
+   void SetBackgroundImage( const std::string& filename ) DALI_DEPRECATED_API;
+                                                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:366:58: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetBackgroundImage( const std::string& filename ) DALI_DEPRECATED_API;
+                                                          ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:376:54: error: expected ‘;’ at end of member declaration
+   void SetSelectedImage( const std::string& filename ) DALI_DEPRECATED_API;
+                                                      ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:376:56: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetSelectedImage( const std::string& filename ) DALI_DEPRECATED_API;
+                                                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:386:64: error: expected ‘;’ at end of member declaration
+   void SetSelectedBackgroundImage( const std::string& filename ) DALI_DEPRECATED_API;
+                                                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:386:66: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetSelectedBackgroundImage( const std::string& filename ) DALI_DEPRECATED_API;
+                                                                  ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:396:64: error: expected ‘;’ at end of member declaration
+   void SetDisabledBackgroundImage( const std::string& filename ) DALI_DEPRECATED_API;
+                                                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:396:66: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetDisabledBackgroundImage( const std::string& filename ) DALI_DEPRECATED_API;
+                                                                  ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:406:54: error: expected ‘;’ at end of member declaration
+   void SetDisabledImage( const std::string& filename ) DALI_DEPRECATED_API;
+                                                      ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:406:56: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetDisabledImage( const std::string& filename ) DALI_DEPRECATED_API;
+                                                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:416:62: error: expected ‘;’ at end of member declaration
+   void SetDisabledSelectedImage( const std::string& filename ) DALI_DEPRECATED_API;
+                                                              ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:416:64: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetDisabledSelectedImage( const std::string& filename ) DALI_DEPRECATED_API;
+                                                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:426:30: error: expected ‘;’ at end of member declaration
+   void SetLabel( Actor label ) DALI_DEPRECATED_API;
+                              ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:426:32: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetLabel( Actor label ) DALI_DEPRECATED_API;
+                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:436:36: error: expected ‘;’ at end of member declaration
+   void SetButtonImage( Image image ) DALI_DEPRECATED_API;
+                                    ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:436:38: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetButtonImage( Image image ) DALI_DEPRECATED_API;
+                                      ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:446:38: error: expected ‘;’ at end of member declaration
+   void SetSelectedImage( Image image ) DALI_DEPRECATED_API;
+                                      ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:446:40: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetSelectedImage( Image image ) DALI_DEPRECATED_API;
+                                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:457:26: error: expected ‘;’ at end of member declaration
+   Actor GetButtonImage() const DALI_DEPRECATED_API;
+                          ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:457:32: error: ‘DALI_DEPRECATED_API’ does not name a type
+   Actor GetButtonImage() const DALI_DEPRECATED_API;
+                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:468:28: error: expected ‘;’ at end of member declaration
+   Actor GetSelectedImage() const DALI_DEPRECATED_API;
+                            ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/button.h:468:34: error: ‘DALI_DEPRECATED_API’ does not name a type
+   Actor GetSelectedImage() const DALI_DEPRECATED_API;
+                                  ^
+In file included from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/dali-toolkit.h:26:0,
+                 from /tmp/sPVqGaY4cY/dump2.h:3:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h:188:36: error: expected ‘;’ at end of member declaration
+   void SetButtonImage( Actor image ) DALI_DEPRECATED_API;
+                                    ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h:188:38: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetButtonImage( Actor image ) DALI_DEPRECATED_API;
+                                      ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h:200:40: error: expected ‘;’ at end of member declaration
+   void SetBackgroundImage( Actor image ) DALI_DEPRECATED_API;
+                                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h:200:42: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetBackgroundImage( Actor image ) DALI_DEPRECATED_API;
+                                          ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h:212:38: error: expected ‘;’ at end of member declaration
+   void SetSelectedImage( Actor image ) DALI_DEPRECATED_API;
+                                      ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h:212:40: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetSelectedImage( Actor image ) DALI_DEPRECATED_API;
+                                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h:224:48: error: expected ‘;’ at end of member declaration
+   void SetSelectedBackgroundImage( Actor image ) DALI_DEPRECATED_API;
+                                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h:224:50: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetSelectedBackgroundImage( Actor image ) DALI_DEPRECATED_API;
+                                                  ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h:236:48: error: expected ‘;’ at end of member declaration
+   void SetDisabledBackgroundImage( Actor image ) DALI_DEPRECATED_API;
+                                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h:236:50: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetDisabledBackgroundImage( Actor image ) DALI_DEPRECATED_API;
+                                                  ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h:248:38: error: expected ‘;’ at end of member declaration
+   void SetDisabledImage( Actor image ) DALI_DEPRECATED_API;
+                                      ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h:248:40: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetDisabledImage( Actor image ) DALI_DEPRECATED_API;
+                                        ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h:260:46: error: expected ‘;’ at end of member declaration
+   void SetDisabledSelectedImage( Actor image ) DALI_DEPRECATED_API;
+                                              ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/buttons/push-button.h:260:48: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetDisabledSelectedImage( Actor image ) DALI_DEPRECATED_API;
+                                                ^
+In file included from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/dali-toolkit.h:28:0,
+                 from /tmp/sPVqGaY4cY/dump2.h:3:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/control-impl.h:465:48: error: expected ‘;’ at end of member declaration
+   virtual void OnControlChildAdd( Actor& child ) DALI_DEPRECATED_API;
+                                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/control-impl.h:465:50: error: ‘DALI_DEPRECATED_API’ does not name a type
+   virtual void OnControlChildAdd( Actor& child ) DALI_DEPRECATED_API;
+                                                  ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/control-impl.h:477:51: error: expected ‘;’ at end of member declaration
+   virtual void OnControlChildRemove( Actor& child ) DALI_DEPRECATED_API;
+                                                   ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/control-impl.h:477:53: error: ‘DALI_DEPRECATED_API’ does not name a type
+   virtual void OnControlChildRemove( Actor& child ) DALI_DEPRECATED_API;
+                                                     ^
+In file included from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/dali-toolkit.h:31:0,
+                 from /tmp/sPVqGaY4cY/dump2.h:3:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/image-view/image-view.h:142:37: error: expected ‘;’ at end of member declaration
+   static ImageView New( Image image ) DALI_DEPRECATED_API;
+                                     ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/image-view/image-view.h:142:39: error: ‘DALI_DEPRECATED_API’ does not name a type
+   static ImageView New( Image image ) DALI_DEPRECATED_API;
+                                       ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/image-view/image-view.h:221:30: error: expected ‘;’ at end of member declaration
+   void SetImage( Image image ) DALI_DEPRECATED_API;
+                              ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/image-view/image-view.h:221:32: error: ‘DALI_DEPRECATED_API’ does not name a type
+   void SetImage( Image image ) DALI_DEPRECATED_API;
+                                ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/image-view/image-view.h:257:20: error: expected ‘;’ at end of member declaration
+   Image GetImage() const DALI_DEPRECATED_API;
+                    ^
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/controls/image-view/image-view.h:257:26: error: ‘DALI_DEPRECATED_API’ does not name a type
+   Image GetImage() const DALI_DEPRECATED_API;
+                          ^
+In file included from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/visuals/visual-properties.h:22:0,
+                 from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/visuals/border-visual-properties.h:22,
+                 from /home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/dali-toolkit.h:61,
+                 from /tmp/sPVqGaY4cY/dump2.h:3:
+/home/kayes/abi_tool/execution/mobile/abi-tool_v3.0/abi-tool/3.0/usr/include/dali-toolkit/public-api/toolkit-property-index-ranges.h:36:39: error: ‘CORE_PROPERTY_MAX_INDEX’ was not declared in this scope
+   VISUAL_PROPERTY_BASE_START_INDEX  = CORE_PROPERTY_MAX_INDEX + 1,             ///< Visual Property Base Start Index. @SINCE_1_1.45
+                                       ^
+

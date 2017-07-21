@@ -1,0 +1,3 @@
+wifi_direct_set_p2poem_loglevel
+__wfd_client_print_cmd
+gettid

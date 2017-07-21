@@ -1,0 +1,34 @@
+package storeapp;
+
+import java.util.List;
+
+import apprunner.BinaryData;
+
+
+public class StoreApp_000000004464_TizenAcu1 extends TCBase {
+
+	BinaryData binary;
+	
+	public StoreApp_000000004464_TizenAcu1() {
+		super();
+	}
+
+	public StoreApp_000000004464_TizenAcu1(String tcName, BinaryData binary) {
+		super(tcName);
+		this.binary = binary;
+	}
+
+	//========================================================[TestCases]==========================================================
+
+	public void install() {
+		
+	}
+	
+	public void exploratory() {
+			
+	}
+
+	public void uninstall() {
+	
+	}
+}

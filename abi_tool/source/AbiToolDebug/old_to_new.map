@@ -1,0 +1,6 @@
+cairo : libcairo
+webkit2-efl : chromium-efl
+capi-data-control : data-control
+capi-message-port : message-port
+libslp-tapi : libtapi
+libaccounts-svc : libaccount-service

@@ -1,0 +1,102 @@
+package com.turbovnc.vncviewer;
+
+import java.awt.Dimension;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
+import org.sikuli.script.IScreen;
+import org.sikuli.script.ScreenImage;
+import org.sikuli.util.EventObserver;
+import org.sikuli.util.EventSubject;
+
+public class CaptureImage extends Thread {
+
+	private static CustomFileChooser jFileChooser = new CustomFileChooser(System.getProperty("user.dir") + File.separator + "res" + File.separator + "ref_images");
+	private boolean isVerify;
+	CodeGenerator codeGenerator;
+	Toolbar toolbar;
+	static String filePath = jFileChooser.getCurrentDirectory().toString().trim();
+
+	public CaptureImage(CodeGenerator codeGenerator, Toolbar toolbar) {
+		this.codeGenerator = codeGenerator;
+
+		jFileChooser = new CustomFileChooser(filePath);
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("PNG File", "png");
+		jFileChooser.addChoosableFileFilter(filter);
+		this.toolbar = toolbar;
+	}
+
+	public void setVerify(boolean isVerify){
+		this.isVerify = isVerify;
+	}
+
+	@Override
+	public void run() {
+
+		IScreen iScreen = null;
+
+		toolbar.buttons[0].setEnabled(false);
+		toolbar.toggleOperationButtons();
+
+		EventObserver eventObserver = null;
+		final CustomOverlayPrompt capturePrompt = new CustomOverlayPrompt(iScreen, eventObserver);
+
+		capturePrompt.setResizable(true);
+
+		capturePrompt.setBounds(codeGenerator.cc.viewport.getX(), codeGenerator.cc.viewport.getY()+86, codeGenerator.cc.viewport.getWidth(), codeGenerator.cc.viewport.getHeight()-126);
+		capturePrompt.prompt("Select Area to capture as Image");
+		toolbar.getCC().viewport.setEnabled(false);
+		capturePrompt.addObserver(new EventObserver() {
+			@Override
+			public void update(EventSubject arg0) {
+				ScreenImage capturedImg = capturePrompt.getSelection();
+				try {
+					if (capturedImg != null) {
+						int rVal = jFileChooser.showSaveDialog(jFileChooser);
+
+						if (rVal == CustomFileChooser.APPROVE_OPTION) {
+							filePath = jFileChooser.getCurrentDirectory().toString().trim();
+							String fileName = jFileChooser.getSelectedFile().getName();
+
+							if (!fileName.toLowerCase().contains(".png")) {
+								fileName = fileName.trim() + ".png";
+							}
+
+							File imgFile = new File(filePath + File.separator + fileName);
+
+							ImageIO.write(capturedImg.getImage(), "PNG", imgFile);
+
+							if (null != codeGenerator) {
+								codeGenerator.updateFileTree(filePath, filePath + File.separator + fileName);
+
+								if (ReadConfigUtil.getCaptureRefImagePath().equals("1")) {
+									filePath = filePath + File.separator + fileName;
+									String[] list = filePath.split("ref_images");
+									if (list.length > 1) {
+										fileName = list[1];
+									}
+								}
+
+								if (!isVerify)
+									codeGenerator.tapImage(fileName);
+								else
+									codeGenerator.verifyImage(fileName);
+							}
+						}
+					}
+					toolbar.getCC().viewport.setEnabled(true);
+					toolbar.toggleOperationButtons();
+					toolbar.buttons[0].setEnabled(true);
+					toolbar.getCC().viewport.toggleFixed();
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+
+	}
+
+}

@@ -1,0 +1,2 @@
+em_check_db_privilege_by_pid
+em_check_socket_privilege_by_pid

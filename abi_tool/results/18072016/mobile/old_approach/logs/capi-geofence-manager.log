@@ -1,0 +1,59 @@
+Temporary header file '/tmp/LbmFXhaACS/dump1.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/geofence/geofence_data_type.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/geofence/geofence_manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/geofence/geofence_module.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/geofence/geofence_type.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/LbmFXhaACS/dump1.h"  -I/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/geofence -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /tmp/LbmFXhaACS/dump1.h:3:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/geofence/geofence_data_type.h:42:3: error: conflicting declaration ‘typedef struct _geofence_s geofence_s’
+ } geofence_s;
+   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/geofence/geofence_data_type.h:19:0,
+                 from /tmp/LbmFXhaACS/dump1.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/geofence/geofence_type.h:104:16: error: ‘struct geofence_s’ has a previous declaration as ‘struct geofence_s’
+ typedef struct geofence_s *geofence_h;
+                ^
+In file included from /tmp/LbmFXhaACS/dump1.h:5:0:
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/geofence/geofence_module.h:34:56: error: ‘gpointer’ has not been declared
+ typedef void (*GeofenceModCB)(int fence_id, int state, gpointer userdata);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/2.4/usr/include/geofence/geofence_module.h:36:86: error: ‘gpointer’ has not been declared
+ typedef void (*GeofenceModEventCB)(int place_id, int fence_id, int error, int state, gpointer userdata);
+                                                                                      ^
+
+Temporary header file '/tmp/LbmFXhaACS/dump2.h' with the following content will be compiled to create GCC translation unit dump:
+
+  // add includes
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/geofence/geofence_data_type.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/geofence/geofence_manager.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/geofence/geofence_module.h"
+  #include "/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/geofence/geofence_type.h"
+
+The GCC parameters:
+  gcc -fdump-translation-unit -fkeep-inline-functions -c -x c++-header -fpermissive -w "/tmp/LbmFXhaACS/dump2.h"  -I/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/geofence -I/home/kayes/tizen-sdk/platforms/tizen-3.0/mobile/rootstraps/mobile-3.0-device.core/usr/include
+
+In file included from /tmp/LbmFXhaACS/dump2.h:3:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/geofence/geofence_data_type.h:42:3: error: conflicting declaration ‘typedef struct _geofence_s geofence_s’
+ } geofence_s;
+   ^
+In file included from /home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/geofence/geofence_data_type.h:19:0,
+                 from /tmp/LbmFXhaACS/dump2.h:3:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/geofence/geofence_type.h:127:16: error: ‘struct geofence_s’ has a previous declaration as ‘struct geofence_s’
+ typedef struct geofence_s *geofence_h;
+                ^
+In file included from /tmp/LbmFXhaACS/dump2.h:5:0:
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/geofence/geofence_module.h:34:56: error: ‘gpointer’ has not been declared
+ typedef void (*GeofenceModCB)(int fence_id, int state, gpointer userdata);
+                                                        ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/geofence/geofence_module.h:36:89: error: ‘gpointer’ has not been declared
+ typedef void (*GeofenceModProximityCB)(int fence_id, int proximity_state, int provider, gpointer userdata);
+                                                                                         ^
+/home/kayes/abi_tool/abi-tool-2.7/3.0/usr/include/geofence/geofence_module.h:38:86: error: ‘gpointer’ has not been declared
+ typedef void (*GeofenceModEventCB)(int place_id, int fence_id, int error, int state, gpointer userdata);
+                                                                                      ^
+

@@ -1,0 +1,2 @@
+telephony_call_get_voice_call_state
+telephony_call_get_video_call_state

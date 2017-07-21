@@ -1,0 +1,78 @@
+==============================appcore-widget-debuginfo==============================
+libcapi-appfw-widget-application is selected for comparision. 
+libcapi-appfw-widget-application dump successful for comparision. 
+==============================cairo-debuginfo==============================
+libcairo-gobject is selected for comparision. 
+libcairo-gobject dump successful for comparision. 
+libcairo-script-interpreter is selected for comparision. 
+libcairo-script-interpreter dump successful for comparision. 
+libcairo is selected for comparision. 
+libcairo dump successful for comparision. 
+==============================capi-appfw-application-debuginfo==============================
+libcapi-appfw-application is selected for comparision. 
+libcapi-appfw-application dump successful for comparision. 
+libcapi-appfw-alarm is not selected for comparision. 
+libcapi-appfw-preference is selected for comparision. 
+libcapi-appfw-preference dump successful for comparision. 
+libcapi-appfw-app-common is selected for comparision. 
+libcapi-appfw-app-common dump successful for comparision. 
+libcapi-appfw-app-control is selected for comparision. 
+libcapi-appfw-app-control dump successful for comparision. 
+==============================capi-network-nfc-debuginfo==============================
+libcapi-network-nfc is selected for comparision. 
+libcapi-network-nfc dump successful for comparision. 
+==============================elementary-debuginfo==============================
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+libelementary is selected for comparision. 
+libelementary dump successful for comparision. 
+elementary_testql is not selected for comparision. 
+==============================evas-debuginfo==============================
+libevas is selected for comparision. 
+libevas dump successful for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+module is selected for comparision. 
+==============================libslp-tapi-debuginfo==============================
+libSLP-tapi is selected for comparision. 
+libSLP-tapi dump successful for comparision. 
+==============================capi-appfw-application-debuginfo==============================
+libcapi-appfw-application is selected for comparision. 
+libcapi-appfw-application dump successful for comparision. 
+libcapi-appfw-alarm is not selected for comparision. 
+libcapi-appfw-preference is selected for comparision. 
+libcapi-appfw-preference dump successful for comparision. 
+libcapi-appfw-app-common is selected for comparision. 
+libcapi-appfw-app-common dump successful for comparision. 
+libcapi-appfw-app-control is selected for comparision. 
+libcapi-appfw-app-control dump successful for comparision. 
+==============================appcore-agent-debuginfo==============================
+libappcore-agent is selected for comparision. 
+libappcore-agent dump successful for comparision. 

@@ -1,0 +1,59 @@
+package uva;
+
+class A {
+	int x = 3;
+	A(int a) {
+		x = a;
+	}
+	
+	void inc() {
+		x++;
+	}
+	
+	void inc(int a) {
+		x = x+ a;
+	}
+	
+	void print () {
+		System.out.println(x);
+	}
+}
+
+public class Limit {
+//	Integer x = new Integer(3);
+	A a = new A(3);
+	public static void inc(Limit l) {
+		l.a.inc();
+//		= new Integer(l.x.intValue() + 1);
+	}
+	
+	void inc(Limit l, int a) {
+		l.a.inc(a);
+	}
+	
+	public static void incx(A x/*, Limit l*/) {
+//		System.out.println(x.hashCode());
+		x.inc();
+//		System.out.println("$$$");
+//		
+//		print(l);
+	}
+	
+	public static void dec(Limit l) {
+//		l.x--;
+	}
+	
+	public static void print(Limit l){
+		l.a.print();
+	}
+	
+	
+	public static void main(String []args) {
+		
+		Limit l1 = new Limit();
+		inc(l1);
+		print(l1);
+		incx(l1.a);
+		print(l1);
+	}
+}
