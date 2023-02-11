@@ -1,0 +1,2 @@
+# git push https://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@github.com/bosch-etas-cycurfuzz/vulnerable-uds-server
+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
